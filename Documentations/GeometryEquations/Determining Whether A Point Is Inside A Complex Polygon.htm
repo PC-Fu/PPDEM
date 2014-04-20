@@ -1,0 +1,165 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+<title>Determining Whether A Point Is Inside A Complex Polygon</title>
+<link rel="stylesheet" href="Determining%20Whether%20A%20Point%20Is%20Inside%20A%20Complex%20Polygon_files/tutorial.css">
+</head><body bgcolor="#ffffff">
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td valign="top"><script type="text/javascript"><!--
+google_ad_client = "pub-3855777271744084";
+google_ad_width = 160;
+google_ad_height = 600;
+google_ad_format = "160x600_as";
+google_ad_type = "text";
+google_ad_channel = "";
+google_color_border = "DFF2FD";
+google_color_bg = "DFF2FD";
+google_color_link = "0000CC";
+google_color_url = "008000";
+google_color_text = "000000";
+//--></script><script type="text/javascript" src="Determining%20Whether%20A%20Point%20Is%20Inside%20A%20Complex%20Polygon_files/show_ads.js"></script><iframe name="google_ads_frame" src="Determining%20Whether%20A%20Point%20Is%20Inside%20A%20Complex%20Polygon_files/ads.htm" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" width="160" frameborder="0" height="600"></iframe></td>
+<td width="20"></td>
+<td valign="top">
+
+<span style="font-size: 14pt;"><b>Point-In-Polygon Algorithm &#8212; Determining Whether A Point Is Inside A Complex
+Polygon</b></span><br>
+
+<span style="font-size: 8pt;"><i>© 1998,2006,2007 Darel Rex Finley.&nbsp; This complete article, unmodified, may be freely
+distributed for educational purposes.</i></span><br><br>
+
+<b><i>Visit the <a href="http://alienryderflex.com/polyspline/">new page</a> which adds spline curves to this
+technique!&nbsp; Also visit the <a href="http://alienryderflex.com/shortest_path">shortest-path-through-polygon
+page</a>!</i></b><br><br><br>
+
+<img src="Determining%20Whether%20A%20Point%20Is%20Inside%20A%20Complex%20Polygon_files/Diagram_1.gif"><b>Figure 1</b><br><br>
+
+Figure 1 demonstrates a typical case of a severely concave polygon with 14 sides.&nbsp; The red dot is a point which
+needs to be tested, to determine if it lies inside the polygon.<br><br>
+
+The solution is to compare each side of the polygon to the Y (vertical) coordinate of the test point, and compile a list
+of <b>nodes</b>, where each node is a point where one side crosses the Y threshold of the test point. In this example,
+eight sides of the polygon cross the Y threshold, while the other six sides do not.&nbsp; Then, if there are an
+<i>odd</i> number of nodes on each side of the test point, then it is inside the polygon; if there are an <i>even</i>
+number of nodes on each side of the test point, then it is outside the polygon.&nbsp; In our example, there are five
+nodes to the left of the test point, and three nodes to the right.&nbsp; Since five and three are odd numbers, our test
+point is inside the polygon.<br><br>
+
+(Note:&nbsp; This algorithm does not care whether the polygon is traced in clockwise or counterclockwise
+fashion.)<br><br><br>
+
+<img src="Determining%20Whether%20A%20Point%20Is%20Inside%20A%20Complex%20Polygon_files/Diagram_2.gif"><b>Figure 2</b><br><br>
+
+Figure 2 shows what happens if the polygon crosses itself.&nbsp; In this example, a ten-sided polygon has lines which
+cross each other.&nbsp; The effect is much like &#8220;exclusive or,&#8221; or XOR as it is known to assembly-language
+programmers.&nbsp; The portions of the polygon which overlap cancel each other out.&nbsp; So, the test point is outside
+the polygon, as indicated by the even number of nodes (two and two) on either side of it.<br><br><br>
+
+<img src="Determining%20Whether%20A%20Point%20Is%20Inside%20A%20Complex%20Polygon_files/Diagram_3.gif"><b>Figure 3</b><br><br>
+
+In Figure 3, the six-sided polygon does not overlap itself, but it does have lines that cross.&nbsp; This is not a
+problem; the algorithm still works fine.<br><br><br>
+
+<img src="Determining%20Whether%20A%20Point%20Is%20Inside%20A%20Complex%20Polygon_files/Diagram_4.gif"><b>Figure 4</b><br><br>
+
+Figure 4 demonstrates the problem that results when a vertex of the polygon falls directly on the Y threshold.&nbsp;
+Since sides <b>a</b> and <b>b</b> both touch the threshold, should they both generate a node?&nbsp; No, because then
+there would be two nodes on each side of the test point and so the test would say it was outside of the polygon, when it
+clearly is not!<br><br>
+
+The solution to this situation is simple.&nbsp; Points which are exactly on the Y threshold must be considered to belong
+to one side of the threshold.&nbsp; Let&#8217;s say we arbitrarily decide that points on the Y threshold will belong to the
+&#8220;above&#8221; side of the threshold.&nbsp; Then, side <b>a</b> generates a node, since it has one endpoint below the
+threshold and its other endpoint on-or-above the threshold.&nbsp; Side <b>b</b> does not generate a node, because both of
+its endpoints are on-or-above the threshold, so it is not considered to be a threshold-crossing side.<br><br><br>
+
+<img src="Determining%20Whether%20A%20Point%20Is%20Inside%20A%20Complex%20Polygon_files/Diagram_5.gif"><b>Figure 5</b><br><br>
+
+Figure 5 shows the case of a polygon in which one of its sides lies entirely on the threshold.&nbsp; Simply follow the
+rule as described concerning Figure 4.&nbsp; Side <b>c</b> generates a node, because it has one endpoint below the
+threshold, and its other endpoint on-or-above the threshold.&nbsp; Side <b>d</b> does not generate a node, because it has
+both endpoints on-or-above the threshold.&nbsp; And side <b>e</b> also does not generate a node, because it has both
+endpoints on-or-above the threshold.<br><br><br>
+
+<img src="Determining%20Whether%20A%20Point%20Is%20Inside%20A%20Complex%20Polygon_files/crowns.gif"><b>Figure 6</b><br><br>
+
+Figure 6 illustrates a special case brought to my attention by John David Munch of Cal Poly.&nbsp; One interior angle of
+the polygon just touches the Y-threshold of the test point.&nbsp; This is OK.&nbsp; In the upper picture, only one side
+(hilited in red) generates a node to the left of the test point, and in the bottom example, three sides do.&nbsp; Either
+way, the number is odd, and the test point will be deemed inside the polygon.<br><br><br>
+
+<b>Polygon Edge</b><br><br>
+
+If the test point is on the border of the polygon, this algorithm will deliver unpredictable results; i.e. the result may
+be &#8220;inside&#8221; or &#8220;outside&#8221; depending on arbitrary factors such as how the polygon is oriented with
+respect to the coordinate system.&nbsp; (That is not generally a problem, since the edge of the polygon is infinitely
+thin anyway, and points that fall right on the edge can go either way without hurting the look of the polygon.)<br><br><br>
+
+<b>Code Sample</b><br><br>
+
+<table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td bgcolor="#e8e8e8">
+<code><font color="#008000">//&nbsp; Globals which should be set before calling this function:<br>
+//<br>
+//&nbsp; int&nbsp;&nbsp;&nbsp;&nbsp;polySides&nbsp;&nbsp;=&nbsp;&nbsp;how many corners the polygon has<br>
+//&nbsp; float&nbsp;&nbsp;polyX[]&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;&nbsp;horizontal coordinates of corners<br>
+//&nbsp; float&nbsp;&nbsp;polyY[]&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;&nbsp;vertical coordinates of corners<br>
+//&nbsp; float&nbsp;&nbsp;x, y&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;&nbsp;point to be tested<br>
+//<br>
+//&nbsp; (Globals are used in this example for purposes of speed.&nbsp; Change as<br>
+//&nbsp; desired.)<br>
+//<br>
+//&nbsp; The function will return YES if the point x,y is inside the polygon, or<br>
+//&nbsp; NO if it is not.&nbsp; If the point is exactly on the edge of the polygon,<br>
+//&nbsp; then the function may return YES or NO.<br>
+//<br>
+//&nbsp; Note that division by zero is avoided because the division is protected<br>
+//&nbsp; by the "if" clause which surrounds it.</font><br><br>
+
+bool pointInPolygon() {<br><br>
+
+&nbsp;&nbsp;int&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i, j=polySides-1 ;<br>
+&nbsp;&nbsp;boolean&nbsp;&nbsp;oddNodes=NO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ;<br><br>
+
+&nbsp;&nbsp;for (i=0; i&lt;polySides; i++) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if (polyY[i]&lt;y &amp;&amp; polyY[j]&gt;=y<br>
+&nbsp;&nbsp;&nbsp;&nbsp;||&nbsp;&nbsp;polyY[j]&lt;y &amp;&amp; polyY[i]&gt;=y) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (polyX[i]+(y-polyY[i])/(polyY[j]-polyY[i])*(polyX[j]-polyX[i])&lt;x) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;oddNodes=!oddNodes; }}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;j=i; }<br><br>
+
+&nbsp;&nbsp;return oddNodes; }</code>
+</td></tr></tbody></table><br><br>
+
+<b>Integer Issue</b><br><br>
+What if you&#8217;re trying to make a polygon like the blue one below (Figure
+7), but it comes out all horizontal and vertical lines, like the red
+one?&nbsp; That indicates that you have defined some of your variables
+as integers instead of floating-point.&nbsp; Check your code carefully
+to ensure that your test point and all the corners of your polygon are
+defined as, and passed as, floating-point numbers.<br><br>
+
+<img src="Determining%20Whether%20A%20Point%20Is%20Inside%20A%20Complex%20Polygon_files/integer_polygon_problem.gif">&nbsp;&nbsp; <b>Figure 7</b><br><br><br>
+
+Send me an <a href="mailto:DarelRex@gmail.com?subject=Point-In-Polygon">e-mail</a>!<br><br>
+
+<table border="0" cellpadding="10" cellspacing="0"><tbody><tr><td width="20"></td>
+<td bgcolor="#ffff80"><span style="font-size: 8pt; color: rgb(128, 128, 0);">Does the <b>brace style</b> in the above code sample freak
+you out?&nbsp; Click <a target="BraceWindow" href="http://alienryderflex.com/brace_style/brace01.html">here</a> to see it explained in a new
+window.</span></td></tr></tbody></table><br>
+
+<table border="0" cellpadding="5" cellspacing="0">
+<tbody><tr><td bgcolor="#808080"><span style="font-family: Helvetica,sans-serif; font-size: 8pt; color: rgb(255, 255, 255);">
+<a href="http://alienryderflex.com/quicksort/"><font color="#ffffff">Quicksort</font></a>&nbsp; |&nbsp;
+<font color="#000000">Point&nbsp;in&nbsp;polygon</font>&nbsp; |&nbsp;
+<a href="http://alienryderflex.com/mouseover_menus_example.html"><font color="#ffffff">Mouseover&nbsp;menus</font></a>&nbsp; |&nbsp;
+<a href="http://alienryderflex.com/gyroscope/"><font color="#ffffff">Gyroscope</font></a>&nbsp; |&nbsp;
+<a href="http://alienryderflex.com/osmosis/"><font color="#ffffff">Osmosis</font></a>&nbsp; |&nbsp;
+<a href="http://alienryderflex.com/polarizer/"><font color="#ffffff">Polarizer&nbsp;experiment</font></a>&nbsp; |&nbsp;
+<a href="http://alienryderflex.com/equilibrium/"><font color="#ffffff">Gravity&nbsp;table&nbsp;equilibrium</font></a>&nbsp; |&nbsp;
+<a href="http://alienryderflex.com/vectors/"><font color="#ffffff">Calculus&nbsp;without&nbsp;calculus</font></a>&nbsp; |
+<a href="http://alienryderflex.com/overlappingmaze/"><font color="#ffffff">Overlapping maze</font></a>
+</span></td></tr>
+</tbody></table>
+
+</td></tr></tbody></table>
+</body></html>

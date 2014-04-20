@@ -1,0 +1,1 @@
+document.write('<a target="_blank" href="http://ad.doubleclick.net/click;h=v8/363a/0/0/%2a/q;90338881;0-0;0;14622506;31-1/1;20374716/20392610/1;;~sscs=%3fhttp://www.oreillynet.com"><img src="http://m1.2mdn.net/viewad/1319813/one_pix_trans.gif" border=0 alt="Click here to find out more!"></a>');

@@ -1,0 +1,481 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Circle-Circle Intersection -- from Wolfram MathWorld</title>
+
+
+
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta name="DC.Creator" content="Weisstein, Eric W.">
+<meta name="DC.Description" content="Two circles may intersect in two imaginary points, a single degenerate point, or two distinct points.The intersections of two circles determine a line known as the radical line. If three circles mutually intersect in a single point, their point of intersection is the intersection of their pairwise radical lines, known as the radical center.Let two circles of radii R and r and centered at (0,0) and (d,0) intersect in a region shaped like an asymmetric lens. The equations of the two circles...">
+<meta name="DC.Date.Modified" scheme="W3CDTF" content="2003-06-13">
+<meta name="DC.Date.Modified" scheme="W3CDTF" content="2005-12-14">
+<meta name="DC.Subject" scheme="MathWorld" content="Mathematics:Geometry:Plane Geometry:Circles">
+<meta name="DC.Subject" scheme="MathWorld" content="Mathematics:Number Theory:Constants:Transcendental Root Constants">
+<meta name="DC.Subject" scheme="MSC_2000" content="51M04">
+<meta name="DC.Rights" content="Copyright 1999-2007 Wolfram Research, Inc.  See http://mathworld.wolfram.com/about/terms.html for a full terms of use statement.">
+<meta name="DC.Format" scheme="IMT" content="text/html">
+<meta name="DC.Identifier" scheme="URI" content="http://mathworld.wolfram.com/Circle-CircleIntersection.html">
+<meta name="DC.Language" scheme="RFC3066" content="en">
+<meta name="DC.Publisher" content="Wolfram Research, Inc.">
+<meta name="DC.Relation.IsPartOf" scheme="URI" content="http://mathworld.wolfram.com">
+<meta name="DC.Type" scheme="DCMIType" content="Text">
+<meta name="Last-Modified" content="2005-12-14">
+<link rel="alternate" type="application/rss+xml" title="MathWorld Headline News" href="http://mathworld.wolfram.com/news/rss.xml">
+<link rel="stylesheet" type="text/css" href="Circle-CircleIntersection_files/mathworld.css">
+<script language="JavaScript" type="text/javascript" src="Circle-CircleIntersection_files/menu.js">
+</script></head><body onload="PreloadImages('/images/sidebar/created-by-over.gif')">
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+   <tbody><tr>
+     <!-- IE Mac will fail on url('') -->
+     <td style="background-image: url(/images/topbar/header.gif); background-repeat: no-repeat;">
+     <table border="0" cellpadding="0" cellspacing="0">
+       <tbody><tr>
+         <td><img src="Circle-CircleIntersection_files/spacer.gif" alt="" usemap="#TopMap" border="0" height="80" width="615"></td>
+         <td valign="top">
+          <div style="margin-top: 5px;">
+          <form method="get" action="/search/" name="search" accept-charset="UTF-8">
+          <table border="0" cellpadding="0" cellspacing="0" width="216">
+              <tbody><tr>
+                <td nowrap="nowrap" valign="middle"><a href="http://mathworld.wolfram.com/search/" style="font-size: 10px;">Search Site </a></td>
+                <td valign="middle">
+                  <input name="query" size="16" style="border: 1px solid rgb(204, 204, 204);" type="text">
+                </td>
+                <td valign="middle"><input src="Circle-CircleIntersection_files/go.gif" type="image"></td>
+             </tr>
+           </tbody></table>
+            </form>
+           </div>
+           </td>
+         </tr>
+       </tbody></table>
+       <div style="padding-right: 619px;"></div>
+     </td>
+    <td width="100%"><img src="Circle-CircleIntersection_files/header-extend.gif" alt="" height="79" width="100%"></td>
+  </tr>
+</tbody></table>
+
+<map name="TopMap" id="TopMap"><area shape="rect" coords="11,34,198,51" href="http://www.wolfram.com/products/mathematica/" target="_blank" alt="made with Mathematica technology"><area shape="rect" coords="8,8,197,30" href="http://mathworld.wolfram.com/" alt="MathWorld">
+  
+  
+</map>
+
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody><tr valign="top">
+<td>
+<!-- Sidebar -->
+
+<table border="0" cellpadding="0" cellspacing="0">
+  <tbody><tr><td align="left" nowrap="nowrap" valign="top" width="185">
+    <table border="0" cellpadding="0" cellspacing="0" width="175">
+    <tbody><tr><td>
+    <div style="border: 1px solid rgb(215, 243, 234); background: rgb(244, 252, 229) none repeat scroll 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; padding-top: 10px; padding-bottom: 10px; padding-right: 5px;">
+    <div class="mainindices">
+      <a href="http://mathworld.wolfram.com/topics/Algebra.html">Algebra</a><br>
+      <a href="http://mathworld.wolfram.com/topics/AppliedMathematics.html">Applied Mathematics</a><br>
+      <a href="http://mathworld.wolfram.com/topics/CalculusandAnalysis.html">Calculus and Analysis</a><br>
+      <a href="http://mathworld.wolfram.com/topics/DiscreteMathematics.html">Discrete Mathematics</a><br>
+      <a href="http://mathworld.wolfram.com/topics/FoundationsofMathematics.html">Foundations of Mathematics</a><br>
+      <a href="http://mathworld.wolfram.com/topics/Geometry.html">Geometry</a><br>
+      <a href="http://mathworld.wolfram.com/topics/HistoryandTerminology.html">History and Terminology</a><br>
+      <a href="http://mathworld.wolfram.com/topics/NumberTheory.html">Number Theory</a><br>
+      <a href="http://mathworld.wolfram.com/topics/ProbabilityandStatistics.html">Probability and Statistics</a><br>
+      <a href="http://mathworld.wolfram.com/topics/RecreationalMathematics.html">Recreational Mathematics</a><br>
+      <a href="http://mathworld.wolfram.com/topics/Topology.html">Topology</a><br>
+    </div>
+    <div class="divider"></div>
+    <div class="subindices">
+    <a href="http://mathworld.wolfram.com/letters/">Alphabetical Index</a><br>
+    <a href="http://mathworld.wolfram.com/topics/InteractiveEntries.html">Interactive Entries</a><br>
+    <a href="http://mathworld.wolfram.com/cgi-bin/random.cgi">Random Entry</a><br>
+    <a href="http://mathworld.wolfram.com/whatsnew/">New in <i>MathWorld</i></a><br>
+    </div>
+    <div class="divider"></div>
+    <div class="subindices">
+      <a href="http://mathworld.wolfram.com/classroom/"><i>MathWorld</i> Classroom</a><br>
+    </div>
+    <div class="divider"></div>
+    <div class="subindices">
+       <a href="http://mathworld.wolfram.com/about/">About <i>MathWorld</i></a><br>
+<!--
+       <a href="/contact/contribute.html">Contribute an Entry</a><br />
+-->
+       <a href="http://mathworld.wolfram.com/contact/">Send a Message to the Team</a><br>
+    </div>
+    <div class="divider"></div>
+    <div class="subindices">
+       <a href="http://www.amazon.com/exec/obidos/ASIN/1584883472/ref=nosim/weisstein-20" target="_blank">Order book from Amazon</a><br>
+    </div>
+    </div>
+    <div style="padding-top: 10px; padding-bottom: 10px; margin-left: 20px;">
+      <img src="Circle-CircleIntersection_files/last-updated.gif" alt="last updated" border="0" height="12" width="61"><br>
+      <span class="last-updated">
+      <a href="http://mathworld.wolfram.com/whatsnew/">12,708 entries</a><br>
+      <a href="http://mathworld.wolfram.com/whatsnew/">Fri Oct  5 2007</a><br>
+      </span>
+      <br>
+      <a href="http://mathworld.wolfram.com/about/author.html" onmouseover="MM_swapImage('Image1','','/images/sidebar/created-by-over.gif',1)" onmouseout="MM_swapImgRestore()"><img src="Circle-CircleIntersection_files/created-by.gif" name="Image1" id="Image1" title="Created, developed, and nurtured by Eric Weisstein with contributions from the world's mathematical community" alt="Created, developed, and nurtured by Eric Weisstein with contributions from the world's mathematical community" border="0" height="49" width="120"></a> 
+    </div>
+  </td></tr>
+  </tbody></table>
+
+  </td></tr>
+</tbody></table>
+
+<map name="SideMap" id="SideMap"><area shape="rect" coords="11,31,97,46" href="http://www.wolfram.com/" alt="Wolfram Research"><area shape="rect" coords="3,3,118,30" href="http://mathworld.wolfram.com/author.html" alt="Eric W. Weisstein">
+  
+  
+</map>
+
+<!-- End Sidebar -->
+</td>
+<td><img src="Circle-CircleIntersection_files/spacer.gif" alt="" width="30"></td><td>
+<table width="100%">
+<tbody><tr><td align="left" valign="top" width="100%">
+<div class="navbar">
+<a href="http://mathworld.wolfram.com/topics/Geometry.html">Geometry</a>&nbsp;&gt;&nbsp;<a href="http://mathworld.wolfram.com/topics/PlaneGeometry.html">Plane Geometry</a>&nbsp;&gt;&nbsp;<a href="http://mathworld.wolfram.com/topics/Circles.html">Circles</a>&nbsp;<br><a href="http://mathworld.wolfram.com/topics/NumberTheory.html">Number Theory</a>&nbsp;&gt;&nbsp;<a href="http://mathworld.wolfram.com/topics/Constants.html">Constants</a>&nbsp;&gt;&nbsp;<a href="http://mathworld.wolfram.com/topics/TranscendentalRootConstants.html">Transcendental Root Constants</a>&nbsp;<br>
+</div>
+<br>
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody><tr><td class="title" valign="baseline"><span class="nowrap">Circle-Circle Intersection</span></td></tr><tr><td valign="top"><span class="nowrap"><img src="Circle-CircleIntersection_files/underline.gif" alt="" height="3" width="100%"><img src="Circle-CircleIntersection_files/underline.gif" alt="" height="3" width="20"></span></td><td><img src="Circle-CircleIntersection_files/spacer.gif" alt="" height="15"></td></tr>
+</tbody></table>
+</td></tr><tr valign="top"><td width="100%"><a href="http://mathworld.wolfram.com/contact/" target="_blank"><img src="Circle-CircleIntersection_files/comment.gif" alt="COMMENT On this Page" border="0" height="25" width="98"></a><a href="http://mathworld.wolfram.com/notebooks/PlaneGeometry/Circle-CircleIntersection.nb"><img src="Circle-CircleIntersection_files/dnld-nb.gif" alt="DOWNLOAD Mathematica Notebook" border="0" height="26" width="119"></a>
+<div align="center">
+<img src="Circle-CircleIntersection_files/CircleIntersections_801.gif" alt="CircleIntersections" height="100" width="470">
+</div>
+<p class="Text">
+Two circles may <a href="http://mathworld.wolfram.com/Intersection.html" class="Hyperlink">intersect</a> in two
+imaginary points, a single degenerate point, or two distinct points.
+</p>
+<p class="Text">
+The intersections of two circles determine a line known as the <a href="http://mathworld.wolfram.com/RadicalLine.html" class="Hyperlink">radical line</a>. If three circles mutually intersect in a single
+ point, their point of intersection is the intersection of their pairwise radical
+ lines, known as the <a href="http://mathworld.wolfram.com/RadicalCenter.html" class="Hyperlink">radical center</a>.
+</p>
+<div align="center">
+<img src="Circle-CircleIntersection_files/CircleCircleIntersection_1000.gif" alt="CircleCircleIntersection" height="285" width="304">
+</div>
+<p class="Text">
+Let two <a href="http://mathworld.wolfram.com/Circle.html" class="Hyperlink">circles</a> of <a href="http://mathworld.wolfram.com/Radius.html" class="Hyperlink">radii</a> <img src="Circle-CircleIntersection_files/inline1.gif" class="inlineformula" alt="R" border="0" height="15" width="9"> and <img src="Circle-CircleIntersection_files/inline2.gif" class="inlineformula" alt="r" border="0" height="15" width="5"> and centered at
+ <img src="Circle-CircleIntersection_files/inline3.gif" class="inlineformula" alt="(0,0)" border="0" height="15" width="30"> and <img src="Circle-CircleIntersection_files/inline4.gif" class="inlineformula" alt="(d,0)" border="0" height="15" width="30"> <a href="http://mathworld.wolfram.com/Intersection.html" class="Hyperlink">intersect</a> in a region shaped like an asymmetric <a href="http://mathworld.wolfram.com/Lens.html" class="Hyperlink">lens</a>. The equations of the two circles are
+</p>
+<table style="padding-left: 50px;" align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr style=""><td align="right" width="1"><img src="Circle-CircleIntersection_files/inline5.gif" alt="x^2+y^2" height="19" width="48"></td><td align="center" width="14"><img src="Circle-CircleIntersection_files/inline6.gif" alt="=" height="18" width="14"></td><td align="left"><img src="Circle-CircleIntersection_files/inline7.gif" alt="R^2" height="19" width="21"></td><td align="right" width="10">
+<div id="eqn1" class="eqnum">
+(1)
+</div>
+</td></tr><tr style=""><td align="right" width="1"><img src="Circle-CircleIntersection_files/inline8.gif" alt="(x-d)^2+y^2" height="19" width="78"></td><td align="center" width="14"><img src="Circle-CircleIntersection_files/inline9.gif" alt="=" height="18" width="14"></td><td align="left"><img src="Circle-CircleIntersection_files/inline10.gif" alt="r^2." height="19" width="20"></td><td align="right" width="10">
+<div id="eqn2" class="eqnum">
+(2)
+</div>
+</td></tr>
+</tbody></table>
+<p class="Text">
+Combining (<a href="#eqn1" class="Hyperlink">1</a>) and (<a href="#eqn2" class="Hyperlink">2</a>)
+gives
+</p>
+<div>
+<table style="padding-left: 50px;" align="center" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td align="left"><img src="Circle-CircleIntersection_files/equation1.gif" alt="(x-d)^2+(R^2-x^2)==r^2." height="19" width="147"></td><td align="right" width="3">
+<div id="eqn3" class="eqnum">
+(3)
+</div>
+</td></tr>
+</tbody></table>
+</div>
+<p class="Text">
+Multiplying through and rearranging gives
+</p>
+<div>
+<table style="padding-left: 50px;" align="center" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td align="left"><img src="Circle-CircleIntersection_files/equation2.gif" alt="x^2-2dx+d^2-x^2==r^2-R^2." height="19" width="180"></td><td align="right" width="3">
+<div id="eqn4" class="eqnum">
+(4)
+</div>
+</td></tr>
+</tbody></table>
+</div>
+<p class="Text">
+Solving for <img src="Circle-CircleIntersection_files/inline11.gif" class="inlineformula" alt="x" border="0" height="15" width="8"> results in
+</p>
+<div>
+<table style="padding-left: 50px;" align="center" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td align="left"><img src="Circle-CircleIntersection_files/equation3.gif" alt="x==(d^2-r^2+R^2)/(2d)." height="37" width="110"></td><td align="right" width="3">
+<div id="eqn5" class="eqnum">
+(5)
+</div>
+</td></tr>
+</tbody></table>
+</div>
+<p class="Text">
+The <a href="http://mathworld.wolfram.com/Chord.html" class="Hyperlink">chord</a> connecting the cusps of the <a href="http://mathworld.wolfram.com/Lens.html" class="Hyperlink">lens</a> therefore has half-length <img src="Circle-CircleIntersection_files/inline12.gif" class="inlineformula" alt="y" border="0" height="15" width="8"> given by plugging
+ <img src="Circle-CircleIntersection_files/inline13.gif" class="inlineformula" alt="x" border="0" height="15" width="8"> back in to obtain
+</p>
+<table style="padding-left: 50px;" align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr style=""><td align="right" width="1"><img src="Circle-CircleIntersection_files/inline14.gif" alt="y^2" height="19" width="20"></td><td align="center" width="14"><img src="Circle-CircleIntersection_files/inline15.gif" alt="=" height="18" width="14"></td><td align="left"><img src="Circle-CircleIntersection_files/inline16.gif" alt="R^2-x^2==R^2-((d^2-r^2+R^2)/(2d))^2" height="39" width="192"></td><td align="right" width="10">
+<div id="eqn6" class="eqnum">
+(6)
+</div>
+</td></tr><tr style=""><td align="right" width="1"><img src="Circle-CircleIntersection_files/inline17.gif" alt="" height="18" width="5"></td><td align="center" width="14"><img src="Circle-CircleIntersection_files/inline18.gif" alt="=" height="18" width="14"></td><td align="left"><img src="Circle-CircleIntersection_files/inline19.gif" alt="(4d^2R^2-(d^2-r^2+R^2)^2)/(4d^2)." height="39" width="155"></td><td align="right" width="10">
+<div id="eqn7" class="eqnum">
+(7)
+</div>
+</td></tr>
+</tbody></table>
+<p class="Text">
+Solving for <img src="Circle-CircleIntersection_files/inline20.gif" class="inlineformula" alt="y" border="0" height="15" width="8"> and plugging back in to give
+ the entire chord length <img src="Circle-CircleIntersection_files/inline21.gif" class="inlineformula" alt="a==2y" border="0" height="15" width="44"> then gives
+</p>
+<table style="padding-left: 50px;" align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr style=""><td align="right" width="1"><img src="Circle-CircleIntersection_files/inline22.gif" alt="a" height="18" width="12"></td><td align="center" width="14"><img src="Circle-CircleIntersection_files/inline23.gif" alt="=" height="18" width="14"></td><td align="left"><img src="Circle-CircleIntersection_files/inline24.gif" alt="1/dsqrt(4d^2R^2-(d^2-r^2+R^2)^2)" height="35" width="180"></td><td align="right" width="10">
+<div id="eqn8" class="eqnum">
+(8)
+</div>
+</td></tr><tr style=""><td align="right" width="1"><img src="Circle-CircleIntersection_files/inline25.gif" alt="" height="18" width="5"></td><td align="center" width="14"><img src="Circle-CircleIntersection_files/inline26.gif" alt="=" height="18" width="14"></td><td align="left"><img src="Circle-CircleIntersection_files/inline27.gif" alt="1/dsqrt((-d+r-R)(-d-r+R)(-d+r+R)(d+r+R))." height="35" width="316"></td><td align="right" width="10">
+<div id="eqn9" class="eqnum">
+(9)
+</div>
+</td></tr>
+</tbody></table>
+<p class="Text">
+This same formulation applies directly to the <a href="http://mathworld.wolfram.com/Sphere-SphereIntersection.html" class="Hyperlink">sphere-sphere intersection</a> problem.
+</p>
+<p class="Text">
+To find the <a href="http://mathworld.wolfram.com/Area.html" class="Hyperlink">area</a> of the asymmetric "<a href="http://mathworld.wolfram.com/Lens.html" class="Hyperlink">lens</a>" in which the <a href="http://mathworld.wolfram.com/Circle.html" class="Hyperlink">circles</a> <a href="http://mathworld.wolfram.com/Intersection.html" class="Hyperlink">intersect</a>,
+ simply use the formula for the <a href="http://mathworld.wolfram.com/CircularSegment.html" class="Hyperlink">circular
+ segment</a> of radius <img src="Circle-CircleIntersection_files/inline28.gif" class="inlineformula" alt="R^'" border="0" height="15" width="14">and triangular
+ height <img src="Circle-CircleIntersection_files/inline29.gif" class="inlineformula" alt="d^'" border="0" height="15" width="12">
+</p>
+<div>
+<table style="padding-left: 50px;" align="center" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td align="left"><img src="Circle-CircleIntersection_files/equation4.gif" alt="A(R^',d^')==R^('2)cos^(-1)((d^')/(R^'))-d^'sqrt(R^('2)-d^('2))" height="35" width="266"></td><td align="right" width="3">
+<div id="eqn10" class="eqnum">
+(10)
+</div>
+</td></tr>
+</tbody></table>
+</div>
+<p class="Text">
+twice, one for each half of the "<a href="http://mathworld.wolfram.com/Lens.html" class="Hyperlink">lens</a>."
+Noting that the heights of the two segment triangles are
+</p>
+<table style="padding-left: 50px;" align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr style=""><td align="right" width="1"><img src="Circle-CircleIntersection_files/inline30.gif" alt="d_1" height="18" width="19"></td><td align="center" width="14"><img src="Circle-CircleIntersection_files/inline31.gif" alt="=" height="18" width="14"></td><td align="left"><img src="Circle-CircleIntersection_files/inline32.gif" alt="x==(d^2-r^2+R^2)/(2d)" height="37" width="108"></td><td align="right" width="10">
+<div id="eqn11" class="eqnum">
+(11)
+</div>
+</td></tr><tr style=""><td align="right" width="1"><img src="Circle-CircleIntersection_files/inline33.gif" alt="d_2" height="18" width="19"></td><td align="center" width="14"><img src="Circle-CircleIntersection_files/inline34.gif" alt="=" height="18" width="14"></td><td align="left"><img src="Circle-CircleIntersection_files/inline35.gif" alt="d-x==(d^2+r^2-R^2)/(2d)." height="37" width="133"></td><td align="right" width="10">
+<div id="eqn12" class="eqnum">
+(12)
+</div>
+</td></tr>
+</tbody></table>
+<p class="Text">
+The result is
+</p>
+<table style="padding-left: 50px;" align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr style=""><td align="right" width="1"><img src="Circle-CircleIntersection_files/inline36.gif" alt="A" height="18" width="15"></td><td align="center" width="14"><img src="Circle-CircleIntersection_files/inline37.gif" alt="=" height="18" width="14"></td><td align="left"><img src="Circle-CircleIntersection_files/inline38.gif" alt="A(R,d_1)+A(r,d_2)" height="18" width="117"></td><td align="right" width="10">
+<div id="eqn13" class="eqnum">
+(13)
+</div>
+</td></tr><tr style=""><td align="right" width="1"><img src="Circle-CircleIntersection_files/inline39.gif" alt="" height="18" width="5"></td><td align="center" width="14"><img src="Circle-CircleIntersection_files/inline40.gif" alt="=" height="18" width="14"></td><td align="left"><img src="Circle-CircleIntersection_files/inline41.gif" alt="r^2cos^(-1)((d^2+r^2-R^2)/(2dr))+R^2cos^(-1)((d^2+R^2-r^2)/(2dR))-1/2sqrt((-d+r+R)(d+r-R)(d-r+R)(d+r+R))." height="71" width="311"></td><td align="right" width="10">
+<div id="eqn14" class="eqnum">
+(14)
+</div>
+</td></tr>
+</tbody></table>
+<p class="Text">
+The limiting cases of this expression can be checked to give 0 when <img src="Circle-CircleIntersection_files/inline42.gif" class="inlineformula" alt="d==R+r" border="0" height="15" width="54"> and
+</p>
+<table style="padding-left: 50px;" align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr style=""><td align="right" width="1"><img src="Circle-CircleIntersection_files/inline43.gif" alt="A" height="18" width="15"></td><td align="center" width="14"><img src="Circle-CircleIntersection_files/inline44.gif" alt="=" height="18" width="14"></td><td align="left"><img src="Circle-CircleIntersection_files/inline45.gif" alt="2R^2cos^(-1)(d/(2R))-1/2dsqrt(4R^2-d^2)" height="35" width="218"></td><td align="right" width="10">
+<div id="eqn15" class="eqnum">
+(15)
+</div>
+</td></tr><tr style=""><td align="right" width="1"><img src="Circle-CircleIntersection_files/inline46.gif" alt="" height="18" width="5"></td><td align="center" width="14"><img src="Circle-CircleIntersection_files/inline47.gif" alt="=" height="18" width="14"></td><td align="left"><img src="Circle-CircleIntersection_files/inline48.gif" alt="2A(1/2d,R)" height="25" width="75"></td><td align="right" width="10">
+<div id="eqn16" class="eqnum">
+(16)
+</div>
+</td></tr>
+</tbody></table>
+<p class="Text">
+when <img src="Circle-CircleIntersection_files/inline49.gif" class="inlineformula" alt="r==R" border="0" height="15" width="33">, as expected. 
+</p>
+<div align="center">
+<img src="Circle-CircleIntersection_files/Circle-CircleIntersectionHalf_1000.gif" alt="Circle-CircleIntersectionHalf" height="275" width="380">
+</div>
+<p class="Text">
+In order for half the area of two <a href="http://mathworld.wolfram.com/UnitDisk.html" class="Hyperlink">unit disks</a> (<img src="Circle-CircleIntersection_files/inline50.gif" class="inlineformula" alt="R==1" border="0" height="15" width="35">) to overlap, set <img src="Circle-CircleIntersection_files/inline51.gif" class="inlineformula" alt="A==piR^2/2==pi/2" border="0" height="16" width="114"> in the above equation
+</p>
+<div>
+<table style="padding-left: 50px;" align="center" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td align="left"><img src="Circle-CircleIntersection_files/equation5.gif" alt="1/2pi==2cos^(-1)(1/2d)-1/2dsqrt(4-d^2)" height="30" width="215"></td><td align="right" width="3">
+<div id="eqn17" class="eqnum">
+(17)
+</div>
+</td></tr>
+</tbody></table>
+</div>
+<p class="Text">
+and solve numerically, yielding <img src="Circle-CircleIntersection_files/inline52.gif" class="inlineformula" alt="d==0.8079455..." border="0" height="15" width="102">
+ (Sloane's <a href="http://www.research.att.com/%7Enjas/sequences/A133741" class="Hyperlink">A133741</a>).
+</p>
+<div align="center">
+<img src="Circle-CircleIntersection_files/Circle3Intersection_800.gif" alt="Circle3Intersection" height="224" width="500">
+</div>
+<p class="Text">
+If three symmetrically placed equal circles <a href="http://mathworld.wolfram.com/Intersection.html" class="Hyperlink">intersect</a> in a single point, as illustrated above, the total area of the three lens-shaped
+ regions formed by the pairwise intersection of circles is given by
+</p>
+<div>
+<table style="padding-left: 50px;" align="center" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td align="left"><img src="Circle-CircleIntersection_files/equation6.gif" alt="A==pi-3/2sqrt(3)." height="29" width="99"></td><td align="right" width="3">
+<div id="eqn18" class="eqnum">
+(18)
+</div>
+</td></tr>
+</tbody></table>
+</div>
+<div align="center">
+<img src="Circle-CircleIntersection_files/Circle4Intersection_700.gif" alt="Circle4Intersection" height="210" width="440">
+</div>
+<p class="Text">
+Similarly, the total area of the four lens-shaped regions formed by the pairwise intersection of circles is given by
+</p>
+<div>
+<table style="padding-left: 50px;" align="center" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td align="left"><img src="Circle-CircleIntersection_files/equation7.gif" alt="A==2(pi-2)." height="17" width="83"></td><td align="right" width="3">
+<div id="eqn19" class="eqnum">
+(19)
+</div>
+</td></tr>
+</tbody></table>
+</div>
+<form name="SearchLinks" method="get" action="http://mathworld.wolfram.com/search/">
+<p class="CrossRefs">
+<span class="crosslinkheader">SEE ALSO:</span> <a href="http://mathworld.wolfram.com/BorromeanRings.html" class="Hyperlink">Borromean Rings</a>, <a href="http://mathworld.wolfram.com/BrocardTriangles.html" class="Hyperlink">Brocard Triangles</a>,
+ <a href="http://mathworld.wolfram.com/Circle-EllipseIntersection.html" class="Hyperlink">Circle-Ellipse Intersection</a>,
+ <a href="http://mathworld.wolfram.com/Circle-LineIntersection.html" class="Hyperlink">Circle-Line Intersection</a>,
+ <a href="http://mathworld.wolfram.com/CircularSegment.html" class="Hyperlink">Circular Segment</a>, <a href="http://mathworld.wolfram.com/CircularTriangle.html" class="Hyperlink">Circular Triangle</a>, <a href="http://mathworld.wolfram.com/DoubleBubble.html" class="Hyperlink">Double
+ Bubble</a>, <a href="http://mathworld.wolfram.com/GoatProblem.html" class="Hyperlink">Goat Problem</a>, <a href="http://mathworld.wolfram.com/JohnsonsTheorem.html" class="Hyperlink">Johnson's Theorem</a>, <a href="http://mathworld.wolfram.com/Lens.html" class="Hyperlink">Lens</a>,
+ <a href="http://mathworld.wolfram.com/RadicalCenter.html" class="Hyperlink">Radical Center</a>, <a href="http://mathworld.wolfram.com/RadicalLine.html" class="Hyperlink">Radical Line</a>, <a href="http://mathworld.wolfram.com/ReuleauxTriangle.html" class="Hyperlink">Reuleaux
+ Triangle</a>, <a href="http://mathworld.wolfram.com/Sphere-SphereIntersection.html" class="Hyperlink">Sphere-Sphere
+ Intersection</a>, <a href="http://mathworld.wolfram.com/SteinerConstruction.html" class="Hyperlink">Steiner Construction</a>,
+ <a href="http://mathworld.wolfram.com/VennDiagram.html" class="Hyperlink">Venn Diagram</a>. <input name="query" value="link:http://mathworld.wolfram.com/Circle-CircleIntersection.html" type="hidden"><a href="javascript:document.forms.SearchLinks.submit();">[Pages&nbsp;Linking&nbsp;Here]</a>
+</p>
+</form>
+<p>
+<img src="Circle-CircleIntersection_files/underline.gif" alt="" height="3" width="300">
+</p>
+<span class="crosslinkheader">REFERENCES:</span>
+<p class="Reference">
+Sloane, N. J. A. Sequence  <a href="http://www.research.att.com/%7Enjas/sequences/A133741" class="Hyperlink">A133741</a> in "The On-Line Encyclopedia of Integer Sequences."
+</p>
+<div>
+<img src="Circle-CircleIntersection_files/underline.gif" alt="" height="3" width="300"><br><br>
+<div>
+<span class="crosslinkheader">LAST MODIFIED:</span><span class="citation">&nbsp;<a href="http://mathworld.wolfram.com/whatsnew/2005/12.html#14">December 14, 2005</a></span>
+</div>
+<br><span class="crosslinkheader">CITE THIS AS:</span><br>
+<p class="citation">
+<a href="http://mathworld.wolfram.com/about/author.html">Weisstein, Eric W.</a> "Circle-Circle Intersection."
+From <a href="http://mathworld.wolfram.com/"><i>MathWorld</i></a>--A Wolfram Web Resource. <a href="http://mathworld.wolfram.com/Circle-CircleIntersection.html">http://mathworld.wolfram.com/Circle-CircleIntersection.html</a>
+</p>
+<img src="Circle-CircleIntersection_files/underline.gif" alt="" height="3" width="300"><br>
+<p class="copyright">
+© 1999 CRC Press LLC, © 1999-2007 <a href="http://www.wolfram.com/" target="_blank">Wolfram
+Research, Inc.</a> | <a href="http://mathworld.wolfram.com/about/terms.html">Terms of Use</a>
+</p>
+</div>
+</td></tr>
+</tbody></table>
+</td><td valign="top">
+<div style="margin-left: 30px; margin-right: 30px;">
+<table border="0" cellpadding="0" cellspacing="0" width="185">
+<tbody><tr valign="top">
+<td style="background-image: url(/images/sidebar/rt-line-sub.gif); background-repeat: repeat-y;"><img src="Circle-CircleIntersection_files/rt-line-sub.gif" alt="" height="2" width="1"></td>
+<td>
+<!-- Rightbar -->
+
+<div style="margin-left: 20px;">
+      <div class="othersite" style="color: rgb(0, 153, 153);"><b>Other Wolfram Sites:</b></div>
+      <div class="othersite"><a href="http://www.wolfram.com/" target="_blank">
+      <img src="Circle-CircleIntersection_files/bullet-aqua.gif" alt="" border="0" height="7" width="7">&nbsp;&nbsp;Wolfram Research</a>
+      </div>
+      <div class="othersite"><a href="http://demonstrations.wolfram.com/" target="_blank">
+      <img src="Circle-CircleIntersection_files/bullet-aqua.gif" alt="" border="0" height="7" width="7">&nbsp;&nbsp;Demonstrations Site</a>
+      </div>
+      <div class="othersite"><a href="http://integrals.wolfram.com/" target="_blank">
+      <img src="Circle-CircleIntersection_files/bullet-aqua.gif" alt="" border="0" height="7" width="7">&nbsp;&nbsp;Integrator</a>
+      </div>
+      <div class="othersite"><a href="http://tones.wolfram.com/" target="_blank">
+      <img src="Circle-CircleIntersection_files/bullet-aqua.gif" alt="" border="0" height="7" width="7">&nbsp;&nbsp;Tones</a>
+      </div>
+      <div class="othersite"><a href="http://functions.wolfram.com/" target="_blank">
+      <img src="Circle-CircleIntersection_files/bullet-aqua.gif" alt="" border="0" height="7" width="7">&nbsp;&nbsp;Functions Site</a>
+      </div>
+      <div class="othersite"><a href="http://www.wolframscience.com/" target="_blank">
+      <img src="Circle-CircleIntersection_files/bullet-aqua.gif" alt="" border="0" height="7" width="7">&nbsp;&nbsp;Wolfram Science</a>
+      </div>
+      <div class="othersite"><a href="http://www.wolfram.com/webresources.html" target="_blank">
+      <img src="Circle-CircleIntersection_files/bullet-aqua.gif" alt="" border="0" height="7" width="7">&nbsp;&nbsp;more&#8230;</a>
+      </div>
+</div>
+<div class="rightline-sub"></div>
+<table style="margin-left: 2px;" border="0" cellpadding="0" cellspacing="0">
+      <!-- Need to run the <td>s together or else IE will misinterpret them -->
+      <tbody><tr>
+          <td valign="top"><img src="Circle-CircleIntersection_files/spacer.gif" alt="" height="2" width="2"><a href="http://www.wolfram.com/products/player/" target="_blank"><img src="Circle-CircleIntersection_files/spikey-icon-dnld16.gif" alt="" align="top" border="0" height="16" width="16"></a></td>
+          <td valign="top">
+              <div class="othersite">
+              <a href="http://www.wolfram.com/products/player/" target="_blank">Download <i>Mathematica Player</i> &gt;&gt;</a>
+              </div>
+              <div class="othersite" style="margin-top: 5px;"></div>
+          </td>
+      </tr>
+      <tr>
+          <td valign="top"><img src="Circle-CircleIntersection_files/spacer.gif" alt="" height="2" width="2"><a href="http://reference.wolfram.com/" target="_blank"><img src="Circle-CircleIntersection_files/spikey-icon-docs16.gif" alt="" align="top" border="0" height="16" width="16"></a></td>
+          <td valign="top">
+              <div class="othersite">
+              <a href="http://reference.wolfram.com/" target="_blank">Complete <i>Mathematica</i> Documentation &gt;&gt;</a>
+              </div>
+              <div class="othersite" style="margin-top: 5px;"></div>
+          </td>
+      </tr>
+</tbody></table>
+
+<!-- End Rightbar -->
+
+<div class="rightline-sub"></div>
+<div style="margin-left: 20px;">
+<div class="ad" style="margin-top: 5px;">
+Show off your math savvy with a <a href="http://store.wolfram.com/view/misc/index.str#mathworld" target="_blank"><i>MathWorld</i> T-shirt</a>.
+</div>
+</div>
+
+<div class="rightline-sub"></div>
+<a href="http://www.wolfram.com/products/mathematica/" target="_blank"><img src="Circle-CircleIntersection_files/mw-ad_M6.gif" alt="Introducing a computing revolution... Mathematica reinvented" title="Introducing a computing revolution... Mathematica reinvented" border="0" height="45" width="183"></a>
+
+<div class="rightline-sub"></div>
+<a href="http://demonstrations.wolfram.com/" target="_blank"><img src="Circle-CircleIntersection_files/mw-ad_Demos.gif" alt="New! Interactive mathematics--The Wolfram Demonstrations Project" title="New! Interactive mathematics--The Wolfram Demonstrations Project" border="0" height="68" width="183"></a>
+
+<div class="rightline-sub">
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody><tr> 
+<td style="background-image: url(/images/sidebar/swish4.gif); background-repeat: no-repeat;" width="179">
+<div style="margin-left: 20px;"> 
+<div class="ad" style="margin-top: 5px;">
+<i>Mathematica</i> availability information for <a href="http://www.wolfram.com/siteinfo/" target="_blank">University of California at Davis</a>.
+</div>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+
+</td>
+</tr>
+</tbody></table>
+</div>
+</td>
+</tr>
+</tbody></table>
+</body></html>

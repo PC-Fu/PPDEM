@@ -1,0 +1,38 @@
+{ 
+var google_ads = new Array(); 
+var google_ad; 
+var google_radlinks = new Array(); 
+var google_radlink; 
+var google_info = new Object(); 
+google_ad = new Object(); 
+google_ad.n = 1; 
+google_ad.type = "text"; 
+google_ad.bidtype = "CPC"; 
+google_ad.targeting_type = "contextual"; 
+google_ad.url = "http://pagead2.googlesyndication.com/pagead/iclk?sa=l&amp;ai=B094HMTp7R7_tOZrGqgPPy5jdBver9jGr8dieBMCNtwHgpxIQARgDIMHS9wEoAjgAULn9w8T9_____wFgydbZhsij_BqgAfGo7_kDqgEKNTI4ODAxOTE5M7IBEnd3dy50aGVzY3JpcHRzLmNvbboBCjMwMHgyNTBfanPIAQHaATFodHRwOi8vd3d3LnRoZXNjcmlwdHMuY29tL2ZvcnVtL3RocmVhZDM4Nzc3Ni5odG1syAK7yPkCqAMB6AMf6APmA-gD3gX1AwABAAA&amp;num=3&amp;adurl=http://clickserve.dartsearch.net/link/click%3Flid%3D43000000057393096&amp;client=ca-pub-8550604525820387"; 
+google_ad.visible_url = "www.skillsoft.com"; 
+google_ad.line1 = "Visual Basic Training"; 
+google_ad.line2 = "VB Training Tools \x26amp; Courses"; 
+google_ad.line3 = "Train with SkillSoft Today"; 
+google_ad.regionname = ""; 
+google_ads[0] = google_ad; 
+google_ad = new Object(); 
+google_ad.n = 2; 
+google_ad.type = "text"; 
+google_ad.bidtype = "CPC"; 
+google_ad.targeting_type = "contextual"; 
+google_ad.url = "http://pagead2.googlesyndication.com/pagead/iclk?sa=l&amp;ai=BaXiBMTp7R7_tOZrGqgPPy5jdBqLDwDfi4aLhAsCNtwGAgVMQAhgEIMHS9wEoAjgAUP6PyeADYMnW2YbIo_waqgEKNTI4ODAxOTE5M7IBEnd3dy50aGVzY3JpcHRzLmNvbboBCjMwMHgyNTBfanPIAQHaATFodHRwOi8vd3d3LnRoZXNjcmlwdHMuY29tL2ZvcnVtL3RocmVhZDM4Nzc3Ni5odG1syAKmnqwBqAMB6AMf6APmA-gD3gX1AwABAAA&amp;num=4&amp;adurl=http://www.ni.com/mstudio/%3Fmetc%3Dmt8uyt&amp;client=ca-pub-8550604525820387"; 
+google_ad.visible_url = "www.ni.com"; 
+google_ad.line1 = "Temperature Tutorials"; 
+google_ad.line2 = "View tutorials in Visual Basic 6"; 
+google_ad.line3 = "and Visual Basic .NET."; 
+google_ad.regionname = ""; 
+google_ads[1] = google_ad; 
+google_info.feedback_url = "http://services.google.com/feedback/abg?url=http://www.thescripts.com/forum/thread387776.html&amp;hl=en&amp;client=ca-pub-8550604525820387&amp;adU=www.skillsoft.com&amp;adT=Visual+Basic+Training&amp;adU=www.ni.com&amp;adT=Temperature+Tutorials&amp;done=1"; 
+if (window.google_ad_request_done) { 
+google_ad_request_done(google_ads); 
+} 
+if (window.google_radlink_request_done) { 
+google_radlink_request_done(google_radlinks); 
+} 
+}

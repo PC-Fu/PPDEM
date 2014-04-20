@@ -1,0 +1,3 @@
+D:\DEM_Intel\Documentations\ProgramingIssues\CPUID1\obj\Debug\ResolveAssemblyReference.cache
+D:\DEM_Intel\Documentations\ProgramingIssues\CPUID1\obj\Debug\CPUID.Resources.resources
+D:\DEM_Intel\Documentations\ProgramingIssues\CPUID1\obj\Debug\CPUID1.vbproj.GenerateResource.Cache

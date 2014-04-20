@@ -1,0 +1,1105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+
+
+<title>
+	How to get processor id (CPU's ID) using Visual Basic.Net - .Net Articles &amp; Samples
+</title><meta name="Description" content="Directory of ASP.NET, VB.NET, C#, XML and SQL resources, articles, samples, tutorials, scripts, applications and sample chapters arranged by category."><meta name="keywords" content="DevASP.NET, ASP.NET, ASP.Net Help, VB.NET, VS.NET, .NET Framework, ADO.NET, ASP .NET, VB .NET, XML, Visual Studio.Net, SOAP, ASP.Net Samples, VB.Net Samples, ASP.Net Articles, VB.Net Articles, C-Sharp .Net, VB.Net Samples, .Net Framework, Sample Chapters, Articles, Samples, Links, Search, Components"><link id="_ctl0_linkMain" rel="stylesheet" type="text/css" href="CPUID_files/stylesheet.css">
+  <script type="text/javascript" language="javascript" src="CPUID_files/java.js"></script>
+  <meta name="verify-v1" content="H7NW4P9MX8HFIjTom6KhvF8FVq2Jisqos3JXQTPVUB4="><meta name="msvalidate.01" content="B10575A27DADF1D515673FAA02F356D4"></head><body topmargin="0" link="#0000ff" vlink="#0000ff">
+  <center>
+    <div align="center">
+      <form name="aspnetForm" method="post" action="article.aspx?404%3bhttp%3a%2f%2fwww.devasp.net%3a80%2fnet%2farticles%2fdisplay%2f149.html" id="aspnetForm">
+<input name="_ctl0_ContentPlaceHolder1_ToolkitScriptManager1_HiddenField" id="_ctl0_ContentPlaceHolder1_ToolkitScriptManager1_HiddenField" value="" type="hidden">
+<input name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJMTE4MjIyNjIyDxYEHghQYWdlTmFtZQU6NDA0O2h0dHA6Ly93d3cuZGV2YXNwLm5ldDo4MC9uZXQvYXJ0aWNsZXMvZGlzcGxheS8xNDkuaHRtbB4JQXJ0aWNsZUlEKClZU3lzdGVtLkludDY0LCBtc2NvcmxpYiwgVmVyc2lvbj0yLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkDMTQ5ZBgBBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WAQU7X2N0bDA6Q29udGVudFBsYWNlSG9sZGVyMTpBZGRBcnRpY2xlQ29tbWVudDE6Y2JFbWFpbEFydGljbGU=" type="hidden">
+
+
+<script src="CPUID_files/ScriptResource.js" type="text/javascript"></script>
+      <map name="tabsmap">
+        <area href="http://www.devasp.net/net/search/" shape="rect" coords="10, 0, 75, 25">
+        <area href="http://www.devasp.com/search/display/category330.html" shape="rect" coords="85, 0, 132, 25">
+        <area href="http://www.devasp.com/search/display/category77.html" shape="rect" coords="140, 0, 188, 25">
+        <area href="http://www.devasp.net/net/search/display/category272.html" shape="rect" coords="200, 0, 270, 25">
+        <area href="http://www.devasp.net/net/search/display/category253.html" shape="rect" coords="285, 0, 345, 25">
+        <area href="http://www.devasp.net/net/search/display/category248.html" shape="rect" coords="358, 0, 430, 25">
+        <area href="http://www.devasp.net/net/search/display/category147.html" shape="rect" coords="440, 0, 490, 25">
+      </map>
+      <table style="text-align: center;" border="0" cellpadding="0" cellspacing="0" width="940">
+        <tbody><tr>
+          <td colspan="10" style="text-align: center;">
+            <span id="_ctl0_lblb728x90"><script language="JavaScript" type="text/javascript" src="CPUID_files/01_002">
+</script><script language="javascript" src="CPUID_files/4f5e23e8e8f143bca9e1a4327cbb11356d0e9f3d3ba7415bb230476d77f41.js"></script><script type="text/javascript" src="CPUID_files/load.js"></script><span style="border-left: 0pt solid black; z-index: 1151; position: absolute; vertical-align: top;" id="arm_positioningNode_4f5e23e8e8f143bca9e1a4327cbb11356d0e9f3d3ba7415bb230476d77f41a5b"><span style="overflow: hidden; position: absolute; z-index: 1151; visibility: hidden; top: 0px; left: 0px; height: 90px; width: 728px;" id="OuterOrange4f5e23e8e8f143bca9e1a4327cbb11356d0e9f3d3ba7415bb230476d77f41a5b"><object type="application/x-shockwave-flash" data="CPUID_files/VS10_W4RichCodeFix_G_728x90_V1R1.swf" id="orange4f5e23e8e8f143bca9e1a4327cbb11356d0e9f3d3ba7415bb230476d77f41a5b" name="orange4f5e23e8e8f143bca9e1a4327cbb11356d0e9f3d3ba7415bb230476d77f41a5b" style="position: absolute; visibility: visible; z-index: 1152; top: 0px; left: 0px; height: 270px; width: 728px;"> <param name="movie" value="HTTP://rmd.atdmt.com/tl/NMMRTUMISVSE/4_VS_CodeFix/VS10_W4RichCodeFix_G_728x90_V1R1.swf?spd=9&amp;destdom=www.devasp.net&amp;ds_path=spe.atdmt.com/ds/NMMRTUMISVSE&amp;xsu=&amp;su=rtmp://llstrm.atdmt.com/a1922/&amp;atlasm1=/fcs.atdmt/strm/NMMRTUMISVSE/4_VS_CodeFix/VS10_W4RichCodeFix_G_Banner&amp;atlasm2=/fcs.atdmt/strm/NMMRTUMISVSE/4_VS_CodeFix/VS10_W4RichCodeFix_G_444x250&amp;AtlasCTR=http://clk.atdmt.com/go/245347512/direct;vt.1;wi.728;hi.90;ai.172324128;ct.1&amp;MovieIndex=0"><param name="quality" value="high"> <param name="bgcolor" value="#FFFFFF"> <param name="wmode" value="transparent"> <param name="allowFullScreen" value="true"><param name="AllowScriptAccess" value="always"><param name="MENU" value="false"></object></span></span><a href='javascript:ARMRedirLib.reportA4EBannerActivity("","orange_alternate_4f5e23e8e8f143bca9e1a4327cbb11356d0e9f3d3ba7415bb230476d77f41a5b_rep",%20"http://clk.atdmt.com/go/245347512/direct;vt.1;wi.728;hi.90;ai.172324128;ct.1",%201284443694204)'><img alt="" onclick='ARMRedirLib.reportA4EBannerActivity("","orange_alternate_4f5e23e8e8f143bca9e1a4327cbb11356d0e9f3d3ba7415bb230476d77f41a5b_rep", "http://clk.atdmt.com/go/245347512/direct;vt.1;wi.728;hi.90;ai.172324128;ct.1", 1284443694204)' usemap="#AtlasAltMap_4f5e23e8e8f143bca9e1a4327cbb11356d0e9f3d3ba7415bb230476d77f41a5b" style="visibility: hidden;" name="orange_alternate_4f5e23e8e8f143bca9e1a4327cbb11356d0e9f3d3ba7415bb230476d77f41a5b" id="orange_alternate_4f5e23e8e8f143bca9e1a4327cbb11356d0e9f3d3ba7415bb230476d77f41a5b" src="CPUID_files/VS10_W4RichCodeFix_G_728x90_V1R1.jpg" border="0"></a><map name="AtlasAltMap_4f5e23e8e8f143bca9e1a4327cbb11356d0e9f3d3ba7415bb230476d77f41a5b"><area href='javascript:ARMRedirLib.reportA4EBannerActivity("","orange_alternate_4f5e23e8e8f143bca9e1a4327cbb11356d0e9f3d3ba7415bb230476d77f41a5b_rep",%20"http://clk.atdmt.com/go/245347512/direct;vt.1;wi.728;hi.90;ai.172324128;ct.1",%201284443694204)' shape="default"></map><script id="arm_toplayer_4f5e23e8e8f143bca9e1a4327cbb11356d0e9f3d3ba7415bb230476d77f41a5b" src="CPUID_files/TopLayer.js"></script>
+<noscript><a
+href="http://clk.atdmt.com/MRT/go/245347512/direct;wi.728;hi.90/01/"
+target="_blank"><img border="0"
+src="http://view.atdmt.com/MRT/view/245347512/direct;wi.728;hi.90/01/"
+/></a></noscript></span>
+          </td>
+        </tr>
+        <tr>
+          <td align="left" bgcolor="#0679f9" nowrap="nowrap" width="20">
+            <img src="CPUID_files/corner1.gif" border="0" height="20" width="20">
+          </td>
+          <td align="center" bgcolor="#0679f9" nowrap="nowrap" width="735">
+            <b><a class="slink" href="http://www.devasp.net/net/search/">Search</a>  - 
+            <a class="slink" href="http://www.devasp.net/net/articles/">Articles</a> - 
+            <a class="slink" href="http://www.devasp.net/net/forum/">Dev Forums</a> - 
+            <a class="slink" href="http://www.devasp.net/net/members/favorites.asp">Favorites</a> - 
+            <a class="slink" href="http://www.devasp.net/net/members/memberLogin.asp">Member Login</a></b>
+          </td>
+          <td align="right" bgcolor="#0679f9" nowrap="nowrap">
+            <img src="CPUID_files/corner2.gif" border="0" height="20" width="20">
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tbody><tr>
+                <td style="text-align: left; width: 125px;" bgcolor="#0679f9" valign="top">
+                  <table style="width: 125px;" border="0" cellpadding="0" cellspacing="0">
+                    <tbody><tr>
+                      <td style="height: 1px;">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="text-align: center; vertical-align: bottom;" nowrap="nowrap">
+                        <a href="http://www.devasp.net/">
+                          <img src="CPUID_files/DevASPNet_Logo.gif" alt="DevASP.NET for ASP.NET, VB.NET, XML and C# (C-Sharp) Developers Tuesday, March 03, 2009" border="0" height="30" width="100"></a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="height: 2px;">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="slink">
+                      <br>
+                        <a href="http://www.devasp.net/default.aspx">Home</a><br>
+                        <a href="http://www.devasp.net/net/articles/">Dev Articles</a><br>
+                        <a href="http://www.devasp.net/net/samplechapters/">Sample Chapters</a><br>
+                        <a href="http://www.devasp.net/net/forum/">Dev Forum</a><br>
+                        <a href="http://www.devasp.net/net/directory.aspx">Directory Feed</a><br>
+                        <a href="http://www.devasp.net/Net/Search/ListingAddNew.aspx">Add a Listing</a><br>
+                        <a href="http://www.devasp.net/Net/LinkToUs.aspx">Link to us</a><br>
+                        <a href="http://www.devasp.net/Net/Contact.aspx">Contact</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="height: 1px;">
+                      </td>
+                    </tr>
+                    
+                    <tr>
+                      <td style="text-align: center; height: 172px;" nowrap="nowrap">
+                        <img src="CPUID_files/clear.gif" height="1" width="122"><br>
+                        <iframe marginheight="2" marginwidth="2" src="CPUID_files/nl_sub120.htm" style="width: 122px; height: 170px;" scrolling="no" frameborder="no"></iframe>
+                        <br>
+                      </td>
+                    </tr>
+                    
+                    <tr>
+                      <td style="text-align: center; vertical-align: baseline; height: 18px;" bgcolor="#ffffbb">
+                        <b><a href="http://www.devasp.net/net/articles/">Dev Articles</a></b>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="slink">
+                      <br>
+                        <a href="http://www.devasp.net/net/articles/asp_net.aspx" id="_ctl0_lnkAsp">ASP.NET (330)</a><br>
+                        <a href="http://www.devasp.net/net/articles/c_sharp.aspx" id="_ctl0_lnkCSharp">C# (298)</a><br>
+                        <a href="http://www.devasp.net/net/articles/sql_server.aspx" id="_ctl0_lnkSql">SQL Server (53)</a><br>
+                        <a href="http://www.devasp.net/net/articles/vb_net.aspx" id="_ctl0_lnkVB">VB.NET (195)</a><br>
+                        <a href="http://www.devasp.net/net/articles/web_services.aspx" id="_ctl0_lnkWService">Web Services (2)</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="text-align: center; vertical-align: baseline; height: 18px;" bgcolor="#ffffbb">
+                        <b><a href="http://www.devasp.net/net/search/">Search Directory</a></b>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="slink">
+                      <br>
+                        <a href="http://www.devasp.net/net/search/display/category75070.html">ASP.Net AJAX</a><br>
+                        <a href="http://www.devasp.net/net/search/display/category75364.html">AJAX ToolKit</a><br>
+                        <a href="http://www.devasp.net/net/search/display/category65694.html">.NET Namespaces</a><br>
+                        <a href="http://www.devasp.net/net/search/display/category87.html">Applications</a><br>
+                        <a href="http://www.devasp.net/net/search/display/category215.html">Articles &amp; Samples</a><br>
+                        <a href="http://www.devasp.net/net/search/display/category212.html">Assembly &amp; Controls</a><br>
+                        <a href="http://www.devasp.net/net/search/display/category246.html">Community</a><br>
+                        <a href="http://www.devasp.net/net/search/display/category187.html">Developer Sites</a><br>
+                        <a href="http://www.devasp.net/net/search/display/category379.html">Downloads</a><br>
+                        <a href="http://www.devasp.net/net/search/display/category263.html">Hosting Services</a><br>
+                        <a href="http://www.devasp.net/net/search/display/category163.html">Introduction</a><br>
+                        <a href="http://www.devasp.net/net/search/display/category296.html">Knowledge Base</a><br>
+                        <a href="http://www.devasp.net/net/search/display/category373.html">Sample Chapters</a><br>
+                        <a href="http://www.devasp.net/net/search/display/category945.html">WebCasts</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <span id="_ctl0_lblb125x125"></span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="text-align: center; vertical-align: baseline; height: 18px;" bgcolor="#ffffbb">
+                        <b><a href="http://www.devasp.net/net/search/display/category272.html">ASP.NET</a></b>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="slink">
+                      <br>
+                        <a href="http://www.devasp.net/net/search/display/category224.html">Applications</a><br>
+                        <a href="http://www.devasp.net/net/search/display/category30.html">Articles &amp; Samples</a><br>
+                        <a href="http://www.devasp.net/net/search/display/category151.html">ASP.Net Sites</a><br>
+                        <a href="http://www.devasp.net/net/search/display/category212.html">Assembly &amp; Controls</a><br>
+                        <a href="http://www.devasp.net/net/search/display/category114.html">Downloads</a><br>
+                        <a href="http://www.devasp.net/net/search/display/category867.html">Errors &amp; Bugs</a><br>
+                        <a href="http://www.devasp.net/net/search/display/category291.html">Introduction</a><br>
+                        <a href="http://www.devasp.net/net/search/display/category177.html">Knowledge Base</a><br>
+                        <a href="http://www.devasp.net/net/search/display/category410.html">Sample Chapters</a><br>
+                        <a href="http://www.devasp.net/net/search/display/category950.html">WebCasts</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="text-align: center; vertical-align: baseline; height: 18px;" bgcolor="#ffffbb">
+                        <b><a href="http://www.devasp.net/net/search/display/category253.html">VB.Net</a></b>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="slink">
+                      <br>
+                        <a href="http://www.devasp.net/net/search/display/category270.html">Articles &amp; Samples</a><br>
+                        <a href="http://www.devasp.net/net/search/display/category380.html">Downloads</a><br>
+                        <a href="http://www.devasp.net/net/search/display/category920.html">Errors, Bugs &amp; Fixes</a><br>
+                        <a href="http://www.devasp.net/net/search/display/category292.html">Introduction</a><br>
+                        <a href="http://www.devasp.net/net/search/display/category635.html">Knowledge Base</a><br>
+                        <a href="http://www.devasp.net/net/search/display/category928.html">Sample Chapters</a><br>
+                        <a href="http://www.devasp.net/net/search/display/category1001.html">WebCasts</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="text-align: center; vertical-align: baseline; height: 18px;" bgcolor="#ffffbb">
+                        <b><a href="http://www.devasp.net/net/search/display/category248.html">C-Sharp</a></b>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="slink">
+                      <br>
+                        <a href="http://www.devasp.net/net/search/display/category526.html">Applications</a><br>
+                        <a href="http://www.devasp.net/net/search/display/category322.html">Articles &amp; Samples</a><br>
+                        <a href="http://www.devasp.net/net/search/display/category162.html">C-Sharp Sites</a><br>
+                        <a href="http://www.devasp.net/net/search/display/category922.html">Errors, Bugs &amp; Fixes</a><br>
+                        <a href="http://www.devasp.net/net/search/display/category293.html">Introduction</a><br>
+                        <a href="http://www.devasp.net/net/search/display/category646.html">Knowledge Base</a><br>
+                        <a href="http://www.devasp.net/net/search/display/category411.html">Sample Chapters</a><br>
+                        <a href="http://www.devasp.net/net/search/display/category1003.html">WebCasts</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="text-align: center; vertical-align: baseline; height: 18px;" bgcolor="#ffffbb">
+                        <b><a href="http://www.devasp.net/net/search/display/category147.html">SQL Server</a></b>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="slink">
+                      <br>
+                        <a href="http://www.devasp.net/net/search/display/category492.html">Applications</a><br>
+                        <a href="http://www.devasp.net/net/search/display/category463.html">Articles &amp; Samples</a><br>
+                        <a href="http://www.devasp.net/net/search/display/category1179.html">SQL Sites</a><br>
+                        <a href="http://www.devasp.net/net/search/display/category404.html">Downloads</a><br>
+                        <a href="http://www.devasp.net/net/search/display/category523.html">Errors, Bugs &amp; Fixes</a><br>
+                        <a href="http://www.devasp.net/net/search/display/category486.html">Introduction</a><br>
+                        <a href="http://www.devasp.net/net/search/display/category522.html">Knowledge Base</a><br>
+                        <a href="http://www.devasp.net/net/search/display/category537.html">Sample Chapters</a><br>
+                        <a href="http://www.devasp.net/net/search/display/category948.html">WebCasts</a>
+                        <br>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="text-align: center; vertical-align: baseline; height: 18px;" bgcolor="#ffffbb">
+                        &nbsp;
+                      </td>
+                    </tr>
+                    
+                    <tr>
+                      <td style="text-align: center;">
+                      <br>
+                        <a href="http://www.devasp.com/">
+                          <img src="CPUID_files/devasplogo2.gif" border="0" height="30" width="100">
+                        </a>
+                      </td>
+                    </tr>
+                    
+                  </tbody></table>
+                </td>
+                <td style="text-align: center;" width="100%">
+                  <table border="0" cellpadding="5" cellspacing="0" width="100%">
+                    <tbody><tr>
+                      <td>
+                        
+  
+  <table border="0" cellpadding="2" cellspacing="0" width="100%">
+  <tbody><tr>
+  <td style="width: 100%; vertical-align: top; text-align: center; padding-bottom: 5px;">
+   <center> <table style="border: 1px solid rgb(187, 187, 187); text-align: center; width: 98%;" bgcolor="Yellow" cellpadding="3" cellspacing="0"><tbody><tr>	<td align="center"> <a href="http://clk.atdmt.com/MRT/go/245347514/direct;wi.1;hi.1/01/">Build the right apps the right way with powerful development tools.<br> Visual Studio 2010. Learn more...</a>
+<img src="CPUID_files/a.gif" border="0" height="1" width="1"></td></tr></tbody></table> </center>
+    </td>
+  </tr>
+    <tr>
+      <td style="width: 100%; vertical-align: top; text-align: left;">
+        <span id="_ctl0_ContentPlaceHolder1_Label1"><font size="3" color="#0000ff" face="arial"><b>How to get processor id (CPU's ID) using Visual Basic.Net</b></font><br><br><font size="2" face="arial"><b>Author: </b><a href="http://www.devasp.net/net/Forum/pop_profile.asp?mode=display&amp;id=1496">Shahzad</a><br><br>Some
+times we do need to find out the cpu's id, which is unique for each
+CPU. This code example will help you to perform this task in vb.net.<br><br>
+</font><div style="text-align: center;"><script language="JavaScript" type="text/javascript" src="CPUID_files/01">
+</script><script language="javascript" src="CPUID_files/e6bc8c1c107240faaace4084e73e96d09a236d4cb3074ae5a1e0afa1300aa.js"></script><script type="text/javascript" src="CPUID_files/load.js"></script><font size="2" face="arial"><span style="border-left: 0pt solid black; z-index: 1151; position: absolute; vertical-align: top;" id="arm_positioningNode_e6bc8c1c107240faaace4084e73e96d09a236d4cb3074ae5a1e0afa1300aaf76"><span style="overflow: hidden; position: absolute; z-index: 1151; visibility: hidden; top: 0px; left: 0px; height: 280px; width: 336px;" id="OuterOrangee6bc8c1c107240faaace4084e73e96d09a236d4cb3074ae5a1e0afa1300aaf76"><object type="application/x-shockwave-flash" data="CPUID_files/VS10_W1RichRoomP_D_336x280_V1R1.swf" id="orangee6bc8c1c107240faaace4084e73e96d09a236d4cb3074ae5a1e0afa1300aaf76" name="orangee6bc8c1c107240faaace4084e73e96d09a236d4cb3074ae5a1e0afa1300aaf76" style="position: absolute; visibility: visible; z-index: 1152; top: 0px; left: -164px; height: 280px; width: 500px;"> <param name="movie" value="HTTP://rmd.atdmt.com/tl/NMMRTUMISVSE/1_VisualStudio2010/VS10_W1RichRoomP_D_336x280_V1R1.swf?spd=22&amp;destdom=www.devasp.net&amp;ds_path=spe.atdmt.com/ds/NMMRTUMISVSE&amp;xsu=&amp;su=undefinedNMMRTUMISVSE/&amp;atlasm1=HTTP://rmd.atdmt.com/tl/NMMRTUMISVSE/1_VisualStudio2010/VS10_W1RichRoomC_D_336x280_V1R1.swf&amp;atlasm2=HTTP://spe.atdmt.com/ds/NMMRTUMISVSE/1_VisualStudio2010/VS10_W1RichRoomC_D_336x280_Text.xml&amp;AtlasCTR=http://clk.atdmt.com/go/245347510/direct;vt.1;wi.336;hi.280;ai.156071458;ct.1&amp;MovieIndex=1"><param name="quality" value="high"> <param name="bgcolor" value="#FFFFFF"> <param name="wmode" value="transparent"> <param name="allowFullScreen" value="true"><param name="AllowScriptAccess" value="always"><param name="MENU" value="false"></object></span></span><a href='javascript:ARMRedirLib.reportA4EBannerActivity("","orange_alternate_e6bc8c1c107240faaace4084e73e96d09a236d4cb3074ae5a1e0afa1300aaf76_rep",%20"http://clk.atdmt.com/go/245347510/direct;vt.1;wi.336;hi.280;ai.156071458;ct.1",%201284443694566)'><img alt="" onclick='ARMRedirLib.reportA4EBannerActivity("","orange_alternate_e6bc8c1c107240faaace4084e73e96d09a236d4cb3074ae5a1e0afa1300aaf76_rep", "http://clk.atdmt.com/go/245347510/direct;vt.1;wi.336;hi.280;ai.156071458;ct.1", 1284443694566)' usemap="#AtlasAltMap_e6bc8c1c107240faaace4084e73e96d09a236d4cb3074ae5a1e0afa1300aaf76" style="visibility: hidden;" name="orange_alternate_e6bc8c1c107240faaace4084e73e96d09a236d4cb3074ae5a1e0afa1300aaf76" id="orange_alternate_e6bc8c1c107240faaace4084e73e96d09a236d4cb3074ae5a1e0afa1300aaf76" src="CPUID_files/VS10_W1RichRoomP_D_336x280_V1R1.jpg" border="0"></a><map name="AtlasAltMap_e6bc8c1c107240faaace4084e73e96d09a236d4cb3074ae5a1e0afa1300aaf76"><area href='javascript:ARMRedirLib.reportA4EBannerActivity("","orange_alternate_e6bc8c1c107240faaace4084e73e96d09a236d4cb3074ae5a1e0afa1300aaf76_rep",%20"http://clk.atdmt.com/go/245347510/direct;vt.1;wi.336;hi.280;ai.156071458;ct.1",%201284443694566)' shape="default"></map><script id="arm_toplayer_e6bc8c1c107240faaace4084e73e96d09a236d4cb3074ae5a1e0afa1300aaf76" src="CPUID_files/TopLayer.js"></script>
+<noscript><a
+href="http://clk.atdmt.com/MRT/go/245347510/direct;wi.336;hi.280/01/"
+target="_blank"><img border="0"
+src="http://view.atdmt.com/MRT/view/245347510/direct;wi.336;hi.280/01/"
+/></a></noscript></font></div>
+<p><font size="2" face="arial">Import following namespace</font></p><font size="2" face="arial"><font style="background-color: rgb(238, 238, 238);">
+</font></font><fieldset><font size="2" face="arial"><font style="background-color: rgb(238, 238, 238);"><font size="2" color="#0000ff">
+</font></font></font><p><font size="2" face="arial"><font style="background-color: rgb(238, 238, 238);"><font size="2" color="#0000ff">Imports</font><font size="2"> System.Management</font></font></font></p><font size="2" face="arial"><font style="background-color: rgb(238, 238, 238);"><font size="2"></font></font></font></fieldset><font size="2" face="arial"><font style="background-color: rgb(238, 238, 238);"> 
+</font></font><p><font size="2" face="arial"><font style="background-color: rgb(238, 238, 238);"></font><font style="background-color: rgb(255, 255, 255);">Declare following three object variables</font></font></p><font size="2" face="arial"><font style="background-color: rgb(238, 238, 238);">
+</font></font><fieldset><font size="2" face="arial"><font style="background-color: rgb(238, 238, 238);"><font size="2">
+</font></font></font><p><font size="2" face="arial"><font style="background-color: rgb(238, 238, 238);"><font size="2"></font><font size="2" color="#0000ff">Dim</font><font size="2"> objMOS </font><font size="2" color="#0000ff">As</font><font size="2"> ManagementObjectSearcher</font></font></font></p>
+<p><font size="2" face="arial"><font style="background-color: rgb(238, 238, 238);"><font size="2"></font><font size="2" color="#0000ff">Dim</font><font size="2"> objMOC </font><font size="2" color="#0000ff">As</font><font size="2"> Management.ManagementObjectCollection</font></font></font></p>
+<p><font size="2" face="arial"><font style="background-color: rgb(238, 238, 238);"><font size="2"></font><font size="2" color="#0000ff">Dim</font><font size="2"> objMO </font><font size="2" color="#0000ff">As</font><font size="2"> Management.ManagementObject</font></font></font></p><font size="2" face="arial"><font style="background-color: rgb(238, 238, 238);"><font size="2"></font></font></font></fieldset><font size="2" face="arial"><font style="background-color: rgb(238, 238, 238);"> 
+</font></font><p><font size="2" face="arial"><font style="background-color: rgb(238, 238, 238);"></font><font style="background-color: rgb(255, 255, 255);">Now, execute the query to get the results</font></font></p><font size="2" face="arial"><font style="background-color: rgb(238, 238, 238);">
+</font></font><fieldset><font size="2" face="arial"><font style="background-color: rgb(238, 238, 238);"><font size="2">
+</font></font></font><p><font size="2" face="arial"><font style="background-color: rgb(238, 238, 238);"><font size="2">objMOS = </font><font size="2" color="#0000ff">New</font><font size="2"> ManagementObjectSearcher("Select * From Win32_Processor")</font></font></font></p>
+<p><font size="2" face="arial"><font style="background-color: rgb(238, 238, 238);"><font size="2">objMOC = objMOS.Get</font></font></font></p><font size="2" face="arial"><font style="background-color: rgb(238, 238, 238);"><font size="2"></font></font></font></fieldset><font size="2" face="arial"><font style="background-color: rgb(238, 238, 238);"> 
+</font></font><p><font size="2" face="arial"><font style="background-color: rgb(238, 238, 238);"></font><font style="background-color: rgb(255, 255, 255);">Finally, get the CPU's id.</font></font></p><font size="2" face="arial"><font style="background-color: rgb(238, 238, 238);">
+</font></font><fieldset><font size="2" face="arial"><font style="background-color: rgb(238, 238, 238);"><font size="2">
+</font></font></font><p><font size="2" face="arial"><font style="background-color: rgb(238, 238, 238);"><font size="2"></font><font size="2" color="#0000ff">For</font><font size="2"> </font><font size="2" color="#0000ff">Each</font><font size="2"> objMO </font><font size="2" color="#0000ff">In</font><font size="2"> objMOC</font></font></font></p>
+<p><font size="2" face="arial"><font style="background-color: rgb(238, 238, 238);"><font size="2">MessageBox.Show("CPU ID = " &amp; objMO("ProcessorID"))</font></font></font></p>
+<p><font size="2" face="arial"><font style="background-color: rgb(238, 238, 238);"><font size="2"></font><font size="2" color="#0000ff">Next</font></font></font></p><font size="2" face="arial"><font style="background-color: rgb(238, 238, 238);"><font size="2" color="#0000ff"></font></font></font></fieldset><font size="2" face="arial"><font style="background-color: rgb(238, 238, 238);"> 
+</font></font><p><font size="2" face="arial"><font style="background-color: rgb(238, 238, 238);"></font><font style="background-color: rgb(255, 255, 255);">Dispose object variables.</font></font></p><font size="2" face="arial"><font style="background-color: rgb(238, 238, 238);">
+<fieldset><font size="2">
+</font><p><font size="2">objMOS.Dispose()</font></p>
+<p><font size="2">objMOS = </font><font size="2" color="#0000ff">Nothing</font></p><font size="2" color="#0000ff"></font><font size="2">
+</font><p><font size="2">objMO.Dispose()</font></p>
+<p><font size="2">objMO = </font><font size="2" color="#0000ff">Nothing</font></p><font size="2" color="#0000ff"></font></fieldset></font></font></span>
+<font size="2" face="arial">      </font></td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">
+        <table id="_ctl0_ContentPlaceHolder1_dgComments" style="border: 1px solid LightGrey; width: 100%; border-collapse: collapse;" rules="all" border="1" bordercolor="LightGrey" cellpadding="4" cellspacing="0">
+	<tbody><tr>
+		<td style="color: Blue; background-color: rgb(223, 223, 223); font-size: medium; font-weight: bold;" align="center">Article Comments</td>
+	</tr><tr>
+		<td>
+                <div class="comment">
+                  <div class="user_info">
+                    Usman Yousaf<br>
+                  </div>
+                  <div class="comment_body">
+                    <div class="middle">
+Hello...I have read about system.Management in many articles that it
+helps you getting CPU ID. But in my case, i am unable to write
+system.Management as it gives error that it is not found.can anyone
+help me.....thanks <div style="margin-top: 15px;">
+                        <p class="posted">
+                          Posted on
+                          11/4/2006 8:37:06 AM
+                          by
+                          Usman Yousaf</p>
+                      </div>
+                      <div class="clearing">
+                      </div>
+                    </div>
+                    <div class="spacer_2">
+                    </div>
+                  </div>
+                  <div class="clearing">
+                  </div>
+                </div>
+                <div class="comment_back">
+                </div>
+              </td>
+	</tr><tr>
+		<td>
+                <div class="comment">
+                  <div class="user_info">
+                    sap<br>
+                  </div>
+                  <div class="comment_body">
+                    <div class="middle">
+                      You must give reference to your System.Management namespace
+                      <div style="margin-top: 15px;">
+                        <p class="posted">
+                          Posted on
+                          12/22/2006 12:43:45 AM
+                          by
+                          sap</p>
+                      </div>
+                      <div class="clearing">
+                      </div>
+                    </div>
+                    <div class="spacer_2">
+                    </div>
+                  </div>
+                  <div class="clearing">
+                  </div>
+                </div>
+                <div class="comment_back">
+                </div>
+              </td>
+	</tr><tr>
+		<td>
+                <div class="comment">
+                  <div class="user_info">
+                    Paul<br>
+                  </div>
+                  <div class="comment_body">
+                    <div class="middle">
+you need to add a reference to the form to system.management prior to
+trying to inport it. Hope that helps! <div style="margin-top: 15px;">
+                        <p class="posted">
+                          Posted on
+                          1/30/2007 11:55:11 AM
+                          by
+                          Paul</p>
+                      </div>
+                      <div class="clearing">
+                      </div>
+                    </div>
+                    <div class="spacer_2">
+                    </div>
+                  </div>
+                  <div class="clearing">
+                  </div>
+                </div>
+                <div class="comment_back">
+                </div>
+              </td>
+	</tr><tr>
+		<td>
+                <div class="comment">
+                  <div class="user_info">
+                    Bhavesh<br>
+                  </div>
+                  <div class="comment_body">
+                    <div class="middle">
+Hi usman u have to add reference from explorer -&gt; Reference -&gt;
+Add Reference -&gt; select system.Managment...Hope it will be useful to
+u...Bye <div style="margin-top: 15px;">
+                        <p class="posted">
+                          Posted on
+                          2/20/2007 2:41:50 AM
+                          by
+                          Bhavesh</p>
+                      </div>
+                      <div class="clearing">
+                      </div>
+                    </div>
+                    <div class="spacer_2">
+                    </div>
+                  </div>
+                  <div class="clearing">
+                  </div>
+                </div>
+                <div class="comment_back">
+                </div>
+              </td>
+	</tr><tr>
+		<td>
+                <div class="comment">
+                  <div class="user_info">
+                    ckdung<br>
+                  </div>
+                  <div class="comment_body">
+                    <div class="middle">
+                      "unable to write system.Management"
+<br>In the solution explorer window you point to the line references
+next press right mouse next choose "add reference.." to add
+system.management.dll
+<br>wish you success.
+<br>
+                      <div style="margin-top: 15px;">
+                        <p class="posted">
+                          Posted on
+                          3/16/2007 4:28:21 AM
+                          by
+                          ckdung</p>
+                      </div>
+                      <div class="clearing">
+                      </div>
+                    </div>
+                    <div class="spacer_2">
+                    </div>
+                  </div>
+                  <div class="clearing">
+                  </div>
+                </div>
+                <div class="comment_back">
+                </div>
+              </td>
+	</tr><tr>
+		<td>
+                <div class="comment">
+                  <div class="user_info">
+                    Carlos Alarcon <br>
+                  </div>
+                  <div class="comment_body">
+                    <div class="middle">
+                      hello...  i have to use in web aplication what is the librery i have to use 
+                      <div style="margin-top: 15px;">
+                        <p class="posted">
+                          Posted on
+                          3/29/2007 11:50:00 AM
+                          by
+                          Carlos Alarcon </p>
+                      </div>
+                      <div class="clearing">
+                      </div>
+                    </div>
+                    <div class="spacer_2">
+                    </div>
+                  </div>
+                  <div class="clearing">
+                  </div>
+                </div>
+                <div class="comment_back">
+                </div>
+              </td>
+	</tr><tr>
+		<td>
+                <div class="comment">
+                  <div class="user_info">
+                    Mekalaasri<br>
+                  </div>
+                  <div class="comment_body">
+                    <div class="middle">
+                      hai usman,
+<br>go to
+<br>&gt;&gt; add referrence
+<br>&gt;&gt; select .NET Tab
+<br>&gt;&gt; there select System.Management namespace
+                      <div style="margin-top: 15px;">
+                        <p class="posted">
+                          Posted on
+                          4/3/2007 3:17:35 AM
+                          by
+                          Mekalaasri</p>
+                      </div>
+                      <div class="clearing">
+                      </div>
+                    </div>
+                    <div class="spacer_2">
+                    </div>
+                  </div>
+                  <div class="clearing">
+                  </div>
+                </div>
+                <div class="comment_back">
+                </div>
+              </td>
+	</tr><tr>
+		<td>
+                <div class="comment">
+                  <div class="user_info">
+                    Hossein<br>
+                  </div>
+                  <div class="comment_body">
+                    <div class="middle">
+                      hi usman
+<br>you must first add System.Management.dll 
+<br>in your solution.
+<br>to do this:
+<br>right click in your solution name in solution explorer and select
+add referrence and find system.Management.dll in list and add it.
+<br>by
+<br>
+                      <div style="margin-top: 15px;">
+                        <p class="posted">
+                          Posted on
+                          4/16/2007 10:06:25 AM
+                          by
+                          Hossein</p>
+                      </div>
+                      <div class="clearing">
+                      </div>
+                    </div>
+                    <div class="spacer_2">
+                    </div>
+                  </div>
+                  <div class="clearing">
+                  </div>
+                </div>
+                <div class="comment_back">
+                </div>
+              </td>
+	</tr><tr>
+		<td>
+                <div class="comment">
+                  <div class="user_info">
+                    Javded<br>
+                  </div>
+                  <div class="comment_body">
+                    <div class="middle">
+                      You have to add this reference to your project "System.Management"
+                      <div style="margin-top: 15px;">
+                        <p class="posted">
+                          Posted on
+                          5/2/2007 3:08:13 AM
+                          by
+                          Javded</p>
+                      </div>
+                      <div class="clearing">
+                      </div>
+                    </div>
+                    <div class="spacer_2">
+                    </div>
+                  </div>
+                  <div class="clearing">
+                  </div>
+                </div>
+                <div class="comment_back">
+                </div>
+              </td>
+	</tr><tr>
+		<td>
+                <div class="comment">
+                  <div class="user_info">
+                    Javded<br>
+                  </div>
+                  <div class="comment_body">
+                    <div class="middle">
+You have to add this reference to your project "System.Management", and
+to add that cpu id is not unique for all pc's <div style="margin-top: 15px;">
+                        <p class="posted">
+                          Posted on
+                          5/2/2007 3:08:40 AM
+                          by
+                          Javded</p>
+                      </div>
+                      <div class="clearing">
+                      </div>
+                    </div>
+                    <div class="spacer_2">
+                    </div>
+                  </div>
+                  <div class="clearing">
+                  </div>
+                </div>
+                <div class="comment_back">
+                </div>
+              </td>
+	</tr><tr>
+		<td>
+                <div class="comment">
+                  <div class="user_info">
+                    Sergey Nikulin<br>
+                  </div>
+                  <div class="comment_body">
+                    <div class="middle">
+                      This best sample to get cpu ID and good lesson for insert system devices .
+<br>Sergey Nikulin
+                      <div style="margin-top: 15px;">
+                        <p class="posted">
+                          Posted on
+                          2/17/2008 12:33:39 AM
+                          by
+                          Sergey Nikulin</p>
+                      </div>
+                      <div class="clearing">
+                      </div>
+                    </div>
+                    <div class="spacer_2">
+                    </div>
+                  </div>
+                  <div class="clearing">
+                  </div>
+                </div>
+                <div class="comment_back">
+                </div>
+              </td>
+	</tr><tr>
+		<td>
+                <div class="comment">
+                  <div class="user_info">
+                    Yousry<br>
+                  </div>
+                  <div class="comment_body">
+                    <div class="middle">
+                      ProcessorID property is not unique for a processor it can be repeated as same for more processors
+                      <div style="margin-top: 15px;">
+                        <p class="posted">
+                          Posted on
+                          3/6/2008 11:04:51 PM
+                          by
+                          Yousry</p>
+                      </div>
+                      <div class="clearing">
+                      </div>
+                    </div>
+                    <div class="spacer_2">
+                    </div>
+                  </div>
+                  <div class="clearing">
+                  </div>
+                </div>
+                <div class="comment_back">
+                </div>
+              </td>
+	</tr><tr>
+		<td>
+                <div class="comment">
+                  <div class="user_info">
+                    maysam<br>
+                  </div>
+                  <div class="comment_body">
+                    <div class="middle">
+                      To work properly it needs to add System.Management.dll to project references
+                      <div style="margin-top: 15px;">
+                        <p class="posted">
+                          Posted on
+                          8/22/2009 2:11:26 PM
+                          by
+                          maysam</p>
+                      </div>
+                      <div class="clearing">
+                      </div>
+                    </div>
+                    <div class="spacer_2">
+                    </div>
+                  </div>
+                  <div class="clearing">
+                  </div>
+                </div>
+                <div class="comment_back">
+                </div>
+              </td>
+	</tr><tr>
+		<td>
+                <div class="comment">
+                  <div class="user_info">
+                    Indrajit Ghosh<br>
+                  </div>
+                  <div class="comment_body">
+                    <div class="middle">
+                      '//////////////////////////////////////////////////////////////////////////<br>Private Sub GetProcessorID()<br>     Dim objs, obj As Object<br>     objs =GetObject("winmgmts:").InstancesOf("Win32_Processor")<br>     For Each obj In objs<br>            MsgBox(obj.ProcessorId)<br>     Next<br>End Sub<br>'//////////////////////////////////////////////////////////////////////////<br><br>This will work on VB6,VB.NET(tested with VS 2008)
+                      <div style="margin-top: 15px;">
+                        <p class="posted">
+                          Posted on
+                          12/17/2009 3:36:00 AM
+                          by
+                          Indrajit Ghosh</p>
+                      </div>
+                      <div class="clearing">
+                      </div>
+                    </div>
+                    <div class="spacer_2">
+                    </div>
+                  </div>
+                  <div class="clearing">
+                  </div>
+                </div>
+                <div class="comment_back">
+                </div>
+              </td>
+	</tr><tr>
+		<td>
+                <div class="comment">
+                  <div class="user_info">
+                    gr8Ashish<br>
+                  </div>
+                  <div class="comment_body">
+                    <div class="middle">
+                      i use it it works as all cpu with single processor and dual core and core 2 duo processors<br>but it throw exception not found when it used at my windows vb.net application with windows server 2008 at with 8 cpu system<br>what could i do to get this processor id<br>i am using ms vs 2010 beta2 .net 4 beta 2
+                      <div style="margin-top: 15px;">
+                        <p class="posted">
+                          Posted on
+                          2/2/2010 2:50:32 AM
+                          by
+                          gr8Ashish</p>
+                      </div>
+                      <div class="clearing">
+                      </div>
+                    </div>
+                    <div class="spacer_2">
+                    </div>
+                  </div>
+                  <div class="clearing">
+                  </div>
+                </div>
+                <div class="comment_back">
+                </div>
+              </td>
+	</tr><tr>
+		<td>
+                <div class="comment">
+                  <div class="user_info">
+                    Ayyappa<br>
+                  </div>
+                  <div class="comment_body">
+                    <div class="middle">
+                      Could anybody explain, from where this cpuid is traced...<br><br>What
+is the format of cpuid..why is it 16 characters in length? how can we
+identify the different vendors from the cpuid? what are the sections in
+the cpuid..<br><br>APPROPRIATE LINKS WILL  HELP ME MORE... thanks a lot...
+                      <div style="margin-top: 15px;">
+                        <p class="posted">
+                          Posted on
+                          4/1/2010 10:26:02 AM
+                          by
+                          Ayyappa</p>
+                      </div>
+                      <div class="clearing">
+                      </div>
+                    </div>
+                    <div class="spacer_2">
+                    </div>
+                  </div>
+                  <div class="clearing">
+                  </div>
+                </div>
+                <div class="comment_back">
+                </div>
+              </td>
+	</tr><tr>
+		<td>
+                <div class="comment">
+                  <div class="user_info">
+                    szmg<br>
+                  </div>
+                  <div class="comment_body">
+                    <div class="middle">
+                      Hi!<br><br>I changed "*" in query to "ProcessorId", and it's much faster to me.<br>So the query became: "Select ProcessorId From Win32_Processor".<br><br>Ayyappa: To get the vendor, try "Select Manufacturer From Win32_Processor" 
+                      <div style="margin-top: 15px;">
+                        <p class="posted">
+                          Posted on
+                          4/21/2010 8:44:44 AM
+                          by
+                          szmg</p>
+                      </div>
+                      <div class="clearing">
+                      </div>
+                    </div>
+                    <div class="spacer_2">
+                    </div>
+                  </div>
+                  <div class="clearing">
+                  </div>
+                </div>
+                <div class="comment_back">
+                </div>
+              </td>
+	</tr><tr>
+		<td>
+                <div class="comment">
+                  <div class="user_info">
+                    Amia<br>
+                  </div>
+                  <div class="comment_body">
+                    <div class="middle">
+                      this working,<br>thnx dear......
+                      <div style="margin-top: 15px;">
+                        <p class="posted">
+                          Posted on
+                          4/26/2010 1:31:57 AM
+                          by
+                          Amia</p>
+                      </div>
+                      <div class="clearing">
+                      </div>
+                    </div>
+                    <div class="spacer_2">
+                    </div>
+                  </div>
+                  <div class="clearing">
+                  </div>
+                </div>
+                <div class="comment_back">
+                </div>
+              </td>
+	</tr><tr>
+		<td>
+                <div class="comment">
+                  <div class="user_info">
+                    Vinyas<br>
+                  </div>
+                  <div class="comment_body">
+                    <div class="middle">
+                      if i declare System.Management then it is showing the error<br>please help me if any other dll should be added...?
+                      <div style="margin-top: 15px;">
+                        <p class="posted">
+                          Posted on
+                          5/21/2010 3:50:43 AM
+                          by
+                          Vinyas</p>
+                      </div>
+                      <div class="clearing">
+                      </div>
+                    </div>
+                    <div class="spacer_2">
+                    </div>
+                  </div>
+                  <div class="clearing">
+                  </div>
+                </div>
+                <div class="comment_back">
+                </div>
+              </td>
+	</tr><tr>
+		<td>
+                <div class="comment">
+                  <div class="user_info">
+                    Nike<br>
+                  </div>
+                  <div class="comment_body">
+                    <div class="middle">
+You can make this code working by adding System.Management.dll First.
+Then import this name sapce to your application<br>
+                      <div style="margin-top: 15px;">
+                        <p class="posted">
+                          Posted on
+                          5/21/2010 5:26:01 AM
+                          by
+                          Nike</p>
+                      </div>
+                      <div class="clearing">
+                      </div>
+                    </div>
+                    <div class="spacer_2">
+                    </div>
+                  </div>
+                  <div class="clearing">
+                  </div>
+                </div>
+                <div class="comment_back">
+                </div>
+              </td>
+	</tr>
+</tbody></table>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span id="_ctl0_ContentPlaceHolder1_lblMessage" style="font-family: Verdana; font-size: 10pt;"></span>
+      </td>
+    </tr>
+    <tr id="trComments">
+      <td style="padding-top: 35px; padding-bottom: 10px; background-image: url(/images/ArticleCommentHeader.gif); background-repeat: no-repeat;" align="left" valign="top">
+        <div id="divComments">
+        <div id="_ctl0_ContentPlaceHolder1_AddArticleComment1_UpdateProgress1" style="display: none;">
+	
+									<div>
+										<img src="CPUID_files/Loading.gif">
+										<font size="2" color="green" face="arial"><b>Please wait ...</b></font></div>
+								
+</div>
+                  <div id="_ctl0_ContentPlaceHolder1_AddArticleComment1_UpdatePanel1">
+	  
+<table style="font-family: Verdana; font-size: 10pt;" cellpadding="2" cellspacing="0" width="100%">
+      <tbody><tr>
+        <td width="100px">
+          &nbsp;</td>
+        <td>
+          &nbsp;<span id="_ctl0_ContentPlaceHolder1_AddArticleComment1_lblMessage" style="color: Red;"></span></td>
+      </tr>
+     <tr>
+        <td colspan="2">
+          <span id="_ctl0_ContentPlaceHolder1_AddArticleComment1_Label2" style="color: Blue; font-size: large; font-weight: bold;">Add Article Comment:</span></td>
+    
+      </tr>
+      
+      <tr>
+        <td style="font-weight: bold;" nowrap="nowrap">
+          Name :
+        </td>
+        <td>
+          <input name="_ctl0:ContentPlaceHolder1:AddArticleComment1:txtName" id="_ctl0_ContentPlaceHolder1_AddArticleComment1_txtName" style="font-family: Verdana; font-size: 10pt; width: 250px;" type="text">
+         </td>
+      </tr>
+      <tr>
+        <td style="font-weight: bold;" nowrap="nowrap">
+          Email Address :
+        </td>
+        <td>
+          <input name="_ctl0:ContentPlaceHolder1:AddArticleComment1:txtEmailAddress" id="_ctl0_ContentPlaceHolder1_AddArticleComment1_txtEmailAddress" style="font-family: Verdana; font-size: 10pt; width: 250px;" type="text">
+          </td>
+      </tr>
+       <tr>
+        <td>
+          &nbsp;</td>
+        <td>
+          &nbsp;<span id="_ctl0_ContentPlaceHolder1_AddArticleComment1_lblComments" style="color: Red;"></span></td>
+      </tr>
+      <tr>
+        <td style="font-weight: bold;" nowrap="nowrap">
+          Comments :
+        </td>
+        <td width="100%">
+          <textarea name="_ctl0:ContentPlaceHolder1:AddArticleComment1:txtComments" id="_ctl0_ContentPlaceHolder1_AddArticleComment1_txtComments" style="font-family: Verdana; font-size: 10pt; height: 100px; width: 70%;"></textarea><br>
+         </td>
+      </tr>
+      <tr>
+        <td>
+          &nbsp;</td>
+        <td>
+          <span style="font-family: Verdana; font-size: 10pt;"><input id="_ctl0_ContentPlaceHolder1_AddArticleComment1_cbEmailArticle" name="_ctl0:ContentPlaceHolder1:AddArticleComment1:cbEmailArticle" type="checkbox"><label for="_ctl0_ContentPlaceHolder1_AddArticleComment1_cbEmailArticle">Send me an email about this article when other users post a Comment</label></span></td>
+      </tr>
+      <tr>
+        <td>
+          &nbsp;</td>
+        <td>
+          <input name="_ctl0:ContentPlaceHolder1:AddArticleComment1:cmdSubmit" value="Submit" id="_ctl0_ContentPlaceHolder1_AddArticleComment1_cmdSubmit" style="font-family: Verdana; font-size: 10pt;" type="submit">&nbsp;<input style="font-family: Verdana; font-size: 10pt;" value="Clear All" type="reset"></td>
+      </tr>
+     
+    </tbody></table>
+    
+      
+</div>
+       </div> 
+      </td>
+    </tr>
+    <tr>
+      <td style="padding-top: 35px; padding-bottom: 10px; background-repeat: no-repeat;" align="left" valign="top">
+        <span id="_ctl0_ContentPlaceHolder1_lblPreviousArticle"><a href="http://www.devasp.net/net/articles/display/144.html">&lt;&lt; How to load excel file data into datagrid.</a></span>
+        <br><br>
+        <div style="text-align: right;">
+       <span id="_ctl0_ContentPlaceHolder1_lblNextArticle"><a href="http://www.devasp.net/net/articles/display/150.html">How to get MAC address of your system. &gt;&gt;</a></span>
+       </div>
+      </td>
+    </tr>
+  </tbody></table>
+  <script type="text/javascript">
+     
+    
+      function Goto1() 
+      {
+          var v1;
+          v1 = document.getElementById("vv1")
+          // alert(v1);
+          //v1.focus();
+         // ScrollToElement(v1);
+          //document.getElementById('divComments').scrollTop = document.getElementById('divComments').offsetTop;
+          //$('trComments').focus();
+         //document.form1.divComments.focus();      
+      }
+     // Goto1();
+    
+      function findPos(obj) {
+          var curtop = 0;
+          if (obj.offsetParent) {
+              do {
+                  curtop += obj.offsetTop;
+              } while (obj = obj.offsetParent);
+              return [curtop];
+          }
+      }
+      //Get object
+      //var SupportDiv = document.getElementById('divComments');
+
+      //Scroll to location of SupportDiv on load
+      //window.scroll(0, findPos(SupportDiv));
+     
+      function ScrollToElement(theElement) {
+
+          var selectedPosX = 0;
+          var selectedPosY = 0;
+
+          while (theElement != null) {
+              selectedPosX += theElement.offsetLeft;
+              selectedPosY += theElement.offsetTop;
+              theElement = theElement.offsetParent;
+          }
+
+          window.scrollTo(selectedPosX, selectedPosY);
+
+      }
+      
+
+  </script>
+
+                      </td>
+                    </tr>
+                    <tr>
+                      <td height="100%">
+                        <center>
+                          <table border="0">
+                            <tbody><tr>
+                              <td style="text-align: center;" height="25">
+                                <a href="http://www.devasp.net/net/disclaimer.asp"><font size="1">Disclaimer</font></a> - <a href="http://www.devasp.net/net/privacy.asp"><font size="1">Privacy</font></a>
+                                <br>
+                                <font size="1" face="Arial">© 2002-2010 DevASP.net</font>
+                              </td>
+                            </tr>
+                          </tbody></table>
+                        </center>
+                      </td>
+                    </tr>
+                  </tbody></table>
+                </td>
+                <td style="text-align: center;" valign="top" width="130">
+                  <table style="text-align: center;" border="0" cellpadding="3" cellspacing="0" width="130">
+                    <tbody><tr>
+                      <td style="text-align: center;">
+                        <table style="text-align: center;" id="Table1" border="0" cellpadding="3" cellspacing="0" width="125">
+                          <tbody><tr>
+                            <td style="text-align: center;">
+                              <span id="_ctl0_lblb160x60"><script language="JavaScript" type="text/javascript" src="CPUID_files/01_003">
+</script><script language="javascript" src="CPUID_files/d8c7e22758f24c4ab4c2268130def27388ca2a5c5de04d919312b9ebffd06.js"></script><script type="text/javascript" src="CPUID_files/load.js"></script><span style="border-left: 0pt solid black; z-index: 1151; position: absolute; vertical-align: top;" id="arm_positioningNode_d8c7e22758f24c4ab4c2268130def27388ca2a5c5de04d919312b9ebffd06e60"><span style="overflow: hidden; position: absolute; z-index: 1151; visibility: hidden; top: 0px; left: 0px; height: 600px; width: 160px;" id="OuterOranged8c7e22758f24c4ab4c2268130def27388ca2a5c5de04d919312b9ebffd06e60"><object type="application/x-shockwave-flash" data="CPUID_files/VS10_W4RichCityRoom_G_P_160x600_V1R1.swf" id="oranged8c7e22758f24c4ab4c2268130def27388ca2a5c5de04d919312b9ebffd06e60" name="oranged8c7e22758f24c4ab4c2268130def27388ca2a5c5de04d919312b9ebffd06e60" style="position: absolute; visibility: visible; z-index: 1152; top: 0px; left: -160px; height: 600px; width: 320px;"> <param name="movie" value="HTTP://rmd.atdmt.com/tl/NMMRTUMISVSE/4_VS_CityZoom/VS10_W4RichCityRoom_G_P_160x600_V1R1.swf?spd=10&amp;destdom=www.devasp.net&amp;ds_path=spe.atdmt.com/ds/NMMRTUMISVSE&amp;xsu=&amp;su=rtmp://llstrm.atdmt.com/a1922/&amp;atlasm1=HTTP://rmd.atdmt.com/tl/NMMRTUMISVSE/4_VS_CityZoom/VS10_W4RichCityRoom_G_C_160x600_V1R1.swf&amp;atlasm2=HTTP://spe.atdmt.com/ds/NMMRTUMISVSE/4_VS_CityZoom/VS10_W4RichCityRoom_G_Text.xml&amp;atlasm3=/fcs.atdmt/strm/NMMRTUMISVSE/4_VS_CityZoom/VS10_W4RichCityRoom_G_HomeLoop_500x250&amp;atlasm4=HTTP://rmd.atdmt.com/tl/NMMRTUMISVSE/4_VS_CityZoom/VS10_W4RichCityRoom_G_Anim1_160x600_V1R1.swf&amp;atlasm5=HTTP://rmd.atdmt.com/tl/NMMRTUMISVSE/4_VS_CityZoom/VS10_W4RichCityRoom_G_Anim2_160x600_V1R1.swf&amp;atlasm6=HTTP://rmd.atdmt.com/tl/NMMRTUMISVSE/4_VS_CityZoom/VS10_W4RichCityRoom_G_Anim3_160x600_V1R1.swf&amp;atlasm7=HTTP://rmd.atdmt.com/tl/NMMRTUMISVSE/4_VS_CityZoom/VS10_W4RichCityRoom_G_Anim4_160x600_V1R1.swf&amp;atlasm8=HTTP://rmd.atdmt.com/tl/NMMRTUMISVSE/4_VS_CityZoom/VS10_W4RichCityRoom_G_Anim5_160x600_V1R1.swf&amp;atlasm9=HTTP://rmd.atdmt.com/tl/NMMRTUMISVSE/4_VS_CityZoom/VS10_W4RichCityRoom_G_Anim6_160x600_V1R1.swf&amp;AtlasCTR=http://clk.atdmt.com/go/245347513/direct;vt.1;wi.160;hi.600;ai.172313110;ct.1&amp;MovieIndex=2"><param name="quality" value="high"> <param name="bgcolor" value="#FFFFFF"> <param name="wmode" value="transparent"> <param name="allowFullScreen" value="true"><param name="AllowScriptAccess" value="always"><param name="MENU" value="false"></object></span></span><a href='javascript:ARMRedirLib.reportA4EBannerActivity("","orange_alternate_d8c7e22758f24c4ab4c2268130def27388ca2a5c5de04d919312b9ebffd06e60_rep",%20"http://clk.atdmt.com/go/245347513/direct;vt.1;wi.160;hi.600;ai.172313110;ct.1",%201284443694745)'><img alt="" onclick='ARMRedirLib.reportA4EBannerActivity("","orange_alternate_d8c7e22758f24c4ab4c2268130def27388ca2a5c5de04d919312b9ebffd06e60_rep", "http://clk.atdmt.com/go/245347513/direct;vt.1;wi.160;hi.600;ai.172313110;ct.1", 1284443694745)' usemap="#AtlasAltMap_d8c7e22758f24c4ab4c2268130def27388ca2a5c5de04d919312b9ebffd06e60" style="visibility: hidden;" name="orange_alternate_d8c7e22758f24c4ab4c2268130def27388ca2a5c5de04d919312b9ebffd06e60" id="orange_alternate_d8c7e22758f24c4ab4c2268130def27388ca2a5c5de04d919312b9ebffd06e60" src="CPUID_files/VS10_W4RichCityRoom_G_Backup_160x600_V1R1.jpg" border="0"></a><map name="AtlasAltMap_d8c7e22758f24c4ab4c2268130def27388ca2a5c5de04d919312b9ebffd06e60"><area href='javascript:ARMRedirLib.reportA4EBannerActivity("","orange_alternate_d8c7e22758f24c4ab4c2268130def27388ca2a5c5de04d919312b9ebffd06e60_rep",%20"http://clk.atdmt.com/go/245347513/direct;vt.1;wi.160;hi.600;ai.172313110;ct.1",%201284443694745)' shape="default"></map><script id="arm_toplayer_d8c7e22758f24c4ab4c2268130def27388ca2a5c5de04d919312b9ebffd06e60" src="CPUID_files/TopLayer.js"></script>
+<noscript><a
+href="http://clk.atdmt.com/MRT/go/245347513/direct;wi.160;hi.600/01/"
+target="_blank"><img border="0"
+src="http://view.atdmt.com/MRT/view/245347513/direct;wi.160;hi.600/01/"
+/></a></noscript></span>
+                            </td>
+                          </tr>
+                        </tbody></table>
+                      </td>
+                    </tr>
+                  </tbody></table>
+                </td>
+              </tr>
+              <tr bgcolor="#0679f9">
+                <td style="text-align: left; vertical-align: bottom; height: 20px;" bgcolor="#0679f9">
+                  <img alt="" src="CPUID_files/corner3.gif" style="width: 20px; height: 20px;" border="0">
+                </td>
+                <td style="height: 20px;" bgcolor="#0679f9">
+                </td>
+                <td style="vertical-align: bottom; text-align: right; height: 20px;" bgcolor="#0679f9">
+                  <img src="CPUID_files/corner4.gif" style="width: 20px; height: 20px;" alt="" border="0">
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: left; vertical-align: bottom; height: 20px;">
+                  &nbsp;
+                </td>
+                <td>
+                  &nbsp;
+                </td>
+                <td style="vertical-align: bottom; text-align: right; height: 20px;">
+                  &nbsp;
+                </td>
+              </tr>
+            </tbody></table>
+          </td>
+        </tr>
+      </tbody></table>
+    </form></div>
+  </center>
+  
+
+<script type="text/javascript">
+<!--
+(function() {var fn = function() {$get("_ctl0_ContentPlaceHolder1_ToolkitScriptManager1_HiddenField").value = '';Sys.Application.remove_init(fn);};Sys.Application.add_init(fn);})();Sys.Application.initialize();
+// -->
+</script>
+
+
+  <script src="CPUID_files/urchin.js" type="text/javascript">
+  </script>
+
+  <script type="text/javascript">
+    _uacct = "UA-735899-12";
+    urchinTracker();
+  </script>
+
+</body></html>

@@ -1,0 +1,51 @@
+.btn-left
+{
+	background-image: url('/media/images/Buttons/btn_left_curve.png');
+	width: 12px;
+	height: 26px;
+	background-repeat: no-repeat;
+}
+
+.btn-center
+{
+	background-image: url('/media/images/Buttons/btn_bg.png');
+	height: 26px;
+	background-repeat: repeat-x;
+	text-align : center;
+	color	: white;
+	margin-left : 5px;
+	margin-right : 5px;
+}
+
+.btn-right
+{
+	background-image: url('/media/images/Buttons/btn_right_curve.png');
+	width: 12px;
+	height: 26px;
+	background-repeat: no-repeat;
+}
+
+.button-old
+{
+	cursor	: pointer;
+}
+
+.btn-common
+{
+	border: none;
+    	background: url('/media/images/Buttons/blue_rollover.png') no-repeat top left;
+    	padding: 3px 8px;
+	width: 79px;
+	height: 26px;
+	color: #ffffff;
+}
+
+.btn-common:hover
+{
+	border: none;
+    	background: url('/media/images/Buttons/blue_rollover.png') no-repeat top left;
+    	padding: 3px 8px;
+	width: 79px;
+	height: 26px;
+	color: #ffffff;
+}

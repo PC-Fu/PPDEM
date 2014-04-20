@@ -1,0 +1,528 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us"><head profile="http://gmpg.org/xfn/11">
+
+ 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="Content-Language" content="en-us">
+  <meta http-equiv="X-UA-Compatible" content="IE-5">
+  <link rel="pingback" href="http://software.intel.com/en-us/services/comment/pingback/">
+  <link rel="shortcut icon" href="http://software.intel.com/common/images/favicon.ico">
+  <link rel="stylesheet" href="Visual%20Basic%20passing%20array%20to%20Fortran%20DLL%20in%20x64%20-%20Intel%C2%AE%20Software%20Network_files/style.css" type="text/css" media="screen">
+  <script type="text/javascript" src="Visual%20Basic%20passing%20array%20to%20Fortran%20DLL%20in%20x64%20-%20Intel%C2%AE%20Software%20Network_files/jquery_004.js"></script>
+  <script type="text/javascript" src="Visual%20Basic%20passing%20array%20to%20Fortran%20DLL%20in%20x64%20-%20Intel%C2%AE%20Software%20Network_files/jquery.js"></script>
+  <script type="text/javascript" src="Visual%20Basic%20passing%20array%20to%20Fortran%20DLL%20in%20x64%20-%20Intel%C2%AE%20Software%20Network_files/superfish.js"></script>
+  <script type="text/javascript" src="Visual%20Basic%20passing%20array%20to%20Fortran%20DLL%20in%20x64%20-%20Intel%C2%AE%20Software%20Network_files/jqmodal.js"></script>
+  <script type="text/javascript" src="Visual%20Basic%20passing%20array%20to%20Fortran%20DLL%20in%20x64%20-%20Intel%C2%AE%20Software%20Network_files/ufo.js"></script>
+  <script type="text/javascript" src="Visual%20Basic%20passing%20array%20to%20Fortran%20DLL%20in%20x64%20-%20Intel%C2%AE%20Software%20Network_files/combined.js"></script><style>
+.jqmisnDL {display: none;position: fixed;top: 17%;left: 50%;margin-left: -200px; font-family:verdana,sans-serif;font-size: 11px;background-color: #E7E7E7;color: #000000; border:1px solid #6699CC; padding:0px;z-index:99999}
+.isnDL {width: 250px;}
+.ISNTabDL {width: 100%;}
+#txtEmailDL {font-family:verdana,sans-serif;font-size: 11px;}
+.ISNHeadDL {padding:4px; width:50%; color:#ffffff; font-family:verdana,sans-serif;font-size: 11px; background-color:#6699CC;}
+.ISNBodyDL {padding-bottom:8px;padding-top:8px; padding-left:8px; text-align:left; width: 100%; font-family:verdana,sans-serif; font-size: 11px;}
+</style>
+<style>
+.jqmEF {display: none;position: fixed;top: 17%;left: 50%;margin-left: -200px; font-family:verdana,sans-serif;font-size: 11px;background-color: #E7E7E7;color: #000000; border:1px solid #69C; padding:0px;z-index:99999}
+.EFin {width: 385px;}
+.FTab {width: 100%;}
+.EF_MsgLenError {margin:0px;font-size:10px;color:red;}
+#eafmessage, #eafsubject, #eafemail, #eafrecipentemail {font-family:verdana,sans-serif;font-size: 11px;}
+#eafmessage {width:370px;}
+.FHead { width: 50%; color:#ffffff; font-family:verdana,sans-serif;font-size: 11px; background-color:#69C;}
+.FBody { padding-top:8px; padding-left:8px; text-align:left; width: 100%; font-family:verdana,sans-serif; font-size: 11px;}
+</style>
+<style>
+.jqmFW {display: none;position: fixed;top: 17%;left: 50%;margin-left: -200px; font-family:verdana,sans-serif;font-size: 11px;background-color: #E7E7E7;color: #000000; border:1px solid #69C; padding:0px;z-index: 99999}
+.FWin {width: 385px;}
+.FTab {width: 100%;}
+.FB_MsgLenError {margin:0px;font-size:10px;color:red;}
+#femail {font-family:verdana,sans-serif;font-size: 11px;}
+#fmessage { width:370px; font-family:verdana,sans-serif;font-size: 11px;}
+.FHeadL,.FHeadR { color:#ffffff; font-family:verdana,sans-serif;font-size: 11px; background-color:#69C;}
+.FHeadL {width:75%;} .FHeadR {width:25%;} .FBody { padding-top:8px; padding-left:8px; text-align:left; width: 100%; font-family:verdana,sans-serif; font-size: 11px;}
+</style>
+
+  <script type="text/javascript" src="Visual%20Basic%20passing%20array%20to%20Fortran%20DLL%20in%20x64%20-%20Intel%C2%AE%20Software%20Network_files/search.js"></script><style>
+#srchBox {font-family:verdana,sans-serif;font-size:10px;color:#555555;width:220px;}
+#srchBox input {font-size:11px;margin:0px;padding:0px;margin-left:2px;}
+#srchSAL {margin:0px;padding:0px;}
+#srchResults, #srchPager {word-wrap:break-word;font-family:verdana,sans-serif;font-size:10px;color:#555555;}
+#srchResults a {cursor:pointer;color:#0000CC;text-decoration:underline;}
+#srchBaseURL {color:#008000;text-decoration:none;}
+#srchTerm {width:120px;font-size:11px;border:1px solid #BCCDF0;}
+#srchBranding {font-size:11px;padding-top:2px;padding-bottom:5px;border-bottom:1px solid #E9E9E9;text-align:right;}
+#srchExpander {font-size:14px;font-weight:bold;}
+#srchMenu {width:200px;display:none;}
+#srchMenu li:hover {background:white;}
+#srchMenu li {cursor:pointer;margin:0px;padding:5px;}
+.filterHover {display:block;position:absolute;padding:0px;margin:0px;border:1px solid #82A1BC;background:#ECEEED;list-style-image:none;list-style-position:outside;list-style-type:none;font-size:11px;font-family:verdana,sans-serif;color:#555555;}
+.srchMenuHover {background:white;}
+.srchPgr, .srchPgrSel  {color:#000000;font-size:11px;font-weight:bold;cursor:pointer;text-decoration:underline;display:inline;}
+.srchPgrSel {color:#A90A08;text-decoration:none;}
+#searchResultsTime{text-align:right;}
+#searchSortByDateRelevance{text-align:right;}
+#searchSpelling{color:red;}
+</style>
+
+  <script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
+<link rel="stylesheet" href="Visual%20Basic%20passing%20array%20to%20Fortran%20DLL%20in%20x64%20-%20Intel%C2%AE%20Software%20Network_files/SyntaxHighlighter.css" type="text/css" media="screen">
+<link rel="stylesheet" href="Visual%20Basic%20passing%20array%20to%20Fortran%20DLL%20in%20x64%20-%20Intel%C2%AE%20Software%20Network_files/widget.css" type="text/css" media="screen">
+<link rel="stylesheet" href="Visual%20Basic%20passing%20array%20to%20Fortran%20DLL%20in%20x64%20-%20Intel%C2%AE%20Software%20Network_files/jquery.css" type="text/css" media="screen">
+<script type="text/javascript" src="Visual%20Basic%20passing%20array%20to%20Fortran%20DLL%20in%20x64%20-%20Intel%C2%AE%20Software%20Network_files/alerts.js"></script><script type="text/javascript" src="Visual%20Basic%20passing%20array%20to%20Fortran%20DLL%20in%20x64%20-%20Intel%C2%AE%20Software%20Network_files/ajaxfileupload.js"></script>
+<script type="text/javascript" src="Visual%20Basic%20passing%20array%20to%20Fortran%20DLL%20in%20x64%20-%20Intel%C2%AE%20Software%20Network_files/select.js"></script>
+<script type="text/javascript" src="Visual%20Basic%20passing%20array%20to%20Fortran%20DLL%20in%20x64%20-%20Intel%C2%AE%20Software%20Network_files/jquery_003.js"></script>
+<script type="text/javascript" src="Visual%20Basic%20passing%20array%20to%20Fortran%20DLL%20in%20x64%20-%20Intel%C2%AE%20Software%20Network_files/isncommentsapi.js"></script>
+<script type="text/javascript" src="Visual%20Basic%20passing%20array%20to%20Fortran%20DLL%20in%20x64%20-%20Intel%C2%AE%20Software%20Network_files/isnratingapi.js"></script>
+<script type="text/javascript" src="Visual%20Basic%20passing%20array%20to%20Fortran%20DLL%20in%20x64%20-%20Intel%C2%AE%20Software%20Network_files/isnpollapi.js"></script>
+<script type="text/javascript" src="Visual%20Basic%20passing%20array%20to%20Fortran%20DLL%20in%20x64%20-%20Intel%C2%AE%20Software%20Network_files/isncategoryapi.js"></script>
+<script type="text/javascript" src="Visual%20Basic%20passing%20array%20to%20Fortran%20DLL%20in%20x64%20-%20Intel%C2%AE%20Software%20Network_files/file_folder.js"></script>
+<script type="text/javascript" src="Visual%20Basic%20passing%20array%20to%20Fortran%20DLL%20in%20x64%20-%20Intel%C2%AE%20Software%20Network_files/shCore.js"></script>
+<script type="text/javascript" src="Visual%20Basic%20passing%20array%20to%20Fortran%20DLL%20in%20x64%20-%20Intel%C2%AE%20Software%20Network_files/shCode.js"></script>
+<script type="text/javascript" src="Visual%20Basic%20passing%20array%20to%20Fortran%20DLL%20in%20x64%20-%20Intel%C2%AE%20Software%20Network_files/querystring.js"></script>
+<meta name="description" content="VB passing array to Fortran DLL - used to work for ia32 application, fails when switching to x64 configuration.    Summary:  VB should not pass first array element ByRef for x64.  It was a fluke that it worked in ia32.">
+<meta name="keywords" content="VB passing array to IVF in x64 config">
+<script type="text/javascript" src="Visual%20Basic%20passing%20array%20to%20Fortran%20DLL%20in%20x64%20-%20Intel%C2%AE%20Software%20Network_files/en-us.js"> </script>
+<!-- corporate -->
+<link rel="stylesheet" type="text/css" id="HAT-linkStyle" href="Visual%20Basic%20passing%20array%20to%20Fortran%20DLL%20in%20x64%20-%20Intel%C2%AE%20Software%20Network_files/ltr_header.css">
+<script type="text/javascript" src="Visual%20Basic%20passing%20array%20to%20Fortran%20DLL%20in%20x64%20-%20Intel%C2%AE%20Software%20Network_files/header.js"> </script>
+<script type="text/javascript">
+      if (typeof HAT == "undefined" || !HAT) {
+      var HAT = {};
+      }
+
+      /* if qs is empty then a filter menu won't be rendered */
+      HAT.SearchFilterLUT = {
+      head:"Filter Your Results",
+      inputName:"category",
+      qs:[
+      
+    {
+    filter:"Products",
+    term:"Products"
+    },
+    {
+    filter:"SuppDown",
+    term:"Support &amp; Downloads"
+    },
+    {
+    filter:"BlogComm",
+    term:"Blogs &amp; Communities"
+    },
+    {
+    filter:"Reseller",
+    term:"Reseller"
+    },
+    {
+    filter:"Software",
+    term:"Software"
+    },
+    {
+    filter:"AboutIntel",
+    term:"About Intel"
+    },
+    {
+    filter:"HAT-adv1",
+    term:"Advanced Search"
+    }
+      ]
+      } 
+    </script>
+  <title>Visual Basic passing array to Fortran DLL in x64 - Intel® Software Network</title>
+<style></style><script type="text/javascript"></script> <style type="text/css">.dp-cpp .datatypes { color: #2E8B57; font-weight: bold; }</style></head><body class="HAT-widebg HAT-widebg-rel"><div class="jqmWindow box jqmID6" style="width: 220px; left: 50%; z-index: 9999999;" id="media_downloads"><div class="boxHeader" style="width: 203px; background-color: rgb(234, 243, 250);"><a href="#" class="jqmClose" style="color: rgb(8, 97, 173);"><b>[X]</b></a>  Download File</div><div class="boxBody" align="center"><div id="download_data"><img src="Visual%20Basic%20passing%20array%20to%20Fortran%20DLL%20in%20x64%20-%20Intel%C2%AE%20Software%20Network_files/progressbar.gif"></div><br><br></div></div><div class="jqmWindow box jqmID5" style="left: 30%; top: 5%; z-index: 9999999; width: 772px;" id="media_uploads"><div class="boxHeader" style="height: 20px; width: 740px; background-color: rgb(234, 243, 250);" align="right"><span style="margin-right: 600px;">Add Files</span> <a href="#" class="jqmClose" style="color: rgb(8, 97, 173);"><b>close</b></a></div><div class="boxBody" align="center"><div id="file_data" align="left"><img src="Visual%20Basic%20passing%20array%20to%20Fortran%20DLL%20in%20x64%20-%20Intel%C2%AE%20Software%20Network_files/progressbar.gif"></div><br><br></div></div><div class="jqmWindow box jqmID4" style="overflow: auto; left: 50%; width: 400px; height: 400px;" id="poll_res"><div class="boxHeader"><a href="#" alt="close" class="jqmClose">[X]<b></b></a><b>&nbsp;&nbsp;Poll Results</b></div><div class="boxBody" align="center"><div id="poll_result"><img src="Visual%20Basic%20passing%20array%20to%20Fortran%20DLL%20in%20x64%20-%20Intel%C2%AE%20Software%20Network_files/progressbar.gif"></div><br><br></div></div><div class="jqmFW jqmID3" id="fb2">	<div class="FWin">	<table class="FTab" cellpadding="5" cellspacing="0">	<tbody><tr><td class="FHeadL" align="left"><b>Feedback For This Page</b>:<span id="fbLenCounter"></span></td><td class="FHeadR" align="right"><a href="#" class="jqmClose" style="color: rgb(255, 255, 255);">Close</a></td></tr>	<tr><td colspan="2" class="FBody">		<div style="display: none;" id="FB_LenError" class="FB_MsgLenError">(Feedback too long please shorten)</div>		<div>Your email address:</div><input onkeyup="return fbCount()" size="40" maxlength="255" id="femail" type="text"><input id="ftitle" type="hidden"><input id="furl" type="hidden"><br><br>		<div>Message:</div><textarea onkeyup="return fbCount()" id="fmessage" rows="6"></textarea>		<br><input class="groovybutton" onclick="javascript:processFeedback();" value="Submit" type="button">	</td></tr><tr>	</tr></tbody></table>	</div></div><div class="jqmEF jqmID2" id="efb2">	<div class="EFin">	<table class="FTab" cellpadding="5" cellspacing="0">	<tbody><tr><td class="FHead" align="left"><b>Email This Page</b>&nbsp;&nbsp;</td><td class="FHead" align="right"><a href="#" class="jqmClose" style="color: rgb(255, 255, 255);">Close</a></td></tr>	<tr><td colspan="2" class="FBody">		<div style="display: none;" id="EF_LenError" class="EF_MsgLenError">(Message too long please shorten)</div>		<div>Email
+this page to your friend. Complete the form below and click on the
+"send" button. All fields are required to help prevent spam.</div><br><br>		<div>Recipients email address:</div><input size="40" maxlength="255" id="eafrecipentemail" type="text"><br><br>		<div>Your email address:</div><input size="40" maxlength="255" id="eafemail" type="text"><br><br>		<div>Subject:</div><input size="40" maxlength="255" id="eafsubject" type="text"><br><br>		<div>Message:</div><textarea id="eafmessage" rows="6"></textarea>		<br><input class="groovybutton" onclick="javascript:processEAF();" value="Submit" type="button"><input id="eafurl" type="hidden">	</td></tr><tr>	</tr></tbody></table>	</div></div><div class="jqmisnDL jqmID1" id="isnDLb2"> <div class="isnDL"> <table class="ISNTabDL" cellpadding="5" cellspacing="0"> <tbody><tr><td class="ISNHeadDL" align="left"><b>Download</b>&nbsp;&nbsp;</td><td style="text-align: right;" class="ISNHeadDL" align="right"><a href="#" class="jqmClose" style="color: rgb(255, 255, 255);">Close</a></td></tr> <tr><td colspan="2" class="ISNBodyDL">  <div>Email:</div><input size="35" maxlength="255" id="txtEmailDL" name="txtEmailDL" type="text"><br>  <input class="groovybutton" style="margin-top: 4px;" onclick="javascript:validateDLData();" value=" Accept " type="button">  <div id="isnDLTOSDiv" style="padding-top: 5px;">Usage governed by <a id="isnDLTOS" target="_blank" href="http://softwarecommunity.intel.com/articles/eng/1517.htm">Terms of Use</a></div> </td></tr><tr> </tr></tbody></table><input name="qlogin" value="true" type="hidden"> </div></div>
+	<noscript><center><strong>Javascript
+is disabled on your browser. In order to use this platform effeciently,
+please enable javascript from your browser settings or contact your
+system administrator.</strong></center></noscript>  <div id="container">
+ <div id="HAT-globalheader" class="HAT-wide HAT-rel HAT-font1">
+  <div class="HAT-wrap">
+    <a href="http://www.intel.com/index.htm?iid=hdr+logo" class="logo"><img src="Visual%20Basic%20passing%20array%20to%20Fortran%20DLL%20in%20x64%20-%20Intel%C2%AE%20Software%20Network_files/intlogo.gif" alt="Intel. Leap ahead.(TM)" border="0" height="47" width="119"></a>
+    <ul>
+      <li id="HAT-gh0">
+        <a class="on" href="http://www.intel.com/business/index.htm?iid=hdr+work">Work</a>
+      </li>
+      <li id="HAT-gh1">
+        <a href="http://www.intel.com/consumer/index.htm?iid=hdr+play">Play</a>
+      </li>
+      <li id="HAT-gh2">
+        <a href="http://www.intel.com/support/index.htm?iid=hdr+support">Support</a>
+      </li>
+      <li id="HAT-gh3">
+        <a href="http://www.intel.com/intel/index.htm?iid=hdr+about">About Intel</a>
+      </li>
+      <li id="HAT-gh4">
+        <a href="http://www.intel.com/intel/nav/locator.htm?iid=hdr+location">Change Location</a>
+      </li>
+      <li class="search">
+        <form action="http://mysearch.intel.com/corporate/default.aspx" method="get" name="FORMSearchHeader">
+          <input id="culture" name="culture" value="en_US" type="hidden">
+          <label for="q">Search</label>
+          <span>
+            <input id="q" name="q" size="10" maxlength="255" class="HAT-searchbox" type="text">
+          </span>
+          <input value="all" name="category" id="category" type="hidden">
+          <input value="0" name="adv" id="adv" type="hidden">
+          <input value="0" name="value" id="value" type="hidden">
+          <input class="searchbutton" style="border: 0px none ; width: 57px; height: 20px;" name="searchsubmit" id="searchsubmit" alt="Search" src="Visual%20Basic%20passing%20array%20to%20Fortran%20DLL%20in%20x64%20-%20Intel%C2%AE%20Software%20Network_files/searchbtn.gif" type="image">
+        </form>
+      </li>
+    </ul>
+  </div>
+<ul id="HAT-filter-menu"><li id="HAT-filterhead">Filter Your Results</li><li><a href="http://software.intel.com/en-us/articles/visual-basic-passing-array-to-fortran-dll-in-x64/?Products">Products</a></li><li><a href="http://software.intel.com/en-us/articles/visual-basic-passing-array-to-fortran-dll-in-x64/?SuppDown">Support &amp; Downloads</a></li><li><a href="http://software.intel.com/en-us/articles/visual-basic-passing-array-to-fortran-dll-in-x64/?BlogComm">Blogs &amp; Communities</a></li><li><a href="http://software.intel.com/en-us/articles/visual-basic-passing-array-to-fortran-dll-in-x64/?Reseller">Reseller</a></li><li><a href="http://software.intel.com/en-us/articles/visual-basic-passing-array-to-fortran-dll-in-x64/?Software">Software</a></li><li><a href="http://software.intel.com/en-us/articles/visual-basic-passing-array-to-fortran-dll-in-x64/?AboutIntel">About Intel</a></li><li><a href="http://software.intel.com/en-us/articles/visual-basic-passing-array-to-fortran-dll-in-x64/?HAT-adv1">Advanced Search</a></li></ul></div>
+<div class="HAT-clear"> </div>
+<div id="HAT-subheader" class="subheaderId-HAT-gh0 HAT-font1">&nbsp;</div>
+<div class="HAT-clear">&nbsp;</div>
+
+<div id="header">
+	<!-- menu -->
+ 	<div id="banner" style="width: 100%;">
+  	<div id="subheader" style="width: 100%;">
+   					
+				<!--<h1 style="font-style:normal;color:#000000;">Intel Software Development Products</h1>
+				</div>
+				<div style="width:100%">
+				<div style="float:left;">
+				<p><a href="/en-us/" style="font-size:12px;font-style:italic;">Intel&#174; Software Network</a></p>
+				</div>-->
+				<h1><a href="http://software.intel.com/en-us/">Intel® Software Network</a></h1>
+                                </div>
+                                <div style="width: 100%;">
+                                <div style="float: left;">
+                        <p><a href="http://software.intel.com/en-us/intel-sdp-home/" style="font-size: 12px; font-style: italic;">Intel Software Development Products</a></p>
+<a href="http://software.intel.com/en-us/intel-sdp-home/" style="font-size: 12px; font-style: italic;">                        </a></div>
+<a href="http://software.intel.com/en-us/intel-sdp-home/" style="font-size: 12px; font-style: italic;">				
+   			</a><div id="menu" style="padding: 0px; float: right;">
+<a href="http://software.intel.com/en-us/intel-sdp-home/" style="font-size: 12px; font-style: italic;">    </a><ul id="nav" class="nav superfish">
+<a class="" href="http://software.intel.com/en-us/intel-sdp-home/" style="font-size: 12px; font-style: italic;">    	</a><li class=""><a href="http://software.intel.com/en-us/articles/intel-software-network-communities/">Communities</a><ul style="display: none; visibility: hidden;"><li><a href="http://software.intel.com/en-us/academic/">Academic</a></li><li><a href="http://software.intel.com/en-us/cluster-ready/">Cluster Ready</a></li><li><a href="http://software.intel.com/en-us/manageability/">Manageability</a></li><li><a href="http://software.intel.com/en-us/mobility/">Mobility</a></li><li><a href="http://software.intel.com/en-us/multi-core/">Parallel Programming and Multi-Core</a></li><li><a href="http://software.intel.com/sites/oss/">Open Source</a></li><li><a href="http://www.intel.com/software/virtualization/">Virtualization</a></li><li><a href="http://software.intel.com/en-us/visual-computing/">Visual Computing</a></li><li><a href="http://software.intel.com/en-us/articles/intel-software-network-communities/">More...</a></li></ul></li><li class=""><a href="http://software.intel.com/en-us/articles/code-downloads/">Downloads</a></li><li class=""><a href="http://software.intel.com/en-us/intel-sdp-home/">Tools</a><ul style="display: none; visibility: hidden;"><li><a href="http://software.intel.com/en-us/intel-parallel-studio-home/">Intel® Parallel Studio</a></li><li><a href="http://software.intel.com/en-us/intel-hpc-home/">HPC Tools</a></li><li><a href="http://www.intel.com/cd/software/products/asmo-na/eng/373233.htm">SOA Products</a></li><li><a href="http://software.intel.com/en-us/articles/buy-or-renew/">Buy or Renew</a></li><li><a href="http://software.intel.com/en-us/articles/intel-software-evaluation-center/">Free Evaluation Software</a></li><li><a href="http://software.intel.com/en-us/articles/non-commercial-software-development/">Free Non-Commercial Download</a></li><li><a href="http://www.intel.com/cd/software/products/asmo-na/eng/reseller/index.htm">Reseller Center</a></li><li><a href="http://www.intel.com/cd/software/products/asmo-na/eng/219603.htm">Academic Program</a></li><li><a href="http://platformadmintech.intel.com/">Platform Administration Products</a></li><li><a href="http://csms.intel.com/csm/">Content Management Products</a></li><li><a href="http://software.intel.com/en-us/articles/tools/">Tools Knowledge Base</a></li></ul></li><li class=""><a href="javascript:void(0);">Forums/Blogs</a><ul style="display: none; visibility: hidden;"><li><a href="http://software.intel.com/en-us/forums/">Forums</a></li><li><a href="http://software.intel.com/en-us/blogs/">Blogs</a></li><li><a href="http://software.intel.com/en-us/blogs/categories/">Blog Categories</a></li><li><a href="http://software.intel.com/en-us/blogs/authors/">Meet The Bloggers</a></li></ul></li><li class=""><a href="javascript:void(0);">Resources</a><ul style="display: none; visibility: hidden;"><li><a href="http://www.intel.com/software/events/">Events Calendar</a></li><li><a href="http://www.intel.com/intelpress/">Intel Press Technical Books</a></li><li><a href="http://www.intel.com/software/insight/">Intel Software Insight Magazine</a></li><li><a href="http://software.intel.com/en-us/articles/intel-visual-adrenaline-magazine/">Intel Visual Adrenaline Magazine</a></li><li><a href="http://www.intel.com/partner/">Intel Software Partner Program</a></li><li><a href="http://software.intel.com/en-us/articles/all/">Knowledge Base</a></li><li><a href="http://software.intel.com/en-us/videos/">Take Five Videos</a></li><li><a href="http://software.intel.com/en-us/college/">Training</a></li><li><a href="http://whatif.intel.com/">What If Software</a></li></ul></li><li class=""><a href="http://software.intel.com/sites/support/">Software Support</a></li>		</ul>
+		</div>
+	</div>
+</div>
+</div>
+	<!-- ----------------------- Add external css files here ------------------------------  -->
+	<link rel="stylesheet" href="Visual%20Basic%20passing%20array%20to%20Fortran%20DLL%20in%20x64%20-%20Intel%C2%AE%20Software%20Network_files/admin.css" type="text/css">
+
+	<!-- ----------------------- Add external js files here ------------------------------  -->
+	<script language="javascript" src="Visual%20Basic%20passing%20array%20to%20Fortran%20DLL%20in%20x64%20-%20Intel%C2%AE%20Software%20Network_files/jquery_002.js"></script>
+	<script language="javascript" src="Visual%20Basic%20passing%20array%20to%20Fortran%20DLL%20in%20x64%20-%20Intel%C2%AE%20Software%20Network_files/alerts_002.js"></script>
+	<script language="javascript" src="Visual%20Basic%20passing%20array%20to%20Fortran%20DLL%20in%20x64%20-%20Intel%C2%AE%20Software%20Network_files/articles.js"></script>
+	<script language="javascript" src="Visual%20Basic%20passing%20array%20to%20Fortran%20DLL%20in%20x64%20-%20Intel%C2%AE%20Software%20Network_files/create_articles.js"></script>
+	<style type="text/css">
+	@media print{
+	body{ background-color:#FFFFFF; background-image:none; color:#000000 }
+	#header{ display:none;}
+	#right{ display:none;}
+	#footer{ display:none;}
+	#print_discard{ display:none;}
+	#rating_option{ display:none;}
+	#poll_res{ display:none;}
+	#media_downloads{ display:none;}
+	#media_uploads{ display:none;}
+	}
+	</style>
+	<script language="javascript">
+ 		var base_url = "/";
+	 	var base_url_ajax = "/en-us/";
+
+		$(document).ready(function() {
+
+		   var options = {
+		    target:        '#managediv_body',   // target element(s) to be updated with server response
+		    success:       art_ajax_poxt_response,  // post-submit callback
+
+		    // other available options:
+		    url:       base_url_ajax+"articles/manage_article.php?f=setpermission&rnd="+Math.random(),         // override for form's 'action' attribute
+		    type:      "post"        // 'get' or 'post', override for form's 'method' attribute
+
+		    };
+
+		    // bind to the form's submit event
+		    $('#frmProtect').submit(function() {
+		        // inside event callbacks 'this' is the DOM element so we first
+		        // wrap it in a jQuery object and then invoke ajaxSubmit
+		        $(this).ajaxSubmit(options);
+
+		        // !!! Important !!!
+		        // always return false to prevent standard browser submit and page navigation
+		        return false;
+		    });
+		});
+
+		// create new article
+		function art_create_article() {
+			//window.open("/en-us/admin/articles/add");
+			document.new_article.action 	= "/en-us/admin/articles/add";
+			document.new_article.method		= "post";
+			document.new_article.submit();
+		}
+
+
+	</script>
+
+
+<div class="wrap"><div style="float: left; width: 745px;"><div id="breadcrumb"><a href="http://software.intel.com/en-us/">Home</a> › <a href="http://software.intel.com/en-us/articles/all/1/">Articles</a></div>
+					<form name="new_article">
+					<input name="article_return_page" value="/en-us/articles/visual-basic-passing-array-to-fortran-dll-in-x64/" type="hidden">
+					</form>
+					<form id="posts-filter" name="art_landing_page">
+					<input id="article_category_ids" value="289" type="hidden">
+					<input id="article_type_ids" value="11|12|14|16|23|24" type="hidden">
+				<h1 style="width: 530px;">Visual Basic passing array to Fortran DLL in x64</h1><p id="post-search"><a id="createNewArticle" href="javascript:art_create_article()" style="color: rgb(21, 27, 142); font-size: 13px; font-weight: bold;">Submit New Article<img src="Visual%20Basic%20passing%20array%20to%20Fortran%20DLL%20in%20x64%20-%20Intel%C2%AE%20Software%20Network_files/black_arrow.gif" align="baseline"></a></p></form><br><div id="rating_option"><div class="alignleft"><table><tbody><tr>
+                <td>Last Modified On&nbsp;:&nbsp;&nbsp;</td>
+                <td>December 18, 2008 11:52 AM PST
+</td></tr><tr>
+									<td colspan="2"><span id="r_s_41847"><div style="float: left; height: 15px;">Rate</div><div style="float: left; height: 15px;">&nbsp;</div><span><input name="r_r_41847" value="" type="hidden"><div class="star star_group_r_r_41847 star_readonly" onclick="alertstuff(this);" title="Please login to rate!
+Current Score: 0 out of 0 users"><a title="Please login to rate!
+Current Score: 0 out of 0 users">Please login to rate!
+Current Score: 0 out of 0 users</a></div><div class="star star_group_r_r_41847 star_readonly" onclick="alertstuff(this);" title="Please login to rate!
+Current Score: 0 out of 0 users"><a title="Please login to rate!
+Current Score: 0 out of 0 users">Please login to rate!
+Current Score: 0 out of 0 users</a></div><div class="star star_group_r_r_41847 star_readonly" onclick="alertstuff(this);" title="Please login to rate!
+Current Score: 0 out of 0 users"><a title="Please login to rate!
+Current Score: 0 out of 0 users">Please login to rate!
+Current Score: 0 out of 0 users</a></div><div class="star star_group_r_r_41847 star_readonly" onclick="alertstuff(this);" title="Please login to rate!
+Current Score: 0 out of 0 users"><a title="Please login to rate!
+Current Score: 0 out of 0 users">Please login to rate!
+Current Score: 0 out of 0 users</a></div><div class="star star_group_r_r_41847 star_readonly" onclick="alertstuff(this);" title="Please login to rate!
+Current Score: 0 out of 0 users"><a title="Please login to rate!
+Current Score: 0 out of 0 users">Please login to rate!
+Current Score: 0 out of 0 users</a></div><input id="hdn_module_41847" value="1" type="hidden"><input id="hdn_source_41847" value="41847" type="hidden"><input id="hdn_language_41847" value="1" type="hidden"><input id="hdn_author_41847" value="160574" type="hidden"></span></span>			</td>
+								</tr>
+							</tbody></table>
+						</div>
+						<div class="alignright">
+							<table>
+								<tbody><tr></tr></tbody></table>
+					</div>
+					<br class="clear">
+				</div>
+				<br><div id="article_text"><!--page break-->
+<hr>
+<div class="sectionHeading">Problem</div>
+<p>A mixed VB/IVF project in which VB passed an array to Fortran DLL
+worked when built in ia32 configuration but fails when built with x64
+configuration.</p>
+<!--page break-->
+<hr>
+<div class="sectionHeading">Environment</div>
+<p>Windows x64, Visual Studio 2005 or 2008 with VB component and IVF component installed.&nbsp; x64 project configurations.</p>
+<!--page break-->
+<hr>
+<div class="sectionHeading">Root Cause</div>
+<p>Many VB users have been passing the first element of the array ByRef with the follow syntax:</p>
+<blockquote>Module Module1<br>Private Declare Sub FortranDLL Lib "SampleFortranDLL.dll" Alias "FORTRANDLL" (ByRef Array1 As Int32, ByRef Int32 As Int32)<br>Sub Main()<br>Try<br>Dim Test As Int32() = {1, 2, 3, 4, 5, 6}<br>FortranDLL(Test(0), Test.Length)<br></blockquote>
+<p>This works on ia32 but apparently just by luck.&nbsp; This syntax is incorrect for x64.</p>
+<!--page break-->
+<hr>
+<div class="sectionHeading">Resolution</div>
+<p>It seems VB handles array passing differently in x64 than Ia32. I would refer you to the following articles:</p>
+<ul>
+<li><a href="http://blogs.msdn.com/robgruen/archive/2004/04/30/124076.aspx">http://blogs.msdn.com/robgruen/archive/2004/04/30/124076.aspx</a></li>
+<li><a href="http://social.msdn.microsoft.com/Forums/en-US/netfx64bit/thread/8609607d-9bdd-494a-94bc-120fa686fe2d/">http://social.msdn.microsoft.com/Forums/en-US/netfx64bit/thread/8609607d-9bdd-494a-94bc-120fa686fe2d/</a></li>
+</ul>
+<p>&nbsp;</p>
+<p>The interesting quote is from the MDSN article: “...snip...Arrays
+are layed out differently in managed code vs unmanaged code, so it was
+a total fluke that it worked simply be passing the first element ByRef
+anyway.”</p>
+<p>The correct syntax for BOTH ia32 and x64 should follow this example:</p>
+<table style="margin-top: -10px; padding-top: 0px;" border="0" cellpadding="4" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td style="font-size: 11px;" width="100%">
+<div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('CollapseSource',this);return false;">- collapse source</a><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><a href="#" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy to clipboard</a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a></div></div><ol class="dp-cpp" start="1"><li class="alt"><span><span>Imports&nbsp;System.Runtime.InteropServices&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>Module&nbsp;Module1&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>Private&nbsp;Declare&nbsp;Sub&nbsp;FortranDLL&nbsp;Lib&nbsp;<span class="string">"FCALL.dll"</span><span>&nbsp;Alias&nbsp;</span><span class="string">"FORTRANDLL"</span><span>&nbsp;(&lt;[In](),&nbsp;Out()&gt;&nbsp;ByVal&nbsp;Array1()&nbsp;As&nbsp;Int32,&nbsp;ByRef&nbsp;Foo&nbsp;As&nbsp;Int32)&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>Sub&nbsp;Main()&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>Dim&nbsp;I&nbsp;As&nbsp;Int32&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>Try&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>Dim&nbsp;Test&nbsp;As&nbsp;Int32()&nbsp;=&nbsp;{1,&nbsp;2,&nbsp;3,&nbsp;4,&nbsp;5,&nbsp;6}&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>FortranDLL(Test,&nbsp;Test.Length)&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>Console.WriteLine(<span class="string">"&nbsp;"</span><span>)&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>Console.WriteLine(<span class="string">"back&nbsp;in&nbsp;VB"</span><span>)&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>Console.WriteLine(<span class="string">"Array&nbsp;elements&nbsp;after&nbsp;call&nbsp;return:"</span><span>)&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>For&nbsp;i&nbsp;=&nbsp;0&nbsp;To&nbsp;5&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>Console.WriteLine(Test(i))&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>Next&nbsp;i&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>Catch&nbsp;ex&nbsp;As&nbsp;Exception&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>Console.WriteLine(ex.Message)&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>My.Computer.Clipboard.SetText(ex.Message)&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>Finally&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>Console.ReadKey()&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>End&nbsp;Try&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>End&nbsp;Sub&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>End&nbsp;Module&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>!&nbsp;FortranDLL&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>!&nbsp;Description:&nbsp;This&nbsp;sample&nbsp;demonstrates&nbsp;a&nbsp;mixed&nbsp;VB-Fortran&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x64&nbsp;application.&nbsp;&nbsp;The&nbsp;purpose&nbsp;is&nbsp;to&nbsp;demonstrate&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;VB&nbsp;declarations&nbsp;necessary&nbsp;to&nbsp;pass&nbsp;an&nbsp;array&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;VB&nbsp;to&nbsp;IVF.&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This&nbsp;is&nbsp;a&nbsp;Fortran&nbsp;subroutine&nbsp;contained&nbsp;in&nbsp;a&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DLL&nbsp;Project&nbsp;type&nbsp;and&nbsp;produces&nbsp;a&nbsp;DLL&nbsp;to&nbsp;be&nbsp;called&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;Visual&nbsp;Basic.&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>!&nbsp;Input&nbsp;files:&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>!&nbsp;&nbsp;NONE&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>!&nbsp;Output&nbsp;files:&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>!&nbsp;&nbsp;NONE&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>!&nbsp;History:&nbsp;&nbsp;v1.0&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>Subroutine&nbsp;FortranDLL(&nbsp;Array1,&nbsp;upbound&nbsp;)&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>!DEC$&nbsp;ATTRIBUTES&nbsp;DLLEXPORT,&nbsp;ALIAS:&nbsp;<span class="string">'FORTRANDLL'</span><span>&nbsp;::&nbsp;FortranDLL&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>!DEC$&nbsp;ATTRIBUTES&nbsp;REFERENCE&nbsp;::&nbsp;Array1&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>!DEC$&nbsp;ATTRIBUTES&nbsp;REFERENCE&nbsp;::&nbsp;upbound&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>Implicit&nbsp;None&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>!&nbsp;...argument&nbsp;declarations&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>Integer(4)&nbsp;::&nbsp;upbound&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>Integer(4)&nbsp;::&nbsp;Array1(1:upbound)&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>!&nbsp;Local&nbsp;variables&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>Integer(4)&nbsp;::&nbsp;I&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>write(*,<span class="string">'(A,I)'</span><span>)&nbsp;</span><span class="string">"Array&nbsp;upper&nbsp;bound&nbsp;passed&nbsp;in&nbsp;"</span><span>,&nbsp;upbound&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>write(*,*)&nbsp;<span class="string">"Array&nbsp;elements&nbsp;passed&nbsp;in:&nbsp;"</span><span>&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span><span class="keyword">do</span><span>&nbsp;i=1,upbound&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>write(*,<span class="string">'("element:",&nbsp;I2,&nbsp;2X,&nbsp;I8)'</span><span>&nbsp;)&nbsp;i,&nbsp;Array1(i)&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>end&nbsp;<span class="keyword">do</span><span>&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>write(*,*)&nbsp;<span class="string">"Adding&nbsp;10&nbsp;to&nbsp;each&nbsp;element&nbsp;and&nbsp;passing&nbsp;back&nbsp;to&nbsp;VB"</span><span>&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>Array1&nbsp;=&nbsp;Array1&nbsp;+&nbsp;10&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>End&nbsp;Subroutine&nbsp;FortranDLL&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li></ol></div><pre style="display: none;" name="code" class="cpp">Imports System.Runtime.InteropServices<br>
+Module Module1<br>
+Private Declare Sub FortranDLL Lib "FCALL.dll" Alias "FORTRANDLL" (&lt;[In](), Out()&gt; ByVal Array1() As Int32, ByRef Foo As Int32)<br>
+Sub Main()<br>
+Dim I As Int32<br>
+Try<br>
+Dim Test As Int32() = {1, 2, 3, 4, 5, 6}<br>
+FortranDLL(Test, Test.Length)<br>
+Console.WriteLine(" ")<br>
+Console.WriteLine("back in VB")<br>
+Console.WriteLine("Array elements after call return:")<br>
+For i = 0 To 5<br>
+Console.WriteLine(Test(i))<br>
+Next i<br>
+Catch ex As Exception<br>
+Console.WriteLine(ex.Message)<br>
+My.Computer.Clipboard.SetText(ex.Message)<br>
+Finally<br>
+Console.ReadKey()<br>
+End Try<br>
+End Sub<br>
+End Module<br>
+! FortranDLL<br>
+! Description: This sample demonstrates a mixed VB-Fortran<br>
+!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x64 application.&nbsp; The purpose is to demonstrate<br>
+!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; the VB declarations necessary to pass an array<br>
+!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; from VB to IVF.<br>
+!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This is a Fortran subroutine contained in a <br>
+!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DLL Project type and produces a DLL to be called<br>
+!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; from Visual Basic.<br>
+! Input files:<br>
+!&nbsp; NONE<br>
+! Output files:<br>
+!&nbsp; NONE<br>
+! History:&nbsp; v1.0<br>
+Subroutine FortranDLL( Array1, upbound )<br>
+!DEC$ ATTRIBUTES DLLEXPORT, ALIAS: 'FORTRANDLL' :: FortranDLL<br>
+!DEC$ ATTRIBUTES REFERENCE :: Array1<br>
+!DEC$ ATTRIBUTES REFERENCE :: upbound<br>
+Implicit None<br>
+! ...argument declarations<br>
+Integer(4) :: upbound<br>
+Integer(4) :: Array1(1:upbound)<br>
+<br>
+! Local variables<br>
+Integer(4) :: I<br>
+write(*,'(A,I)') "Array upper bound passed in ", upbound<br>
+write(*,*) "Array elements passed in: "<br>
+do i=1,upbound<br>
+write(*,'("element:", I2, 2X, I8)' ) i, Array1(i)<br>
+end do<br>
+write(*,*) "Adding 10 to each element and passing back to VB"<br>
+Array1 = Array1 + 10<br>
+<br>
+End Subroutine FortranDLL<br>
+<br>
+</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p></div><br><br><div class="box" id="topic_attachment" style="margin-top: 10px;">
+								<div class="boxHeader">Article Attachments</div><div class="boxBody"><a href="javascript:void(0)">VB-Calls-Fortranx64.zip</a></div></div><br><br>This article applies to: <a href="http://software.intel.com/en-us/articles/intel-visual-fortran-compiler-for-windows-kb/all/1/">Intel® Visual Fortran Compiler for Windows* Knowledge Base</a><div id="print_discard"><div id="article_footer"></div><div id="comments"></div>
+<style type="text/css">.dp-highlighter { width: 525px; }</style>
+<script type="text/javascript">
+function comment_form_check(full) {
+	if(full == 'true') {
+		if($("#comment_name").val().length < 1) {
+			alert('Name required is a required field!');
+			$("#comment_name").focus();
+			return false;
+		}
+		if(!validate_email($("#comment_email").val())) {
+			alert('Email required is a required field!');
+			$("#comment_email").focus();
+			return false;
+		}
+	}
+	if($("#comment_text").val().length < 1) {
+		alert('comment text is a required field');
+		$("#comment_text").focus();
+		return false;
+	}
+	return true;
+}
+</script>
+<h3 class="pagesection">Comments (0) <a href="http://software.intel.com/en-us/articles/visual-basic-passing-array-to-fortran-dll-in-x64/feed/"><img src="Visual%20Basic%20passing%20array%20to%20Fortran%20DLL%20in%20x64%20-%20Intel%C2%AE%20Software%20Network_files/rss.png" style="vertical-align: bottom;" border="0"></a></h3><div class="seperator"></div>
+<h3 class="pagesection">Trackbacks (0)</h3><div class="seperator"></div><br>
+<h3 class="pagesection">Leave a comment&nbsp;&nbsp;<a target="_blank" href="http://software.intel.com/en-us/articles/comments-help-guide/"><img src="Visual%20Basic%20passing%20array%20to%20Fortran%20DLL%20in%20x64%20-%20Intel%C2%AE%20Software%20Network_files/help.gif" style="height: 19px; width: 19px; vertical-align: middle;" border="0"></a></h3><div>To obtain technical support, please go to <a href="http://software.intel.com/sites/support/">Software Support</a>.</div><div class="seperator"></div>
+<form action="/services/comment/post/" method="post" onsubmit="return comment_form_check('true');">
+Name (required)*<br><input id="comment_name" name="n" size="45" type="text"><br>
+Email (required; will not be displayed on this page)*<br><input id="comment_email" name="e" size="45" type="text"><br>
+Your URL (optional)<br><input name="u" size="45" type="text"><br>
+<br>
+Comment*<br>
+<input name="m" value="1" type="hidden">
+<input name="s" value="41847" type="hidden">
+<input name="l" value="1" type="hidden">
+<input name="a" value="160574" type="hidden">
+<input name="p" value="http://software.intel.com/en-us/articles/visual-basic-passing-array-to-fortran-dll-in-x64/" type="hidden">
+<textarea id="comment_text" name="c" rows="10" style="width: 97%;"></textarea><br>
+<input class="button" value="submit" type="submit">
+</form>
+</div></div><div id="right"><p><a href="http://software.intel.com/en-us/">English</a> | <a href="http://software.intel.com/zh-cn/">中文</a> | <a href="http://software.intel.com/ru-ru/">Русский</a> | <a href="http://software.intel.com/fr-fr/">Français</a></p>
+<div class="box" id="buttons">
+ <div class="boxBody" id="icons">
+  <div id="sprn" onclick="print();" onmouseout="window.status=''" onmouseover="window.status='Print'" title="Print"></div>
+  <div id="seaf" onclick="eaf();" onmouseout="window.status=''" onmouseover="window.status='Email to a friend'" title="Email to a friend"></div>
+  <div id="ssfb" onclick="sfb();" onmouseout="window.status=''" onmouseover="window.status='Support'" title="Support"></div>
+  <div id="snew" onclick="document.location='http://software.intel.com/en-us/articles/intel-software-network-news-archive/';" onmouseout="window.status=''" onmouseover="window.status='http://software.intel.com/en-us/articles/intel-software-network-news-archive/'" title="Newsletter"></div>
+  <div id="srss" onclick="document.location='http://feeds.feedburner.com/ISNMain';" onmouseout="window.status=''" onmouseover="window.status='http://feeds.feedburner.com/ISNMain'" title="RSS"></div>
+  <div id="sdig" onclick="digg();" onmouseout="window.status=''" onmouseover="window.status='Digg this'" title="Digg this"></div>
+  <div id="sdel" onclick="delicious();" onmouseout="window.status=''" onmouseover="window.status='del.icio.us'" title="del.icio.us"></div>
+  <div id="ssrc" onclick="window.open('http://software.intel.com/en-us/articles/advanced-search/','_blank');" onmouseout="window.status=''" onmouseover="window.status='Search'" title="Search"></div>
+ </div>
+</div>
+<div class="box">
+ <div class="boxHeader">Login</div>
+ <div class="boxBody">
+  <form action="https://ssl.software.intel.com/en-us/login/?Lang=ENG&amp;TARGET=http://software.intel.com/en-us/articles/visual-basic-passing-array-to-fortran-dll-in-x64/" method="post">
+   <input name="qlogin" value="true" type="hidden">
+   <div class="row">
+    <div class="key">Login ID:</div>
+    <div class="value"><input id="txtUserName" name="txtUserName" class="login" size="12" type="text"></div>
+   </div>
+   <div class="row">
+    <div class="key">Password:</div>
+    <div class="value"><input id="txtPassword" name="txtPassword" class="login" size="12" type="password"></div>
+   </div>
+   <div class="row">
+    <div class="key">Remember Me?</div><div class="value"><input id="chkRememberMe" name="chkRememberMe" value="on" type="checkbox"></div>
+   </div>
+   <div style="clear: both;"></div>
+   <input class="login" value="Login" type="submit"><br>
+  </form>
+  <br>
+  <a href="https://welcome.intel.com/forgot_loginid.aspx?Lang=ENG">Forgot Login ID?</a><br>
+  <a href="https://welcome.intel.com/forgot_password.aspx?Lang=ENG">Forgot Password?</a><br>
+	<a id="new_reg" href="http://software.intel.com/en-us/articles/intel-software-network-login-id-faq/">New Registration?</a><br>
+ </div>
+</div>
+<div class="box"><div class="boxHeader">Author</div><div class="boxBody"><table><tbody><tr><td><a href="http://software.intel.com/en-us/profile/160574/">Ronald Green (Intel)</a><br><table style="border: 0px none ;" cellpadding="0" cellspacing="0"><tbody><tr><td style="border: 0px none ; padding: 0px;"><a href="http://software.intel.com/en-us/profile/160574/"><img alt="" src="Visual%20Basic%20passing%20array%20to%20Fortran%20DLL%20in%20x64%20-%20Intel%C2%AE%20Software%20Network_files/5f5084c97a1071545d4765468e7194f0_s.jpg" title="" border="0" height="60" width="60"></a></td><td style="border: 0px none ; padding: 0px 3px 3px; width: 135px; line-height: 14px;" valign="top">Total Points: <br>7,812<br>Status Points: <br>7,312<br><div class="lpic"><img src="Visual%20Basic%20passing%20array%20to%20Fortran%20DLL%20in%20x64%20-%20Intel%C2%AE%20Software%20Network_files/brown.jpg"></div>Brown Belt</td></tr></tbody></table><br></td></tr></tbody></table></div></div><div class="box"><div class="boxHeader">Tags for this Page</div><div class="boxBody" id="tfpage"><a href="http://software.intel.com/en-us/tags/3789">VB passing array to IVF in x64 config</a> </div></div></div><div class="clear"></div></div>
+	<br class="clear">
+
+	<div style="padding: 0px; display: none;" id="flag_type_display">
+		<select id="selflag"><option value="9">Inappropriate Content</option><option value="10">Out of Context Content</option><option value="35">Content out of date</option></select>	</div>
+
+   <div id="footer">
+    <div id="subfooter">
+     <ul>
+      <li><a href="http://www.intel.com/siteindex.htm?iid=ftr+map">Site Map</a></li>
+      <li><a href="http://www.intel.com/intel/rss.htm?iid=ftr+rss">RSS</a></li>
+      <li><a href="http://www.intel.com/jobs/index.htm?iid=ftr+jobs">Jobs</a></li>
+      <li><a href="http://www.intc.com/index.cfm?iid=ftr+invrel">Investor Relations</a></li>
+      <li><a href="http://www.intel.com/pressroom/index.htm?iid=ftr+press">Press Room</a></li>
+      <li><a href="http://www.intel.com/feedback.htm?iid=ftr+contact">Contact Us</a></li>
+     </ul>
+     <ul>
+      <li><a href="http://www.intel.com/sites/corporate/termsofuse.htm?iid=ftr+terms">Terms of Use</a></li>
+      <li><a href="http://www.intel.com/sites/corporate/tradmarx.htm?iid=ftr+trademark">*Trademarks</a></li>
+      <li><a href="http://www.intel.com/sites/corporate/privacy.htm?iid=ftr+privacy">Privacy</a></li>
+      <li>©Intel Corporation</li>
+     </ul>
+    </div>
+   </div>
+  </div>
+  <div style="display: none;">
+   <script type="text/javascript" src="Visual%20Basic%20passing%20array%20to%20Fortran%20DLL%20in%20x64%20-%20Intel%C2%AE%20Software%20Network_files/wa_setup.js"></script>
+   <script type="text/javascript"><!--
+    var wa_pageName='Visual Basic passing array to Fortran DLL in x64';
+    var wa_geo='asmo-na';
+    var wa_language='en-us';
+    var wa_org1='sw';
+    var wa_org2='isn';
+    var wa_org3='articles';
+    var wa_org4='';
+    var wa_orgX='';
+    var wa_custom01='Ronald Green (Intel)';
+    var wa_custom03='FortranWin';
+    var wa_custom04='VB passing array to IVF in x64 config';
+    var wa_custom05='Known Issues,Errors and Diagnostics,Tips and Techniques,Compatibility,Technical Notes,Sample Cod';
+    var wa_custom14='2008-12-18';
+    var wa_custom21='41847';
+    var wa_eCustom14='41847';
+    var wa_custom15='2008-12-18';
+    var wa_urlQueryString="cid,kwid";
+    var wa_reportSuites='intelcorpsw,intelcorpswkb,intelcorpswdpd';
+    var s_charSet='UTF-8';
+    var wa_trackDFA='n';
+    var wa_eCustom13='http://software.intel.com/en-us/articles/visual-basic-passing-array-to-fortran-dll-in-x64/';
+   // -->
+   </script>
+   <script type="text/javascript" src="Visual%20Basic%20passing%20array%20to%20Fortran%20DLL%20in%20x64%20-%20Intel%C2%AE%20Software%20Network_files/wa_process.js"></script>
+   <script type="text/javascript">var cbjspath="static.chartbeat.com/js/chartbeat.js?uid=982&domain=software.intel.com"; var cbjsprotocol = (("https:" == document.location.protocol) ? "https://s3.amazonaws.com/" : "http://"); document.write(unescape("%3Cscript src='"+cbjsprotocol+cbjspath+"' type='text/javascript'%3E%3C/script%3E"))</script><script src="Visual%20Basic%20passing%20array%20to%20Fortran%20DLL%20in%20x64%20-%20Intel%C2%AE%20Software%20Network_files/chartbeat.js" type="text/javascript"></script>
+  </div>
+ </body></html>

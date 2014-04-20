@@ -1,0 +1,260 @@
+/* Styles for MathWorld */
+
+body {
+ background-color: #ffffff;
+ color: #000000;
+ margin: 0px;
+ margin-bottom: 10px;
+}
+
+.title, h1, h1 a:visited {
+ font-family: Verdana,Arial,Helvetica,sans-serif;
+ font-size: 24px;
+ font-weight: normal;
+ color: #00a6a6;
+ white-space: nowrap;
+}
+
+/* Netscape 4.x */
+p, blockquote, .entry, .entry td, li, td, th {
+ font-family: Verdana,Arial,Helvetica,sans-serif;
+ font-size: 12px;
+/* line-height: 16px; */
+}
+
+.letters a {
+ font-family: Verdana,Arial,Helvetica,sans-serif;
+ font-size: 24px;
+}
+
+a, .index a, .index td  {
+ text-decoration: none;
+ color: #009999;
+}
+
+a:hover, .index a:hover {
+ color: #00cccc;
+}
+
+a:visited {
+ color: #006699;
+}
+
+hr {
+ height: 1px;
+ color: #bbbbbb;
+}
+
+.last-updated, .last-updated a {
+  color: #999999;
+  font-size: 10px;
+}
+
+.index a, .index td {
+ font-family: Verdana,Arial,Helvetica,sans-serif;
+ font-size: 12px;
+ line-height: 16px;
+ font-size: 12px;
+ white-space: nowrap;
+}
+
+h4, h5, h6 {
+ font-family: Verdana,Arial,Helvetica,sans-serif;
+ font-weight: normal;
+ color: #146a68;
+}
+
+/* Note that appending style information actually overwrites it in IE and Netscape 4.7. */
+h2 {
+ font-family: Verdana,Arial,Helvetica,sans-serif;
+ font-weight: normal;
+ color: #146a68;
+ font-size: 20px;
+}
+
+h3 {
+ font-family: Verdana,Arial,Helvetica,sans-serif;
+ font-weight: normal;
+ color: #146a68;
+ font-size: 16px;
+}
+
+h3, .references-head {
+ font-family: Verdana,Arial,Helvetica,sans-serif;
+ font-size: 12px;
+ font-weight: bold;
+ color: #146a68;
+}
+
+.smalltext {
+ font-size:10px;
+}
+
+.nowrap {
+ white-space: nowrap;
+}
+
+/* Subject link trail */
+
+.navbar {
+ font-family: Arial,Verdana,Helvetica,sans-serif;
+ font-size: 10px;
+ line-height: 14px;
+}
+
+/*
+.navbar a:visited needed for IE
+*/
+.navbar a, .navbar a:visited {
+ color: #696969;
+}
+
+.navbar a:hover {
+ color:#999999;
+}
+
+/* References, etc. */
+
+/* Netscape 4.x */
+.references, .references p, .citation, .citation p {
+ font-size: 10px;
+/* line-height: 12px; */
+}
+
+.copyright {
+ font-size: 9px;
+}
+
+.p2 {
+ font-family: Verdana, Arial, Helvetica, sans-serif;
+ font-size: 11px;
+ line-height: 14px;
+ text-decoration: none;
+}
+
+/* Registration */
+
+.register {
+ font-family: Verdana, Arial, Helvetica, sans-serif;
+ font-size: 9px;
+ color: #999999;
+}
+/*
+.register a:visited needed for IE
+*/
+.register a, .register a:visited {
+ color: #999999;
+}
+
+.register a:hover {
+ color: #999999;
+}
+
+/* added by johnr */
+
+p.Reference {
+ font-size: 10px;
+}
+
+div.versionlink {
+ text-align: right;
+}
+
+td.letters {
+ text-align: center;
+}
+
+img.inlineformula {
+ vertical-align: middle;
+}
+
+/* What's New */
+
+li.new  { color:#feb823; }
+li.mod  { color:#999999; }
+li.subj { color:#00ff00; }
+
+/* Divisions in entry pages, e.g., see also */
+
+.crosslinkheader {
+ font-family: 'Lucida Grande',Tahoma,Verdana,Helvetica,sans-serif;
+ font-size: 11px;
+ font-weight: bold;
+ color: #146a68;
+ border-bottom: 3px solid #ddf6b8;
+ line-height: 19px;
+/* margin-right: 0.5em; */
+}
+
+/* Sidebar */
+
+.mainindices a, .mainindices a:link {
+ color:#000000;
+ font-family: Tahoma,Verdana,Arial,'Lucida Grande',Helvetica,sans-serif;
+ font-size: 10px;
+ line-height: 160%;
+ margin-left: 20px;
+ white-space: nowrap;
+}
+
+.mainindices a:hover {
+ color:#00CCCC
+}
+
+.subindices a, .subindices a:link {
+ color:#666666;
+ font-family: Tahoma,Verdana,Arial,'Lucida Grande',Helvetica,sans-serif;
+ font-size: 10px;
+ line-height: 160%;
+ padding-left:20px;
+ white-space: nowrap;
+}
+
+.subindices a:hover {
+ color:#00CCCC
+}
+
+.rightline {
+ border:none 1px #67B2D0;
+ border-top-style:solid;
+ margin-top:5px;
+ margin-bottom:5px;
+ margin-left:4px;
+}
+ 
+.rightline-sub {
+ border:none 1px #C6E3DB;
+ border-top-style:solid;
+ margin-top:5px;
+ margin-bottom:5px;
+ margin-left:4px;
+}
+ 
+.divider {
+ border:none 1px #E0F3CD;
+ border-top-style:solid;
+ margin-top:3px;
+ margin-bottom:5px;
+}
+ 
+.othersite, .othersite a {
+ font-family: Arial,Tahoma,Verdana,'Lucida Grande',Helvetica,sans-serif;
+ margin-top: 6px;
+ margin-bottom: 6px;
+ font-size: 10px;
+ color: #000000;
+}
+
+.ad {
+ font-family: Arial,Tahoma,Verdana,'Lucida Grande',Helvetica,sans-serif;
+ margin-top: 6px;
+ margin-bottom: 6px;
+ font-size: 10px;
+}
+
+/* News */
+
+.news {
+  font-weight: bold;
+  font-size: 10px;
+}

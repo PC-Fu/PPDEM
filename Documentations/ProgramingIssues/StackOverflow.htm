@@ -1,0 +1,1591 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head><title>Intel® Software Network - Intel Fortran compiler 9.1 stack overflow</title>
+
+
+
+    
+
+
+<meta name="GENERATOR" content="CommunityServer 2.0 (Build: 60217.2664)">
+<link rel="alternate" type="application/rss+xml" title="Intel® Visual Fortran Compiler for Windows (RSS 2.0)" href="http://softwarecommunity.intel.com/isn/Community/en-US/forums/rss.aspx?ForumID=-1&amp;Mode=0">
+<link rel="alternate" type="application/rss+xml" title="Re: Intel Fortran compiler 9.1 stack overflow (RSS 2.0)" href="http://softwarecommunity.intel.com/isn/Community/en-US/forums/rss.aspx?ForumID=1005&amp;PostID=30233858">
+
+            <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+            <script src="StackOverflow_files/global.js" type="text/javascript"></script>
+            <style type="text/css"> body { font-size: 84%; } </style>
+            <link rel="stylesheet" href="StackOverflow_files/IntelCommon.css" type="text/css" media="screen">
+			<link rel="stylesheet" href="StackOverflow_files/Intelforum.css" type="text/css" media="screen">
+			<link rel="stylesheet" href="StackOverflow_files/common_print.css" type="text/css" media="print">
+			<link rel="stylesheet" href="StackOverflow_files/forum_print.css" type="text/css" media="print"><!--block_head-->
+			
+        <link href="StackOverflow_files/v3.css" media="all" rel="stylesheet" type="text/css"><link href="http://www.intel.com/sites/corporate/pix/favicon.ico" rel="icon" type="image/x-icon"><link href="http://www.intel.com/sites/corporate/pix/favicon.ico" rel="shortcut icon" type="image/x-icon"><script language="javascript" src="StackOverflow_files/jquery.js" type="text/javascript"></script><script language="javascript" src="StackOverflow_files/arc.js" type="text/javascript"></script><script language="javascript" src="StackOverflow_files/isn.js" type="text/javascript"></script><script language="javascript"><!--
+     var thisURL = document.location.protocol + "//" + document.location.hostname + document.location.pathname;
+     var serviceURL = 'http://softwarecommunity.intel.com';
+     // -->
+     </script><script language="javascript" type="text/javascript" src="StackOverflow_files/jqModal.js"></script><script language="javascript" type="text/javascript" src="StackOverflow_files/isnfeedbackapi.js"></script><style>
+.jqmFW {display: none;position: fixed;top: 17%;left: 50%;margin-left: -200px; font-family:verdana,sans-serif;font-size: 11px;background-color: #E7E7E7;color: #000000; border:1px solid #6699CC; padding:0px;}
+.FWin {width: 385px;}
+.FTab {width: 100%;}
+.FB_MsgLenError {margin:0px;font-size:10px;color:red;}
+#femail {font-family:verdana,sans-serif;font-size: 11px;}
+#fmessage { width:370px; font-family:verdana,sans-serif;font-size: 11px;}
+.FHead { width: 50%; color:#ffffff; font-family:verdana,sans-serif;font-size: 11px; background-color:#6699CC;}
+.FBody { padding-top:8px; padding-left:8px; text-align:left; width: 100%; font-family:verdana,sans-serif; font-size: 11px;}
+* html .jqmFW {width:238px; position: absolute;top: expression((document.documentElement.scrollTop || document.body.scrollTop) + Math.round(17 * (document.documentElement.offsetHeight || document.body.clientHeight) / 100) + 'px');}
+.jqmOverlay { background-color: #262626; }
+a.jqmClose, .jqmClose { color: #ffffff;}
+.groovybutton {background-image:url(http://softwarecommunity.intel.com/videos/images/back03.gif);border:1px solid #DDDDDD;font-family:Verdana,sans-serif;font-size:11px;height:20px;}
+</style>
+<script language="javascript" type="text/javascript" src="StackOverflow_files/ISNEmailAFriendAPI.js"></script><style>
+.jqmEF {display: none;position: fixed;top: 17%;left: 50%;margin-left: -200px; font-family:verdana,sans-serif;font-size: 11px;background-color: #E7E7E7;color: #000000; border:1px solid #6699CC; padding:0px;}
+.EFin {width: 385px;}
+.FTab {width: 100%;}
+.EF_MsgLenError {margin:0px;font-size:10px;color:red;}
+#eafmessage, #eafsubject, #eafemail, #eafrecipentemail {font-family:verdana,sans-serif;font-size: 11px;}
+#eafmessage {width:370px;}
+.FHead { width: 50%; color:#ffffff; font-family:verdana,sans-serif;font-size: 11px; background-color:#6699CC;}
+.FBody { padding-top:8px; padding-left:8px; text-align:left; width: 100%; font-family:verdana,sans-serif; font-size: 11px;}
+* html .jqmEF {width:238px; position: absolute;top: expression((document.documentElement.scrollTop || document.body.scrollTop) + Math.round(17 * (document.documentElement.offsetHeight || document.body.clientHeight) / 100) + 'px');}
+.jqmOverlay { background-color: #262626; }
+a.jqmClose, .jqmClose { color: #ffffff;}
+.groovybutton {background-image:url(http://softwarecommunity.intel.com/videos/images/back03.gif);border:1px solid #DDDDDD;font-family:Verdana,sans-serif;font-size:11px;height:20px;}
+</style>
+<script language="javascript" type="text/javascript" src="StackOverflow_files/ISNCommentAPI.js"></script><style>
+.CB_SharedStyle {font-size:11px; font-family:Verdana;}
+.CB_LMargin {margin:5px;}
+.CB_TMargin {padding-top:5px;}
+#CB_Outter {width:300px;border:solid 1px #c0c0c0;}
+#CB_head {font-weight:bold;padding-bottom:5px;}
+.CB_MsgLenError {margin:0px;font-size:10px;color:red;}
+.CB_Buttons {text-align:right; padding-right:5px;}
+.CB_EmailNotDisplayed {font-size:10px;color:666666;}
+.CB_ProtectedByMsg {font-size:10px;color:666666;}
+.CB_CommentBox {width:275px;font-size:11px;font-family:Verdana}
+.CB_TextBox {width:275px;font-size:11px;font-family:Verdana}
+</style>
+<script language="javascript"><!--
+      function confirmLogout() {
+       if (confirm("Are you sure you want to logout of Intel(R) Software Network?")) {
+        var d = new Date();
+        document.cookie = "ISNUSER=;expires=" + d.toGMTString() + ";domain=.intel.com;path=/" + ";";
+        document.cookie = "UserRoles=;expires=" + d.toGMTString() + ";domain=.intel.com;path=/" + ";";
+        document.location = "http://softwarecommunity.intel.com/isn/Community/en-US/logout.aspx?ReturnUrl=/isn/Community/en-US/";
+       }
+      }
+      // -->
+      </script><!--/block_head-->
+<script language="JavaScript" src="StackOverflow_files/collapse_expand_single_item.js"></script>
+<style type="text/css">object{visibility:hidden;}</style><link rel="stylesheet" type="text/css" href="StackOverflow_files/sitewide_header_eng.css"><style type="text/css">object{visibility:visible;}</style><script src="StackOverflow_files/CommonServices_002.htm"></script><script src="StackOverflow_files/CommonServices_005.htm"></script><script src="StackOverflow_files/CommonServices.htm"></script><script src="StackOverflow_files/CommonServices_003.htm"></script><script src="StackOverflow_files/CommonServices.htm"></script><script src="StackOverflow_files/CommonServices_003.htm"></script><script src="StackOverflow_files/CommonServices.htm"></script><script src="StackOverflow_files/CommonServices_004.htm"></script><script src="StackOverflow_files/CommonServices_003.htm"></script><script src="StackOverflow_files/CommonServices.htm"></script><script src="StackOverflow_files/CommonServices_003.htm"></script></head><body><div class="jqmEF jqmID2" id="efb2">	<div class="EFin">	<table class="FTab" cellpadding="5" cellspacing="0">	<tbody><tr><td class="FHead" align="left"><b>Email This Page</b>&nbsp;&nbsp;</td><td class="FHead" align="right"><a href="#" class="jqmClose" style="color: rgb(255, 255, 255);">Close</a></td></tr>	<tr><td colspan="2" class="FBody">		<div style="display: none;" id="EF_LenError" class="EF_MsgLenError">(Message too long please shorten)</div>		<div>Email
+this page to your friend. Complete the form below and click on the
+"send" button. All fields are required to help prevent spam.</div><br><br>		<div>Recipients email address:</div><input size="40" maxlength="255" id="eafrecipentemail" type="text"><br><br>		<div>Your email address:</div><input size="40" maxlength="255" id="eafemail" type="text"><br><br>		<div>Subject:</div><input size="40" maxlength="255" id="eafsubject" type="text"><br><br>		<div>Message:</div><textarea id="eafmessage" rows="6"></textarea>		<br><input class="groovybutton" onclick="javascript:processEAF();" value="Submit" type="button"><input id="eafurl" type="hidden">	</td></tr><tr>	</tr></tbody></table>	</div></div><div class="jqmFW jqmID1" id="fb2">	<div class="FWin">	<table class="FTab" cellpadding="5" cellspacing="0">	<tbody><tr><td class="FHead" align="left"><b>Feedback For This Page</b>&nbsp;&nbsp;</td><td class="FHead" align="right"><a href="#" class="jqmClose" style="color: rgb(255, 255, 255);">Close</a></td></tr>	<tr><td colspan="2" class="FBody">		<div style="display: none;" id="FB_LenError" class="FB_MsgLenError">(Feedback too long please shorten)</div>		<div>Your email address:</div><input size="40" maxlength="255" id="femail" type="text"><input id="ftitle" type="hidden"><input id="furl" type="hidden"><br><br>		<div>Message:</div><textarea id="fmessage" rows="6"></textarea>		<br><input class="groovybutton" onclick="javascript:processFeedback();" value="Submit" type="button">	</td></tr><tr>	</tr></tbody></table>	</div></div>
+	<script language="javascript">
+	function isPPRole(user,ispp)
+	{
+		$(".ispp").each(function (i) {
+			if ( $(this).attr("usr") == user && ispp == "1")
+				$(this).attr("title","Intel Software Partner Program Member").css({"font-size":"10px","color":"#ffd700","display":"inline"}).html("&#9733;");
+		});
+	}
+	$(function(){
+		setTimeout("loadISPP()",500);
+	});
+
+	function loadISPP()
+	{
+		$(".ispp").each(function (i) {
+			$(this).html("");
+			$.ajax({
+				type: "GET",
+				async: true,
+				cache: true,
+				url: "http://fm1cedar.cps.intel.com/isn/login/CommonServices.ashx?F=CheckIfUserHasRole&P1=" + $(this).attr("usr") + "&P2=PP_MBR",
+				dataType: "script"
+			});			
+			//getData("http://fm1cedar.cps.intel.com/isn/login/CommonServices.ashx?F=CheckIfUserHasRole&P1=" + $(this).attr("usr") + "&P2=PP_MBR"); //IDS_MBR
+		});
+	}
+	</script>
+		<!--block_header--><a name="IntelTop"></a>
+<!-- SW Header V2.0 -->
+<script language="JavaScript">
+	var sLanguage = 'eng';
+</script>
+
+<!-- Corp EMEA Navigation Content - GEOs: Substitute menus.js with your localized version of  menus.js -->
+<script type="text/javascript" language="JavaScript" src="StackOverflow_files/common.js"></script>
+<script language="javascript" type="text/javascript" src="StackOverflow_files/dhtml.js"></script>
+<script language="javascript" type="text/javascript" src="StackOverflow_files/menus.js"></script>
+<script language="JavaScript" type="text/JavaScript" src="StackOverflow_files/flashdetect.js"></script>
+
+<!-- /Corp EMEA Navigation Content - GEOs: Substitute menus.js with your localized version of  menus.js -->
+
+	
+
+
+
+
+
+<!-- header -->  
+      <div id="header">
+        <div class="header-logo"><a href="http://www.intel.com/index.htm?iid=CorporateV3+Header_1_Logo"><img src="StackOverflow_files/hdr-txt-logo.gif" class="header-image-logo" alt="Intel® Leap ahead™" border="0" height="51" width="127"></a></div>
+        <div class="header-topbar">
+          <div class="header-locale">
+            <span class="header-locale-name">United States
+											</span><img src="StackOverflow_files/hdr-globe-map.gif" class="header-locale-globe" alt="Worldwide" border="0" height="32" width="31">
+          </div>
+          <ul class="header-topnav">
+            <li class="header-topnav-first" style="width: 106px;"><a href="http://www.intel.com/intel/nav/locator.htm?iid=CorporateV3+Header_1_Worldwide">Worldwide</a></li>
+            <li class="header-topnav-second"><a href="http://www.intel.com/intel/index.htm?iid=CorporateV3+Header_1_About">About Intel</a></li>
+            <li class="header-topnav-third"><a href="http://www.intel.com/pressroom/index.htm?iid=CorporateV3+Header_1_Press">Press Room</a></li>
+            <li class="header-topnav-fourth"><a href="http://www.intel.com/feedback.htm?iid=CorporateV3+Header_1_Contact">Contact Us</a></li>
+          </ul>
+          <div class="header-search">
+            <form action="http://mysearch.intel.com/corporate/default.aspx" id="FORMSearchHeader" method="get" name="FORMSearchHeader">
+              <input id="culture" name="culture" value="en-US" type="hidden">
+              <label for="q" class="header-search-label">Search</label><input id="q" name="q" size="10" maxlength="255" class="header-searchbox" type="text">
+             <div class="header-searchbutton"><input name="searchsubmit" src="StackOverflow_files/hdr-txt-btn-search.jpg" alt="Search" border="0" type="image"></div>
+            </form>
+          </div>
+          <div class="header-dropdown">
+            <ul class="header-navbar" style="padding: 22px 0px 0px 70px;">
+              <li><a href="http://www.intel.com/products/index.htm?iid=CorporateV3+Header_2_Product_Head" onmouseover="startShow('0'); clearbg();" onmouseout="startHide(); changeStatus('');"><img src="StackOverflow_files/nav0.gif" name="nav0" id="nav0" alt="Products" border="0" height="19" width="57"></a></li>
+              <li><a href="http://www.intel.com/technology/index.htm?iid=CorporateV3+Header_2_Technology_Head" onmouseover="startShow('1'); clearbg();" onmouseout="startHide(); changeStatus('');"><img src="StackOverflow_files/nav1.gif" name="nav1" id="nav1" alt="Technology and Research" border="0" height="19" width="146"></a></li>
+              <li><a href="http://www.intel.com/resources/index.htm?iid=CorporateV3+Header_2_Resource_Head" onmouseover="startShow('2'); clearbg();" onmouseout="startHide(); changeStatus('');"><img src="StackOverflow_files/nav2.gif" name="nav2" id="nav2" alt="Resource Centers" border="0" height="19" width="112"></a></li>
+              <li><a href="http://www.intel.com/support/index.htm?iid=CorporateV3+Header_2_Support_Head" onmouseover="startShow('3'); clearbg();" onmouseout="startHide(); changeStatus('');"><img src="StackOverflow_files/nav3.gif" name="nav3" id="nav3" alt="Support and Downloads" border="0" height="19" width="138"></a></li>
+              <li><a href="http://www.intel.com/buy/index.htm"><img src="StackOverflow_files/nav4.gif" name="nav4" id="nav4" alt="Where to Buy" border="0" height="19" width="82"></a></li>
+            </ul>
+          </div>
+        </div>        
+      </div>
+      <iframe src="StackOverflow_files/miss.htm" id="iMask" class="iMask"></iframe>
+      <script language="javascript" type="text/javascript"><!--
+      writeMenus();
+      //-->
+      </script><div id="menu0" style="position: absolute; z-index: 100; top: 87px; left: 221px; visibility: hidden;">
+<div id="menuitem0" onmouseover="startShow('0'); changebg('menuitem0'); changeStatus('http://www.intel.com/products/processor/index.htm?iid=CorporateV3+Header_2_Product_Proc');" onmouseout="startHide(); changeStatus('');" onclick="goTo('http://www.intel.com/products/processor/index.htm?iid=CorporateV3+Header_2_Product_Proc');" style="border-top: 1px solid rgb(198, 198, 198); border-left: 1px solid rgb(198, 198, 198); border-right: 1px solid rgb(85, 85, 85); width: 180px; text-align: left; background-color: rgb(255, 255, 255); cursor: pointer;"><div class="dhtmlmenuitem"><a href="http://www.intel.com/products/processor/index.htm?iid=CorporateV3+Header_2_Product_Proc" class="dhtmlmenulink">Processors</a></div><div class="dhtmlmenuitem-hr"> </div></div><div id="menuitem1" onmouseover="startShow('0'); changebg('menuitem1'); changeStatus('http://www.intel.com/products/chipsets/index.htm?iid=CorporateV3+Header_2_Product_Chip');" onmouseout="startHide(); changeStatus('');" onclick="goTo('http://www.intel.com/products/chipsets/index.htm?iid=CorporateV3+Header_2_Product_Chip');" style="border-left: 1px solid rgb(198, 198, 198); border-right: 1px solid rgb(85, 85, 85); width: 180px; text-align: left; background-color: rgb(255, 255, 255); cursor: pointer;"><div class="dhtmlmenuitem"><a href="http://www.intel.com/products/chipsets/index.htm?iid=CorporateV3+Header_2_Product_Chip" class="dhtmlmenulink">Chipsets</a></div><div class="dhtmlmenuitem-hr"> </div></div><div id="menuitem2" onmouseover="startShow('0'); changebg('menuitem2'); changeStatus('http://www.intel.com/products/motherboard/index.htm?iid=CorporateV3+Header_2_Product_MB');" onmouseout="startHide(); changeStatus('');" onclick="goTo('http://www.intel.com/products/motherboard/index.htm?iid=CorporateV3+Header_2_Product_MB');" style="border-left: 1px solid rgb(198, 198, 198); border-right: 1px solid rgb(85, 85, 85); width: 180px; text-align: left; background-color: rgb(255, 255, 255); cursor: pointer;"><div class="dhtmlmenuitem"><a href="http://www.intel.com/products/motherboard/index.htm?iid=CorporateV3+Header_2_Product_MB" class="dhtmlmenulink">Motherboards</a></div><div class="dhtmlmenuitem-hr"> </div></div><div id="menuitem3" onmouseover="startShow('0'); changebg('menuitem3'); changeStatus('http://www.intel.com/products/desktop/index.htm?iid=CorporateV3+Header_2_Product_Desk');" onmouseout="startHide(); changeStatus('');" onclick="goTo('http://www.intel.com/products/desktop/index.htm?iid=CorporateV3+Header_2_Product_Desk');" style="border-left: 1px solid rgb(198, 198, 198); border-right: 1px solid rgb(85, 85, 85); width: 180px; text-align: left; background-color: rgb(255, 255, 255); cursor: pointer;"><div class="dhtmlmenuitem"><a href="http://www.intel.com/products/desktop/index.htm?iid=CorporateV3+Header_2_Product_Desk" class="dhtmlmenulink">Desktop</a></div><div class="dhtmlmenuitem-hr"> </div></div><div id="menuitem4" onmouseover="startShow('0'); changebg('menuitem4'); changeStatus('http://www.intel.com/products/laptop/index.htm?iid=CorporateV3+Header_2_Product_Lap');" onmouseout="startHide(); changeStatus('');" onclick="goTo('http://www.intel.com/products/laptop/index.htm?iid=CorporateV3+Header_2_Product_Lap');" style="border-left: 1px solid rgb(198, 198, 198); border-right: 1px solid rgb(85, 85, 85); width: 180px; text-align: left; background-color: rgb(255, 255, 255); cursor: pointer;"><div class="dhtmlmenuitem"><a href="http://www.intel.com/products/laptop/index.htm?iid=CorporateV3+Header_2_Product_Lap" class="dhtmlmenulink">Notebook</a></div><div class="dhtmlmenuitem-hr"> </div></div><div id="menuitem5" onmouseover="startShow('0'); changebg('menuitem5'); changeStatus('http://www.intel.com/products/server/index.htm?iid=CorporateV3+Header_2_Product_SvrWkn');" onmouseout="startHide(); changeStatus('');" onclick="goTo('http://www.intel.com/products/server/index.htm?iid=CorporateV3+Header_2_Product_SvrWkn');" style="border-left: 1px solid rgb(198, 198, 198); border-right: 1px solid rgb(85, 85, 85); width: 180px; text-align: left; background-color: rgb(255, 255, 255); cursor: pointer;"><div class="dhtmlmenuitem"><a href="http://www.intel.com/products/server/index.htm?iid=CorporateV3+Header_2_Product_SvrWkn" class="dhtmlmenulink">Server/Workstation</a></div><div class="dhtmlmenuitem-hr"> </div></div><div id="menuitem6" onmouseover="startShow('0'); changebg('menuitem6'); changeStatus('http://www.intel.com/design/embedded/index.htm?iid=CorporateV3+Header_2_Product_Embed');" onmouseout="startHide(); changeStatus('');" onclick="goTo('http://www.intel.com/design/embedded/index.htm?iid=CorporateV3+Header_2_Product_Embed');" style="border-left: 1px solid rgb(198, 198, 198); border-right: 1px solid rgb(85, 85, 85); width: 180px; text-align: left; background-color: rgb(255, 255, 255); cursor: pointer;"><div class="dhtmlmenuitem"><a href="http://www.intel.com/design/embedded/index.htm?iid=CorporateV3+Header_2_Product_Embed" class="dhtmlmenulink">Embedded</a></div><div class="dhtmlmenuitem-hr"> </div></div><div id="menuitem7" onmouseover="startShow('0'); changebg('menuitem7'); changeStatus('http://www.intel.com/netcomms/index.htm?iid=CorporateV3+Header_2_Product_NetComm');" onmouseout="startHide(); changeStatus('');" onclick="goTo('http://www.intel.com/netcomms/index.htm?iid=CorporateV3+Header_2_Product_NetComm');" style="border-left: 1px solid rgb(198, 198, 198); border-right: 1px solid rgb(85, 85, 85); width: 180px; text-align: left; background-color: rgb(255, 255, 255); cursor: pointer;"><div class="dhtmlmenuitem"><a href="http://www.intel.com/netcomms/index.htm?iid=CorporateV3+Header_2_Product_NetComm" class="dhtmlmenulink">Networking &amp; Communications</a></div><div class="dhtmlmenuitem-hr"> </div></div><div id="menuitem8" onmouseover="startShow('0'); changebg('menuitem8'); changeStatus('http://www.intel.com/cd/software/main/asmo-na/eng/294191.htm?iid=CorporateV3+Header_2_Product_SW');" onmouseout="startHide(); changeStatus('');" onclick="goTo('http://www.intel.com/cd/software/main/asmo-na/eng/294191.htm?iid=CorporateV3+Header_2_Product_SW');" style="border-left: 1px solid rgb(198, 198, 198); border-right: 1px solid rgb(85, 85, 85); width: 180px; text-align: left; background-color: rgb(255, 255, 255); cursor: pointer;"><div class="dhtmlmenuitem"><a href="http://www.intel.com/cd/software/main/asmo-na/eng/294191.htm?iid=CorporateV3+Header_2_Product_SW" class="dhtmlmenulink">Software</a></div><div class="dhtmlmenuitem-hr"> </div></div><div id="menuitem9" onmouseover="startShow('0'); changebg('menuitem9'); changeStatus('http://www.intel.com/products/sitemap.htm?iid=CorporateV3+Header_2_Product_Sitemap');" onmouseout="startHide(); changeStatus('');" onclick="goTo('http://www.intel.com/products/sitemap.htm?iid=CorporateV3+Header_2_Product_Sitemap');" style="border-left: 1px solid rgb(198, 198, 198); border-right: 1px solid rgb(85, 85, 85); border-bottom: 1px solid rgb(85, 85, 85); width: 180px; text-align: left; background-color: rgb(255, 255, 255); cursor: pointer;"><div class="dhtmlmenuitem"><a href="http://www.intel.com/products/sitemap.htm?iid=CorporateV3+Header_2_Product_Sitemap" class="dhtmlmenulink">More Products</a></div></div></div>
+<div id="menu1" style="position: absolute; z-index: 100; top: 87px; left: 278px; visibility: hidden;">
+<div id="menuitem10" onmouseover="startShow('1'); changebg('menuitem10'); changeStatus('http://www.intel.com/technology/architecture-silicon/index.htm?iid=CorporateV3+Header_2_Technology_Architecture');" onmouseout="startHide(); changeStatus('');" onclick="goTo('http://www.intel.com/technology/architecture-silicon/index.htm?iid=CorporateV3+Header_2_Technology_Architecture');" style="border-top: 1px solid rgb(198, 198, 198); border-left: 1px solid rgb(198, 198, 198); border-right: 1px solid rgb(85, 85, 85); width: 180px; text-align: left; background-color: rgb(255, 255, 255); cursor: pointer;"><div class="dhtmlmenuitem"><a href="http://www.intel.com/technology/architecture-silicon/index.htm?iid=CorporateV3+Header_2_Technology_Architecture" class="dhtmlmenulink">Architecture</a></div><div class="dhtmlmenuitem-hr"> </div></div><div id="menuitem11" onmouseover="startShow('1'); changebg('menuitem11'); changeStatus('http://www.intel.com/platforms/index.htm?iid=CorporateV3+Header_2_Technology_Platform');" onmouseout="startHide(); changeStatus('');" onclick="goTo('http://www.intel.com/platforms/index.htm?iid=CorporateV3+Header_2_Technology_Platform');" style="border-left: 1px solid rgb(198, 198, 198); border-right: 1px solid rgb(85, 85, 85); width: 180px; text-align: left; background-color: rgb(255, 255, 255); cursor: pointer;"><div class="dhtmlmenuitem"><a href="http://www.intel.com/platforms/index.htm?iid=CorporateV3+Header_2_Technology_Platform" class="dhtmlmenulink">Platform Benefits</a></div><div class="dhtmlmenuitem-hr"> </div></div><div id="menuitem12" onmouseover="startShow('1'); changebg('menuitem12'); changeStatus('http://www.intel.com/research/index.htm?iid=CorporateV3+Header_2_Technology_Research');" onmouseout="startHide(); changeStatus('');" onclick="goTo('http://www.intel.com/research/index.htm?iid=CorporateV3+Header_2_Technology_Research');" style="border-left: 1px solid rgb(198, 198, 198); border-right: 1px solid rgb(85, 85, 85); width: 180px; text-align: left; background-color: rgb(255, 255, 255); cursor: pointer;"><div class="dhtmlmenuitem"><a href="http://www.intel.com/research/index.htm?iid=CorporateV3+Header_2_Technology_Research" class="dhtmlmenulink">Research</a></div><div class="dhtmlmenuitem-hr"> </div></div><div id="menuitem13" onmouseover="startShow('1'); changebg('menuitem13'); changeStatus('http://www.intel.com/technology/silicon/index.htm?iid=CorporateV3+Header_2_Technology_Silicon');" onmouseout="startHide(); changeStatus('');" onclick="goTo('http://www.intel.com/technology/silicon/index.htm?iid=CorporateV3+Header_2_Technology_Silicon');" style="border-left: 1px solid rgb(198, 198, 198); border-right: 1px solid rgb(85, 85, 85); width: 180px; text-align: left; background-color: rgb(255, 255, 255); cursor: pointer;"><div class="dhtmlmenuitem"><a href="http://www.intel.com/technology/silicon/index.htm?iid=CorporateV3+Header_2_Technology_Silicon" class="dhtmlmenulink">Silicon</a></div><div class="dhtmlmenuitem-hr"> </div></div><div id="menuitem14" onmouseover="startShow('1'); changebg('menuitem14'); changeStatus('http://www.intel.com/technology/applications/index.htm?iid=CorporateV3+Header_2_Technology_SWApps');" onmouseout="startHide(); changeStatus('');" onclick="goTo('http://www.intel.com/technology/applications/index.htm?iid=CorporateV3+Header_2_Technology_SWApps');" style="border-left: 1px solid rgb(198, 198, 198); border-right: 1px solid rgb(85, 85, 85); width: 180px; text-align: left; background-color: rgb(255, 255, 255); cursor: pointer;"><div class="dhtmlmenuitem"><a href="http://www.intel.com/technology/applications/index.htm?iid=CorporateV3+Header_2_Technology_SWApps" class="dhtmlmenulink">Software &amp; Applications</a></div><div class="dhtmlmenuitem-hr"> </div></div><div id="menuitem15" onmouseover="startShow('1'); changebg('menuitem15'); changeStatus('http://www.intel.com/standards/index.htm?iid=CorporateV3+Header_2_Technology_Standards');" onmouseout="startHide(); changeStatus('');" onclick="goTo('http://www.intel.com/standards/index.htm?iid=CorporateV3+Header_2_Technology_Standards');" style="border-left: 1px solid rgb(198, 198, 198); border-right: 1px solid rgb(85, 85, 85); border-bottom: 1px solid rgb(85, 85, 85); width: 180px; text-align: left; background-color: rgb(255, 255, 255); cursor: pointer;"><div class="dhtmlmenuitem"><a href="http://www.intel.com/standards/index.htm?iid=CorporateV3+Header_2_Technology_Standards" class="dhtmlmenulink">Standards &amp; Initiatives</a></div></div></div>
+<div id="menu2" style="position: absolute; z-index: 100; top: 87px; left: 424px; visibility: hidden;">
+<div id="menuitem16" onmouseover="startShow('2'); changebg('menuitem16'); changeStatus('http://www.intel.com/personal/index.htm?iid=CorporateV3+Header_2_Resource_Personal');" onmouseout="startHide(); changeStatus('');" onclick="goTo('http://www.intel.com/personal/index.htm?iid=CorporateV3+Header_2_Resource_Personal');" style="border-top: 1px solid rgb(198, 198, 198); border-left: 1px solid rgb(198, 198, 198); border-right: 1px solid rgb(85, 85, 85); width: 180px; text-align: left; background-color: rgb(255, 255, 255); cursor: pointer;"><div class="dhtmlmenuitem"><a href="http://www.intel.com/personal/index.htm?iid=CorporateV3+Header_2_Resource_Personal" class="dhtmlmenulink">Personal Computing</a></div><div class="dhtmlmenuitem-hr"> </div></div><div id="menuitem17" onmouseover="startShow('2'); changebg('menuitem17'); changeStatus('http://www.intel.com/business/index.htm?iid=CorporateV3+Header_2_Resource_Business');" onmouseout="startHide(); changeStatus('');" onclick="goTo('http://www.intel.com/business/index.htm?iid=CorporateV3+Header_2_Resource_Business');" style="border-left: 1px solid rgb(198, 198, 198); border-right: 1px solid rgb(85, 85, 85); width: 180px; text-align: left; background-color: rgb(255, 255, 255); cursor: pointer;"><div class="dhtmlmenuitem"><a href="http://www.intel.com/business/index.htm?iid=CorporateV3+Header_2_Resource_Business" class="dhtmlmenulink">Business/Enterprise</a></div><div class="dhtmlmenuitem-hr"> </div></div><div id="menuitem18" onmouseover="startShow('2'); changebg('menuitem18'); changeStatus('http://www.intel.com/design/index.htm?iid=CorporateV3+Header_2_Resource_HardwareDesign');" onmouseout="startHide(); changeStatus('');" onclick="goTo('http://www.intel.com/design/index.htm?iid=CorporateV3+Header_2_Resource_HardwareDesign');" style="border-left: 1px solid rgb(198, 198, 198); border-right: 1px solid rgb(85, 85, 85); width: 180px; text-align: left; background-color: rgb(255, 255, 255); cursor: pointer;"><div class="dhtmlmenuitem"><a href="http://www.intel.com/design/index.htm?iid=CorporateV3+Header_2_Resource_HardwareDesign" class="dhtmlmenulink">Hardware Design</a></div><div class="dhtmlmenuitem-hr"> </div></div><div id="menuitem19" onmouseover="startShow('2'); changebg('menuitem19'); changeStatus('http://www.intel.com/cd/ids/developer/asmo-na/eng/index.htm?iid=CorporateV3+Header_2_Resource_Software');" onmouseout="startHide(); changeStatus('');" onclick="goTo('http://www.intel.com/cd/ids/developer/asmo-na/eng/index.htm?iid=CorporateV3+Header_2_Resource_Software');" style="border-left: 1px solid rgb(198, 198, 198); border-right: 1px solid rgb(85, 85, 85); width: 180px; text-align: left; background-color: rgb(255, 255, 255); cursor: pointer;"><div class="dhtmlmenuitem"><a href="http://www.intel.com/cd/ids/developer/asmo-na/eng/index.htm?iid=CorporateV3+Header_2_Resource_Software" class="dhtmlmenulink">Software Network</a></div><div class="dhtmlmenuitem-hr"> </div></div><div id="menuitem20" onmouseover="startShow('2'); changebg('menuitem20'); changeStatus('http://www.intel.com/cd/channel/reseller/asmo-na/eng/index.htm?iid=CorporateV3+Header_2_Resource_Reseller');" onmouseout="startHide(); changeStatus('');" onclick="goTo('http://www.intel.com/cd/channel/reseller/asmo-na/eng/index.htm?iid=CorporateV3+Header_2_Resource_Reseller');" style="border-left: 1px solid rgb(198, 198, 198); border-right: 1px solid rgb(85, 85, 85); border-bottom: 1px solid rgb(85, 85, 85); width: 180px; text-align: left; background-color: rgb(255, 255, 255); cursor: pointer;"><div class="dhtmlmenuitem"><a href="http://www.intel.com/cd/channel/reseller/asmo-na/eng/index.htm?iid=CorporateV3+Header_2_Resource_Reseller" class="dhtmlmenulink">Reseller Center</a></div></div></div>
+<div id="menu3" style="position: absolute; z-index: 100; top: 87px; left: 492px; visibility: hidden;">
+<div id="menuitem21" onmouseover="startShow('3'); changebg('menuitem21'); changeStatus('http://downloadfinder.intel.com/scripts-df-external/Support_Intel.aspx?iid=CorporateV3+Header_2_Support_Download');" onmouseout="startHide(); changeStatus('');" onclick="goTo('http://downloadfinder.intel.com/scripts-df-external/Support_Intel.aspx?iid=CorporateV3+Header_2_Support_Download');" style="border-top: 1px solid rgb(198, 198, 198); border-left: 1px solid rgb(198, 198, 198); border-right: 1px solid rgb(85, 85, 85); width: 180px; text-align: left; background-color: rgb(255, 255, 255); cursor: pointer;"><div class="dhtmlmenuitem"><a href="http://downloadfinder.intel.com/scripts-df-external/Support_Intel.aspx?iid=CorporateV3+Header_2_Support_Download" class="dhtmlmenulink">Download Center</a></div><div class="dhtmlmenuitem-hr"> </div></div><div id="menuitem22" onmouseover="startShow('3'); changebg('menuitem22'); changeStatus('http://www.intel.com/support/product.htm?iid=CorporateV3+Header_2_Support_Product');" onmouseout="startHide(); changeStatus('');" onclick="goTo('http://www.intel.com/support/product.htm?iid=CorporateV3+Header_2_Support_Product');" style="border-left: 1px solid rgb(198, 198, 198); border-right: 1px solid rgb(85, 85, 85); width: 180px; text-align: left; background-color: rgb(255, 255, 255); cursor: pointer;"><div class="dhtmlmenuitem"><a href="http://www.intel.com/support/product.htm?iid=CorporateV3+Header_2_Support_Product" class="dhtmlmenulink">Product Support</a></div><div class="dhtmlmenuitem-hr"> </div></div><div id="menuitem23" onmouseover="startShow('3'); changebg('menuitem23'); changeStatus('http://www.intel.com/services/index.htm?iid=CorporateV3+Header_2_Support_Support');" onmouseout="startHide(); changeStatus('');" onclick="goTo('http://www.intel.com/services/index.htm?iid=CorporateV3+Header_2_Support_Support');" style="border-left: 1px solid rgb(198, 198, 198); border-right: 1px solid rgb(85, 85, 85); width: 180px; text-align: left; background-color: rgb(255, 255, 255); cursor: pointer;"><div class="dhtmlmenuitem"><a href="http://www.intel.com/services/index.htm?iid=CorporateV3+Header_2_Support_Support" class="dhtmlmenulink">Support Services</a></div><div class="dhtmlmenuitem-hr"> </div></div><div id="menuitem24" onmouseover="startShow('3'); changebg('menuitem24'); changeStatus('http://www.intel.com/support/feedback.htm?iid=CorporateV3+Header_2_Support_Contact');" onmouseout="startHide(); changeStatus('');" onclick="goTo('http://www.intel.com/support/feedback.htm?iid=CorporateV3+Header_2_Support_Contact');" style="border-left: 1px solid rgb(198, 198, 198); border-right: 1px solid rgb(85, 85, 85); width: 180px; text-align: left; background-color: rgb(255, 255, 255); cursor: pointer;"><div class="dhtmlmenuitem"><a href="http://www.intel.com/support/feedback.htm?iid=CorporateV3+Header_2_Support_Contact" class="dhtmlmenulink">Contact Support</a></div><div class="dhtmlmenuitem-hr"> </div></div><div id="menuitem25" onmouseover="startShow('3'); changebg('menuitem25'); changeStatus('http://mysearch.intel.com/support/default.aspx?iid=CorporateV3+Header_2_Support_Search');" onmouseout="startHide(); changeStatus('');" onclick="goTo('http://mysearch.intel.com/support/default.aspx?iid=CorporateV3+Header_2_Support_Search');" style="border-left: 1px solid rgb(198, 198, 198); border-right: 1px solid rgb(85, 85, 85); border-bottom: 1px solid rgb(85, 85, 85); width: 180px; text-align: left; background-color: rgb(255, 255, 255); cursor: pointer;"><div class="dhtmlmenuitem"><a href="http://mysearch.intel.com/support/default.aspx?iid=CorporateV3+Header_2_Support_Search" class="dhtmlmenulink">Search Support</a></div></div></div>
+
+      <div>
+        <a name="top" id="top"></a>
+      </div>
+      <!-- /header -->
+	  
+<script language="JavaScript" src="StackOverflow_files/onsite.js"></script><div class="headerLine"></div><div class="bodyContainer"><div class="bodyContainer2"><!--/block_header-->
+<table border="0" cellpadding="0" cellspacing="0" width="760">
+<tbody><tr>
+<td class="leftNav" style="display: block;" id="first">
+
+		<!--block_lhn_sitename--><img alt="" src="StackOverflow_files/spacer.gif" border="0" height="10" width="177"><br><div class="siteIdentifier"><a href="http://softwarecommunity.intel.com/isn/home/">Software Home</a></div><!--/block_lhn_sitename-->
+<script language="javascript">
+ function setCookieAndJump( selectedvalue)
+ {
+  if (selectedvalue == "#")
+   return;
+  createCookie( "SelectedLanguage", selectedvalue);
+  window.location.href="/isn/Community/" + selectedvalue;
+ }
+ 
+ function createCookie(name,value,days)
+ {
+  var expires = "";
+  if (days)
+  {
+   var date = new Date();
+   date.setTime(date.getTime()+(days*24*60*60*1000));
+   expires = "; expires="+date.toGMTString();
+  }
+  document.cookie = name+"="+value+expires+";domain=.intel.com;path=/";
+ }
+
+ function readCookie(name)
+ {
+  var nameEQ = name + "=";
+  var ca = document.cookie.split(';');
+  for(var i=0;i < ca.length;i++)
+  {
+   var c = ca[i];
+   while (c.charAt(0)==' ') c = c.substring(1,c.length);
+   if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+  }
+  return null;
+ }
+
+ function eraseCookie(name)
+ {
+  createCookie(name,"",-1);
+ }
+ 
+</script>
+<br><span class="leftNav"><ul><li class="leftNavHeading">Select a language</li>
+<li><select name="lang" onchange="setCookieAndJump(this.options[this.selectedIndex].value);">
+<option value="#">Please select</option>
+<option value="en-US" selected="selected">English</option>
+<option value="zh-CN">简体中文</option>
+</select></li></ul></span>
+<!--block_lhn_categorylist--><ul><li class="leftNavHeading">Tools &amp; Resources</li><li><a href="http://www.intel.com/cd/ids/developer/asmo-na/eng/downloads/index.htm">Code &amp; Downloads</a></li><li><a href="http://www.intel.com/cd/software/products/asmo-na/eng/index.htm">Software Tools</a></li><li><a href="http://www.intel.com/cd/ids/developer/asmo-na/eng/dc/index.htm">Resource Center</a></li><li><a href="http://www.intel.com/opensource/">Open Source</a></li><li><a href="http://www.intel.com/cd/ids/developer/asmo-na/eng/296614.htm">Podcasts</a></li><li><a href="http://www.intel.com/cd/ids/developer/asmo-na/eng/training/index.htm">Training</a></li><li><a href="http://www.intel.com/cd/ids/developer/asmo-na/eng/support/index.htm">Support</a></li><li><a href="http://www.intel.com/intelpress/" target="_blank">Intel Press Technical Books</a></li><li><a href="http://whatif.intel.com/">What If Software</a></li></ul><ul><li class="leftNavHeading">Communities</li><li><a href="http://www.intel.com/software/mobile/">Mobile Software</a></li><li><a href="http://www.intel.com/software/manageability/">Manageability</a></li><li><a href="http://www.intel.com/software/mcdeveloper/">Threading for Multi-Core</a></li><li><a href="http://www.intel.com/software/graphics/">Graphics</a></li><li><a href="http://www.intel.com/software/virtualization/">Virtualization</a></li></ul><ul><li class="leftNavHeading">Discussion &amp; Opinion</li><li><a href="http://softwarecommunity.intel.com/wiki">Knowledge Base</a></li><li><a href="http://softwarecommunity.intel.com/isn/Community/en-us/Forums/">Forums</a></li><li><a href="http://www.intel.com/software/blogs/">Blogs</a></li><li><a href="http://softwarecommunity.intel.com/ISN/ISNVideoRepository/VideoRepository.aspx">Videos</a></li><li><a href="http://coolsw.intel.com/">Cool Software</a></li><li><a href="http://softwarecommunity.intel.com/articles/eng/1220.htm">Events - Meet Us!</a></li></ul><ul><li class="leftNavHeading">Programs</li><li><a href="http://www.intel.com/partner/">Intel® Software Partner Program</a></li><li><a href="http://www.intel.com/software/insight/">Intel® Software Insight Magazine</a></li><li><a href="http://www.intel.com/cd/ids/developer/asmo-na/eng/solutions/index.htm">Professional Services</a></li><li><a href="http://www.intel.com/software/ra/">Intel® Remote Access Service</a></li></ul><!--/block_lhn_categorylist-->
+<!--block_lhn_loginbox_loggedout--><ul><li class="leftNavHeading">Registration</li><li><a href="http://softwarecommunity.intel.com/isn/Community/en-US/login.aspx?ReturnUrl=--isn--Community--en-US--forums--thread--30233858.aspx">Login</a></li><li><a href="https://fm1cedar.cps.intel.com/isn/Registration/isnRegpage.aspx?TARGET=http%3a%2f%2fsoftwarecommunity.intel.com%2fisn%2fCommunity%2fen-US%2flogin.aspx%3fReturnUrl%3d--isn--Community--en-US--">Register</a></li></ul><!--/block_lhn_loginbox_loggedout-->
+<br><br></td>
+<td valign="top">
+
+
+				<div id="overDiv" style="position: absolute; z-index: 1;"></div>
+
+				<form name="__aspnetForm" method="post" action="/isn/Community/en-US/forums/thread/30233858.aspx" id="__aspnetForm">
+<input name="__EVENTTARGET" value="" type="hidden">
+<input name="__EVENTARGUMENT" value="" type="hidden">
+<input name="__VIEWSTATE" value="dDwtNTQ0NjM5NjcxOztsPF9jdGwwOl9jdGwxOmJoY3I6dDpfOlRpdGxlQmFyU2VhcmNoVGV4dDs+PtyjjzjziHzmMy6ygx7kxrcknKpM" type="hidden">
+
+<script language="javascript" type="text/javascript">
+<!--
+	function __doPostBack(eventTarget, eventArgument) {
+		var theform;
+		if (window.navigator.appName.toLowerCase().indexOf("microsoft") > -1) {
+			theform = document.__aspnetForm;
+		}
+		else {
+			theform = document.forms["__aspnetForm"];
+		}
+		theform.__EVENTTARGET.value = eventTarget.split("$").join(":");
+		theform.__EVENTARGUMENT.value = eventArgument;
+		theform.submit();
+	}
+// -->
+</script>
+
+<script language="javascript" type="text/javascript">
+var RatingControlAJAX = {
+
+"SaveRating": function(id, rating, clientCallBack) {
+	return Ajax_CallBack('CommunityServer.Discussions.Controls.RatePost', id, 'SaveRating', [rating], clientCallBack, false, false, false, true,'/isn/Community/en-US/forums/thread/30233858.aspx?Ajax_CallBack=true');
+}
+
+};
+</script>
+
+	
+<script language="javascript" type="text/javascript">
+var FavoriteAJAX = {
+
+"RemoveFavoriteSection": function(id, sectionID, clientCallBack) {
+	return Ajax_CallBack('CommunityServer.Controls.FavoritePopupMenu', id, 'RemoveFavoriteSection', [sectionID], clientCallBack, false, false, false, true,'/isn/Community/en-US/forums/thread/30233858.aspx?Ajax_CallBack=true');
+},
+
+"RemoveFavoritePost": function(id, postID, clientCallBack) {
+	return Ajax_CallBack('CommunityServer.Controls.FavoritePopupMenu', id, 'RemoveFavoritePost', [postID], clientCallBack, false, false, false, true,'/isn/Community/en-US/forums/thread/30233858.aspx?Ajax_CallBack=true');
+},
+
+"RemoveFavoriteUser": function(id, userID, clientCallBack) {
+	return Ajax_CallBack('CommunityServer.Controls.FavoritePopupMenu', id, 'RemoveFavoriteUser', [userID], clientCallBack, false, false, false, true,'/isn/Community/en-US/forums/thread/30233858.aspx?Ajax_CallBack=true');
+},
+
+"AddFavoriteSection": function(id, sectionID, clientCallBack) {
+	return Ajax_CallBack('CommunityServer.Controls.FavoritePopupMenu', id, 'AddFavoriteSection', [sectionID], clientCallBack, false, false, false, true,'/isn/Community/en-US/forums/thread/30233858.aspx?Ajax_CallBack=true');
+},
+
+"AddFavoritePost": function(id, postID, clientCallBack) {
+	return Ajax_CallBack('CommunityServer.Controls.FavoritePopupMenu', id, 'AddFavoritePost', [postID], clientCallBack, false, false, false, true,'/isn/Community/en-US/forums/thread/30233858.aspx?Ajax_CallBack=true');
+},
+
+"AddFavoriteUser": function(id, userID, clientCallBack) {
+	return Ajax_CallBack('CommunityServer.Controls.FavoritePopupMenu', id, 'AddFavoriteUser', [userID], clientCallBack, false, false, false, true,'/isn/Community/en-US/forums/thread/30233858.aspx?Ajax_CallBack=true');
+}
+
+};
+</script>
+
+	<script language="JavaScript">
+<!--
+var sURL = 'http://softwarecommunity.intel.com/isn/Community/en-US/forums/ShowThread.aspx?PostID=30233858;'
+function refresh() {window.location.href = sURL;}
+//-->
+</script>
+<script language="JavaScript1.1">
+<!--
+function refresh(){window.location.replace( sURL );}
+//-->
+</script>
+<script language="JavaScript1.2">
+<!--
+function refresh() { window.location.reload( false );}
+//-->
+</script>
+
+	<script type="text/javascript">
+function showQuickReply(postID) {
+ showPopWin('/isn/Community/en-US/forums/QuickReply.aspx?PostID='+postID,600,400,reLoadPage); 
+}
+function reLoadPage(shouldRefresh){	if(shouldRefresh){refresh();}}
+</script>
+
+
+	
+<script language="javascript" type="text/javascript">
+var ThreadSubscribeLinkButton = {
+
+"ToggleEmailReplies": function(id, threadID, clientCallBack) {
+	return Ajax_CallBack('CommunityServer.Controls.ThreadSubscribeLinkButton', id, 'ToggleEmailReplies', [threadID], clientCallBack, false, false, false, false,'/isn/Community/en-US/forums/thread/30233858.aspx?Ajax_CallBack=true');
+}
+
+};
+</script>
+
+	<script type="text/javascript" src="StackOverflow_files/submodal.js"></script>
+
+	<script language="javascript">renderPopWin('/isn/Community/en-US/utility/modal/close.gif', '/isn/Community/en-US/utility/modal/loading.html');</script><div id="popupMask" style="display: none;">&nbsp;</div><div id="popupContainer" style="display: none;"><div id="popupInner"><div id="popupTitleBar"><div id="popupTitle"></div><div id="popupControls"><img src="StackOverflow_files/close.gif" onclick="hidePopWin(false);"></div></div><iframe src="StackOverflow_files/loading.htm" style="width: 100%; height: 100%; background-color: transparent;" allowtransparency="true" id="popupFrame" name="popupFrame" frameborder="0" height="100%" scrolling="auto" width="100%"></iframe></div></div>
+
+	<script type="text/javascript" language="javascript" src="StackOverflow_files/ExpanderPanelScript.js"></script>
+
+
+					
+						<div id="Common">
+							<div id="CommonHeader">
+								
+<div class="CommonTitleBar">
+	<div class="CommonTitleBarImage">
+	<table border="0" cellpadding="4" cellspacing="0" width="100%">
+		<tbody><tr>
+			<td id="add177px" class="CommonTitleBarSearchArea" align="left" nowrap="true" width="800">
+				<div class="CommonUserArea" align="left">				
+					
+<div id="welcome">
+	
+			
+
+<!-- Courtesy of SimplytheBest.net - http://simplythebest.net/scripts/ -->
+<script language="javascript">
+//	function $(ElementId)
+//	{
+//		return document.getElementById(ElementId);
+//	}
+
+	//Overrides for overlib.js file
+	var ol_closeclickEventOverride = "CloseClickReEnableSelect();";
+	var ol_closeclick=1;  // 1=enable close click 0=mouse over close
+	var ol_bgcolor = "#6699CC"
+	var ol_fgcolor = "#EEEEEE"
+	var ol_textcolor = "#4C7A9E";
+	var ol_closecolor = "#FFFFFF";
+	var ol_captionsize = "11px";
+	var ol_closesize = "11px";
+	var ol_width = "200px";
+
+	var ol_close = 'Close';
+	var ol_closetitle = 'Close';
+	
+	//var = 
+	//var ol_fixy = 100;
+	//var ol_fixx = 100;
+	var ol_hpos = 10000008; //LEFT
+	//var olHideForm
+	//var olHideForm = 1;
+	//var fnRef = CloseClickReEnableSelect;
+	
+	//var ol_frame = $("iMask2");
+
+	function resizeItem(controlID, boxwidth, boxheight)
+	{
+		var obj = document.getElementById(controlID);
+
+		try
+		{
+			if (obj.style.height) {
+				obj.style.height = boxheight;
+				obj.style.width = boxwidth;
+			}
+		}
+		catch(ex)
+		{
+			alert(ex);
+		}
+	}
+
+	function setForm()
+	{
+		var rtnval = overlib('<form name=frmLogin id=frmLogin method=POST action=\'https://fm1cedar.cps.intel.com/isn/Login/Template.aspx?TARGET=http%3a%2f%2fsoftwarecommunity.intel.com%2fisn%2fCommunity%2fen-US%2flogin.aspx%3fReturnUrl%3d--isn--Community--en-US--forums--thread--30233858.aspx\'> <input type=hidden name=qlogin value=true><table><tr><td align=right style=\'FONT-SIZE: 12px\'>Login:</td><td><input id=txtUserName name=txtUserName type=text></td></tr><tr><td align=right style=\'FONT-SIZE: 12px\'>Password:</td><td><input id=txtPassword name=txtPassword type=password></td></tr><tr><td><input type=\'submit\' value=\'Login\' style=\'FONT-SIZE: 12px\'></td><td align=right><span id=\'elementId\' style=\'FONT-SIZE: 12px\'></span></td></tr></table></form>', STICKY, CAPTION, 'Quick Login');
+		//alert(LEFT);
+		return rtnval;
+	}
+
+
+	function doFocus()
+	{
+		try
+		{
+			document.frmLogin.txtUserName.focus();
+			hideSelect("_ctl0__ctl1_bhcr_t___TitleBarSearchDropDownList");
+		} catch (e){
+			unhideSelect("_ctl0__ctl1_bhcr_t___TitleBarSearchDropDownList");
+		}
+		return true;
+	}
+
+	function CloseClickReEnableSelect()
+	{
+		unhideSelect("_ctl0__ctl1_bhcr_t___TitleBarSearchDropDownList");
+		return cClick();
+	}
+
+	function hideSelect(ControlId)
+	{
+		var obj = document.getElementById(ControlId);
+		if (obj)
+			obj.style.visibility="hidden";
+	}
+
+	function unhideSelect(ControlId)
+	{
+		var obj = document.getElementById(ControlId);
+		if (obj)
+			obj.style.visibility="visible";
+	}
+</script>
+<script language="javascript" src="StackOverflow_files/overlib.js"></script>	
+
+<a onclick="shoh('first');"><img src="StackOverflow_files/d.gif" name="imgfirst" border="0"></a>&nbsp;Welcome to Intel® Software Network
+<a href="javascript:void(0);" onmouseover="return overlib('Click for Quick Login');" onclick="return setForm();" onmouseout="return doFocus() && nd();">Quick Login</a> | <a id="_ctl0__ctl1_bhcr_t___Displayuserwelcome1____ctl2___Login2"></a><a id="_ctl0__ctl1_bhcr_t___Displayuserwelcome1____ctl2___Register" href="https://fm1cedar.cps.intel.com/isn/Registration/isnRegpage.aspx?TARGET=http%3a%2f%2fsoftwarecommunity.intel.com%2fisn%2fCommunity%2fen-US%2flogin.aspx%3fReturnUrl%3d--isn--Community--en-US--forums--thread--30233858.aspx">Join</a>
+
+
+
+ |  <a id="_ctl0__ctl1_bhcr_t___Displayuserwelcome1____ctl2___Faq1" name="Faq1" href="javascript:OpenWindow('/isn/Community/en-US/languages/en-US/docs/faq.aspx')">Help</a>
+
+ | 
+
+		
+</div>
+  
+					<table align="left" border="0" cellpadding="0" cellspacing="0">
+					<tbody><tr>
+						<td colspan="3" style="color: rgb(0, 0, 0); font-size: 10px;" align="left">
+							Search in Intel® Software Network Forums 
+						</td>
+					</tr>
+					<tr valign="middle">
+						<td style="font-size: 10px;" align="left">
+							<input name="_ctl0:_ctl1:bhcr:t:_:TitleBarSearchText" maxlength="64" size="30" id="_ctl0__ctl1_bhcr_t___TitleBarSearchText" onkeydown="KeyDownHandler_ctl0__ctl1_bhcr_t___TitleBarSearchButton(event);" style="font-size: 11px; font-family: Verdana,Tahoma,Arial,Helvetica;" type="text">
+							 in <select name="_ctl0:_ctl1:bhcr:t:_:TitleBarSearchDropDownList" id="_ctl0__ctl1_bhcr_t___TitleBarSearchDropDownList" style="font-size: 10px; width: 265px;">
+	<option value="S:1005">Intel® Visual Fortran Compiler for Windows (forum)</option>
+	<option value="G:1002">Intel® Software Development Products (group)</option>
+	<option value=":">(Entire Site)</option>
+
+</select>
+							<span class="CommonSearchButtonOuter"><a id="_ctl0__ctl1_bhcr_t___TitleBarSearchButton" class="CommonSearchButton" href="javascript:__doPostBack('_ctl0$_ctl1$bhcr$t$_$TitleBarSearchButton','')">Go</a></span>
+						</td>
+						<td align="left">
+							
+						</td>
+					</tr>
+					</tbody></table>
+				</div>
+			</td>
+		</tr>
+	</tbody></table>
+	</div>
+</div>
+							</div>
+
+							<div id="CommonBody">
+								<table id="CommonBodyTable" border="0" cellpadding="0" cellspacing="0" width="100%">
+									<tbody><tr>
+										<td id="CommonLeftColumn" valign="top">
+											
+										</td>
+										
+										<td id="CommonBodyColumn" valign="top" width="100%">
+											
+
+<div class="CommonContentArea">
+	<div class="CommonBreadCrumbArea"><a href="http://softwarecommunity.intel.com/isn/Community/en-US/forums/default.aspx" class="lnk3" title="Intel® Software Network">Intel® Software Network</a> › <a href="http://softwarecommunity.intel.com/isn/Community/en-US/forums/default.aspx?GroupID=1002" class="lnk3" title="Intel® Software Development Products">Intel® Software Developmen...</a> › <a href="http://softwarecommunity.intel.com/isn/Community/en-US/forums/1005/ShowForum.aspx" class="lnk3" title="Intel® Visual Fortran Compiler for Windows">Intel® Visual Fortran Compiler...</a> › <a href="http://softwarecommunity.intel.com/isn/Community/en-US/forums/thread/30233858.aspx" class="lnk3" title="Re: Intel Fortran compiler 9.1 stack overflow">Re: Intel Fortran compiler 9.1 stack overflow</a></div>
+	
+	<h2 class="CommonTitle"><span id="_ctl0__ctl1_bcr__ctl0___ForumName">Intel Fortran compiler 9.1 stack overflow</span></h2>
+	<div class="CommonContent">
+		<span id="_ctl0__ctl1_bcr__ctl0___ThreadStats" class="CommonDescription h2Desc">Last post 11-01-2007, 1:41 PM by <a href="http://softwarecommunity.intel.com/isn/Community/en-US/members/Steve+Lionel.aspx">Steve Lionel</a>. 8 replies.</span>
+		
+		
+
+		<div class="CommonFormArea">
+		<table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tbody><tr><td colspan="2" align="left">
+			
+			</td></tr>
+			
+			<tr>
+				<td colspan="2" class="CommonFormField CommonPrintHidden" align="right">
+					
+				</td>
+			</tr>
+			<tr>
+				<td class="CommonFormField CommonPrintHidden" align="left">
+					
+					<a id="_ctl0__ctl1_bcr__ctl0___TrackingButton" trackingresourcename="PostFlatView_EnableThreadTrackingOn" nottrackingresourcename="PostFlatView_EnableThreadTrackingOff"></a>
+				</td>
+				<td class="CommonFormField CommonPrintHidden" align="right">
+					<span id="_ctl0__ctl1_bcr__ctl0___Resourcelabel1">Sort Posts:</span>
+					<select name="_ctl0:_ctl1:bcr:_ctl0:_:SortOrder" onchange="__doPostBack('_ctl0$_ctl1$bcr$_ctl0$_$SortOrder','')" language="javascript" id="_ctl0__ctl1_bcr__ctl0___SortOrder">
+	<option selected="selected" value="0">Oldest to newest</option>
+	<option value="1">Newest to oldest</option>
+
+</select>
+					<a href="http://softwarecommunity.intel.com/isn/Community/en-US/forums/ThreadNavigation.aspx?PostID=30233858&amp;NavType=Previous" class="CommonImageTextButton" style="background-image: url(/isn/Community/en-US/Themes/default/images/forum/PreviousTopic.gif);">Previous</a>
+					<a href="http://softwarecommunity.intel.com/isn/Community/en-US/forums/ThreadNavigation.aspx?PostID=30233858&amp;NavType=Next" class="CommonImageTextButton" style="background-image: url(/isn/Community/en-US/Themes/default/images/forum/NextTopic.gif);">Next</a>
+				</td>
+			</tr>
+		</tbody></table>
+		</div>
+        
+		
+					<table class="ForumPostList" style="table-layout: auto;" border="0" cellpadding="0" cellspacing="0" width="99%">
+			
+							<tbody><tr class="ForumPostHeader" valign="middle">
+								<td style="border-top: 1px solid rgb(187, 187, 187); border-left: 1px solid rgb(187, 187, 187); border-bottom: 1px solid rgb(187, 187, 187); padding: 6px;" align="left"><a id="_ctl0__ctl1_bcr__ctl0___PostRepeater__ctl1_PostAnchor" name="30233854"><img id="_ctl0__ctl1_bcr__ctl0___PostRepeater__ctl1_Themedimage1" src="StackOverflow_files/icon_post_show.gif" alt="" border="0"></a>&nbsp;04-24-2007, 6:48 AM</td>
+								<td style="border-top: 1px solid rgb(187, 187, 187); border-right: 1px solid rgb(187, 187, 187); border-bottom: 1px solid rgb(187, 187, 187); padding: 6px; font-weight: normal;" class="ForumPostHeaderControlArea" align="right">
+									<a title="Permanent link to this thread (30233854)" href="http://softwarecommunity.intel.com/isn/Community/en-US/forums/permalink/30233858/30233854/ShowThread.aspx#30233854">30233854</a><a></a>
+									&nbsp;
+								</td>
+							</tr>
+						<tr valign="top">
+							<td rowspan="2" class="ForumPostUserArea">
+								<div class="ForumPostUserContent">
+								<ul class="ForumPostUserPropertyList">
+									<li class="ForumPostUserName">
+										<img src="StackOverflow_files/user_IsOffline.gif" alt="huanghe@engr.sc.edu is not online. Last active: 11-09-2007, 2:46 PM" border="0">
+										<div class="ispp" usr="huanghe@engr.sc.edu"></div><a href="http://softwarecommunity.intel.com/isn/Community/en-US/members/huanghe%40engr.sc.edu.aspx">huanghe@engr.sc.edu</a>
+									</li>
+									<li class="ForumPostUserAvatar CommonPrintHidden">
+										
+									</li>
+									<li class="ForumPostUserIcons CommonPrintHidden">
+										<img title="Not Ranked" alt="Not Ranked" src="StackOverflow_files/rank0.gif">
+									</li>
+									<li class="ForumPostUserAttribute">
+										Joined on 11-14-2006
+									</li>
+									<li class="ForumPostUserAttribute">
+										
+									</li>
+									<li class="ForumPostUserAttribute">
+										<a href="http://softwarecommunity.intel.com/isn/Community/en-US/search/SearchResults.aspx?u=22265&amp;o=DateDescending">Posts 10</a>
+									</li>
+									<li class="ForumPostUserAttribute">
+										
+									</li>
+									<li class="ForumPostRoleIcons CommonPrintHidden">
+										
+									</li>
+								</ul>
+								</div>
+							</td>
+							<td class="ForumPostContentArea">
+								<div class="ForumPostTitleArea">
+									<h4 class="ForumPostTitle">
+										
+										Intel Fortran compiler 9.1 stack overflow
+									</h4>
+									
+									<div class="ForumPostAttachment">
+										
+									</div>
+
+									<div class="ForumPostThreadStatus">
+										 
+									</div>
+
+									<div class="ForumPostButtons">
+										<a href="http://softwarecommunity.intel.com/isn/Community/en-US/forums/AddPost.aspx?PostID=30233854" class="CommonImageTextButton" style="background-image: url(/isn/Community/en-US/Themes/default/images/forum/Reply.gif);">Reply</a>
+										<a href="http://softwarecommunity.intel.com/isn/Community/en-US/forums/AddPost.aspx?PostID=30233854&amp;Quote=True" class="CommonImageTextButton" style="background-image: url(/isn/Community/en-US/Themes/default/images/forum/Quote.gif);">Quote</a>
+										
+										
+										
+										
+										
+									</div>
+								</div>
+
+								<table style="table-layout: fixed;" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%">
+								<tbody><tr><td>
+									<div class="ForumPostBodyArea">
+									<div id="_ctl0__ctl1_bcr__ctl0___PostRepeater__ctl1_PostViewWrapper" class="ForumPostContentText">
+										<p>I
+have exactly the same code for three-dimensional CFD simulation (large
+memory required) and considered dynamic memory allocation for all
+larger arrays.&nbsp;If compiled by Intel Fortran compiler 7, it runs
+very well; however if compiled by Intel Fortran compiler 9.1 on the
+same computer, it gives me "stack overflow". </p>
+<p>Is there any set-up I need to do for Intel Frotran compiler 9.1 to prevent the stack overflow.</p>
+<p>thanks</p>
+
+
+									</div>
+									</div>
+								</td></tr>
+								</tbody></table>
+							</td>
+						</tr>
+						<tr valign="bottom">
+							<td class="ForumPostFooterArea">								
+								<ul class="ForumPostStatistics CommonPrintHidden" style="clear: both;">
+									<li></li>
+									<li></li>
+									<li><a id="_ctl0__ctl1_bcr__ctl0___PostRepeater__ctl1_ReportLink" href="http://softwarecommunity.intel.com/isn/Community/en-US/forums/AddPost.aspx?ForumID=1&amp;ReportPostID=30233854">Report abuse</a></li>
+									
+								</ul>
+							</td>
+						</tr>
+						<tr>
+						<td colspan="2" style="border: 0px none ;">&nbsp;</td>
+						</tr>
+			
+							<tr class="ForumPostHeader" valign="middle">
+								<td style="border-top: 1px solid rgb(187, 187, 187); border-left: 1px solid rgb(187, 187, 187); border-bottom: 1px solid rgb(187, 187, 187); padding: 6px;" align="left"><a id="_ctl0__ctl1_bcr__ctl0___PostRepeater__ctl2_PostAnchor" name="30233858"><img id="_ctl0__ctl1_bcr__ctl0___PostRepeater__ctl2_Themedimage1" src="StackOverflow_files/icon_post_show.gif" alt="" border="0"></a>&nbsp;04-24-2007, 8:28 AM</td>
+								<td style="border-top: 1px solid rgb(187, 187, 187); border-right: 1px solid rgb(187, 187, 187); border-bottom: 1px solid rgb(187, 187, 187); padding: 6px; font-weight: normal;" class="ForumPostHeaderControlArea" align="right">
+									<a title="Link to this post" href="http://softwarecommunity.intel.com/isn/Community/en-US/forums/permalink/30233858/30233858/ShowThread.aspx#30233858">30233858</a> in reply to <a title="Link to this post" href="http://softwarecommunity.intel.com/isn/Community/en-US/forums/permalink/30233858/30233854/ShowThread.aspx#30233854">30233854</a>
+									&nbsp;
+								</td>
+							</tr>
+						<tr valign="top">
+							<td rowspan="2" class="ForumPostUserArea">
+								<div class="ForumPostUserContent">
+								<ul class="ForumPostUserPropertyList">
+									<li class="ForumPostUserName">
+										<img src="StackOverflow_files/user_IsOffline.gif" alt="MAD\sblionel is not online. Last active: 03/23/2008, 2:10 PM" border="0">
+										<div class="ispp" usr="MAD\sblionel"></div><a href="http://softwarecommunity.intel.com/isn/Community/en-US/members/MAD%5csblionel.aspx">Steve Lionel</a>
+									</li>
+									<li class="ForumPostUserAvatar CommonPrintHidden">
+										
+									</li>
+									<li class="ForumPostUserIcons CommonPrintHidden">
+										<img title="Top 10 Contributor" alt="Top 10 Contributor" src="StackOverflow_files/rankTop10.gif">
+									</li>
+									<li class="ForumPostUserAttribute">
+										Joined on 03-13-2002
+									</li>
+									<li class="ForumPostUserAttribute">
+										
+									</li>
+									<li class="ForumPostUserAttribute">
+										<a href="http://softwarecommunity.intel.com/isn/Community/en-US/search/SearchResults.aspx?u=2450&amp;o=DateDescending">Posts 10,388</a>
+									</li>
+									<li class="ForumPostUserAttribute">
+										
+									</li>
+									<li class="ForumPostRoleIcons CommonPrintHidden">
+										 <a href="http://softwarecommunity.intel.com/isn/Community/en-US/user/Members.aspx?search=1&amp;r=35563a07-fd76-4dc0-91fd-79fb8a82a8aa"><img src="StackOverflow_files/35563a07-fd76-4dc0-91fd-79fb8a82a8aa.png" alt="Intel Employee" border="0"></a>
+									</li>
+								</ul>
+								</div>
+							</td>
+							<td class="ForumPostContentArea">
+								<div class="ForumPostTitleArea">
+									<h4 class="ForumPostTitle">
+										
+										Re: Intel Fortran compiler 9.1 stack overflow
+									</h4>
+									
+									<div class="ForumPostAttachment">
+										
+									</div>
+
+									<div class="ForumPostThreadStatus">
+										 
+									</div>
+
+									<div class="ForumPostButtons">
+										<a href="http://softwarecommunity.intel.com/isn/Community/en-US/forums/AddPost.aspx?PostID=30233858" class="CommonImageTextButton" style="background-image: url(/isn/Community/en-US/Themes/default/images/forum/Reply.gif);">Reply</a>
+										<a href="http://softwarecommunity.intel.com/isn/Community/en-US/forums/AddPost.aspx?PostID=30233858&amp;Quote=True" class="CommonImageTextButton" style="background-image: url(/isn/Community/en-US/Themes/default/images/forum/Quote.gif);">Quote</a>
+										
+										
+										
+										
+										
+									</div>
+								</div>
+
+								<table style="table-layout: fixed;" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%">
+								<tbody><tr><td>
+									<div class="ForumPostBodyArea">
+									<div id="_ctl0__ctl1_bcr__ctl0___PostRepeater__ctl2_PostViewWrapper" class="ForumPostContentText">
+										Try adding the /heap-arrays option to get the same behavior as IFC7.
+
+<hr align="left" size="1" width="25%">Steve <br><br>Doctor Fortran: intel.com/software/drfortran
+									</div>
+									</div>
+								</td></tr>
+								</tbody></table>
+							</td>
+						</tr>
+						<tr valign="bottom">
+							<td class="ForumPostFooterArea">								
+								<ul class="ForumPostStatistics CommonPrintHidden" style="clear: both;">
+									<li></li>
+									<li></li>
+									<li><a id="_ctl0__ctl1_bcr__ctl0___PostRepeater__ctl2_ReportLink" href="http://softwarecommunity.intel.com/isn/Community/en-US/forums/AddPost.aspx?ForumID=1&amp;ReportPostID=30233858">Report abuse</a></li>
+									
+								</ul>
+							</td>
+						</tr>
+						<tr>
+						<td colspan="2" style="border: 0px none ;">&nbsp;</td>
+						</tr>
+			
+							<tr class="ForumPostHeader" valign="middle">
+								<td style="border-top: 1px solid rgb(187, 187, 187); border-left: 1px solid rgb(187, 187, 187); border-bottom: 1px solid rgb(187, 187, 187); padding: 6px;" align="left"><a id="_ctl0__ctl1_bcr__ctl0___PostRepeater__ctl3_PostAnchor" name="30233872"><img id="_ctl0__ctl1_bcr__ctl0___PostRepeater__ctl3_Themedimage1" src="StackOverflow_files/icon_post_show.gif" alt="" border="0"></a>&nbsp;04-24-2007, 11:10 AM</td>
+								<td style="border-top: 1px solid rgb(187, 187, 187); border-right: 1px solid rgb(187, 187, 187); border-bottom: 1px solid rgb(187, 187, 187); padding: 6px; font-weight: normal;" class="ForumPostHeaderControlArea" align="right">
+									<a title="Link to this post" href="http://softwarecommunity.intel.com/isn/Community/en-US/forums/permalink/30233858/30233872/ShowThread.aspx#30233872">30233872</a> in reply to <a title="Link to this post" href="http://softwarecommunity.intel.com/isn/Community/en-US/forums/permalink/30233858/30233858/ShowThread.aspx#30233858">30233858</a>
+									&nbsp;
+								</td>
+							</tr>
+						<tr valign="top">
+							<td rowspan="2" class="ForumPostUserArea">
+								<div class="ForumPostUserContent">
+								<ul class="ForumPostUserPropertyList">
+									<li class="ForumPostUserName">
+										<img src="StackOverflow_files/user_IsOffline.gif" alt="huanghe@engr.sc.edu is not online. Last active: 11-09-2007, 2:46 PM" border="0">
+										<div class="ispp" usr="huanghe@engr.sc.edu"></div><a href="http://softwarecommunity.intel.com/isn/Community/en-US/members/huanghe%40engr.sc.edu.aspx">huanghe@engr.sc.edu</a>
+									</li>
+									<li class="ForumPostUserAvatar CommonPrintHidden">
+										
+									</li>
+									<li class="ForumPostUserIcons CommonPrintHidden">
+										<img title="Not Ranked" alt="Not Ranked" src="StackOverflow_files/rank0.gif">
+									</li>
+									<li class="ForumPostUserAttribute">
+										Joined on 11-14-2006
+									</li>
+									<li class="ForumPostUserAttribute">
+										
+									</li>
+									<li class="ForumPostUserAttribute">
+										<a href="http://softwarecommunity.intel.com/isn/Community/en-US/search/SearchResults.aspx?u=22265&amp;o=DateDescending">Posts 10</a>
+									</li>
+									<li class="ForumPostUserAttribute">
+										
+									</li>
+									<li class="ForumPostRoleIcons CommonPrintHidden">
+										
+									</li>
+								</ul>
+								</div>
+							</td>
+							<td class="ForumPostContentArea">
+								<div class="ForumPostTitleArea">
+									<h4 class="ForumPostTitle">
+										
+										Re: Intel Fortran compiler 9.1 stack overflow
+									</h4>
+									
+									<div class="ForumPostAttachment">
+										
+									</div>
+
+									<div class="ForumPostThreadStatus">
+										 
+									</div>
+
+									<div class="ForumPostButtons">
+										<a href="http://softwarecommunity.intel.com/isn/Community/en-US/forums/AddPost.aspx?PostID=30233872" class="CommonImageTextButton" style="background-image: url(/isn/Community/en-US/Themes/default/images/forum/Reply.gif);">Reply</a>
+										<a href="http://softwarecommunity.intel.com/isn/Community/en-US/forums/AddPost.aspx?PostID=30233872&amp;Quote=True" class="CommonImageTextButton" style="background-image: url(/isn/Community/en-US/Themes/default/images/forum/Quote.gif);">Quote</a>
+										
+										
+										
+										
+										
+									</div>
+								</div>
+
+								<table style="table-layout: fixed;" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%">
+								<tbody><tr><td>
+									<div class="ForumPostBodyArea">
+									<div id="_ctl0__ctl1_bcr__ctl0___PostRepeater__ctl3_PostViewWrapper" class="ForumPostContentText">
+										Can you tell me how to&nbsp;add the option in Microsoft Visual Studio 2005 environment? Thanks.
+
+
+									</div>
+									</div>
+								</td></tr>
+								</tbody></table>
+							</td>
+						</tr>
+						<tr valign="bottom">
+							<td class="ForumPostFooterArea">								
+								<ul class="ForumPostStatistics CommonPrintHidden" style="clear: both;">
+									<li></li>
+									<li></li>
+									<li><a id="_ctl0__ctl1_bcr__ctl0___PostRepeater__ctl3_ReportLink" href="http://softwarecommunity.intel.com/isn/Community/en-US/forums/AddPost.aspx?ForumID=1&amp;ReportPostID=30233872">Report abuse</a></li>
+									
+								</ul>
+							</td>
+						</tr>
+						<tr>
+						<td colspan="2" style="border: 0px none ;">&nbsp;</td>
+						</tr>
+			
+							<tr class="ForumPostHeader" valign="middle">
+								<td style="border-top: 1px solid rgb(187, 187, 187); border-left: 1px solid rgb(187, 187, 187); border-bottom: 1px solid rgb(187, 187, 187); padding: 6px;" align="left"><a id="_ctl0__ctl1_bcr__ctl0___PostRepeater__ctl4_PostAnchor" name="30233876"><img id="_ctl0__ctl1_bcr__ctl0___PostRepeater__ctl4_Themedimage1" src="StackOverflow_files/icon_post_show.gif" alt="" border="0"></a>&nbsp;04-24-2007, 12:50 PM</td>
+								<td style="border-top: 1px solid rgb(187, 187, 187); border-right: 1px solid rgb(187, 187, 187); border-bottom: 1px solid rgb(187, 187, 187); padding: 6px; font-weight: normal;" class="ForumPostHeaderControlArea" align="right">
+									<a title="Link to this post" href="http://softwarecommunity.intel.com/isn/Community/en-US/forums/permalink/30233858/30233876/ShowThread.aspx#30233876">30233876</a> in reply to <a title="Link to this post" href="http://softwarecommunity.intel.com/isn/Community/en-US/forums/permalink/30233858/30233872/ShowThread.aspx#30233872">30233872</a>
+									&nbsp;
+								</td>
+							</tr>
+						<tr valign="top">
+							<td rowspan="2" class="ForumPostUserArea">
+								<div class="ForumPostUserContent">
+								<ul class="ForumPostUserPropertyList">
+									<li class="ForumPostUserName">
+										<img src="StackOverflow_files/user_IsOffline.gif" alt="MAD\sblionel is not online. Last active: 03/23/2008, 2:10 PM" border="0">
+										<div class="ispp" usr="MAD\sblionel"></div><a href="http://softwarecommunity.intel.com/isn/Community/en-US/members/MAD%5csblionel.aspx">Steve Lionel</a>
+									</li>
+									<li class="ForumPostUserAvatar CommonPrintHidden">
+										
+									</li>
+									<li class="ForumPostUserIcons CommonPrintHidden">
+										<img title="Top 10 Contributor" alt="Top 10 Contributor" src="StackOverflow_files/rankTop10.gif">
+									</li>
+									<li class="ForumPostUserAttribute">
+										Joined on 03-13-2002
+									</li>
+									<li class="ForumPostUserAttribute">
+										
+									</li>
+									<li class="ForumPostUserAttribute">
+										<a href="http://softwarecommunity.intel.com/isn/Community/en-US/search/SearchResults.aspx?u=2450&amp;o=DateDescending">Posts 10,388</a>
+									</li>
+									<li class="ForumPostUserAttribute">
+										
+									</li>
+									<li class="ForumPostRoleIcons CommonPrintHidden">
+										 <a href="http://softwarecommunity.intel.com/isn/Community/en-US/user/Members.aspx?search=1&amp;r=35563a07-fd76-4dc0-91fd-79fb8a82a8aa"><img src="StackOverflow_files/35563a07-fd76-4dc0-91fd-79fb8a82a8aa.png" alt="Intel Employee" border="0"></a>
+									</li>
+								</ul>
+								</div>
+							</td>
+							<td class="ForumPostContentArea">
+								<div class="ForumPostTitleArea">
+									<h4 class="ForumPostTitle">
+										
+										Re: Intel Fortran compiler 9.1 stack overflow
+									</h4>
+									
+									<div class="ForumPostAttachment">
+										
+									</div>
+
+									<div class="ForumPostThreadStatus">
+										 
+									</div>
+
+									<div class="ForumPostButtons">
+										<a href="http://softwarecommunity.intel.com/isn/Community/en-US/forums/AddPost.aspx?PostID=30233876" class="CommonImageTextButton" style="background-image: url(/isn/Community/en-US/Themes/default/images/forum/Reply.gif);">Reply</a>
+										<a href="http://softwarecommunity.intel.com/isn/Community/en-US/forums/AddPost.aspx?PostID=30233876&amp;Quote=True" class="CommonImageTextButton" style="background-image: url(/isn/Community/en-US/Themes/default/images/forum/Quote.gif);">Quote</a>
+										
+										
+										
+										
+										
+									</div>
+								</div>
+
+								<table style="table-layout: fixed;" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%">
+								<tbody><tr><td>
+									<div class="ForumPostBodyArea">
+									<div id="_ctl0__ctl1_bcr__ctl0___PostRepeater__ctl4_PostViewWrapper" class="ForumPostContentText">
+										<p>Go to the property page Fortran &gt; Command Line.&nbsp; In the Additional Options box, type in:</p>
+<p>/heap_arrays</p>
+<p>You will need a version of the compiler released in the last six months in order to use this.</p>
+
+<hr align="left" size="1" width="25%">Steve <br><br>Doctor Fortran: intel.com/software/drfortran
+									</div>
+									</div>
+								</td></tr>
+								</tbody></table>
+							</td>
+						</tr>
+						<tr valign="bottom">
+							<td class="ForumPostFooterArea">								
+								<ul class="ForumPostStatistics CommonPrintHidden" style="clear: both;">
+									<li></li>
+									<li></li>
+									<li><a id="_ctl0__ctl1_bcr__ctl0___PostRepeater__ctl4_ReportLink" href="http://softwarecommunity.intel.com/isn/Community/en-US/forums/AddPost.aspx?ForumID=1&amp;ReportPostID=30233876">Report abuse</a></li>
+									
+								</ul>
+							</td>
+						</tr>
+						<tr>
+						<td colspan="2" style="border: 0px none ;">&nbsp;</td>
+						</tr>
+			
+							<tr class="ForumPostHeader" valign="middle">
+								<td style="border-top: 1px solid rgb(187, 187, 187); border-left: 1px solid rgb(187, 187, 187); border-bottom: 1px solid rgb(187, 187, 187); padding: 6px;" align="left"><a id="_ctl0__ctl1_bcr__ctl0___PostRepeater__ctl5_PostAnchor" name="30242947"><img id="_ctl0__ctl1_bcr__ctl0___PostRepeater__ctl5_Themedimage1" src="StackOverflow_files/icon_post_show.gif" alt="" border="0"></a>&nbsp;10-31-2007, 1:57 PM</td>
+								<td style="border-top: 1px solid rgb(187, 187, 187); border-right: 1px solid rgb(187, 187, 187); border-bottom: 1px solid rgb(187, 187, 187); padding: 6px; font-weight: normal;" class="ForumPostHeaderControlArea" align="right">
+									<a title="Link to this post" href="http://softwarecommunity.intel.com/isn/Community/en-US/forums/permalink/30233858/30242947/ShowThread.aspx#30242947">30242947</a> in reply to <a title="Link to this post" href="http://softwarecommunity.intel.com/isn/Community/en-US/forums/permalink/30233858/30233858/ShowThread.aspx#30233858">30233858</a>
+									&nbsp;
+								</td>
+							</tr>
+						<tr valign="top">
+							<td rowspan="2" class="ForumPostUserArea">
+								<div class="ForumPostUserContent">
+								<ul class="ForumPostUserPropertyList">
+									<li class="ForumPostUserName">
+										<img src="StackOverflow_files/user_IsOffline.gif" alt="huanghe@engr.sc.edu is not online. Last active: 11-09-2007, 2:46 PM" border="0">
+										<div class="ispp" usr="huanghe@engr.sc.edu"></div><a href="http://softwarecommunity.intel.com/isn/Community/en-US/members/huanghe%40engr.sc.edu.aspx">huanghe@engr.sc.edu</a>
+									</li>
+									<li class="ForumPostUserAvatar CommonPrintHidden">
+										
+									</li>
+									<li class="ForumPostUserIcons CommonPrintHidden">
+										<img title="Not Ranked" alt="Not Ranked" src="StackOverflow_files/rank0.gif">
+									</li>
+									<li class="ForumPostUserAttribute">
+										Joined on 11-14-2006
+									</li>
+									<li class="ForumPostUserAttribute">
+										
+									</li>
+									<li class="ForumPostUserAttribute">
+										<a href="http://softwarecommunity.intel.com/isn/Community/en-US/search/SearchResults.aspx?u=22265&amp;o=DateDescending">Posts 10</a>
+									</li>
+									<li class="ForumPostUserAttribute">
+										
+									</li>
+									<li class="ForumPostRoleIcons CommonPrintHidden">
+										
+									</li>
+								</ul>
+								</div>
+							</td>
+							<td class="ForumPostContentArea">
+								<div class="ForumPostTitleArea">
+									<h4 class="ForumPostTitle">
+										
+										stack overflow
+									</h4>
+									
+									<div class="ForumPostAttachment">
+										
+									</div>
+
+									<div class="ForumPostThreadStatus">
+										 
+									</div>
+
+									<div class="ForumPostButtons">
+										<a href="http://softwarecommunity.intel.com/isn/Community/en-US/forums/AddPost.aspx?PostID=30242947" class="CommonImageTextButton" style="background-image: url(/isn/Community/en-US/Themes/default/images/forum/Reply.gif);">Reply</a>
+										<a href="http://softwarecommunity.intel.com/isn/Community/en-US/forums/AddPost.aspx?PostID=30242947&amp;Quote=True" class="CommonImageTextButton" style="background-image: url(/isn/Community/en-US/Themes/default/images/forum/Quote.gif);">Quote</a>
+										
+										
+										
+										
+										
+									</div>
+								</div>
+
+								<table style="table-layout: fixed;" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%">
+								<tbody><tr><td>
+									<div class="ForumPostBodyArea">
+									<div id="_ctl0__ctl1_bcr__ctl0___PostRepeater__ctl5_PostViewWrapper" class="ForumPostContentText">
+Now I'm using Intel Fortran Compiler 10.0.025. I tried the /heap-arrays
+option as instructed. But it doesn't work.It&nbsp; I still have the
+stack overflow problem. <br>
+
+
+									</div>
+									</div>
+								</td></tr>
+								</tbody></table>
+							</td>
+						</tr>
+						<tr valign="bottom">
+							<td class="ForumPostFooterArea">								
+								<ul class="ForumPostStatistics CommonPrintHidden" style="clear: both;">
+									<li></li>
+									<li></li>
+									<li><a id="_ctl0__ctl1_bcr__ctl0___PostRepeater__ctl5_ReportLink" href="http://softwarecommunity.intel.com/isn/Community/en-US/forums/AddPost.aspx?ForumID=1&amp;ReportPostID=30242947">Report abuse</a></li>
+									
+								</ul>
+							</td>
+						</tr>
+						<tr>
+						<td colspan="2" style="border: 0px none ;">&nbsp;</td>
+						</tr>
+			
+							<tr class="ForumPostHeader" valign="middle">
+								<td style="border-top: 1px solid rgb(187, 187, 187); border-left: 1px solid rgb(187, 187, 187); border-bottom: 1px solid rgb(187, 187, 187); padding: 6px;" align="left"><a id="_ctl0__ctl1_bcr__ctl0___PostRepeater__ctl6_PostAnchor" name="30242953"><img id="_ctl0__ctl1_bcr__ctl0___PostRepeater__ctl6_Themedimage1" src="StackOverflow_files/icon_post_show.gif" alt="" border="0"></a>&nbsp;10-31-2007, 4:42 PM</td>
+								<td style="border-top: 1px solid rgb(187, 187, 187); border-right: 1px solid rgb(187, 187, 187); border-bottom: 1px solid rgb(187, 187, 187); padding: 6px; font-weight: normal;" class="ForumPostHeaderControlArea" align="right">
+									<a title="Link to this post" href="http://softwarecommunity.intel.com/isn/Community/en-US/forums/permalink/30233858/30242953/ShowThread.aspx#30242953">30242953</a> in reply to <a title="Link to this post" href="http://softwarecommunity.intel.com/isn/Community/en-US/forums/permalink/30233858/30242947/ShowThread.aspx#30242947">30242947</a>
+									&nbsp;
+								</td>
+							</tr>
+						<tr valign="top">
+							<td rowspan="2" class="ForumPostUserArea">
+								<div class="ForumPostUserContent">
+								<ul class="ForumPostUserPropertyList">
+									<li class="ForumPostUserName">
+										<img src="StackOverflow_files/user_IsOffline.gif" alt="ssragunath is not online. Last active: 11-07-2007, 10:56 AM" border="0">
+										<div class="ispp" usr="ssragunath"></div><a href="http://softwarecommunity.intel.com/isn/Community/en-US/members/ssragunath.aspx">ssragunath</a>
+									</li>
+									<li class="ForumPostUserAvatar CommonPrintHidden">
+										
+									</li>
+									<li class="ForumPostUserIcons CommonPrintHidden">
+										<img title="Not Ranked" alt="Not Ranked" src="StackOverflow_files/rank0.gif">
+									</li>
+									<li class="ForumPostUserAttribute">
+										Joined on 08-09-2007
+									</li>
+									<li class="ForumPostUserAttribute">
+										
+									</li>
+									<li class="ForumPostUserAttribute">
+										<a href="http://softwarecommunity.intel.com/isn/Community/en-US/search/SearchResults.aspx?u=26572&amp;o=DateDescending">Posts 11</a>
+									</li>
+									<li class="ForumPostUserAttribute">
+										
+									</li>
+									<li class="ForumPostRoleIcons CommonPrintHidden">
+										
+									</li>
+								</ul>
+								</div>
+							</td>
+							<td class="ForumPostContentArea">
+								<div class="ForumPostTitleArea">
+									<h4 class="ForumPostTitle">
+										
+										Re: stack overflow
+									</h4>
+									
+									<div class="ForumPostAttachment">
+										
+									</div>
+
+									<div class="ForumPostThreadStatus">
+										 
+									</div>
+
+									<div class="ForumPostButtons">
+										<a href="http://softwarecommunity.intel.com/isn/Community/en-US/forums/AddPost.aspx?PostID=30242953" class="CommonImageTextButton" style="background-image: url(/isn/Community/en-US/Themes/default/images/forum/Reply.gif);">Reply</a>
+										<a href="http://softwarecommunity.intel.com/isn/Community/en-US/forums/AddPost.aspx?PostID=30242953&amp;Quote=True" class="CommonImageTextButton" style="background-image: url(/isn/Community/en-US/Themes/default/images/forum/Quote.gif);">Quote</a>
+										
+										
+										
+										
+										
+									</div>
+								</div>
+
+								<table style="table-layout: fixed;" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%">
+								<tbody><tr><td>
+									<div class="ForumPostBodyArea">
+									<div id="_ctl0__ctl1_bcr__ctl0___PostRepeater__ctl6_PostViewWrapper" class="ForumPostContentText">
+										Did you try /heap_arrays or /heap-arrays ?<br>
+
+
+									</div>
+									</div>
+								</td></tr>
+								</tbody></table>
+							</td>
+						</tr>
+						<tr valign="bottom">
+							<td class="ForumPostFooterArea">								
+								<ul class="ForumPostStatistics CommonPrintHidden" style="clear: both;">
+									<li></li>
+									<li></li>
+									<li><a id="_ctl0__ctl1_bcr__ctl0___PostRepeater__ctl6_ReportLink" href="http://softwarecommunity.intel.com/isn/Community/en-US/forums/AddPost.aspx?ForumID=1&amp;ReportPostID=30242953">Report abuse</a></li>
+									
+								</ul>
+							</td>
+						</tr>
+						<tr>
+						<td colspan="2" style="border: 0px none ;">&nbsp;</td>
+						</tr>
+			
+							<tr class="ForumPostHeader" valign="middle">
+								<td style="border-top: 1px solid rgb(187, 187, 187); border-left: 1px solid rgb(187, 187, 187); border-bottom: 1px solid rgb(187, 187, 187); padding: 6px;" align="left"><a id="_ctl0__ctl1_bcr__ctl0___PostRepeater__ctl7_PostAnchor" name="30242956"><img id="_ctl0__ctl1_bcr__ctl0___PostRepeater__ctl7_Themedimage1" src="StackOverflow_files/icon_post_show.gif" alt="" border="0"></a>&nbsp;10-31-2007, 5:01 PM</td>
+								<td style="border-top: 1px solid rgb(187, 187, 187); border-right: 1px solid rgb(187, 187, 187); border-bottom: 1px solid rgb(187, 187, 187); padding: 6px; font-weight: normal;" class="ForumPostHeaderControlArea" align="right">
+									<a title="Link to this post" href="http://softwarecommunity.intel.com/isn/Community/en-US/forums/permalink/30233858/30242956/ShowThread.aspx#30242956">30242956</a> in reply to <a title="Link to this post" href="http://softwarecommunity.intel.com/isn/Community/en-US/forums/permalink/30233858/30242953/ShowThread.aspx#30242953">30242953</a>
+									&nbsp;
+								</td>
+							</tr>
+						<tr valign="top">
+							<td rowspan="2" class="ForumPostUserArea">
+								<div class="ForumPostUserContent">
+								<ul class="ForumPostUserPropertyList">
+									<li class="ForumPostUserName">
+										<img src="StackOverflow_files/user_IsOffline.gif" alt="MAD\sblionel is not online. Last active: 03/23/2008, 2:10 PM" border="0">
+										<div class="ispp" usr="MAD\sblionel"></div><a href="http://softwarecommunity.intel.com/isn/Community/en-US/members/MAD%5csblionel.aspx">Steve Lionel</a>
+									</li>
+									<li class="ForumPostUserAvatar CommonPrintHidden">
+										
+									</li>
+									<li class="ForumPostUserIcons CommonPrintHidden">
+										<img title="Top 10 Contributor" alt="Top 10 Contributor" src="StackOverflow_files/rankTop10.gif">
+									</li>
+									<li class="ForumPostUserAttribute">
+										Joined on 03-13-2002
+									</li>
+									<li class="ForumPostUserAttribute">
+										
+									</li>
+									<li class="ForumPostUserAttribute">
+										<a href="http://softwarecommunity.intel.com/isn/Community/en-US/search/SearchResults.aspx?u=2450&amp;o=DateDescending">Posts 10,388</a>
+									</li>
+									<li class="ForumPostUserAttribute">
+										
+									</li>
+									<li class="ForumPostRoleIcons CommonPrintHidden">
+										 <a href="http://softwarecommunity.intel.com/isn/Community/en-US/user/Members.aspx?search=1&amp;r=35563a07-fd76-4dc0-91fd-79fb8a82a8aa"><img src="StackOverflow_files/35563a07-fd76-4dc0-91fd-79fb8a82a8aa.png" alt="Intel Employee" border="0"></a>
+									</li>
+								</ul>
+								</div>
+							</td>
+							<td class="ForumPostContentArea">
+								<div class="ForumPostTitleArea">
+									<h4 class="ForumPostTitle">
+										
+										Re: stack overflow
+									</h4>
+									
+									<div class="ForumPostAttachment">
+										
+									</div>
+
+									<div class="ForumPostThreadStatus">
+										 
+									</div>
+
+									<div class="ForumPostButtons">
+										<a href="http://softwarecommunity.intel.com/isn/Community/en-US/forums/AddPost.aspx?PostID=30242956" class="CommonImageTextButton" style="background-image: url(/isn/Community/en-US/Themes/default/images/forum/Reply.gif);">Reply</a>
+										<a href="http://softwarecommunity.intel.com/isn/Community/en-US/forums/AddPost.aspx?PostID=30242956&amp;Quote=True" class="CommonImageTextButton" style="background-image: url(/isn/Community/en-US/Themes/default/images/forum/Quote.gif);">Quote</a>
+										
+										
+										
+										
+										
+									</div>
+								</div>
+
+								<table style="table-layout: fixed;" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%">
+								<tbody><tr><td>
+									<div class="ForumPostBodyArea">
+									<div id="_ctl0__ctl1_bcr__ctl0___PostRepeater__ctl7_PostViewWrapper" class="ForumPostContentText">
+										Doesn't matter - they are equivalent.<br><br>Please send a test case to Intel Premier Support so that we can investigate.<br>
+
+<hr align="left" size="1" width="25%">Steve <br><br>Doctor Fortran: intel.com/software/drfortran
+									</div>
+									</div>
+								</td></tr>
+								</tbody></table>
+							</td>
+						</tr>
+						<tr valign="bottom">
+							<td class="ForumPostFooterArea">								
+								<ul class="ForumPostStatistics CommonPrintHidden" style="clear: both;">
+									<li></li>
+									<li></li>
+									<li><a id="_ctl0__ctl1_bcr__ctl0___PostRepeater__ctl7_ReportLink" href="http://softwarecommunity.intel.com/isn/Community/en-US/forums/AddPost.aspx?ForumID=1&amp;ReportPostID=30242956">Report abuse</a></li>
+									
+								</ul>
+							</td>
+						</tr>
+						<tr>
+						<td colspan="2" style="border: 0px none ;">&nbsp;</td>
+						</tr>
+			
+							<tr class="ForumPostHeader" valign="middle">
+								<td style="border-top: 1px solid rgb(187, 187, 187); border-left: 1px solid rgb(187, 187, 187); border-bottom: 1px solid rgb(187, 187, 187); padding: 6px;" align="left"><a id="_ctl0__ctl1_bcr__ctl0___PostRepeater__ctl8_PostAnchor" name="30242996"><img id="_ctl0__ctl1_bcr__ctl0___PostRepeater__ctl8_Themedimage1" src="StackOverflow_files/icon_post_show.gif" alt="" border="0"></a>&nbsp;11-01-2007, 12:59 PM</td>
+								<td style="border-top: 1px solid rgb(187, 187, 187); border-right: 1px solid rgb(187, 187, 187); border-bottom: 1px solid rgb(187, 187, 187); padding: 6px; font-weight: normal;" class="ForumPostHeaderControlArea" align="right">
+									<a title="Link to this post" href="http://softwarecommunity.intel.com/isn/Community/en-US/forums/permalink/30233858/30242996/ShowThread.aspx#30242996">30242996</a> in reply to <a title="Link to this post" href="http://softwarecommunity.intel.com/isn/Community/en-US/forums/permalink/30233858/30242956/ShowThread.aspx#30242956">30242956</a>
+									&nbsp;
+								</td>
+							</tr>
+						<tr valign="top">
+							<td rowspan="2" class="ForumPostUserArea">
+								<div class="ForumPostUserContent">
+								<ul class="ForumPostUserPropertyList">
+									<li class="ForumPostUserName">
+										<img src="StackOverflow_files/user_IsOffline.gif" alt="huanghe@engr.sc.edu is not online. Last active: 11-09-2007, 2:46 PM" border="0">
+										<div class="ispp" usr="huanghe@engr.sc.edu"></div><a href="http://softwarecommunity.intel.com/isn/Community/en-US/members/huanghe%40engr.sc.edu.aspx">huanghe@engr.sc.edu</a>
+									</li>
+									<li class="ForumPostUserAvatar CommonPrintHidden">
+										
+									</li>
+									<li class="ForumPostUserIcons CommonPrintHidden">
+										<img title="Not Ranked" alt="Not Ranked" src="StackOverflow_files/rank0.gif">
+									</li>
+									<li class="ForumPostUserAttribute">
+										Joined on 11-14-2006
+									</li>
+									<li class="ForumPostUserAttribute">
+										
+									</li>
+									<li class="ForumPostUserAttribute">
+										<a href="http://softwarecommunity.intel.com/isn/Community/en-US/search/SearchResults.aspx?u=22265&amp;o=DateDescending">Posts 10</a>
+									</li>
+									<li class="ForumPostUserAttribute">
+										
+									</li>
+									<li class="ForumPostRoleIcons CommonPrintHidden">
+										
+									</li>
+								</ul>
+								</div>
+							</td>
+							<td class="ForumPostContentArea">
+								<div class="ForumPostTitleArea">
+									<h4 class="ForumPostTitle">
+										
+										Re: stack overflow
+									</h4>
+									
+									<div class="ForumPostAttachment">
+										
+									</div>
+
+									<div class="ForumPostThreadStatus">
+										 
+									</div>
+
+									<div class="ForumPostButtons">
+										<a href="http://softwarecommunity.intel.com/isn/Community/en-US/forums/AddPost.aspx?PostID=30242996" class="CommonImageTextButton" style="background-image: url(/isn/Community/en-US/Themes/default/images/forum/Reply.gif);">Reply</a>
+										<a href="http://softwarecommunity.intel.com/isn/Community/en-US/forums/AddPost.aspx?PostID=30242996&amp;Quote=True" class="CommonImageTextButton" style="background-image: url(/isn/Community/en-US/Themes/default/images/forum/Quote.gif);">Quote</a>
+										
+										
+										
+										
+										
+									</div>
+								</div>
+
+								<table style="table-layout: fixed;" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%">
+								<tbody><tr><td>
+									<div class="ForumPostBodyArea">
+									<div id="_ctl0__ctl1_bcr__ctl0___PostRepeater__ctl8_PostViewWrapper" class="ForumPostContentText">
+After input /heap_arrays at command line, in the optimization set-up
+window, there is a new Heap Arrays item appears, I inputted 100 (kb) in
+the blank after it. It works now. The problem now is that it runs very
+slow. Any suggestions for running the program faster? Does it help if I
+set the Optimization/Parallization as Yes(/Qparallel)?<br><br>thanks a lot,<br><br>heqing<br>
+
+
+									</div>
+									</div>
+								</td></tr>
+								</tbody></table>
+							</td>
+						</tr>
+						<tr valign="bottom">
+							<td class="ForumPostFooterArea">								
+								<ul class="ForumPostStatistics CommonPrintHidden" style="clear: both;">
+									<li></li>
+									<li></li>
+									<li><a id="_ctl0__ctl1_bcr__ctl0___PostRepeater__ctl8_ReportLink" href="http://softwarecommunity.intel.com/isn/Community/en-US/forums/AddPost.aspx?ForumID=1&amp;ReportPostID=30242996">Report abuse</a></li>
+									
+								</ul>
+							</td>
+						</tr>
+						<tr>
+						<td colspan="2" style="border: 0px none ;">&nbsp;</td>
+						</tr>
+			
+							<tr class="ForumPostHeader" valign="middle">
+								<td style="border-top: 1px solid rgb(187, 187, 187); border-left: 1px solid rgb(187, 187, 187); border-bottom: 1px solid rgb(187, 187, 187); padding: 6px;" align="left"><a id="_ctl0__ctl1_bcr__ctl0___PostRepeater__ctl9_PostAnchor" name="30242999"><img id="_ctl0__ctl1_bcr__ctl0___PostRepeater__ctl9_Themedimage1" src="StackOverflow_files/icon_post_show.gif" alt="" border="0"></a>&nbsp;11-01-2007, 1:41 PM</td>
+								<td style="border-top: 1px solid rgb(187, 187, 187); border-right: 1px solid rgb(187, 187, 187); border-bottom: 1px solid rgb(187, 187, 187); padding: 6px; font-weight: normal;" class="ForumPostHeaderControlArea" align="right">
+									<a title="Link to this post" href="http://softwarecommunity.intel.com/isn/Community/en-US/forums/permalink/30233858/30242999/ShowThread.aspx#30242999">30242999</a> in reply to <a title="Link to this post" href="http://softwarecommunity.intel.com/isn/Community/en-US/forums/permalink/30233858/30242996/ShowThread.aspx#30242996">30242996</a>
+									&nbsp;
+								</td>
+							</tr>
+						<tr valign="top">
+							<td rowspan="2" class="ForumPostUserArea">
+								<div class="ForumPostUserContent">
+								<ul class="ForumPostUserPropertyList">
+									<li class="ForumPostUserName">
+										<img src="StackOverflow_files/user_IsOffline.gif" alt="MAD\sblionel is not online. Last active: 03/23/2008, 2:10 PM" border="0">
+										<div class="ispp" usr="MAD\sblionel"></div><a href="http://softwarecommunity.intel.com/isn/Community/en-US/members/MAD%5csblionel.aspx">Steve Lionel</a>
+									</li>
+									<li class="ForumPostUserAvatar CommonPrintHidden">
+										
+									</li>
+									<li class="ForumPostUserIcons CommonPrintHidden">
+										<img title="Top 10 Contributor" alt="Top 10 Contributor" src="StackOverflow_files/rankTop10.gif">
+									</li>
+									<li class="ForumPostUserAttribute">
+										Joined on 03-13-2002
+									</li>
+									<li class="ForumPostUserAttribute">
+										
+									</li>
+									<li class="ForumPostUserAttribute">
+										<a href="http://softwarecommunity.intel.com/isn/Community/en-US/search/SearchResults.aspx?u=2450&amp;o=DateDescending">Posts 10,388</a>
+									</li>
+									<li class="ForumPostUserAttribute">
+										
+									</li>
+									<li class="ForumPostRoleIcons CommonPrintHidden">
+										 <a href="http://softwarecommunity.intel.com/isn/Community/en-US/user/Members.aspx?search=1&amp;r=35563a07-fd76-4dc0-91fd-79fb8a82a8aa"><img src="StackOverflow_files/35563a07-fd76-4dc0-91fd-79fb8a82a8aa.png" alt="Intel Employee" border="0"></a>
+									</li>
+								</ul>
+								</div>
+							</td>
+							<td class="ForumPostContentArea">
+								<div class="ForumPostTitleArea">
+									<h4 class="ForumPostTitle">
+										
+										Re: stack overflow
+									</h4>
+									
+									<div class="ForumPostAttachment">
+										
+									</div>
+
+									<div class="ForumPostThreadStatus">
+										 
+									</div>
+
+									<div class="ForumPostButtons">
+										<a href="http://softwarecommunity.intel.com/isn/Community/en-US/forums/AddPost.aspx?PostID=30242999" class="CommonImageTextButton" style="background-image: url(/isn/Community/en-US/Themes/default/images/forum/Reply.gif);">Reply</a>
+										<a href="http://softwarecommunity.intel.com/isn/Community/en-US/forums/AddPost.aspx?PostID=30242999&amp;Quote=True" class="CommonImageTextButton" style="background-image: url(/isn/Community/en-US/Themes/default/images/forum/Quote.gif);">Quote</a>
+										
+										
+										
+										
+										
+									</div>
+								</div>
+
+								<table style="table-layout: fixed;" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%">
+								<tbody><tr><td>
+									<div class="ForumPostBodyArea">
+									<div id="_ctl0__ctl1_bcr__ctl0___PostRepeater__ctl9_PostViewWrapper" class="ForumPostContentText">
+Turn on /check:arg_temp_created (Fortran &gt; Run-Time &gt; Check for
+Actual Arguments using temporary Storage &gt; Yes, rebuild and rerun
+your program.&nbsp; Look to see if you get messages about a temporary
+being created.&nbsp; At these locations, your program is doing
+something inefficient - passing a possibly non-contiguous array section
+to a routine expecting a contiguous array.&nbsp; If you see this, you
+can have the called routine accept the argument as assumed-shape (:)
+and provide an explicit interface to all callers, or do what is needed
+to pass the array as a contiguous section.<br><br>Your
+program is slow because it requires making large copies of one or more
+arrays - that you need to set /heap-arrays is an indication of
+this.&nbsp; If you can eliminate the copies, your program will get MUCH
+faster.<br>
+
+<hr align="left" size="1" width="25%">Steve <br><br>Doctor Fortran: intel.com/software/drfortran
+									</div>
+									</div>
+								</td></tr>
+								</tbody></table>
+							</td>
+						</tr>
+						<tr valign="bottom">
+							<td class="ForumPostFooterArea">								
+								<ul class="ForumPostStatistics CommonPrintHidden" style="clear: both;">
+									<li></li>
+									<li></li>
+									<li><a id="_ctl0__ctl1_bcr__ctl0___PostRepeater__ctl9_ReportLink" href="http://softwarecommunity.intel.com/isn/Community/en-US/forums/AddPost.aspx?ForumID=1&amp;ReportPostID=30242999">Report abuse</a></li>
+									
+								</ul>
+							</td>
+						</tr>
+						<tr>
+						<td colspan="2" style="border: 0px none ;">&nbsp;</td>
+						</tr>
+			
+				</tbody></table>
+			
+
+		
+
+		<table border="0" cellpadding="0" cellspacing="0" width="98%">
+			<tbody><tr>
+				<td colspan="2" align="right">
+					<div class="CommonWebFeedArea CommonPrintHidden">
+						<a href="http://softwarecommunity.intel.com/isn/Community/en-US/forums/rss.aspx?ForumID=1005&amp;PostID=30233858" id="_ctl0__ctl1_bcr__ctl0___Postrsslink1" name="Postrsslink1"><img src="StackOverflow_files/rss.gif" alt="View as RSS news feed in XML" border="0"></a>
+					</div>
+				</td>
+			</tr>
+		</tbody></table>
+	</div>		
+	
+
+</div>
+
+										</td>
+										
+										<td id="CommonRightColumn" valign="top">
+											
+			<div class="CommonSidebarArea">
+				<h4 class="CommonSidebarHeader"><span id="_ctl0__ctl1_rcr_Resourcelabel7" class="CommonSidebarLabel">Shortcuts</span></h4>
+				<div class="CommonSidebarContent">
+					
+<script language="javascript">
+	function tag(ref) 
+	{
+		window.open(ref+"?turl="+location.protocol+"//"+location.host+location.pathname+"&tdec="+document.title+"&taID=4","ISNTag","width=700,height=400,resizable=0,scrollbars=1");
+	}
+	
+	function eaf(ref, height, width, scrollbar) {
+		if (scrollbar=="true")
+			scrollbar = "yes";
+		else
+			scrollbar = "no";
+		var leftPos = (screen.availWidth-width)/2, topPos = (screen.availHeight-height)/2;
+		window.open(ref+"?page="+location.href+"&title="+escape(document.title),"TellObj","width="+width+",height="+height+", top="+topPos+", left=" + leftPos+", resizable=no,scrollbars="+ scrollbar+",toolbar=no,location=no,status=no,menubar=no");
+    }
+</script>
+<div class="CommonSidebarContentItem"><a href="http://softwarecommunity.intel.com/isn/Community/en-US/user/Members.aspx"><span id="_ctl0__ctl1_rcr_Forumlinkbar1___Resourcelabel6">View all users</span></a></div>
+
+
+
+<div class="CommonSidebarContentItem"><a href="javascript:void(0);" onmouseover="return overlib('Click for Quick Login');" onclick="return setForm();" onmouseout="return doFocus() && nd();"><span id="_ctl0__ctl1_rcr_Forumlinkbar1___Resourcelabel2">My Tags</span></a></div>
+<div class="CommonSidebarContentItem"><a href="javascript:void(0);" onmouseover="return overlib('Click for Quick Login');" onclick="return setForm();" onmouseout="return doFocus() && nd();"><span id="_ctl0__ctl1_rcr_Forumlinkbar1___Resourcelabel7">Tag This</span></a></div>
+
+
+<div class="CommonSidebarContentItem"><a target="_blank" href="http://softwarecommunity.intel.com/ISNTagWeb/ISNTagcloud.aspx"><span id="_ctl0__ctl1_rcr_Forumlinkbar1___Resourcelabel3">Site Tag Cloud</span></a></div>
+
+<div class="CommonSidebarContentItem"><a href="javascript:eaf('http://softwarecommunity.intel.com/ISNCommunication/EmailAFriend.aspx', 400, 390, 'false')"><span id="_ctl0__ctl1_rcr_Forumlinkbar1___Resourcelabel1">Email a Friend</span></a></div>
+<div class="CommonSidebarContentItem"><a href="javascript:eaf('http://softwarecommunity.intel.com/ISNCommunication/Feedback.aspx', 300, 390, 'false')"><span id="_ctl0__ctl1_rcr_Forumlinkbar1___Resourcelabel10">Submit Feedback</span></a></div>
+
+							
+				</div>
+
+				<script type="text/javascript" language="javascript">
+				thisURL = encodeURIComponent(document.location);
+				$(document).ready( function(){
+					getTagsForUrl();
+					getTags();
+				});
+				getTagsCallback.extend = function(jData) {
+					$("#tagsText").css({'padding-bottom':'0px'});
+					if(!jData) { $("#tagsText").html(""); }
+				}
+				getTagsForUrlCallback.extend = function(jData) {
+					if(!jData) { 
+						$("#tagsForUrlTextAlt").html("");
+						return; 
+					}
+					var tagsForUrlText = '';
+					var display = '<a href="%%url%%" class="font%%weight%%">%%tag%%</a>&#160; ';
+					var len = jData.length;
+					if(len > 0) {
+						for(i=0;i<len;i++) {
+							if(jData[i].TagName.length > 2) {
+								var thisRow = display;
+								thisRow = thisRow.replace('%%tag%%',jData[i].TagName);
+								thisRow = thisRow.replace('%%weight%%',jData[i].TagWeight);
+								thisRow = thisRow.replace('%%url%%',jData[i].TagUrl);
+								tagsForUrlText += thisRow;
+							}
+						}
+						$("#tagsForUrlTextAlt").html("<div class='sectionBody' style='padding-bottom:0px;'>"+tagsForUrlText + "</div>");
+					}
+				}				
+				</script>
+				<br>
+				<h4 class="CommonSidebarHeader"><span id="_ctl0__ctl1_rcr_Resourcelabel1" class="CommonSidebarLabel">Tags For This Post</span></h4>
+				<div class="CommonSidebarContent">
+					<div class="CommonSidebarContentItem" id="tagsForUrlTextAlt"></div>
+				</div>
+
+				<br>
+				<h4 class="CommonSidebarHeader"><span id="_ctl0__ctl1_rcr_Resourcelabel2" class="CommonSidebarLabel">Community Tags</span></h4>
+				<div class="CommonSidebarContent">
+					<div style="padding-bottom: 0px;" class="CommonSidebarContentItem" id="tagsText"><a href="http://softwarecommunity.intel.com/ISNTagWeb/TagList.aspx?tid=353&amp;lang=eng" class="font2">Charles</a>&nbsp; <a href="http://softwarecommunity.intel.com/ISNTagWeb/TagList.aspx?tid=425&amp;lang=eng" class="font2">code</a>&nbsp; <a href="http://softwarecommunity.intel.com/ISNTagWeb/TagList.aspx?tid=343&amp;lang=eng" class="font2">developer</a>&nbsp; <a href="http://softwarecommunity.intel.com/ISNTagWeb/TagList.aspx?tid=354&amp;lang=eng" class="font2">FAQ</a>&nbsp; <a href="http://softwarecommunity.intel.com/ISNTagWeb/TagList.aspx?tid=178&amp;lang=eng" class="font4">INTEL</a>&nbsp; <a href="http://softwarecommunity.intel.com/ISNTagWeb/TagList.aspx?tid=191&amp;lang=eng" class="font2">Manageability</a>&nbsp; <a href="http://softwarecommunity.intel.com/ISNTagWeb/TagList.aspx?tid=355&amp;lang=eng" class="font2">methodology</a>&nbsp; <a href="http://softwarecommunity.intel.com/ISNTagWeb/TagList.aspx?tid=42&amp;lang=eng" class="font2">Mobility</a>&nbsp; <a href="http://softwarecommunity.intel.com/ISNTagWeb/TagList.aspx?tid=293&amp;lang=eng" class="font2">multithreading</a>&nbsp; <a href="http://softwarecommunity.intel.com/ISNTagWeb/TagList.aspx?tid=181&amp;lang=eng" class="font3">multi-threading</a>&nbsp; <a href="http://softwarecommunity.intel.com/ISNTagWeb/TagList.aspx?tid=182&amp;lang=eng" class="font3">parallelism</a>&nbsp; <a href="http://softwarecommunity.intel.com/ISNTagWeb/TagList.aspx?tid=217&amp;lang=eng" class="font3">software</a>&nbsp; <a href="http://softwarecommunity.intel.com/ISNTagWeb/TagList.aspx?tid=272&amp;lang=eng" class="font2">Technology</a>&nbsp; <a href="http://softwarecommunity.intel.com/ISNTagWeb/TagList.aspx?tid=33&amp;lang=eng" class="font3">threading</a>&nbsp; <a href="http://softwarecommunity.intel.com/ISNTagWeb/TagList.aspx?tid=397&amp;lang=eng" class="font1">tools</a>&nbsp; <br><br></div>
+				</div>
+
+			</div>
+    
+										</td>
+									</tr>
+								</tbody></table>
+							</div>
+						</div>
+					
+				<script src="StackOverflow_files/wz_tooltip.js" type="text/javascript"></script>
+
+	<script language="javascript" type="text/javascript">
+<!--
+function KeyDownHandler_ctl0__ctl1_bhcr_t___TitleBarSearchButton(event)
+{
+	if (event.keyCode == 13)
+	{
+		event.returnValue = false;
+		event.cancel = true;
+     __doPostBack('_ctl0:_ctl1:bhcr:t:_:TitleBarSearchButton','')	}
+}
+
+//-->
+</script>
+
+
+</form>
+
+		
+
+		<br>
+<table align="left">
+<tbody><tr>
+<td id="LegalBodyColumn" class="CommonContent" align="left" height="100%" valign="bottom" width="100%">
+<a href="http://www.intel.com/cd/ids/developer/asmo-na/eng/291616.htm" target="_blank">*Additional Legal Information</a>
+</td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+</tbody></table>
+<!--block_footer--></div>
+	 <!-- footer -->        
+      <div id="footer">
+        <ul class="footer-leftbar">
+          <li class="footer-leftbar-firstitem"><a href="http://www.intel.com/siteindex.htm?iid=CorporateV3+Footer_Sitemap">Site Map</a></li>
+          <li class="footer-leftbar-item"><a href="http://www.intel.com/intel/rss.htm?iid=CorporateV3+Footer_RSS">RSS Feeds</a></li>
+          <li class="footer-leftbar-item"><a href="http://www.intel.com/jobs/index.htm?iid=CorporateV3+Footer_jobs">Jobs at Intel</a></li>
+          <li class="footer-leftbar-item"><a href="http://www.intc.com/phoenix.zhtml?c=101302&amp;p=irol-IRHome&amp;iid=engHPage+ftr_investor">Investor Relations</a></li>
+        </ul>
+        <ul class="footer-rightbar">
+          <li class="footer-rightbar-firstitem"><span class="footer-link-character">*</span><a href="http://www.intel.com/sites/corporate/tradmarx.htm?iid=CorporateV3+Footer_legal">Legal Information</a></li>
+          <li class="footer-rightbar-item"><a href="http://www.intel.com/sites/corporate/privacy.htm?iid=CorporateV3+Footer_privacy">Privacy Policy</a></li>
+          <li class="footer-rightbar-lastitem">©Intel Corporation</li>
+        </ul>            
+      </div>
+      <!-- /footer -->
+	  <!-- Flash detection script -->
+	  <script type="text/javascript">  
+		flashdetect();  
+	  </script> 
+	  <!-- /Flash detection script -->
+		<script language="JavaScript" type="text/javascript"><!--
+		if (document.gn_js) { gn_writeLayers(); } // -->
+		</script>
+		
+		
+		</div><!--/block_footer-->
+
+		<!-- WA WAP code --> 
+<script type="text/javascript" src="StackOverflow_files/wa_setup.js"></script> 
+<script type="text/javascript"><!-- 
+var wa_pageName="/isn/Community/en-US/forums/thread/30233858.aspx"
+var wa_geo="asmo-na" 
+var wa_language="eng" 
+var wa_org1="sw" 
+var wa_org2="Community" 
+var wa_org3="" 
+var wa_org4="" 
+var wa_orgX="" 
+var wa_urlQueryString="" 
+var wa_reportSuites="intelcorpisnforums,intelcorpsw" 
+var wa_ngipDocId="" 
+var wa_ngipUniqueId="" 
+var wa_campaign="" 
+var wa_custom03="Intel® Visual Fortran Compiler for Windows" 
+var wa_custom06="View Thread" 
+var wa_custom07="Intel Fortran compiler 9.1 stack overflow" 
+var wa_custom09="http://softwarecommunity.intel.com/isn/Community/en-US/forums/thread/30233854.aspx" 
+--></script> 
+<script type="text/javascript" src="StackOverflow_files/wa_process.htm"></script><img src="StackOverflow_files/s74312524414662.gif" name="s_i_intelcorpisnforums" alt="" border="0" height="1" width="1"> 
+<!-- End WA WAP code --> 
+
+	</body></html>

@@ -1,0 +1,233 @@
+/* parent or containter adtype */
+#headerads{
+	position: relative;
+	width: 728px;
+	height: 90px;
+	padding: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	float: left;
+	text-align: left;
+	border-collapse: collapse;
+}
+
+#rightads{
+	width: 600px;
+	padding-top: 15px;
+	padding-bottom: 16px;
+}
+
+#footerads{
+	position: relative;
+	width: 950px;
+	height: 160px;
+	padding: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	background: #ffffff;
+	margin-left: auto;
+	margin-right: auto;
+	border-collapse: collapse;
+}
+
+
+/* one unit header ad */
+#as1a{
+	position: absolute;
+	left:0px;
+	width:550px;
+	top:0px;
+	text-align: left;
+
+}
+#as1b{
+	position: absolute;
+	left:550px;
+	width:120px;
+	background:#fff;
+	top:0px;
+}
+
+
+/* header styling */
+.ghdrad{
+	padding: 4px;
+	padding-bottom: 15px;
+	font-family: Arial, sans-serif;
+}
+.ghdrad .desc{
+	font-size: 11pt;
+	font-weight: normal;
+	text-decoration: none;
+	color: #000;
+}
+.ghdrad .title{
+	text-decoration: underline;
+}
+.ghdrad .url{
+	font-size: 10pt;
+	font-weight: normal;
+	text-decoration: none;
+	color: red;
+}
+.ghdrad a{
+	font-size: 12pt;
+	color: #105CB6;
+	font-weight: bold;
+	text-decoration: none;
+}
+.ghdrad a:hover{
+	font-size: 12pt;
+	color: #000;
+	font-weight: bold;
+}
+.ghdrad a:visited{
+	font-size: 12pt;
+	color: #105CB6;
+	font-weight: bold;
+}
+.ghdrad a:hover .desc{
+	font-size: 11pt;
+	font-weight: normal;
+	text-decoration: none;
+	color: #666666;
+}
+.ghdradby{
+	text-align: right;
+}
+.ghdradby a{
+	font-family: Arial, sans-serif;
+	font-size: 10pt;
+	text-decoration: none;
+	font-weight: bold;
+	color: #666;
+}
+.ghdradby a:hover{
+	font-family: Arial, sans-serif;
+	font-size: 10pt;
+	font-weight: bold;
+	text-decoration: underline;
+	color: #666;
+}
+
+/* column ad styling */
+.gcolad{
+	padding: 4px;
+	padding-bottom: 15px;
+	font-family: Arial, sans-serif;
+}
+.gcolad .desc{
+	font-size: 11pt;
+	font-weight: normal;
+	text-decoration: none;
+	color: #000;
+}
+.gcolad .title{
+	text-decoration: underline;
+}
+.gcolad .url{
+	font-size: 10pt;
+	font-weight: normal;
+	text-decoration: none;
+	color: red;
+}
+.gcolad a{
+	font-size: 12pt;
+	color: #105CB6;
+	font-weight: bold;
+	text-decoration: none;
+}
+.gcolad a:hover{
+	font-size: 12pt;
+	color: #000;
+	font-weight: bold;
+}
+.gcolad a:visited{
+	font-size: 12pt;
+	color: #105CB6;
+	font-weight: bold;
+}
+.gcolad a:hover .desc{
+	font-size: 11pt;
+	font-weight: normal;
+	text-decoration: none;
+	color: #666666;
+}
+.gcoladby{
+	text-align: right;
+}
+.gcoladby a{
+	font-family: Arial, sans-serif;
+	font-size: 10pt;
+	text-decoration: none;
+	font-weight: bold;
+	color: #666;
+}
+.gcoladby a:hover{
+	font-family: Arial, sans-serif;
+	font-size: 10pt;
+	font-weight: bold;
+	text-decoration: underline;
+	color: #666;
+}
+
+/* footer ad styling */
+.gftrad{
+	padding: 4px;
+	padding-bottom: 15px;
+	font-family: Arial, sans-serif;
+}
+.gftrad .desc{
+	font-size: 11pt;
+	font-weight: normal;
+	text-decoration: none;
+	color: #000;
+}
+.gftrad .title{
+	text-decoration: underline;
+}
+.gftrad .url{
+	font-size: 10pt;
+	font-weight: normal;
+	text-decoration: none;
+	color: red;
+}
+.gftrad a{
+	font-size: 12pt;
+	color: #105CB6;
+	font-weight: bold;
+	text-decoration: none;
+}
+.gftrad a:hover{
+	font-size: 12pt;
+	color: #000;
+	font-weight: bold;
+}
+.gftrad a:visited{
+	font-size: 12pt;
+	color: #105CB6;
+	font-weight: bold;
+}
+.gftrad a:hover .desc{
+	font-size: 11pt;
+	font-weight: normal;
+	text-decoration: none;
+	color: #666666;
+}
+.gftradby{
+	text-align: right;
+}
+.gftradby a{
+	font-family: Arial, sans-serif;
+	font-size: 10pt;
+	font-weight: bold;
+	text-decoration: none;
+	color: #666;
+}
+.gftradby a:hover{
+	font-family: Arial, sans-serif;
+	font-size: 10pt;
+	font-weight: bold;
+	text-decoration: underline;
+	color: #666;
+}

@@ -1,0 +1,1109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en"><head><title>Panel flicker - .NET VB</title>
+
+
+
+<meta name="keywords" content="Panel flicker software, programming, scripts, php, C++, C, .NET, python,  VB, VB.net,  perl,  java,  javascript, web services,  xml, database, mysql, oracle">
+<meta name="description" content="Panel flicker. Get answers to your questions in our .NET VB forum.">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link href="Panel%20flicker_files/all.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="Panel%20flicker_files/as_styles.css"><!-- CSS Stylesheet -->
+
+<link rel="stylesheet" type="text/css" href="Panel%20flicker_files/style-e9d40a21-00013.css"><!-- / CSS Stylesheet -->
+
+
+
+<script type="text/javascript">
+<!--
+var SESSIONURL = "";
+var IMGDIR_MISC = "http://www.thescripts.com/forum/images/cnome_misc";
+// -->
+</script>
+
+
+<script type="text/javascript" src="Panel%20flicker_files/vbulletin_global.js"></script>
+
+<link href="Panel%20flicker_files/navMenu.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="Panel%20flicker_files/navMenu.js"></script>
+
+
+<script> 
+window.onload = navMenuExp; 
+</script> 
+
+<script src="Panel%20flicker_files/a" type="text/javascript"></script><script src="Panel%20flicker_files/a_002" type="text/javascript"></script></head><body>
+<table class="maintable">
+  <tbody><tr>
+    <td width="180">
+
+<a href="http://www.thescripts.com/"><img title="IT / Developer Network" src="Panel%20flicker_files/logo4.gif" alt="IT / Developer Network" border="0" height="80" width="220"></a>
+
+</td>
+    
+	<td class="top_header" align="right">
+		<table width="100%">
+			<tbody><tr>
+				<td class="top_header" align="right" height="20" valign="top">
+					
+						<a href="http://www.thescripts.com/forum/faq.php">Help</a> | 
+						<a href="http://www.thescripts.com/forum/archive/index.php">Site Map</a> | 
+						<a href="http://www.thescripts.com/mediakit.html">Advertise</a>
+
+					
+				</td>
+			</tr>
+			<tr>
+				<td class="top_header" align="left" height="30" valign="bottom">
+					
+					<table width="100%">
+					<tbody><tr><td class="top_header" align="left" width="50%">
+						
+							Hello, <a href="http://www.thescripts.com/forum/login.php">Sign in</a> or <a href="http://www.thescripts.com/forum/register.php">Create an account</a>
+						
+					</td>
+					<td class="top_header" align="right">
+						<form action="http://www.thescripts.com/forum/search.php" method="post" name="search">
+						<input name="do" value="process" type="hidden">
+						<input name="showposts" value="0" type="hidden">
+						<input name="quicksearch" value="1" type="hidden">
+						<input name="forumchoice[]" value="" type="hidden">					<input name="query" size="20" value="Search" onfocus="this.value=''" type="text">
+						<input value="Go" name="gobutton" type="submit">
+						</form>
+					</td>
+					</tr>
+					</tbody></table>
+				</td>
+			</tr>
+		</tbody></table>
+		
+	</td>
+  </tr>
+</tbody></table>
+
+<div id="menuwrapper">
+	<ul id="navMenubar">
+		<li><a class="trigger" href="#">Discussions</a>
+			<ul>
+				<li><a href="http://www.thescripts.com/forum/forum30.html">Introductions</a></li>
+				<li><a href="http://www.thescripts.com/forum/forum160.html">Cafe / Lounge</a></li>
+				<li><a href="http://www.thescripts.com/forum/forum67.html">Programming Challenges / IT Case Studies</a></li>
+				<li><a href="http://www.thescripts.com/forum/forum125.html">Feedback, Bugs, Suggestions</a></li>
+
+				
+			</ul>
+		</li>
+		<li><a class="trigger" href="#">Forums</a>
+			<ul>
+				<div id="menudesc">Programming forums for software developers and programmers:</div>
+				<li><div class="menucat">Languages</div>
+					<div id="sublist">
+						<a href="http://www.thescripts.com/forum/forum129.html">C / C++</a>
+						<a href="http://www.thescripts.com/forum/forum130.html">Java</a>
+						<a href="http://www.thescripts.com/forum/forum131.html">.NET</a>
+						<a href="http://www.thescripts.com/forum/forum132.html">Visual Basic </a>
+						<a href="http://www.thescripts.com/forum/forum152.html">Python</a>
+					</div>
+				</li>
+				<li><div class="menucat">Web Development</div>
+					<div id="sublist">
+						<a href="http://www.thescripts.com/forum/forum128.html">PHP</a>
+						<a href="http://www.thescripts.com/forum/forum147.html">Ruby / Rails</a>
+						<a href="http://www.thescripts.com/forum/forum150.html">Perl</a>
+						<a href="http://www.thescripts.com/forum/forum151.html">ASP</a>
+						<a href="http://www.thescripts.com/forum/forum148.html">Coldfusion</a>
+						<a href="http://www.thescripts.com/forum/forum149.html">Javascript / Ajax</a>
+						<a href="http://www.thescripts.com/forum/forum144.html">Flash / Actionscript</a>
+						<a href="http://www.thescripts.com/forum/forum145.html">XML</a>
+						<a href="http://www.thescripts.com/forum/forum143.html">HTML / CSS</a>				
+					</div>
+				</li>
+				<li><div class="menucat">Database</div>
+					<div id="sublist">
+						<a href="http://www.thescripts.com/forum/forum138.html">MySQL</a>
+						<a href="http://www.thescripts.com/forum/forum139.html">Oracle</a>
+						<a href="http://www.thescripts.com/forum/forum141.html">SQL Server</a>
+						<a href="http://www.thescripts.com/forum/forum140.html">PostgreSQL</a>
+						<a href="http://www.thescripts.com/forum/forum142.html">Access</a>				
+						<a href="http://www.thescripts.com/forum/forum159.html">DB2</a>
+					</div>
+				</li>
+				<li><div class="menucat">System Administration</div>
+					<div id="sublist">
+						<a href="http://www.thescripts.com/forum/forum133.html">Apache</a>
+						<a href="http://www.thescripts.com/forum/forum134.html">IIS</a>
+						<a href="http://www.thescripts.com/forum/forum135.html">Networking</a>
+						<a href="http://www.thescripts.com/forum/forum136.html">Linux / Unix / BSD</a>
+						<a href="http://www.thescripts.com/forum/forum137.html">Windows</a>					
+					</div>
+				</li>
+				<li><div class="menucat">More</div>
+					<div id="sublist">
+						<a href="http://www.thescripts.com/forum/forum158.html">Software Development</a>
+						<a href="http://www.thescripts.com/forum/forum146.html">Mobile Development</a>
+						<a href="http://www.thescripts.com/forum/forum214.html">Jobs</a>
+						<a href="http://www.thescripts.com/forum/forum28.html">Misc Questions</a>
+					</div>
+				</li>
+			</ul>
+		</li>
+		<li><a class="trigger" href="http://www.thescripts.com/howtos.php">Howtos</a>
+			<ul>
+				<li><a href="http://www.thescripts.com/howtos.php">Browse all Howtos and articles here</a></li>
+				
+			</ul>
+		</li>
+		<li><a class="trigger" href="#">Our Community</a>
+			<ul>
+				<li><a href="#">Meet the Admins</a></li>
+				<li><a href="#">Meet the Moderators</a></li>
+				<li><a href="#">Meet the Experts</a></li>
+				<li><a href="#">Most active members</a></li>
+				<li><a href="http://www.thescripts.com/forum/memberlist.php">Member Directory</a></li>
+				<li><a href="#">Who's Online</a></li>
+			</ul>
+		</li>
+	</ul>
+	<br class="clearit">
+</div>
+
+
+
+<script type="text/javascript">
+<!--
+function log_out()
+{
+	ht = document.getElementsByTagName("html");
+	ht[0].style.filter = "progid:DXImageTransform.Microsoft.BasicImage(grayscale=1)";
+	if (confirm('Are you sure you want to log out?'))
+	{
+		return true;
+	}
+	else
+	{
+		ht[0].style.filter = "";
+		return false;
+	}
+}
+//-->
+</script>
+
+
+<table class="navtable">
+  <tbody><tr>
+   <td>
+<!-- breadcrumb, login, pm info -->
+<div class="navbar_box">
+
+
+	
+		
+			<strong><a href="http://www.thescripts.com/forum/" accesskey="1">Community</a>
+	<span class="navbar">&gt; <a href="http://www.thescripts.com/forum/forum86.html">Newsgroup Archive</a></span>
+
+	<span class="navbar">&gt; <a href="http://www.thescripts.com/forum/forum112.html">microsoft.public.*</a></span>
+
+	<span class="navbar">&gt; <a href="http://www.thescripts.com/forum/forum117.html">.NET VB</a></span>
+</strong> 
+		
+	
+</div>
+</td>
+</tr>
+</tbody></table>
+
+<table class="maintable">
+  <tbody><tr>
+    <td valign="top">
+      <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tbody><tr>
+          <td height="1000" valign="top">
+		
+
+			
+			<!-- content table -->
+			
+
+			
+
+
+
+<a name="poststop" id="poststop"></a>
+
+
+<!-- end content table -->
+
+<!-- / end content table -->
+
+<h1 style="margin: 0px; padding: 0px 3px 0px 0px; font-size: 17pt;">Panel flicker</h1>
+
+
+<script language="JavaScript" src="Panel%20flicker_files/as_header.js"></script>
+<script language="JavaScript" src="Panel%20flicker_files/show_ads.js"></script><script language="JavaScript1.1" src="Panel%20flicker_files/ads"></script><div id="rightads"><div class="ghdrad"><a href="http://pagead2.googlesyndication.com/pagead/iclk?sa=l&amp;ai=BcblnMTp7R5mVHaWqrAPJ9uGWBoS3pTW4pPLhBMCNtwGghjIQARgBIMHS9wEoAjgAUL2KrFZgydbZhsij_BqqAQo2ODA4NDA3Nzg5sgESd3d3LnRoZXNjcmlwdHMuY29tugEKMzAweDI1MF9qc8gBAdoBMWh0dHA6Ly93d3cudGhlc2NyaXB0cy5jb20vZm9ydW0vdGhyZWFkMzg3Nzc2Lmh0bWyAAgHIAtiAvgGoAwHoAx_oA-YD6APeBfUDAAEAAA&amp;num=1&amp;adurl=http://www.SmartDraw.com/specials/context/SmartDraw.htm%3Fid%3D207233&amp;client=ca-pub-8550604525820387" onmouseout="window.status=''" onmouseover="window.status='go to www.SmartDraw.com'"><span class="title">SmartDraw 2008</span><span class="desc"> - The World's Most Popular Business Graphics Software. Free Download! ( <span class="url">www.SmartDraw.com</span> )</span></a></div><div class="ghdrad"><a href="http://pagead2.googlesyndication.com/pagead/iclk?sa=l&amp;ai=BHZWaMTp7R5mVHaWqrAPJ9uGWBver9jGj8tieBMCNtwHw1xwQAhgCIMHS9wEoAjgAULn9w8T9_____wFgydbZhsij_BqgAfGo7_kDqgEKNjgwODQwNzc4ObIBEnd3dy50aGVzY3JpcHRzLmNvbboBCjMwMHgyNTBfanPIAQHaATFodHRwOi8vd3d3LnRoZXNjcmlwdHMuY29tL2ZvcnVtL3RocmVhZDM4Nzc3Ni5odG1syAK7yPkCqAMB6AMf6APmA-gD3gX1AwABAAA&amp;num=2&amp;adurl=http://clickserve.dartsearch.net/link/click%3Flid%3D43000000057393096&amp;client=ca-pub-8550604525820387" onmouseout="window.status=''" onmouseover="window.status='go to www.skillsoft.com'"><span class="title">Visual Basic Training</span><span class="desc"> - IT Training Certification Guides Online Books &amp; Courses at SkillSoft ( <span class="url">www.skillsoft.com</span> )</span></a></div><div class="ghdradby"><a href="http://services.google.com/feedback/abg?url=http://www.thescripts.com/forum/thread387776.html&amp;hl=en&amp;client=ca-pub-8550604525820387&amp;adU=www.SmartDraw.com&amp;adT=SmartDraw+2008&amp;adU=www.skillsoft.com&amp;adT=Visual+Basic+Training&amp;done=1">Ads by Google</a></div></div>
+
+
+
+
+<!-- post #1496388 -->
+
+<div id="post_box">
+	<div class="alt2 post_box_top">
+		<!-- user info -->
+		<table border="0" cellpadding="3" cellspacing="0" width="100%">
+			<tbody><tr>
+<td valign="top" width="30">
+
+
+	
+		<a href="http://www.thescripts.com/forum/member.php?u="><img title="Sarika's Avatar" class="avtr" src="Panel%20flicker_files/noavatar.gif" alt="Sarika's Avatar" border="0" height="30" width="30"></a>
+	
+
+
+
+</td>
+				<td id="post_box_clear" width="50%">
+					<div id="postmenu_1496388" class="post_auth">						
+						
+							Sarika
+						
+
+						<div class="smallfont">Guest</div>
+						<div class="smallfont">
+							n/a Posts
+						</div>
+					</div>					
+				</td>
+				<td id="post_box_clear" class="post_auth" align="right" valign="bottom">
+					<div class="smallfont">
+						
+							November 21st, 2005<br>10:12 PM
+						<br>
+						#<a href="http://www.thescripts.com/forum/post1496388-1.html" target="new" class="smallfont"><strong>1</strong></a>
+
+					</div>
+				</td>			
+			</tr>
+		</tbody></table>
+		<!-- / user info -->
+	</div>
+	<div class="alt1 post_box_bottom">
+		<!-- message, attachments, sig -->
+		<!-- message -->
+                <br>
+		
+			<strong>Panel flicker</strong>
+		
+		<hr style="border: medium none ; color: rgb(238, 238, 238); background-color: rgb(238, 238, 238); height: 1px; padding-top: 3px;" size="1">
+		<div class="post_message">I migrated a VB6.0 application to VB.NET. This app has a drawing area, which<br>
+is a panel. The user can drag and drop several objects on this drawing area<br>
+and can also draw lines, boxes etc. The app is sufferring from the problem of<br>
+flicker.<br>
+<br>
+On reading several posts on this forum and others I decided to enable double<br>
+buffering for my panel. However the drawing area appears blank. I can briefly<br>
+see the objects when adding new objects on the drawing area.<br>
+<br>
+I have a context menu associated w/ the panel. On clicking the Show option<br>
+in the context menu, the drawing appears, however on resizing the form or<br>
+adding a new object to the drawing area, the screen becomes blank again.<br>
+<br>
+Any idea as to what I am missing here?<br>
+<br>
+Posting some code snippets below, if that will help.<br>
+<br>
+Thanks in advance for your help.<br>
+<br>
+<br>
+Code:<br>
+<br>
+'This class defines an object which is a specialized panel, which eliminates<br>
+'the flickering effect when used as a drawing pad<br>
+<br>
+Public Class CBufferedPanel<br>
+Inherits Panel<br>
+<br>
+Public Sub New()<br>
+MyBase.New()<br>
+<br>
+SetStyle(ControlStyles.AllPaintingInWmPaint Or _<br>
+ControlStyles.DoubleBuffer Or _<br>
+ControlStyles.ResizeRedraw Or _<br>
+ControlStyles.UserPaint, _<br>
+True)<br>
+<br>
+UpdateStyles()<br>
+End Sub<br>
+End Class<br>
+<br>
+'In the form that has the panel, I define picSegment of type CBuffered class<br>
+and instantiate it<br>
+Public Class DrawingArea<br>
+Inherits System.Windows.Forms.Form<br>
+<br>
+Private Sub picSegment_Paint(ByVal Sender As Object, ByVal pea As<br>
+PaintEventArgs) _<br>
+Handles picSegment.Paint<br>
+<br>
+'Paint method calls the draw routine<br>
+DrawAll(picSegment, True)<br>
+End Sub<br>
+<br>
+End Class<br>
+</div>
+		<!-- / message -->
+	
+		
+		
+		
+		<hr style="border: medium none ; color: rgb(238, 238, 238); background-color: rgb(238, 238, 238); height: 1px; padding-top: 3px;" size="1">
+		
+	
+		<div class="post_buttons" align="right">
+			<!-- controls -->
+			
+			
+			
+
+			
+			
+			
+			
+			<!-- / controls -->
+		</div>
+		<!-- message, attachments, sig -->
+	</div>
+</div>
+
+<!-- / post #1496388 -->
+
+ 
+
+		<script language="JavaScript" src="Panel%20flicker_files/as_column.js"></script>
+		<script language="JavaScript" src="Panel%20flicker_files/show_ads.js"></script><script language="JavaScript1.1" src="Panel%20flicker_files/ads_002"></script><div id="rightads"><div class="gcolad"><a href="http://pagead2.googlesyndication.com/pagead/iclk?sa=l&amp;ai=B094HMTp7R7_tOZrGqgPPy5jdBver9jGr8dieBMCNtwHgpxIQARgDIMHS9wEoAjgAULn9w8T9_____wFgydbZhsij_BqgAfGo7_kDqgEKNTI4ODAxOTE5M7IBEnd3dy50aGVzY3JpcHRzLmNvbboBCjMwMHgyNTBfanPIAQHaATFodHRwOi8vd3d3LnRoZXNjcmlwdHMuY29tL2ZvcnVtL3RocmVhZDM4Nzc3Ni5odG1syAK7yPkCqAMB6AMf6APmA-gD3gX1AwABAAA&amp;num=3&amp;adurl=http://clickserve.dartsearch.net/link/click%3Flid%3D43000000057393096&amp;client=ca-pub-8550604525820387" onmouseout="window.status=''" onmouseover="window.status='go to www.skillsoft.com'"><span class="title">Visual Basic Training</span><span class="desc"> - VB Training Tools &amp; Courses Train with SkillSoft Today. ( <span class="url">www.skillsoft.com</span> ) </span></a></div><div class="gcolad"><a href="http://pagead2.googlesyndication.com/pagead/iclk?sa=l&amp;ai=BaXiBMTp7R7_tOZrGqgPPy5jdBqLDwDfi4aLhAsCNtwGAgVMQAhgEIMHS9wEoAjgAUP6PyeADYMnW2YbIo_waqgEKNTI4ODAxOTE5M7IBEnd3dy50aGVzY3JpcHRzLmNvbboBCjMwMHgyNTBfanPIAQHaATFodHRwOi8vd3d3LnRoZXNjcmlwdHMuY29tL2ZvcnVtL3RocmVhZDM4Nzc3Ni5odG1syAKmnqwBqAMB6AMf6APmA-gD3gX1AwABAAA&amp;num=4&amp;adurl=http://www.ni.com/mstudio/%3Fmetc%3Dmt8uyt&amp;client=ca-pub-8550604525820387" onmouseout="window.status=''" onmouseover="window.status='go to www.ni.com'"><span class="title">Temperature Tutorials</span><span class="desc"> - View tutorials in Visual Basic 6 and Visual Basic .NET.. ( <span class="url">www.ni.com</span> ) </span></a></div><div class="gcoladby"><a href="http://services.google.com/feedback/abg?url=http://www.thescripts.com/forum/thread387776.html&amp;hl=en&amp;client=ca-pub-8550604525820387&amp;adU=www.skillsoft.com&amp;adT=Visual+Basic+Training&amp;adU=www.ni.com&amp;adT=Temperature+Tutorials&amp;done=1">Ads by Google</a></div></div>
+
+<!-- post #1496395 -->
+
+<div id="post_box">
+	<div class="alt2 post_box_top">
+		<!-- user info -->
+		<table border="0" cellpadding="3" cellspacing="0" width="100%">
+			<tbody><tr>
+<td valign="top" width="30">
+
+
+	
+		<a href="http://www.thescripts.com/forum/member.php?u="><img title="Ken Tucker [MVP]'s Avatar" class="avtr" src="Panel%20flicker_files/noavatar.gif" alt="Ken Tucker [MVP]'s Avatar" border="0" height="30" width="30"></a>
+	
+
+
+
+</td>
+				<td id="post_box_clear" width="50%">
+					<div id="postmenu_1496395" class="post_auth">						
+						
+							Ken Tucker [MVP]
+						
+
+						<div class="smallfont">Guest</div>
+						<div class="smallfont">
+							n/a Posts
+						</div>
+					</div>					
+				</td>
+				<td id="post_box_clear" class="post_auth" align="right" valign="bottom">
+					<div class="smallfont">
+						
+							November 21st, 2005<br>10:12 PM
+						<br>
+						#<a href="http://www.thescripts.com/forum/post1496395-2.html" target="new" class="smallfont"><strong>2</strong></a>
+
+					</div>
+				</td>			
+			</tr>
+		</tbody></table>
+		<!-- / user info -->
+	</div>
+	<div class="alt1 post_box_bottom">
+		<!-- message, attachments, sig -->
+		<!-- message -->
+                <br>
+		
+			<strong>Re: Panel flicker</strong>
+		
+		<hr style="border: medium none ; color: rgb(238, 238, 238); background-color: rgb(238, 238, 238); height: 1px; padding-top: 3px;" size="1">
+		<div class="post_message">Hi,<br>
+<br>
+You need to use the graphics object passed to you in paint event to<br>
+draw on the panel.  I dont see you passing it to your drawall procedure.<br>
+The graphics object is passed in pea.<br>
+<br>
+Ken<br>
+-----------------<br>
+"Sarika" &lt;Sarika@discussions.microsoft.com&gt; wrote in message<br>
+news:4D6945F6-C377-4E43-9799-2374E7838CBB@microsoft.com...[color=blue]<br>
+&gt; I migrated a VB6.0 application to VB.NET. This app has a drawing area,<br>
+&gt; which<br>
+&gt; is a panel. The user can drag and drop several objects on this drawing<br>
+&gt; area<br>
+&gt; and can also draw lines, boxes etc. The app is sufferring from the problem<br>
+&gt; of<br>
+&gt; flicker.<br>
+&gt;<br>
+&gt; On reading several posts on this forum and others I decided to enable<br>
+&gt; double<br>
+&gt; buffering for my panel. However the drawing area appears blank. I can<br>
+&gt; briefly<br>
+&gt; see the objects when adding new objects on the drawing area.<br>
+&gt;<br>
+&gt; I have a context menu associated w/ the panel. On clicking the Show option<br>
+&gt; in the context menu, the drawing appears, however on resizing the form or<br>
+&gt; adding a new object to the drawing area, the screen becomes blank again.<br>
+&gt;<br>
+&gt; Any idea as to what I am missing here?<br>
+&gt;<br>
+&gt; Posting some code snippets below, if that will help.<br>
+&gt;<br>
+&gt; Thanks in advance for your help.<br>
+&gt;<br>
+&gt;<br>
+&gt; Code:<br>
+&gt;<br>
+&gt; 'This class defines an object which is a specialized panel, which<br>
+&gt; eliminates<br>
+&gt; 'the flickering effect when used as a drawing pad<br>
+&gt;<br>
+&gt; Public Class CBufferedPanel<br>
+&gt; Inherits Panel<br>
+&gt;<br>
+&gt;    Public Sub New()<br>
+&gt;        MyBase.New()<br>
+&gt;<br>
+&gt;       SetStyle(ControlStyles.AllPaintingInWmPaint Or _<br>
+&gt;                ControlStyles.DoubleBuffer Or _<br>
+&gt;                ControlStyles.ResizeRedraw Or _<br>
+&gt;                ControlStyles.UserPaint, _<br>
+&gt;                True)<br>
+&gt;<br>
+&gt;        UpdateStyles()<br>
+&gt;    End Sub<br>
+&gt; End Class<br>
+&gt;<br>
+&gt; 'In the form that has the panel, I define picSegment of type CBuffered<br>
+&gt; class<br>
+&gt; and instantiate it<br>
+&gt; Public Class DrawingArea<br>
+&gt; Inherits System.Windows.Forms.Form<br>
+&gt;<br>
+&gt;    Private Sub picSegment_Paint(ByVal Sender As Object, ByVal pea As<br>
+&gt; PaintEventArgs) _<br>
+&gt;                Handles picSegment.Paint<br>
+&gt;<br>
+&gt;        'Paint method calls the draw routine<br>
+&gt;        DrawAll(picSegment, True)<br>
+&gt;    End Sub<br>
+&gt;<br>
+&gt; End Class[/color]<br>
+<br>
+<br>
+</div>
+		<!-- / message -->
+	
+		
+		
+		
+		<hr style="border: medium none ; color: rgb(238, 238, 238); background-color: rgb(238, 238, 238); height: 1px; padding-top: 3px;" size="1">
+		
+	
+		<div class="post_buttons" align="right">
+			<!-- controls -->
+			
+			
+			
+
+			
+			
+			
+			
+			<!-- / controls -->
+		</div>
+		<!-- message, attachments, sig -->
+	</div>
+</div>
+
+<!-- / post #1496395 -->
+
+<!-- post #1496411 -->
+
+<div id="post_box">
+	<div class="alt2 post_box_top">
+		<!-- user info -->
+		<table border="0" cellpadding="3" cellspacing="0" width="100%">
+			<tbody><tr>
+<td valign="top" width="30">
+
+
+	
+		<a href="http://www.thescripts.com/forum/member.php?u="><img title="Sarika's Avatar" class="avtr" src="Panel%20flicker_files/noavatar.gif" alt="Sarika's Avatar" border="0" height="30" width="30"></a>
+	
+
+
+
+</td>
+				<td id="post_box_clear" width="50%">
+					<div id="postmenu_1496411" class="post_auth">						
+						
+							Sarika
+						
+
+						<div class="smallfont">Guest</div>
+						<div class="smallfont">
+							n/a Posts
+						</div>
+					</div>					
+				</td>
+				<td id="post_box_clear" class="post_auth" align="right" valign="bottom">
+					<div class="smallfont">
+						
+							November 21st, 2005<br>10:12 PM
+						<br>
+						#<a href="http://www.thescripts.com/forum/post1496411-3.html" target="new" class="smallfont"><strong>3</strong></a>
+
+					</div>
+				</td>			
+			</tr>
+		</tbody></table>
+		<!-- / user info -->
+	</div>
+	<div class="alt1 post_box_bottom">
+		<!-- message, attachments, sig -->
+		<!-- message -->
+                <br>
+		
+			<strong>Re: Panel flicker</strong>
+		
+		<hr style="border: medium none ; color: rgb(238, 238, 238); background-color: rgb(238, 238, 238); height: 1px; padding-top: 3px;" size="1">
+		<div class="post_message">Hi Ken,<br>
+<br>
+Thanks for your response. I pass the panel "picSegment" to the DrawAll<br>
+method and create a graphics object in the DrawAll method. The various<br>
+objects on the screen are drawn by their individual methods.<br>
+<br>
+I am pasting the code snippet for your ref.<br>
+<br>
+Thanks in advance for your help.<br>
+<br>
+///<br>
+Public Sub DrawAll(ByVal Pic As Object, Optional ByVal Clear As<br>
+Boolean = True, _<br>
+Optional ByVal watermark As Boolean = False)<br>
+<br>
+Dim wm As String<br>
+Dim g As Graphics<br>
+<br>
+g = Pic.CreateGraphics<br>
+<br>
+If Clear Then g.Clear(Pic.BackColor)<br>
+<br>
+If watermark = True Then<br>
+wm = "Copyright "<br>
+Pic.Font = New Font("Arial", 28)<br>
+<br>
+CurrentX = (Pic.ClientRectangle.Width - g.MeasureString(wm,<br>
+Pic.Font).Width) / 2<br>
+CurrentY = (Pic.ClientRectangle.Height - g.MeasureString(wm,<br>
+Pic.Font).Height) / 2<br>
+g.DrawString(wm, Pic.Font, WmarkBrush, CurrentX, CurrentY)<br>
+<br>
+Pic.Font = New Font("Arial", 8)<br>
+End If<br>
+<br>
+For Each child In Items<br>
+child.Paint(Pic)<br>
+Next child<br>
+<br>
+For Each child In Links<br>
+child.Paint(Pic)<br>
+Next child<br>
+<br>
+For Each child In Texts<br>
+child.Paint(Pic)<br>
+Next child<br>
+<br>
+For Each child In Lines<br>
+child.Paint(Pic)<br>
+Next child<br>
+<br>
+For Each child In Boxes<br>
+child.Paint(Pic)<br>
+Next child<br>
+<br>
+g.Dispose()<br>
+WmarkBrush.Dispose()<br>
+End Sub<br>
+\\\<br>
+</div>
+		<!-- / message -->
+	
+		
+		
+		
+		<hr style="border: medium none ; color: rgb(238, 238, 238); background-color: rgb(238, 238, 238); height: 1px; padding-top: 3px;" size="1">
+		
+	
+		<div class="post_buttons" align="right">
+			<!-- controls -->
+			
+			
+			
+
+			
+			
+			
+			
+			<!-- / controls -->
+		</div>
+		<!-- message, attachments, sig -->
+	</div>
+</div>
+
+<!-- / post #1496411 -->
+
+<!-- post #1496556 -->
+
+<div id="post_box">
+	<div class="alt2 post_box_top">
+		<!-- user info -->
+		<table border="0" cellpadding="3" cellspacing="0" width="100%">
+			<tbody><tr>
+<td valign="top" width="30">
+
+
+	
+		<a href="http://www.thescripts.com/forum/member.php?u="><img title="Ronchese's Avatar" class="avtr" src="Panel%20flicker_files/noavatar.gif" alt="Ronchese's Avatar" border="0" height="30" width="30"></a>
+	
+
+
+
+</td>
+				<td id="post_box_clear" width="50%">
+					<div id="postmenu_1496556" class="post_auth">						
+						
+							Ronchese
+						
+
+						<div class="smallfont">Guest</div>
+						<div class="smallfont">
+							n/a Posts
+						</div>
+					</div>					
+				</td>
+				<td id="post_box_clear" class="post_auth" align="right" valign="bottom">
+					<div class="smallfont">
+						
+							November 21st, 2005<br>10:13 PM
+						<br>
+						#<a href="http://www.thescripts.com/forum/post1496556-4.html" target="new" class="smallfont"><strong>4</strong></a>
+
+					</div>
+				</td>			
+			</tr>
+		</tbody></table>
+		<!-- / user info -->
+	</div>
+	<div class="alt1 post_box_bottom">
+		<!-- message, attachments, sig -->
+		<!-- message -->
+                <br>
+		
+			<strong>Re: Panel flicker</strong>
+		
+		<hr style="border: medium none ; color: rgb(238, 238, 238); background-color: rgb(238, 238, 238); height: 1px; padding-top: 3px;" size="1">
+		<div class="post_message">You are calling your DrawAll method in the OnPaint() event already?<br>
+<br>
+A suggestion to improve your painting is write the image in a new bitmap,<br>
+and later draw it directly to control's graphic object.<br>
+<br>
+For sample:<br>
+<br>
+<br>
+<br>
+Private Sub MyGrid_Paint(ByVal sender As Object, ByVal e As<br>
+System.Windows.Forms.PaintEventArgs) Handles MyBase.Paint<br>
+<br>
+Dim g As System.Drawing.Graphics<br>
+<br>
+(...)<br>
+<br>
+Dim bmp As New Bitmap(rectClient.Width, rectClient.Height,<br>
+Imaging.PixelFormat.Format32bppArgb)<br>
+g = Graphics.FromImage(bmp)<br>
+<br>
+(...) 'draw everything in the g object created above<br>
+<br>
+'transfer to control's graphics object<br>
+e.Graphics.DrawImage(bmp, New Point(0, 0))<br>
+<br>
+'release memory<br>
+g.Dispose()<br>
+<br>
+End sub<br>
+<br>
+<br>
+<br>
+[]s<br>
+Cesar<br>
+<br>
+<br>
+<br>
+"Sarika" &lt;Sarika@discussions.microsoft.com&gt; escreveu na mensagem<br>
+news:10FF2404-D65E-4D6E-857B-5F3ACEB943DF@microsoft.com...<br>
+Hi Ken,<br>
+<br>
+Thanks for your response. I pass the panel "picSegment" to the DrawAll<br>
+method and create a graphics object in the DrawAll method. The various<br>
+objects on the screen are drawn by their individual methods.<br>
+<br>
+I am pasting the code snippet for your ref.<br>
+<br>
+Thanks in advance for your help.<br>
+<br>
+///<br>
+Public Sub DrawAll(ByVal Pic As Object, Optional ByVal Clear As<br>
+Boolean = True, _<br>
+Optional ByVal watermark As Boolean = False)<br>
+<br>
+Dim wm As String<br>
+Dim g As Graphics<br>
+<br>
+g = Pic.CreateGraphics<br>
+<br>
+If Clear Then g.Clear(Pic.BackColor)<br>
+<br>
+If watermark = True Then<br>
+wm = "Copyright "<br>
+Pic.Font = New Font("Arial", 28)<br>
+<br>
+CurrentX = (Pic.ClientRectangle.Width - g.MeasureString(wm,<br>
+Pic.Font).Width) / 2<br>
+CurrentY = (Pic.ClientRectangle.Height - g.MeasureString(wm,<br>
+Pic.Font).Height) / 2<br>
+g.DrawString(wm, Pic.Font, WmarkBrush, CurrentX, CurrentY)<br>
+<br>
+Pic.Font = New Font("Arial", 8)<br>
+End If<br>
+<br>
+For Each child In Items<br>
+child.Paint(Pic)<br>
+Next child<br>
+<br>
+For Each child In Links<br>
+child.Paint(Pic)<br>
+Next child<br>
+<br>
+For Each child In Texts<br>
+child.Paint(Pic)<br>
+Next child<br>
+<br>
+For Each child In Lines<br>
+child.Paint(Pic)<br>
+Next child<br>
+<br>
+For Each child In Boxes<br>
+child.Paint(Pic)<br>
+Next child<br>
+<br>
+g.Dispose()<br>
+WmarkBrush.Dispose()<br>
+End Sub<br>
+\\\<br>
+<br>
+<br>
+</div>
+		<!-- / message -->
+	
+		
+		
+		
+		<hr style="border: medium none ; color: rgb(238, 238, 238); background-color: rgb(238, 238, 238); height: 1px; padding-top: 3px;" size="1">
+		
+	
+		<div class="post_buttons" align="right">
+			<!-- controls -->
+			
+			
+			
+
+			
+			
+			
+			
+			<!-- / controls -->
+		</div>
+		<!-- message, attachments, sig -->
+	</div>
+</div>
+
+<!-- / post #1496556 -->
+
+<!-- post #1497158 -->
+
+<div id="post_box">
+	<div class="alt2 post_box_top">
+		<!-- user info -->
+		<table border="0" cellpadding="3" cellspacing="0" width="100%">
+			<tbody><tr>
+<td valign="top" width="30">
+
+
+	
+		<a href="http://www.thescripts.com/forum/member.php?u="><img title="Sarika's Avatar" class="avtr" src="Panel%20flicker_files/noavatar.gif" alt="Sarika's Avatar" border="0" height="30" width="30"></a>
+	
+
+
+
+</td>
+				<td id="post_box_clear" width="50%">
+					<div id="postmenu_1497158" class="post_auth">						
+						
+							Sarika
+						
+
+						<div class="smallfont">Guest</div>
+						<div class="smallfont">
+							n/a Posts
+						</div>
+					</div>					
+				</td>
+				<td id="post_box_clear" class="post_auth" align="right" valign="bottom">
+					<div class="smallfont">
+						
+							November 21st, 2005<br>10:17 PM
+						<br>
+						#<a href="http://www.thescripts.com/forum/post1497158-5.html" target="new" class="smallfont"><strong>5</strong></a>
+
+					</div>
+				</td>			
+			</tr>
+		</tbody></table>
+		<!-- / user info -->
+	</div>
+	<div class="alt1 post_box_bottom">
+		<!-- message, attachments, sig -->
+		<!-- message -->
+                <br>
+		
+			<strong>Re: Panel flicker</strong>
+		
+		<hr style="border: medium none ; color: rgb(238, 238, 238); background-color: rgb(238, 238, 238); height: 1px; padding-top: 3px;" size="1">
+		<div class="post_message">Thanks all for your inputs.<br>
+<br>
+As mentioned in &lt;a href="http://www.bobpowell.net/creategraphics.htm"&gt;GDI<br>
+Info&lt;/a&gt; and also by you, I improvised my Paint routine. I was unnecessarily<br>
+creating a Graphics object instead of utilizing the object provided by the<br>
+PaintEventArgs argument. After optimizing the routine I enabled double<br>
+buffering on the Panel and yohoo! the flicker was gone...<br>
+<br>
+Thanks!<br>
+<br>
+</div>
+		<!-- / message -->
+	
+		
+		
+		
+		<hr style="border: medium none ; color: rgb(238, 238, 238); background-color: rgb(238, 238, 238); height: 1px; padding-top: 3px;" size="1">
+		
+	
+		<div class="post_buttons" align="right">
+			<!-- controls -->
+			
+			
+			
+
+			
+			
+			
+			
+			<!-- / controls -->
+		</div>
+		<!-- message, attachments, sig -->
+	</div>
+</div>
+
+<!-- / post #1497158 -->
+
+
+
+
+<!-- start content table -->
+
+<!-- / start content table -->
+
+<!-- controls below postbits -->
+<table style="margin-bottom: 3px; margin-top: 5px;" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr valign="bottom">
+		
+
+		<td class="smallfont">&nbsp;</td>
+	
+
+</tr>
+</tbody></table>
+<!-- / controls below postbits -->
+
+<br>
+
+
+<!-- Quick Reply -->
+
+<!-- Quick Reply End -->
+
+
+<!-- forum rules and admin links -->
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr valign="bottom">
+	<td class="smallfont" align="right">
+		<table border="0" cellpadding="0" cellspacing="0">
+		
+		<tbody><tr>
+			<td>
+			
+			</td>
+		</tr>		
+		</tbody></table>
+	</td>
+</tr>
+</tbody></table>
+<!-- /forum rules and admin links -->
+
+			
+			<!-- /content area table -->
+
+		
+			
+			<script type="text/javascript">
+			<!--
+				// Main vBulletin Javascript Initialization
+				vBulletin_init();
+
+				// Initialize 'Active' Table Cells
+				//activecells_init();
+			//-->
+			</script>
+
+
+</td>
+        </tr>
+      </tbody></table></td>
+
+<td class="spacer" width="12"></td>
+<td height="1000" valign="top" width="300">
+
+
+
+
+
+
+<div style="padding-bottom: 15px;">
+
+	<!-- begin ad tag  (programming/dotnet) -->
+	<script language="JavaScript" type="text/javascript">
+	document.write('<script language="JavaScript" src="http://ad.doubleclick.net/adj/ttm.thescripts/programming/dotnet;cmy=programming;zn=dotnet;sz=300x250;tile=2;ord=412330736?" type="text/javascript"></scr' + 'ipt>');
+	</script><script language="JavaScript" src="Panel%20flicker_files/dotnet.js" type="text/javascript"></script><script language="Javascript" src="Panel%20flicker_files/go.js" type="text/javascript"></script><script type="text/javascript">e9 = new Object();e9.size = "300x250";e9.noAd = 1;</script><script type="text/javascript" src="Panel%20flicker_files/tags.js"></script><center><script type="text/javascript" src="Panel%20flicker_files/j.js"></script><iframe src="Panel%20flicker_files/go.htm" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" height="250" scrolling="no" width="300"></iframe></center>
+<noscript> <a
+href="http://ad.doubleclick.net/jump/ttm.thescripts/programming/dotnet;cmy=programming;zn=dotnet;ord=412330736?"
+target="_blank"><img
+src="http://ad.doubleclick.net/ad/ttm.thescripts/programming/dotnet;cmy=programming;zn=dotnet;ord=412330736?"
+width="300" height="250" border="0" alt="sponsor content">sponsor
+content</a></noscript>
+	<!-- End ad tag -->
+	
+</div>
+
+
+
+
+
+
+	<div class="rctoolbox">
+		
+		
+		
+			<li>Didn't find the answer you were looking for? <br> <a href="http://www.thescripts.com/forum/newthread.php?do=newthread&amp;f=117">Post Your Question</a></li>
+		
+
+		
+		
+
+		
+	</div>
+
+<!-- ACTIVE MEMBER BOX -->
+	
+	
+	
+	
+
+
+<!-- footer submenu -->
+
+<!-- footer submenu -->
+	</td>
+
+  </tr>
+</tbody></table>
+
+<div class="adtable">
+		<script language="JavaScript" src="Panel%20flicker_files/as_footer.js"></script>
+		<script language="JavaScript" src="Panel%20flicker_files/show_ads.js"></script><script language="JavaScript1.1" src="Panel%20flicker_files/ads_003"></script><div id="footerads"><div class="gftrad"><a href="http://pagead2.googlesyndication.com/pagead/iclk?sa=l&amp;ai=BMrNaMjp7R9a0N6LGqgO-jNiwBpzWjB2crNLOA8CNtwHQ9wcQARgGIMHS9wEoBDgAUJvH3Jj______wFgydbZhsij_BqgAZOwiv8DqgEKNDE1NzM2NTYyNrIBEnd3dy50aGVzY3JpcHRzLmNvbboBCTcyOHg5MF9qc8gBAdoBMWh0dHA6Ly93d3cudGhlc2NyaXB0cy5jb20vZm9ydW0vdGhyZWFkMzg3Nzc2Lmh0bWyAAgGoAwHoAx_oA-YD9QMAAQAA&amp;num=6&amp;adurl=http://www.cdearth.com/openoffice-office-suite.htm&amp;client=ca-pub-8550604525820387" onmouseout="window.status=''" onmouseover="window.status='go to FreeSoftwareCD.net'"><span class="title">Free Drawing Software CD</span><span class="desc"> - Complete Office Suite including Drawing Software on CD - Free ( <span class="url">FreeSoftwareCD.net</span> )</span></a></div><div class="gftrad"><a href="http://pagead2.googlesyndication.com/pagead/iclk?sa=l&amp;ai=BocXGMjp7R9a0N6LGqgO-jNiwBtDj3iHAh4qOAcCNtwGwzAsQAhgHIMHS9wEoBDgAUI-qz_f8_____wFgydbZhsij_BqqAQo0MTU3MzY1NjI2sgESd3d3LnRoZXNjcmlwdHMuY29tugEJNzI4eDkwX2pzyAEB2gExaHR0cDovL3d3dy50aGVzY3JpcHRzLmNvbS9mb3J1bS90aHJlYWQzODc3NzYuaHRtbIACAagDAegDH-gD5gP1AwABAAA&amp;num=7&amp;adurl=http://www.cambria.com/services_visualbasic.asp%3Fsrc%3Dadw%26kw%3DCPG%26spl%3DVB&amp;client=ca-pub-8550604525820387" onmouseout="window.status=''" onmouseover="window.status='go to www.cambria.com'"><span class="title">Visual Basic Programming</span><span class="desc"> - Specialists in VB Programming Writing Software since 1984 ( <span class="url">www.cambria.com</span> )</span></a></div><div class="gftrad"><a href="http://pagead2.googlesyndication.com/pagead/iclk?sa=l&amp;ai=Bj25CMjp7R9a0N6LGqgO-jNiwBsab-T_awq-6BMCNtwHQjioQAxgIIMHS9wEoBDgAUO26sqr9_____wFgydbZhsij_BqqAQo0MTU3MzY1NjI2sgESd3d3LnRoZXNjcmlwdHMuY29tugEJNzI4eDkwX2pzyAEB2gExaHR0cDovL3d3dy50aGVzY3JpcHRzLmNvbS9mb3J1bS90aHJlYWQzODc3NzYuaHRtbKgDAegDH-gD5gP1AwABAAA&amp;num=8&amp;adurl=http://www.aspose.com/adtracker/%3Fcode%3D141356061120&amp;client=ca-pub-8550604525820387" onmouseout="window.status=''" onmouseover="window.status='go to www.aspose.com'"><span class="title">Easy barcode programming</span><span class="desc"> - Add barcodes to your applications. .NET and Java support. Free Demo! ( <span class="url">www.aspose.com</span> )</span></a></div><div class="gftrad"><a href="http://pagead2.googlesyndication.com/pagead/iclk?sa=l&amp;ai=Bp9caMjp7R9a0N6LGqgO-jNiwBp33gjbNppPdBMCNtwHgxQgQBBgJIMHS9wEoBDgAUPDC-tH4_____wFgydbZhsij_BqgAZmCh_8DqgEKNDE1NzM2NTYyNrIBEnd3dy50aGVzY3JpcHRzLmNvbboBCTcyOHg5MF9qc8gBAdoBMWh0dHA6Ly93d3cudGhlc2NyaXB0cy5jb20vZm9ydW0vdGhyZWFkMzg3Nzc2Lmh0bWyoAwHoAx_oA-YD9QMAAQAA&amp;num=9&amp;adurl=http://www.devexpress.com/free&amp;client=ca-pub-8550604525820387" onmouseout="window.status=''" onmouseover="window.status='go to www.devexpress.com/free'"><span class="title">40 Free .NET Controls</span><span class="desc"> - Advanced and Feature Complete .NET Controls by Developer Express ( <span class="url">www.devexpress.com/free</span> )</span></a></div><div class="gftradby"><a href="http://services.google.com/feedback/abg?url=http://www.thescripts.com/forum/thread387776.html&amp;hl=en&amp;client=ca-pub-8550604525820387&amp;adU=FreeSoftwareCD.net&amp;adT=Free+Drawing+Software+CD&amp;adU=www.cambria.com&amp;adT=Visual+Basic+Programming&amp;adU=www.aspose.com&amp;adT=Easy+barcode+programming&amp;adU=www.devexpress.com/free&amp;adT=40+Free+.NET+Controls&amp;done=1">Ads by Google</a></div></div>
+
+</div>
+
+<table class="maintable footer">
+  <tbody><tr>
+    <td>
+<div>
+
+<strong>Quick Browse:</strong><br>
+<a href="http://www.thescripts.com/forum/archive/index.php/f-65.html">Programming Help</a> 
+<br>
+<a href="http://www.thescripts.com/forum/archive/index.php/f-57.html">XML</a> / <a href="http://www.thescripts.com/forum/archive/index.php/f-64.html">CSS</a> | 
+<a href="http://www.thescripts.com/forum/archive/index.php/f-62.html">HTML</a> | 
+<a href="http://www.thescripts.com/forum/archive/index.php/f-63.html">Javascript</a> | 
+<a href="http://www.thescripts.com/forum/archive/index.php/f-49.html">PHP</a> | 
+<a href="http://www.thescripts.com/forum/archive/index.php/f-50.html">Perl</a> | 
+<a href="http://www.thescripts.com/forum/archive/index.php/f-54.html">Visual Basic</a> | 
+<a href="http://www.thescripts.com/forum/archive/index.php/f-53.html">Python</a> | 
+<a href="http://www.thescripts.com/forum/archive/index.php/f-51.html">C++</a> / <a href="http://www.thescripts.com/forum/archive/index.php/f-122.html">C</a> | 
+<a href="http://www.thescripts.com/forum/archive/index.php/f-52.html">Java</a> | 
+<a href="http://www.thescripts.com/forum/archive/index.php/f-55.html">.NET</a> / 
+<a href="http://www.thescripts.com/forum/archive/index.php/f-115.html">C#</a> / 
+<a href="http://www.thescripts.com/forum/archive/index.php/f-117.html">VB</a> /
+<a href="http://www.thescripts.com/forum/archive/index.php/f-114.html">XML</a> /
+<a href="http://www.thescripts.com/forum/archive/index.php/f-116.html">ASP.net</a> | 
+<a href="http://www.thescripts.com/forum/archive/index.php/f-56.html">ASP</a>
+<br>
+<a href="http://www.thescripts.com/forum/archive/index.php/f-59.html">PostgreSQL</a> | 
+<a href="http://www.thescripts.com/forum/archive/index.php/f-61.html">MS SQL</a> | 
+<a href="http://www.thescripts.com/forum/archive/index.php/f-60.html">Oracle</a> | 
+<a href="http://www.thescripts.com/forum/archive/index.php/f-120.html">IBM DB2</a> | 
+<a href="http://www.thescripts.com/forum/archive/index.php/f-121.html">MS Access</a> | 
+<a href="http://www.thescripts.com/forum/archive/index.php/f-58.html">MySQL</a> 
+</div>
+<br>
+	<a href="http://www.thescripts.com/mediakit.html">Advertise</a> |
+<a href="http://www.thescripts.com/forum/sendmessage.php">Contact Us</a> |
+	
+	
+	<a href="http://www.thescripts.com/forum/archive/index.php">Archive</a> |			
+	<a href="http://www.thescripts.com/sitemap.html">Sitemap</a> | <a href="http://www.thescripts.com/privacy.html">Privacy Policy</a> | <a href="http://www.thescripts.com/terms.html">Terms of Use</a>
+	<br>
+	Copyright 1995-2005 MINDSEED INC. All rights Reserved <br>
+
+	<!-- Do not remove  or your scheduled tasks will cease to function -->
+	
+	<!-- Do not remove  or your scheduled tasks will cease to function -->
+    </td>
+  </tr>
+</tbody></table>
+
+</body></html>

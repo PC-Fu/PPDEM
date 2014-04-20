@@ -1,0 +1,233 @@
+.section_border_gray
+	{
+	border:     1px solid #999999;
+	text-align: left;
+	}
+
+.section_border_gray_menu
+	{
+	border:     1px solid #999999;
+  border-left: 1px solid #F0F0F0;
+	text-align: left;
+	}
+
+.section_corner_gray
+	{
+	height:   7px;
+	position: relative;
+	}
+
+.section_corner_gray .top_left,
+.section_corner_gray .bottom_left,
+.section_corner_gray .top_right,
+.section_corner_gray .bottom_right
+	{
+	background-repeat: no-repeat;
+	width:             7px;
+	height:            7px;
+	position:          absolute;
+	}
+.section_corner_gray .top_left
+	{
+	float:            left;
+	background-image: url("../images/ctl_gray.gif");
+	left:            -1px;
+	top:             -1px;
+	}
+.section_corner_gray .top_right
+	{
+	float:            right;
+	background-image: url("../images/ctr_gray.gif");
+	right:           -1px;
+	top:             -1px;
+	}
+.section_corner_gray .bottom_left
+	{
+	float:            left;
+	background-image: url("../images/cbl_gray.gif");
+	left:             -1px;
+	top:               1px;
+	}
+.section_corner_gray .bottom_right
+	{
+	float:            right;
+	background-image: url("../images/cbr_gray.gif");
+	right:            -1px;
+	top:               1px;
+	}
+
+  
+.section_border_red
+	{
+	border:     1px solid #E09999;
+	text-align: left;
+	}
+
+.section_border_red_menu
+	{
+	border:     1px solid #E09999;
+  border-top: 1px solid #E09999;
+  border-left: 1px solid #FFFFFF;
+	text-align: left;
+	}
+
+.section_corner_red
+	{
+	height:   7px;
+	position: relative;
+	}
+
+.section_corner_red .top_left,
+.section_corner_red .bottom_left,
+.section_corner_red .top_right,
+.section_corner_red .bottom_right
+	{
+	background-repeat: no-repeat;
+	width:             7px;
+	height:            7px;
+	position:          absolute;
+	}
+.section_corner_red .top_left
+	{
+	float:            left;
+	background-image: url("../images/ctl_red.gif");
+	left:            -1px;
+	top:             -1px;
+	}
+.section_corner_red .top_right
+	{
+	float:            right;
+	background-image: url("../images/ctr_red.gif");
+	right:           -1px;
+	top:             -1px;
+	}
+.section_corner_red .bottom_left
+	{
+	float:            left;
+	background-image: url("../images/cbl_red.gif");
+	left:             -1px;
+	top:               1px;
+	}
+.section_corner_red .bottom_right
+	{
+	float:            right;
+	background-image: url("../images/cbr_red.gif");
+	right:            -1px;
+	top:               1px;
+	}
+
+  
+  
+.section_border_blue
+	{
+	border:     1px solid #4080E0;
+	text-align: left;
+	}
+
+.section_corner_blue
+	{
+	height:   7px;
+	position: relative;
+	}
+
+.section_corner_blue .top_left,
+.section_corner_blue .bottom_left,
+.section_corner_blue .top_right,
+.section_corner_blue .bottom_right
+	{
+	background-repeat: no-repeat;
+	width:             7px;
+	height:            7px;
+	position:          absolute;
+	}
+.section_corner_blue .top_left
+	{
+	float:            left;
+	background-image: url("../images/ctl_blue.gif");
+	left:            -1px;
+	top:             -1px;
+	}
+.section_corner_blue .top_right
+	{
+	float:            right;
+	background-image: url("../images/ctr_blue.gif");
+	right:           -1px;
+	top:             -1px;
+	}
+.section_corner_blue .bottom_left
+	{
+	float:            left;
+	background-image: url("../images/cbl_blue.gif");
+	left:             -1px;
+	top:               1px;
+	}
+.section_corner_blue .bottom_right
+	{
+	float:            right;
+	background-image: url("../images/cbr_blue.gif");
+	right:            -1px;
+	top:               1px;
+	}
+
+  
+  
+.section_border_orange
+	{
+	border:     1px solid #E08010;
+	text-align: left;
+	}
+
+.section_border_orange_menu
+	{
+	border:     1px solid #E08010;
+  border-left:1px solid #F0F0F0;
+	text-align: left;
+	}
+
+ 
+  
+  
+.section_corner_orange
+	{
+	height:   7px;
+	position: relative;
+	}
+
+.section_corner_orange .top_left,
+.section_corner_orange .bottom_left,
+.section_corner_orange .top_right,
+.section_corner_orange .bottom_right
+	{
+	background-repeat: no-repeat;
+	width:             7px;
+	height:            7px;
+	position:          absolute;
+	}
+.section_corner_orange .top_left
+	{
+	float:            left;
+	background-image: url("../images/ctl_orange.gif");
+	left:            -1px;
+	top:             -1px;
+	}
+.section_corner_orange .top_right
+	{
+	float:            right;
+	background-image: url("../images/ctr_orange.gif");
+	right:           -1px;
+	top:             -1px;
+	}
+.section_corner_orange .bottom_left
+	{
+	float:            left;
+	background-image: url("../images/cbl_orange.gif");
+	left:             -1px;
+	top:               1px;
+	}
+.section_corner_orange .bottom_right
+	{
+	float:            right;
+	background-image: url("../images/cbr_orange.gif");
+	right:            -1px;
+	top:               1px;
+	}

@@ -1,0 +1,53 @@
+/* Intel Refresh stylesheet */
+
+
+ /* header */
+#header {height:85px; font-size:64%; padding:0px 0px 4px 0px; margin:0px; font-family:verdana, sans-serif;width:776px;}
+.header-logo {float:left; width:141px; padding:25px 0px 0px 0px;}
+.header-image-logo {margin-left:14px;}
+.header-topbar {float:left; width:619px; background:url(http://cache-www.intel.com/plt/cd/corporate/sitewide/pix/hdr-stripe-bg.jpg) no-repeat top right; margin-top:5px;}
+.header-locale {float:left; margin-top:3px;}
+.header-locale-name {padding:0px 0px 0px 9px;float:left;margin-top:5px}
+.header-locale-name a, .header-locale-name a:visited  { color:#0860a8; text-decoration:none; }
+.header-locale-name a:hover  { color:#0860a8; text-decoration:underline; }
+.header-locale-globe {margin-left:4px;}
+.header-topnav {float:left; margin:0px; list-style-type:none; color:#0860a8; padding:8px 0px 0px 5px;}      
+.header-topnav li a {color:#0860a8; text-decoration:none;}
+.header-topnav li a:hover {color:#0860a8; text-decoration:underline;}
+.header-topnav-first {float:left; width:102px;}
+.header-topnav-second {float:left; text-align:right; padding:0px 8px 0px 0px;}
+.header-topnav-third {float:left; background:url(http://cache-www.intel.com/plt/cd/corporate/sitewide/pix/hdr-spacer-bar.gif) no-repeat left; text-align:left; padding:0px 8px 0px 8px;}
+.header-topnav-fourth {float:left; background:url(http://cache-www.intel.com/plt/cd/corporate/sitewide/pix/hdr-spacer-bar.gif) no-repeat left; text-align:left; padding:0px 8px 0px 8px;}
+.header-search {float:right; margin:0px; padding:6px 0px 0px 0px;}
+.header-searchbutton {float:left; height:16px; padding:0px 10px 0px 0px;}
+.header-dropdown {float:left; width:609px; height:25px;}
+.header-navbar {float:left; margin:0px; list-style-type:none; padding:22px 0px 0px 72px;}
+.header-navbar li {float:left;}
+.header-search-label {display:none;}
+/* Render mode change: 'quirks' =  width:95px; height:16px; 'standards' = width:93px; height:14px; */
+.header-searchbox {float:left; width:95px; height:16px; border:1px solid #cccccc; font-size:100%; line-height:100%; padding:0px; font-family:verdana, sans-serif; }                                                                                     
+/* header */
+
+/* drop down menus */
+.iMask { position:absolute; left:-300px; top:-300px; z-index:10; }/* hides the device used in drop down menus */
+.dhtmlmenuitem { padding:5px 8px 5px 8px; font-size:70%;font-family:verdana, sans-serif;}
+a.dhtmlmenulink { color:#0860a8; text-decoration:none; }
+a.dhtmlmenulink:hover { color:#0860a8; text-decoration:none; }
+a.dhtmlmenulink:visited { color:#0860a8; text-decoration:none; }
+.dhtmlmenuitem-hr { font-size:1px; height:1px; width:170px; margin-left:4px; background-image:url(http://cache-www.intel.com/plt/cd/corporate/sitewide/pix/hdr-drop-linerule.gif); background-repeat:repeat-x; background-position:bottom; }
+/* /drop down menus */
+
+/* footer */
+#footer {width:736px; margin:0px 5px 25px 14px; background:url(http://cache-www.intel.com/plt/cd/corporate/sitewide/pix/ftr-start-footer.gif) repeat-x top; padding-top:10px; font-size:64%; font-family:verdana, sans-serif; }
+.footer-leftbar {float:left; width:385px; margin:0px; padding:0px; list-style-type:none; color:#0860a8;}
+.footer-rightbar {float:right; width:350px; margin:0px; padding:0px; list-style-type:none; color:#000000;}      
+.footer-leftbar li a, .footer-rightbar li a {color:#0860a8; text-decoration:none;}
+.footer-leftbar li a:hover, .footer-rightbar li a:hover {color:#0860a8; text-decoration:underline;}
+.footer-leftbar-firstitem {float:left; padding:0px 9px 0px 0px;}
+.footer-leftbar-item {float:left; background:url(http://cache-www.intel.com/plt/cd/corporate/sitewide/pix/ftr-spacer-bar.gif) no-repeat left; padding:0px 9px 0px 9px;}
+.footer-rightbar-firstitem {float:left; padding:0px 12px 0px 9px;}
+.footer-rightbar-item {float:left; background:url(http://cache-www.intel.com/plt/cd/corporate/sitewide/pix/ftr-spacer-bar.gif) no-repeat left; padding:0px 9px 0px 9px;}
+.footer-rightbar-lastitem {float:left; background:url(http://cache-www.intel.com/plt/cd/corporate/sitewide/pix/ftr-spacer-bar.gif) no-repeat left; padding:0px 0px 0px 9px;}
+.footer-link-character{color: #0860a8;}
+/* /footer */
+

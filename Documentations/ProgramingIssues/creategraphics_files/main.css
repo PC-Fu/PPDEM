@@ -1,0 +1,34 @@
+.bodyclass {background: #F8FAF3; }
+.header { background: #996600; color: white; font-family: Verdana, Arial, Helvetica, Sans-serif ; font-size: 9pt; font-weight: bold } 
+.footer { background: #996600; color: white; font-family: Verdana, Arial, Helvetica, Sans-serif ; font-size: 8pt; }
+.content { background: #DDEEDD; font-family: Verdana, Arial, Helvetica, Sans-serif ; font-size: 8pt;}
+.previewarea { background: white }
+.pollcontent { font-family: Verdana, Arial, Helvetica, Sans-serif ; font-size: 8pt; }
+
+.poweredlink { font-family: Verdana, Arial, Helvetica, Sans-serif ; font-size: 7pt; text-decoration: none}
+.poweredlink:visited { font-family: Verdana, Arial, Helvetica, Sans-serif ; font-size: 7pt; }
+.poweredlink:hover  { font-family: Verdana, Arial, Helvetica, Sans-serif ; font-size: 7pt; }
+
+.tablecaption { background: #F5F4E1; color: black; font-family: Verdana, Arial, Helvetica, Sans-serif ; font-size: 10pt; font-weight: bold }
+.tableheader { background: #006600; color: white; font-family: Verdana, Arial, Helvetica, Sans-serif; font-size: 9pt; font-weight: bold }
+.tablefooter { background: #006600; color: white; font-family: Verdana, Arial, Helvetica, Sans-serif; font-size: 9pt; font-weight: bold }
+.tableborder { background: black; }
+
+.indipolllink { color: #003366; font-family: Verdana, Arial, Helvetica, Sans-serif; font-size: 8pt;}
+.indipolllink:visited { color: #003366; font-family: Verdana, Arial, Helvetica, Sans-serif; font-size: 8pt;}
+.indipolllink:hover { color: blue; font-family: Verdana, Arial, Helvetica, Sans-serif; font-size: 8pt;}
+
+.actionbutton { height: 22; font-family: verdana, sans-serif, arial; font-weight: normal; font-size: 8pt; color: #000000; letter-spacing: 0pt; cursor: hand; }
+.inputfield { background: white; height: 22; font-family: verdana, sans-serif, arial; font-weight: normal; font-size: 9pt; color: #000000; letter-spacing: 0pt; }
+.inputselect { background: white; font-family: verdana, sans-serif, arial; font-weight: normal; color: #000000; letter-spacing: 0,5pt; }
+
+
+
+
+
+
+
+
+
+
+

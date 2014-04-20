@@ -1,0 +1,5 @@
+        Dim instance As System.Net.NetworkInformation.NetworkInterface
+        Dim returnValue As System.Net.NetworkInformation.PhysicalAddress
+        instance = System.Net.NetworkInformation.NetworkInterface.GetAllNetworkInterfaces(0)
+        returnValue = instance.GetPhysicalAddress()
+        MessageBox.Show(returnValue.ToString)

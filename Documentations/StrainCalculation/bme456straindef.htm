@@ -1,0 +1,497 @@
+<html><head>
+
+<!-- #BeginEditable "doctitle" -->
+<title>BME 456:  Strain/Deformation</title>
+<!-- #EndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head><body bgcolor="#ffffff" text="#000000">
+<div align="center"> 
+  <p><font color="#ff0000"><b><font size="6">BME 456: Biosolid 
+    Mechanics: Modeling and Applications </font></b></font></p>
+  <p>&nbsp;</p>
+  <!-- #BeginEditable "bme332edit" --> 
+  <p><b><font size="5"><u>Section 3:</u> The Concept of Deformation and Strain</font></b></p>
+  <!-- #EndEditable --><div align="left">
+    <p><br>
+      <b>I. Overview</b></p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In the last section we derived the 
+      stress equilibrium equations based on considerations of force balance within 
+      the material. The stress equilibrium equations, although derived for the 
+      <i>deformed</i> state of that material, did not entail any assumptions about 
+      the material or the type of deformation it encurs. We learned that for most 
+      situations, the stress equilibrium equations are indeterminate, and we can't 
+      solve for material stresses directly from these equations. We therefore 
+      need to consider other aspects of the material and tissue mechanics. The 
+      next logical step is to examine then how the material deforms. It is at 
+      this point that we introduce our first significant assumptions concerning 
+      continuum mechanics. If we make no assumptions about the size of deformation, 
+      then the resulting strain tensor is valid for every situation. However, 
+      this strain tensor is nonlinear and leads to complex analysis. Therefore, 
+      if the deformation is small (typically less than 3-4%), then we can use 
+      a small deformation analysis, which is linear and simpler to use. In tissue 
+      mechanics, hard tissues fit under the small deformation model, but most 
+      soft tissues typically undergo large deformation (strains &gt; 5%). In this 
+      section, we will discuss and derive deformation and strain measures for 
+      both small and large deformation. By the end of this section, you should 
+      be able to:</p>
+    <p>1. Understand concepts of the small deformation tensor<br>
+      2. Understand concepts of initial and deformed configuration<br>
+      3. Understand the concept of displacement<br>
+      4. Understand the concept of the deformation gradient tensor<br>
+      5. Understand the concept of the large deformation strain tensor<br>
+      6. Understand differences between small and large deformation</p>
+    <p><b>II. Small Deformation Strain Tensor</b></p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We first consider the case of small 
+      deformation, since this is applicable to bone and is much less complex than 
+      large deformation. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Consider the deformation 
+      of an infinitesimal cube (once more!) in the x1 direction:</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="bme456straindef_files/def1.jpg" height="217" width="344"></p>
+    <p>We know that if the displacements are small, then we can approximate the 
+      normal strain in the 11 direction as:</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;<img src="bme456straindef_files/straineq1.gif" height="73" width="118"> </p>
+    <p>If we in the limit allow both <img src="bme456straindef_files/Delx1eq.htm" align="top" height="25" width="32">and 
+      <img src="bme456straindef_files/delu1.gif" align="top" height="25" width="30"> both to approach 
+      zero, then we arrive at the following <i>strain displacement</i> relationship:</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="bme456straindef_files/strain11.gif" height="52" width="77"></p>
+    <p>This corresponds to our notion that strain is defined as the change in 
+      length over length. Note that this is an approximation of strain for small 
+      deformations. Thus, it is our definition of strain that renders this discussion 
+      for the <i>small deformation</i> part of small deformation elasticity. We 
+      can also do the same change in length for the x2 and x3 directions to arrive 
+      at:</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a name="norstrain"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="bme456straindef_files/strain2233.gif" height="108" width="82"></p>
+    <p>Next, let us consider a pure shear deformation as shown as the infinitesimal 
+      cube below:</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="bme456straindef_files/sheardef1.jpg" height="241" width="321"></p>
+    <p>Here, the total deformation is the sum of the angles <font face="Symbol">q</font>1 
+      and <font face="Symbol">q</font>2, and can be written as:</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a name="angdef"></a>&nbsp;<img src="bme456straindef_files/shearang.gif" height="46" width="172"></p>
+    <p>Note that <font face="Symbol">q</font>1 is defined to <i>equal</i> <font face="Symbol">q</font>2,<font face="Symbol">q</font>1 
+      = <font face="Symbol">q</font>2.&nbsp;&nbsp;Now we use some trigonometry. 
+      We note that the tangent of <font face="Symbol">q</font>1 and the tangent 
+      of &nbsp;<font face="Symbol">q</font>2 can be written as:</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="bme456straindef_files/sineang.gif" height="105" width="100"></p>
+    <p>If we assume that the angle of deformation is small (again referring back 
+      that this section is <i>small deformation</i> strain), we know that the 
+      tangent of a small angle is equivalent to the angle itself, assuming we 
+      define the angle in radians. Thus, we may write the above as:</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="bme456straindef_files/sineang2.gif" height="105" width="246"> 
+    </p>
+    <p>We can thus rewrite the <a href="#angdef">angular deformation from above</a> 
+      as:</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="bme456straindef_files/shearstrain1.gif" height="57" width="329"></p>
+    <p>Note that we have added an extra definition <font face="Symbol">e</font>12. 
+      This is the definition of <i>tensorial</i> shear strain that is one half 
+      <font face="Symbol">g</font>12 that is the definiton of <i>engineering</i> 
+      shear strain. If we taken the limit as all delta quantities go to zero, 
+      then we have the following definition of the shear strain:</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="bme456straindef_files/shearstrain2.gif" height="57" width="225"></p>
+    <p>by definition shear strains are symmetric as we see below:</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="bme456straindef_files/shearstrain3.gif" height="57" width="442"></p>
+    <p>The definition of the other shear strains follows directly as:</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="bme456straindef_files/shearstrain4.gif" height="238" width="169"></p>
+    <p>Given the <a href="#norstrain">definition of normal strains</a>, and the 
+      shear strains given above, we can write a compact defintion of small strain 
+      in indicial notation as:</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a name="straindef"></a><img src="bme456straindef_files/strainind.gif" height="62" width="164"></p>
+    <p>Note that the small deformation strain is a second order tensor just like 
+      the Cauchy stress tensor. It has nine components for 3D. We can write the 
+      small deformation strain tensor in matrix form as:</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="bme456straindef_files/straineq2.gif" height="572" width="813"><a name="straindisp"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+    <p>How does the addition of the strain displacement relationship affect our 
+      ability to solve the mechanics problem. Well, now we have introduced 12 
+      more unknowns, the nine strains eij and the three displacements ui. We have 
+      introduced, however, only 9 additional equations, <a href="#straindisp">namely 
+      the strain-displacement equations</a>. </p>
+    <p><b>III. Definition of Reference and Deformed Configurations, and the Relationships 
+      between Them</b></p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We explicitly made the assumption in 
+      deriving the small strain tensor that strains were "small" for 
+      both normal and shear strain. While this assumption is valid for bone, it 
+      is not valid for soft tissues. Of course, one may ask why bother with assuming 
+      small deformation at all. As we will see in this section, large deformation, 
+      while valid for all deformation situations, is much more complex and introduces 
+      nonlinearity into the problem, called <i>geometric nonlinearity</i>. </p>
+    <p>III.A. Reference (Initial) and Deformed Configurations</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The 
+      first step in defining large deformation strain measures is to define the 
+      relationship between what is known as the <i>reference, initial or undeformed</i> 
+      configuration of a body, and the <i>deformed</i> configuration of the body. 
+      The <i>reference or undeformed</i> configuation is the condition of the 
+      body in 3D space before loads have been applied to it. The <i>deformed</i> 
+      configuration is the location and shape of the body after loads have been 
+      applied to it. It is important to note that the body may undergo rigid body 
+      motion in addition to strain when loades are placed on it. An illustration 
+      of the relationship between the initial (note that I will use <i>initial</i>, 
+      <i>reference</i>, and <i>undeformed</i> configuration interchangeably throughout 
+      this section) and deformed configuration is shown below:</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="bme456straindef_files/pot1.jpg" height="252" width="548"></p>
+    <p>III.B. Displacement: Relationship between a point in the Reference and 
+      Deformed Configuration</p>
+    <p>Note that we have defined a vector in 3D space x' in the reference configuration 
+      of the body and a vector x in the deformed configuration of the body. We 
+      note that the relationship between the two position vectors in space, which 
+      represent the locations of a point in the reference configuration and a 
+      point in the deformed configuration, is the <i>displacement</i> vector, 
+      as shown below:</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="bme456straindef_files/pot2.jpg" height="252" width="548"></p>
+    <p>By vector addition, we can directly write the relationship between the 
+      position vectors in the initial and deformed configuration:</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a name="dispeq"></a>&nbsp;&nbsp;<img src="bme456straindef_files/eq1.gif" height="32" width="90"></p>
+    <p>III.C. Deformation Gradient: Relationship between a material vector in 
+      the Reference and Deformed Configuration</p>
+    <p>The above results tells us how a point displaces from the reference to 
+      the deformed configuration. However, we would also like to know how a piece 
+      of material, again, an infinitesimal piece, is stretched and rotated as 
+      the body moves from the reference to the deformed configuration. The infinitesimal 
+      material vector in the reference configuration, dx', is shown in red in 
+      the reference configuration. The material vector after it has been stretched 
+      and rotated, dx, is shown in red in the deformed configuration below:</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="bme456straindef_files/defgrad1.jpg" height="282" width="592"><a name="materialvector"></a></p>
+    <p>Since the length of dx' can change when going to the deformed configuration 
+      as well as its orientation, we can say that dx' deforms into dx. The question 
+      then becomes how to relate dx in the deformed configuration into dx' of 
+      the reference configuration. This can readily be done through the chain 
+      rule as:</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a name="defgrad"></a>&nbsp;<img src="bme456straindef_files/eq2.gif" height="58" width="114"></p>
+    <p>The above equation gives a relationship between a material vector in the 
+      undeformed and deformed configuration. We define the mapping itself as the 
+      deformation gradient tensor:</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="bme456straindef_files/eq3.gif" height="58" width="76">.</p>
+    <p>where Fij is the deformation gradient tensor. We know by the rules of index 
+      notation that F is a second order tensor, since it has two independent indices. 
+      It is also important to note that F IS NOT Symmetric. We can also write 
+      the deformation gradient tensor in matrix format as:</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="bme456straindef_files/straineq3.gif" height="264" width="510"><a name="defgradtensor"></a></p>
+    <p>III.D. Relating the Displacement Vector and Deformation Gradient Tensor</p>
+    <p>We now have two entities that relate quantities in the reference configuration 
+      to the deformed configuration: the displacement vector and the deformation 
+      gradient tensor. The next logical question is whether these quantities themselves 
+      have any connection. First, let us begin with the displacement vector that 
+      relates a position in the reference configuration to a position in the deformed 
+      configuration:</p>
+    <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="bme456straindef_files/eq1.gif" height="32" width="90"></p>
+    <p>The above equation actually represents the relationship between the three 
+      coordinates in a reference and deformed configuration:</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="bme456straindef_files/straineq4.gif" height="141" width="137"></p>
+    <p>Now let us differentiate each on of the above equations with repect to 
+      <img src="bme456straindef_files/straineq5.gif" align="absmiddle" height="42" width="29">, <img src="bme456straindef_files/straineq6.gif" align="absmiddle" height="42" width="30">, 
+      and <img src="bme456straindef_files/straineq7.gif" align="absmiddle" height="42" width="30">:</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="bme456straindef_files/straineq8.gif" height="293" width="622"></p>
+    <p>Let's first look at and group the left hand side of the differentiated 
+      displacement relationship. If we group all these terms, <a href="#defgradtensor">we 
+      end up with the deformation gradient tensor</a>. Now, let's take a look 
+      at the first term on the right hand side in each of the above equations. 
+      If we group these terms in a matrix, we obtain:</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="bme456straindef_files/straineq9.gif" height="280" width="213">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+    <p>Let us look more carefully at each entry in the above matrix. Obviously, 
+      if we differentiate something with respect to itself we get 1. Thus, the 
+      diagonal of the above matrix will all have ones. For all the off axis terms, 
+      we are differentiating a one coordinate position with respect to one of 
+      the two other coordinate positions. Since one coordinate position (e.g. 
+      1,2,3) does not depend on the other coordinate positions, these terms are 
+      all zero. This leaves us with the identity matrix, which is <a href="file:///C%7C/scotthollister/Hollistersite/BME332/mathprelim/bme332mathprelim.htm#dotproductkronecker">equivalent 
+      to the kronecker delta 2nd order tensor we defined in the section on mathematical 
+      preliminaries</a>:</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="bme456straindef_files/straineq10.gif" height="118" width="193">&nbsp;&nbsp;&nbsp;</p>
+    <p>Finally, we consider the term on the right hand side of the differentiated 
+      displacement equation. We can also write this in a matrix from as:</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="bme456straindef_files/straineq11.gif" height="264" width="292"></p>
+    <p>We can also recognize from the mathematical preliminary section that the 
+      above entity is <a href="file:///C%7C/scotthollister/Hollistersite/BME332/mathprelim/bme332mathprelim.htm#gradvector">the 
+      gradient of the displacement</a>. We can therefore recognize that differentiating 
+      the displacement equation with respect to <img src="bme456straindef_files/straineq5.gif" align="absmiddle" height="42" width="29">, 
+      <img src="bme456straindef_files/straineq6.gif" align="absmiddle" height="42" width="30">, and 
+      <img src="bme456straindef_files/straineq7.gif" align="absmiddle" height="42" width="30"> gives 
+      us the deformation gradient tensor being equal to the kronecker delta second 
+      order tensor plus the graident of the displacement. This relationship is 
+      written in both matrix and index notation below:</p>
+    <p>Matrix Notation:</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="bme456straindef_files/straineq12.gif" height="280" width="853"></p>
+    <p>&nbsp;</p>
+    <p>Index Notation:</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="bme456straindef_files/straineq13.gif" height="92" width="333"></p>
+    <p>III E Decomposing the Deformation Gradient Tensor in Stretch and Rotation 
+      Tensors</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;As we noted earlier, the deformation 
+      gradient tensor includes both rigid body and deformation modes. Therefore, 
+      we should be able to decompose the deformation gradient into rigid body 
+      and deformation components. Since translation does not change any vector 
+      or its components, we can therefore conclude that the deformation gradient 
+      tensor contains only deformation plus rotation components. To verify this, 
+      consider pure translation. In this case, we may write directly x in terms 
+      of x' plus a translational component:</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="bme456straindef_files/straineq50.gif" height="178" width="562"></p>
+    <p>If we plug the above translation component into the deformation gradient 
+      tensor definition we have:</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;<img src="bme456straindef_files/straineq51.gif" height="280" width="480"></p>
+    <p>In pure translation, all points in the body will move the same amount in 
+      each of the three orthogonal directions. This means that s1, s2, and s3 
+      will not differ at different points in the body. Thus, the gradients of 
+      s1, s2 and s3 with respect to x' will all be zero. This leaves us with the 
+      fact that the deformation gradient tensor is the identity under pure translation:</p>
+    <p>&nbsp;&nbsp;&nbsp;<img src="bme456straindef_files/straineq52.gif" height="118" width="184"></p>
+    <p>we also not that when there is no displacement at all the deformation gradient 
+      tensor will also be equal to the identity tensor. Thus, the deformation 
+      gradient tensor does not distinguish between states of translation.</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;Thus, we know that the deformation gradient tensor 
+      will only contain the rigid body mode of rotation in addition to stretch. 
+      We therefore postulate without proof that the deformation gradient tensor 
+      can be decomposed into a rotation multipled by stretch or a stretch multiplied 
+      by rotation. Let us denote the rotation tensor by R. If we decompose the 
+      deformation gradient tensor such that we rotate first and then stretch, 
+      we denote this stretch tensor by U. We therefore can write this decomposition 
+      as:</p>
+    <p>&nbsp;&nbsp;&nbsp;<img src="bme456straindef_files/straineq53.gif" height="38" width="148"></p>
+    <p>If we first stretch and then rotate, we denote the stretch tensor by V, 
+      and can write the decompositon as:</p>
+    <p>&nbsp;&nbsp;<img src="bme456straindef_files/straineq54.gif" height="38" width="142"></p>
+    <p>Graphically, we can represent this decomposition as:</p>
+    <p><img src="bme456straindef_files/rotstretch.jpg" height="516" width="744"></p>
+    <p>We further note that the rotation tensor has special properties, namely 
+      that it is orthogonal. This means that the transpose of the rotation tensor 
+      multiplied by itself will give the identity tensor:</p>
+    <p>&nbsp;&nbsp;<img src="bme456straindef_files/straineq55.gif" height="46" width="261"></p>
+    <p>This property will play a role in the definition of other deformation tensors, 
+      which themselves play a significant role in definition of many constitutive 
+      equations. </p>
+    <p><b>IV. Definition of Large Deformation or Finite Strain Tensor and other 
+      Deformation Tensors in terms of the Deformation Gradient Tensor</b></p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Once we have defined reference 
+      configuration, deformed configuration, displacement, and deformation gradient 
+      tensor, we can derive the large strain tensor. We cannot use the deformation 
+      gradient tensor as a strain measure directly because it can contain rigid 
+      body modes like translation and rotation. For a strain tensor, our goal 
+      is to obtain some measure the change in length of a material. One way to 
+      measure length is to take the dot product of the <a href="#materialvector">material 
+      vector we used when defining the deformation gradient</a> with itself. Thus, 
+      the length squared ds'^2 of the material vector in the reference configuration 
+      is:</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="bme456straindef_files/straineq14.gif" height="46" width="592"></p>
+    <p>We can likewise write the length squared of the material vector ds^2 in 
+      the deformed configuration as:</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="bme456straindef_files/straineq15.gif" height="46" width="566"></p>
+    <p>The strain tensor should be a measure of how much the material vector in 
+      the reference configuration is stretched into the deformed configuration. 
+      We would essentially like the strain measure to operate on the material 
+      vector in the reference configuration and generate the difference in the 
+      square of the lengths of the material vector. We may write this idea in 
+      compact index notation as:</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="bme456straindef_files/straineq16.gif" height="62" width="529"></p>
+    <p>Note that the above equation represents the difference two scalars, the 
+      square of the length of material vectors in the reference and deformed configuration. 
+      If we expand this equation we can see this more clearly:</p>
+    <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="bme456straindef_files/straineq18.gif" height="192" width="621"></p>
+    <p>Note that E, which will be defined as the large deformation or finite strain 
+      tensor, has 9 components in 3D making it a 2nd order tensor. Two thirds 
+      of the strain equation above is written in terms of dx'. Therefore, to define 
+      Eij we will need to write the square of the length of the material vector 
+      in the deformed configuration also in terms of the reference configuration 
+      vector dx'. One way we can do this is to use the <a href="#defgrad">deformation 
+      gradient tensor</a>, which gives the material vector dx in the deformed 
+      configuration in terms of the material vector dx' in the reference configuration. 
+      We also need to write the relationship using the deformation gradient tensor 
+      such that we obtain pre and post multiplication by dx'i and dx'j, respectively. 
+      First, since the quantity dxidxi is a scalar with repeated or dummy indices, 
+      it doesn't matter if we write the repeated index with i,j,k, or any other 
+      letter, it will produce the same result. So, let us write the dot product 
+      with a k:</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="bme456straindef_files/straineq19.gif" height="34" width="189"></p>
+    <p>Next, we can write the deformed configuration material vector in terms 
+      of the deformation gradient tensor and the reference configuration material 
+      vectors as:</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="bme456straindef_files/straineq20.gif" height="46" width="152"></p>
+    <p>This gives us the dx'j post multiplication term. Note that if we change 
+      the order of F and dx', this will not change the result. Also, since j is 
+      a repeated or dummy index in the above equation, we can replace it with 
+      any other repeated index, including i. If we carry out these operations, 
+      we obtain:</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="bme456straindef_files/straineq21.gif" height="42" width="149"></p>
+    <p>Just to show that the Fkjdx'j and the dx'iFki give equivalent expressions, 
+      we will expand each expression. For <img src="bme456straindef_files/straineq21.gif" align="absmiddle" height="42" width="149"></p>
+    <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="bme456straindef_files/straineq22.gif" height="274" width="648"></p>
+    <p>For <img src="bme456straindef_files/straineq21.gif" align="absmiddle" height="42" width="149"> 
+      we have:</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="bme456straindef_files/straineq23.gif" height="270" width="644"></p>
+    <p>we can see that the two above equations are equivalent. We can now substitute 
+      the expressions with the deformation gradient into the strain equation to 
+      obtain:</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="bme456straindef_files/straineq24.gif" height="46" width="412"> 
+    </p>
+    <p>The last task in defining Eij is to somehow rewrite the dx'idx'i term as 
+      a dx'idx'j term. To do this, we can simply apply the Kronecker delta as:</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="bme456straindef_files/straineq25.gif" height="46" width="140"></p>
+    <p>We can expand the above relationship as:</p>
+    <p><img src="bme456straindef_files/straineq26.gif" height="141" width="716"></p>
+    <p>which shows that multiplying by the kronecker delta gives us back the original 
+      quantity. We can now substitute in for the kronecker delta term into the 
+      large strain equation to give:</p>
+    <p>&nbsp;&nbsp;&nbsp;<img src="bme456straindef_files/straineq27.gif" height="46" width="444"></p>
+    <p>We note that the above relationship can be separated in terms of dx'i as:</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;<img src="bme456straindef_files/straineq28.gif" height="49" width="356"></p>
+    <p>since both dx'i and dx'j are non-zero and arbitrary, then the quantity 
+      in the bracket must be zero. This gives:</p>
+    <p>&nbsp;&nbsp;&nbsp;<img src="bme456straindef_files/straineq29.gif" height="85" width="284"></p>
+    <p>We divide by two to come up with our final definition of the finite strain 
+      tensor in terms of the deformation gradient tensor as:</p>
+    <p>&nbsp;&nbsp;&nbsp;<img src="bme456straindef_files/straineq30.gif" height="65" width="244"><a name="finitestraindeformgrad"></a></p>
+    <p>We will expand the above expression for one normal and one shear stress. 
+      First, consider the normal stress E11. In this case, i and j are fixed at 
+      1. However, k in the above is a repeated or dummy index, and therefore terms 
+      must be summed over k. Thus, we can write:</p>
+    <p>&nbsp;<img src="bme456straindef_files/straineq30a.gif" height="214" width="444">&nbsp;&nbsp;</p>
+    <p>We also show an example of the shear strain E12:</p>
+    <p><img src="bme456straindef_files/straineq30b.gif" height="214" width="452"></p>
+    <p>In addition to the finite strain tensor, other deformation tensors are 
+      oftern defined in terms of the deformation gradient tensor. An often used 
+      deformation measure, especially in hyperelastic constitutive tensors used 
+      to characterize soft tissues, is the <i>right Cauchy deformation tensor</i>. 
+      This is defined as:</p>
+    <p>&nbsp;&nbsp;&nbsp;<img src="bme456straindef_files/straineq31.gif" height="38" width="142"><a name="rightcauchy"></a></p>
+    <p>The right Cauchy deformation tensor can also be defined in matrix form 
+      as:</p>
+    <p>&nbsp;&nbsp;&nbsp; <img src="bme456straindef_files/straineq32.gif" height="41" width="116"></p>
+    <p>We can expand both the index and matrix notation of the right Cauchy deformation 
+      tensor as:</p>
+    <p><img src="bme456straindef_files/straineq33.gif" height="845" width="936">&nbsp;&nbsp;&nbsp;&nbsp;</p>
+    <p>By closely examining the explicit expression for C, we can see that C is 
+      symmeric, that is Cij = Cji.<a name="rightcauchsymmetric"></a></p>
+    <p>In addition to the right Cauchy deformation tensor, we can define the left 
+      Caucy deformation tensor in both index and matrix form as:</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="bme456straindef_files/straineq34.gif" height="86" width="146"><a name="leftcauchy"></a></p>
+    <p>We can similarly expand the left Cauchy deformation tensor as:</p>
+    <p>&nbsp;&nbsp;<img src="bme456straindef_files/straineq35.gif" height="416" width="485"></p>
+    <p>From the right and left Cauchy deformation tensors, we can further define 
+      relationships between these tensors and the stretch tensors. First, consider 
+      the definition of the right Cauchy:</p>
+    <p><img src="bme456straindef_files/straineq56.gif" height="38" width="132"></p>
+    <p>We next subtitute the polar decomposition of F for each F in the above 
+      equation:</p>
+    <p><img src="bme456straindef_files/straineq57.gif" height="85" width="341"> </p>
+    <p>However, we know that since R is an orthogonal tensor, we have the following 
+      relationship:</p>
+    <p><img src="bme456straindef_files/straineq58.gif" height="81" width="296"> </p>
+    <p>This result shows that the right Cauchy deformation tensor is equal to 
+      the square of the right stretch tensor. Likewise, we can show that the left 
+      Cauchy Deformation tensor is:</p>
+    <p><img src="bme456straindef_files/straineq59.gif" height="177" width="308"></p>
+    <p>Thus giving that the left Cauchy Deformation tensor is the square of the 
+      left stretch tensor.</p>
+    <p>We can furthermore find the eigenvalues of both U and V. The eigenvalues 
+      of U are called the <i>principal stretches</i>. These are used to construct 
+      some constitutive equations.</p>
+    <p><b>V. Definition of the Finite Strain Tensor in terms of displacement gradient, 
+      comparison to the small strain tensor</b></p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In the final part of this section, 
+      we will derive the finite strain tensor in terms of the displacement gradient, 
+      just as the small strain tensor was defined in terms of the displacement 
+      gradient. We will then be able to compare the small strain and finite strain 
+      tensor. To begin, recall that we can write the deformation gradient tensor 
+      in terms of the displacement gradient as:</p>
+    <p>&nbsp;&nbsp;&nbsp;<img src="bme456straindef_files/straineq13.gif" height="92" width="333"></p>
+    <p>We can also write the finite strain tensor in terms of the deformation 
+      gradient tensor as:</p>
+    <p>&nbsp;&nbsp;&nbsp;<img src="bme456straindef_files/straineq30.gif" height="65" width="244"><a name="finitestraindefgrad2"></a></p>
+    <p>Now let us write each deformation gradient tensor in terms of the deformation 
+      gradient tensor with the indices Fki and Fkj:</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;<img src="bme456straindef_files/straineq36.gif" height="160" width="170"></p>
+    <p>If we substitute these <a href="#finitestraindefgrad2">expressions into 
+      the finite strain tensor written in terms of the deformation gradient</a>, 
+      we obtain:</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="bme456straindef_files/straineq37.gif" height="94" width="440"></p>
+    <p>Expanding the above strain expression, we have:</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="bme456straindef_files/straineq38.gif" height="90" width="582"></p>
+    <p>Now let's look at each term of this expression, starting with the term 
+      with kronecker delta's multiplied together. We can expand this as:</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="bme456straindef_files/straineq40.gif" height="416" width="664"></p>
+    <p>Looking at the expansion, we see that the product of the kroneckor deltas 
+      itself leaves a kronecker delta. In fact, when a quantity is multiplied 
+      by a Kronecker delta, we actually exchange the non-repeated index:</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="bme456straindef_files/straineq41.gif" height="38" width="130"></p>
+    <p>Substituting this kronecker delta into the strain expression give:</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="bme456straindef_files/straineq42.gif" height="90" width="544"></p>
+    <p>Leaving us with:</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="bme456straindef_files/straineq43.gif" height="90" width="442"></p>
+    <p>Next, we turn our attention to the term <img src="bme456straindef_files/straineq44.gif" align="absmiddle" height="78" width="89">. 
+      &nbsp;&nbsp;Again, we can expand this for i and j, summing over k:</p>
+    <p>&nbsp;&nbsp;<img src="bme456straindef_files/straineq45.gif" height="806" width="712">&nbsp;&nbsp;&nbsp;&nbsp;</p>
+    <p>Here we note that the resulting displacement gradient indices match those 
+      of i and j. Thus, we see again that the result of operating on a quantity 
+      with the kronecker delta allows us to replace the summed or repeated index 
+      of the product with the remaining free independent index of the kronecker 
+      delta:</p>
+    <p>&nbsp;&nbsp;<img src="bme456straindef_files/straineq46.gif" height="78" width="160">&nbsp;&nbsp;&nbsp;&nbsp;</p>
+    <p>We can clearly do the same index swapping with the other displacement term 
+      that is multiplied with a kronecker delta:</p>
+    <p>&nbsp;&nbsp;<img src="bme456straindef_files/straineq47.gif" height="82" width="160"></p>
+    <p>If we substitute these results into the strain tensor, we obtain the finite 
+      strain tensor in terms of displacement gradients:</p>
+    <p><img src="bme456straindef_files/straineq48.gif" height="100" width="354"></p>
+    <p>Now, recalling the small strain tensor we have:</p>
+    <p><img src="bme456straindef_files/straineq49.gif" height="90" width="232"></p>
+    <p>We note two major differences between the small and finite strain tensor. 
+      First, the finite strain tensor contains a quadratic product of the displacement 
+      gradient. This makes the finite strain tensor nonlinear. <i>Also, note that 
+      unlike the small strain tensor, we did not make any assumptions about the 
+      size of deformation for the large strain tensor. Thus, the large strain 
+      tensor is exact for any deformation state. </i>The small strain tensor does 
+      not contain the quadratic terms, and is therefore a <i>linearized</i> version 
+      of the small strain tensor. Another subtle but critical point to note is 
+      that the finite strain tensor displacement gradients are taken with respect 
+      to the reference coordinates x'. The small strain tensor displacement gradients 
+      are taken with respect to the deformed coodinates x. This is a critical 
+      difference, especially when we consider that stress and strain tensors must 
+      be matched to produce a correct expression for energy. Since both the Cauchy 
+      stress tensor and the small strain tensor are defined in the deformed coordinate 
+      system, they are energetically conjugate. However, for the finite strain 
+      tensor, since it is defined in the reference coordinate system, we need 
+      to derive a new stress tensor. Also, defining new stress tensors is also 
+      important when we look at materials or tissues that undergo large deformation, 
+      since these problems are inherently nonlinear. Therefore, for these problems 
+      we need to write not only new stress tensors, but a new stress equilibrium 
+      equation. We take these issues up in the next section. Finally, as we mentioned, 
+      we have developed 9 new equations, but 12 new unkowns. </p>
+    <table border="1" width="96%">
+      <tbody><tr> 
+        <td width="21%">Equations Type</td>
+        <td width="20%"># of Equations</td>
+        <td width="23%">Unknown Quantity</td>
+        <td width="18%"># Unknowns</td>
+        <td width="18%">Independent Unknowns</td>
+      </tr>
+      <tr> 
+        <td width="21%">Equilibrium</td>
+        <td width="20%">3</td>
+        <td width="23%">stress <font face="Symbol">s</font>ij</td>
+        <td width="18%">9</td>
+        <td width="18%">6</td>
+      </tr>
+      <tr> 
+        <td width="21%">Strain Displacement</td>
+        <td width="20%">9</td>
+        <td width="23%">strain eij, displacement ui</td>
+        <td width="18%">12</td>
+        <td width="18%">9</td>
+      </tr>
+    </tbody></table>
+    <p>Thus, even though we have considered both stress balance and kinematics 
+      (displacements and strains), we still do not have a determinate system. 
+      We need to relate stress and strain to close the loop and make the systems 
+      determinate. This is where the nature of the material or tissue plays a 
+      role, since this nature determines the relationship between stress and strain 
+      we use, known as the constitutive relationship. </p>
+    <p><a href="file:///C%7C/scotthollister/Hollistersite/BME332/index.htm">HOME</a></p>
+    <p>&nbsp;</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;&nbsp;&nbsp;</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+    <p>&nbsp;</p>
+    </div>
+</div>
+</body></html>

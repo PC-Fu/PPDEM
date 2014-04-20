@@ -1,0 +1,38 @@
+{ 
+var google_ads = new Array(); 
+var google_ad; 
+var google_radlinks = new Array(); 
+var google_radlink; 
+var google_info = new Object(); 
+google_ad = new Object(); 
+google_ad.n = 1; 
+google_ad.type = "text"; 
+google_ad.bidtype = "CPC"; 
+google_ad.targeting_type = "contextual"; 
+google_ad.url = "http://pagead2.googlesyndication.com/pagead/iclk?sa=l&amp;ai=BcblnMTp7R5mVHaWqrAPJ9uGWBoS3pTW4pPLhBMCNtwGghjIQARgBIMHS9wEoAjgAUL2KrFZgydbZhsij_BqqAQo2ODA4NDA3Nzg5sgESd3d3LnRoZXNjcmlwdHMuY29tugEKMzAweDI1MF9qc8gBAdoBMWh0dHA6Ly93d3cudGhlc2NyaXB0cy5jb20vZm9ydW0vdGhyZWFkMzg3Nzc2Lmh0bWyAAgHIAtiAvgGoAwHoAx_oA-YD6APeBfUDAAEAAA&amp;num=1&amp;adurl=http://www.SmartDraw.com/specials/context/SmartDraw.htm%3Fid%3D207233&amp;client=ca-pub-8550604525820387"; 
+google_ad.visible_url = "www.SmartDraw.com"; 
+google_ad.line1 = "SmartDraw 2008"; 
+google_ad.line2 = "The World\x26#39;s Most Popular Business"; 
+google_ad.line3 = "Graphics Software. Free Download!"; 
+google_ad.regionname = ""; 
+google_ads[0] = google_ad; 
+google_ad = new Object(); 
+google_ad.n = 2; 
+google_ad.type = "text"; 
+google_ad.bidtype = "CPC"; 
+google_ad.targeting_type = "contextual"; 
+google_ad.url = "http://pagead2.googlesyndication.com/pagead/iclk?sa=l&amp;ai=BHZWaMTp7R5mVHaWqrAPJ9uGWBver9jGj8tieBMCNtwHw1xwQAhgCIMHS9wEoAjgAULn9w8T9_____wFgydbZhsij_BqgAfGo7_kDqgEKNjgwODQwNzc4ObIBEnd3dy50aGVzY3JpcHRzLmNvbboBCjMwMHgyNTBfanPIAQHaATFodHRwOi8vd3d3LnRoZXNjcmlwdHMuY29tL2ZvcnVtL3RocmVhZDM4Nzc3Ni5odG1syAK7yPkCqAMB6AMf6APmA-gD3gX1AwABAAA&amp;num=2&amp;adurl=http://clickserve.dartsearch.net/link/click%3Flid%3D43000000057393096&amp;client=ca-pub-8550604525820387"; 
+google_ad.visible_url = "www.skillsoft.com"; 
+google_ad.line1 = "Visual Basic Training"; 
+google_ad.line2 = "IT Training Certification Guides"; 
+google_ad.line3 = "Online Books \x26amp; Courses at SkillSoft"; 
+google_ad.regionname = ""; 
+google_ads[1] = google_ad; 
+google_info.feedback_url = "http://services.google.com/feedback/abg?url=http://www.thescripts.com/forum/thread387776.html&amp;hl=en&amp;client=ca-pub-8550604525820387&amp;adU=www.SmartDraw.com&amp;adT=SmartDraw+2008&amp;adU=www.skillsoft.com&amp;adT=Visual+Basic+Training&amp;done=1"; 
+if (window.google_ad_request_done) { 
+google_ad_request_done(google_ads); 
+} 
+if (window.google_radlink_request_done) { 
+google_radlink_request_done(google_radlinks); 
+} 
+}

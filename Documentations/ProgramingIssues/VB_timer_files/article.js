@@ -1,0 +1,1 @@
+document.write('<a target="_blank" href="http://ad.doubleclick.net/click;h=v8/363a/0/0/%2a/b;94292047;2-0;0;13513798;2321-160/600;21188947/21206840/1;;~sscs=%3fhttp://www.oreillyschool.com/?CMP=BAC-ostlaunch"><img src="http://m1.2mdn.net/viewad/1319813/SOT_160x600.jpg" border=0 alt="Click here to find out more!"></a>');

@@ -1,0 +1,217 @@
+* { font-family: verdana, sans-serif; margin: 0px; padding: 0px }
+
+a { border: 0 }
+a:link, a:visited { color: #0860A8; text-decoration: none }
+a:hover { color: #626262; text-decoration: none }
+blockquote { font-family:Courier New; font-size: 11px; background-color: #eee; margin: 0 0 5px 20px; padding: 5px; width: 90% }
+blockquote p { font-family:Courier New; font-size: 11px; margin: 0; padding: 0 }
+body { background: #fff; color: #000; font-size: 11px; padding: 0px 15px 15px 10px }
+code { font-family: courier new, monospace; font-size: 11px; white-space: pre; }
+h1 { color: #000; font-family: "lucida grande",arial,sans-serif; font-size: 21px; font-weight: normal; padding-bottom: 5px }
+h1 a:link, h1 a:visited { color: #0860a8; text-decoration: none }
+h1 a:hover { color: #626262; text-decoration: none }
+h2 { font-family:verdana, sans-serif; color: #000000; font-size: 14px; font-weight: bold; margin-bottom: 4px; padding-bottom: 4px;border-bottom:none; }
+h3 { font-family:verdana, sans-serif; color: #666; font-size: 12px; font-weight: normal; line-height: 16px; padding-bottom: 6px;margin-bottom:0px; }
+h3 a { font-weight: bold }
+h4 { color: #000; font-family: verdana, sans-serif; font-size: 12px; font-weight: bold; padding-bottom: 6px }
+h5 { font-family:verdana, sans-serif;color: #666; font-size: 10px; font-weight: normal; line-height: 16px; padding-bottom: 20px }
+h5 a { font-weight: bold }
+
+/* Page title will be H1 - Page title - 21px, "lucida grande",arial,sans-serif, black */
+.pagetitle {font-family: "lucida grande",arial,sans-serif; color: #959595; font-size: 21px; font-weight: normal;}
+.pagetitle a:link { color: #0860a8; text-decoration: none }
+.pagetitle a:visited { color: #0860a8; text-decoration: none }
+.pagetitle a:hover { color: #626262; text-decoration: none }
+
+/* Page section/group will be H2 - Section heading - 14px, bold, verdana,sans-serif, black - only used occasionally */
+.pagesection {font-family:verdana, sans-serif; color: #000000; font-size: 14px; font-weight: bold;border-bottom:none;margin-bottom:0px;}
+
+/* Table column headings will be H3 - Heading - 12px, bold, verdana,sans-serif, black */
+.colheader {font-family:verdana, sans-serif; color: #fff; font-size: 12px; font-weight: bold;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #ccc;
+	vertical-align: text-top;}
+.colheader a { font-weight: bold }
+
+/* Table column text will be H4 - Normal text - 11px, verdana,sans-serif, black  */
+.bodytext {font-family: verdana, sans-serif; color: #000; font-size: 11px; font-weight: normal;}
+.bodytext a { font-weight: bold }
+
+/* H5 � Author and date � 11px, verdana,sans-serif, grey */
+.grayText {font-family:verdana, sans-serif;color: #666; font-size: 10px; font-weight: normal;}
+
+.widefat th {
+font-size:12px;
+}
+
+#poststuff .postbox, #poststuff .stuffbox {
+        margin-left: 0px;
+	margin-right:0px;
+}
+/*h1 { color: #959595; font-family: "lucida grande",arial,sans-serif; font-size: 24px; font-weight: normal; padding-bottom: 5px }
+h1 a:link, h1 a:visited { color: #0860a8; text-decoration: none }
+h1 a:hover { color: #626262; text-decoration: none }
+h2 { border-bottom: 1px solid #bababa; border-color: #bababa; color: #000000; font-size: 12px; font-weight: bold; margin-bottom: 4px; padding-bottom: 4px }
+h3 { color: #666; font-size: 10px; font-weight: normal; line-height: 16px; padding-bottom: 6px }
+h3 a { font-weight: bold }
+h4 { color: #fff; font-family: "lucida grande",arial,sans-serif; font-size: 22px; font-weight: normal; padding-bottom: 2px }
+h5 { color: #666; font-size: 10px; font-weight: normal; line-height: 16px; padding-bottom: 20px }
+h5 a { font-weight: bold }
+*/
+
+img { border: 0 }
+input, select, textarea { font-size: 11px }
+p, ol, ul { line-height: 16px }
+p { margin-bottom: 10px }
+
+/* lists: we need to do work on this */
+ol { margin-bottom: 16px; margin-left: 25px }
+ol ol { margin-bottom: 0px }
+ol ol ol { margin-bottom: 0px }
+ul { margin-bottom: 16px; margin-left: 16px }
+ul ul { margin-bottom: 0px }
+ul ul ul { margin-bottom: 0px }
+ul ul ul ul { margin-bottom: 0px }
+
+#container { margin: 10px auto 10px auto; width: 975px }
+#header { background-image:url(/common/images/grey_bar1.gif); background-repeat: repeat-x; height:70px; padding: 2px 5px 0px 5px }
+
+#menu { cl4ear: both; height: 22px; padding-bottom: 5px; padding-top: 25px }
+#banner { float: left }
+#subheader h1 { font-size: 20px }
+#subheader p { font-size: 12px;font-style:italic; }
+
+#breadcrumb { margin-bottom: 3px }
+#right { float: right; width: 216px }
+#body { position: relative; width: 744px; z-index: 1 }
+
+#nav { position: relative; z-index: 100 }
+#nav, #nav ul { list-style: none; margin: 0; padding: 0 }
+#nav ul { border-bottom: 1px solid #bababa; left: 0; list-style: none; position: absolute; top: -999em;}
+#nav ul li { border: 0; float: none;}
+#nav ul a {border: 1px solid #bababa; border-bottom: 0; padding-right: 15px; white-space: nowrap; width:225px;}
+#nav li { border-rig3ht: 1px solid #0860a8; float: left; position: relative;}
+#nav li:hover ul, #nav li.sfHover ul { top: 22px }
+#nav li a {  color: #0860a8; display: block; font-size: 13px; font-weight: bold; padding: 3px 9px; text-decoration: none;} /* toplevel normal */
+#nav li a:hover, #nav li.sfHover a { background: #fff; border: 1px solid #fff; color:#d54e21 } /* toplevel hover */
+#nav li ul a, #nav li.sfHover ul a {background: #fff; border-bottom: 1px solid #bababa; border-left: 1px solid #bababa; border-right: 1px solid #bababa; color: #0860a8; font-weight: normal } /* dropdown normal */
+#nav li ul a:hover, #nav li.sfHover ul a:hover { background: #fff; border-bottom: 1px solid #bababa; border-left: 1px solid #bababa; border-right: 1px solid #bababa; color:#d54e21 } /* dropdown hover */
+
+#footer { clear: both; text-align: center; padding-top: 10px; width: 960px; align:center; }
+#subfooter { border-top: 2px solid #ccc; color: #666; height: 20px; width: 960px; text-align: center;}
+#subfooter ul { margin: 5px }
+#subfooter ul li { display: inline; margin: 5px; white-space: nowrap }
+
+.box { border: 1px solid #c6c6c6; height-min: 0.01%; margin-bottom: 15px }
+.boxHeader { border-bottom: 1px solid #c6c6c6; font-size: 12px; font-weight: bold; padding: 8px }
+.boxBody { padding: 6px 8px }
+.boxBody ul { list-style-type: none; margin-bottom: 0px; margin-left: 0px }
+.boxBody ul li { padding-bottom: 8px }
+
+.row { clear: both }
+.key { float: left; width: 100px }
+.value { float: left; }
+.key, .value { line-height: 20px; }
+.value input {font-size:11px;}
+
+/* try to get rid of this */
+.calendarDateInput { width: 55px }
+
+.seperator { border-top: 1px solid #ccc; margin: 10px 0 10px 0 }
+
+.tableformat1 { font-size: 11px }
+.tableformat1FirstRow { background-color: #555555; color: #ffffff; font-size: 12px; font-weight: bold }
+.tableformat1FirstRowCol { border-right: 1px solid #bababa }
+.tableformat1RowOdd { background-color: #e3e3e3 }
+.tableformat1RowEven { background-color: #ffffff }
+.tableformat1Col { border-bottom: 1px solid #bababa; border-right: 1px dotted #bababa }
+
+.pager{margin:15px;}
+#media_uploads{height:90%;overflow-y:auto;background-color:#FFFFFF;border:4px solid #525252;z-index:10000;}
+#file_data{padding:5px;height:500px;width:700px}
+.file_table{width:700px;border-color:silver;}
+.file_table thead{background-color:#0861AD;}
+.file_table td{align:left}
+.file_binary{height:60px;width:60px;background-color:#E8E8E8;border:solid 1px black;}
+
+.folder_table{width:700px;border-color:silver;}
+.folder_table tbody tr{height:30px;}
+.folder_table thead{background-color:#0861AD;}
+.folder_table td{align:left}
+.even{background-color:#F9F9F9}
+.jqmWindow{
+        background-color:#fff;border:4px solid #525252;
+        position: absolute;
+        top: expression((document.documentElement.scrollTop || document.body.scrollTop) + Math.round(17 * (document.documentElement.offsetHeight || document.body.clientHeight) / 100) + 'px');
+}
+#file_details{margin-top:10px;padding:10px;width:680px;height:400px;border:1px #E7E7E7 solid}
+
+.h2_nob h2 {
+font-family:Georgia,"Times New Roman",Times,serif;
+font-size:24px;
+font-size-adjust:none;
+font-stretch:normal;
+font-style:normal;
+font-variant:normal;
+font-weight:normal;
+line-height:normal;
+margin:0pt;
+border:0px;
+color:#666666;
+}
+.lpic{height:20px;width:20px;float:left;margin-right:5px}
+.lgreen{background:url(/media/images/green.jpg) no-repeat;}
+.lbrown{background:url(/media/images/brown.jpg) no-repeat;}
+.lblack{background:url(/media/images/black.jpg) no-repeat;}
+
+/* Background iframe styling for IE6. Prevents ActiveX bleed-through (<select> form elements, etc.) */
+* iframe.jqm {position:absolute;top:0;left:0;z-index:-1;
+	width: expression(this.parentNode.offsetWidth+'px');
+	height: expression(this.parentNode.offsetHeight+'px');
+}
+
+/* Fixed posistioning emulation for IE6
+     Star selector used to hide definition from browsers other than IE6
+     For valid CSS, use a conditional include instead */
+* html .jqmWindow {
+     position: absolute;
+     top: expression((document.documentElement.scrollTop || document.body.scrollTop) + Math.round(17 * (document.documentElement.offsetHeight || document.body.clientHeight) / 100) + 'px');
+}
+/* login box*/
+.login{margin:0px;padding:0px;font-size:11px;}
+
+/*common services common settings */
+.jqmWindow {display: none;position: fixed;top: 17%;left: 50%;margin-left: -200px; font-family:verdana,sans-serif;font-size: 11px;background-color: #fff; color: #000000; border:4px solid #525252; padding:0px;z-index:99999}
+.jqmOverlay { background-color: #262626; }
+.groovybutton {background-image:url(/common/images/back03.gif);border:1px solid #DDDDDD;font-family:Verdana,sans-serif;font-size:11px;height:20px;}
+
+/*spritebar login navigation options */
+#icons { height: 20px; width: 194px }
+#sprn, #seaf, #ssfb, #snew, #srss, #sdig, #sdel, #ssrc { background: url('/common/images/icons2.gif'); cursor: hand; cursor: pointer; float: left; height: 19px; width: 24px }
+#sprn { background-position: 0px }
+#seaf { background-position: -24px }
+#ssfb { background-position: -48px }
+#snew { background-position: -72px }
+#srss { background-position: -96px }
+#sdig { background-position: -120px }
+#sdel { background-position: -144px }
+#ssrc { background-position: -168px }
+
+.poll_div_0{background-color:blue;height:5px;font-size:0;}
+.poll_div_1{background-color:green;height:5px;font-size:0;}
+.poll_div_2{background-color:yellow;height:5px;font-size:0;}
+.poll_div_3{background-color:black;height:5px;font-size:0;}
+.poll_div_4{background-color:red;height:5px;font-size:0;}
+
+.sectionHeading, .sectionHeadingText { color: #000000; font-size: 12px; font-weight: bold; }
+.sectionHeading { border-bottom-style: solid; border-bottom-width: 1px; border-color: #bababa; margin-bottom: 4px; padding-bottom: 4px; }
+.sectionBody, .sectionBodyText { font-size: 11px; }
+.sectionBody { padding-bottom: 15px; }
+.sectionBody ul { margin-bottom: 0px; margin-top: 2px; }
+.sectionBody ul li { list-style-image: url("http://www.intel.com/plt/cd/software/shared/images/3.0/bullet.gif"); padding: 2px 0px 2px 0px; }
+.sectionBody ol { margin-bottom: 0px; margin-top: 2px; }
+.sectionBody ol li { padding: 2px 0px 2px 0px; }
+
+.alignleft { float: left; padding-right: 8px; }
+.alignright { float: right; padding-left: 8px; }

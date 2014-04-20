@@ -1,0 +1,1292 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us"><head profile="http://gmpg.org/xfn/11">
+
+ 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="Content-Language" content="en-us">
+  <meta http-equiv="X-UA-Compatible" content="IE-5">
+  <link rel="pingback" href="http://software.intel.com/en-us/services/comment/pingback/">
+  <link rel="shortcut icon" href="http://software.intel.com/common/images/favicon.ico">
+  <link rel="stylesheet" href="VB.NET%2064%20bit%20calling%20DLL%20compiled%20with%20Intel%20Fortran%2010.1.024%20%5BIntel%2064%5D%20-%20Intel%C2%AE%20Software%20Network_files/style.css" type="text/css" media="screen">
+  <script type="text/javascript" src="VB.NET%2064%20bit%20calling%20DLL%20compiled%20with%20Intel%20Fortran%2010.1.024%20%5BIntel%2064%5D%20-%20Intel%C2%AE%20Software%20Network_files/jquery_003.js"></script>
+  <script type="text/javascript" src="VB.NET%2064%20bit%20calling%20DLL%20compiled%20with%20Intel%20Fortran%2010.1.024%20%5BIntel%2064%5D%20-%20Intel%C2%AE%20Software%20Network_files/jquery.js"></script>
+  <script type="text/javascript" src="VB.NET%2064%20bit%20calling%20DLL%20compiled%20with%20Intel%20Fortran%2010.1.024%20%5BIntel%2064%5D%20-%20Intel%C2%AE%20Software%20Network_files/superfish.js"></script>
+  <script type="text/javascript" src="VB.NET%2064%20bit%20calling%20DLL%20compiled%20with%20Intel%20Fortran%2010.1.024%20%5BIntel%2064%5D%20-%20Intel%C2%AE%20Software%20Network_files/jqmodal.js"></script>
+  <script type="text/javascript" src="VB.NET%2064%20bit%20calling%20DLL%20compiled%20with%20Intel%20Fortran%2010.1.024%20%5BIntel%2064%5D%20-%20Intel%C2%AE%20Software%20Network_files/ufo.js"></script>
+  <script type="text/javascript" src="VB.NET%2064%20bit%20calling%20DLL%20compiled%20with%20Intel%20Fortran%2010.1.024%20%5BIntel%2064%5D%20-%20Intel%C2%AE%20Software%20Network_files/combined.js"></script><style>
+.jqmisnDL {display: none;position: fixed;top: 17%;left: 50%;margin-left: -200px; font-family:verdana,sans-serif;font-size: 11px;background-color: #E7E7E7;color: #000000; border:1px solid #6699CC; padding:0px;z-index:99999}
+.isnDL {width: 250px;}
+.ISNTabDL {width: 100%;}
+#txtEmailDL {font-family:verdana,sans-serif;font-size: 11px;}
+.ISNHeadDL {padding:4px; width:50%; color:#ffffff; font-family:verdana,sans-serif;font-size: 11px; background-color:#6699CC;}
+.ISNBodyDL {padding-bottom:8px;padding-top:8px; padding-left:8px; text-align:left; width: 100%; font-family:verdana,sans-serif; font-size: 11px;}
+</style>
+<style>
+.jqmEF {display: none;position: fixed;top: 17%;left: 50%;margin-left: -200px; font-family:verdana,sans-serif;font-size: 11px;background-color: #E7E7E7;color: #000000; border:1px solid #69C; padding:0px;z-index:99999}
+.EFin {width: 385px;}
+.FTab {width: 100%;}
+.EF_MsgLenError {margin:0px;font-size:10px;color:red;}
+#eafmessage, #eafsubject, #eafemail, #eafrecipentemail {font-family:verdana,sans-serif;font-size: 11px;}
+#eafmessage {width:370px;}
+.FHead { width: 50%; color:#ffffff; font-family:verdana,sans-serif;font-size: 11px; background-color:#69C;}
+.FBody { padding-top:8px; padding-left:8px; text-align:left; width: 100%; font-family:verdana,sans-serif; font-size: 11px;}
+</style>
+<style>
+.jqmFW {display: none;position: fixed;top: 17%;left: 50%;margin-left: -200px; font-family:verdana,sans-serif;font-size: 11px;background-color: #E7E7E7;color: #000000; border:1px solid #69C; padding:0px;z-index: 99999}
+.FWin {width: 385px;}
+.FTab {width: 100%;}
+.FB_MsgLenError {margin:0px;font-size:10px;color:red;}
+#femail {font-family:verdana,sans-serif;font-size: 11px;}
+#fmessage { width:370px; font-family:verdana,sans-serif;font-size: 11px;}
+.FHeadL,.FHeadR { color:#ffffff; font-family:verdana,sans-serif;font-size: 11px; background-color:#69C;}
+.FHeadL {width:75%;} .FHeadR {width:25%;} .FBody { padding-top:8px; padding-left:8px; text-align:left; width: 100%; font-family:verdana,sans-serif; font-size: 11px;}
+</style>
+
+  <script type="text/javascript" src="VB.NET%2064%20bit%20calling%20DLL%20compiled%20with%20Intel%20Fortran%2010.1.024%20%5BIntel%2064%5D%20-%20Intel%C2%AE%20Software%20Network_files/search.js"></script><style>
+#srchBox {font-family:verdana,sans-serif;font-size:10px;color:#555555;width:220px;}
+#srchBox input {font-size:11px;margin:0px;padding:0px;margin-left:2px;}
+#srchSAL {margin:0px;padding:0px;}
+#srchResults, #srchPager {word-wrap:break-word;font-family:verdana,sans-serif;font-size:10px;color:#555555;}
+#srchResults a {cursor:pointer;color:#0000CC;text-decoration:underline;}
+#srchBaseURL {color:#008000;text-decoration:none;}
+#srchTerm {width:120px;font-size:11px;border:1px solid #BCCDF0;}
+#srchBranding {font-size:11px;padding-top:2px;padding-bottom:5px;border-bottom:1px solid #E9E9E9;text-align:right;}
+#srchExpander {font-size:14px;font-weight:bold;}
+#srchMenu {width:200px;display:none;}
+#srchMenu li:hover {background:white;}
+#srchMenu li {cursor:pointer;margin:0px;padding:5px;}
+.filterHover {display:block;position:absolute;padding:0px;margin:0px;border:1px solid #82A1BC;background:#ECEEED;list-style-image:none;list-style-position:outside;list-style-type:none;font-size:11px;font-family:verdana,sans-serif;color:#555555;}
+.srchMenuHover {background:white;}
+.srchPgr, .srchPgrSel  {color:#000000;font-size:11px;font-weight:bold;cursor:pointer;text-decoration:underline;display:inline;}
+.srchPgrSel {color:#A90A08;text-decoration:none;}
+#searchResultsTime{text-align:right;}
+#searchSortByDateRelevance{text-align:right;}
+#searchSpelling{color:red;}
+</style>
+
+  <script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
+<link rel="stylesheet" href="VB.NET%2064%20bit%20calling%20DLL%20compiled%20with%20Intel%20Fortran%2010.1.024%20%5BIntel%2064%5D%20-%20Intel%C2%AE%20Software%20Network_files/SyntaxHighlighter.css" type="text/css" media="screen">
+<link rel="stylesheet" href="VB.NET%2064%20bit%20calling%20DLL%20compiled%20with%20Intel%20Fortran%2010.1.024%20%5BIntel%2064%5D%20-%20Intel%C2%AE%20Software%20Network_files/widget.css" type="text/css" media="screen">
+<link rel="stylesheet" href="VB.NET%2064%20bit%20calling%20DLL%20compiled%20with%20Intel%20Fortran%2010.1.024%20%5BIntel%2064%5D%20-%20Intel%C2%AE%20Software%20Network_files/jquery.css" type="text/css" media="screen">
+<script type="text/javascript" src="VB.NET%2064%20bit%20calling%20DLL%20compiled%20with%20Intel%20Fortran%2010.1.024%20%5BIntel%2064%5D%20-%20Intel%C2%AE%20Software%20Network_files/alerts.js"></script><script type="text/javascript" src="VB.NET%2064%20bit%20calling%20DLL%20compiled%20with%20Intel%20Fortran%2010.1.024%20%5BIntel%2064%5D%20-%20Intel%C2%AE%20Software%20Network_files/ajaxfileupload.js"></script>
+<script type="text/javascript" src="VB.NET%2064%20bit%20calling%20DLL%20compiled%20with%20Intel%20Fortran%2010.1.024%20%5BIntel%2064%5D%20-%20Intel%C2%AE%20Software%20Network_files/select.js"></script>
+<script type="text/javascript" src="VB.NET%2064%20bit%20calling%20DLL%20compiled%20with%20Intel%20Fortran%2010.1.024%20%5BIntel%2064%5D%20-%20Intel%C2%AE%20Software%20Network_files/jquery_004.js"></script>
+<script type="text/javascript" src="VB.NET%2064%20bit%20calling%20DLL%20compiled%20with%20Intel%20Fortran%2010.1.024%20%5BIntel%2064%5D%20-%20Intel%C2%AE%20Software%20Network_files/isncommentsapi.js"></script>
+<script type="text/javascript" src="VB.NET%2064%20bit%20calling%20DLL%20compiled%20with%20Intel%20Fortran%2010.1.024%20%5BIntel%2064%5D%20-%20Intel%C2%AE%20Software%20Network_files/isnratingapi.js"></script>
+<script type="text/javascript" src="VB.NET%2064%20bit%20calling%20DLL%20compiled%20with%20Intel%20Fortran%2010.1.024%20%5BIntel%2064%5D%20-%20Intel%C2%AE%20Software%20Network_files/isnpollapi.js"></script>
+<script type="text/javascript" src="VB.NET%2064%20bit%20calling%20DLL%20compiled%20with%20Intel%20Fortran%2010.1.024%20%5BIntel%2064%5D%20-%20Intel%C2%AE%20Software%20Network_files/isncategoryapi.js"></script>
+<script type="text/javascript" src="VB.NET%2064%20bit%20calling%20DLL%20compiled%20with%20Intel%20Fortran%2010.1.024%20%5BIntel%2064%5D%20-%20Intel%C2%AE%20Software%20Network_files/file_folder.js"></script>
+<script type="text/javascript" src="VB.NET%2064%20bit%20calling%20DLL%20compiled%20with%20Intel%20Fortran%2010.1.024%20%5BIntel%2064%5D%20-%20Intel%C2%AE%20Software%20Network_files/shCore.js"></script>
+<script type="text/javascript" src="VB.NET%2064%20bit%20calling%20DLL%20compiled%20with%20Intel%20Fortran%2010.1.024%20%5BIntel%2064%5D%20-%20Intel%C2%AE%20Software%20Network_files/shCode.js"></script>
+<script type="text/javascript" src="VB.NET%2064%20bit%20calling%20DLL%20compiled%20with%20Intel%20Fortran%2010.1.024%20%5BIntel%2064%5D%20-%20Intel%C2%AE%20Software%20Network_files/querystring.js"></script>
+<script type="text/javascript" src="VB.NET%2064%20bit%20calling%20DLL%20compiled%20with%20Intel%20Fortran%2010.1.024%20%5BIntel%2064%5D%20-%20Intel%C2%AE%20Software%20Network_files/alerts_002.js"></script>
+<link href="VB.NET%2064%20bit%20calling%20DLL%20compiled%20with%20Intel%20Fortran%2010.1.024%20%5BIntel%2064%5D%20-%20Intel%C2%AE%20Software%20Network_files/buttons.css" rel="stylesheet" type="text/css">
+<meta name="Description" content="We have a&nbsp;legacy software product that runs in 32-bit mode on IA32 and x64 systems. The&nbsp;32-bit VB.NET routine calls a 32-bit Fortran DLL. No problems.
+We want to move to full 64 bit programming.&nbsp;We have experience compiling x64 applications written en"><meta name="keywords" content="Intel Fortran 10 x64,VB.NET,MS VS 2008,.Net Framework v3.5 all x64">
+<style type="text/css">
+	#rightdir {float:right;}
+	#group { background:#eaf3fa; padding:5px; border:1px solid #C6C6C6; font-size:12px; margin-top:20px; display:block; }
+	.a12px { font-size: 12px; }
+	.margina { margin-top: 10px; }
+</style>
+<script language="javascript">
+	function toggle(id) {	
+		var display = $('#group'+id).css('display');
+		if (display == 'block')	$('#group'+id).hide();  
+		else 			$('#group'+id).show();
+	}
+</script>
+<link href="VB.NET%2064%20bit%20calling%20DLL%20compiled%20with%20Intel%20Fortran%2010.1.024%20%5BIntel%2064%5D%20-%20Intel%C2%AE%20Software%20Network_files/admin.css" rel="stylesheet" type="text/css">
+	
+<!--[if IE]><link href="/admin/css/ie.css" rel="stylesheet" type="text/css" /><![endif]-->
+<!--[if IE 7]><link href="/admin/css/ie.css" rel="stylesheet" type="text/css" /><![endif]-->
+
+<style type="text/css" media="all">
+	@import '/media/css/thickbox.css';
+	div#TB_title {
+		background-color: #222222;
+		color: #cfcfcf;
+	}
+	div#TB_title a, div#TB_title a:visited {
+		color: #cfcfcf;
+	}
+	pre{
+		white-space: pre-wrap; /* css-3 */
+		white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
+		white-space: -pre-wrap; /* Opera 4-6 */
+		white-space: -o-pre-wrap; /* Opera 7 */
+		word-wrap: break-word; /* Internet Explorer 5.5+ */
+	}
+	
+	.wordwrap
+	{
+				-moz-binding: url("/admin/landingpages/wordwrap.xml#wordwrap");
+				padding: 2px;
+		overflow: hidden;
+		margin :0px;
+		float:left;
+		word-wrap:break-word;
+	}	
+	
+
+</style>
+
+<script type="text/javascript" src="VB.NET%2064%20bit%20calling%20DLL%20compiled%20with%20Intel%20Fortran%2010.1.024%20%5BIntel%2064%5D%20-%20Intel%C2%AE%20Software%20Network_files/slug.js"></script>
+<script type="text/javascript" src="VB.NET%2064%20bit%20calling%20DLL%20compiled%20with%20Intel%20Fortran%2010.1.024%20%5BIntel%2064%5D%20-%20Intel%C2%AE%20Software%20Network_files/postbox.js"></script>
+<script type="text/javascript" src="VB.NET%2064%20bit%20calling%20DLL%20compiled%20with%20Intel%20Fortran%2010.1.024%20%5BIntel%2064%5D%20-%20Intel%C2%AE%20Software%20Network_files/page.js"></script>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+	postboxL10n = {
+		requestFile: "/forums/admin-ajax.php"
+	}
+/* ]]> */
+</script>
+
+<script src="VB.NET%2064%20bit%20calling%20DLL%20compiled%20with%20Intel%20Fortran%2010.1.024%20%5BIntel%2064%5D%20-%20Intel%C2%AE%20Software%20Network_files/SupportedList.aspx"></script>
+<script type="text/javascript" src="VB.NET%2064%20bit%20calling%20DLL%20compiled%20with%20Intel%20Fortran%2010.1.024%20%5BIntel%2064%5D%20-%20Intel%C2%AE%20Software%20Network_files/en-us.js"> </script>
+<!-- corporate -->
+<link rel="stylesheet" type="text/css" id="HAT-linkStyle" href="VB.NET%2064%20bit%20calling%20DLL%20compiled%20with%20Intel%20Fortran%2010.1.024%20%5BIntel%2064%5D%20-%20Intel%C2%AE%20Software%20Network_files/ltr_header.css">
+<script type="text/javascript" src="VB.NET%2064%20bit%20calling%20DLL%20compiled%20with%20Intel%20Fortran%2010.1.024%20%5BIntel%2064%5D%20-%20Intel%C2%AE%20Software%20Network_files/header.js"> </script>
+<script type="text/javascript">
+      if (typeof HAT == "undefined" || !HAT) {
+      var HAT = {};
+      }
+
+      /* if qs is empty then a filter menu won't be rendered */
+      HAT.SearchFilterLUT = {
+      head:"Filter Your Results",
+      inputName:"category",
+      qs:[
+      
+    {
+    filter:"Products",
+    term:"Products"
+    },
+    {
+    filter:"SuppDown",
+    term:"Support &amp; Downloads"
+    },
+    {
+    filter:"BlogComm",
+    term:"Blogs &amp; Communities"
+    },
+    {
+    filter:"Reseller",
+    term:"Reseller"
+    },
+    {
+    filter:"Software",
+    term:"Software"
+    },
+    {
+    filter:"AboutIntel",
+    term:"About Intel"
+    },
+    {
+    filter:"HAT-adv1",
+    term:"Advanced Search"
+    }
+      ]
+      } 
+    </script>
+  <title>VB.NET 64 bit calling DLL compiled with Intel Fortran 10.1.024 [Intel 64] - Intel® Software Network</title>
+ </head><body class="HAT-widebg HAT-widebg-rel"><div class="jqmWindow box jqmID6" style="width: 220px; left: 50%; z-index: 9999999;" id="media_downloads"><div class="boxHeader" style="width: 203px; background-color: rgb(234, 243, 250);"><a href="#" class="jqmClose" style="color: rgb(8, 97, 173);"><b>[X]</b></a>  Download File</div><div class="boxBody" align="center"><div id="download_data"><img src="VB.NET%2064%20bit%20calling%20DLL%20compiled%20with%20Intel%20Fortran%2010.1.024%20%5BIntel%2064%5D%20-%20Intel%C2%AE%20Software%20Network_files/progressbar.gif"></div><br><br></div></div><div class="jqmWindow box jqmID5" style="left: 30%; top: 5%; z-index: 9999999; width: 772px;" id="media_uploads"><div class="boxHeader" style="height: 20px; width: 740px; background-color: rgb(234, 243, 250);" align="right"><span style="margin-right: 600px;">Add Files</span> <a href="#" class="jqmClose" style="color: rgb(8, 97, 173);"><b>close</b></a></div><div class="boxBody" align="center"><div id="file_data" align="left"><img src="VB.NET%2064%20bit%20calling%20DLL%20compiled%20with%20Intel%20Fortran%2010.1.024%20%5BIntel%2064%5D%20-%20Intel%C2%AE%20Software%20Network_files/progressbar.gif"></div><br><br></div></div><div class="jqmWindow box jqmID4" style="overflow: auto; left: 50%; width: 400px; height: 400px;" id="poll_res"><div class="boxHeader"><a href="#" alt="close" class="jqmClose">[X]<b></b></a><b>&nbsp;&nbsp;Poll Results</b></div><div class="boxBody" align="center"><div id="poll_result"><img src="VB.NET%2064%20bit%20calling%20DLL%20compiled%20with%20Intel%20Fortran%2010.1.024%20%5BIntel%2064%5D%20-%20Intel%C2%AE%20Software%20Network_files/progressbar.gif"></div><br><br></div></div><div class="jqmFW jqmID3" id="fb2">	<div class="FWin">	<table class="FTab" cellpadding="5" cellspacing="0">	<tbody><tr><td class="FHeadL" align="left"><b>Feedback For This Page</b>:<span id="fbLenCounter"></span></td><td class="FHeadR" align="right"><a href="#" class="jqmClose" style="color: rgb(255, 255, 255);">Close</a></td></tr>	<tr><td colspan="2" class="FBody">		<div style="display: none;" id="FB_LenError" class="FB_MsgLenError">(Feedback too long please shorten)</div>		<div>Your email address:</div><input onkeyup="return fbCount()" size="40" maxlength="255" id="femail" type="text"><input id="ftitle" type="hidden"><input id="furl" type="hidden"><br><br>		<div>Message:</div><textarea onkeyup="return fbCount()" id="fmessage" rows="6"></textarea>		<br><input class="groovybutton" onclick="javascript:processFeedback();" value="Submit" type="button">	</td></tr><tr>	</tr></tbody></table>	</div></div><div class="jqmEF jqmID2" id="efb2">	<div class="EFin">	<table class="FTab" cellpadding="5" cellspacing="0">	<tbody><tr><td class="FHead" align="left"><b>Email This Page</b>&nbsp;&nbsp;</td><td class="FHead" align="right"><a href="#" class="jqmClose" style="color: rgb(255, 255, 255);">Close</a></td></tr>	<tr><td colspan="2" class="FBody">		<div style="display: none;" id="EF_LenError" class="EF_MsgLenError">(Message too long please shorten)</div>		<div>Email
+this page to your friend. Complete the form below and click on the
+"send" button. All fields are required to help prevent spam.</div><br><br>		<div>Recipients email address:</div><input size="40" maxlength="255" id="eafrecipentemail" type="text"><br><br>		<div>Your email address:</div><input size="40" maxlength="255" id="eafemail" type="text"><br><br>		<div>Subject:</div><input size="40" maxlength="255" id="eafsubject" type="text"><br><br>		<div>Message:</div><textarea id="eafmessage" rows="6"></textarea>		<br><input class="groovybutton" onclick="javascript:processEAF();" value="Submit" type="button"><input id="eafurl" type="hidden">	</td></tr><tr>	</tr></tbody></table>	</div></div><div class="jqmisnDL jqmID1" id="isnDLb2"> <div class="isnDL"> <table class="ISNTabDL" cellpadding="5" cellspacing="0"> <tbody><tr><td class="ISNHeadDL" align="left"><b>Download</b>&nbsp;&nbsp;</td><td style="text-align: right;" class="ISNHeadDL" align="right"><a href="#" class="jqmClose" style="color: rgb(255, 255, 255);">Close</a></td></tr> <tr><td colspan="2" class="ISNBodyDL">  <div>Email:</div><input size="35" maxlength="255" id="txtEmailDL" name="txtEmailDL" type="text"><br>  <input class="groovybutton" style="margin-top: 4px;" onclick="javascript:validateDLData();" value=" Accept " type="button">  <div id="isnDLTOSDiv" style="padding-top: 5px;">Usage governed by <a id="isnDLTOS" target="_blank" href="http://softwarecommunity.intel.com/articles/eng/1517.htm">Terms of Use</a></div> </td></tr><tr> </tr></tbody></table><input name="qlogin" value="true" type="hidden"> </div></div>
+	<noscript><center><strong>Javascript
+is disabled on your browser. In order to use this platform effeciently,
+please enable javascript from your browser settings or contact your
+system administrator.</strong></center></noscript>  <div id="container">
+ <div id="HAT-globalheader" class="HAT-wide HAT-rel HAT-font1">
+  <div class="HAT-wrap">
+    <a href="http://www.intel.com/index.htm?iid=hdr+logo" class="logo"><img src="VB.NET%2064%20bit%20calling%20DLL%20compiled%20with%20Intel%20Fortran%2010.1.024%20%5BIntel%2064%5D%20-%20Intel%C2%AE%20Software%20Network_files/intlogo.gif" alt="Intel. Leap ahead.(TM)" border="0" height="47" width="119"></a>
+    <ul>
+      <li id="HAT-gh0">
+        <a class="on" href="http://www.intel.com/business/index.htm?iid=hdr+work">Work</a>
+      </li>
+      <li id="HAT-gh1">
+        <a href="http://www.intel.com/consumer/index.htm?iid=hdr+play">Play</a>
+      </li>
+      <li id="HAT-gh2">
+        <a href="http://www.intel.com/support/index.htm?iid=hdr+support">Support</a>
+      </li>
+      <li id="HAT-gh3">
+        <a href="http://www.intel.com/intel/index.htm?iid=hdr+about">About Intel</a>
+      </li>
+      <li id="HAT-gh4">
+        <a href="http://www.intel.com/intel/nav/locator.htm?iid=hdr+location">Change Location</a>
+      </li>
+      <li class="search">
+        <form action="http://mysearch.intel.com/corporate/default.aspx" method="get" name="FORMSearchHeader">
+          <input id="culture" name="culture" value="en_US" type="hidden">
+          <label for="q">Search</label>
+          <span>
+            <input id="q" name="q" size="10" maxlength="255" class="HAT-searchbox" type="text">
+          </span>
+          <input value="all" name="category" id="category" type="hidden">
+          <input value="0" name="adv" id="adv" type="hidden">
+          <input value="0" name="value" id="value" type="hidden">
+          <input class="searchbutton" style="border: 0px none ; width: 57px; height: 20px;" name="searchsubmit" id="searchsubmit" alt="Search" src="VB.NET%2064%20bit%20calling%20DLL%20compiled%20with%20Intel%20Fortran%2010.1.024%20%5BIntel%2064%5D%20-%20Intel%C2%AE%20Software%20Network_files/searchbtn.gif" type="image">
+        </form>
+      </li>
+    </ul>
+  </div>
+<ul id="HAT-filter-menu"><li id="HAT-filterhead">Filter Your Results</li><li><a href="http://software.intel.com/en-us/forums/intel-visual-fortran-compiler-for-windows/topic/62068/?Products">Products</a></li><li><a href="http://software.intel.com/en-us/forums/intel-visual-fortran-compiler-for-windows/topic/62068/?SuppDown">Support &amp; Downloads</a></li><li><a href="http://software.intel.com/en-us/forums/intel-visual-fortran-compiler-for-windows/topic/62068/?BlogComm">Blogs &amp; Communities</a></li><li><a href="http://software.intel.com/en-us/forums/intel-visual-fortran-compiler-for-windows/topic/62068/?Reseller">Reseller</a></li><li><a href="http://software.intel.com/en-us/forums/intel-visual-fortran-compiler-for-windows/topic/62068/?Software">Software</a></li><li><a href="http://software.intel.com/en-us/forums/intel-visual-fortran-compiler-for-windows/topic/62068/?AboutIntel">About Intel</a></li><li><a href="http://software.intel.com/en-us/forums/intel-visual-fortran-compiler-for-windows/topic/62068/?HAT-adv1">Advanced Search</a></li></ul></div>
+<div class="HAT-clear"> </div>
+<div id="HAT-subheader" class="subheaderId-HAT-gh0 HAT-font1">&nbsp;</div>
+<div class="HAT-clear">&nbsp;</div>
+
+<div id="header">
+	<!-- menu -->
+ 	<div id="banner" style="width: 100%;">
+  	<div id="subheader" style="width: 100%;">
+   						<h1><a href="http://software.intel.com/en-us/">Intel® Software Network</a></h1>
+				</div>
+				<div style="width: 100%;">
+				<div style="float: left;">
+   			<p><a href="http://software.intel.com/en-us/articles/about-intel-software-network/" style="font-size: 12px; font-style: italic;">Connect with developers and Intel engineers</a></p>
+   			</div>
+   			<div id="menu" style="padding: 0px; float: right;">
+    <ul id="nav" class="nav superfish">
+    	<li class=""><a href="http://software.intel.com/en-us/articles/intel-software-network-communities/">Communities</a><ul style="display: none; visibility: hidden;"><li><a href="http://software.intel.com/en-us/academic/">Academic</a></li><li><a href="http://software.intel.com/en-us/cluster-ready/">Cluster Ready</a></li><li><a href="http://software.intel.com/en-us/manageability/">Manageability</a></li><li><a href="http://software.intel.com/en-us/mobility/">Mobility</a></li><li><a href="http://software.intel.com/en-us/multi-core/">Parallel Programming and Multi-Core</a></li><li><a href="http://software.intel.com/sites/oss/">Open Source</a></li><li><a href="http://www.intel.com/software/virtualization/">Virtualization</a></li><li><a href="http://software.intel.com/en-us/visual-computing/">Visual Computing</a></li><li><a href="http://software.intel.com/en-us/articles/intel-software-network-communities/">More...</a></li></ul></li><li><a href="http://software.intel.com/en-us/articles/code-downloads/">Downloads</a></li><li class=""><a href="http://software.intel.com/en-us/intel-sdp-home/">Tools</a><ul style="display: none; visibility: hidden;"><li><a href="http://software.intel.com/en-us/intel-parallel-studio-home/">Intel® Parallel Studio</a></li><li><a href="http://software.intel.com/en-us/intel-hpc-home/">HPC Tools</a></li><li><a href="http://www.intel.com/cd/software/products/asmo-na/eng/373233.htm">SOA Products</a></li><li><a href="http://software.intel.com/en-us/articles/buy-or-renew/">Buy or Renew</a></li><li><a href="http://software.intel.com/en-us/articles/intel-software-evaluation-center/">Free Evaluation Software</a></li><li><a href="http://software.intel.com/en-us/articles/non-commercial-software-development/">Free Non-Commercial Download</a></li><li><a href="http://www.intel.com/cd/software/products/asmo-na/eng/reseller/index.htm">Reseller Center</a></li><li><a href="http://www.intel.com/cd/software/products/asmo-na/eng/219603.htm">Academic Program</a></li><li><a href="http://platformadmintech.intel.com/">Platform Administration Products</a></li><li><a href="http://csms.intel.com/csm/">Content Management Products</a></li><li><a href="http://software.intel.com/en-us/articles/tools/">Tools Knowledge Base</a></li></ul></li><li class=""><a href="javascript:void(0);">Forums/Blogs</a><ul style="display: none; visibility: hidden;"><li><a href="http://software.intel.com/en-us/forums/">Forums</a></li><li><a href="http://software.intel.com/en-us/blogs/">Blogs</a></li><li><a href="http://software.intel.com/en-us/blogs/categories/">Blog Categories</a></li><li><a href="http://software.intel.com/en-us/blogs/authors/">Meet The Bloggers</a></li></ul></li><li class=""><a href="javascript:void(0);">Resources</a><ul style="display: none; visibility: hidden;"><li><a href="http://www.intel.com/software/events/">Events Calendar</a></li><li><a href="http://www.intel.com/intelpress/">Intel Press Technical Books</a></li><li><a href="http://www.intel.com/software/insight/">Intel Software Insight Magazine</a></li><li><a href="http://software.intel.com/en-us/articles/intel-visual-adrenaline-magazine/">Intel Visual Adrenaline Magazine</a></li><li><a href="http://www.intel.com/partner/">Intel Software Partner Program</a></li><li><a href="http://software.intel.com/en-us/articles/all/">Knowledge Base</a></li><li><a href="http://software.intel.com/en-us/videos/">Take Five Videos</a></li><li><a href="http://software.intel.com/en-us/college/">Training</a></li><li><a href="http://whatif.intel.com/">What If Software</a></li></ul></li><li><a href="http://software.intel.com/sites/support/">Software Support</a></li>		</ul>
+		</div>
+	</div>
+</div>
+</div>
+
+<script language="javascript">
+	var base_url = "/";	
+</script>
+
+<script language="javascript" src="VB.NET%2064%20bit%20calling%20DLL%20compiled%20with%20Intel%20Fortran%2010.1.024%20%5BIntel%2064%5D%20-%20Intel%C2%AE%20Software%20Network_files/forum.js"></script>
+<script language="javascript" src="VB.NET%2064%20bit%20calling%20DLL%20compiled%20with%20Intel%20Fortran%2010.1.024%20%5BIntel%2064%5D%20-%20Intel%C2%AE%20Software%20Network_files/dropdowncontent.js"></script>
+
+
+<!-- Include Javascript file for pagination -->
+<script src="VB.NET%2064%20bit%20calling%20DLL%20compiled%20with%20Intel%20Fortran%2010.1.024%20%5BIntel%2064%5D%20-%20Intel%C2%AE%20Software%20Network_files/pagination.js"></script>
+
+<!-- Language Folder -->
+<input id="currlang" value="en-us" type="hidden"> 
+<input id="topic_moderate_reply" value="NO" type="hidden">
+
+<!-- Toggle for replies view-->
+<input id="flat_view" value="Flat View" type="hidden">
+<input id="thread_view" value="Thread View" type="hidden">
+
+<div id="wrap"><!-- Main Working Body -->
+
+
+	
+	<div id="body" style="float: left;">
+		
+		<div id="breadcrumb">
+			<a href="http://software.intel.com/en-us">Home</a>
+			›
+			<a href="http://software.intel.com/en-us/forums/">Forums</a>
+			›
+			<a href="http://software.intel.com/en-us/forums/intel-visual-fortran-compiler-for-windows/">Intel® Visual Fortran Compiler for Windows</a>
+			›
+			VB.NET 64 bit calling DLL compiled with Intel Fortran 10.1.024 [Intel 64]                </div>
+                <div id="clear"></div><br>
+		
+		<script language="Javascript" src="VB.NET%2064%20bit%20calling%20DLL%20compiled%20with%20Intel%20Fortran%2010.1.024%20%5BIntel%2064%5D%20-%20Intel%C2%AE%20Software%20Network_files/jquery_002.js"></script>
+<div id="displayoption">
+        <div id="poststuff">
+                <div id="pagecommentstatusdiv" class="postbox closed" style="border: 0px none ;">
+                <h3 class="pagesection" style="margin-bottom: 0px;"><a class="togbox">+</a>&nbsp;&nbsp;Forum Jump</h3>
+                <div class="inside" style="margin: 0px;">
+                        <form name="frm_display_option" action="" method="post">
+                                <input name="language_name" value="en-us" type="hidden">
+                                <input name="forum_id" id="forum_id" value="15" type="hidden">
+                                <input name="forum_nice_name" id="forum_nice_name" value="intel-visual-fortran-compiler-for-windows" type="hidden">
+                                <table class="taboddeven widefat" border="0" cellpadding="0" cellspacing="0">
+                                        <tbody><tr>
+                                                <th style="width: 25%;">Select Group</th>
+                                                <td style="width: 10px;">:</td>
+                                                <td>
+                                                                <select name="groupbyid" id="groupbyid" onchange="frm_get_forum();">
+                                                                <option value="0"></option>
+<option value="1">Administrators / Moderators</option>
+<option value="3">Platform and Technology Dis...</option>
+<option value="4" selected="selected">Intel® Software Development Products</option>
+<option value="5">Intel® Software Network Talk Back</option>
+<option value="6">Archived Forums (Private)</option>
+<option value="9">Intel® Threading Challenge Contest</option>
+                                                                                                                                </select>
+                                                </td>
+                                        </tr>
+                                        
+                                        <tr class="alternate">
+                                                <th style="width: 25%;">Select Forum</th>
+                                                <td style="width: 10px;">:</td>
+                                                <td>
+                                                                <select name="forumbyid" id="forumbyid" onchange="frm_get_nice_name();">
+                                                                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<option value="0"></option><option value="19">Archived Visual Fortran (read-only)</option><option value="29">Havok</option><option value="78">Havok Behavior</option><option value="81">Intel C++ Compiler and Performance Library for QNX* Neutrino* RTOS</option><option value="24">Intel® Array Visualizer</option><option value="20">Intel® C++ Compiler</option><option value="4">Intel® Clusters and HPC Technology</option><option value="16">Intel® Fortran Compiler for Linux and Mac OS* X</option><option value="100">Intel® Graphics Performance Analyzers</option><option value="23">Intel® Integrated Performance Primitives</option><option value="22">Intel® Math Kernel Library</option><option value="77">Intel® Parallel Studio</option><option value="116">Intel® SOA Products Group</option><option value="10">Intel® Software Development Tool Suites for Intel® Atom™ Processor</option><option value="113">Intel® Software Development Tools for Itanium® Architecture</option><option value="25">Intel® Threading Building Blocks</option><option value="21">Intel® Tools for UPnP* Technology</option><option value="15">Intel® Visual Fortran Compiler for Windows</option><option value="17">Intel® VTune™ Performance Analyzer</option><option value="26">Mobile Clinical Assistant (MCA) SDK</option><option value="28">Software Certification</option></select>
+                                                </td>
+                                        </tr>
+                                         
+                                        <tr>
+                                                <th style="width: 25%;">Sorted By</th>
+                                                <td style="width: 10px;">:</td>
+                                                <td>
+                                                                <select name="forumtopicsortyby" id="forumtopicsortyby">
+                                                                        <option value="1">THREAD TITLE</option>
+                                                                        <option value="2">LAST POST TIME</option>
+                                                                        <option value="3">NO OF POSTS</option>
+                                                                        <option value="4">NO OF VIEWS</option>
+                                                                        <option value="5">THREAD START TIME</option>			
+                                                                </select>
+                                                </td>
+                                        </tr>
+                                        <tr class="alternate">
+                                                <th style="width: 25%;">Sort Order</th>
+                                                <td style="width: 10px;">:</td>
+                                                <td>
+                                                        <select name="forumtopicorderyby" id="forumtopicorderyby">
+                                                                <option value="1">ASC</option>
+                                                                <option value="2">DESC</option>						
+                                                        </select>
+                                                </td>
+                                        </tr>
+                                        <tr>
+                                               <th style="width: 25%;">From The</th>
+                                               <td style="width: 10px;">:</td>
+                                               <td>
+                                                       <select name="forumtopicfilterby" id="forumtopicfilterby">
+                                                               <option value="1">beginning</option>
+                                                               <option value="2">last 2 days</option>
+                                                               <option value="3">last week</option> 
+                                                               <option value="4">last 10 days</option> 
+                                                               <option value="5">last 2 weeks</option>
+                                                               <option value="6">last month</option> 
+                                                               <option value="7">last 2 months</option> 
+                                                               <option value="8">last year</option>						
+                                                       </select>
+                                               </td>
+                                         </tr>
+                                                                                 <tr class="alternate">
+                                               <td colspan="3">
+                                                       <input name="show_threads_button" value="Show Threads" onclick="frm_forum_display_option_change()" class="button" type="button">&nbsp;
+                                                       <input value="Clear" class="button" type="reset">
+                                                       <input value="All Forums" id="allforum_label" type="hidden">
+                                               </td>
+                                         </tr>					
+                                </tbody></table>		
+                        </form>
+                        <script language="Javascript">
+                                frm_get_forum();
+                        </script>
+                   
+                </div>
+        </div>
+</div>
+        </div>		<div id="clear"></div>
+		
+				
+		<div style="margin-top: 10px;"></div>
+		<div style="height: 30px;" id="topic-top-bar">
+			<!-- Pagination Div -->
+			<div style="float: right;">
+				
+				<a href="http://software.intel.com/en-us/admin/forums/intel-visual-fortran-compiler-for-windows/topic/edit/" target="_blank" style="color: rgb(21, 27, 142); font-size: 13px; font-weight: bold;"><i>Start New Discussion</i><img src="VB.NET%2064%20bit%20calling%20DLL%20compiled%20with%20Intel%20Fortran%2010.1.024%20%5BIntel%2064%5D%20-%20Intel%C2%AE%20Software%20Network_files/black_arrow.gif" align="baseline"></a>&nbsp;<input class="button" onclick="javascript:view_toggle(62068);" value="Thread View" id="toggle_view" type="button"><input class="button" onclick="javascript:window.location='/en-us/forums/intel-visual-fortran-compiler-for-windows/topic/62575/'" value="Prev Thread" type="button">&nbsp;<input class="button" onclick="javascript:window.location='/en-us/forums/intel-visual-fortran-compiler-for-windows/topic/62555/'" value="Next Thread" type="button">			
+			</div>
+			
+        <div style="height: 40px;">
+			</div>	
+            </div>
+            <div class="tablenav-pages">
+			<div style="float: right; margin-bottom: 10px; margin-top: 10px;" id="pagination"><span id="firstprev"></span><span id="pageno"><span class="page-numbers current"><b>1</b></span>&nbsp;</span><span id="nextlast"></span></div>
+            </div>
+		
+		<div style="height: 5px;">
+			<!-- To hold the value of text box and hidden tag for suggest box-->
+			<input name="set_user_id" id="set_user_id" value="" type="hidden">
+			<input name="set_user_name" id="set_user_name" value="" type="hidden">
+			<input name="set_user_select" id="set_user_select" value="" type="hidden">
+		</div>
+		<div>
+		<table class="widefat" cellpadding="0" cellspacing="0" width="100%"><thead><tr>		<th style="width: 29%; text-align: left;">		</th>		<th style="width: 25%;"></th>		<th style="width: 20%; text-align: right;" class="widefat"><a href="#" id="toolslink" rel="threadTools" style="color: rgb(255, 255, 255);" hid="searchForm">Thread Tools&nbsp;<img src="VB.NET%2064%20bit%20calling%20DLL%20compiled%20with%20Intel%20Fortran%2010.1.024%20%5BIntel%2064%5D%20-%20Intel%C2%AE%20Software%20Network_files/menu_open.gif" border="0"></a></th>		<th style="width: 26%; text-align: right;" class="widefat"><a href="#" id="searchlink" rel="searchForm" style="color: rgb(255, 255, 255);" hid="threadTools">Search this thread&nbsp;<img src="VB.NET%2064%20bit%20calling%20DLL%20compiled%20with%20Intel%20Fortran%2010.1.024%20%5BIntel%2064%5D%20-%20Intel%C2%AE%20Software%20Network_files/menu_open.gif" border="0"></a></th></tr></thead></table><table class="widefat" cellpadding="0" cellspacing="0" width="100%"><tbody><tr>		<td style="padding: 4px; width: 173px;" class="widefat-head"><a href="http://software.intel.com/en-us/profile/390547/">Fortranic</a><br><table style="border: 0px none ;" cellpadding="0" cellspacing="0"><tbody><tr><td style="border: 0px none ; padding: 0px;"><a href="http://software.intel.com/en-us/profile/390547/"><img alt="" src="VB.NET%2064%20bit%20calling%20DLL%20compiled%20with%20Intel%20Fortran%2010.1.024%20%5BIntel%2064%5D%20-%20Intel%C2%AE%20Software%20Network_files/pixel.gif" title="" border="0" height="60" width="60"></a></td><td style="border: 0px none ; padding: 0px 3px 3px; width: 135px; line-height: 14px;" valign="top">Total Points: <br>110<br>Status Points: <br>60<br><div class="lpic"><img src="VB.NET%2064%20bit%20calling%20DLL%20compiled%20with%20Intel%20Fortran%2010.1.024%20%5BIntel%2064%5D%20-%20Intel%C2%AE%20Software%20Network_files/green.jpg"></div>Green Belt</td></tr></tbody></table></td><td class="widefat-head" colspan="3">November 24, 2008 2:35 AM PST
+<div style="height: 13px;"></div><b>VB.NET 64 bit calling DLL compiled with Intel Fortran 10.1.024 [Intel 64]</b></td></tr><tr>		<td colspan="4" class="widefat" style="padding: 3px;"><div style="height: auto;"><p>We
+have a&nbsp;legacy software product that runs in 32-bit mode on IA32
+and x64 systems. The&nbsp;32-bit VB.NET routine calls a 32-bit Fortran
+DLL. No problems.</p>
+<p>We want to move to full 64 bit programming.&nbsp;We have experience
+compiling x64 applications written entirely in Fortran and
+running&nbsp;on x64 systems and have no issues to report. The 64-bit
+VB.NET program is to call a 64-bit Fortran DLL. Right away there was a
+problem. The VB.NET passes arrays of data but the DLL does not
+interpret the data correctly. We have simplified the problem to a
+sample. The Fortran DLL code is attached.</p>
+<p>The data passed is an integer array and the upper dimension of the
+array. In this sample, the array stores&nbsp;the numbers&nbsp;0 through
+6, and the dimension is passed as an integer varaible, 6. The integer
+value 6 is passed okay. The elements of the array are not. We tested
+several KINDs of integers. The problem appears for all types. The
+sample uses 32 bit integers in VB.NET and Fortran. However, the VB.NET
+caller is 64 bit and the DLL is 64-bit. Type matching is correct
+between VB.NET and Fortran.</p>
+<p>Fortran output:</p>
+<p>integer variable, upper limit of array simension:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6<br>Array:</p>
+<p>&nbsp;&nbsp; Index&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Value</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3 -2147404312<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1602<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5&nbsp;&nbsp;&nbsp;&nbsp; 1516080<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0</p>
+<p>The upper dimension appears at entry 1 &amp; 2, there is a zero at 0
+entry, and the rest appears to be random data, except for the 6th,
+which is zero.</p>
+<p>Premier support are stumped for now, because of the load of the 11.0
+release, and asked me to check this forum. Someone out there must know
+something obvious that we missed. For your further information, the
+identical code in VB.NET and Fortran, if set for 32-bit applications,
+runs as expected and outputs</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6</p>
+<p>My colleaugue tells me that the VB.NET caller passes an array of
+Int32s and was written and compiled with MS VS 2008 &amp; .NET
+Framework v3.5.</p>
+<p>Thanks in advance for any help,</p>
+<p>John Potjewyd</p></div><div id="clear"></div><div stlye="margin-top:10px;"></div><div style="float: right;"></div></td></tr></tbody></table>		</div>
+		<!-- Div for Thread Tree -->
+		<div id="thread_view_group" style="margin-top: 10px; margin-bottom: 10px; display: none;">
+			<div style="color: rgb(0, 0, 0); height: 16px;" id="group">Thread View</div>
+			<div class="box" id="thread_tree" style="border-style: none solid solid; border-color: -moz-use-text-color rgb(198, 198, 198) rgb(198, 198, 198); border-width: medium 1px 1px; padding: 5px; overflow: auto; height: 150px;">
+			</div>
+		</div>
+	
+		
+		
+		<!-- Div for Thread Views -->
+		<div id="thread_replies" style="display: none;">
+		</div>
+		<style type="text/css" media="all">
+			pre{
+				width:739px;
+			}
+		</style>
+		<!-- Div for Flat Replies -->
+		<div id="flat_replies" style="margin-top: 0px; margin-bottom: 0px;">
+		<table cellpadding="0" cellspacing="0" width="100%">
+		<tbody>
+								<tr>
+					<td>
+					<a name="69140"></a>
+						
+			<table class="taboddeven widefat" cellpadding="0" cellspacing="0" width="100%">
+			<tbody>		
+		
+									<tr>
+						<td style="padding: 4px; width: 173px;" class="widefat-head">
+							<a href="http://software.intel.com/en-us/profile/336209/">Steve Lionel (Intel)</a><br><table style="border: 0px none ;" cellpadding="0" cellspacing="0"><tbody><tr><td style="border: 0px none ; padding: 0px;"><a href="http://software.intel.com/en-us/profile/336209/"><img alt="" src="VB.NET%2064%20bit%20calling%20DLL%20compiled%20with%20Intel%20Fortran%2010.1.024%20%5BIntel%2064%5D%20-%20Intel%C2%AE%20Software%20Network_files/442d325eb463c714c3e2e86b438ed742_s.jpg" title="" border="0" height="60" width="60"></a></td><td style="border: 0px none ; padding: 0px 3px 3px; width: 135px; line-height: 14px;" valign="top">Total Points: <br>80,029<br>Status Points: <br>80,029<br><div class="lpic"><img src="VB.NET%2064%20bit%20calling%20DLL%20compiled%20with%20Intel%20Fortran%2010.1.024%20%5BIntel%2064%5D%20-%20Intel%C2%AE%20Software%20Network_files/black.jpg"></div>Black Belt</td></tr></tbody></table>						</td>
+						<td colspan="3" class="widefat-head">
+							<div id="top_reply_line69140">
+								<div style="float: left;">
+								<div>November 24, 2008 4:52 AM PST
+</div><div style="height: 13px;"></div><div><span id="r_s_69140"><div style="float: left; height: 15px;">Rate</div><div style="float: left; height: 15px;">&nbsp;</div><span><input name="r_r_69140" value="" type="hidden"><div class="star star_group_r_r_69140 star_readonly" onclick="alertstuff(this);" title="Please login to rate!
+Current Score: 0 out of 0 users"><a title="Please login to rate!
+Current Score: 0 out of 0 users">Please login to rate!
+Current Score: 0 out of 0 users</a></div><div class="star star_group_r_r_69140 star_readonly" onclick="alertstuff(this);" title="Please login to rate!
+Current Score: 0 out of 0 users"><a title="Please login to rate!
+Current Score: 0 out of 0 users">Please login to rate!
+Current Score: 0 out of 0 users</a></div><div class="star star_group_r_r_69140 star_readonly" onclick="alertstuff(this);" title="Please login to rate!
+Current Score: 0 out of 0 users"><a title="Please login to rate!
+Current Score: 0 out of 0 users">Please login to rate!
+Current Score: 0 out of 0 users</a></div><div class="star star_group_r_r_69140 star_readonly" onclick="alertstuff(this);" title="Please login to rate!
+Current Score: 0 out of 0 users"><a title="Please login to rate!
+Current Score: 0 out of 0 users">Please login to rate!
+Current Score: 0 out of 0 users</a></div><div class="star star_group_r_r_69140 star_readonly" onclick="alertstuff(this);" title="Please login to rate!
+Current Score: 0 out of 0 users"><a title="Please login to rate!
+Current Score: 0 out of 0 users">Please login to rate!
+Current Score: 0 out of 0 users</a></div><input id="hdn_module_69140" value="2" type="hidden"><input id="hdn_source_69140" value="69140" type="hidden"><input id="hdn_language_69140" value="1" type="hidden"><input id="hdn_author_69140" value="" type="hidden"></span></span></div>								</div>
+								<div style="float: right;">
+									<a href="http://software.intel.com/en-us/forums/intel-visual-fortran-compiler-for-windows/topic/62068/reply/69140/"><b>#1</b></a>	
+								</div>
+							</div>
+							</td>
+						</tr>
+						
+						<tr>
+							
+						<td colspan="4" class="widefat" style="padding: 0px;">
+							<table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%">
+							<tbody><tr>
+							<td style="border: 0px none ; margin: 0px; padding: 3px; height: 100%;">
+							<script language="javascript">
+							// this is an IE specific issue fix for HTML with " /" characters in it which IE looks at like "&nbsp;/" instead and does not line break it.
+							$(function(){
+								if ($.browser.msie)
+									$("[id^='reply_text_']").css({"overflow-x":"scroll","overflow-y":""});
+							});
+							</script>
+							<div id="reply_text_69140" style="width: 730px; height: 100%;">	
+								<div style="margin: 0px;"></div>
+<p>I don't see the attachment.&nbsp; What is the Premier Support issue number?</p>								<br><div style="height: auto;">--------<br>Steve<br>
+<br>
+<a href="http://software.intel.com/en-us/forums/intel-visual-fortran-compiler-for-windows/announcement/241/">Attaching or including files in a post</a><br>
+<a href="http://intel.com/software/drfortran">Doctor Fortran blog</a></div><br><br>
+							</div>
+							</td></tr>
+							<tr>
+							<td style="border: 0px none ;">
+												</td></tr>
+						<tr><td style="border: 0px none ; margin: 0px; padding: 3px; width: 739px;" align="right">
+							<!-- Bottom right link for reply box-->
+							<div style="width: 739px; float: right; margin-top: 0px;">
+																				</div>
+						</td>
+						</tr>
+						</tbody></table>
+						</td>
+						</tr>
+					</tbody>
+			</table>
+						</td>
+					</tr>
+		
+					
+									<tr>
+					<td>
+					<a name="69250"></a>
+						
+			<table class="taboddeven widefat" cellpadding="0" cellspacing="0" width="100%">
+			<tbody>		
+		
+									<tr>
+						<td style="padding: 4px; width: 173px;" class="widefat-head">
+							<a href="http://software.intel.com/en-us/profile/390547/">Fortranic</a><br><table style="border: 0px none ;" cellpadding="0" cellspacing="0"><tbody><tr><td style="border: 0px none ; padding: 0px;"><a href="http://software.intel.com/en-us/profile/390547/"><img alt="" src="VB.NET%2064%20bit%20calling%20DLL%20compiled%20with%20Intel%20Fortran%2010.1.024%20%5BIntel%2064%5D%20-%20Intel%C2%AE%20Software%20Network_files/pixel.gif" title="" border="0" height="60" width="60"></a></td><td style="border: 0px none ; padding: 0px 3px 3px; width: 135px; line-height: 14px;" valign="top">Total Points: <br>110<br>Status Points: <br>60<br><div class="lpic"><img src="VB.NET%2064%20bit%20calling%20DLL%20compiled%20with%20Intel%20Fortran%2010.1.024%20%5BIntel%2064%5D%20-%20Intel%C2%AE%20Software%20Network_files/green.jpg"></div>Green Belt</td></tr></tbody></table>						</td>
+						<td colspan="3" class="widefat-head">
+							<div id="top_reply_line69250">
+								<div style="float: left;">
+								<div>November 24, 2008 11:52 PM PST
+</div><div style="height: 13px;"></div><div><span id="r_s_69250"><div style="float: left; height: 15px;">Rate</div><div style="float: left; height: 15px;">&nbsp;</div><span><input name="r_r_69250" value="" type="hidden"><div class="star star_group_r_r_69250 star_readonly" onclick="alertstuff(this);" title="Please login to rate!
+Current Score: 0 out of 0 users"><a title="Please login to rate!
+Current Score: 0 out of 0 users">Please login to rate!
+Current Score: 0 out of 0 users</a></div><div class="star star_group_r_r_69250 star_readonly" onclick="alertstuff(this);" title="Please login to rate!
+Current Score: 0 out of 0 users"><a title="Please login to rate!
+Current Score: 0 out of 0 users">Please login to rate!
+Current Score: 0 out of 0 users</a></div><div class="star star_group_r_r_69250 star_readonly" onclick="alertstuff(this);" title="Please login to rate!
+Current Score: 0 out of 0 users"><a title="Please login to rate!
+Current Score: 0 out of 0 users">Please login to rate!
+Current Score: 0 out of 0 users</a></div><div class="star star_group_r_r_69250 star_readonly" onclick="alertstuff(this);" title="Please login to rate!
+Current Score: 0 out of 0 users"><a title="Please login to rate!
+Current Score: 0 out of 0 users">Please login to rate!
+Current Score: 0 out of 0 users</a></div><div class="star star_group_r_r_69250 star_readonly" onclick="alertstuff(this);" title="Please login to rate!
+Current Score: 0 out of 0 users"><a title="Please login to rate!
+Current Score: 0 out of 0 users">Please login to rate!
+Current Score: 0 out of 0 users</a></div><input id="hdn_module_69250" value="2" type="hidden"><input id="hdn_source_69250" value="69250" type="hidden"><input id="hdn_language_69250" value="1" type="hidden"><input id="hdn_author_69250" value="" type="hidden"></span></span></div>								</div>
+								<div style="float: right;">
+									<a href="http://software.intel.com/en-us/forums/intel-visual-fortran-compiler-for-windows/topic/62068/reply/69250/"><b>#2</b></a> Reply to <a href="http://software.intel.com/en-us/forums/intel-visual-fortran-compiler-for-windows/topic/62068/reply/69140/"><b>#1</b></a>	
+								</div>
+							</div>
+							</td>
+						</tr>
+						
+						<tr>
+							
+						<td colspan="4" class="widefat" style="padding: 0px;">
+							<table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%">
+							<tbody><tr>
+							<td style="border: 0px none ; margin: 0px; padding: 3px; height: 100%;">
+							<script language="javascript">
+							// this is an IE specific issue fix for HTML with " /" characters in it which IE looks at like "&nbsp;/" instead and does not line break it.
+							$(function(){
+								if ($.browser.msie)
+									$("[id^='reply_text_']").css({"overflow-x":"scroll","overflow-y":""});
+							});
+							</script>
+							<div id="reply_text_69250" style="width: 730px; height: 100%;">	
+								<div style="margin: 0px;"></div>
+<p>It is premier support issue # 522856. Ron was working on it after
+Kirill Mavrodiev was unable to work on it. We are stuck as our resident
+VB gurus believe it must be a Fortran fault, having to do with argument
+passing conventions that have changed between the (working) 32-bit
+version and the (failing) 64-bit version, and with possibly new, hidden
+arguments.</p>
+<p>The uploads were made using your system, with "Add Files." I just
+clicked "Add Files" now and it lists the directory as "VB.NET Fortran
+x64", and states there are two files in it. The two zip files are: one
+for Fortran code, other for VB.NET code. Are you able to access these
+files?</p>
+<p>VB-DotNETSample.zip, loads with MS VS 2008</p>
+<p>SampleFortranDLL.zip, loads with MS VS 2005 only. Warning: writes a txt file on the root of C: drive.</p>
+<p>Both zips contain all project files.</p>
+<p>Has anyone else tried running a x64 application in a Fortran DLL
+compiled in MS VS 2005 through a VB.NET calling application with MS VS
+2008 &amp; .NET Framework v3.5?</p>
+<p>Further information: we have compiled the DLL in PGI Fortran demo
+compiler for x64 and achieve output identical to the DLL compiled in
+Intel Fortran, with identical (but wrong) output.</p>
+<p>There must be an absolutely ridiculous reason for this. Else
+everyone who uses x64 applications would be unable to run it with an
+x64 VB.NET application, and your board would be full of complaints.</p>
+<p>Thanks,</p>
+<p>John</p>								<br><br>
+							</div>
+							</td></tr>
+							<tr>
+							<td style="border: 0px none ;">
+												</td></tr>
+						<tr><td style="border: 0px none ; margin: 0px; padding: 3px; width: 739px;" align="right">
+							<!-- Bottom right link for reply box-->
+							<div style="width: 739px; float: right; margin-top: 0px;">
+																				</div>
+						</td>
+						</tr>
+						</tbody></table>
+						</td>
+						</tr>
+					</tbody>
+			</table>
+						</td>
+					</tr>
+		
+					
+									<tr>
+					<td>
+					<a name="69271"></a>
+						
+			<table class="taboddeven widefat" cellpadding="0" cellspacing="0" width="100%">
+			<tbody>		
+		
+									<tr>
+						<td style="padding: 4px; width: 173px;" class="widefat-head">
+							<a href="http://software.intel.com/en-us/profile/336209/">Steve Lionel (Intel)</a><br><table style="border: 0px none ;" cellpadding="0" cellspacing="0"><tbody><tr><td style="border: 0px none ; padding: 0px;"><a href="http://software.intel.com/en-us/profile/336209/"><img alt="" src="VB.NET%2064%20bit%20calling%20DLL%20compiled%20with%20Intel%20Fortran%2010.1.024%20%5BIntel%2064%5D%20-%20Intel%C2%AE%20Software%20Network_files/442d325eb463c714c3e2e86b438ed742_s.jpg" title="" border="0" height="60" width="60"></a></td><td style="border: 0px none ; padding: 0px 3px 3px; width: 135px; line-height: 14px;" valign="top">Total Points: <br>80,029<br>Status Points: <br>80,029<br><div class="lpic"><img src="VB.NET%2064%20bit%20calling%20DLL%20compiled%20with%20Intel%20Fortran%2010.1.024%20%5BIntel%2064%5D%20-%20Intel%C2%AE%20Software%20Network_files/black.jpg"></div>Black Belt</td></tr></tbody></table>						</td>
+						<td colspan="3" class="widefat-head">
+							<div id="top_reply_line69271">
+								<div style="float: left;">
+								<div>November 25, 2008 4:29 AM PST
+</div><div style="height: 13px;"></div><div><span id="r_s_69271"><div style="float: left; height: 15px;">Rate</div><div style="float: left; height: 15px;">&nbsp;</div><span><input name="r_r_69271" value="" type="hidden"><div class="star star_group_r_r_69271 star_readonly" onclick="alertstuff(this);" title="Please login to rate!
+Current Score: 0 out of 0 users"><a title="Please login to rate!
+Current Score: 0 out of 0 users">Please login to rate!
+Current Score: 0 out of 0 users</a></div><div class="star star_group_r_r_69271 star_readonly" onclick="alertstuff(this);" title="Please login to rate!
+Current Score: 0 out of 0 users"><a title="Please login to rate!
+Current Score: 0 out of 0 users">Please login to rate!
+Current Score: 0 out of 0 users</a></div><div class="star star_group_r_r_69271 star_readonly" onclick="alertstuff(this);" title="Please login to rate!
+Current Score: 0 out of 0 users"><a title="Please login to rate!
+Current Score: 0 out of 0 users">Please login to rate!
+Current Score: 0 out of 0 users</a></div><div class="star star_group_r_r_69271 star_readonly" onclick="alertstuff(this);" title="Please login to rate!
+Current Score: 0 out of 0 users"><a title="Please login to rate!
+Current Score: 0 out of 0 users">Please login to rate!
+Current Score: 0 out of 0 users</a></div><div class="star star_group_r_r_69271 star_readonly" onclick="alertstuff(this);" title="Please login to rate!
+Current Score: 0 out of 0 users"><a title="Please login to rate!
+Current Score: 0 out of 0 users">Please login to rate!
+Current Score: 0 out of 0 users</a></div><input id="hdn_module_69271" value="2" type="hidden"><input id="hdn_source_69271" value="69271" type="hidden"><input id="hdn_language_69271" value="1" type="hidden"><input id="hdn_author_69271" value="" type="hidden"></span></span></div>								</div>
+								<div style="float: right;">
+									<a href="http://software.intel.com/en-us/forums/intel-visual-fortran-compiler-for-windows/topic/62068/reply/69271/"><b>#3</b></a> Reply to <a href="http://software.intel.com/en-us/forums/intel-visual-fortran-compiler-for-windows/topic/62068/reply/69250/"><b>#2</b></a>	
+								</div>
+							</div>
+							</td>
+						</tr>
+						
+						<tr>
+							
+						<td colspan="4" class="widefat" style="padding: 0px;">
+							<table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%">
+							<tbody><tr>
+							<td style="border: 0px none ; margin: 0px; padding: 3px; height: 100%;">
+							<script language="javascript">
+							// this is an IE specific issue fix for HTML with " /" characters in it which IE looks at like "&nbsp;/" instead and does not line break it.
+							$(function(){
+								if ($.browser.msie)
+									$("[id^='reply_text_']").css({"overflow-x":"scroll","overflow-y":""});
+							});
+							</script>
+							<div id="reply_text_69271" style="width: 730px; height: 100%;">	
+								<div style="margin: 0px;"></div>
+<p>The way attachments in this forum work, you have to click on the
+file name in the "folder" and then click the "Add attachment"
+button.&nbsp; I am told that this rather convoluted method was chosen
+because that's "the WordPress way" and they wanted a common interface
+among the forums, blogs and knowledge base.</p>
+<p>Thanks for the issue ID - I'll check that out.</p>								<br><div style="height: auto;">--------<br>Steve<br>
+<br>
+<a href="http://software.intel.com/en-us/forums/intel-visual-fortran-compiler-for-windows/announcement/241/">Attaching or including files in a post</a><br>
+<a href="http://intel.com/software/drfortran">Doctor Fortran blog</a></div><br><br>
+							</div>
+							</td></tr>
+							<tr>
+							<td style="border: 0px none ;">
+												</td></tr>
+						<tr><td style="border: 0px none ; margin: 0px; padding: 3px; width: 739px;" align="right">
+							<!-- Bottom right link for reply box-->
+							<div style="width: 739px; float: right; margin-top: 0px;">
+																				</div>
+						</td>
+						</tr>
+						</tbody></table>
+						</td>
+						</tr>
+					</tbody>
+			</table>
+						</td>
+					</tr>
+		
+					
+									<tr>
+					<td>
+					<a name="69289"></a>
+						
+			<table class="taboddeven widefat" cellpadding="0" cellspacing="0" width="100%">
+			<tbody>		
+		
+									<tr>
+						<td style="padding: 4px; width: 173px;" class="widefat-head">
+							<a href="http://software.intel.com/en-us/profile/390547/">Fortranic</a><br><table style="border: 0px none ;" cellpadding="0" cellspacing="0"><tbody><tr><td style="border: 0px none ; padding: 0px;"><a href="http://software.intel.com/en-us/profile/390547/"><img alt="" src="VB.NET%2064%20bit%20calling%20DLL%20compiled%20with%20Intel%20Fortran%2010.1.024%20%5BIntel%2064%5D%20-%20Intel%C2%AE%20Software%20Network_files/pixel.gif" title="" border="0" height="60" width="60"></a></td><td style="border: 0px none ; padding: 0px 3px 3px; width: 135px; line-height: 14px;" valign="top">Total Points: <br>110<br>Status Points: <br>60<br><div class="lpic"><img src="VB.NET%2064%20bit%20calling%20DLL%20compiled%20with%20Intel%20Fortran%2010.1.024%20%5BIntel%2064%5D%20-%20Intel%C2%AE%20Software%20Network_files/green.jpg"></div>Green Belt</td></tr></tbody></table>						</td>
+						<td colspan="3" class="widefat-head">
+							<div id="top_reply_line69289">
+								<div style="float: left;">
+								<div>November 25, 2008 5:58 AM PST
+</div><div style="height: 13px;"></div><div><span id="r_s_69289"><div style="float: left; height: 15px;">Rate</div><div style="float: left; height: 15px;">&nbsp;</div><span><input name="r_r_69289" value="" type="hidden"><div class="star star_group_r_r_69289 star_readonly" onclick="alertstuff(this);" title="Please login to rate!
+Current Score: 0 out of 0 users"><a title="Please login to rate!
+Current Score: 0 out of 0 users">Please login to rate!
+Current Score: 0 out of 0 users</a></div><div class="star star_group_r_r_69289 star_readonly" onclick="alertstuff(this);" title="Please login to rate!
+Current Score: 0 out of 0 users"><a title="Please login to rate!
+Current Score: 0 out of 0 users">Please login to rate!
+Current Score: 0 out of 0 users</a></div><div class="star star_group_r_r_69289 star_readonly" onclick="alertstuff(this);" title="Please login to rate!
+Current Score: 0 out of 0 users"><a title="Please login to rate!
+Current Score: 0 out of 0 users">Please login to rate!
+Current Score: 0 out of 0 users</a></div><div class="star star_group_r_r_69289 star_readonly" onclick="alertstuff(this);" title="Please login to rate!
+Current Score: 0 out of 0 users"><a title="Please login to rate!
+Current Score: 0 out of 0 users">Please login to rate!
+Current Score: 0 out of 0 users</a></div><div class="star star_group_r_r_69289 star_readonly" onclick="alertstuff(this);" title="Please login to rate!
+Current Score: 0 out of 0 users"><a title="Please login to rate!
+Current Score: 0 out of 0 users">Please login to rate!
+Current Score: 0 out of 0 users</a></div><input id="hdn_module_69289" value="2" type="hidden"><input id="hdn_source_69289" value="69289" type="hidden"><input id="hdn_language_69289" value="1" type="hidden"><input id="hdn_author_69289" value="" type="hidden"></span></span></div>								</div>
+								<div style="float: right;">
+									<a href="http://software.intel.com/en-us/forums/intel-visual-fortran-compiler-for-windows/topic/62068/reply/69289/"><b>#4</b></a> Reply to <a href="http://software.intel.com/en-us/forums/intel-visual-fortran-compiler-for-windows/topic/62068/reply/69250/"><b>#2</b></a>	
+								</div>
+							</div>
+							</td>
+						</tr>
+						
+						<tr>
+							
+						<td colspan="4" class="widefat" style="padding: 0px;">
+							<table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%">
+							<tbody><tr>
+							<td style="border: 0px none ; margin: 0px; padding: 3px; height: 100%;">
+							<script language="javascript">
+							// this is an IE specific issue fix for HTML with " /" characters in it which IE looks at like "&nbsp;/" instead and does not line break it.
+							$(function(){
+								if ($.browser.msie)
+									$("[id^='reply_text_']").css({"overflow-x":"scroll","overflow-y":""});
+							});
+							</script>
+							<div id="reply_text_69289" style="width: 730px; height: 100%;">	
+								<div style="margin: 0px;">
+<div id="quote_reply" style="width: 100%; margin-top: 5px;">
+<div style="margin-left: 2px; margin-right: 2px;">Quoting - <a href="http://software.intel.com/en-us/profile/390547">Fortranic</a></div>
+<div style="border: 1px inset ; padding: 5px; background-color: rgb(229, 229, 229); margin-left: 2px; margin-right: 2px;"><em>
+<p>It is premier support issue # 522856. Ron was working on it after
+Kirill Mavrodiev was unable to work on it. We are stuck as our resident
+VB gurus believe it must be a Fortran fault, having to do with argument
+passing conventions that have changed between the (working) 32-bit
+version and the (failing) 64-bit version, and with possibly new, hidden
+arguments.</p>
+<p>The uploads were made using your system, with "Add Files." I just
+clicked "Add Files" now and it lists the directory as "VB.NET Fortran
+x64", and states there are two files in it. The two zip files are: one
+for Fortran code, other for VB.NET code. Are you able to access these
+files?</p>
+<p>VB-DotNETSample.zip, loads with MS VS 2008</p>
+<p>SampleFortranDLL.zip, loads with MS VS 2005 only. Warning: writes a txt file on the root of C: drive.</p>
+<p>Both zips contain all project files.</p>
+<p>Has anyone else tried running a x64 application in a Fortran DLL
+compiled in MS VS 2005 through a VB.NET calling application with MS VS
+2008 &amp; .NET Framework v3.5?</p>
+<p>Further information: we have compiled the DLL in PGI Fortran demo
+compiler for x64 and achieve output identical to the DLL compiled in
+Intel Fortran, with identical (but wrong) output.</p>
+<p>There must be an absolutely ridiculous reason for this. Else
+everyone who uses x64 applications would be unable to run it with an
+x64 VB.NET application, and your board would be full of complaints.</p>
+<p>Thanks,</p>
+<p>John</p>
+</em></div>
+</div>
+</div>
+<p>&nbsp;</p>								<br><br>
+							</div>
+							</td></tr>
+							<tr>
+							<td style="border: 0px none ;">
+													<fieldset style="margin-top: 10px; margin-left: 5px; margin-bottom: 10px;">
+								<legend>&nbsp;Attachments&nbsp;</legend>
+						<div class="boxBody"><a href="javascript:void(0)">SampleFortranDLL.zip</a></div><div class="boxBody"><a href="javascript:void(0)">VB-DotNETSample.zip</a></div>	
+							</fieldset>
+												</td></tr>
+						<tr><td style="border: 0px none ; margin: 0px; padding: 3px; width: 739px;" align="right">
+							<!-- Bottom right link for reply box-->
+							<div style="width: 739px; float: right; margin-top: 0px;">
+																				</div>
+						</td>
+						</tr>
+						</tbody></table>
+						</td>
+						</tr>
+					</tbody>
+			</table>
+						</td>
+					</tr>
+		
+					
+									<tr>
+					<td>
+					<a name="70058"></a>
+						
+			<table class="taboddeven widefat" cellpadding="0" cellspacing="0" width="100%">
+			<tbody>		
+		
+									<tr>
+						<td style="padding: 4px; width: 173px;" class="widefat-head">
+							<a href="http://software.intel.com/en-us/profile/390547/">Fortranic</a><br><table style="border: 0px none ;" cellpadding="0" cellspacing="0"><tbody><tr><td style="border: 0px none ; padding: 0px;"><a href="http://software.intel.com/en-us/profile/390547/"><img alt="" src="VB.NET%2064%20bit%20calling%20DLL%20compiled%20with%20Intel%20Fortran%2010.1.024%20%5BIntel%2064%5D%20-%20Intel%C2%AE%20Software%20Network_files/pixel.gif" title="" border="0" height="60" width="60"></a></td><td style="border: 0px none ; padding: 0px 3px 3px; width: 135px; line-height: 14px;" valign="top">Total Points: <br>110<br>Status Points: <br>60<br><div class="lpic"><img src="VB.NET%2064%20bit%20calling%20DLL%20compiled%20with%20Intel%20Fortran%2010.1.024%20%5BIntel%2064%5D%20-%20Intel%C2%AE%20Software%20Network_files/green.jpg"></div>Green Belt</td></tr></tbody></table>						</td>
+						<td colspan="3" class="widefat-head">
+							<div id="top_reply_line70058">
+								<div style="float: left;">
+								<div>December 3, 2008 4:24 AM PST
+</div><div style="height: 13px;"></div><div><span id="r_s_70058"><div style="float: left; height: 15px;">Rate</div><div style="float: left; height: 15px;">&nbsp;</div><span><input name="r_r_70058" value="" type="hidden"><div class="star star_group_r_r_70058 star_readonly" onclick="alertstuff(this);" title="Please login to rate!
+Current Score: 0 out of 0 users"><a title="Please login to rate!
+Current Score: 0 out of 0 users">Please login to rate!
+Current Score: 0 out of 0 users</a></div><div class="star star_group_r_r_70058 star_readonly" onclick="alertstuff(this);" title="Please login to rate!
+Current Score: 0 out of 0 users"><a title="Please login to rate!
+Current Score: 0 out of 0 users">Please login to rate!
+Current Score: 0 out of 0 users</a></div><div class="star star_group_r_r_70058 star_readonly" onclick="alertstuff(this);" title="Please login to rate!
+Current Score: 0 out of 0 users"><a title="Please login to rate!
+Current Score: 0 out of 0 users">Please login to rate!
+Current Score: 0 out of 0 users</a></div><div class="star star_group_r_r_70058 star_readonly" onclick="alertstuff(this);" title="Please login to rate!
+Current Score: 0 out of 0 users"><a title="Please login to rate!
+Current Score: 0 out of 0 users">Please login to rate!
+Current Score: 0 out of 0 users</a></div><div class="star star_group_r_r_70058 star_readonly" onclick="alertstuff(this);" title="Please login to rate!
+Current Score: 0 out of 0 users"><a title="Please login to rate!
+Current Score: 0 out of 0 users">Please login to rate!
+Current Score: 0 out of 0 users</a></div><input id="hdn_module_70058" value="2" type="hidden"><input id="hdn_source_70058" value="70058" type="hidden"><input id="hdn_language_70058" value="1" type="hidden"><input id="hdn_author_70058" value="" type="hidden"></span></span></div>								</div>
+								<div style="float: right;">
+									<a href="http://software.intel.com/en-us/forums/intel-visual-fortran-compiler-for-windows/topic/62068/reply/70058/"><b>#5</b></a>	
+								</div>
+							</div>
+							</td>
+						</tr>
+						
+						<tr>
+							
+						<td colspan="4" class="widefat" style="padding: 0px;">
+							<table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%">
+							<tbody><tr>
+							<td style="border: 0px none ; margin: 0px; padding: 3px; height: 100%;">
+							<script language="javascript">
+							// this is an IE specific issue fix for HTML with " /" characters in it which IE looks at like "&nbsp;/" instead and does not line break it.
+							$(function(){
+								if ($.browser.msie)
+									$("[id^='reply_text_']").css({"overflow-x":"scroll","overflow-y":""});
+							});
+							</script>
+							<div id="reply_text_70058" style="width: 730px; height: 100%;">	
+								<div style="margin: 0px;"></div>
+<p>We have had no response on premier support or on this forum. Appears no one uses x64 VB.NET with Fortran x64.</p>
+<p>It has been over one week without a whisper from premier support. Do any of you guys have an idea?</p>								<br><br>
+							</div>
+							</td></tr>
+							<tr>
+							<td style="border: 0px none ;">
+												</td></tr>
+						<tr><td style="border: 0px none ; margin: 0px; padding: 3px; width: 739px;" align="right">
+							<!-- Bottom right link for reply box-->
+							<div style="width: 739px; float: right; margin-top: 0px;">
+																				</div>
+						</td>
+						</tr>
+						</tbody></table>
+						</td>
+						</tr>
+					</tbody>
+			</table>
+						</td>
+					</tr>
+		
+					
+									<tr>
+					<td>
+					<a name="70066"></a>
+						
+			<table class="taboddeven widefat" cellpadding="0" cellspacing="0" width="100%">
+			<tbody>		
+		
+									<tr>
+						<td style="padding: 4px; width: 173px;" class="widefat-head">
+							<a href="http://software.intel.com/en-us/profile/336209/">Steve Lionel (Intel)</a><br><table style="border: 0px none ;" cellpadding="0" cellspacing="0"><tbody><tr><td style="border: 0px none ; padding: 0px;"><a href="http://software.intel.com/en-us/profile/336209/"><img alt="" src="VB.NET%2064%20bit%20calling%20DLL%20compiled%20with%20Intel%20Fortran%2010.1.024%20%5BIntel%2064%5D%20-%20Intel%C2%AE%20Software%20Network_files/442d325eb463c714c3e2e86b438ed742_s.jpg" title="" border="0" height="60" width="60"></a></td><td style="border: 0px none ; padding: 0px 3px 3px; width: 135px; line-height: 14px;" valign="top">Total Points: <br>80,029<br>Status Points: <br>80,029<br><div class="lpic"><img src="VB.NET%2064%20bit%20calling%20DLL%20compiled%20with%20Intel%20Fortran%2010.1.024%20%5BIntel%2064%5D%20-%20Intel%C2%AE%20Software%20Network_files/black.jpg"></div>Black Belt</td></tr></tbody></table>						</td>
+						<td colspan="3" class="widefat-head">
+							<div id="top_reply_line70066">
+								<div style="float: left;">
+								<div>December 3, 2008 4:54 AM PST
+</div><div style="height: 13px;"></div><div><span id="r_s_70066"><div style="float: left; height: 15px;">Rate</div><div style="float: left; height: 15px;">&nbsp;</div><span><input name="r_r_70066" value="" type="hidden"><div class="star star_group_r_r_70066 star_readonly" onclick="alertstuff(this);" title="Please login to rate!
+Current Score: 0 out of 0 users"><a title="Please login to rate!
+Current Score: 0 out of 0 users">Please login to rate!
+Current Score: 0 out of 0 users</a></div><div class="star star_group_r_r_70066 star_readonly" onclick="alertstuff(this);" title="Please login to rate!
+Current Score: 0 out of 0 users"><a title="Please login to rate!
+Current Score: 0 out of 0 users">Please login to rate!
+Current Score: 0 out of 0 users</a></div><div class="star star_group_r_r_70066 star_readonly" onclick="alertstuff(this);" title="Please login to rate!
+Current Score: 0 out of 0 users"><a title="Please login to rate!
+Current Score: 0 out of 0 users">Please login to rate!
+Current Score: 0 out of 0 users</a></div><div class="star star_group_r_r_70066 star_readonly" onclick="alertstuff(this);" title="Please login to rate!
+Current Score: 0 out of 0 users"><a title="Please login to rate!
+Current Score: 0 out of 0 users">Please login to rate!
+Current Score: 0 out of 0 users</a></div><div class="star star_group_r_r_70066 star_readonly" onclick="alertstuff(this);" title="Please login to rate!
+Current Score: 0 out of 0 users"><a title="Please login to rate!
+Current Score: 0 out of 0 users">Please login to rate!
+Current Score: 0 out of 0 users</a></div><input id="hdn_module_70066" value="2" type="hidden"><input id="hdn_source_70066" value="70066" type="hidden"><input id="hdn_language_70066" value="1" type="hidden"><input id="hdn_author_70066" value="" type="hidden"></span></span></div>								</div>
+								<div style="float: right;">
+									<a href="http://software.intel.com/en-us/forums/intel-visual-fortran-compiler-for-windows/topic/62068/reply/70066/"><b>#6</b></a> Reply to <a href="http://software.intel.com/en-us/forums/intel-visual-fortran-compiler-for-windows/topic/62068/reply/70058/"><b>#5</b></a>	
+								</div>
+							</div>
+							</td>
+						</tr>
+						
+						<tr>
+							
+						<td colspan="4" class="widefat" style="padding: 0px;">
+							<table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%">
+							<tbody><tr>
+							<td style="border: 0px none ; margin: 0px; padding: 3px; height: 100%;">
+							<script language="javascript">
+							// this is an IE specific issue fix for HTML with " /" characters in it which IE looks at like "&nbsp;/" instead and does not line break it.
+							$(function(){
+								if ($.browser.msie)
+									$("[id^='reply_text_']").css({"overflow-x":"scroll","overflow-y":""});
+							});
+							</script>
+							<div id="reply_text_70066" style="width: 730px; height: 100%;">	
+								<div style="margin: 0px;"></div>
+<p>I'll check into it.</p>								<br><div style="height: auto;">--------<br>Steve<br>
+<br>
+<a href="http://software.intel.com/en-us/forums/intel-visual-fortran-compiler-for-windows/announcement/241/">Attaching or including files in a post</a><br>
+<a href="http://intel.com/software/drfortran">Doctor Fortran blog</a></div><br><br>
+							</div>
+							</td></tr>
+							<tr>
+							<td style="border: 0px none ;">
+												</td></tr>
+						<tr><td style="border: 0px none ; margin: 0px; padding: 3px; width: 739px;" align="right">
+							<!-- Bottom right link for reply box-->
+							<div style="width: 739px; float: right; margin-top: 0px;">
+																				</div>
+						</td>
+						</tr>
+						</tbody></table>
+						</td>
+						</tr>
+					</tbody>
+			</table>
+						</td>
+					</tr>
+		
+					
+									<tr>
+					<td>
+					<a name="71272"></a>
+						
+			<table class="taboddeven widefat" cellpadding="0" cellspacing="0" width="100%">
+			<tbody>		
+		
+									<tr>
+						<td style="padding: 4px; width: 173px;" class="widefat-head">
+							<a href="http://software.intel.com/en-us/profile/390547/">Fortranic</a><br><table style="border: 0px none ;" cellpadding="0" cellspacing="0"><tbody><tr><td style="border: 0px none ; padding: 0px;"><a href="http://software.intel.com/en-us/profile/390547/"><img alt="" src="VB.NET%2064%20bit%20calling%20DLL%20compiled%20with%20Intel%20Fortran%2010.1.024%20%5BIntel%2064%5D%20-%20Intel%C2%AE%20Software%20Network_files/pixel.gif" title="" border="0" height="60" width="60"></a></td><td style="border: 0px none ; padding: 0px 3px 3px; width: 135px; line-height: 14px;" valign="top">Total Points: <br>110<br>Status Points: <br>60<br><div class="lpic"><img src="VB.NET%2064%20bit%20calling%20DLL%20compiled%20with%20Intel%20Fortran%2010.1.024%20%5BIntel%2064%5D%20-%20Intel%C2%AE%20Software%20Network_files/green.jpg"></div>Green Belt</td></tr></tbody></table>						</td>
+						<td colspan="3" class="widefat-head">
+							<div id="top_reply_line71272">
+								<div style="float: left;">
+								<div>December 19, 2008 1:59 AM PST
+</div><div style="height: 13px;"></div><div><span id="r_s_71272"><div style="float: left; height: 15px;">Rate</div><div style="float: left; height: 15px;">&nbsp;</div><span><input name="r_r_71272" value="" type="hidden"><div class="star star_group_r_r_71272 star_readonly" onclick="alertstuff(this);" title="Please login to rate!
+Current Score: 0 out of 0 users"><a title="Please login to rate!
+Current Score: 0 out of 0 users">Please login to rate!
+Current Score: 0 out of 0 users</a></div><div class="star star_group_r_r_71272 star_readonly" onclick="alertstuff(this);" title="Please login to rate!
+Current Score: 0 out of 0 users"><a title="Please login to rate!
+Current Score: 0 out of 0 users">Please login to rate!
+Current Score: 0 out of 0 users</a></div><div class="star star_group_r_r_71272 star_readonly" onclick="alertstuff(this);" title="Please login to rate!
+Current Score: 0 out of 0 users"><a title="Please login to rate!
+Current Score: 0 out of 0 users">Please login to rate!
+Current Score: 0 out of 0 users</a></div><div class="star star_group_r_r_71272 star_readonly" onclick="alertstuff(this);" title="Please login to rate!
+Current Score: 0 out of 0 users"><a title="Please login to rate!
+Current Score: 0 out of 0 users">Please login to rate!
+Current Score: 0 out of 0 users</a></div><div class="star star_group_r_r_71272 star_readonly" onclick="alertstuff(this);" title="Please login to rate!
+Current Score: 0 out of 0 users"><a title="Please login to rate!
+Current Score: 0 out of 0 users">Please login to rate!
+Current Score: 0 out of 0 users</a></div><input id="hdn_module_71272" value="2" type="hidden"><input id="hdn_source_71272" value="71272" type="hidden"><input id="hdn_language_71272" value="1" type="hidden"><input id="hdn_author_71272" value="" type="hidden"></span></span></div>								</div>
+								<div style="float: right;">
+									<a href="http://software.intel.com/en-us/forums/intel-visual-fortran-compiler-for-windows/topic/62068/reply/71272/"><b>#7</b></a>	
+								</div>
+							</div>
+							</td>
+						</tr>
+						
+						<tr>
+							
+						<td colspan="4" class="widefat" style="padding: 0px;">
+							<table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%">
+							<tbody><tr>
+							<td style="border: 0px none ; margin: 0px; padding: 3px; height: 100%;">
+							<script language="javascript">
+							// this is an IE specific issue fix for HTML with " /" characters in it which IE looks at like "&nbsp;/" instead and does not line break it.
+							$(function(){
+								if ($.browser.msie)
+									$("[id^='reply_text_']").css({"overflow-x":"scroll","overflow-y":""});
+							});
+							</script>
+							<div id="reply_text_71272" style="width: 730px; height: 100%;">	
+								<div style="margin: 0px;">The
+issue is resolved! I want to share the solution so that anyone else who
+develops a Fortran DLL for a VB.NET application in 64 bits on a 64 bit
+env can benefit from it:</div>
+<div style="margin: 0px;"><br></div>
+<div style="margin: 0px;">Ron Green and his team at Intel Premier
+Support confirmed that this is not a Fortran issue. I quote: "Rather,
+[the problem develops from] the odd handling of array arguments by VB."
+<br></div>
+<div style="margin: 0px;"><br></div>
+<div style="margin: 0px;">Ron writes:</div>
+<div style="margin: 0px;">"The key was the rather bizarre and un-intuitive decl' in the VB:<br><br>Private
+Declare Sub FortranDLL Lib "FCALL.dll" Alias "FORTRANDLL" (&lt;[In](),
+Out()&gt; ByVal Array1() As Int32, ByRef Foo As Int32)<br><br>and then just passing the array without the (0) index (which apparently is a fluke that it worked at all)<br><br> FortranDLL(Test, Test.Length)<br><br>I've
+convinced myself now that this is not a Fortran issue.&nbsp; Rather,
+the odd handling of array arguments by VB.&nbsp; I would recommend
+testing this in both IA32 and x86 to insure it works.&nbsp; Then I
+would research this whole issue of passing arrays from VB to unmanaged
+code.&nbsp;&nbsp; IF this syntax works for both 32 and 64 bit envs, I
+would surely recommend recoding this way for all calls to unmanaged
+code."</div>
+<div style="margin: 0px;"><br></div>
+<div style="margin: 0px;">End of quote.</div>
+<div style="margin: 0px;"><br></div>
+<div style="margin: 0px;">His solution works for both IA32 and x64 envs.</div>
+<div style="margin: 0px;">In our sample code, Test is an array of
+integers and Test.Length is the number of entries. We tested both 4
+byte and 8 byte integers in the interface and both work on IA32 and x64
+envs.</div>
+<div style="margin: 0px;"><br></div>
+<div style="margin: 0px;">Thanks Intel Premier Support. Intel
+recommends MS VS with the Intel Fortran compiler, so the issue had to
+be resolved by Intel, and it was. <br></div>
+<div style="margin: 0px;"></div>								<br><br>
+							</div>
+							</td></tr>
+							<tr>
+							<td style="border: 0px none ;">
+												</td></tr>
+						<tr><td style="border: 0px none ; margin: 0px; padding: 3px; width: 739px;" align="right">
+							<!-- Bottom right link for reply box-->
+							<div style="width: 739px; float: right; margin-top: 0px;">
+																				</div>
+						</td>
+						</tr>
+						</tbody></table>
+						</td>
+						</tr>
+					</tbody>
+			</table>
+						</td>
+					</tr>
+		
+					
+						
+			<!-- Pagination specific Details here -->
+			<input id="currpage" value="1" type="hidden"> 
+			<input id="totpages" value="1" type="hidden">
+			<input id="recperpage" value="25" type="hidden">
+			<input id="tot_records" value="7" type="hidden">
+			<input id="topic_id" value="62068" type="hidden">
+			
+			<script language="Javascript">
+				url = "/en-us/forums/intel-visual-fortran-compiler-for-windows/topic/62068/";
+									shownavbar("'"+url+"page/'");
+							</script>
+
+		</tbody>
+		</table>
+		
+		</div>
+		<!-- End of flat reply-->
+		
+		<!-- Pagination Div -->
+		<div style="height: 20px;"></div>
+		<div id="pagination_bottom"><span id="firstprev"></span><span id="pageno"><span class="page-numbers current"><b>1</b></span>&nbsp;</span><span id="nextlast"></span></div>
+		<br>
+		<div id="move_post_bottom_link" style="height: 30px;">
+			<div id="move_post" style="float: left;">
+			<div><div style="margin-top: 4px;"></div></div>			</div>
+			<div id="breadcrumb" style="float: right;">
+				<div style="height: 10px;"></div>
+				<div>
+					<a href="http://software.intel.com/en-us">Home</a>
+					›
+					<a href="http://software.intel.com/en-us/forums/">Forums</a>
+					›
+					<a href="http://software.intel.com/en-us/forums/intel-visual-fortran-compiler-for-windows/">Intel® Visual Fortran Compiler for Windows</a>
+					›
+					VB.NET 64 bit calling DLL compiled with Intel Fortran 10.1.024 [Intel 64]				</div>
+			</div>
+		</div>	
+		<div style="height: 20px;"></div>
+		<br>
+				
+		<div style="height: 10px;"></div>	
+	
+	<div id="forumstat"><div id="poststuff"><div id="pagecommentstatusdiv" class="postbox" style="border: 0px none ;">
+						<h3 class="pagesection" style="margin-bottom: 0px;"><a class="togbox">+</a>&nbsp;&nbsp;Intel Software Network Forums Statistics</h3>
+						<div class="inside" style="margin: 0px;"><table class="taboddeven widefat" cellpadding="0" cellspacing="0" width="100%"><thead><tr><th>6442 users have contributed to 27815 threads and 85489 posts to date.</th></tr></thead><tbody><tr><td>In the past 24 hours, we have 13 new thread(s) 24 new posts(s), and 38 new user(s).<br><br>In the past 3 days, the most popular thread for everyone has been <a href="http://software.intel.com/en-us/forums/intel-visual-fortran-compiler-for-windows/topic/66210/">VS 2003 to VS 2008</a>  The most posts were made to <a href="http://software.intel.com/en-us/forums/intel-c-compiler/topic/66200/"> XCode and icc problem: always recompiles entire project</a> The post with the most views is <a href="http://software.intel.com/en-us/forums/intel-visual-fortran-compiler-for-windows/topic/66210/reply/86352/">
+
+Quoting - lklawrie
+I'm sw</a> <br><br>Please welcome our newest member <a href="http://software.intel.com/en-us/profile/431976">billi-goat</a></td></tr></tbody></table></div></div></div></div><div style="height: 100px;"></div>	
+	
+</div>
+	<div id="right">
+		<p><a href="http://software.intel.com/en-us/">English</a> | <a href="http://software.intel.com/zh-cn/">中文</a> | <a href="http://software.intel.com/ru-ru/">Русский</a> | <a href="http://software.intel.com/fr-fr/">Français</a></p>
+<div class="box" id="buttons">
+ <div class="boxBody" id="icons">
+  <div id="sprn" onclick="print();" onmouseout="window.status=''" onmouseover="window.status='Print'" title="Print"></div>
+  <div id="seaf" onclick="eaf();" onmouseout="window.status=''" onmouseover="window.status='Email to a friend'" title="Email to a friend"></div>
+  <div id="ssfb" onclick="sfb();" onmouseout="window.status=''" onmouseover="window.status='Support'" title="Support"></div>
+  <div id="snew" onclick="document.location='http://software.intel.com/en-us/articles/intel-software-network-news-archive/';" onmouseout="window.status=''" onmouseover="window.status='http://software.intel.com/en-us/articles/intel-software-network-news-archive/'" title="Newsletter"></div>
+  <div id="srss" onclick="document.location='/en-us/forums/feed/'" onmouseout="window.status=''" onmouseover="window.status=document.location.protocol + '//' + document.location.hostname + '/en-us/forums/feed/'" title="RSS"></div>
+  <div id="sdig" onclick="digg();" onmouseout="window.status=''" onmouseover="window.status='Digg this'" title="Digg this"></div>
+  <div id="sdel" onclick="delicious();" onmouseout="window.status=''" onmouseover="window.status='del.icio.us'" title="del.icio.us"></div>
+  <div id="ssrc" onclick="window.open('http://software.intel.com/en-us/articles/advanced-search/','_blank');" onmouseout="window.status=''" onmouseover="window.status='Search'" title="Search"></div>
+ </div>
+</div>
+<div class="box">
+ <div class="boxHeader">Login</div>
+ <div class="boxBody">
+  <form action="https://ssl.software.intel.com/en-us/login/?Lang=ENG&amp;TARGET=http://software.intel.com/en-us/forums/intel-visual-fortran-compiler-for-windows/topic/62068/" method="post">
+   <input name="qlogin" value="true" type="hidden">
+   <div class="row">
+    <div class="key">Login ID:</div>
+    <div class="value"><input id="txtUserName" name="txtUserName" class="login" size="12" type="text"></div>
+   </div>
+   <div class="row">
+    <div class="key">Password:</div>
+    <div class="value"><input id="txtPassword" name="txtPassword" class="login" size="12" type="password"></div>
+   </div>
+   <div class="row">
+    <div class="key">Remember Me?</div><div class="value"><input id="chkRememberMe" name="chkRememberMe" value="on" type="checkbox"></div>
+   </div>
+   <div style="clear: both;"></div>
+   <input class="login" value="Login" type="submit"><br>
+  </form>
+  <br>
+  <a href="https://welcome.intel.com/forgot_loginid.aspx?Lang=ENG">Forgot Login ID?</a><br>
+  <a href="https://welcome.intel.com/forgot_password.aspx?Lang=ENG">Forgot Password?</a><br>
+	<a id="new_reg" href="http://software.intel.com/en-us/articles/intel-software-network-login-id-faq/">New Registration?</a><br>
+ </div>
+</div>
+<div class="box"><div class="boxHeader">Tags for this Page</div><div class="boxBody" id="tfpage"><a href="http://software.intel.com/en-us/tags/3474">Intel Fortran 10 x64</a> <a href="http://software.intel.com/en-us/tags/3475">VB.NET</a> <a href="http://software.intel.com/en-us/tags/3476">MS VS 2008</a> <a href="http://software.intel.com/en-us/tags/3477">.Net Framework v3.5 all x64</a> </div></div>	</div>
+</div><!-- Enf of working div -->
+
+   <div id="footer">
+    <div id="subfooter">
+     <ul>
+      <li><a href="http://www.intel.com/siteindex.htm?iid=ftr+map">Site Map</a></li>
+      <li><a href="http://www.intel.com/intel/rss.htm?iid=ftr+rss">RSS</a></li>
+      <li><a href="http://www.intel.com/jobs/index.htm?iid=ftr+jobs">Jobs</a></li>
+      <li><a href="http://www.intc.com/index.cfm?iid=ftr+invrel">Investor Relations</a></li>
+      <li><a href="http://www.intel.com/pressroom/index.htm?iid=ftr+press">Press Room</a></li>
+      <li><a href="http://www.intel.com/feedback.htm?iid=ftr+contact">Contact Us</a></li>
+     </ul>
+     <ul>
+      <li><a href="http://www.intel.com/sites/corporate/termsofuse.htm?iid=ftr+terms">Terms of Use</a></li>
+      <li><a href="http://www.intel.com/sites/corporate/tradmarx.htm?iid=ftr+trademark">*Trademarks</a></li>
+      <li><a href="http://www.intel.com/sites/corporate/privacy.htm?iid=ftr+privacy">Privacy</a></li>
+      <li>©Intel Corporation</li>
+     </ul>
+    </div>
+   </div>
+  </div>
+  <div style="display: none;">
+   <script type="text/javascript" src="VB.NET%2064%20bit%20calling%20DLL%20compiled%20with%20Intel%20Fortran%2010.1.024%20%5BIntel%2064%5D%20-%20Intel%C2%AE%20Software%20Network_files/wa_setup.js"></script>
+   <script type="text/javascript"><!--
+    var wa_pageName='VB.NET 64 bit calling DLL compiled with Intel Fortran 10.1.024 [Intel 64]';
+    var wa_geo='asmo-na';
+    var wa_language='en-us';
+    var wa_org1='sw';
+    var wa_org2='isn';
+    var wa_org3='forums';
+    var wa_org4='';
+    var wa_orgX='';
+    var wa_custom03='General';
+    var wa_custom04='';
+    var wa_custom10='Intel® Visual Fortran Compiler for Windows';
+    var wa_custom14='2008-11-24';
+    var wa_custom15='2008-11-24';
+    var wa_urlQueryString="cid,kwid";
+    var wa_reportSuites='intelcorpsw,intelcorpisnforums';
+    var s_charSet='UTF-8';
+    var wa_trackDFA='n';
+    var wa_eCustom13='http://software.intel.com/en-us/forums/intel-visual-fortran-compiler-for-windows/topic/62068/';
+   // -->
+   </script>
+   <script type="text/javascript" src="VB.NET%2064%20bit%20calling%20DLL%20compiled%20with%20Intel%20Fortran%2010.1.024%20%5BIntel%2064%5D%20-%20Intel%C2%AE%20Software%20Network_files/wa_process.js"></script>
+   <script type="text/javascript">var cbjspath="static.chartbeat.com/js/chartbeat.js?uid=982&domain=software.intel.com"; var cbjsprotocol = (("https:" == document.location.protocol) ? "https://s3.amazonaws.com/" : "http://"); document.write(unescape("%3Cscript src='"+cbjsprotocol+cbjspath+"' type='text/javascript'%3E%3C/script%3E"))</script><script src="VB.NET%2064%20bit%20calling%20DLL%20compiled%20with%20Intel%20Fortran%2010.1.024%20%5BIntel%2064%5D%20-%20Intel%C2%AE%20Software%20Network_files/chartbeat.js" type="text/javascript"></script>
+  </div>
+ <!-- If thread view is enabled -->
+<!-- End of thread view -->
+
+<div id="searchForm" style="margin: 9px; z-index: 500; position: absolute; visibility: hidden; top: 0pt; left: 0pt;">
+
+		<div class="dropdown" style="width: 300px;">
+			<p><b>Search this thread:</b></p>
+			<form method="post" action="/en-us/forums/intel-visual-fortran-compiler-for-windows/topic/62068/" id="searchform" name="searchform">
+			<input name="query" maxlength="255" style="width: 150px;" id="topsearchbox" alt="Search" value="">
+			<div id="clear" style="height: 10px;"></div>
+			<input value="Go" class="button" type="submit">
+			<input name="form_name" id="form_name" value="searchform" type="hidden">
+			</form>
+			<div align="right"><a href="javascript:dropdowncontent.hidediv('searchForm')">Hide This</a></div>
+		</div>
+</div>
+<div id="threadTools" style="margin: 9px; z-index: 500; position: absolute; visibility: hidden; top: 0pt; left: 0pt;">
+	<div class="dropdown" style="width: 200px;">
+		<div><a href="#" onclick="frm_forum_jump_print();">Show Printable Version</a>
+		<form method="post" action="/en-us/forums/intel-visual-fortran-compiler-for-windows/topic/62068/" id="printview" name="printview" target="_BLANK">
+			<input name="show_printable_version" value="YES" type="hidden">
+		</form>
+		</div>
+		<div id="clear" style="height: 5px;"></div>
+		<input value="NO" name="subscribetothistopic" id="subscribetothistopic" type="hidden">		<div id="clear" style="height: 10px;"></div>
+		<div align="right"><a href="javascript:dropdowncontent.hidediv('threadTools')">Hide This</a></div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	dropdowncontent.init("searchlink", "right-bottom", 500, "click");
+	dropdowncontent.init("toolslink", "right-bottom", 500, "click");	
+</script>
+
+<script language="Javascript">
+	</script>
+<script language="Javascript">
+$("#pagination_bottom").html($("#pagination").html());
+</script>
+
+<script language="Javascript">
+	$(document).ready(function() {		
+		$("div.dp-highlighter").css("width","735px");
+	});
+</script>
+</body></html>

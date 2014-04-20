@@ -1,0 +1,232 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><title>GDI+ Graphics in Visual Basic 2005 .NET</title><meta name="keywords" content="GDI+, GDI, graphics, e, Image, bitmap, Metafile, WMF, icon, LineCap, FromHandle, pixel, pixelColor, photo effect, getpixel, setpixel, thumbnail, abstract class"><meta name="description" content="GDI+ is the way to draw shapes, fonts, images or generally anything graphic in Visual Basic 2005 .NET. This is Part 8 of a complete introduction for programmers. Graphics using images are explained in this segment, including bitmap images, thumbnails, and icons."><meta http-equiv="X-UA-Compatible" content="IE=8">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="ROBOTS" content="NOODP"><meta name="pd" content="Wednesday, 02-Apr-2008 14:07:29 GMT">
+<meta http-equiv="P3P" content="policyref=&quot;http://w.about.com/w3c/p3p.xml&quot;">
+<link rel="P3Pv1" href="http://w.about.com/w3c/p3p.xml" type="text/xml">
+<link rel="shortcut icon" href="http://z.about.com/m/a08.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="http://z.about.com/0/dc/osrch.htm" title="About.com">
+
+
+<script type="text/javascript">var ziRfw=0;function zIpSS(u){zpu(0,u,280,375,"ssWin")}function zIlb(l,t,f){var u=new Array([["1/XJ/W9","1/XJ/WP"],["1/XK/WB","1/XK/WQ"],["18/15m","1/XL/WR"]],[["18/15o","18/1Pp"]],[["1/XJ/WA","1/XJ/WP"],["1/XK/WC","1/XK/WQ"],["18/15m","1/XL/WR"],["18/15o","18/1Pp"]]);var p=l.parentNode.parentNode.parentNode.parentNode.id=="oC"?0:1;var clk;if(arguments.length==3){if(t==1){f=0}if(t==2&&!zIos(l.href)){f=3}clk=u[t][f][p]}else{var c=l.parentNode.parentNode.className;var t=c=="obE"?0:(c=="obS"?1:(c=="obO"?2:-1));var f=t==0?2:(t==1?0:(t==2&&zIos(l.href)?2:(t==2&&!zIos(l.href)?3:-1)));clk=u[t][f][p]}if(!clk)clk="18/15p";zT(l,clk)}function zIos(u){var r=(u.indexOf("&zu=")>0&&(u.substr(u.indexOf("&zu=")).indexOf("about.com")>0)||u.indexOf("http://")<0||u.indexOf("about.com")>0)?false:true;return r}</script>
+<link rel="stylesheet" href="GDI+%20Graphics%20in%20Visual%20Basic%202005%20.NET_files/rdb.css" type="text/css" media="all"><!--[if lt IE 8]><link rel="stylesheet" href="http://z.about.com/6g/dc/rdie.css" type="text/css" media="all"><![endif]--><link rel="stylesheet" href="GDI+%20Graphics%20in%20Visual%20Basic%202005%20.NET_files/rdp.css" type="text/css" media="print"><script type="text/javascript" src="GDI+%20Graphics%20in%20Visual%20Basic%202005%20.NET_files/rd.js"></script><script type="text/javascript">zOBT=" Ads"</script>
+<meta http-equiv="pics-label" content="(pics-1.1 &quot;http://www.icra.org/ratingsv02.html&quot; l gen true for &quot;http://visualbasic.about.com&quot; r (nz 1 vz 1 lz 1 oz 1 cz 1) &quot;http://www.rsac.org/ratingsv01.html&quot; l gen true for &quot;http://visualbasic.about.com&quot; r (n 0 s 0 v 0 l 0))">
+<script>zGCID=this.zGCID?zGCID+" test33":" test33"</script>
+<script>zGCID=this.zGCID?zGCID+" test13":" test13"</script>
+</head><body id="tt2" class="gt2">
+<script language="JavaScript">
+<!--
+xd=0;zap="";zAth='';zAthG='5296';zTt='2';zir='';zBTS=1;zBT=1;zSt='';zGz='g'
+ch='compute';gs='visualbasic';xg="Visual Basic";zcs=''
+zFDT='1'
+zFST='0'
+zOr='96F4nk08OkWA0Y5H';zTbO=zRQO=1;zp0=zp1=zp2=zp3=zfs=0;zDc=1;
+zSm=zSu=zhc=zpb=zgs=zdn='';zFS='96F10960110900101';zFD='96F196E295O1096032950110900403'
+zDO=zis=1;zpid=zi=zRf=ztp=zpo=0;zdx=20;zfx=100;zJs=13;
+zi=1;zz=';72890=2-1-1299;272890=2-1-1299;336280=2-1-1299;2336280=2-1-1299;93048=2-1-12-1;293048=2-1-12-1;336155=2-1-1239;2336155=2-1-12-1';zx='3-1-1399';zde=15;zdp=1440;zds=1440;zfp=0;zfs=66;zfd=100;zdd=20;zaX=new Array(11, new Array(100,504,8197,1,'336,210'),7, new Array(100,284,8197,9,'336,290'));zDc=1;;zDO=1;;zhc='';;zGTH=1;
+zGo=0;zG=17;zTac=2;zDot=3;
+zObT="Visual Basic";zRad=5;var tp=" test"+(zBT?11:10);if(!this.zGCID)zGCID=tp
+else zGCID+=tp;if(zBT>0){zOBR=1}
+//-->
+</script>
+<script language="JavaScript" src="GDI+%20Graphics%20in%20Visual%20Basic%202005%20.NET_files/cj017x14t388.js"></script>
+<script language="JavaScript" src="GDI+%20Graphics%20in%20Visual%20Basic%202005%20.NET_files/gdc01.js"></script>
+<script>zDO=0</script>
+<script language="JavaScript" src="GDI+%20Graphics%20in%20Visual%20Basic%202005%20.NET_files/show_ads.js"></script><script src="GDI+%20Graphics%20in%20Visual%20Basic%202005%20.NET_files/test_domain.js"></script><script>window.google_render_ad();</script><script language="JavaScript1.1" src="GDI+%20Graphics%20in%20Visual%20Basic%202005%20.NET_files/ads"></script><noscript><meta
+http-equiv=refresh
+content="0;url=http://www.about.com/snf.htm?u=http://visualbasic.about.com/od/usingvbnet/a/GDIP08.htm%3Frd%3D1"></noscript>
+
+<script type="text/javascript">z930=zpreC(930,48);if(thin){z930=0};z160=zpreC(160,600);z336=zpreC(336,280);z728=zpreC(728,90);z155=zpreC(336,155);zItw=160;</script>
+
+
+
+<div id="abw">
+<script type="text/javascript">if(thin)gEI('abw').className='thin';</script>
+<div id="abh">
+<form class="gsearch" name="sas" method="get" action="http://clk.about.com/" target="_top" alert="Please enter something to search for!"><fieldset class="main"><input id="sTxt" class="txt" name="terms" value="" validate="required" type="text"><input name="zi" value="18/1Yf/Zd" type="hidden"><input name="SUName" value="visualbasic" type="hidden"><input name="sdn" value="visualbasic" type="hidden"><input name="tt" value="2" type="hidden"><input name="bts" value="1" type="hidden"><button class="btn search" type="submit">Search</button></fieldset></form>
+<div class="mast"><div class="logo"><a href="http://www.about.com/" zt="18/1Yb/Zv"><img src="GDI+%20Graphics%20in%20Visual%20Basic%202005%20.NET_files/a1.gif" alt="About.com"></a></div><h2><a href="http://visualbasic.about.com/" zt="18/1Yc/Zx" title="Visual Basic">Visual Basic</a></h2><script type="text/javascript">var h2=document.getElementsByTagName("h2")[0];if(h2.getElementsByTagName("a")[0].firstChild.nodeValue.length>28)h2.className="long";</script></div>
+<ol class="crumbtrail"><li class="home"><a href="http://www.about.com/" zt="18/1Yd/Zz">Home</a></li><li><a href="http://www.about.com/compute/" zt="18/1Yd/Zz">Computing &amp; Technology</a></li><li><a href="http://visualbasic.about.com/" zt="18/1Yd/Zz">Visual Basic</a></li></ol>
+<div id="adL"><script type="text/javascript">if(z930==0 && z728>0){adunit('','',uy,ch,gs,728,90,'1','lb',1)}</script>
+<iframe id="lb" name="lb" src="GDI+%20Graphics%20in%20Visual%20Basic%202005%20.NET_files/GDIP08.htm" marginwidth="0" marginheight="0" hspace="0" vspace="0" border="0" frameborder="0" height="90" scrolling="no" width="728"></iframe>
+
+</div>
+<ul id="actions"><li id="emailaction"><a href="http://visualbasic.about.com/gi/pages/shareurl.htm?PG=http://visualbasic.about.com/od/usingvbnet/a/GDIP08.htm&amp;zItl=GDI+%20Graphics%20Intro%20Part%208" zt="18/1Z0/[3">Email</a></li><li id="printaction"><script>w(x2+zWl+'?p=1" zT="18/1[N" rel="nofollow">Print</a>')</script><a href="http://visualbasic.about.com/od/usingvbnet/a/GDIP08.htm?p=1" zt="18/1[N" rel="nofollow">Print</a>
+</li></ul>
+</div>
+<ul id="usrp" class="up"><li id="up0"><a href="http://visualbasic.about.com/" zt="18/1ZZ/aZ">Visual Basic</a></li><li id="up1"><a href="http://visualbasic.about.com/od/usingvbnet/u/vbbasics.htm" zt="18/1ZZ">VB Basics</a></li><li id="up2"><a href="http://visualbasic.about.com/od/usingvbnet/u/vbtipstools.htm" zt="18/1ZZ">Tips &amp; Tools</a></li><li id="up3"><a href="http://visualbasic.about.com/od/learnvbnet/u/VBTutorials.htm" zt="18/1ZZ">Learn Visual Basic</a></li></ul>
+<script type="text/javascript">if(z930>0){adunit('','',uy,ch,gs,930,48,'1','s',1)}</script><ul id="community"><li><form class="nl" name="subscription" action="http://clk.about.com/" method="get" alert="Please enter a valid email address."><label for="nTxt">Free Visual Basic Newsletter!</label><input name="zi" value="18/1a9" type="hidden"><input name="surl" value="http://visualbasic.about.com/gi/pages/mmail.htm" type="hidden"><input name="eurl" value="http://visualbasic.about.com/gi/pages/mmail.htm" type="hidden"><input name="cmd_visualbasic" value="+:gs::visualbasic" type="hidden"><input name="gs" value="1" type="hidden"><input name="sdn" value="visualbasic" type="hidden"><input name="tt" value="2" type="hidden"><input name="bts" value="1" type="hidden"><span class="cntnr"><input id="nTxt" name="email" value="Enter email address" validate="email" autoclear="1" type="text"></span><button type="submit" name="newsub" class="signup">Sign Up</button></form></li><li><a href="http://forums.about.com/n/pfx/forum.aspx?nav=messages&amp;webtag=ab-visualbasic" zt="18/1Z1"><strong>Discuss</strong> in my Forum</a></li></ul>
+<!--gc--><div id="title">
+	<h1>GDI+ Graphics in Visual Basic 2005&nbsp;.NET</h1>
+	<script type="text/javascript">h1 = document.getElementById("title").getElementsByTagName("h1")[0];h1.innerHTML = widont(h1.innerHTML);</script>
+	<h2>Part 8 of an About Visual Basic Tutorial</h2>
+	
+		
+	<p id="byline">By <a href="http://visualbasic.about.com/mbiopage.htm" zt="18/1YF/Zf">Dan Mabbutt</a>, About.com</p></div>
+<div class="nav"><h4>See More About:</h4><ul><li><a href="http://visualbasic.about.com/lr/gdi_graphics_in_vb.net/156896/1/" zt="18/1Ys/[1" rel="nofollow">gdi+ graphics in vb.net</a></li><li><a href="http://visualbasic.about.com/lr/gdi_images_in_vb.net/156896/2/" zt="18/1Ys/[1" rel="nofollow">gdi+ images in vb.net</a></li><li><a href="http://visualbasic.about.com/lr/abstract_classes_and_mustinherit/156896/3/" zt="18/1Ys/[1" rel="nofollow">abstract classes and mustinherit</a></li></ul></div>
+<div id="abm" class="clear"><div id="abc">
+
+
+<div id="spacer"></div><div id="sidebar"><script type="text/javascript">zSB(3,3)</script><div id="gB3" class="gB"><h5>Sponsored Links</h5>
+<p onmouseover="return zhl(1,0)" onmouseout="zhl(0)"><a href="http://googleads.g.doubleclick.net/aclk?sa=l&amp;ai=B3o28ZdM1St7aEJ-urAPK-8zNDqPJ9HmxuaT6AcCNtwGAxWYQARgBIKil9wEoBzgAUNTlsf0DYMnW2YbIo_waoAHYurj_A7IBFXZpc3VhbGJhc2ljLmFib3V0LmNvbcgBAdoBN2h0dHA6Ly92aXN1YWxiYXNpYy5hYm91dC5jb20vb2QvdXNpbmd2Ym5ldC9hL0dESVAwOC5odG2AAgHIAuerjAqoAwG4AwHoA-YD6AMf6APeBfUDAAQABPUDBAAAAA&amp;num=1&amp;sig=AGiWqtwr1du7OS6PkERWF7-R3Qf216VmGg&amp;client=ca-primedia-premium_js&amp;adurl=https://www.verisign.com/products-services/security-services/code-signing/index.html%3Fsl%3Dt41860135980000002%26set%3Db044543" lnp="0" title="Secure and Protect Your Online Code Learn More about Content Signing" target="_blank"><span class="t">Visual Basic Code</span><span class="d">Secure and Protect Your Online Code Learn More about Content Signing</span><span class="u">www.verisign.com</span></a></p>
+<p onmouseover="return zhl(1,1)" onmouseout="zhl(0)"><a href="http://googleads.g.doubleclick.net/aclk?sa=l&amp;ai=B0mjRZdM1St7aEJ-urAPK-8zNDpPdrH7j2tryCcCNtwGw1DIQAhgCIKil9wEoBzgAUNPkm5X5_____wFgydbZhsij_BqgAfOtlP8DsgEVdmlzdWFsYmFzaWMuYWJvdXQuY29tyAEB2gE3aHR0cDovL3Zpc3VhbGJhc2ljLmFib3V0LmNvbS9vZC91c2luZ3ZibmV0L2EvR0RJUDA4Lmh0bYACAcgC2fKCAagDAbgDAegD5gPoAx_oA94F9QMABAAE9QMEAAAA&amp;num=2&amp;sig=AGiWqtyPxBILMfYIusJ5K4GuMjdpBV1KAA&amp;client=ca-primedia-premium_js&amp;adurl=http://track.did-it.com/n%3Flid%3D61626014%26tid%3D430e334d55748%26eng_creative%3D2565433011%26eng_keyword%3Dfree%2520vector%2520graphics%26eng_placement%3Dvisualbasic.about.com%26url%3Dhttp://www.istockphoto.com/illustration.php%3FLID%3D61626014" lnp="1" title="Download Amazing Illustrations. Join iStockphoto For Free Today!" target="_blank"><span class="t">Free Vector Illustrations</span><span class="d">Download Amazing Illustrations. Join iStockphoto For Free Today!</span><span class="u">iStockphoto.com</span></a></p>
+<p onmouseover="return zhl(1,2)" onmouseout="zhl(0)"><a href="http://googleads.g.doubleclick.net/aclk?sa=l&amp;ai=BHUP2ZdM1St7aEJ-urAPK-8zNDuOW1IcB573qiQ3AjbcB8IQOEAMYAyCopfcBKAc4AFCDmNWCAWDJ1tmGyKP8GrIBFXZpc3VhbGJhc2ljLmFib3V0LmNvbcgBAdoBN2h0dHA6Ly92aXN1YWxiYXNpYy5hYm91dC5jb20vb2QvdXNpbmd2Ym5ldC9hL0dESVAwOC5odG3IArP08gioAwG4AwHoA-YD6AMf6APeBfUDAAQABPUDBAAAAA&amp;num=3&amp;sig=AGiWqtzAoR5jVIKvtSIwTaQNM9nQ5Qrjdw&amp;client=ca-primedia-premium_js&amp;adurl=http://www.ask.com/web%3Fq%3Dvisual%2Bbasic%2Btutorials%26o%3D1493%26l%3Ddis" lnp="2" title="-Find All Visual Basic Tutorials- Search Visual B.Lessons On Ask&gt;" target="_blank"><span class="t">VISUAL BASIC TUTORIAL</span><span class="d">-Find All Visual Basic Tutorials- Search Visual B.Lessons On Ask&gt;</span><span class="u">Visual-Basic-Lessons.Ask.com</span></a></p>
+</div>
+<script type="text/javascript">zob();if(zs<1){gEI('spacer').className='hide';gEI('sidebar').className='hide';}</script><div class="open" id="m9"><a href="javascript:mN(9);">Visual Basic Ads</a><div class="sub">
+<a href="http://visualbasic.about.com/z/js/o.htm?k=visual%20basic%20control&amp;d=Visual%20Basic%20Control&amp;r=http%3A//visualbasic.about.com/od/usingvbnet/a/GDIP08.htm" target="_top">Visual Basic Control</a>
+<a href="http://visualbasic.about.com/z/js/o.htm?k=vb6%20tutorial&amp;d=VB6%20Tutorial&amp;r=http%3A//visualbasic.about.com/od/usingvbnet/a/GDIP08.htm" target="_top">VB6 Tutorial</a>
+<a href="http://visualbasic.about.com/z/js/o.htm?k=microsoft%20visual%20basic%206%200&amp;d=Microsoft%20Visual%20Basic%206%200&amp;r=http%3A//visualbasic.about.com/od/usingvbnet/a/GDIP08.htm" target="_top">Microsoft Visual Basic 6 0</a>
+<a href="http://visualbasic.about.com/z/js/o.htm?k=free%20vb%20source%20code&amp;d=Free%20VB%20Source%20Code&amp;r=http%3A//visualbasic.about.com/od/usingvbnet/a/GDIP08.htm" target="_top">Free VB Source Code</a>
+<a href="http://visualbasic.about.com/z/js/o.htm?k=how%20to%20learn%20visual%20basic&amp;d=How%20to%20Learn%20Visual%20Basic&amp;r=http%3A//visualbasic.about.com/od/usingvbnet/a/GDIP08.htm" target="_top">How to Learn Visual Basic</a>
+</div></div>
+</div>
+<div id="articlebody">
+
+<div id="date">Mar 10 2007</div>
+		<p><b>GDI+</b> is the way to draw
+shapes, fonts, images or generally anything graphic in Visual Basic
+.NET. You can get the most from this tutorial by starting with Part 1
+where the fundamentals of GDI+ are explained.
+</p><p><b>Previous Lesson Links</b>
+
+</p><ul>
+<li><a href="http://visualbasic.about.com/od/usingvbnet/a/GDIP01.htm">Part 1</a> - Introduction to GDI+ and the Graphics object
+</li><li><a href="http://visualbasic.about.com/od/usingvbnet/a/GDIP02.htm">Part 2</a> - Drawing a curve with a series of connected points
+</li><li><a href="http://visualbasic.about.com/od/usingvbnet/a/GDIP03.htm">Part 3</a> - Advanced vector graphics with an intro to bitmapped graphics
+</li><li><a href="http://visualbasic.about.com/od/usingvbnet/a/GDIP04.htm">Part 4</a> - Blending and merging colors and shapes in the same graphic
+</li><li><a href="http://visualbasic.about.com/od/usingvbnet/a/GDIP05.htm">Part 5</a> - Coordinate Spaces and Matrix Transformations
+</li><li><a href="http://visualbasic.about.com/od/usingvbnet/a/GDIP06.htm">Part 6</a> - Using the GraphicsPath object and clipping regions
+</li><li><a href="http://visualbasic.about.com/od/usingvbnet/a/GDIP07.htm">Part 7</a> - Colors and Transparency
+</li></ul>
+
+<p>In Part 8, we dig deep into the code for images. We have already
+used images in this tutorial. In Part 3 a picture of my pet lizard was
+used as the fill for a very thick "line" just to show how shapes could
+be stretched to meet different needs. And in Part 4, I used two
+transparent GIF images overlaid in the center of a "temperature"
+display. But these were just handy ways to describe how images could be
+integrated with vector graphics. This segment covers images as the
+focus, not as a side note.
+</p><p>The first thing to learn about an image in VB.NET is just what it actually is. In programming terms, it's probably best <i>not</i> to think of it as a file (like a JPG or BMP file). Think of an image as either ...
+
+</p><ul>
+<li>An object inherited from the <b>Image</b> class
+</li><li>A bit map in memory
+</li></ul>
+
+<p>If you look up the <b>Image</b> class in Microsoft's documentation, the first words describing the class are, "An <b>abstract</b> base class ..." So the first step in understanding what an <b>Image</b>
+is in VB.NET is to understand what an abstract class is. Microsoft says
+they are classes that are, "solely for the purpose of inheritance&#8212;to
+define features of derived, non-abstract classes." </p><p>Think of them as the mold that you pour software into.
+
+</p><p>An abstract class uses the keyword <b>MustInherit</b> in the definition. This can be confusing because what it actually means is that you <i>can't</i> simply instantiate the class as you normally would. So, for example, if you code:
+
+</p><p><b>Dim myImage As New Image</b>
+
+</p><p>The compiler flags this as an error with the message:
+
+</p><p><b>'New' cannot be used on a class that is declared 'MustInherit'.</b>
+
+</p><p>Instead, you need to instantiate a class that is inherited from the <b>Image</b> class. There are two to choose from:
+
+</p><ul>
+<li>BitMap
+</li><li>Metafile
+</li></ul>
+
+<p>(It's also interesting to note that, although the <b>BitMap</b> and <b>Metafile</b> classes are both inherited directly from <b>Image</b>, they are in different namespaces. <b>Bitmap</b> is in <b>System.Drawing</b> and <b>Metafile</b> is in <b>System.Drawing.Imaging</b>.)
+
+</p><p>So you can code:
+
+</p><p><b>Dim myBitmap As New Bitmap("D:\aBitmap.bmp")</b>
+
+</p><p><b>Metafile</b> is a bit more difficult than  <b>Bitmap</b>. For one thing, the good folks at Microsoft haven't given us a way to encode <b>Metafile</b>
+objects in the .NET Framework yet (as of Framework version 2.0). So you
+can read Metafile files, but you can't write them directly.
+</p><p>Here's what Microsoft MSDN has to say about it:
+
+</p><p><i>When you use the Save method to save a graphic image as a
+Windows Metafile Format (WMF) or Enhanced Metafile Format (EMF) file,
+the resulting file is saved as a Portable Network Graphics (PNG) file
+instead. This behavior occurs because the GDI+ component of the .NET
+Framework does not have an encoder that you can use to save files as
+.wmf or .emf files.</i>
+
+</p><p>You can, however, create metafiles and the next segment will have more to say about that!
+
+</p><p>The <b>Icon</b> class can be thought of as a type of bitmap too, but it's not an <b>Image</b> object and you have to use different methods to handle it. I'll discuss this class after we check out the <b>Image</b> class.
+
+</p><p>The <b>Bitmap</b> object in code creates the bitmap in memory
+... a pixel by pixel representation of the image. There are a lot of
+useful methods provided in VB.NET to help you use this image. For
+example, you can create a thumbnail of the image:
+</p><p><b>Dim myImage As Bitmap = _<br>
+&nbsp;&nbsp;&nbsp;New Bitmap("C:\zion.jpg", True)<br>
+PictureBoxThumb.Image = _<br>
+&nbsp;&nbsp;&nbsp;myImage.GetThumbnailImage( _<br>
+&nbsp;&nbsp;&nbsp;79, 38, Nothing, Nothing)<br>
+PictureBox.Image = myImage</b>
+
+</p><p><b></b></p><p><b>--------<br>
+<a href="http://z.about.com/d/visualbasic/1/0/9/M/GDIP08-01.gif">Click Here to display the illustration</a><br>
+Click the Back button on your browser to return<br>
+--------</b>
+		<!--/gc-->
+</p></div>
+
+
+<div id="pagination"><span class="prev po">Prev</span><ul><li class="first cur">1</li><li><a href="http://visualbasic.about.com/od/usingvbnet/a/GDIP08_2.htm" zt="8/1YJ/Z1">2</a></li><li><a href="http://visualbasic.about.com/od/usingvbnet/a/GDIP08_3.htm" zt="8/1YJ/Z1">3</a></li></ul><span class="next"><a href="http://visualbasic.about.com/od/usingvbnet/a/GDIP08_2.htm" zt="8/1YJ/Z1" accesskey="&gt;">Next</a></span></div>
+
+
+<div id="coda"><div id="resources">
+<div id="related"><h5> Related Articles</h5><ul><li><a href="http://visualbasic.about.com/od/usingvbnet/a/GDIP10.htm" zt="18/1YL/Zn">GDI+ Graphics in Visual Basic 2005 .NET</a></li><li><a href="http://visualbasic.about.com/od/usingvbnet/a/GDIP03.htm" zt="18/1YL/Zn">GDI+ Graphics in Visual Basic 2005 .NET</a></li><li><a href="http://delphi.about.com/od/oopindelphi/a/delphi_oop7.htm" zt="18/1YL/Zn">Programmer Defined Classes and Objects - Delphi OOP Part 3 / Chapter 7</a></li><li><a href="http://desktoppub.about.com/od/scanninggraphics/bb/graphicsuse.htm" zt="18/1YL/Zn">Using Pictures in Desktop Publishing - Before You Use Graphics in Desktop P...</a></li><li><a href="http://visualbasic.about.com/od/usingvbnet/a/GDIP09.htm" zt="18/1YL/Zn">GDI+ Graphics in Visual Basic 2005 .NET</a></li></ul></div>
+</div><div id="guideinfo"><div class="cntnr"><div id="thumb"><a href="http://visualbasic.about.com/mbiopage.htm" zt="18/1YK"><img src="GDI+%20Graphics%20in%20Visual%20Basic%202005%20.NET_files/5296.jpg" alt="Dan Mabbutt"></a></div><div class="est">Guide since 2002</div><p><a href="http://visualbasic.about.com/mbiopage.htm" zt="18/1YO">Dan Mabbutt</a><br>Visual Basic Guide</p><ul><li><a href="http://visualbasic.about.com/gi/pages/stay.htm" zt="18/1YS"><strong>Sign up</strong> for my Newsletter</a></li></ul><ul class="social"><li><a href="http://visualbasic.about.com/b/" zt="18/1YM">My Blog</a></li><li><a href="http://forums.about.com/n/pfx/forum.aspx?nav=messages&amp;webtag=ab-visualbasic" zt="18/1YN">My Forum</a></li></ul></div></div></div><script type="text/javascript">zSbL=3;zSB(2);zSbL=0</script><div id="gB2" class="gB"><h5>Sponsored Links</h5>
+<p onmouseover="return zhl(1,3)" onmouseout="zhl(0)"><a href="http://googleads.g.doubleclick.net/aclk?sa=l&amp;ai=BcBt9ZdM1St7aEJ-urAPK-8zNDumwtIkB7_uxnA7AjbcBoMIeEAQYBCCopfcBKAc4AFCPorz4B2DJ1tmGyKP8GqABltyS_wOyARV2aXN1YWxiYXNpYy5hYm91dC5jb23IAQHaATdodHRwOi8vdmlzdWFsYmFzaWMuYWJvdXQuY29tL29kL3VzaW5ndmJuZXQvYS9HRElQMDguaHRtgAIBqAMBuAMB6APmA-gDH-gD3gX1AwAEAAT1AwQAAAA&amp;num=4&amp;sig=AGiWqtxxmKAx0yPpmLqscyuB0UpertPWHQ&amp;client=ca-primedia-premium_js&amp;adurl=http://www.appdev.com/promo/SE00058" lnp="3" title="Award-Winning Content, Only $19 Per Course With Library Thru 6/30." target="_blank"><span class="t">Learn Visual Basic Online</span><span class="d">Award-Winning Content, Only $19 Per Course With Library Thru 6/30.</span><span class="u">www.AppDev.com</span></a></p>
+<p onmouseover="return zhl(1,4)" onmouseout="zhl(0)"><a href="http://googleads.g.doubleclick.net/aclk?sa=l&amp;ai=B0XuBZdM1St7aEJ-urAPK-8zNDrix4XzK8rOgCsCNtwHAzyQQBRgFIKil9wEoBzgAUODw74D5_____wFgydbZhsij_BqyARV2aXN1YWxiYXNpYy5hYm91dC5jb23IAQHaATdodHRwOi8vdmlzdWFsYmFzaWMuYWJvdXQuY29tL29kL3VzaW5ndmJuZXQvYS9HRElQMDguaHRtyALk6ukIqAMBuAMB6APmA-gDH-gD3gX1AwAEAAT1AwQAAAA&amp;num=5&amp;sig=AGiWqtxS42tRr0n5OX0gLjITNJmyIS7HAA&amp;client=ca-primedia-premium_js&amp;adurl=http://www.Bing.com/images/search%3Fq%3Dimage%26FORM%3DMFEIMG%26PUBL%3DGoogle%26CREA%3Duserid1743a2dce653021c5cb8fc1ba92e5d5ebcf1c" lnp="4" title="Find Free Images Online&#8212;Bing&#8482; Get Celebrity Pics &amp; Stock Photos" target="_blank"><span class="t">Image</span><span class="d">Find Free Images Online&#8212;Bing&#8482; Get Celebrity Pics &amp; Stock Photos</span><span class="u">www.Bing.com</span></a></p>
+<p onmouseover="return zhl(1,5)" onmouseout="zhl(0)"><a href="http://googleads.g.doubleclick.net/aclk?sa=l&amp;ai=BEeNdZdM1St7aEJ-urAPK-8zNDuWLyo4BuerW-Q3AjbcB8IQOEAYYBiCopfcBKAc4AFCEnZjt_P____8BYMnW2YbIo_wasgEVdmlzdWFsYmFzaWMuYWJvdXQuY29tyAEB2gE3aHR0cDovL3Zpc3VhbGJhc2ljLmFib3V0LmNvbS9vZC91c2luZ3ZibmV0L2EvR0RJUDA4Lmh0bYACAagDAbgDAegD5gPoAx_oA94F9QMABAAE9QMEAAAA&amp;num=6&amp;sig=AGiWqtxCydnk55mQaNdw9wWDDVrC9cQq3g&amp;client=ca-primedia-premium_js&amp;adurl=http://www.edulearn.com/visual-basic/visual-basic.html" lnp="5" title="Learn Visual Basic 2008 and 2005. Over 24 hours of training on CD-ROM" target="_blank"><span class="t">Get Visual Basic Training</span><span class="d">Learn Visual Basic 2008 and 2005. Over 24 hours of training on CD-ROM</span><span class="u">www.edulearn.com</span></a></p>
+<p onmouseover="return zhl(1,6)" onmouseout="zhl(0)"><a href="http://googleads.g.doubleclick.net/aclk?sa=l&amp;ai=Bu4ZwZdM1St7aEJ-urAPK-8zNDtWFlZwBnez94wrAjbcB8KIEEAcYByCopfcBKAc4AFCu69SPBmDJ1tmGyKP8GrIBFXZpc3VhbGJhc2ljLmFib3V0LmNvbcgBAdoBN2h0dHA6Ly92aXN1YWxiYXNpYy5hYm91dC5jb20vb2QvdXNpbmd2Ym5ldC9hL0dESVAwOC5odG2AAgGpAnSuQQvEjLs-yALNr6MJqAMBuAMB6APmA-gDH-gD3gX1AwAEAAT1AwQAAAA&amp;num=7&amp;sig=AGiWqty7dQ5vSfTvRmbretfrkeKms11xIQ&amp;client=ca-primedia-premium_js&amp;adurl=http://www.WorkCircle.us/%3Fad%3Dgoogle%26keywords%3DVisual%2520Basic%26adtype%3DContent%26creative%3D2803332551%26googlekeywords%3DVisual%2520Basic" lnp="6" title="We have over 600,000 jobs! Search for Visual Basic jobs now." target="_blank"><span class="t">Visual Basic</span><span class="d">We have over 600,000 jobs! Search for Visual Basic jobs now.</span><span class="u">WorkCircle.us/Visual_Basic</span></a></p>
+</div>
+</div>
+<div id="widgets">
+
+
+
+
+
+<script type="text/javascript">if(z336>0){w('<div id="adB">'+ap[0]+at[4]+as[0]);adunit('','','about.com',ch,gs,336,280,'1','bb',3);w('</div>')}if(z155>0){w('<div id="adP">'+ap[0]+at[4]+as[0]);adunit('','','about.com',ch,gs,336,155,'1','ps',4);w('</div>')}</script><div id="adB"><p>Advertisement</p>
+
+<iframe id="bb" name="bb" src="GDI+%20Graphics%20in%20Visual%20Basic%202005%20.NET_files/GDIP08_002.htm" marginwidth="0" marginheight="0" hspace="0" vspace="0" border="0" frameborder="0" height="280" scrolling="no" width="336"></iframe>
+
+</div>
+
+
+
+
+
+
+<script type="text/javascript">if(zp[7].d){Dsp(zp[7],'ip')}</script>
+<iframe id="ip0" name="ip0" src="GDI+%20Graphics%20in%20Visual%20Basic%202005%20.NET_files/9.htm" marginwidth="0" marginheight="0" hspace="0" vspace="0" border="0" frameborder="0" height="290" scrolling="no" width="336"></iframe>
+
+<script type="text/javascript">if(zp[11].d){Dsp(zp[11],'ip')}</script>
+<iframe id="ip0" name="ip0" src="GDI+%20Graphics%20in%20Visual%20Basic%202005%20.NET_files/1.htm" marginwidth="0" marginheight="0" hspace="0" vspace="0" border="0" frameborder="0" height="210" scrolling="no" width="336"></iframe>
+
+
+
+
+
+
+
+</div>
+</div>
+<div id="browse" class="pane clear"><h3>Explore Visual Basic</h3><div id="bc1"><h5>Must Reads</h5><ul><li><a href="http://visualbasic.about.com/od/vbnetspecialtopics/a/aboutvb.htm" zt="18/1fG/1">About Visual Basic and This Site</a></li><li><a href="http://visualbasic.about.com/od/learnvbnet/a/LVBE_L1.htm" zt="18/1fG/2">Learn Visual Basic .NET</a></li><li><a href="http://visualbasic.about.com/od/standalonevb6/l/bllvb_6a.htm" zt="18/1fG/3">Learn Visual Basic With VB 6</a></li><li><a href="http://visualbasic.about.com/od/usingvbnet/l/blglossa.htm" zt="18/1fG/4">A Glossary of Technical Terms</a></li></ul><div class="lkbx"><div class="obM" id="ob/O3"><h5>Most Popular</h5><p><a href="http://visualbasic.about.com/od/learnvbnet/a/LVBE_L1.htm" onclick="zT(this,'18/yV/O3')">Part 1 of an Intro to VB.NET</a><a href="http://visualbasic.about.com/od/standalonevb6/l/bllvb_6a.htm" onclick="zT(this,'18/yV/O3')">Learn Visual Basic Version 6</a><a href="http://visualbasic.about.com/od/standalonevb6/l/bllearnvba.htm" onclick="zT(this,'18/yV/O3')">Learning Visual Basic</a><a href="http://visualbasic.about.com/od/learnvbnet/a/LVBE_L3_P2.htm" onclick="zT(this,'18/yV/O3')">Part 2 of an Intro to VB.NET</a><a href="http://visualbasic.about.com/od/learnvbnet/a/byvalbyref.htm" onclick="zT(this,'18/yV/O3')">ByVal and ByRef Argument Passi</a></p></div></div>
+</div><div id="bc2"><div class="nav"><h4>See More About:</h4><ul class="col1"><li><a href="http://visualbasic.about.com/lr/gdi_graphics_in_vb.net/156896/1/" zt="18/1gH" rel="nofollow">gdi+ graphics in vb.net</a></li><li><a href="http://visualbasic.about.com/lr/gdi_images_in_vb.net/156896/2/" zt="18/1gH" rel="nofollow">gdi+ images in vb.net</a></li></ul><ul class="col2"><li><a href="http://visualbasic.about.com/lr/abstract_classes_and_mustinherit/156896/3/" zt="18/1gH" rel="nofollow">abstract classes and mustinherit</a></li></ul></div><script type="text/javascript">splitList(getElementsByClassName('nav',gEI('bc2'))[0].getElementsByTagName('ul')[0]);</script><h5>By Category</h5><ul class="col1"><li><a href="http://visualbasic.about.com/od/usingvbnet/How_to_do_it_Programming_Techniques_for_Visual_Basic_NET.htm" zt="18/1hZ/1">Using VB.NET</a></li><li><a href="http://visualbasic.about.com/od/learnvbnet/Learn_VBNET_Visual_Basic_for_the_new_millenium.htm" zt="18/1hZ/2">Learn VB.NET</a></li><li><a href="http://visualbasic.about.com/od/usevb6/How_to_do_it_Programming_Techniques_for_Visual_Basic_6.htm" zt="18/1hZ/3">Use VB 6</a></li></ul><ul class="col2"><li><a href="http://visualbasic.about.com/od/learnvb6/Learn_Visual_Basic_6_Classic_Visual_Basic.htm" zt="18/1hZ/4">Learn VB 6</a></li><li><a href="http://visualbasic.about.com/od/vbbooks/Find_the_Visual_Basic_book_you_need.htm" zt="18/1hZ/5">VB Books</a></li><li><a href="http://visualbasic.about.com/od/quicktips/Quick_Tips_for_VB_Programmers.htm" zt="18/1hZ/6">Quick Tips</a></li></ul></div></div><script type="text/javascript">splitList(gEI('bcl'));</script><style type="text/css">#fpromo .moref a{float:right;margin-top:1em;padding-left:11px;}#fpromo .fpni{float:left;height:auto;margin:0 0 1em 10px;width:300px;}#fpromo .fpni h4{font:14px Georgia;font-weight:bold;margin-bottom:0;}</style><div id="fpromo" class="pane"><h3>About.com Special Features</h3><div><div class="fpni"><h4><a href="http://webdesign.about.com/od/beforeyoustartawebsite/p/build_website.htm" zt="1/1gS/os">Build Your Own Website</a></h4><p>Step-by-step advice on how to do everything from choosing a Web host to promoting your content. <a href="http://webdesign.about.com/od/beforeyoustartawebsite/p/build_website.htm" zt="1/1gS/os">More &gt;</a></p></div></div><div><div class="fpni"><h4><a href="http://compnetworking.about.com/od/homenetworking/a/connecttwocomp.htm" zt="1/1gS/ot">Connect Your Home Computers</a></h4><p>Easy ways to connect two computers for networking purposes. <a href="http://compnetworking.about.com/od/homenetworking/a/connecttwocomp.htm" zt="1/1gS/ot">More &gt;</a></p></div></div><div class="moref"><a href="http://azlist.about.com/a.htm" zt="18/1]]"><b>Browse All</b> About.com</a></div></div><script type="text/javascript">prepareTools();zCi();validateForms();</script><div id="abf"><div class="mast"><div class="logo"><a href="http://www.about.com/" zt="18/1Yb/Zv"><img src="GDI+%20Graphics%20in%20Visual%20Basic%202005%20.NET_files/a1.gif" alt="About.com"></a></div><h2><a href="http://visualbasic.about.com/" zt="18/1Yc/Zx" title="Visual Basic">Visual Basic</a></h2><script type="text/javascript">var h2=document.getElementsByTagName("h2")[0];if(h2.getElementsByTagName("a")[0].firstChild.nodeValue.length>28)h2.className="long";</script></div><ol class="crumbtrail"><li class="home"><a href="http://www.about.com/" zt="18/1Yd/Zz">Home</a></li><li><a href="http://www.about.com/compute/" zt="18/1Yd/Zz">Computing &amp; Technology</a></li><li><a href="http://visualbasic.about.com/" zt="18/1Yd/Zz">Visual Basic</a></li><li><a href="http://visualbasic.about.com/od/usingvbnet" zt="18/1Yd/Zz">Using VB.NET</a></li><li><a>GDI+ Graphics in Visual Basic 2005 .NET</a></li></ol><div id="lists" class="hlist"><ul><li class="pop"><a href="http://visualbasic.about.com/popular.htm" zt="18/1YY">Most Popular</a></li><li class="last"><a href="http://visualbasic.about.com/updated.htm" zt="18/1]c">Latest Articles</a></li></ul></div><div class="subscribe hlist"><h6>Add to: </h6><ul><li><a href="http://fusion.google.com/add?feedurl=http://z.about.com/5/g/visualbasic/b/index.xml?r=9F" title="Add the Visual Basic Blog to Google Reader" zt="18/1YZ/cz">iGoogle</a></li><li><a href="http://add.my.yahoo.com/rss?url=http://z.about.com/5/g/visualbasic/b/index.xml?r=94" title="Add the Visual Basic Blog to My Yahoo!" zt="18/1YZ/d0">My Yahoo!</a></li><li class="rss last"><a href="http://visualbasic.about.com/gi/pages/stay.htm#rs" zt="18/1YZ/Zt">RSS</a></li></ul></div></div><div id="aboutinfo" class="hlist"><ul id="siteinfo"><li><a href="http://advertise.about.com/" zt="18/1YX/Zr" rel="nofollow">Advertising Info</a></li><li><a href="http://advertise.about.com/newspress/index.html" zt="18/1YX/Zr" rel="nofollow">News &amp; Events</a></li><li><a href="http://jobs.about.com/" zt="18/1YX/Zr" rel="nofollow">Work at About</a></li><li><a href="http://spiderbites.about.com/sitemap.htm" zt="18/1YX/Zr">SiteMap</a></li><li><a href="http://azlist.about.com/a.htm" zt="18/1]]">All Topics</a></li><li><a href="http://advertise.about.com/contact/printrequests.html" zt="18/1YX/Zr" rel="nofollow">Reprints</a></li><li class="last"><a href="http://visualbasic.about.com/gi/pages/hc.htm" zt="18/1YX/Zr" rel="nofollow">Help</a></li></ul><ul id="legalinfo"><li><a href="http://www.about.com/gi/pages/uagree.htm" zt="18/1YX/Zr" rel="nofollow">User Agreement</a></li><li><a href="http://www.about.com/gi/pages/ethics.htm" zt="18/1YX/Zr" rel="nofollow">Ethics Policy</a></li><li><a href="http://www.about.com/gi/pages/patent.htm" zt="18/1YX/Zr" rel="nofollow">Patent Info.</a></li><li class="last"><a href="http://www.about.com/gi/pages/mprivacy.htm" zt="18/1YX/Zr" rel="nofollow">Privacy Policy</a></li></ul><ul id="companyinfo"><li><a href="http://ourstory.about.com/" zt="18/1YX/Zr" rel="nofollow">Our Story</a></li><li class="last"><a href="http://beaguide.about.com/" zt="18/1YX/Zr" rel="nofollow">Be a Guide</a></li></ul><div id="disclaimer"><p>©2009 About.com, a part of <a href="http://www.nytco.com/" zt="1/1JK">The New York Times Company</a>.</p><p>All rights reserved.</p></div></div>
+</div>
+<img id="zIpfb" alt="" border="0" height="1" width="1">
+<script type="text/javascript"><!--
+adclose()
+//-->
+</script>
+<script type="text/javascript">var tcdacmd="dt;da";</script>
+<script type="text/javascript" src="GDI+%20Graphics%20in%20Visual%20Basic%202005%20.NET_files/slf.js"></script><script src="GDI+%20Graphics%20in%20Visual%20Basic%202005%20.NET_files/r.js" language="JavaScript"></script><iframe src="GDI+%20Graphics%20in%20Visual%20Basic%202005%20.NET_files/tpp.htm" frameborder="0" height="0" width="0"></iframe><script src="GDI+%20Graphics%20in%20Visual%20Basic%202005%20.NET_files/ping.js" language="JavaScript"></script><img src="GDI+%20Graphics%20in%20Visual%20Basic%202005%20.NET_files/blank.gif" style="display: none;" border="0" height="1" width="1">
+<img src="GDI+%20Graphics%20in%20Visual%20Basic%202005%20.NET_files/a.gif" alt="" border="0" height="1" width="3">
+
+</body></html>

@@ -1,0 +1,830 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head> 
+  
+  
+
+    
+    
+  
+
+
+  
+
+  
+ 
+  
+  
+  
+
+
+    
+  
+
+  
+
+  
+    
+    
+    
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+      
+        
+      
+      
+    
+    
+  
+  
+
+ 
+
+  
+
+
+
+
+  
+  
+ 
+  
+  
+    
+  
+
+  
+    
+    
+      
+      
+      
+      
+
+      
+     
+    
+      
+      
+       
+     
+       
+    
+    
+
+    
+    
+
+ 
+
+    
+    
+     
+     
+      
+      
+      
+      
+        
+        
+        
+       
+      
+    
+    
+       
+
+   
+
+    
+    
+      
+      
+        
+      
+  
+      
+        
+      
+      
+      
+      
+
+
+      
+      
+
+
+     
+    
+    
+  
+    
+    
+      
+      
+      
+      
+
+      
+     
+    
+      
+      
+       
+     
+       
+    
+    
+
+    
+    
+
+ 
+
+    
+    
+     
+     
+      
+      
+      
+      
+        
+        
+        
+       
+      
+    
+    
+       
+
+   
+
+    
+    
+      
+      
+        
+      
+  
+      
+        
+      
+      
+      
+      
+
+
+      
+      
+
+
+     
+    
+    
+  
+    
+    
+    
+
+    
+    
+
+ 
+
+    
+    
+     
+     
+    
+    
+       
+
+   
+
+    
+     
+    
+    
+   
+  
+
+
+
+
+ 
+
+   
+  
+ 
+
+
+  
+  
+
+
+
+ 
+
+
+
+
+  
+  <meta name="AUTHOR" content="eFunda, Inc.">
+  <meta name="DESCRIPTION" content="Engineering Fundamentals: CENTROID, AREA, MOMENTS OF INERTIA, POLAR MOMENTS OF INERTIA, &amp; RADIUS OF GYRATION OF A CIRCLE">
+  <meta name="KEYWORDS" content="Moment, inertia, circle, RADIUS, GYRATION, Properties, eFunda">
+  <link rel="stylesheet" type="text/css" href="CircularSegment.cfm_files/round_border.css"><title>Engineering Fundamentals: CENTROID, AREA, MOMENTS OF INERTIA, POLAR MOMENTS OF INERTIA, &amp; RADIUS OF GYRATION OF A CIRCLE</title>
+  
+  
+  <style>
+  <!--
+    
+      
+.IndexSideElement {font-size: 13px; font-family: Verdana, Arial, Sans-serif}
+.SectionTitle	{font-size: 20px; font-family: Verdana ; color:#404000}
+
+.title {font-size: 17px; font-family: Verdana, Arial, Sans-serif}
+.titlefootnote {font-size: 13px; font-family: Verdana, Arial, Sans-serif}
+
+.Text {font-size: 15px; font-family: Verdana, Arial, Sans-serif}
+
+.SmallText {font-size: 13px; font-family: Verdana, Arial, Sans-serif}
+.SmallNarrow {font-size: 13px; font-family: Arial, Sans-serif}
+
+.FootnoteText {font-size: 10px; font-style: normal; font-family: Verdana, Arial, Sans-serif}
+
+.SmallCourier {font-size: 10px; font-family: Courier, Verdana, Arial, Sans-serif}
+
+
+.blue {color:blue}
+.navy {color:navy}
+.red {color:Red}
+.green {color:green}
+.maroon {color:maroon}
+.black {color:black}
+.orange {color:#cc6900}
+.gray {color:#888888}
+.greengray {color:#888877}
+.purple {color:#800080}
+
+a:hover {color:red}
+a:visited {color:LightSlateGray}
+
+a.title0:link {color:black;text-decoration:none}
+a.title0:visited {color:black;text-decoration:none}
+a.title0:active {color:maroon;text-decoration:none}
+
+a.title1:link {color:black;text-decoration:none}
+a.title1:visited {color:black;text-decoration:none}
+a.title1:active {color:maroon;text-decoration:none}
+a.title1:hover {color:red;text-decoration:underline}
+
+a.intext:link {color:#000099;text-decoration:none}
+a.intext:visited {color:maroon;text-decoration:none}
+a.intext:active {color:red;text-decoration:none}
+a.intext:hover {color:red;text-decoration:underline}
+
+a.intextgray:link {color:gray;text-decoration:none}
+a.intextgray:visited {color:gray;text-decoration:none}
+a.intextgray:active {color:red;text-decoration:none}
+a.intextgray:hover {color:red;text-decoration:underline}
+
+
+
+.DefaultFont {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+}
+.VerdanaS {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+}
+.VerdanaM {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+}
+.VerdanaL {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 16px;
+}
+.CourierS{
+	font-family: Courier, Courier New;
+	font-size: 9px;
+}
+.CourierL{
+	font-family: Courier, Courier New;
+	font-size: 12px;
+}
+
+* { 
+    box-sizing: border-box; 
+    -moz-box-sizing: border-box; 
+}
+    
+    a.menu:link {color:silver;text-decoration:none}
+    a.menu:visited {color:silver;text-decoration:none}
+    a.menu:hover {color:orange;text-decoration:none}
+    a.menu2:link {color:white;text-decoration:none}
+    a.menu2:visited {color:white;text-decoration:none}
+    a.menu2:hover {color:navy;text-decoration:none}
+    .TPtable{font-family:verdana,arial,helvetica; background:#F3F5E7; border-color:#FFFFFF;border-collapse:collapse;width:158}
+    .TPheader{text-decoration:none; font-size: 1px; font-weight:normal; font-style:normal; color:#F3F5E7; padding:0px; text-align:center; background:#F3F5E7;}
+    .TProw{text-decoration:none; font-size: 10px; font-weight:normal; font-style:normal; color:#F3F5E7; padding-bottom:5px;}
+    a.TProw{text-decoration:none; font-size: 10px; font-weight:normal; font-style:normal; color:#000000;}
+    a:hover.TProw{text-decoration:underline; font-size: 10px; font-weight:normal; font-style:normal; color:#FF0000;}
+  -->
+  </style></head><body topmargin="0" leftmargin="0" link="navy" marginheight="0" marginwidth="0" vlink="maroon">
+
+
+ 
+
+<table border="0" cellpadding="0" cellspacing="0" width="750">
+<tbody><tr>
+  <td bgcolor="#303060" valign="bottom" width="224"><a href="http://www.efunda.com/"><img src="CircularSegment.cfm_files/efunda_blue.gif" border="0"></a></td>
+  <td style="padding-right: 5px; padding-bottom: 3px;" align="right" bgcolor="#303060" valign="bottom" width="526">
+    <span class="title"><font color="white">Circular Segment</font></span><br>
+    <span class="footnotetext"><font color="silver">
+    <a href="http://www.efunda.com/about/about.cfm" class="menu">About Us</a> |
+    <a href="http://www.efunda.com/eds/eds_home.cfm" class="menu">Directory</a> |
+    <a href="http://efunda.4jobs.com/MKT/Content/JS/Default.asp" class="menu">Career</a> |
+    <a href="http://www.efunda.com/news/moreover.cfm" class="menu">News</a> |
+    <a href="http://www.efunda.com/chat/chat.cfm" class="menu">Chat</a> |
+    <a href="http://www.techstreet.com/cgi-bin/joint.cgi/efunda/" class="menu">InfoStore</a> |
+    <a href="http://www.efunda.com/ThomasClick.cfm" class="menu">Industrial</a> |
+    <a href="http://efunda.intota.com/" class="menu">Ask an Expert</a>
+    </font></span>
+  </td>
+</tr>
+<tr><td colspan="3" align="left" bgcolor="#e5cc6c" valign="top"><img src="CircularSegment.cfm_files/gap_new.gif" height="3" width="165"></td></tr>
+</tbody></table>
+
+
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="750">
+<tbody><tr>
+<td valign="top" width="165"> 
+<div style="background: rgb(224, 224, 160) none repeat scroll 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;" align="center"> 
+
+ 
+
+
+
+
+<table border="0" cellpadding="1" cellspacing="0" width="163">
+
+  <tbody><tr> 
+    <td width="10"></td>
+    <td width="149"></td>
+  </tr>
+  
+  
+  
+  
+  <tr bgcolor="#eeeee0">
+    <td colspan="2" class="smalltext" align="center"><a href="http://www.efunda.com/math/areas/IndexArea.cfm" class="title1"><b>Geometry Home</b></a></td>
+  </tr>
+  
+
+  
+  
+  <tr>
+    <td valign="top"><img src="CircularSegment.cfm_files/dot.gif"></td>
+    <td class="smalltext"><b>Cross-Sections of</b></td>
+  </tr>
+  
+  
+   
+    <tr>
+      <td valign="top"><spacer type="block" height="1" width="1"></td>
+      <td class="smalltext"><a href="http://www.efunda.com/math/areas/IbeamIndex.cfm" class="title1">Standard Beams</a></td>
+    </tr>
+   
+    <tr>
+      <td valign="top"><spacer type="block" height="1" width="1"></td>
+      <td class="smalltext"><a href="http://www.efunda.com/math/areas/Common_Cross_Section_Index.cfm" class="title1">Common Beams</a></td>
+    </tr>
+  
+  
+
+
+
+
+  
+  <tr>
+    <td valign="top"><img src="CircularSegment.cfm_files/dot.gif"></td>
+    <td class="smalltext"><b>Applications</b></td>
+  </tr>
+
+  <tr>
+    <td valign="top"><spacer type="block" height="1" width="1"></td>
+    <td class="smalltext"><a href="http://www.efunda.com/formulae/solid_mechanics/beams/index.cfm" class="title1">Beam Bending</a></td>
+  </tr>
+
+
+
+
+<tr>
+  <td valign="top"><img src="CircularSegment.cfm_files/dot.gif"></td>
+  <td class="smalltext"><b>Geometric Shapes</b></td>
+</tr>
+
+
+
+   
+    <tr>
+      <td valign="top"><spacer type="block" height="1" width="1"></td>
+      <td class="smalltext"><a href="http://www.efunda.com/math/areas/Common_Geometric_Shapes_Index.cfm" class="title1">Common Areas</a></td>
+    </tr>
+   
+    <tr>
+      <td valign="top"><spacer type="block" height="1" width="1"></td>
+      <td class="smalltext"><a href="http://www.efunda.com/math/solids/IndexSolid.cfm" class="title1">Common Solids</a></td>
+    </tr>
+   
+    <tr>
+      <td valign="top"><spacer type="block" height="1" width="1"></td>
+      <td class="smalltext"><a href="http://www.efunda.com/math/areas/Geometric_Relations_Index.cfm" class="title1">Useful Geometry</a></td>
+    </tr>
+  
+    
+ 
+  
+  <tr>
+    <td valign="top"><img src="CircularSegment.cfm_files/dot.gif"></td>
+    <td class="smalltext"><b>Resources</b></td>
+  </tr>
+  
+  
+  <tr>
+    <td valign="top"><spacer type="block" height="1" width="1"></td>
+    <td class="smalltext"><a href="http://www.efunda.com/math/math_home/math_bibliography.cfm" class="title1">Bibliography</a></td>
+  </tr>
+  
+  
+</tbody></table>
+ 
+
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+
+  <tbody><tr><td colspan="2" height="10"></td></tr>
+  
+  
+  
+  
+   
+    
+    
+
+	  
+	    <tr><td colspan="2" height="1"><img src="CircularSegment.cfm_files/menu_gap.gif"></td></tr>
+	    <tr bgcolor="DarkKhaki">
+	    	<td align="center" width="14"><img src="CircularSegment.cfm_files/menu_arrow.gif" height="16" width="10"></td>
+	    	<td class="smalltext" height="25" width="151"><a class="title1" href="http://www.efunda.com/members/login/login.cfm?direct=y" style="color: white;"><b>Login</b></a></td>
+	    </tr>
+	   
+   
+  
+  <tr><td colspan="2" height="1"><img src="CircularSegment.cfm_files/menu_gap.gif"><br><img src="CircularSegment.cfm_files/side_bar_bottom.jpg" border="0"></td></tr>
+  
+</tbody></table> 
+
+</div> 
+
+
+
+
+
+
+
+
+  
+  
+  
+  <div class="section_border_gray_menu" style="margin-top: 10px; width: 164px; background-color: rgb(219, 221, 208);"><div class="section_corner_gray"><div class="top_right"><spacer type="block" height="1" width="1"></div></div>
+  <div style="background-color: rgb(243, 245, 231);" align="left">
+  
+  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+   	<tbody><tr bgcolor="#dbddd0">
+      <td class="smalltext" style="border-bottom: 1px solid rgb(151, 153, 143);" height="21" valign="top" width="151"><img src="CircularSegment.cfm_files/pixel.gif" border="0" height="1" width="7"><a target="free_magazine" href="http://efunda.tradepub.com/_brands/efunda/cat/Eng.cat.html" class="title1"><b>Free Magazines</b></a></td>
+    </tr>
+    <tr>
+  	  <td class="footnotetext" style="border-top: 1px solid white; line-height: 17px; padding-top: 5px; padding-bottom: 5px; padding-left: 7px;">
+        
+        
+        
+    <a href="http://efunda.tradepub.com/free/d2p" class="title1" target="magazine" style="color: rgb(85, 85, 85);">Design-2-Part</a><br>
+    <a href="http://efunda.tradepub.com/free/im/" class="title1" target="magazine" style="color: rgb(85, 85, 85);">Injection Molding</a><br>
+    <a href="http://efunda.tradepub.com/free/rp/" class="title1" target="magazine" style="color: rgb(85, 85, 85);">Reinforced Plastics</a><br>
+    <a href="http://efunda.tradepub.com/free/prm2/" class="title1" target="magazine" style="color: rgb(85, 85, 85);">Processing Magazine</a><br>
+    <a href="http://efunda.tradepub.com/free/pw/" class="title1" target="magazine" style="color: rgb(85, 85, 85);">Packaging World</a><br>
+    <a href="http://efunda.tradepub.com/free/pn/" class="title1" target="magazine" style="color: rgb(85, 85, 85);">Plastics News</a><br>
+    <a href="http://efunda.tradepub.com/free/mlm/" class="title1" target="magazine" style="color: rgb(85, 85, 85);">Machinery Lubrication</a><br>
+    
+        <a target="free_magazine" href="http://efunda.tradepub.com/_brands/efunda/cat/Eng.cat.html" class="title1" style="color: rgb(85, 85, 85);"><b>more</b>...</a>
+      </td>
+  	</tr>
+  </tbody></table>
+  
+  </div>
+  <div class="section_corner_gray" style="background-color: rgb(243, 245, 231);"><div class="bottom_right"><spacer type="block" height="1" width="1"></div></div></div>
+  
+  
+  
+  
+  
+
+  <div class="smalltext">&nbsp;</div>
+  
+
+
+
+
+</td>
+<td width="10"> 
+  <img src="CircularSegment.cfm_files/pixel.gif" height="1" width="10">
+</td>
+<td class="smalltext" align="left" valign="top" width="575"> 
+
+  
+  
+
+  <div align="center">
+  <table border="0" cellpadding="0" cellspacing="0" width="573">
+    <tbody><tr><td height="10"></td></tr>
+    <tr><td colspan="7" bgcolor="#666600">
+      <table border="0" cellpadding="4" cellspacing="1" width="100%"> 
+        <tbody><tr bgcolor="#e0e0a0">
+          <form method="post" action="http://www.efunda.com/search/search_efunda.cfm"></form>
+          <td colspan="6" class="smalltext" align="center">
+            <b>Search</b>
+            <select name="search_scope" size="1" class="smalltext">
+              <option value="all" selected="selected">All
+              </option><option value="materials">Materials
+              </option><option value="standards">Design Center
+              </option><option value="processes">Processes
+              </option><option value="units">Units and Constants
+              </option><option value="formula">Formulas
+              </option><option value="math">Mathematics
+            </option></select>
+            <b>for</b>
+            <input size="24" name="search_string" class="smalltext" value="" type="text">
+            <input class="footnotetext" value="Go" type="submit">&nbsp;
+          </td>
+          
+        </tr>
+      </tbody></table> 
+    </td></tr>
+
+  </tbody></table>
+
+  <table border="0" cellpadding="3" cellspacing="1" width="100%">
+  <tbody><tr bgcolor="#e5cc6c">
+    <td class="footnotetext" align="center"><a class="menu2" href="http://www.efunda.com/home.cfm"><b>Home</b></a></td>
+    <td class="footnotetext" align="center"><a class="menu2" href="http://www.efunda.com/whyjoin.cfm"><b>Membership</b></a></td>
+    <td class="footnotetext" align="center"><a class="menu2" href="http://www.efunda.com/palm/store.cfm"><b>Palm Store</b></a></td>
+    <td class="footnotetext" align="center"><a class="menu2" href="http://www.efunda.com/forum/forum.cfm"><b>Forum</b></a></td>
+    <td class="footnotetext" align="center"><a class="menu2" href="http://www.efunda.com/members/people/search_people.cfm"><b>Search Member</b></a></td>
+    <td class="footnotetext" align="center"><a class="menu2" href="http://www.efunda.com/calculator.cfm"><b>Calculators</b></a></td>
+  </tr>
+  </tbody></table>
+  
+  <table border="0" cellpadding="0" cellspacing="0" width="573">
+  <tbody><tr><td colspan="13" height="3"></td></tr>
+  <tr>
+    <td valign="bottom" width="11"><img src="CircularSegment.cfm_files/llc1.gif" border="0"></td>
+    <td class="footnotetext" align="center" width="75"><a href="http://www.efunda.com/materials/"><img src="CircularSegment.cfm_files/title4.gif" align="absmiddle" border="0"></a><br><a class="title1" href="http://www.efunda.com/materials/">Materials</a></td>
+    <td valign="bottom" width="21"><img src="CircularSegment.cfm_files/mid_peg1.gif" border="0"></td>
+    <td class="footnotetext" align="center" width="74"><a href="http://www.efunda.com/DesignStandards/"><img src="CircularSegment.cfm_files/title3.gif" align="absmiddle" border="0"></a><br><a class="title1" href="http://www.efunda.com/DesignStandards/">Design</a></td>
+    <td valign="bottom" width="21"><img src="CircularSegment.cfm_files/mid_peg1.gif" border="0"></td>
+    <td class="footnotetext" align="center" width="74"><a href="http://www.efunda.com/processes/"><img src="CircularSegment.cfm_files/title2.gif" align="absmiddle" border="0"></a><br><a class="title1" href="http://www.efunda.com/processes/">Processes</a></td>
+    <td valign="bottom" width="21"><img src="CircularSegment.cfm_files/mid_peg1.gif" border="0"></td> 
+    <td class="footnotetext" align="center" width="74"><a href="http://www.efunda.com/units/"><img src="CircularSegment.cfm_files/title5.gif" align="absmiddle" border="0"></a><br><a class="title1" href="http://www.efunda.com/units/">Units</a></td>
+    <td valign="bottom" width="21"><img src="CircularSegment.cfm_files/mid_peg1.gif" border="0"></td>
+    <td class="footnotetext" align="center" width="74"><a href="http://www.efunda.com/formulae/"><img src="CircularSegment.cfm_files/title6.gif" align="absmiddle" border="0"></a><br><a class="title1" href="http://www.efunda.com/formulae/">Formulas</a></td>
+    <td valign="bottom" width="21"><img src="CircularSegment.cfm_files/mid_peg1.gif" border="0"></td>
+    <td class="footnotetext" align="center" width="75"><a href="http://www.efunda.com/math/"><img src="CircularSegment.cfm_files/title1.gif" align="absmiddle" border="0"></a><br><a class="title1" href="http://www.efunda.com/math/">Math</a></td>
+    <td valign="bottom" width="11"><img src="CircularSegment.cfm_files/lrc1.gif" border="0"></td>
+  </tr>
+  <tr><td colspan="13" height="3"></td></tr>
+  </tbody></table> 
+  </div>
+  
+
+   
+  
+  
+     
+  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+     
+        
+          <tbody><tr><td colspan="2" height="10"></td></tr>
+          <tr>
+            <td width="468"><script type="text/javascript"><!--
+google_ad_client = "pub-4893968732705577";
+google_alternate_ad_url = "http://www.efunda.com/advertising/house/googlehouse468.html";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_color_border = "FFFFFF";
+google_color_bg = "FFFFFF";
+google_color_link = "333399";
+google_color_url = "008000";
+google_color_text = "6F6F6F";
+//--></script>
+<script type="text/javascript" src="CircularSegment.cfm_files/show_ads.js">
+</script><iframe name="google_ads_frame" src="CircularSegment.cfm_files/ads.htm" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" frameborder="0" height="60" scrolling="no" width="468"></iframe></td>
+            <td class="footnotetext">
+              
+                <a href="http://efunda.4jobs.com/MKT/Content/JS/Default.asp" target="4jobs"><img src="CircularSegment.cfm_files/4jobs_search.gif" border="0"></a>
+              
+            
+            
+            </td>
+          </tr>
+        
+      
+    
+  </tbody></table>
+  
+
+  
+  
+  
+  
+  
+
+
+
+
+&nbsp;<br>
+<table border="0" cellpadding="3" cellspacing="3" width="100%">
+
+<tbody><tr>
+	<td colspan="3" align="center"><img src="CircularSegment.cfm_files/CircularSegmentGen00.gif" alt="" border="0"></td>
+</tr>
+
+<tr>
+	<td colspan="3" bgcolor="#eeeee0" height="5"><spacer type="block" height="1" width="1"></td>
+</tr>
+
+<tr>
+	<td class="smalltext" align="center" width="33%"><a href="http://www.efunda.com/math/areas/Centroid.cfm" class="title1"><b>C<sub>x</sub></b></a></td>
+
+	<td class="smalltext" align="center" width="33%"><a href="http://www.efunda.com/math/areas/Centroid.cfm" class="title1"><b>C<sub>y</sub></b></a></td>
+
+	<td class="smalltext" align="center" width="33%"><a href="http://www.efunda.com/math/areas/Area.cfm" class="title1"><b>Area</b></a></td>
+</tr>
+
+<tr>
+	<td class="smalltext" align="center"><a href="http://www.efunda.com/math/areas/Centroid.cfm"><img src="CircularSegment.cfm_files/CircularSection2.gif" alt="" border="0"></a></td>
+	<td class="smalltext" align="center"><a href="http://www.efunda.com/math/areas/Centroid.cfm"><img src="CircularSegment.cfm_files/CircularSegmentGen_cy.gif" alt="" border="0"></a></td>
+	<td class="smalltext" align="center"><a href="http://www.efunda.com/math/areas/Area.cfm"><img src="CircularSegment.cfm_files/CircularSegmentGen1.gif" alt="" border="0"></a></td>
+</tr>
+
+<tr>
+	<td colspan="3" bgcolor="#eeeee0" height="5"><spacer type="block" height="1" width="1"></td>
+</tr>
+
+<tr>
+	<td class="smalltext" align="center"><a href="http://www.efunda.com/math/areas/MomentOfInertia.cfm?Moment=x" class="title1">Moment of Inertia<br>about the <i>x</i> axis<br>
+	<b>I<sub>x</sub></b></a></td>
+	<td class="smalltext" align="center"><a href="http://www.efunda.com/math/areas/MomentOfInertia.cfm?Moment=y" class="title1">Moment of Inertia<br>about the <i>y</i> axis<br>
+	<b>I<sub>y</sub></b></a></td>
+	<td class="smalltext" align="center"><a href="http://www.efunda.com/math/areas/MomentOfInertia.cfm?Moment=z" class="title1">Polar Moment of Inertia <br>about the <i>z</i> axis<br>
+	<b>J<sub>z</sub></b></a></td>
+</tr>
+
+<tr>
+	<td class="smalltext" align="center"><a href="http://www.efunda.com/math/areas/MomentOfInertia.cfm?Moment=x"><img src="CircularSegment.cfm_files/CircularSegmentGen_ix.gif" alt="" border="0"></a></td>
+	<td class="smalltext" align="center"><a href="http://www.efunda.com/math/areas/MomentOfInertia.cfm?Moment=y"><img src="CircularSegment.cfm_files/CircularSegmentGen_iy.gif" alt="" border="0"></a></td>
+	<td class="smalltext" align="center"><a href="http://www.efunda.com/math/areas/MomentOfInertia.cfm?Moment=z"><img src="CircularSegment.cfm_files/CircularSegmentGen_jz.gif" alt="" border="0"></a></td>
+</tr>
+
+</tbody></table>
+
+
+ 
+  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tbody><tr><td height="20"></td></tr>
+  </tbody></table>
+   
+  
+     
+  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+     
+        
+          
+          <tbody><tr>
+            <td width="468"><script type="text/javascript"><!--
+google_ad_client = "pub-4893968732705577";
+google_alternate_ad_url = "http://www.efunda.com/advertising/house/googlehouse468.html";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_color_border = "FFFFFF";
+google_color_bg = "FFFFFF";
+google_color_link = "333399";
+google_color_url = "008000";
+google_color_text = "6F6F6F";
+//--></script>
+<script type="text/javascript" src="CircularSegment.cfm_files/show_ads.js">
+</script><iframe name="google_ads_frame" src="CircularSegment.cfm_files/ads_002.htm" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" frameborder="0" height="60" scrolling="no" width="468"></iframe></td>
+            <td class="footnotetext">
+              
+                <a href="http://efunda.4jobs.com/JS/Form/SignUpForm.asp" target="4jobs"><img src="CircularSegment.cfm_files/4jobs_post.gif" border="0"></a>
+              
+            
+            
+            </td>
+          </tr>
+        
+      
+    
+  </tbody></table>
+  
+
+  
+  
+
+
+  
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tbody><tr><td height="10"></td></tr>
+  
+  <tr>    
+    <td align="right" valign="bottom" width="100%"><img src="CircularSegment.cfm_files/bottom_bar.gif" border="0"></td>
+  </tr>
+  <tr><td class="footnotetext" align="right">
+    <a href="http://www.efunda.com/whyjoin.cfm">Membership</a>&nbsp; 
+    <a href="http://www.efunda.com/about/about.cfm">About Us</a>&nbsp;
+    <a href="http://www.efunda.com/members/privacy.cfm">Privacy</a>&nbsp;
+    <a href="http://www.efunda.com/disclaimer.cfm">Disclaimer</a>&nbsp;
+    <a href="http://www.efunda.com/about/contact.cfm">Contact</a>&nbsp;
+    <a href="http://www.digitalharvestmedia.com/media/efunda/index.asp">Advertise</a>
+    <br>
+    <img src="CircularSegment.cfm_files/pixel.gif" height="5" width="1"><br><span class="footnotetext">Copyright © 2007 eFunda</span>
+  </td></tr>
+  <tr><td height="10"></td></tr>
+</tbody></table>
+ 
+
+</td> 
+</tr>
+
+
+</tbody></table>
+
+
+
+
+  <script language="JavaScript">
+  <!--
+  function opensubwindow(){  
+    newsubwindow=window.open("","eFundaSubWin","screenX=50,screenY=50,left=50,top=50,toolbar=no,status=no,menubar=no,width=640,height=400,scrollbars=yes,resizable=yes,dependent=yes,directories=no");
+  newsubwindow.focus();
+  }
+  //-->
+  </script>
+
+
+  
+ 
+
+
+
+</body></html>

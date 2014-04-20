@@ -1,0 +1,62 @@
+{ 
+var google_ads = new Array(); 
+var google_ad; 
+var google_radlinks = new Array(); 
+var google_radlink; 
+var google_info = new Object(); 
+google_ad = new Object(); 
+google_ad.n = 1; 
+google_ad.type = "text"; 
+google_ad.bidtype = "CPC"; 
+google_ad.targeting_type = "contextual"; 
+google_ad.url = "http://pagead2.googlesyndication.com/pagead/iclk?sa=l&amp;ai=BMrNaMjp7R9a0N6LGqgO-jNiwBpzWjB2crNLOA8CNtwHQ9wcQARgGIMHS9wEoBDgAUJvH3Jj______wFgydbZhsij_BqgAZOwiv8DqgEKNDE1NzM2NTYyNrIBEnd3dy50aGVzY3JpcHRzLmNvbboBCTcyOHg5MF9qc8gBAdoBMWh0dHA6Ly93d3cudGhlc2NyaXB0cy5jb20vZm9ydW0vdGhyZWFkMzg3Nzc2Lmh0bWyAAgGoAwHoAx_oA-YD9QMAAQAA&amp;num=6&amp;adurl=http://www.cdearth.com/openoffice-office-suite.htm&amp;client=ca-pub-8550604525820387"; 
+google_ad.visible_url = "FreeSoftwareCD.net"; 
+google_ad.line1 = "Free Drawing Software CD"; 
+google_ad.line2 = "Complete Office Suite including"; 
+google_ad.line3 = "Drawing Software on CD - Free"; 
+google_ad.regionname = ""; 
+google_ads[0] = google_ad; 
+google_ad = new Object(); 
+google_ad.n = 2; 
+google_ad.type = "text"; 
+google_ad.bidtype = "CPC"; 
+google_ad.targeting_type = "contextual"; 
+google_ad.url = "http://pagead2.googlesyndication.com/pagead/iclk?sa=l&amp;ai=BocXGMjp7R9a0N6LGqgO-jNiwBtDj3iHAh4qOAcCNtwGwzAsQAhgHIMHS9wEoBDgAUI-qz_f8_____wFgydbZhsij_BqqAQo0MTU3MzY1NjI2sgESd3d3LnRoZXNjcmlwdHMuY29tugEJNzI4eDkwX2pzyAEB2gExaHR0cDovL3d3dy50aGVzY3JpcHRzLmNvbS9mb3J1bS90aHJlYWQzODc3NzYuaHRtbIACAagDAegDH-gD5gP1AwABAAA&amp;num=7&amp;adurl=http://www.cambria.com/services_visualbasic.asp%3Fsrc%3Dadw%26kw%3DCPG%26spl%3DVB&amp;client=ca-pub-8550604525820387"; 
+google_ad.visible_url = "www.cambria.com"; 
+google_ad.line1 = "Visual Basic Programming"; 
+google_ad.line2 = "Specialists in VB Programming"; 
+google_ad.line3 = "Writing Software since 1984"; 
+google_ad.regionname = ""; 
+google_ads[1] = google_ad; 
+google_ad = new Object(); 
+google_ad.n = 3; 
+google_ad.type = "text"; 
+google_ad.bidtype = "CPC"; 
+google_ad.targeting_type = "contextual"; 
+google_ad.url = "http://pagead2.googlesyndication.com/pagead/iclk?sa=l&amp;ai=Bj25CMjp7R9a0N6LGqgO-jNiwBsab-T_awq-6BMCNtwHQjioQAxgIIMHS9wEoBDgAUO26sqr9_____wFgydbZhsij_BqqAQo0MTU3MzY1NjI2sgESd3d3LnRoZXNjcmlwdHMuY29tugEJNzI4eDkwX2pzyAEB2gExaHR0cDovL3d3dy50aGVzY3JpcHRzLmNvbS9mb3J1bS90aHJlYWQzODc3NzYuaHRtbKgDAegDH-gD5gP1AwABAAA&amp;num=8&amp;adurl=http://www.aspose.com/adtracker/%3Fcode%3D141356061120&amp;client=ca-pub-8550604525820387"; 
+google_ad.visible_url = "www.aspose.com"; 
+google_ad.line1 = "Easy barcode programming"; 
+google_ad.line2 = "Add barcodes to your applications."; 
+google_ad.line3 = ".NET and Java support. Free Demo!"; 
+google_ad.regionname = ""; 
+google_ads[2] = google_ad; 
+google_ad = new Object(); 
+google_ad.n = 4; 
+google_ad.type = "text"; 
+google_ad.bidtype = "CPC"; 
+google_ad.targeting_type = "contextual"; 
+google_ad.url = "http://pagead2.googlesyndication.com/pagead/iclk?sa=l&amp;ai=Bp9caMjp7R9a0N6LGqgO-jNiwBp33gjbNppPdBMCNtwHgxQgQBBgJIMHS9wEoBDgAUPDC-tH4_____wFgydbZhsij_BqgAZmCh_8DqgEKNDE1NzM2NTYyNrIBEnd3dy50aGVzY3JpcHRzLmNvbboBCTcyOHg5MF9qc8gBAdoBMWh0dHA6Ly93d3cudGhlc2NyaXB0cy5jb20vZm9ydW0vdGhyZWFkMzg3Nzc2Lmh0bWyoAwHoAx_oA-YD9QMAAQAA&amp;num=9&amp;adurl=http://www.devexpress.com/free&amp;client=ca-pub-8550604525820387"; 
+google_ad.visible_url = "www.devexpress.com/free"; 
+google_ad.line1 = "40 Free .NET Controls"; 
+google_ad.line2 = "Advanced and Feature Complete"; 
+google_ad.line3 = ".NET Controls by Developer Express"; 
+google_ad.regionname = ""; 
+google_ads[3] = google_ad; 
+google_info.feedback_url = "http://services.google.com/feedback/abg?url=http://www.thescripts.com/forum/thread387776.html&amp;hl=en&amp;client=ca-pub-8550604525820387&amp;adU=FreeSoftwareCD.net&amp;adT=Free+Drawing+Software+CD&amp;adU=www.cambria.com&amp;adT=Visual+Basic+Programming&amp;adU=www.aspose.com&amp;adT=Easy+barcode+programming&amp;adU=www.devexpress.com/free&amp;adT=40+Free+.NET+Controls&amp;done=1"; 
+if (window.google_ad_request_done) { 
+google_ad_request_done(google_ads); 
+} 
+if (window.google_radlink_request_done) { 
+google_radlink_request_done(google_radlinks); 
+} 
+}

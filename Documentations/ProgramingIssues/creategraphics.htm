@@ -1,0 +1,130 @@
+<html><head>
+
+
+<meta name="keywords" content="Windows Forms, Drawing, Graphics, CreateGraphics">
+<meta name="description" content="Bob Powell describes how to use the CreateGraphics method ">
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><title>When to use CreateGraphics.</title>
+
+<link href="creategraphics_files/main.css" rel="stylesheet" type="text/css"></head><body bgcolor="#ffffff">
+
+<p><img src="creategraphics_files/faqbanner.jpg" height="70" width="800"></p>
+<table style="border-collapse: collapse;" id="table1" border="0" width="800">
+  <tbody><tr>
+    <td>
+    <h1><font face="Verdana">How to use the CreateGraphics method.&nbsp; </font>
+    </h1>
+    <p><font face="Verdana">The process of drawing on a Windows Forms 
+    application is managed by the Graphics object which is created during the 
+    Paint event. Internally, the system responds to the WM_PAINT message in the 
+    traditional manner by calling BeginPaint to obtain a device context, 
+    wrapping this device context with a managed Graphics class and passing this 
+    class to your drawing code in the PaintEventArgs which are provided first to 
+    the OnPaint protected method and then, in turn, to the Paint event.&nbsp; 
+    Generally, a correctly structured Windows Forms application or control 
+    should never need to obtain the Graphics object in any other way if the 
+    intention is to draw upon that object.</font></p>
+    <p><font face="Verdana">Windows Forms controls and forms provide the 
+    CreateGraphics method specifically to enable you to access information about 
+    the graphics abilities of the system and perform simple tasks such as 
+    measuring text. This methods ease of use however, provides many 
+    opportunities for you to misuse the event driven structure of a Windows 
+    Forms application and consequently has undesirable side effects such as 
+    graphics that disappear or which appear incomplete.</font></p>
+    <p><font face="Verdana">There are two cases in which inexperienced 
+    programmers consistently misuse the CreateGraphics method.&nbsp; They are:</font></p>
+    <ul>
+      <li><font face="Verdana">When servicing a paint event CreateGraphics is 
+      used instead of the PaintEventArgs.Graphics property.&nbsp; </font></li>
+      <li><font face="Verdana">When attempting to perform custom drawing the 
+      MyControl.CreateGraphics method is used to hijack the screen real-estate 
+      of a particular control, most often a PictureBox, upon which graphics will 
+      be plastered by brute force.&nbsp; </font></li>
+    </ul>
+    <p><font face="Verdana">Both of these methods can have serious consequences 
+    because, in the first instance the graphics provided to the paint event may 
+    not be the same as that provided by the CreateGraphics call. Specifically, 
+    in the case of double buffered controls or forms the Graphics object 
+    returned during the paint event refers to an in-memory bitmap and not to the 
+    Graphics object owned by the window.&nbsp; In the second instance, 
+    CreateGraphics is used most often in response to a button click or mouse 
+    event to asynchronously draw onto another control.&nbsp; This causes 
+    problems because at a later date the control will update itself and remove 
+    all of the carefully constructed output effectively erasing the desired 
+    graphics.&nbsp; </font></p>
+    <p><font face="Verdana">The following table will provide you with guidelines 
+    on how to obtain the graphics object and what to do with it once you've got 
+    it.&nbsp; </font></p>
+    <table style="border-collapse: collapse;" id="table2" bordercolorlight="#C0C0C0" bordercolordark="#808080" bgcolor="#ffffff" border="1" bordercolor="#ffffff" cellpadding="5" width="100%">
+      <tbody><tr>
+        <td style="font-weight: bold;" bgcolor="#00ffff"><font face="Verdana">
+        Context</font></td>
+        <td style="font-weight: bold;" bgcolor="#00ffff"><font face="Verdana">
+        Where to obtain</font></td>
+        <td style="font-weight: bold;" bgcolor="#00ffff"><font face="Verdana">&nbsp;Draw?</font></td>
+        <td style="font-weight: bold;" bgcolor="#00ffff"><font face="Verdana">&nbsp;Dispose?</font></td>
+      </tr>
+      <tr>
+        <td><font face="Verdana">The Paint Event handler</font></td>
+        <td><font face="Verdana">From the PaintEventArguments provided</font></td>
+        <td><font face="Verdana">&nbsp;Yes</font></td>
+        <td><font face="Verdana">&nbsp;No</font></td>
+      </tr>
+      <tr>
+        <td><font face="Verdana">The OnPaint protected override</font></td>
+        <td><font face="Verdana">From the PaintEventArguments provided</font></td>
+        <td><font face="Verdana">&nbsp;Yes</font></td>
+        <td><font face="Verdana">&nbsp;No</font></td>
+      </tr>
+      <tr>
+        <td><font face="Verdana">The OnPaintBackground protected override</font></td>
+        <td><font face="Verdana">From the PaintEventArguments provided</font></td>
+        <td><font face="Verdana">&nbsp;Yes</font></td>
+        <td><font face="Verdana">&nbsp;No</font></td>
+      </tr>
+      <tr>
+        <td><font face="Verdana">Outside of the Paint, OnPaint or OnPaint 
+        background when using MeasureString</font></td>
+        <td><font face="Verdana">CreateGraphics</font></td>
+        <td><font face="Verdana">&nbsp;No</font></td>
+        <td><font face="Verdana">&nbsp;Yes</font></td>
+      </tr>
+      <tr>
+        <td><font face="Verdana">Outside of Paint, OnPaint or OnPaintBackground 
+        when you need information such as DPI of the screen</font></td>
+        <td><font face="Verdana">CreateGraphics</font></td>
+        <td><font face="Verdana">&nbsp;No</font></td>
+        <td><font face="Verdana">&nbsp;Yes</font></td>
+      </tr>
+      <tr>
+        <td>When drawing on a Bitmap</td>
+        <td>Graphics.FromImage</td>
+        <td>Yes</td>
+        <td>Yes</td>
+      </tr>
+    </tbody></table>
+    </td>
+    <td valign="top">
+<script type="text/javascript"><!--
+google_ad_client = "pub-4086741107110485";
+google_ad_width = 120;
+google_ad_height = 600;
+google_ad_format = "120x600_as";
+google_ad_channel ="9438036511";
+google_color_border = ["336699","B4D0DC","A8DDA0","FDEFD2"];
+google_color_bg = ["FFFFFF","ECF8FF","EBFFED","FDEFD2"];
+google_color_link = ["0000FF","0000CC","0000CC","0000CC"];
+google_color_url = "008000";
+google_color_text = ["000000","6F6F6F","6F6F6F","000000"];
+//--></script>
+<script type="text/javascript" src="creategraphics_files/show_ads.js">
+</script><iframe name="google_ads_frame" src="creategraphics_files/ads.htm" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" frameborder="0" height="600" scrolling="no" width="120"></iframe>    </td>
+  </tr>
+  <tr>
+    <td>&nbsp;<p><font face="Verdana"><a href="http://www.bobpowell.net/faqmain.htm">Return to the GDI+ 
+    FAQ</a></font></p></td>
+  </tr>
+</tbody></table>
+<script language="javascript" src="creategraphics_files/view_Poll.htm"></script><table bgcolor="#000000" border="0" cellpadding="1" cellspacing="0" width="100"><tbody><tr><td><input name="poll_id" value="3125" type="hidden"><table class="pollcontent" border="0" cellpadding="5" cellspacing="0" width="180"><form name="custompoll" method="post" target="_blank" action="http://www.blogpoll.com/poll/act_Vote.php"></form><tbody><tr bgcolor="#0099cc"><td><div align="center"><font color="#ffffff"><b>CreateGraphics How-To</b><br>How do you rate this article?</font></div></td></tr><tr bgcolor="#0099cc"><td><font color="#000000"><input name="chosenanswer" value="1" checked="checked" type="radio"> Excellent!<br><input name="chosenanswer" value="2" type="radio"> Good<br><input name="chosenanswer" value="3" type="radio"> Average<br><input name="chosenanswer" value="4" type="radio"> Poor<br><input name="chosenanswer" value="5" type="radio"> Awful<br></font></td></tr><tr bgcolor="#0099cc"><td><div align="center"><input class="actionbutton" name="Vote" id="Vote" value="Vote!" type="submit"><br><a class="indipolllink" href="http://www.blogpoll.com/poll/view_Results.php?poll_id=3125" target="_blank"><font color="#000000">view results</font></a></div></td></tr><tr bgcolor="#0099cc"><td><div align="center"><a class="poweredlink" href="http://www.blogpoll.com/" target="_blank"><font color="#ffffff">powered by blogpoll</font></a></div></td></tr></tbody></table></td></tr></tbody></table>  
+</body></html>

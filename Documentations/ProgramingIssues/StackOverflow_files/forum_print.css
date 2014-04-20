@@ -1,0 +1,521 @@
+/* 
+Forum Style Overrides
+*/
+
+/*
+Forum Styles
+*/
+
+/*
+List Styles
+*/
+
+.ForumListCellLeftMostImageOnly
+{
+	padding: 4px;
+	
+	
+	
+	
+	
+	color: #000000;
+	font-family: Tahoma, Arial, Helvetica;
+	font-size: 8pt;
+	width: 20px;
+}
+
+.ForumListCellImageOnly
+{
+	padding: 4px;
+	color: #000000;
+	font-family: Tahoma, Arial, Helvetica;
+	font-size: 8pt;
+}
+
+.ForumSubListCellLeftMost
+{
+	padding: 2px;
+	color: #000000;
+	font-family: Tahoma, Arial, Helvetica;
+	font-size: 9pt;
+}
+
+.ForumSubListCell
+{
+	padding: 2px;
+	color: #000000;
+	font-family: Tahoma, Arial, Helvetica;
+	font-size: 9pt;
+}
+
+/*
+Styles within Lists
+*/
+
+A.ForumGroupName
+{
+	font-weight: bold;
+	font-size: 9pt;
+}
+
+.ForumGroupName:LINK
+{
+	font-weight: bold;
+	font-size: 9pt;
+	
+}
+
+.ForumGroupName:VISITED
+{
+	font-weight: bold;
+	font-size: 9pt;
+	
+}
+
+.ForumGroupName:HOVER
+{
+	text-decoration: underline;
+}
+
+/*
+Read/unread links
+*/
+
+A.ForumNameUnRead
+{
+	font-weight: bold;
+	font-size: 9pt;
+}
+
+A.ForumNameRead
+{
+	font-weight: normal;
+	font-size: 9pt;
+}
+
+.ForumNameRead:LINK
+{
+	font-weight: normal;
+	font-size: 9pt;
+	
+}
+
+.ForumNameRead:VISITED
+{
+	font-weight: normal;
+	font-size: 9pt;
+	
+}
+
+.ForumNameRead:HOVER
+{
+	text-decoration: underline;
+}
+
+.ForumNameUnRead:LINK
+{
+	font-weight: bold;
+	font-size: 9pt;
+	
+}
+
+.ForumNameUnRead:VISITED
+{
+	font-weight: bold;
+	font-size: 9pt;
+	
+}
+
+.ForumNameUnRead:HOVER
+{
+	text-decoration: underline;
+}
+
+/*
+Post Styles
+*/
+
+UL.ForumPostList
+{
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+}
+
+.ForumPostArea
+{
+	margin-top: 12px;
+	margin-bottom: 12px;
+}
+
+.ForumPostHeader
+{
+	padding: 4px;
+	padding-left: 8px;
+	
+	border-style: solid;
+	border-width: 1px;
+	border-color: #000000;
+	color: black;
+	font-family:Verdana, Tahoma, Arial, Helvetica;
+	font-size: 9px;
+	font-weight: bold;
+	margin: 0px;
+	vertical-align: middle;
+}
+
+.ForumPostHeader span
+{
+	color: #000000;
+}
+
+.ForumPostManagementArea
+{
+	
+	border-style: solid;
+	border-width: 0px;
+	border-bottom-width: 1px;
+	border-color: #000000;
+	font-family: Tahoma, Arial, Helvetica;
+	color: #000000;
+}
+
+.ForumPostTitleArea
+{
+		
+	border-style: solid;
+	border-width: 0px;
+	border-bottom-width: 1px;
+	border-color: #000000;
+	padding: 4px;
+}
+
+.ForumPostTitle
+{
+	font-family: Tahoma, Arial, Helvetica;
+	font-size: 120%;
+	font-weight: bold;
+	color: #000000;
+	margin: 0px;
+	padding: 0px;
+}
+
+.ForumPostBodyArea
+{
+	width: 100%;
+	overflow: visible;
+	vertical-align: top;
+}
+
+.ForumPostContentArea
+{
+	font-family: Tahoma, Arial, Helvetica;
+	border-style: solid;
+	border-width: 0px;
+	border-color: #000000;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+}
+
+.ForumPostUserArea
+{
+	width: 200px;
+	
+	padding: 4px;
+	text-align: center;
+	border-style: solid;
+	border-width: 1px;
+	border-top-width: 0px;
+	border-color: #000000;
+}
+
+.ForumPostFooterArea
+{
+	border-style: solid;
+	border-width: 1px;
+	border-top-width: 0px;
+	border-left-width: 0px;
+	border-color: #000000;
+	font-family: Tahoma, Arial, Helvetica;
+	padding: 4px;
+	line-height: 20px;
+	vertical-align: bottom;	
+}
+
+.ForumPostContentText
+{
+	font-size: 90%;
+	text-align: left;
+	padding: 8px;
+	margin-bottom: 20px;
+}
+
+.ForumPostUserName
+{
+	margin: 0px;
+	margin-top: 4px;
+	padding-left: 4px;
+	font-size: 12px;
+	color: #666666;
+	font-family:Verdana, Tahoma, Arial, Helvetica;
+	padding-bottom: 4px;
+}
+
+.ForumPostUserName a:link, .ForumPostUserName a:active, .ForumPostUserName a:visited, .ForumPostUserName a:hover
+{
+	margin: 0px;
+	color: #666666;
+	font-size: 12px;
+	text-decoration: none;
+}
+
+.ForumPostUserAvatar
+{
+	padding: 4px;
+	padding-right: 0px;
+}
+
+.ForumPostRoleIcons
+{
+	padding-top: 4px;
+	padding-bottom: 4px;
+}
+
+.ForumPostRoleIcons img
+{
+	padding-left: 4px;
+	padding-right: 4px;
+}
+
+.ForumPostAttachment
+{
+	font-family: Tahoma, Arial, Helvetica;
+	font-size: 90%;
+	font-weight: bold;
+	color: #000000;
+	padding: 4px;
+	padding-left: 8px;
+}
+
+.ForumPostThreadStatus
+{
+	float: right;
+	padding: 4px;
+	color: #000000;
+	font-weight: bold;
+}
+
+.ForumPostButtons
+{
+	margin: 4px;
+	margin-left: 0px;
+	padding-left: 4px;
+	text-align: right;
+}
+
+UL.ForumPostStatistics
+{
+	text-align: right;
+	font-size: 90%;
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+	margin-top: 4px;
+	margin-right: 8px;
+}
+
+UL.ForumPostStatistics LI
+{
+	display: inline;
+	padding-left: 16px;
+	font-size: 90%;
+}
+
+UL.ForumPostUserPropertyList
+{
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;	
+	padding-left: 4px;
+}
+
+UL.ForumPostUserPropertyList LI
+{
+	margin: 4px;
+	margin-left: 2px;
+	margin-right: 10px;
+	font-size: 90%;
+}
+
+/*
+Header Definitions
+*/
+
+.ForumThreadImageAndNameHeader
+{
+}
+
+.ForumThreadLastPostHeader
+{
+	text-align: center;
+}
+
+.ForumThreadTotalThreadsHeader
+{
+	text-align: center;
+}
+
+.ForumThreadTotalPostsHeader
+{
+	text-align: center;
+}
+
+.ForumThreadMoveHeader
+{
+	text-align: center;
+}
+
+.ForumMyImageAndNameHeader
+{
+}
+
+.ForumMyRepliesHeader
+{
+	text-align: center;
+}
+
+.ForumMyViewsHeader
+{
+	text-align: center;
+}
+
+.ForumMyLastPostHeader
+{
+	text-align: center;
+}
+
+.ForumGroupImageAndNameHeader
+{
+}
+
+.ForumGroupLastPostHeader
+{
+	text-align: left;
+}
+
+.ForumGroupTotalThreadsHeader
+{
+	text-align: center;
+}
+
+.ForumGroupTotalPostsHeader
+{
+	text-align: center;
+}
+
+/* 
+Column Defitions
+*/
+
+.ForumThreadImageColumn
+{
+	width: 20px;
+}
+
+.ForumThreadNameColumn
+{
+	width: 40%;
+}
+
+.ForumThreadLastPostColumn
+{
+	width: 24%;
+	font-size: 7pt;
+	text-align: center;
+}
+
+.ForumThreadTotalThreadsColumn
+{
+	width: 18%;
+	text-align: center;
+}
+
+.ForumThreadTotalPostsColumn
+{
+	width: 18%;
+	text-align: center;
+}
+
+.ForumThreadMoveColumn
+{
+	text-align: center;
+}
+
+.ForumMyImageColumn
+{
+	width: 20px;
+}
+
+.ForumMyNameColumn
+{
+	width: 40%;
+}
+
+.ForumMyRepliesColumn
+{
+	width: 18%;
+	text-align: center;
+}
+
+.ForumMyViewsColumn
+{
+	width: 18%;
+	text-align: center;
+}
+
+.ForumMyLastPostColumn
+{
+	width: 24%;
+	font-size: 8pt;
+	text-align: left;
+}
+
+.ForumGroupImageColumn
+{
+	width: 20px;
+}
+
+.ForumGroupNameColumn
+{
+	width: 40%;
+}
+
+.ForumGroupLastPostColumn
+{
+	width: 24%;
+	font-size: 8pt;
+	text-align: left;
+}
+
+.ForumGroupTotalThreadsColumn
+{
+	width: 18%;
+	text-align: center;
+}
+
+.ForumGroupTotalPostsColumn
+{
+	width: 18%;
+	text-align: center;
+}
+
+/*
+Quoting
+*/
+
+BLOCKQUOTE
+{
+	
+	
+	
+}

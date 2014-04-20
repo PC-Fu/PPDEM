@@ -1,0 +1,217 @@
+/* globals */
+body { background-color: #ffffff; margin: 0px 0px 15px 10px; }
+body, div, span, ul, li, input, select { color: #555555; font-family: verdana, sans-serif; }
+a, a:visited { color: #0860A8; text-decoration: none; }
+a:hover { color: #0860A8; text-decoration: underline; }
+
+/* header line/body container */
+.headerLine { border-top: 1px solid #bababa; font-size: 1px; position: absolute; top: 85px; width: 760px; }
+.bodyContainer { position: absolute; top: 86px; width: 760px; }
+.bodyContainer2 { position: relative; }
+
+/* breadcrumb */
+.breadCrumb { color: #7D7E80; font-family: verdana, sans-serif; font-size: 10px; padding: 6px 10px 14px 15px; }
+.breadCrumb a, .breadCrumb a:hover, .breadCrumb a:visited { color: #7D7E80; text-decoration: underline; }
+
+/* page heading, tagline */
+.pageHeading { color: #000000; font-size: 21px; font-weight: normal; line-height: 26px; margin: 0px; padding: 0px 0px 23px 15px; }
+.pageHeadingReg { color: #000000; display: inline; font-size: 18px; vertical-align: top; }
+.pageTagline { color: #555555; font-size: 12px; font-weight: bold; line-height: 17px; margin-top: -23px; padding: 0px 0px 13px 15px; }
+
+/* site identifier */
+.siteIdentifier { color: #0860A8; font-size: 11px; font-weight: bold; margin-left: 8px; padding-bottom: 10px; text-decoration: none; }
+
+/* leftnav */
+.leftNav { background-color: #E6E6E6; font-family: verdana, sans-serif; font-size: 10px; vertical-align: top; width: 170px; }
+.leftNav li { list-style-type: none; margin-left: -32px; padding-bottom: 8px; padding-left: 0px; }
+.leftNav li.leftNavHeading { color: #000000; font-weight: bold; padding-bottom: 6px; }
+.leftNav ul { margin-bottom: 0px; margin-top: 0px; padding-top: 0px; }
+.leftNav select { font-size: 10px; }
+
+/* body */
+.sectionHeading, .sectionHeadingText { color: #000000; font-size: 12px; font-weight: bold; }
+.sectionHeading td {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #000000;PADDING-BOTTOM: 0px; MARGIN-BOTTOM: 0px;
+}
+.sectionHeading { border-bottom-style: solid; border-bottom-width: 1px; border-color: #bababa; margin-bottom: 4px; padding-bottom: 4px; }
+.sectionBody, .sectionBodyText { font-size: 10px; }
+.sectionBody { padding-bottom: 15px; }
+.sectionBody ul { margin-bottom: 0px; margin-top: 2px; }
+.sectionBody ul li { list-style-image: url("http://www.intel.com/plt/cd/software/shared/images/3.0/bullet.gif"); margin-left: -22px; padding: 2px 0px 2px 0px; }
+.sectionBody ol { margin-bottom: 0px; margin-top: 2px; }
+.sectionBody ol li { margin-left: -9px; padding: 2px 0px 2px 0px; }
+
+.sectionBody-abs { font-size: 10px; }
+.sectionBody-abs { padding-bottom: 15px; }
+.sectionBody-abs ul { margin-bottom: 0px; margin-top: 2px; margin-left: 52px; padding-right: 0px; padding-left: 175px; padding-bottom: 2px; padding-top: 2px; }
+.sectionBody-abs ul li { list-style-image: url("http://www.intel.com/plt/cd/software/shared/images/3.0/bullet.gif"); margin-left: -22px; padding: 2px 0px 2px 0px; }
+.sectionBody-abs ol { margin-bottom: 0px; margin-top: 2px; }
+.sectionBody-abs ol li { margin-left: -9px; padding: 2px 0px 2px 0px; }
+
+/* anchor links (jump links) */
+.anchorLinks { padding-bottom: 10px; }
+.anchorLinksBottom, .anchorLinksTop { background-repeat: no-repeat; height: 5px; line-height: 1px; width: 372px; }
+.anchorLinksTop { background-image: url(http://www.intel.com/sites/templates/pix/moduleWhiteTop.gif); background-position: bottom; }
+.anchorLinksBottom { background-image: url(http://www.intel.com/sites/templates/pix/moduleWhiteBottom.gif); background-position: top; }
+.anchorLinksContent { background-image: url(http://www.intel.com/sites/templates/pix/moduleWhiteContentArea.gif); padding: 7px 10px 5px 10px; vertical-align: top; }
+.anchorLinksContent, .anchorLinksContentText { font-size: 11px; }
+.anchorLinks li { list-style-type: none; margin-left: -40px; padding: 0px 0px 6px 0px; }
+.anchorLinks ul { margin-bottom: 0px; margin-top: 2px; }
+
+/* modules */
+.module { margin-bottom: 0px; padding-bottom: 10px; width: 178px; }
+.moduleBottom, .moduleTop { background-repeat: no-repeat; line-height: 1px; width: 178px; }
+.moduleTop { background-image: url(http://www.intel.com/sites/templates/pix/moduleTop.gif); background-position: bottom; height: 5px; }
+.moduleBottom { background-image: url(http://www.intel.com/sites/templates/pix/moduleBottom.gif); background-position: top; height: 6px; }
+.moduleContent { background-image: url(http://www.intel.com/sites/templates/pix/moduleContentArea.gif); font-size: 10px; padding: 10px 10px 10px 10px; vertical-align: top; }
+.borderContent { font-size: 10px; padding: 10px 10px 10px 10px; vertical-align: top; }
+.moduleHeading { background-image: url(http://www.intel.com/sites/templates/pix/moduleTitle.gif); color: #000000; font-size: 12px; font-weight: bold; padding: 4px 10px 9px 10px; vertical-align: top; }
+.moduleContent li { list-style-image: url("http://www.intel.com/plt/cd/software/shared/images/3.0/bullet.gif"); margin-left: -22px; padding: 2px 0px 2px 0px; }
+.moduleContent ul { margin-bottom: 0px; margin-top: 2px; }
+
+.moduleWide { margin-bottom: 0px; padding-bottom: 10px; width: 373px; }
+.moduleBottomWide, .moduleTopWide { background-repeat: no-repeat; line-height: 1px; width: 373px; }
+.moduleTopWide { background-image: url(http://cache-www.intel.com/plt/cd/software/shared/images/3.0/moduleTopWide.gif); background-position: bottom; height: 5px; }
+.moduleBottomWide { background-image: url(http://cache-www.intel.com/plt/cd/software/shared/images/3.0/moduleBottomWide.gif); background-position: top; height: 6px; }
+.moduleContentWide { background-image: url(http://cache-www.intel.com/plt/cd/software/shared/images/3.0/moduleContentAreaWide.gif); font-size: 10px; padding: 10px 10px 10px 10px; vertical-align: top; }
+.borderContentWide { font-size: 10px; padding: 10px 10px 10px 10px; vertical-align: top; }
+.moduleHeadingWide { background-image: url(http://cache-www.intel.com/plt/cd/software/shared/images/3.0/moduleTitleWide.gif); color: #000000; font-size: 12px; font-weight: bold; padding: 4px 10px 9px 10px; vertical-align: top; }
+.moduleContentWide li { list-style-image: url("http://www.intel.com/plt/cd/software/shared/images/3.0/bullet.gif"); margin-left: -22px; padding: 2px 0px 2px 0px; }
+.moduleContentWide ul { margin-bottom: 0px; margin-top: 2px; }
+
+.dboxtop {PADDING-RIGHT: 0px; BACKGROUND-POSITION: 50% top; PADDING-LEFT: 0px; FONT-SIZE: 1px; BACKGROUND-IMAGE: url(http://cache-www.intel.com/plt/cd/software/shared/images/3.0/dboxtop.gif); PADDING-BOTTOM: 0px; MARGIN: 16px 0px 0px; PADDING-TOP: 0px; BACKGROUND-REPEAT: no-repeat; HEIGHT: 7px}
+.dboxbtm {PADDING-RIGHT: 0px; BACKGROUND-POSITION: 50% bottom; PADDING-LEFT: 0px; FONT-SIZE: 1px; BACKGROUND-IMAGE: url(http://cache-www.intel.com/plt/cd/software/shared/images/3.0/dboxbtm.gif); PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; BACKGROUND-REPEAT: no-repeat; HEIGHT: 12px}
+DIV.dgrad {BORDER-RIGHT: #ccc 1px solid; BACKGROUND: url(http://cache-www.intel.com/plt/cd/software/shared/images/3.0/box_gradient.jpg) repeat-x left bottom; BORDER-LEFT: #ccc 1px solid}
+
+/* tables */
+.tableFormat1 { font-size: 10px; }
+.tableFormat1FirstRow { background-color: #555555; color: #ffffff; font-size: 12px; font-weight: bold; }
+.tableFormat1FirstRowCol { border-right: 1px solid #bababa; }
+.tableFormat1RowOdd { background-color: #e3e3e3; }
+.tableFormat1RowEven { background-color: #ffffff; }
+.tableFormat1Col { border-bottom: 1px solid #bababa; border-right: 1px dotted #bababa; }
+
+/* tabs */
+.tabNav { border-bottom-style: solid; border-bottom-width: 1px; border-color: #bababa; display: inline; float: left; font-size: 10px; line-height: normal; margin-bottom: 0px; width: 568px; }
+.tabNav ul { list-style: none; margin: 0px; padding: 0px 10px 0px 0px; }
+.tabNav li { display: inline; margin: 0px; padding: 0px; }
+.tabNav a { background: url("http://www.intel.com/plt/cd/software/shared/images/3.0/tableft.gif") no-repeat left top; float: left; margin: 0px 4px 0px 0px; padding: 0px 0px 0px 4px; text-decoration: none; }
+.tabNav a span { background: url("http://www.intel.com/plt/cd/software/shared/images/3.0/tabright.gif") no-repeat right top; color: #666666; display: block; float: left; padding: 5px 15px 4px 6px; }
+/* Commented Backslash Hack hides rule from IE5-Mac \*/
+.tabNav a span { float: none; }
+/* End IE5-Mac hack */
+.tabNav a:hover span { color: #000000; }
+.tabNav a:hover { background-position: 0% -42px; }
+.tabNav a:hover span { background-position: 100% -42px; text-decoration: none; }
+.tabNav #current a { background-position: 0% -42px; }
+.tabNav #current a span { background-position: 100% -42px; }
+
+/* subnavigation */
+.subNav { clear: both; font-size: 10px; padding-bottom: 15px; }
+.subNav ul { list-style-type: none; margin: 0px; padding-bottom: 15px; padding-left: 0px; }
+.subNav li { float: left; margin-bottom: 5px; margin-right: 5px; padding: 5px 10px 5px 10px; }
+.subNav #current { background-color: #0860A8; }
+.subNav #current a { color: #ffffff; text-decoration: none; }
+
+/* buttons */
+.button { margin-bottom: 10px; width: 178px; }
+.buttonContent { border-left: 1px solid #bababa; border-right: 1px solid #bababa; color: #0860A8; cursor: pointer; cursor: hand; font-size: 10px; font-weight: bold; padding: 0px 4px 0px 4px; text-decoration: none; }
+.buttonLargeTop { background-image: url(http://www.intel.com/sites/templates/pix/buttonLarge_top.gif); background-repeat: no-repeat; height: 5px; line-height: 1px; width: 178px; }
+.buttonLargeBottom { background-image: url(http://www.intel.com/sites/templates/pix/buttonLarge_bottom.gif); background-repeat: no-repeat; height: 6px; line-height: 1px; width: 178px; }
+.buttonLarge_off { background-color: #f6f6f6; color: #0860A8; padding: 6px 6px 6px 6px; }
+.buttonLarge_on  { background-color: #ebebeb; color: #0860A8; padding: 6px 6px 6px 6px; }
+
+/* misc */
+.backToTopCaret { background-image: url(http://www.intel.com/sites/templates/pix/carrot_up.gif); background-position: center; background-repeat: no-repeat; display: inline; height: 10px; margin-right: 4px; padding: 0px; vertical-align: top; width: 6px; }
+
+/* in corp headers/footers - untouched */
+.hide { display: none !important; }
+.dhtmlmenuitem { padding: 5px 8px 5px 8px; }
+a.dhtmlmenulink { color: #0860A8; font-size: 11px; text-decoration: none; }
+a.dhtmlmenulink:hover { color: #0860A8; text-decoration: none; }
+a.dhtmlmenulink:visited { color: #0860A8; text-decoration: none; }
+.v3headersearch { width: 95px; height: 16px; border: 1px solid #CCCCCC; padding: 0px; vertical-align: top; }
+.v3iMask { position: absolute; left: -300px; top: -300px; z-index: 10; }
+.v3inppad { padding-top: 1px; }
+.v3masthead { font-size: 10px; position: relative; top: 0; width: 760px; height: 85px; }
+.v3masthead ul { padding-left: 0px; display: block; margin: 0px; list-style-type: none; }
+.v3masthead ul li { display: block; float: left; position: relative; }
+.v3footer { font-size: 10px; position: relative; width: 760px; }
+.v3footer ul { padding-left:0px; display: block; margin: 0px; list-style-type: none; }
+.v3footer ul li { display: block; float: left; position: relative; }
+.v3footer { height: 30px; border-top: 2px solid #bababa; }
+.v3nav { position: relative; background-image: url(http://cache-www.intel.com/plt/cd/gradient_top.gif); background-position: right; height: 28px; padding-top: 0px; }
+.v3navCont { height: 60px; }
+.v3navdhtml { position: relative; float: right; padding-top: 0px; }
+.v3navend { font-size: 10px; color: #0860A8; padding-left: 8px; }
+.v3navend2 { font-size: 10px; color: #0860A8; padding-left: 8px; padding-right: 8px; }
+.v3navoff { color: #333333; }
+a.v3navoff, a.v3navoff:visited { color: #333333; text-decoration: none; }
+a.v3navoff:hover  { color: #333333; text-decoration: underline; }
+.v3navpad { font-size: 10px; color: #0860A8; padding-left: 8px; padding-right: 8px; border-right: 1px solid #BDBABD; }
+.v3navstart { font-size: 10px; color: #0860A8; padding-left: 28px; }
+.v3navul { padding-top: 7px; }
+.v3search { float: right; margin: 5px 8px 0px 0px; }
+
+/*
+v3_ie.css:
+.v3inppad { padding-top:1px; }
+
+v3_macie.css:
+.v3search { position: absolute; top:0; left:10; margin: 5px 8px 0px 0px; }
+*/
+
+/* for tag cloud */
+.font1 { font-size: 9px; }
+.font2 { font-size: 10px; }
+.font3 { font-size: 11px; }
+.font4 { font-size: 12px; }
+.font5 { font-size: 13px; }
+
+/* printable */
+@media print {
+   .leftNav, #rightNav, #headerLine, #header, #footer { display: none; }
+   .bodyContainer { position: relative; top: 5px; }
+}
+
+/* ISPP new page classes */
+.dboxtop {
+	 PADDING-RIGHT: 0px; BACKGROUND-POSITION: 50% top; PADDING-LEFT: 0px; FONT-SIZE: 0px;  BACKGROUND-IMAGE: url(http://www.intel.com/sites/templates/pix/moduleWhiteTop.gif); PADDING-BOTTOM: 0px; MARGIN: 16px 0px 0px; PADDING-TOP: 0px; BACKGROUND-REPEAT: repeat; HEIGHT: 5px
+}
+.dboxbtm {
+	PADDING-RIGHT: 0px; BACKGROUND-POSITION: 50% bottom; PADDING-LEFT: 0px; FONT-SIZE: 1px; BACKGROUND-IMAGE: url(http://www.intel.com/sites/templates/pix/moduleWhiteBottom.gif); PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; BACKGROUND-REPEAT: no-repeat; HEIGHT: 6px
+}
+
+.dcontent {
+	padding:10px; FONT-SIZE: 10px; BORDER-LEFT: 1px solid #ccc; BORDER-RIGHT: 1px solid #ccc; BACKGROUND-POSITION: 50% top; BACKGROUND-IMAGE: url('http://fm1heron.cps.intel.com/plt/cd/software/shared/images/3.0/dboxgradient.gif');
+}
+.dboxHeading {
+	 PADDING-LEFT: 10px; FONT-WEIGHT: bold; FONT-SIZE: 12px; BORDER-BOTTOM: 1px solid #ccc; BORDER-LEFT: 1px solid #ccc; BORDER-RIGHT: 1px solid #ccc; BACKGROUND-POSITION: 50% top; BACKGROUND-IMAGE: url('http://fm1heron.cps.intel.com/plt/cd/software/shared/images/3.0/dboxgradient.gif');  
+}
+.marqueeHeading {
+	PADDING-RIGHT: 10px; width:130px; BORDER-TOP: 1px solid #ccc; DISPLAY: inline; PADDING-LEFT: 10px; FONT-WEIGHT: bold; FONT-SIZE: 12px; BACKGROUND-IMAGE: url(http://fm1heron.cps.intel.com/plt/cd/software/shared/images/3.0/marqueehead.gif); PADDING-BOTTOM: 9px; VERTICAL-ALIGN: top; COLOR: #000000; PADDING-TOP: 4px
+}
+.marqueeContent {
+	 PADDING-RIGHT: 10px;  width:130px;  BORDER-BOTTOM: 1px solid #ccc; PADDING-LEFT: 10px; FONT-SIZE: 10px; BACKGROUND-IMAGE: url(http://fm1heron.cps.intel.com/plt/cd/software/shared/images/3.0/marqueegray.gif); PADDING-BOTTOM: 10px; VERTICAL-ALIGN: top; PADDING-TOP: 10px
+}
+.pageHeadingnew {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 15px; FONT-WEIGHT: normal; FONT-SIZE: 18px; PADDING-BOTTOM: 15px; MARGIN: 0px; COLOR: #000000; LINE-HEIGHT: 15px; PADDING-TOP: 0px
+}
+.loginBar{
+	BACKGROUND-IMAGE: url(http://www.intel.com/plt/cd/software/shared/images/3.0/logingradient.gif); MARGIN: 0px; WIDTH: 185px; LINE-HEIGHT: 17px; height:67px; PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; MARGIN: 0px; PADDING-TOP: 5px
+}
+.border1 
+{
+	border:1px solid #E0E0E0; margin:0em 0; padding:7px; text-align:left; vertical-align:top; border-spacing: 0px; border-collapse:collapse; 
+}
+.tableBodyText
+{
+	font-family:arial,verdana,sans-serif; font-size: 9px; font-weight:bold; 
+}
+
+/* temporary for SEO */
+H1.pageHeading {margin-left: -15px; margin-bottom: -25px;}
+H2.sectionHeadingText {margin-top:0px}
+H2.sectionHeading {margin-top:0px}
+H3.sectionBodyText {font-size:11px;font-weight:bold;margin-bottom:-15px;margin-top:0px;}
+H3.sectionBody {font-size:11px;font-weight:bold;margin-bottom:-15px;margin-top:0px;}

@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+
+  <title></title>
+</head><body topmargin="1" rightmargin="1">
+  <form method="post" action="http://app4.intellicontact.com/icp/signup.pl" name="icpsignup" onsubmit="return verifyRequiredTemp();">
+    <input name="errorredirect" value="http://www.intellicontact.com/signup/error.html" type="hidden">
+    <input name="redirect" value="http://www.devasp.net/include/nl_thankyou.htm" type="hidden">
+    
+    <input name="listid" value="18151" type="hidden">
+    <input name="specialid:18151" value="0YH7" type="hidden">
+    <input name="reallistid" value="1" type="hidden">
+
+    <script language="javascript">
+        function verifyRequired() {
+            if (document.icpsignup.fields_fname.value == "") {
+                alert("The Name: field is required.");
+                return false;
+            }
+            if (document.icpsignup.fields_email.value == "") {
+                alert("The Email: field is required.");
+                return false;
+            }
+        }
+        function verifyRequiredTemp() 
+        {
+  if (document.icpsignup.fields_fname.value == "") 
+  {
+    alert("The Name: field is required.");
+    return false;
+  }
+    var Email;
+    Email = /\w+([\.-]?\w+)*@\w+([\.-]?\w+)*\.(\w{2}|(com|net|org|edu|int|mil|gov|arpa|biz|aero|name|coop|info|pro|museum))*/;
+
+    if (document.icpsignup.fields_email.value.search(Email) == -1) 
+    {
+        alert("The Email is not correct.");
+        return false;
+    }
+    if (document.icpsignup.fields_email.value== "a") 
+    {
+          alert("The Email: Not Correct");
+          return false;
+    }
+return true;
+}
+    </script>
+
+    <table style="border-collapse: collapse;" border="1" bordercolor="#ffffff" cellpadding="2" cellspacing="0" width="112">
+      <tbody><tr>
+        <td style="text-align: center;" bgcolor="#ffffff" nowrap="nowrap">
+          <font size="2" color="#ff0000" face="verdana"><b>DevASP Weekly<br>News Letter:</b></font>
+<b>        </b></td>
+      </tr>
+      <tr>
+        <td bgcolor="#ffffff" nowrap="nowrap" valign="top">
+          <b><font size="2" color="#000000" face="Arial, Helvetica, sans-serif">Your Name:</font></b>
+          <br>
+          <input name="fields_fname" size="12" type="text">
+          <br>
+          <b><font size="2" color="#000000" face="Arial, Helvetica, sans-serif">Email Address:</font></b>
+          <br>
+          <input name="fields_email" size="12" type="text">
+          <br><img src="CPUID_files/clear.gif" height="5" width="1"><br>
+          <center><input name="Submit" value="Submit" type="submit"></center>
+          </td>
+      </tr>
+    </tbody></table>  
+</form></body></html>

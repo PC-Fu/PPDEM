@@ -1,0 +1,337 @@
+﻿body 
+{
+    FONT-SIZE: 10pt;
+    FONT-FAMILY: Arial, Verdana
+}
+PRE
+{
+  clear: none;
+  border-right: darkgray thin solid;
+  table-layout: auto;
+  border-top: darkgray thin solid;
+  font-size: 8pt;
+  overflow: auto;
+  border-left: darkgray thin solid;
+  width: 485px;
+  cursor: text;
+  border-bottom: darkgray thin solid;
+  font-family: "Courier New" , monospace;
+  border-collapse: separate;
+  background-color: whitesmoke;
+}
+A
+{
+    FONT-SIZE: 10pt;
+    FONT-FAMILY: Arial, Verdana
+}
+td
+{
+	FONT-SIZE: 10pt;
+  FONT-FAMILY: Arial, Verdana;
+  vertical-align:top;
+}
+.slink a
+{
+	font-weight: bold;
+	font-size: 9pt;
+	line-height: 15px;
+	padding-left: 4px;
+	color: #ffff00;
+	font-family: Arial, Helvetica, sans-serif;
+	letter-spacing: normal;
+	text-decoration: none;
+}
+a:hover
+{
+COLOR: #ff0000
+}
+.head1
+{
+    FONT-WEIGHT: 800;
+    FONT-SIZE: 15pt;
+    COLOR: #686898;
+    FONT-FAMILY: Arial
+}
+.Heading1
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 18pt;
+    COLOR: #686898;
+    FONT-FAMILY: Arial
+}
+.main
+{
+    FONT-SIZE: 10pt;
+    COLOR: #000000;
+    FONT-FAMILY: Arial
+}
+.b
+{
+    FONT-SIZE: 10pt;
+    COLOR: #0000ff;
+    FONT-FAMILY: Arial
+}
+.three
+{
+    FONT-SIZE: 12pt;
+    COLOR: #0000ff;
+    FONT-FAMILY: Arial
+}
+.yellow
+{
+    BACKGROUND: yellow
+}
+.YELL
+{
+    BACKGROUND: #fffcc5;
+    COLOR: #000000
+}
+.EE
+{
+    BACKGROUND: #eeeeee
+}
+.Scroller
+{
+    FONT-SIZE: 6pt;
+    COLOR: #0000ff;
+    FONT-FAMILY: Arial, Verdana
+}
+.slink
+{
+	font-weight: bold;
+	font-size: 9pt;
+	padding-bottom: 20px;
+	padding-left: 4px;
+	color: #ffff00;
+	font-family: Arial, Helvetica, sans-serif;
+	letter-spacing: normal;
+	text-decoration: none;
+}
+.ButtonYellow
+{
+    BORDER-RIGHT: black 1px double;
+    BORDER-TOP: black 1px double;
+    FONT-SIZE: 11px;
+    BORDER-LEFT: black 1px double;
+    BORDER-BOTTOM: black 1px double;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    BACKGROUND-COLOR: #ffffdb
+}
+.Small
+{
+    FONT-SIZE: 8pt;
+    COLOR: black;
+    FONT-FAMILY: Verdana;
+    LETTER-SPACING: normal
+}
+.SmallGray
+{
+    FONT-SIZE: 8pt;
+    COLOR: #999999;
+    FONT-FAMILY: Verdana;
+    LETTER-SPACING: normal
+}
+.SmallBold
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 8pt;
+    COLOR: black;
+    FONT-FAMILY: Verdana;
+    LETTER-SPACING: normal
+}
+.SmallLink
+{
+    FONT-SIZE: 8pt;
+    FONT-FAMILY: Arial, verdana
+}
+.TextArea
+{
+    BORDER-RIGHT: black 1px solid;
+    BORDER-TOP: black 1px solid;
+    BORDER-LEFT: black 1px solid;
+    COLOR: indigo;
+    BORDER-BOTTOM: black 1px solid;
+    BACKGROUND-COLOR: lightyellow
+}
+.TextBox
+{
+    BORDER-RIGHT: black 1px solid;
+    BORDER-TOP: black 1px solid;
+    BORDER-LEFT: black 1px solid;
+    COLOR: indigo;
+    BORDER-BOTTOM: black 1px solid;
+    BACKGROUND-COLOR: lightyellow
+}
+.TextBoxGray
+{
+    BORDER-RIGHT: black 1px solid;
+    BORDER-TOP: black 1px solid;
+    MARGIN-TOP: 2pt;
+    MARGIN-BOTTOM: 2pt;
+    BORDER-LEFT: black 1px solid;
+    COLOR: black;
+    BORDER-BOTTOM: black 1px solid;
+    BACKGROUND-COLOR: #efefef
+}
+.LightImage
+{
+    FILTER: alpha(opacity=35)
+}
+H2
+{
+    FONT-SIZE: medium;
+    COLOR: #0000ff;
+    FONT-FAMILY: Arial, Verdana
+}
+.TDWithNoTop
+{
+    BORDER-TOP: 0pt
+}
+.RatingDropDown
+{
+    BORDER-RIGHT: black 1px solid;
+    BORDER-TOP: black 1px solid;
+    FONT-SIZE: 7pt;
+    BORDER-LEFT: black 1px solid;
+    COLOR: indigo;
+    BORDER-BOTTOM: black 1px solid;
+    BACKGROUND-COLOR: lightyellow
+}
+LI
+{
+    MARGIN-TOP: 2pt
+}
+.CodeArea
+{
+    BORDER-RIGHT: 1px solid;
+    PADDING-RIGHT: 4px;
+    BORDER-TOP: 1px solid;
+    PADDING-LEFT: 4px;
+    FONT-SIZE: 11px;
+    PADDING-BOTTOM: 4px;
+    BORDER-LEFT: 1px solid;
+    WIDTH: 100px;
+    COLOR: #333333;
+    PADDING-TOP: 4px;
+    BORDER-BOTTOM: 1px solid;
+    FONT-FAMILY: "Courier New", Courier, mono;
+    BACKGROUND-COLOR: #f1f1f1
+}
+table.code
+{
+	background-color: #F5EACF;
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+.Prod
+{
+	text-decoration:none;
+	font-size:9pt;
+	font-family: Arial
+}
+.TD_Small
+{
+ font-family:Verdana;
+ font-size:11px;
+ font-weight:bold;
+}
+.TD_Small_Simple
+{
+ font-family:Verdana;
+ font-size:11px;
+}
+table.table1 
+	{
+	border-width: 1px;
+	border-style: solid;
+	border-color: #cccccc;
+	border-collapse: collapse;
+	width:100%;
+	}
+table.table1 td {
+	border-width: 1px;
+	border-style: solid;
+	border-color: #cccccc;
+}
+table.table1 table td {
+	border-width: 0px;
+	border-style:none;
+}
+#aboutme
+	{
+	display: none;
+	}
+	
+	
+.comment A IMG {
+	BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none
+}
+DIV.comment {
+	BACKGROUND: none transparent scroll repeat 0% 0%; MARGIN-BOTTOM: 25px; BORDER-BOTTOM: #fff 1px solid; POSITION: relative
+}
+DIV.comment_back {
+	MARGIN-TOP: -135px; BACKGROUND: url(../images/Box_Back.gif) repeat-x 0px -18px; WIDTH: 100%; HEIGHT: 110px
+}
+DIV.red_comment {
+	BORDER-RIGHT: #f00 3px solid; BORDER-TOP: #f00 3px solid; BORDER-LEFT: #f00 3px solid; BORDER-BOTTOM: #f00 3px solid
+}
+DIV.comment DIV.user_info {
+	PADDING-RIGHT: 15px; PADDING-LEFT: 15px; FONT-SIZE: 11px; BACKGROUND: none transparent scroll repeat 0% 0%; FLOAT: left; PADDING-BOTTOM: 15px; OVERFLOW: hidden; WIDTH: 70px; LINE-HEIGHT: 16px; PADDING-TOP: 15px; POSITION: relative
+}
+DIV.comment_body {
+	MARGIN-LEFT: 105px; WIDTH: 663px; PADDING-TOP: 15px
+}
+DIV.comment_body DIV.top {
+	BACKGROUND: url(../images/top_part.gif) no-repeat WIDTH: 663px; HEIGHT: 24px
+}
+DIV.comment DIV.bottom {
+	BACKGROUND: url(../images/btm_part.gif) no-repeat WIDTH: 645px; HEIGHT: 16px
+}
+DIV.comment_body DIV.middle {
+	PADDING-RIGHT: 15px; PADDING-LEFT: 15px; BACKGROUND: #e1e1e1; PADDING-BOTTOM: 0px; MARGIN-LEFT: 18px; OVERFLOW: hidden; WIDTH: 615px; LINE-HEIGHT: 18px; PADDING-TOP: 0px; HEIGHT: auto
+}
+DIV.comment_body DIV.middle P {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px
+}
+DIV.comment_body DIV.middle P.arrow_links {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 11px; PADDING-BOTTOM: 10px; LINE-HEIGHT: 11px; PADDING-TOP: 20px
+}
+DIV.comment_body DIV.middle P.posted {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 11px; PADDING-BOTTOM: 10px; LINE-HEIGHT: 11px; PADDING-TOP: 20px
+}
+DIV.comment P.arrow_links {
+	FLOAT: right
+}
+
+DIV.comment .moderator {
+	MARGIN-TOP: 10px
+}
+#new_comment_area TEXTAREA {
+	BORDER-RIGHT: #dfdfdf 1px solid; BORDER-TOP: #dfdfdf 1px solid; MARGIN-BOTTOM: 10px; BORDER-LEFT: #dfdfdf 1px solid; WIDTH: 774px; BORDER-BOTTOM: #dfdfdf 1px solid; HEIGHT: 100px
+}
+#new_comment_area {
+	PADDING-TOP: 15px; TEXT-ALIGN: right
+}
+#new_comment_area .promo {
+	FLOAT: left
+}
+#new_comment_area INPUT.name {
+	BORDER-RIGHT: #dfdfdf 1px solid; PADDING-RIGHT: 2px; BORDER-TOP: #dfdfdf 1px solid; PADDING-LEFT: 2px; MARGIN-BOTTOM: 5px; PADDING-BOTTOM: 2px; VERTICAL-ALIGN: middle; BORDER-LEFT: #dfdfdf 1px solid; WIDTH: 700px; PADDING-TOP: 2px; BORDER-BOTTOM: #dfdfdf 1px solid
+}
+#new_comment {
+	MARGIN-TOP: 20px
+}
+#cp_content_area #new_comment_area INPUT.name {
+	WIDTH: 686px
+}
+#cp_content_area #new_comment_area TEXTAREA {
+	WIDTH: 758px
+}
+
+.clearing {
+	FONT-SIZE: 1px; LINE-HEIGHT: 1px
+}
+
+.spacer_2 {
+	PADDING-TOP: 10px
+}

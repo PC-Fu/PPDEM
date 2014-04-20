@@ -1,0 +1,100 @@
+<html><head>
+
+<link rel="StyleSheet" href="Polygon%20Area%20and%20Centroid_files/pdbstyle.css" type="text/css" media="all"><title>Polygon Area and Centroid</title></head><body bgcolor="#ffffff">
+
+<table width="100%"><tbody><tr><td valign="top" width="40%">
+	<center>
+	<h1>Calculating the area and centroid of a polygon</h1>
+	Written by <a href="http://local.wasp.uwa.edu.au/%7Epbourke/geometry/">Paul Bourke</a><br>
+	July 1988
+	</center>
+</td>
+<td width="10%">&nbsp;</td>
+<td valign="top" width="40%">
+	<b>Sample source code</b><br>
+	<a href="http://local.wasp.uwa.edu.au/%7Epbourke/geometry/polyarea/source1.c">
+	This C function</a> returns the area of a polygon.<br>
+	<a href="http://local.wasp.uwa.edu.au/%7Epbourke/geometry/polyarea/source2.java">JAVA code</a> submitted by Ramón Talavera.<br>
+	<a href="http://local.wasp.uwa.edu.au/%7Epbourke/geometry/polyarea/PolygonUtilities.java">PolygonUtilities.java</a> contributed by Christopher Fuhrman<br>
+	<a href="http://local.wasp.uwa.edu.au/%7Epbourke/geometry/polyarea/polygon.pas">Pascal/Dephi</a> example by Rodrigo Alves Pons.<br>
+	<a href="http://local.wasp.uwa.edu.au/%7Epbourke/geometry/polyarea/PolygonArea.bas">Basic version</a> also by Rodrigo Alves Pons.
+</td></tr></tbody></table>
+<p></p><hr><p>
+
+<b>Area</b>
+
+</p><p align="justify">
+The problem of determining the area of a polygon seems at best messy but the
+final formula is particularly simple. The result and sample source code (C)
+will be presented here.
+Consider a polygon made up of line segments between N vertices 
+(x<sub>i</sub>,y<sub>i</sub>), i=0 to
+N-1. The last vertex 
+(x<sub>N</sub>,y<sub>N</sub>) is assumed to be the same as the first, ie: the
+polygon is closed. 
+</p>
+
+<center><img src="Polygon%20Area%20and%20Centroid_files/polyarea1.gif" height="206" width="346"></center><p>
+
+The area is given by</p><p>
+
+</p><center><img src="Polygon%20Area%20and%20Centroid_files/polyarea2.gif" height="84" width="270"></center><p>
+
+</p><p align="justify">
+Note for polygons with holes. The holes are usually defined by ordering the
+vertices of the enclosing polygon in the opposite direction to those of the
+holes. This algorithm still works except that the absolute value should be
+taken after adding the polygon area to the area of all the holes. That is, the
+holes areas will be of opposite sign to the bounding polygon area.
+</p>
+
+<p align="justify">
+The sign of the area expression above (without the absolute value) can be 
+used to determine the ordering of the vertices of the polygon. If the 
+sign is positive then the polygon vertices are ordered counter clockwise 
+about the normal, otherwise clockwise. 
+</p>
+
+<p align="justify">
+To derive this solution, project lines from each vertex to some horizontal line
+below the lowest part of the polygon. The enclosed region from each line
+segment is made up of a triangle and rectangle. Sum these areas together noting
+that the areas outside the polygon eventually cancel as the polygon loops
+around to the beginning.
+</p>
+
+<center><img src="Polygon%20Area%20and%20Centroid_files/polyarea3.gif" height="192" width="309"></center><p>
+
+</p><p align="justify">
+The only restriction that will be placed on the polygon for this 
+technique to work is that the polygon must not be self intersecting, 
+for example the solution will fail in the following cases.
+</p>
+
+<center><img src="Polygon%20Area%20and%20Centroid_files/polyarea4.gif" height="90" width="191"></center><p>
+
+<b>Centroid</b>
+
+</p><p align="justify">
+The centroid is also known as the "centre of gravity" or the "center
+of mass". The position of the centroid assuming the polygon to be made
+of a material of uniform density is given below. As in the calculation
+of the area above, x<sub>N</sub> is assumed to be x<sub>0</sub>, in
+other words the polygon is closed.
+</p>
+
+<center><img src="Polygon%20Area%20and%20Centroid_files/polyarea5.gif" height="166" width="335"></center><p>
+
+<b>Centroid of a 3D shell described by 3 vertex facets</b></p><p>
+</p><p align="justify">
+The centroid C of a 3D object made up of a collection of N triangular
+faces with vertices (a<sub>i</sub>,b<sub>i</sub>,c<sub>i</sub>)
+is given below. R<sub>i</sub> is the average of the vertices of
+the i'th face and A<sub>i</sub> is twice the area of the i'th face.
+Note the faces are assumed to be thin sheets of uniform mass,
+they need not be connected or form a solid object. This reduces
+to the equations above for a 2D 3 vertex polygon.
+</p>
+<center><img src="Polygon%20Area%20and%20Centroid_files/facets.gif" height="234" width="275"></center><p> 
+
+</p></body></html>

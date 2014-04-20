@@ -1,0 +1,187 @@
+<html><head>
+
+    <title> Draw to a Bitmap object and save it as a image file : Bitmap&nbsp;«&nbsp;2D&nbsp;«&nbsp;VB.Net </title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">    <meta http-equiv="content-style-type" content="text/css">
+    <meta name="author" content="Demo Source and Support Ltd.">
+    <meta name="copyright" content="2006 Demo Source and Support Ltd.">
+    <meta name="description" content=" Draw to a Bitmap object and save it as a image file : Bitmap&nbsp;«&nbsp;2D&nbsp;«&nbsp;VB.Net ">
+    <meta name="keywords" content=" Draw to a Bitmap object and save it as a image file : Bitmap&nbsp;«&nbsp;2D&nbsp;«&nbsp;VB.Net ">
+ <link href="DrawtoaBitmapobjectandsaveitasaimagefile_files/java2s.css" type="text/css" rel="stylesheet">
+<link rel="shortcut icon" href="http://www.java2s.com/style/favicon.ico"></head><body>
+<h1>Draw to a Bitmap object and save it as a image file : Bitmap&nbsp;«&nbsp;2D&nbsp;«&nbsp;VB.Net</h1><h1>
+<table border="0" width="1024"><tbody><tr align="left"><td align="left" valign="top" width="140">
+<table class="leftBarTable" cellpadding="0" cellspacing="0"><tbody><tr><td><a href="http://www.java2s.com/Code/VB/CatalogVB.htm">VB.Net</a></td></tr>
+
+<tr><td><table class="leftBarFolderTable"><tbody><tr><td valign="top">1.&nbsp;</td><td><b>2D</b></td></tr>
+<tr><td valign="top">2.&nbsp;</td><td><a href="http://www.java2s.com/Code/VB/Application/CatalogApplication.htm">Application</a></td></tr>
+<tr><td valign="top">3.&nbsp;</td><td><a href="http://www.java2s.com/Code/VB/Class/CatalogClass.htm">Class</a></td></tr>
+<tr><td valign="top">4.&nbsp;</td><td><a href="http://www.java2s.com/Code/VB/Data-Structure/CatalogData-Structure.htm">Data Structure</a></td></tr>
+<tr><td valign="top">5.&nbsp;</td><td><a href="http://www.java2s.com/Code/VB/Database-ADO.net/CatalogDatabase-ADO.net.htm">Database ADO.net</a></td></tr>
+<tr><td valign="top">6.&nbsp;</td><td><a href="http://www.java2s.com/Code/VB/Development/CatalogDevelopment.htm">Development</a></td></tr>
+<tr><td valign="top">7.&nbsp;</td><td><a href="http://www.java2s.com/Code/VB/Event/CatalogEvent.htm">Event</a></td></tr>
+<tr><td valign="top">8.&nbsp;</td><td><a href="http://www.java2s.com/Code/VB/File-Directory/CatalogFile-Directory.htm">File Directory</a></td></tr>
+<tr><td valign="top">9.&nbsp;</td><td><a href="http://www.java2s.com/Code/VB/Generics/CatalogGenerics.htm">Generics</a></td></tr>
+<tr><td valign="top">10.&nbsp;</td><td><a href="http://www.java2s.com/Code/VB/GUI/CatalogGUI.htm">GUI</a></td></tr>
+<tr><td valign="top">11.&nbsp;</td><td><a href="http://www.java2s.com/Code/VB/Language-Basics/CatalogLanguage-Basics.htm">Language Basics</a></td></tr>
+<tr><td valign="top">12.&nbsp;</td><td><a href="http://www.java2s.com/Code/VB/Network-Remote/CatalogNetwork-Remote.htm">Network Remote</a></td></tr>
+<tr><td valign="top">13.&nbsp;</td><td><a href="http://www.java2s.com/Code/VB/Thread/CatalogThread.htm">Thread</a></td></tr>
+<tr><td valign="top">14.&nbsp;</td><td><a href="http://www.java2s.com/Code/VB/Windows-System/CatalogWindows-System.htm">Windows System</a></td></tr>
+<tr><td valign="top">15.&nbsp;</td><td><a href="http://www.java2s.com/Code/VB/XML/CatalogXML.htm">XML</a></td></tr>
+</tbody></table></td></tr><tr><td class="leftLangCell"><a href="http://www.java2s.com/Code/Java/CatalogJava.htm">Java</a></td></tr>
+<tr><td class="leftLangCell"><a href="http://www.java2s.com/Tutorial/Java/CatalogJava.htm">Java Tutorial</a></td></tr>
+<tr><td class="leftLangCell"><a href="http://www.java2s.com/Open-Source/Java-Document/CatalogJava-Document.htm">Java Source Code / Java Documentation</a></td></tr>
+<tr><td class="leftLangCell"><a href="http://www.java2s.com/Open-Source/Java/CatalogJava.htm">Java Open Source</a></td></tr>
+<tr><td class="leftLangCell"><a href="http://www.java2s.com/Code/Jar/CatalogJar.htm">Jar File Download</a></td></tr>
+<tr><td class="leftLangCell"><a href="http://www.java2s.com/Article/Java/CatalogJava.htm">Java Articles</a></td></tr>
+<tr><td class="leftLangCell"><a href="http://www.java2s.com/Product/Java/CatalogJava.htm">Java Products</a></td></tr>
+<tr><td class="leftLangCell"><a href="http://www.java2s.com/Code/JavaAPI/CatalogJavaAPI.htm">Java by API</a></td></tr>
+<tr><td class="leftLangCell"><a href="http://www.java2s.com/Code/CSharp/CatalogCSharp.htm">C# / C Sharp</a></td></tr>
+<tr><td class="leftLangCell"><a href="http://www.java2s.com/Tutorial/CSharp/CatalogCSharp.htm">C# / CSharp Tutorial</a></td></tr>
+<tr><td class="leftLangCell"><a href="http://www.java2s.com/Code/ASP/CatalogASP.htm">ASP.Net</a></td></tr>
+<tr><td class="leftLangCell"><a href="http://www.java2s.com/Code/JavaScript/CatalogJavaScript.htm">JavaScript DHTML</a></td></tr>
+<tr><td class="leftLangCell"><a href="http://www.java2s.com/Tutorial/JavaScript/CatalogJavaScript.htm">JavaScript Tutorial</a></td></tr>
+<tr><td class="leftLangCell"><a href="http://www.java2s.com/Code/JavaScriptReference/CatalogJavaScriptReference.htm">JavaScript Reference</a></td></tr>
+<tr><td class="leftLangCell"><a href="http://www.java2s.com/Code/HTMLCSS/CatalogHTMLCSS.htm">HTML / CSS</a></td></tr>
+<tr><td class="leftLangCell"><a href="http://www.java2s.com/Code/HTMLCSSReference/CatalogHTMLCSSReference.htm">HTML CSS Reference</a></td></tr>
+<tr><td class="leftLangCell"><a href="http://www.java2s.com/Code/C/CatalogC.htm">C / ANSI-C</a></td></tr>
+<tr><td class="leftLangCell"><a href="http://www.java2s.com/Tutorial/C/CatalogC.htm">C Tutorial</a></td></tr>
+<tr><td class="leftLangCell"><a href="http://www.java2s.com/Code/Cpp/CatalogCpp.htm">C++</a></td></tr>
+<tr><td class="leftLangCell"><a href="http://www.java2s.com/Tutorial/Cpp/CatalogCpp.htm">C++ Tutorial</a></td></tr>
+<tr><td class="leftLangCell"><a href="http://www.java2s.com/Code/Php/CatalogPhp.htm">PHP</a></td></tr>
+<tr><td class="leftLangCell"><a href="http://www.java2s.com/Code/Python/CatalogPython.htm">Python</a></td></tr>
+<tr><td class="leftLangCell"><a href="http://www.java2s.com/Code/SQLServer/CatalogSQLServer.htm">SQL Server / T-SQL</a></td></tr>
+<tr><td class="leftNewLangCell"><a href="http://www.java2s.com/Tutorial/SQLServer/CatalogSQLServer.htm">SQL Server / T-SQL Tutorial</a></td></tr>
+<tr><td class="leftLangCell"><a href="http://www.java2s.com/Code/Oracle/CatalogOracle.htm">Oracle PL / SQL</a></td></tr>
+<tr><td class="leftLangCell"><a href="http://www.java2s.com/Tutorial/Oracle/CatalogOracle.htm">Oracle PL/SQL Tutorial</a></td></tr>
+<tr><td class="leftLangCell"><a href="http://www.java2s.com/Code/PostgreSQL/CatalogPostgreSQL.htm">PostgreSQL</a></td></tr>
+<tr><td class="leftLangCell"><a href="http://www.java2s.com/Code/SQL/CatalogSQL.htm">SQL / MySQL</a></td></tr>
+<tr><td class="leftLangCell"><a href="http://www.java2s.com/Tutorial/MySQL/CatalogMySQL.htm">MySQL Tutorial</a></td></tr>
+<tr><td class="leftLangCell"><a href="http://www.java2s.com/Tutorial/VB/CatalogVB.htm">VB.Net Tutorial</a></td></tr>
+<tr><td class="leftLangCell"><a href="http://www.java2s.com/Code/Flash-Flex-ActionScript/CatalogFlash-Flex-ActionScript.htm">Flash / Flex / ActionScript</a></td></tr>
+<tr><td class="leftLangCell"><a href="http://www.java2s.com/Code/VBA-Excel-Access-Word/CatalogVBA-Excel-Access-Word.htm">VBA / Excel / Access / Word</a></td></tr>
+<tr><td class="leftLangCell"><a href="http://www.java2s.com/Tutorial/Microsoft-Office-PowerPoint-2007/CatalogMicrosoft-Office-PowerPoint-2007.htm">Microsoft Office PowerPoint 2007 Tutorial</a></td></tr>
+<tr><td class="leftLangCell"><a href="http://www.java2s.com/Tutorial/Microsoft-Office-Excel-2007/CatalogMicrosoft-Office-Excel-2007.htm">Microsoft Office Excel 2007 Tutorial</a></td></tr>
+<tr><td class="leftLangCell"><a href="http://www.java2s.com/Tutorial/Microsoft-Office-Word-2007/CatalogMicrosoft-Office-Word-2007.htm">Microsoft Office Word 2007 Tutorial</a></td></tr>
+</tbody></table></td><td width="2"></td><td valign="top">                                                 
+<script language="javascript" src="DrawtoaBitmapobjectandsaveitasaimagefile_files/get.js"></script><a href="http://media.fastclick.net/w/click.here?cid=172169&amp;mid=323646&amp;sid=24280&amp;m=1&amp;c=0" target="_blank">                           <img src="DrawtoaBitmapobjectandsaveitasaimagefile_files/media323646.gif" alt="Click Here" border="0" height="90" width="728"></a>
+<noscript><a
+href="http://media.fastclick.net/w/click.here?sid=24280&m=1&c=1"
+target="_blank"><img
+src="http://media.fastclick.net/w/get.media?sid=24280&m=1&tp=5&d=s&c=1"width=728
+height=90 border=1></a></noscript><table border="0"><tbody><tr><td height="3"></td></tr></tbody></table>
+<table class="googleBar" border="0" cellpadding="0" cellspacing="0" width="800"><tbody><tr><td width="60%"><a href="http://www.java2s.com/Code/VB/CatalogVB.htm">VB.Net</a>&nbsp;»&nbsp;<a href="http://www.java2s.com/Code/VB/2D/Catalog2D.htm">2D</a>&nbsp;»&nbsp;<a href="http://www.java2s.com/Code/VB/2D/Bitmap.htm">Bitmap</a></td><td align="right" width="10%"><a href="http://www.java2s.com/Code/VB/2D1.htm">Screenshots</a>&nbsp;</td><td align="right" nowrap="nowrap" valign="center" width="30%"><form style="margin: 2px;" method="get" action="http://www.google.com/custom"><input name="q" size="15" maxlength="255" value="" type="text"><input style="" name="sa" value="Search 2D" type="submit"><input name="cof" value="S:http://www.java2s.com" ;ah:center;awfid:048d0478e57b2768;="" type="hidden"><input name="domains" value="www.java2s.com/Code/VB/2D/" type="hidden"><input name="sitesearch" value="www.java2s.com/Code/VB/2D/" checked="checked" type="hidden"></form> </td></tr></tbody></table><table border="0"><tbody><tr><td height="3"></td></tr></tbody></table>
+<table border="0" cellpadding="0" cellspacing="0" width="650">
+       <tbody>
+<tr><td align="left">
+                                               <script type="text/javascript"><!--
+  google_ad_client = "pub-1130008796007602";
+                               google_ad_width = 300;
+                                                     google_ad_height = 250;
+                                                    google_ad_format = "300x250_as";
+                                         google_ad_type = "text_image";
+                                           google_ad_channel ="";
+                                                   google_color_border = "ffffff";
+                                          google_color_bg = "FFFFFF";
+                                              google_color_link = "003399";
+                                            google_color_url = "75a3ed";
+                                             google_color_text = "000000";
+                                            //--></script>
+                                                             <script type="text/javascript" src="DrawtoaBitmapobjectandsaveitasaimagefile_files/show_ads.js">
+           </script><script src="DrawtoaBitmapobjectandsaveitasaimagefile_files/expansion_embed.js"></script><script src="DrawtoaBitmapobjectandsaveitasaimagefile_files/test_domain.js"></script><script>window.google_render_ad();</script><ins style="border: medium none ; margin: 0pt; padding: 0pt; display: inline-table; height: 250px; position: relative; visibility: visible; width: 300px;"><ins style="border: medium none ; margin: 0pt; padding: 0pt; display: block; height: 250px; position: relative; visibility: visible; width: 300px;"><iframe allowtransparency="true" hspace="0" id="google_ads_frame1" marginheight="0" marginwidth="0" name="google_ads_frame" src="DrawtoaBitmapobjectandsaveitasaimagefile_files/ads.htm" style="left: 0pt; position: absolute; top: 0pt;" vspace="0" frameborder="0" height="250" scrolling="no" width="300"></iframe></ins></ins>
+                                                                  </td>
+<td align="right">                                                      <script type="text/javascript"><!--
+  google_ad_client = "pub-1130008796007602";
+                               google_ad_width = 300;
+                                                     google_ad_height = 250;
+                                                    google_ad_format = "300x250_as";
+                                         google_ad_type = "text_image";
+                                           google_ad_channel ="";
+                                                   google_color_border = "ffffff";
+                                          google_color_bg = "FFFFFF";
+                                              google_color_link = "003399";
+                                            google_color_url = "75a3ed";
+                                             google_color_text = "000000";
+                                            //--></script>
+                                                             <script type="text/javascript" src="DrawtoaBitmapobjectandsaveitasaimagefile_files/show_ads.js">
+           </script><script>window.google_render_ad();</script><ins style="border: medium none ; margin: 0pt; padding: 0pt; display: inline-table; height: 250px; position: relative; visibility: visible; width: 300px;"><ins style="border: medium none ; margin: 0pt; padding: 0pt; display: block; height: 250px; position: relative; visibility: visible; width: 300px;"><iframe allowtransparency="true" hspace="0" id="google_ads_frame2" marginheight="0" marginwidth="0" name="google_ads_frame" src="DrawtoaBitmapobjectandsaveitasaimagefile_files/ads_002.htm" style="left: 0pt; position: absolute; top: 0pt;" vspace="0" frameborder="0" height="250" scrolling="no" width="300"></iframe></ins></ins>
+                                                                  </td></tr></tbody>
+</table>
+                                               <table border="0" width="800"><tbody><tr><td class="codeTitle">Draw to a Bitmap object and save it as a image file</td></tr>
+<tr><td><table border="0"><tbody><tr><td height="20"></td></tr></tbody></table>
+</td></tr>
+<tr><td>
+
+<table bgcolor="#ffffff" border="0" cellpadding="3" cellspacing="0">
+   <tbody><tr>
+  <!-- start source code -->
+   <td align="left" nowrap="nowrap" valign="top">
+    <div class="codeShade"><code>
+<font color="#ffffff"></font><br>
+<font color="#7f0055"><b>Imports&nbsp;</b></font><font color="#000000">System</font><br>
+<font color="#7f0055"><b>Imports&nbsp;</b></font><font color="#000000">System.Windows.Forms</font><br>
+<font color="#7f0055"><b>Imports&nbsp;</b></font><font color="#000000">System.Collections.Generic</font><br>
+<font color="#7f0055"><b>Imports&nbsp;</b></font><font color="#000000">System.ComponentModel</font><br>
+<font color="#7f0055"><b>Imports&nbsp;</b></font><font color="#000000">System.Drawing.Imaging</font><br>
+<font color="#7f0055"><b>Imports&nbsp;</b></font><font color="#000000">System.Drawing</font><br>
+<font color="#ffffff"></font><br>
+<font color="#7f0055"><b>Public&nbsp;Class&nbsp;</b></font><font color="#000000">MainClass</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>Shared&nbsp;Sub&nbsp;</b></font><font color="#000000">Main</font><font color="#000000">()</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>Dim&nbsp;</b></font><font color="#000000">bm&nbsp;</font><font color="#7f0055"><b>As&nbsp;</b></font><font color="#000000">New&nbsp;Bitmap</font><font color="#000000">(</font><font color="#990000">256</font><font color="#000000">,&nbsp;</font><font color="#990000">256</font><font color="#000000">)</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#ff6100">'&nbsp;D</font><font color="#000000">raw&nbsp;on&nbsp;it.</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>Dim&nbsp;</b></font><font color="#000000">gr&nbsp;</font><font color="#7f0055"><b>As&nbsp;</b></font><font color="#000000">Graphics&nbsp;=&nbsp;Graphics.FromImage</font><font color="#000000">(</font><font color="#000000">bm</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">gr.Clear</font><font color="#000000">(</font><font color="#000000">Color.White</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">gr.DrawEllipse</font><font color="#000000">(</font><font color="#000000">Pens.Red,&nbsp;</font><font color="#990000">0</font><font color="#000000">,&nbsp;</font><font color="#990000">0</font><font color="#000000">,&nbsp;bm.Width&nbsp;-&nbsp;</font><font color="#990000">1</font><font color="#000000">,&nbsp;bm.Height&nbsp;-&nbsp;</font><font color="#990000">1</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">gr.DrawLine</font><font color="#000000">(</font><font color="#000000">Pens.Green,&nbsp;</font><font color="#990000">0</font><font color="#000000">,&nbsp;</font><font color="#990000">0</font><font color="#000000">,&nbsp;bm.Width&nbsp;-&nbsp;</font><font color="#990000">1</font><font color="#000000">,&nbsp;bm.Height&nbsp;-&nbsp;</font><font color="#990000">1</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">gr.DrawLine</font><font color="#000000">(</font><font color="#000000">Pens.Blue,&nbsp;bm.Width&nbsp;-&nbsp;</font><font color="#990000">1</font><font color="#000000">,&nbsp;</font><font color="#990000">0</font><font color="#000000">,&nbsp;</font><font color="#990000">0</font><font color="#000000">,&nbsp;bm.Height&nbsp;-&nbsp;</font><font color="#990000">1</font><font color="#000000">)</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#ff6100">'&nbsp;S</font><font color="#000000">ave&nbsp;the&nbsp;result&nbsp;as&nbsp;a&nbsp;JPEG&nbsp;file.</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">bm.Save</font><font color="#000000">(</font><font color="#2a00ff">"test.gif"</font><font color="#000000">,&nbsp;ImageFormat.Gif</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>End&nbsp;Sub&nbsp;</b></font><br>
+<font color="#ffffff"></font><br>
+<font color="#7f0055"><b>End&nbsp;Class</b></font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></code></div>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</tbody></table>
+</td></tr>
+<tr><td></td></tr>
+<tr><td class="relatedExample">Related examples in the same category</td></tr></tbody></table><table border="0" cellpadding="0" cellspacing="0" width="800"><tbody><tr class="even"><td>1.&nbsp;</td><td align="left"><a href="http://www.java2s.com/Code/VB/2D/ManipulateBitmapColor.htm">Manipulate Bitmap Color</a></td><td width="32"></td><td align="right" width="200"><a href="http://www.java2s.com/Code/VB/2D/ManipulateBitmapColor.htm"><img alt="Manipulate Bitmap Color" src="DrawtoaBitmapobjectandsaveitasaimagefile_files/ManipulateBitmapColor.PNG" border="0" height="40" width="200"></a></td></tr><tr class="odd"><td>2.&nbsp;</td><td align="left"><a href="http://www.java2s.com/Code/VB/2D/OutputColorPaletteforaBitmap.htm">Output Color Palette for a Bitmap</a></td><td width="32"></td><td align="right" width="200"><a href="http://www.java2s.com/Code/VB/2D/OutputColorPaletteforaBitmap.htm"><img alt="Output Color Palette for a Bitmap" src="DrawtoaBitmapobjectandsaveitasaimagefile_files/OutputColorPaletteforaBitmap.PNG" border="0" height="40" width="200"></a></td></tr><tr class="even"><td>3.&nbsp;</td><td align="left"><a href="http://www.java2s.com/Code/VB/2D/BitmapInformationWidthHeightVerticalResolutionPixelFormatPhysicalDimension.htm">Bitmap Information: Width, Height, Vertical Resolution, Pixel Format, Physical Dimension</a></td><td width="32"></td><td align="right" width="200"><a href="http://www.java2s.com/Code/VB/2D/BitmapInformationWidthHeightVerticalResolutionPixelFormatPhysicalDimension.htm"><img alt="Bitmap Information: Width, Height, Vertical Resolution, Pixel Format, Physical Dimension" src="DrawtoaBitmapobjectandsaveitasaimagefile_files/BitmapInformationWidthHeightVerticalResolutionPixelFormatPhy.PNG" border="0" height="40" width="200"></a></td></tr><tr class="odd"><td>4.&nbsp;</td><td align="left"><a href="http://www.java2s.com/Code/VB/2D/LoadanImagefromfileanddrawontheloadedimage.htm">Load an Image from file and draw on the loaded image</a></td><td width="32"></td><td align="right" width="200"><a href="http://www.java2s.com/Code/VB/2D/LoadanImagefromfileanddrawontheloadedimage.htm"><img alt="Load an Image from file and draw on the loaded image" src="DrawtoaBitmapobjectandsaveitasaimagefile_files/LoadanImagefromfileanddrawontheloadedimage.PNG" border="0" height="40" width="200"></a></td></tr></tbody></table><table border="0"><tbody><tr><td height="10"></td></tr></tbody></table>
+<script type="text/javascript"><!--
+google_ad_client = "pub-1130008796007602";                         
+google_ad_width = 728;                                               
+google_ad_height = 90;                                               
+google_ad_format = "728x90_as";                                    
+google_ad_type = "text_image";                                     
+google_ad_channel = "";                                            
+google_color_border = "ffffff";                                    
+google_color_bg = "ffffff";                                        
+google_color_link = "003399";                                      
+google_color_text = "000000";                                      
+google_color_url = "75a3ed";                                       
+//  -->                                                              
+</script>                                                            
+<script type="text/javascript" src="DrawtoaBitmapobjectandsaveitasaimagefile_files/show_ads.js">     
+</script><script>window.google_render_ad();</script><ins style="border: medium none ; margin: 0pt; padding: 0pt; display: inline-table; height: 90px; position: relative; visibility: visible; width: 728px;"><ins style="border: medium none ; margin: 0pt; padding: 0pt; display: block; height: 90px; position: relative; visibility: visible; width: 728px;"><iframe allowtransparency="true" hspace="0" id="google_ads_frame3" marginheight="0" marginwidth="0" name="google_ads_frame" src="DrawtoaBitmapobjectandsaveitasaimagefile_files/ads_003.htm" style="left: 0pt; position: absolute; top: 0pt;" vspace="0" frameborder="0" height="90" scrolling="no" width="728"></iframe></ins></ins>                                                            
+</td></tr></tbody></table>                                                               
+<center><table border="0">     <tbody><tr align="left">
+     <td>
+         <a href="http://www.java2s.com/">w_w_w_.__jav___a__2_s___.___co_m_</a> | 
+         <a href="http://www.java2s.com/html/contact.htm">Contact Us</a>
+     </td>
+     </tr>
+     <tr align="left">
+            <td class="Templatetext">Copyright 2003 - 08 Demo Source and Support. All rights reserved.</td>
+     </tr>
+     <tr align="left">
+        <td>All other trademarks are property of their respective owners.</td>
+     </tr>
+</tbody></table></center>
+</h1></body></html>

@@ -1,0 +1,477 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+
+<title>Point-Line Distance--2-Dimensional -- from Wolfram MathWorld</title>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<meta name="DC.Creator" content="Weisstein, Eric W.">
+<meta name="DC.Description" content="The equation of a line ax+by+c=0 in slope-intercept form is given by  y=-a/bx-c/b,  (1)   so the line has slope -a/b. Now consider the distance from a point (x_0,y_0) to the line. Points on the line have the vector coordinates  [x; -a/bx-c/b]=[0; -c/b]-1/b[-b; a]x.  (2)   Therefore, the vector  [-b; a]  (3)   is parallel to the line, and the vector  v=[a; b]  (4)   is perpendicular to it. Now, a vector from the point to the line is given by  r=[x-x_0; y-y_0].  (5)   Projecting r onto v, d =...">
+<meta name="DC.Date.Modified" scheme="W3CDTF" content="2002-03-05">
+<meta name="DC.Date.Modified" scheme="W3CDTF" content="2002-11-07">
+<meta name="DC.Date.Modified" scheme="W3CDTF" content="2003-02-01">
+<meta name="DC.Subject" scheme="MathWorld" content="Mathematics:Geometry:Distance">
+<meta name="DC.Subject" scheme="MathWorld" content="Mathematics:Geometry:Line Geometry:Lines">
+<meta name="DC.Subject" scheme="MSC_2000" content="51A">
+<meta name="DC.Subject" scheme="MSC_2000" content="51K">
+<meta name="DC.Rights" content="Copyright 1999-2009 Wolfram Research, Inc.  See http://mathworld.wolfram.com/about/terms.html for a full terms of use statement.">
+<meta name="DC.Format" scheme="IMT" content="text/html">
+<meta name="DC.Identifier" scheme="URI" content="http://mathworld.wolfram.com/Point-LineDistance2-Dimensional.html">
+<meta name="DC.Language" scheme="RFC3066" content="en">
+<meta name="DC.Publisher" content="Wolfram Research, Inc.">
+<meta name="DC.Relation.IsPartOf" scheme="URI" content="http://mathworld.wolfram.com/">
+<meta name="DC.Type" scheme="DCMIType" content="Text">
+<meta name="Last-Modified" content="2003-02-01">
+<link rel="alternate" type="application/rss+xml" title="MathWorld Headline News" href="http://mathworld.wolfram.com/news/rss.xml">
+<link rel="stylesheet" type="text/css" href="Point-LineDistance2-Dimensional_files/mathworld.css">
+<link rel="shortcut icon" href="http://mathworld.wolfram.com/favicon_mathworld.png" type="image/png">
+<script language="JavaScript" type="text/javascript" src="Point-LineDistance2-Dimensional_files/menu.js"></script>
+<script language="JavaScript" type="text/javascript" src="Point-LineDistance2-Dimensional_files/mathworld.js"></script>
+<script language="JavaScript" type="text/javascript" src="Point-LineDistance2-Dimensional_files/downloadNotebook.js"></script>
+</head><body>
+  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tbody><tr>
+      <!-- IE Mac will fail on url('') -->
+      <td style="background-image: url(/images/topbar/header.gif); background-repeat: no-repeat;">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tbody><tr>
+            <td><img src="Point-LineDistance2-Dimensional_files/spacer.gif" alt="" usemap="#TopMap" border="0" height="80" width="615"></td>
+<td width="300"><img src="Point-LineDistance2-Dimensional_files/spacer.gif" alt="" width="50">
+<div class="formwrapper">
+<form name="NavBarSearch" action="http://mathworld.wolfram.com/search/" method="get" accept-charset="UTF-8" onsubmit=" if (checkForDefaultInput('query_1', 'SEARCH MATHWORLD')) { return false; }">
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<!--
+<td valign="middle" nowrap="nowrap"><a href="/search/" style="font-size:10px;">
+Search Site</a>
+</td>
+-->
+<td>
+<table class="searchboxborder" border="0" cellpadding="0" cellspacing="0">
+  <tbody><tr>
+  <td><input id="query_1" class="searchboxsub" name="query" value="SEARCH MATHWORLD" onfocus="initTextInput(this,'clear','SEARCH MATHWORLD')" onblur="initTextInput(this,'setDefault','SEARCH MATHWORLD')" type="text"></td>
+<!--
+  <td><input type="image" src="/common/images/search/searchbox_arrows.gif" class="searchbox" alt="Search" onclick="if (checkForDefaultInput('query_1', 'SEARCH MATHWORLD')) { return false;} else {document.NavBarSearch.submit(); }" /></td>
+-->
+  </tr>
+</tbody></table></td>
+<td valign="middle"><input src="Point-LineDistance2-Dimensional_files/go.gif" type="image"></td>
+</tr>
+</tbody></table>
+</form>
+</div>
+            </td>
+          </tr>
+        </tbody></table>
+        <div style="padding-right: 840px;"></div>
+      </td>
+      <td width="100%"><img src="Point-LineDistance2-Dimensional_files/header-extend.gif" alt="" height="79" width="100%"></td>
+    </tr>
+  </tbody></table>
+
+<map name="TopMap" id="TopMap">
+  <area shape="rect" coords="11,34,198,51" href="http://www.wolfram.com/products/mathematica/" target="_blank" alt="made with Mathematica technology">
+  <area shape="rect" coords="8,8,197,30" href="http://mathworld.wolfram.com/" alt="MathWorld">
+</map>
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody><tr valign="top">
+<td>
+<!-- Sidebar -->
+
+<table border="0" cellpadding="0" cellspacing="0">
+  <tbody><tr><td align="left" nowrap="nowrap" valign="top" width="185">
+    <table border="0" cellpadding="0" cellspacing="0" width="175">
+    <tbody><tr><td>
+    <div class="leftsidebar">
+    <div class="mainindices">
+      <a href="http://mathworld.wolfram.com/topics/Algebra.html">Algebra</a><br>
+      <a href="http://mathworld.wolfram.com/topics/AppliedMathematics.html">Applied Mathematics</a><br>
+      <a href="http://mathworld.wolfram.com/topics/CalculusandAnalysis.html">Calculus and Analysis</a><br>
+      <a href="http://mathworld.wolfram.com/topics/DiscreteMathematics.html">Discrete Mathematics</a><br>
+      <a href="http://mathworld.wolfram.com/topics/FoundationsofMathematics.html">Foundations of Mathematics</a><br>
+      <a href="http://mathworld.wolfram.com/topics/Geometry.html">Geometry</a><br>
+      <a href="http://mathworld.wolfram.com/topics/HistoryandTerminology.html">History and Terminology</a><br>
+      <a href="http://mathworld.wolfram.com/topics/NumberTheory.html">Number Theory</a><br>
+      <a href="http://mathworld.wolfram.com/topics/ProbabilityandStatistics.html">Probability and Statistics</a><br>
+      <a href="http://mathworld.wolfram.com/topics/RecreationalMathematics.html">Recreational Mathematics</a><br>
+      <a href="http://mathworld.wolfram.com/topics/Topology.html">Topology</a><br>
+    </div>
+    </div>
+    </td></tr></tbody></table>
+</td></tr>
+<tr><td height="10"></td></tr>
+<tr><td align="left" nowrap="nowrap" valign="top" width="185">
+<table border="0" cellpadding="0" cellspacing="0" width="175">
+    <tbody><tr><td>
+    <div class="leftsidebar2">
+    <div class="subindices">
+    <a href="http://mathworld.wolfram.com/letters/">Alphabetical Index</a><br>
+    <a href="http://mathworld.wolfram.com/topics/InteractiveEntries.html">Interactive Entries</a><br>
+    <a href="http://mathworld.wolfram.com/cgi-bin/random.cgi">Random Entry</a><br>
+    <a href="http://mathworld.wolfram.com/whatsnew/">New in <i>MathWorld</i></a><br>
+    </div>
+    <div class="divider"></div>
+    <div class="subindices">
+      <a href="http://mathworld.wolfram.com/classroom/"><i>MathWorld</i> Classroom</a><br>
+    </div>
+    <div class="divider"></div>
+    <div class="subindices">
+       <a href="http://mathworld.wolfram.com/about/">About <i>MathWorld</i></a><br>
+       <a href="http://mathworld.wolfram.com/contact/contribute.html">Contribute to <i>MathWorld</i></a><br>
+       <a href="http://mathworld.wolfram.com/contact/">Send a Message to the Team</a><br>
+    </div>
+    <div class="divider"></div>
+    <div class="subindices">
+       <a href="http://www.amazon.com/exec/obidos/ASIN/1584883472/ref=nosim/weisstein-20" target="_blank"><i>MathWorld</i> Book</a><br>
+    </div>
+    </div>
+    <div class="leftsidebarfooter">
+      <div class="last-updated">
+      <a href="http://mathworld.wolfram.com/whatsnew/">12,966 entries</a>
+      </div>
+      <div class="last-updated">
+      <a href="http://mathworld.wolfram.com/whatsnew/">Last updated: Tue Oct 27 2009</a><br>
+      </div>
+      <br>
+      <a href="http://mathworld.wolfram.com/about/author.html" onmouseover="MM_swapImage('Image1','','/images/sidebar/created-over_01.gif',1)" onmouseout="MM_swapImgRestore()"><img src="Point-LineDistance2-Dimensional_files/created_01.gif" name="Image1" id="Image1" title="Created, developed, and nurtured by Eric Weisstein" alt="Created, developed, and nurtured by Eric Weisstein" border="0" height="32" width="120"></a><br>
+      <a href="http://www.wolfram.com/" target="_blank" onmouseover="MM_swapImage('Image2','','/images/sidebar/created-over_02.gif',1)" onmouseout="MM_swapImgRestore()"><img src="Point-LineDistance2-Dimensional_files/created_02.gif" name="Image2" id="Image2" title="at Wolfram Research" alt="at Wolfram Research" border="0" height="17" width="120"></a> 
+    </div>
+  </td></tr>
+  </tbody></table>
+
+  </td></tr>
+</tbody></table>
+
+<!-- End Sidebar -->
+
+</td>
+<td><img src="Point-LineDistance2-Dimensional_files/spacer.gif" alt="" height="1" width="20"></td>
+<td>
+<div class="leftshadow">
+<div class="centertable">
+<table width="100%">
+<!-- Begin Body -->
+<tbody><tr>
+<td><img src="Point-LineDistance2-Dimensional_files/spacer.gif" alt="" height="1" width="400"></td>
+</tr>
+<tr>
+<td align="left" valign="top" width="100%">
+<!-- Begin Subject -->
+<div class="subjectnavbar">
+<a href="http://mathworld.wolfram.com/topics/Geometry.html">Geometry</a>&nbsp;&gt;&nbsp;<a href="http://mathworld.wolfram.com/topics/Distance.html">Distance</a>&nbsp;&gt;<br>
+</div>
+<div class="subjectnavbar">
+<a href="http://mathworld.wolfram.com/topics/Geometry.html">Geometry</a>&nbsp;&gt;&nbsp;<a href="http://mathworld.wolfram.com/topics/LineGeometry.html">Line
+Geometry</a>&nbsp;&gt;&nbsp;<a href="http://mathworld.wolfram.com/topics/Lines.html">Lines</a>&nbsp;&gt;<br>
+</div>
+<div class="subjectnavbar">
+<a href="http://mathworld.wolfram.com/topics/InteractiveEntries.html">Interactive Entries</a>&nbsp;&gt;&nbsp;<a href="http://mathworld.wolfram.com/topics/InteractiveDemonstrations.html">Interactive Demonstrations</a>&nbsp;&gt;<br>
+</div>
+<!-- End Subject -->
+<br>
+<!-- Begin Title -->
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody><tr><td class="title" valign="baseline"><span class="nowrap">Point-Line Distance--2-Dimensional</span></td></tr><tr><td valign="top"><span class="nowrap"><img src="Point-LineDistance2-Dimensional_files/underline.gif" alt="" height="3" width="100%"><img src="Point-LineDistance2-Dimensional_files/underline.gif" alt="" height="3" width="20"></span></td><td><img src="Point-LineDistance2-Dimensional_files/spacer.gif" alt="" height="15"></td></tr>
+</tbody></table>
+<!-- End Title -->
+</td>
+</tr>
+<tr valign="top">
+<td>
+<!-- Begin Total Content -->
+<!-- Begin Content -->
+<div align="center">
+<img src="Point-LineDistance2-Dimensional_files/PointLineDistance2D_1000.gif" alt="PointLineDistance2D" height="174" width="204">
+</div>
+<p class="Text">
+The equation of a line <img src="Point-LineDistance2-Dimensional_files/Inline1.gif" class="inlineformula" alt="ax+by+c=0" border="0" height="14" width="94"> in slope-intercept
+ form is given by
+</p>
+<div>
+<table style="padding-left: 50px;" align="center" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td align="left"><img src="Point-LineDistance2-Dimensional_files/NumberedEquation1.gif" class="numberedequation" alt=" y=-a/bx-c/b, " border="0" height="33" width="86"></td><td align="right" width="3">
+<div id="eqn1" class="eqnum">
+(1)
+</div>
+</td></tr>
+</tbody></table>
+</div>
+<p class="Text">
+so the line has <a href="http://mathworld.wolfram.com/Slope.html" class="Hyperlink">slope</a> <img src="Point-LineDistance2-Dimensional_files/Inline2.gif" class="inlineformula" alt="-a/b" border="0" height="14" width="32">. Now consider
+ the distance from a point <img src="Point-LineDistance2-Dimensional_files/Inline3.gif" class="inlineformula" alt="(x_0,y_0)" border="0" height="16" width="42"> to the
+ line. Points <i>on</i> the line have the vector coordinates
+</p>
+<div>
+<table style="padding-left: 50px;" align="center" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td align="left"><img src="Point-LineDistance2-Dimensional_files/NumberedEquation2.gif" class="numberedequation" alt=" [x; -a/bx-c/b]=[0; -c/b]-1/b[-b; a]x. " border="0" height="44" width="200"></td><td align="right" width="3">
+<div id="eqn2" class="eqnum">
+(2)
+</div>
+</td></tr>
+</tbody></table>
+</div>
+<p class="Text">
+Therefore, the <a href="http://mathworld.wolfram.com/Vector.html" class="Hyperlink">vector</a>
+</p>
+<div>
+<table style="padding-left: 50px;" align="center" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td align="left"><img src="Point-LineDistance2-Dimensional_files/NumberedEquation3.gif" class="numberedequation" alt=" [-b; a] " border="0" height="36" width="33"></td><td align="right" width="3">
+<div id="eqn3" class="eqnum">
+(3)
+</div>
+</td></tr>
+</tbody></table>
+</div>
+<p class="Text">
+is <a href="http://mathworld.wolfram.com/Parallel.html" class="Hyperlink">parallel</a> to the line, and the <a href="http://mathworld.wolfram.com/Vector.html" class="Hyperlink">vector</a>
+</p>
+<div>
+<table style="padding-left: 50px;" align="center" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td align="left"><img src="Point-LineDistance2-Dimensional_files/NumberedEquation4.gif" class="numberedequation" alt=" v=[a; b] " border="0" height="36" width="47"></td><td align="right" width="3">
+<div id="eqn4" class="eqnum">
+(4)
+</div>
+</td></tr>
+</tbody></table>
+</div>
+<p class="Text">
+is <a href="http://mathworld.wolfram.com/Perpendicular.html" class="Hyperlink">perpendicular</a> to it. Now, a <a href="http://mathworld.wolfram.com/Vector.html" class="Hyperlink">vector</a> from the point to the line
+ is given by
+</p>
+<div>
+<table style="padding-left: 50px;" align="center" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td align="left"><img src="Point-LineDistance2-Dimensional_files/NumberedEquation5.gif" class="numberedequation" alt=" r=[x-x_0; y-y_0]. " border="0" height="36" width="78"></td><td align="right" width="3">
+<div id="eqn5" class="eqnum">
+(5)
+</div>
+</td></tr>
+</tbody></table>
+</div>
+<p class="Text">
+Projecting <img src="Point-LineDistance2-Dimensional_files/Inline4.gif" class="inlineformula" alt="r" border="0" height="14" width="6"> onto <img src="Point-LineDistance2-Dimensional_files/Inline5.gif" class="inlineformula" alt="v" border="0" height="14" width="7">,
+</p>
+<table style="padding-left: 50px;" align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr style=""><td align="right" width="1"><img src="Point-LineDistance2-Dimensional_files/Inline6.gif" class="displayformula" alt="d" border="0" height="14" width="7"></td><td align="center" width="14"><img src="Point-LineDistance2-Dimensional_files/Inline7.gif" class="displayformula" alt="=" border="0" height="14" width="9"></td><td align="left"><img src="Point-LineDistance2-Dimensional_files/Inline8.gif" class="displayformula" alt="|proj_(v)r|" border="0" height="21" width="44"></td><td align="right" width="10">
+<div id="eqn6" class="eqnum">
+(6)
+</div>
+</td></tr><tr style=""><td align="right" width="1"><img src="Point-LineDistance2-Dimensional_files/Inline9.gif" class="displayformula" alt="" border="0" height="14" width="12"></td><td align="center" width="14"><img src="Point-LineDistance2-Dimensional_files/Inline10.gif" class="displayformula" alt="=" border="0" height="14" width="9"></td><td align="left"><img src="Point-LineDistance2-Dimensional_files/Inline11.gif" class="displayformula" alt="(|v·r|)/(|v|)" border="0" height="36" width="31"></td><td align="right" width="10">
+<div id="eqn7" class="eqnum">
+(7)
+</div>
+</td></tr><tr style=""><td align="right" width="1"><img src="Point-LineDistance2-Dimensional_files/Inline12.gif" class="displayformula" alt="" border="0" height="14" width="12"></td><td align="center" width="14"><img src="Point-LineDistance2-Dimensional_files/Inline13.gif" class="displayformula" alt="=" border="0" height="14" width="9"></td><td align="left"><img src="Point-LineDistance2-Dimensional_files/Inline14.gif" class="displayformula" alt="|v^^·r|" border="0" height="20" width="26"></td><td align="right" width="10">
+<div id="eqn8" class="eqnum">
+(8)
+</div>
+</td></tr><tr style=""><td align="right" width="1"><img src="Point-LineDistance2-Dimensional_files/Inline15.gif" class="displayformula" alt="" border="0" height="14" width="12"></td><td align="center" width="14"><img src="Point-LineDistance2-Dimensional_files/Inline16.gif" class="displayformula" alt="=" border="0" height="14" width="9"></td><td align="left"><img src="Point-LineDistance2-Dimensional_files/Inline17.gif" class="displayformula" alt="(|a(x-x_0)+b(y-y_0)|)/(sqrt(a^2+b^2))" border="0" height="48" width="132"></td><td align="right" width="10">
+<div id="eqn9" class="eqnum">
+(9)
+</div>
+</td></tr><tr style=""><td align="right" width="1"><img src="Point-LineDistance2-Dimensional_files/Inline18.gif" class="displayformula" alt="" border="0" height="14" width="12"></td><td align="center" width="14"><img src="Point-LineDistance2-Dimensional_files/Inline19.gif" class="displayformula" alt="=" border="0" height="14" width="9"></td><td align="left"><img src="Point-LineDistance2-Dimensional_files/Inline20.gif" class="displayformula" alt="(|ax+by-ax_0-by_0|)/(sqrt(a^2+b^2))" border="0" height="48" width="136"></td><td align="right" width="10">
+<div id="eqn10" class="eqnum">
+(10)
+</div>
+</td></tr><tr style=""><td align="right" width="1"><img src="Point-LineDistance2-Dimensional_files/Inline21.gif" class="displayformula" alt="" border="0" height="14" width="12"></td><td align="center" width="14"><img src="Point-LineDistance2-Dimensional_files/Inline22.gif" class="displayformula" alt="=" border="0" height="14" width="9"></td><td align="left"><img src="Point-LineDistance2-Dimensional_files/Inline23.gif" class="displayformula" alt="(|ax_0+by_0+c|)/(sqrt(a^2+b^2))." border="0" height="48" width="97"></td><td align="right" width="10">
+<div id="eqn11" class="eqnum">
+(11)
+</div>
+</td></tr>
+</tbody></table>
+<div align="center">
+<img src="Point-LineDistance2-Dimensional_files/PointLineDistance2DVec_1000.gif" alt="PointLineDistance2DVec" height="141" width="244">
+</div>
+<p class="Text">
+If the line is specified by two points <img src="Point-LineDistance2-Dimensional_files/Inline24.gif" class="inlineformula" alt="x_1=(x_1,y_1)" border="0" height="14" width="72"> and
+ <img src="Point-LineDistance2-Dimensional_files/Inline25.gif" class="inlineformula" alt="x_2=(x_2,y_2)" border="0" height="14" width="72">, then a <a href="http://mathworld.wolfram.com/Vector.html" class="Hyperlink">vector</a> <a href="http://mathworld.wolfram.com/Perpendicular.html" class="Hyperlink">perpendicular</a>
+ to the line is given by
+</p>
+<div>
+<table style="padding-left: 50px;" align="center" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td align="left"><img src="Point-LineDistance2-Dimensional_files/NumberedEquation6.gif" class="numberedequation" alt=" v=[y_2-y_1; -(x_2-x_1)]. " border="0" height="36" width="103"></td><td align="right" width="3">
+<div id="eqn12" class="eqnum">
+(12)
+</div>
+</td></tr>
+</tbody></table>
+</div>
+<p class="Text">
+Let <img src="Point-LineDistance2-Dimensional_files/Inline26.gif" class="inlineformula" alt="r" border="0" height="14" width="6"> be a vector from the point <img src="Point-LineDistance2-Dimensional_files/Inline27.gif" class="inlineformula" alt="x_0=(x_0,y_0)" border="0" height="16" width="72"> to
+ the first point on the line
+</p>
+<div>
+<table style="padding-left: 50px;" align="center" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td align="left"><img src="Point-LineDistance2-Dimensional_files/NumberedEquation7.gif" class="numberedequation" alt=" r=[x_1-x_0; y_1-y_0], " border="0" height="36" width="84"></td><td align="right" width="3">
+<div id="eqn13" class="eqnum">
+(13)
+</div>
+</td></tr>
+</tbody></table>
+</div>
+<p class="Text">
+then the distance from <img src="Point-LineDistance2-Dimensional_files/Inline28.gif" class="inlineformula" alt="(x_0,y_0)" border="0" height="16" width="42"> to the
+ line is again given by projecting <img src="Point-LineDistance2-Dimensional_files/Inline29.gif" class="inlineformula" alt="r" border="0" height="14" width="6"> onto <img src="Point-LineDistance2-Dimensional_files/Inline30.gif" class="inlineformula" alt="v" border="0" height="14" width="7">, giving
+</p>
+<div>
+<table style="padding-left: 50px;" align="center" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td align="left"><img src="Point-LineDistance2-Dimensional_files/NumberedEquation8.gif" class="numberedequation" alt=" d=|v^^·r|=(|(x_2-x_1)(y_1-y_0)-(x_1-x_0)(y_2-y_1)|)/(sqrt((x_2-x_1)^2+(y_2-y_1)^2)). " border="0" height="48" width="299"></td><td align="right" width="3">
+<div id="eqn14" class="eqnum">
+(14)
+</div>
+</td></tr>
+</tbody></table>
+</div>
+<p class="Text">
+As it must, this formula corresponds to the distance in the three-dimensional case
+</p>
+<div>
+<table style="padding-left: 50px;" align="center" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td align="left"><img src="Point-LineDistance2-Dimensional_files/NumberedEquation9.gif" class="numberedequation" alt=" d=(|(x_2-x_1)x(x_1-x_0)|)/(|x_2-x_1|) " border="0" height="38" width="142"></td><td align="right" width="3">
+<div id="eqn15" class="eqnum">
+(15)
+</div>
+</td></tr>
+</tbody></table>
+</div>
+<p class="Text">
+with all vectors having zero <img src="Point-LineDistance2-Dimensional_files/Inline31.gif" class="inlineformula" alt="z" border="0" height="14" width="6">-components, and
+ can be written in the slightly more concise form
+</p>
+<div>
+<table style="padding-left: 50px;" align="center" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td align="left"><img src="Point-LineDistance2-Dimensional_files/NumberedEquation10.gif" class="numberedequation" alt=" d=(|det(x_2-x_1  x_1-x_0)|)/(|x_2-x_1|), " border="0" height="38" width="154"></td><td align="right" width="3">
+<div id="eqn16" class="eqnum">
+(16)
+</div>
+</td></tr>
+</tbody></table>
+</div>
+<p class="Text">
+where <img src="Point-LineDistance2-Dimensional_files/Inline32.gif" class="inlineformula" alt="det(A)" border="0" height="14" width="37"> denotes a <a href="http://mathworld.wolfram.com/Determinant.html" class="Hyperlink">determinant</a>.
+</p>
+<p class="Text">
+The distance between a point with <a href="http://mathworld.wolfram.com/ExactTrilinearCoordinates.html" class="Hyperlink">exact trilinear coordinates</a> <img src="Point-LineDistance2-Dimensional_files/Inline33.gif" class="inlineformula" alt="(alpha^',beta^',gamma^')" border="0" height="14" width="59">
+ and a line <img src="Point-LineDistance2-Dimensional_files/Inline34.gif" class="inlineformula" alt="lalpha+mbeta+ngamma=0" border="0" height="14" width="107">
+ is
+</p>
+<div>
+<table style="padding-left: 50px;" align="center" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td align="left"><img src="Point-LineDistance2-Dimensional_files/NumberedEquation11.gif" class="numberedequation" alt=" d=(|lalpha^'+mbeta^'+ngamma^'|)/(sqrt(l^2+m^2+n^2-2mncosA-2nlcosB-2lmcosC)) " border="0" height="48" width="344"></td><td align="right" width="3">
+<div id="eqn17" class="eqnum">
+(17)
+</div>
+</td></tr>
+</tbody></table>
+</div>
+<p class="Text">
+(Kimberling 1998, p.&nbsp;31).
+</p>
+<!-- End Content -->
+<!-- Begin See Also -->
+<form name="SearchLinks" method="get" action="http://mathworld.wolfram.com/search/">
+<p class="CrossRefs">
+<span class="crosslinkheader">SEE ALSO:</span> <a href="http://mathworld.wolfram.com/Collinear.html" class="Hyperlink">Collinear</a>,
+<a href="http://mathworld.wolfram.com/Point-LineDistance3-Dimensional.html" class="Hyperlink">Point-Line Distance--3-Dimensional</a>
+</p>
+</form>
+<!-- End See Also -->
+<!-- Begin CrossURL -->
+<!-- End CrossURL -->
+<!-- Begin Contributor -->
+<!-- End Contributor -->
+<!-- Begin References -->
+<p>
+<img src="Point-LineDistance2-Dimensional_files/underline.gif" alt="" height="3" width="300">
+</p>
+<span class="crosslinkheader">REFERENCES:</span>
+<p class="Reference">
+Kimberling, C. "Triangle Centers and Central Triangles." <i>Congr. Numer.</i> <b>129</b>,
+1-295, 1998.
+</p>
+<!-- End References -->
+<!-- Begin CiteAs -->
+<div>
+<img src="Point-LineDistance2-Dimensional_files/underline.gif" alt="" height="3" width="300"><br><br><br><span class="crosslinkheader">CITE THIS AS:</span><br>
+<p class="citation">
+<a href="http://mathworld.wolfram.com/about/author.html">Weisstein, Eric W.</a> "Point-Line Distance--2-Dimensional."
+From <a href="http://mathworld.wolfram.com/"><i>MathWorld</i></a>--A Wolfram Web Resource. <a href="http://mathworld.wolfram.com/Point-LineDistance2-Dimensional.html">http://mathworld.wolfram.com/Point-LineDistance2-Dimensional.html</a>
+</p>
+</div>
+<!-- End CiteAs -->
+<!-- End Total Content -->
+</td></tr>
+<!-- End Body -->
+</tbody></table>
+</div>
+</div>
+<div class="bottomshadow">
+<img src="Point-LineDistance2-Dimensional_files/spacer.gif" alt="" height="17" width="1">
+</div>
+<p class="footer">
+<a href="http://mathworld.wolfram.com/contact/"><img src="Point-LineDistance2-Dimensional_files/send.gif" alt="Send" title="Send" border="0" height="17" width="16">Contact the <i>MathWorld</i> Team</a><br>
+© 1999-2009 <a href="http://www.wolfram.com/" target="_blank">Wolfram Research, Inc.</a> | <a href="http://mathworld.wolfram.com/about/terms.html">Terms of Use</a>
+</p>
+
+</td>
+<td valign="top">
+<div class="demonstrations">
+<table border="0" width="185">
+<tbody><tr valign="top"><td>
+<div class="demoheader">
+<span class="demoinsidetitle">Point-Line Distance--2-Dimensional</span><span class="demoinsidetext">&nbsp;in&nbsp;the&nbsp;</span>
+<div>
+<img src="Point-LineDistance2-Dimensional_files/demo_logo.jpg" alt="New! Interactive mathematics--The Wolfram Demonstrations Project" title="New! Interactive mathematics--The Wolfram Demonstrations Project" border="0" height="20" width="203">
+</div>
+</div>
+</td></tr>
+</tbody></table>
+<div class="demolowerhalf">
+<div class="leftmargin">
+<table border="0" width="185">
+<tbody><tr valign="top"><td class="demorowleftTop"><a href="http://demonstrations.wolfram.com/ShortestDistanceBetweenAPointAndALineIn2D/" class="demolink" target="_blank"><img src="Point-LineDistance2-Dimensional_files/ShortestDistanceBetweenAPointAndALineIn2D.jpg" alt="Shortest Distance between a Point and a Line in 2D" border="0" height="48" width="44"><img src="Point-LineDistance2-Dimensional_files/play.gif" class="play" alt="Shortest Distance between a Point and a Line in 2D" border="0"></a></td><td class="demorowrightTop" valign="middle"><span class="demowords"><a href="http://demonstrations.wolfram.com/ShortestDistanceBetweenAPointAndALineIn2D/" class="othersite" target="_blank">Shortest Distance between a Point and a Line in
+ 2D</a></span></td></tr><tr valign="top"><td class="demorowleftBottom"><a href="http://demonstrations.wolfram.com/DistanceFromAPointToALine/" class="demolink" target="_blank"><img src="Point-LineDistance2-Dimensional_files/DistanceFromAPointToALine.jpg" alt="Distance from a Point to a Line" border="0" height="46" width="44"><img src="Point-LineDistance2-Dimensional_files/play.gif" class="play" alt="Distance from a Point to a Line" border="0"></a></td><td class="demorowrightBottom" valign="middle"><span class="demowords"><a href="http://demonstrations.wolfram.com/DistanceFromAPointToALine/" class="othersite" target="_blank">Distance from a Point to a Line</a></span></td></tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div style="margin-left: 30px; margin-right: 10px; margin-top: 20px;">
+
+<a href="http://www.wolfram.com/products/mathematica/" target="_blank"><img src="Point-LineDistance2-Dimensional_files/mathematica.gif" alt="Wolfram Mathematica 7" title="Wolfram Mathematica 7" border="0" height="308" width="211"></a><div>
+<!-- The code below handles :hover and :active for IE6 and below -->
+<!--[if lte IE 6]>
+<style type="text/css">
+div.redwebmenu {
+   behavior: url(/scripts/csshover.htc);
+   }
+ </style>
+<![endif]-->
+
+<div style="position: absolute; margin-left: -3px; margin-right: 30px; padding-top: 6px;">
+<table>
+<tbody><tr>
+<td>
+<div class="redwebmenu">
+	<div class="redwebmenuheader"><a class="aredmenuheader" href="http://www.wolfram.com/webresources.html">&nbsp;Other Wolfram Web Resources »</a>
+		<div class="redwebsubmenu">
+			<div class="redwebitem"><a href="http://www.wolfram.com/" target="_blank">Wolfram Research</a></div>
+			<div class="redwebitem"><a href="http://www.wolfram.com/products/mathematica/" target="_blank"><i>Mathematica</i> Home Page</a></div>
+			<div class="redwebitem"><a href="http://reference.wolfram.com/" target="_blank"><i>Mathematica</i> Documentation Center</a></div>
+			<div class="redwebitem"><a href="http://demonstrations.wolfram.com/" target="_blank">Wolfram Demonstrations Project</a></div>
+			<div class="redwebitem"><a href="http://integrals.wolfram.com/" target="_blank">Online Integrator</a></div>
+			<div class="redwebitem"><a href="http://functions.wolfram.com/" target="_blank">Functions Site</a></div>
+			<div class="redwebitem"><a href="http://tones.wolfram.com/" target="_blank">Wolfram Tones</a></div>
+			<div class="redwebitem"><a href="http://www.wolframscience.com/" target="_blank">Wolfram Science</a></div>
+			<div class="redwebitem"><a href="http://blog.wolfram.com/" target="_blank">Wolfram Blog</a></div>
+			<div class="redwebitem"><a href="http://www.wolfram.com/webresources.html" target="_blank">more&#8230;</a></div>
+		</div>
+	</div>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+
+</div>
+</td>
+</tr>
+</tbody></table>
+</body></html>

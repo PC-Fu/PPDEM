@@ -1,0 +1,319 @@
+/* vBulletin 3 CSS For Style 'recent_up.11.19.07' (styleid: 13) */
+body
+{
+	background-color: #ffffff;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+td, th, p, li
+{
+	font: 11pt Arial, sans-serif;
+}
+.tborder
+{
+	color: #000000;
+	border: 1px #666666 solid;
+}
+.tcat
+{
+	background-color: #F3F6FB;
+	color: #333333;
+	font: bold 10pt Arial, sans-serif;
+}
+.thead
+{
+	background-color: #6699CC;
+	color: #FFFFFF;
+	font: 11px Arial, sans-serif;
+}
+.thead a:link
+{
+	color: #FFFFFF;
+}
+.thead a:visited
+{
+	color: #FFFFFF;
+}
+.thead a:hover, .thead a:active
+{
+	color: #FFFF00;
+}
+.tfoot
+{
+	background-color: #6699CC;
+	color: #ffffff;
+}
+.tfoot a:link
+{
+	color: #ffffff;
+}
+.tfoot a:visited
+{
+	color: #ffffff;
+}
+.tfoot a:hover, .tfoot a:active
+{
+	color: #FFFF66;
+}
+.alt1, .alt1Active
+{
+	background-color: #FFFFFF;
+	color: #000000;
+}
+.alt2, .alt2Active
+{
+	background-color: #F3F6FB;
+	color: #000000;
+}
+.wysiwyg
+{
+	background-color: #ffffff;
+	color: #000000;
+	font: 10pt Arial, sans-serif;
+}
+textarea, .bginput
+{
+	font: 10pt Arial, sans-serif;
+}
+.button
+{
+	font-family: Arial, sans-serif;
+}
+select
+{
+	font: 11px Arial, sans-serif;
+}
+option, optgroup
+{
+	font-size: 11px;
+	font-family: Arial, sans-serif;
+}
+.smallfont
+{
+	font: 10pt Arial, sans-serif;
+}
+.time
+{
+	color: #666686;
+}
+.highlight
+{
+	color: #FF0000;
+	font-weight: bold;
+}
+.fjsel
+{
+	background-color: #3E5C92;
+}
+.fjdpth0
+{
+	background-color: #F7F7F7;
+	color: #000000;
+}
+.panel
+{
+	background-color: #EDF2F6;
+	color: #000000;
+	padding: 10px;
+}
+.panelsurround
+{
+	background-color: #FCFEFD;
+	color: #000000;
+}
+legend
+{
+	color: #333333;
+	font-family: Arial, sans-serif;
+}
+.vbmenu_control
+{
+	background-color: #4A7EA6;
+	color: #FFFFFF;
+	font: bold 11px Arial, sans-serif;
+	padding: 3px 6px 3px 6px;
+	white-space: nowrap;
+}
+.vbmenu_control a:link
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.vbmenu_control a:visited
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.vbmenu_control a:hover, .vbmenu_control a:active
+{
+	color: #FFFFFF;
+	text-decoration: underline;
+}
+.vbmenu_popup
+{
+	background-color: #FFFFFF;
+	color: #000000;
+	border: 1px solid #0B198C;
+}
+.vbmenu_option
+{
+	background-color: #BBC7CE;
+	color: #000000;
+	font: 11px Arial, sans-serif;
+	white-space: nowrap;
+	cursor: pointer;
+}
+.vbmenu_option a:link
+{
+	color: #22229C;
+	text-decoration: none;
+}
+.vbmenu_option a:visited
+{
+	color: #22229C;
+	text-decoration: none;
+}
+.vbmenu_option a:hover, .vbmenu_option a:active
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.vbmenu_hilite
+{
+	background-color: #8A949E;
+	color: #FFFFFF;
+	font: 11px Arial, sans-serif;
+	white-space: nowrap;
+	cursor: pointer;
+}
+.vbmenu_hilite a:link
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.vbmenu_hilite a:visited
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.vbmenu_hilite a:hover, .vbmenu_hilite a:active
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+so /* ***** styling for 'big' usernames on postbit etc. ***** */
+.bigusername { font-size: 14pt; }
+
+/* ***** small padding on 'thead' elements ***** */
+td.thead, div.thead { padding: 4px; }
+
+/* ***** basic styles for multi-page nav elements */
+.pagenav a { text-decoration: none; font-size:11pt}
+.pagenav td { padding: 2px 4px 2px 4px; font-size:11pt; margin:3px; border: 1px solid #666666}
+
+
+
+
+/* ***** define margin and font-size for elements inside panels ***** */
+.fieldset { margin-bottom: 6px; }
+.fieldset, .fieldset td, .fieldset p, .fieldset li { }
+
+/* ***** don't change the following ***** */
+form { display: inline; }
+label { cursor: default; }
+.normal { font-weight: normal; }
+.inlineimg { vertical-align: middle; }
+.showthreadh1{
+  font-family:verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;  
+  margin:0;
+  font-size: 14px;
+  font-weight: bold;	
+  display: inline;
+}
+
+.navbar_box{
+margin-top:0px;
+margin-bottom: 0px;
+padding: 5px;
+font-size: 9pt;
+background: #F3F6FB;
+}
+
+.post_message{
+  padding: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  line-height:20px;
+  font-size: 11pt;
+}
+#nav_info{
+  padding-top:10px;
+  padding-bottom:10px;
+}
+#nav_info h1{
+  font-size:16px;
+  font-weight: bold;
+  padding:0px;
+  margin:0px;
+}
+#post_box{
+  margin:0px;
+  padding: 1px;
+  background:#FFFFFF;
+  margin-top: 7px;
+  margin-bottom: 8px;
+  border: 1px solid #3E5C92;
+}
+.post_box_top{
+  margin:0px;
+  padding:3px;
+  border-bottom: 1px solid #EEEEEE;
+}
+.post_box_bottom{
+  padding: 0px;
+  margin: 0px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  background: #FFFFFF;
+  font-size: 10pt;
+}
+#post_box_clear div{
+ padding: 0px;
+ margin: 0px;
+ padding-bottom: 2px;
+}
+.post_auth a{
+ font-weight: bold;
+ font-size: 12pt;
+}
+.post_buttons a{
+   background-color: #F4F4F4;
+   font-weight:bold;
+   font-size: 8pt;
+   text-decoration: none;
+   padding:3px;
+   color: #666666;
+}
+.post_buttons a:visited{
+   background-color: #F4F4F4;
+   font-weight:bold;
+   font-size: 8pt;
+   padding:3px;
+   color: #666666;
+   text-decoration: none;
+}
+.post_buttons a:hover{
+   background-color: #ffcc66;
+   font-weight:bold;
+   font-size: 8pt;
+   padding:3px;
+   color: red;
+   text-decoration: none;
+}
+.smallcode div pre{
+  font-size:8pt;
+}
+
+.post_auth .smallfont{
+  font-size:8pt;
+}

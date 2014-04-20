@@ -1,0 +1,23 @@
+BODY,TABLE {
+  font-family: Verdana,Tahoma,Helvetica,sans-serif;
+  font-size  : 10pt;
+  line-height: 16pt; }
+
+H1 {
+  font-family: Verdana,Tahoma,Helvetica,sans-serif;
+  font-size  : 16pt;
+  line-height: 16pt; }
+
+CODE {
+  font-family: Courier,Courier New;
+  font-size  :  9pt;
+  line-height: 10pt; }
+
+A:link {
+  color      : #000000; }
+
+A:visited {
+  color      : #000000; }
+
+A:hover {
+  color      : #808080; }
