@@ -14,7 +14,7 @@
      $  flagLoadMode, intLoadPara, realLoadPara,iCurStep,eleOut,
      $  FWall,iniFWall,FxWall,FyWall,FMWall,Fx,Fy,FM,iniOri,elong,
      $  flagOutInied,factorSlow,hThinLayer,flagThinLayer,iDirecCyc, 
-     $  flagSpecialLoad)
+     $  flagSpecialLoad, nLinks, iEleLink, l0Link, kLinkPos, kLinkNeg)
 	implicit none
 
 	integer nEle,nActEle,nWall,nCon,nPCon,nGridX,nGridY,numThreads,
@@ -130,6 +130,11 @@ c     $   strgTensl(1)
       integer iDirecCyc,flagUDCyc, flagConstP, flagSpecialLoad
       double precision maxVWall, maxAccWall,stressUDCyc(2),
      $ qLimit,v0,v1, pMean, stsV0
+     
+     	integer nLinks, iLink, iEleLink(nLinks,2)
+      double precision l0Link(nLinks),kLinkPos(nLinks),kLinkNeg(nLinks)
+      double precision FLink(2)
+
 
 	maxVWall=(y1Wall(2)-y1Wall(1))*0.002/1000.0/dt/nInc
 	maxAccWall=maxVWall/dt/nInc/20
@@ -739,16 +744,36 @@ c      time111(iiter,3)=omp_get_Wtime()
         iniFWall(4,1)=-iniFWall(3,1)
       end if
       !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
       
+      
+      
+      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+      !!! Links !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
+      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+      do iLink = 1, nLinks
+        iEle = iEleLink(iLink, 1)
+        jEle = iEleLink(iLink, 2)
+        Call LinkForce(xEle(iEle), yEle(iEle), xEle(jEle), yEle(jEle),
+     $                 l0Link(iLink), kLinkPos(iLink), kLinkNeg(iLink),
+     $                 FLink)    
+     
+        Fx(iEle) = Fx(iEle) + FLink(1)
+        Fy(iEle) = Fy(iEle) + FLink(2)
+        Fx(jEle) = Fx(jEle) - FLink(1)
+        Fy(jEle) = Fy(jEle) - FLink(2)
+      end do
+      
+      
+      
+      
+      
+      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+      !!! Walls !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
+      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
       FxWall=0
       FyWall=0
       FMWall=0
       FWall=iniFWall
-      
-      
-      
-      
       
       
 c       call omp_set_num_threads (1)   !  Overhead for paralellization was very high.  Couldn't figure out why.  Use one thread only for this loop.
