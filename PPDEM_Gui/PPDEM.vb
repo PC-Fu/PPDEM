@@ -46,7 +46,7 @@ Public Class PPDEM
      ByVal eleOut() As Integer, ByVal FWall(,) As Double, ByVal iniFWall(,) As Double, ByVal FxWall() As Double, ByVal FyWall() As Double, ByVal FMWall() As Double, ByVal Fx() As Double, ByVal Fy() As Double, ByVal FM() As Double, _
      ByVal iniOri() As Double, ByVal elong() As Double, ByRef flagOutInied As Integer, ByRef factorSlow As Double, _
      ByRef hThinLayer As Double, ByVal flagThinLayer() As Integer, ByRef iDirecCyc As Integer, ByRef flagSpecialLoad As Integer, _
-     ByRef nLinks As Integer, ByVal iEleLink(,) As Integer, ByVal l0Link() As Double, ByVal kLinkPos() As Double, ByVal kLinkNeg() As Double)
+     ByRef nLinks As Integer, ByVal iEleLink(,) As Integer, ByVal l0Link() As Double, ByVal kLinkPos() As Double, ByVal kLinkNeg() As Double, ByRef linkDampingRatio As Double)
 
     Declare Sub DomainLimit Lib "demintel.dll" Alias "DomainLimit" (<[In](), Out()> _
     ByRef nEle As Integer, ByRef nActEle As Integer, ByVal xEle() As Double, ByVal yEle() As Double, ByVal rEle() As Double, _
@@ -929,6 +929,9 @@ Public Class PPDEM
     Dim l0Link() As Double
     Dim kLinkPos() As Double
     Dim kLinkNeg() As Double
+    Dim linkDampingRatio As Double = setLinkDampingRatio.Value
+
+
 
 
 
@@ -1537,7 +1540,7 @@ Public Class PPDEM
         mGravEle, mInertEle, MIInertEle, zoomScale, rqCE, xCE, hSector, limitAll, vWall, aOverAll, vol, _
          flagLoadMode, intLoadPara, realLoadPara, iCurStep, eleOut, FWall, iniFWall, FxWall, FyWall, FMWall, Fx, Fy, FM, iniOri, elong, flagOutInied, factorSlow, _
          hThinLayer, flagThinLayer, iDirecCyc, flagSpecialLoad, _
-         nLinks, iEleLink, l0Link, kLinkPos, kLinkNeg)
+         nLinks, iEleLink, l0Link, kLinkPos, kLinkNeg, linkDampingRatio)
 
 #End If
         lbICurStep1.Text = "Step:           " & iCurStep(0).ToString
@@ -7496,4 +7499,7 @@ Public Class PPDEM
     End Sub
 
 
+    Private Sub setLinkDampingRatio_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles setLinkDampingRatio.ValueChanged
+        linkDampingRatio = setLinkDampingRatio.Value
+    End Sub
 End Class
