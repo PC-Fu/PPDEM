@@ -14,7 +14,8 @@
      $  flagLoadMode, intLoadPara, realLoadPara,iCurStep,eleOut,
      $  FWall,iniFWall,FxWall,FyWall,FMWall,Fx,Fy,FM,iniOri,elong,
      $  flagOutInied,factorSlow,hThinLayer,flagThinLayer,iDirecCyc, 
-     $  flagSpecialLoad, nLinks, iEleLink, l0Link, kLinkPos, kLinkNeg)
+     $  flagSpecialLoad, nLinks, iEleLink, l0Link, kLinkPos, kLinkNeg,
+     $  linkDampingRatio)
 	implicit none
 
 	integer nEle,nActEle,nWall,nCon,nPCon,nGridX,nGridY,numThreads,
@@ -133,7 +134,7 @@ c     $   strgTensl(1)
      
      	integer nLinks, iLink, iEleLink(nLinks,2)
       double precision l0Link(nLinks),kLinkPos(nLinks),kLinkNeg(nLinks)
-      double precision FLink(2)
+      double precision FLink(2),linkDampingRatio
 
 
 	maxVWall=(y1Wall(2)-y1Wall(1))*0.002/1000.0/dt/nInc
@@ -754,8 +755,10 @@ c      time111(iiter,3)=omp_get_Wtime()
         iEle = iEleLink(iLink, 1)
         jEle = iEleLink(iLink, 2)
         Call LinkForce(xEle(iEle), yEle(iEle), xEle(jEle), yEle(jEle),
-     $                 l0Link(iLink), kLinkPos(iLink), kLinkNeg(iLink),
-     $                 FLink)    
+     $         l0Link(iLink), kLinkPos(iLink), kLinkNeg(iLink),
+     $         FLink,  mInertEle(iEle), mInertEle(jEle), vxEle(iEle), 
+     $         vxEle(jEle), vyEle(iEle), vyEle(jEle),
+     $         linkDampingRatio)    
      
         Fx(iEle) = Fx(iEle) + FLink(1)
         Fy(iEle) = Fy(iEle) + FLink(2)

@@ -15,7 +15,8 @@
      $  eleOut,FWall,iniFWall,FxWall,FyWall,FMWall,Fx,Fy,FM,iniOri,
      $  elong,flagOutInied,factorSlow,
      $  hThinLayer,flagThinLayer,iDirecCyc, 
-     $  flagSpecialLoad, nLinks, iEleLink, l0Link, kLinkPos, kLinkNeg) 
+     $  flagSpecialLoad, nLinks, iEleLink, l0Link, kLinkPos, kLinkNeg,
+     $  linkDampingRatio) 
 		implicit none
 
 	 !DEC$ ATTRIBUTES DLLEXPORT :: CalPOLY
@@ -38,7 +39,8 @@
      $  eleOut,FWall,iniFWall,FxWall,FyWall,FMWall,Fx,Fy,FM,iniOri,
      $  elong,flagOutInied,factorSlow,
      $  hThinLayer,flagThinLayer,iDirecCyc, 
-     $  flagSpecialLoad, nLinks, iEleLink, l0Link, kLinkPos, kLinkNeg
+     $  flagSpecialLoad, nLinks, iEleLink, l0Link, kLinkPos, kLinkNeg,
+     $  linkDampingRatio
      
      
      
@@ -148,7 +150,7 @@ c     $   strgTensl(1)
      $  eleOut,FWall,iniFWall,FxWall,FyWall,FMWall,Fx,Fy,FM,iniOri,
      $  elong,flagOutInied,factorSlow,
      $  hThinLayer,flagThinLayer,iDirecCyc,flagSpecialLoad, 
-     $  nLinks, iEleLink, l0Link, kLinkPos, kLinkNeg)
+     $  nLinks, iEleLink, l0Link, kLinkPos, kLinkNeg, linkDampingRatio)
 
 
 
