@@ -45,7 +45,8 @@ Public Class PPDEM
      ByRef flagLoadMode As Integer, ByVal intLoadPara(,) As Integer, ByVal realLoadPara(,) As Double, ByVal iCurStep() As Integer, _
      ByVal eleOut() As Integer, ByVal FWall(,) As Double, ByVal iniFWall(,) As Double, ByVal FxWall() As Double, ByVal FyWall() As Double, ByVal FMWall() As Double, ByVal Fx() As Double, ByVal Fy() As Double, ByVal FM() As Double, _
      ByVal iniOri() As Double, ByVal elong() As Double, ByRef flagOutInied As Integer, ByRef factorSlow As Double, _
-     ByRef hThinLayer As Double, ByVal flagThinLayer() As Integer, ByRef iDirecCyc As Integer, ByRef flagSpecialLoad As Integer)
+     ByRef hThinLayer As Double, ByVal flagThinLayer() As Integer, ByRef iDirecCyc As Integer, ByRef flagSpecialLoad As Integer, _
+     ByRef nLinks As Integer, ByVal iEleLink(,) As Integer, ByVal l0Link() As Double, ByVal kLinkPos() As Double, ByVal kLinkNeg() As Double)
 
     Declare Sub DomainLimit Lib "demintel.dll" Alias "DomainLimit" (<[In](), Out()> _
     ByRef nEle As Integer, ByRef nActEle As Integer, ByVal xEle() As Double, ByVal yEle() As Double, ByVal rEle() As Double, _
@@ -280,6 +281,12 @@ Public Class PPDEM
 
     Declare Sub ReadPauseFile Lib "demintel.dll" Alias "ReadPauseFile" (<[In](), Out()> _
     ByRef flagPause As Integer, ByVal curDir As String, ByRef lCurDir As Integer)
+
+    Declare Sub ImportLinks Lib "demintel.dll" Alias "ImportLinks" (<[In](), Out()> _
+    ByRef nLinks As Integer, ByVal iEleLink(,) As Integer, ByVal l0Link() As Double, ByVal kLinkPos() As Double, ByVal kLinkNeg() As Double, _
+    ByRef nEle As Integer, ByVal xEle() As Double, ByVal yEle() As Double, _
+    ByVal FileName As String, ByRef lName As Int32)
+
 
 #Const USEKEY = 0
 #Const STRESSROTATE = 1
@@ -917,6 +924,15 @@ Public Class PPDEM
 
     Public flagPause As Integer = 0
 
+    Dim nLinks As Integer = 0
+    Dim iEleLink(,) As Integer
+    Dim l0Link() As Double
+    Dim kLinkPos() As Double
+    Dim kLinkNeg() As Double
+
+
+
+
 
     Private Sub PolyBall_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
@@ -1504,7 +1520,8 @@ Public Class PPDEM
         rMA, rNA, rMB, rNB, ECohe, nPtHL, xPtHL, strgTensl, numThreads, alwNEleFrd, _
         mGravEle, mInertEle, MIInertEle, zoomScale, rqCE, xCE, hSector, limitAll, vWall, aOverAll, vol, _
          flagLoadMode, intLoadPara, realLoadPara, iCurStep, eleOut, FWall, iniFWall, FxWall, FyWall, FMWall, Fx, Fy, FM, iniOri, elong, flagOutInied, factorSlow, _
-         hThinLayer, flagThinLayer, iDirecCyc, flagSpecialLoad )
+         hThinLayer, flagThinLayer, iDirecCyc, flagSpecialLoad, _
+         nLinks, iEleLink, l0Link, kLinkPos, kLinkNeg )
 
 #Else
         Call CalPOLY(nEle, nActEle, xEle, yEle, qEle, nVertex, xVertex, yVertex, qVertex, _
@@ -1519,7 +1536,8 @@ Public Class PPDEM
         rMA, rNA, rMB, rNB, ECohe, nPtHL, xPtHL, strgTensl, numThreads, alwNEleFrd, _
         mGravEle, mInertEle, MIInertEle, zoomScale, rqCE, xCE, hSector, limitAll, vWall, aOverAll, vol, _
          flagLoadMode, intLoadPara, realLoadPara, iCurStep, eleOut, FWall, iniFWall, FxWall, FyWall, FMWall, Fx, Fy, FM, iniOri, elong, flagOutInied, factorSlow, _
-         hThinLayer, flagThinLayer, iDirecCyc, flagSpecialLoad)
+         hThinLayer, flagThinLayer, iDirecCyc, flagSpecialLoad, _
+         nLinks, iEleLink, l0Link, kLinkPos, kLinkNeg)
 
 #End If
         lbICurStep1.Text = "Step:           " & iCurStep(0).ToString
@@ -2339,7 +2357,7 @@ Public Class PPDEM
         End If
 
 
-
+        subDrawLinks(graphObj)
 
         '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         ' '' Temp movie making
@@ -6089,14 +6107,25 @@ Public Class PPDEM
 
     End Sub
 
+
+
+    Private Sub subDrawLinks(ByRef graphObj As Graphics)
+
+        penAct = penHL
+
+        For iLink As Integer = 0 To nLinks - 1
+            graphObj.DrawLine(penAct, X2Scr(xEle(iEleLink(0, iLink) - 1)), Y2Scr(yEle(iEleLink(0, iLink) - 1)), X2Scr(xEle(iEleLink(1, iLink) - 1)), Y2Scr(yEle(iEleLink(1, iLink) - 1)))
+        Next
+
+
+
+    End Sub
+
     Private Sub rbContourCoordNum_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbContourCoordNum.CheckedChanged
         If rbContourCoordNum.Checked = True Then
             iMode = 12
             Call ColorDeform(nEle, nActEle, xEleTrace, yEleTrace, qEleTrace, rangeContour, relaMin, relamax, nStep, iStep, jStep, iMode, jMode, kMode, mMode, TraceRGB, ptcStress, areaEle, iniOri, Ori, refOri, numECon)
-
-
         End If
-
     End Sub
 
 
@@ -7427,6 +7456,43 @@ Public Class PPDEM
         End If
 
 
+    End Sub
+
+
+    Private Sub btnImpLink_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnImpLink.Click
+        dlgOpenTest.ShowDialog()
+        FileName = dlgOpenTest.FileName
+        lName = FileName.Length
+
+        nLinks = 0
+        ReDim iEleLink(1, Math.Max(nLinks - 1, 0))
+        ReDim l0Link(Math.Max(nLinks - 1, 0))
+        ReDim kLinkPos(Math.Max(nLinks - 1, 0))
+        ReDim kLinkNeg(Math.Max(nLinks - 1, 0))
+        Call ImportLinks(nLinks, iEleLink, l0Link, kLinkPos, kLinkNeg, nEle, xEle, yEle, FileName, lName)
+        'First call get the number of links so that we can redim the variables
+
+        ReDim iEleLink(1, Math.Max(nLinks - 1, 0))
+        ReDim l0Link(Math.Max(nLinks - 1, 0))
+        ReDim kLinkPos(Math.Max(nLinks - 1, 0))
+        ReDim kLinkNeg(Math.Max(nLinks - 1, 0))
+        Call ImportLinks(nLinks, iEleLink, l0Link, kLinkPos, kLinkNeg, nEle, xEle, yEle, FileName, lName)
+
+    End Sub
+
+
+    Private Sub btnLinkStiffPlus_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLinkStiffPlus.Click
+        For iLink As Integer = 0 To nLinks - 1
+            kLinkNeg(iLink) *= 2.0
+            kLinkPos(iLink) *= 2.0
+        Next
+    End Sub
+
+    Private Sub btnLinkStiffMinus_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLinkStiffMinus.Click
+        For iLink As Integer = 0 To nLinks - 1
+            kLinkNeg(iLink) *= 0.5
+            kLinkPos(iLink) *= 0.5
+        Next
     End Sub
 
 

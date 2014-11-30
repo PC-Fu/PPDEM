@@ -24,7 +24,7 @@
 				<Tool Name="VFPreBuildEventTool"/>
 				<Tool Name="VFPostBuildEventTool"/>
 				<Tool Name="VFManifestTool" SuppressStartupBanner="true"/></Configuration>
-		<Configuration Name="Debug|x64" OutputDirectory="D:\DEM_Intel\VB_X64\PolyBall\bin\Debug" DeleteExtensionsOnClean="*.obj;*.mod;*.pdb;*.asm;*.map;*.dyn;*.dpi;*.tmp;*.log;*.ilk;*.dll;$(TargetPath)" ConfigurationType="typeDynamicLibrary">
+		<Configuration Name="Debug|x64" OutputDirectory="..\PPDEM_Gui\Bin\Release" DeleteExtensionsOnClean="*.obj;*.mod;*.pdb;*.asm;*.map;*.dyn;*.dpi;*.tmp;*.log;*.ilk;*.dll;$(TargetPath)" ConfigurationType="typeDynamicLibrary">
 				<Tool Name="VFFortranCompilerTool" AdditionalOptions="/dll" SuppressStartupBanner="true" DebugInformationFormat="debugEnabled" Optimization="optimizeDisabled" OpenMP="OpenMPParallelCode" OpenMPDiagLevel="openMPDiagLevel2" WarnDeclarations="true" WarnUnusedVariables="true" WarnIgnoreLOC="true" WarnInterfaces="true" ModulePath="$(INTDIR)/" ObjectFile="$(INTDIR)/" Traceback="true" BoundsCheck="true" RuntimeLibrary="rtMultiThreadedDebugDLL"/>
 				<Tool Name="VFLinkerTool" OutputFile="$(OUTDIR)/DEMIntel.dll" LinkIncremental="linkIncrementalNo" SuppressStartupBanner="true" GenerateDebugInformation="true" ProgramDatabaseFile="$(OUTDIR)/DEMIntel.pdb" SubSystem="subSystemWindows" StackReserveSize="2000000000" ImportLibrary="$(OUTDIR)/DEMIntel.lib" LinkDLL="true"/>
 				<Tool Name="VFResourceCompilerTool"/>
@@ -98,6 +98,7 @@
 		<File RelativePath="Grid.for"/>
 		<File RelativePath="Histgram.for"/>
 		<File RelativePath="HSV2RGB.for"/>
+		<File RelativePath=".\ImportLinks.f90"/>
 		<File RelativePath="InheritPair.for"/>
 		<File RelativePath=".\IniDelaunay.for"/>
 		<File RelativePath="IniGD.for"/>
@@ -108,6 +109,7 @@
 		<File RelativePath="InterCircle.for"/>
 		<File RelativePath="LineCircle.for"/>
 		<File RelativePath=".\LineIntersect.for"/>
+		<File RelativePath=".\LinkForce.f90"/>
 		<File RelativePath=".\MaskCrop.for"/>
 		<File RelativePath=".\MaskStrainCell.for"/>
 		<File RelativePath="Mass.for"/>
