@@ -131,6 +131,7 @@ c     $   strgTensl(1)
 
 	integer nLinks, iEleLink(nLinks,2)
       double precision l0Link(nLinks),kLinkPos(nLinks),kLinkNeg(nLinks)
+      double precision linkDampingRatio
 
 	
 	call CalOMP(nEle,nActEle,xEle,yEle,qEle,nVertex,xVertex,yVertex,
