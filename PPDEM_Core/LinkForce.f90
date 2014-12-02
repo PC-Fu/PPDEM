@@ -17,11 +17,11 @@ implicit none
     end if
 
     if (l .ge. l0) then
-        FLink(1) = FLink(1) + 2* dampingRatio * dsqrt(kPos / (1/m1 + 1/m2)) * dsign(vx2 - vx1, (vx2 - vx1) * (x2-x1))
-        FLink(2) = FLink(2) + 2* dampingRatio * dsqrt(kPos / (1/m1 + 1/m2)) * dsign(vy2 - vy1, (vy2 - vy1) * (y2-y1))
+        FLink(1) = FLink(1) + 2* dampingRatio * dsqrt(kPos / (1/m1 + 1/m2)) * (vx2 - vx1)
+        FLink(2) = FLink(2) + 2* dampingRatio * dsqrt(kPos / (1/m1 + 1/m2)) * (vy2 - vy1)
     else
-        FLink(1) = FLink(1) + 2* dampingRatio * dsqrt(kNeg / (1/m1 + 1/m2)) * dsign(vx2 - vx1, (vx2 - vx1) * (x2-x1))
-        FLink(2) = FLink(2) + 2* dampingRatio * dsqrt(kNeg / (1/m1 + 1/m2)) * dsign(vy2 - vy1, (vy2 - vy1) * (y2-y1))
+        FLink(1) = FLink(1) + 2* dampingRatio * dsqrt(kNeg / (1/m1 + 1/m2)) * (vx2 - vx1)
+        FLink(2) = FLink(2) + 2* dampingRatio * dsqrt(kNeg / (1/m1 + 1/m2)) * (vy2 - vy1)
     end if
     
 end subroutine LinkForce  

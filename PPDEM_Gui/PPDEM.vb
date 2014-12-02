@@ -929,7 +929,7 @@ Public Class PPDEM
     Dim l0Link() As Double
     Dim kLinkPos() As Double
     Dim kLinkNeg() As Double
-    Dim linkDampingRatio As Double = setLinkDampingRatio.Value
+    Dim linkDampingRatio As Double = 0
 
 
 
@@ -994,6 +994,8 @@ Public Class PPDEM
         setLoadModeRightT.SelectedIndex = 1
         setLoadModeBottomT.SelectedIndex = 1
         setLoadModeTopT.SelectedIndex = 1
+
+        linkDampingRatio = setLinkDampingRatio.Value
 
 #If USEKEY = 1 Then
         WriteNoxMemo()
@@ -1524,7 +1526,7 @@ Public Class PPDEM
         mGravEle, mInertEle, MIInertEle, zoomScale, rqCE, xCE, hSector, limitAll, vWall, aOverAll, vol, _
          flagLoadMode, intLoadPara, realLoadPara, iCurStep, eleOut, FWall, iniFWall, FxWall, FyWall, FMWall, Fx, Fy, FM, iniOri, elong, flagOutInied, factorSlow, _
          hThinLayer, flagThinLayer, iDirecCyc, flagSpecialLoad, _
-         nLinks, iEleLink, l0Link, kLinkPos, kLinkNeg )
+         nLinks, iEleLink, l0Link, kLinkPos, kLinkNeg, linkDampingRatio )
 
 #Else
         Call CalPOLY(nEle, nActEle, xEle, yEle, qEle, nVertex, xVertex, yVertex, qVertex, _
