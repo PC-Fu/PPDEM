@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{6989167D-11E4-40FE-8C1A-2192A86A7E90}") = "DEMIntel", "DEMIntel.vfproj", "{C8885B96-3ABC-4320-A10F-AE2D53E8F232}"
 EndProject
 Global
