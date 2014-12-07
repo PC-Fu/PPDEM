@@ -284,7 +284,7 @@ Public Class PPDEM
 
     Declare Sub ImportLinks Lib "demintel.dll" Alias "ImportLinks" (<[In](), Out()> _
     ByRef nLinks As Integer, ByVal iEleLink(,) As Integer, ByVal coordEleLink(,) As Double, ByVal l0Link() As Double, ByVal kLinkPos() As Double, ByVal kLinkNeg() As Double, _
-    ByRef nEle As Integer, ByVal xEle() As Double, ByVal yEle() As Double, ByVal rEle() As Double, _
+    ByRef nEle As Integer, ByVal xEle() As Double, ByVal yEle() As Double, ByVal rEle() As Double, ByRef nActEle As Integer, _
     ByVal FileName As String, ByRef lName As Int32)
 
 
@@ -7476,7 +7476,7 @@ Public Class PPDEM
         ReDim l0Link(Math.Max(nLinks - 1, 0))
         ReDim kLinkPos(Math.Max(nLinks - 1, 0))
         ReDim kLinkNeg(Math.Max(nLinks - 1, 0))
-        Call ImportLinks(nLinks, iEleLink, coordEleLink, l0Link, kLinkPos, kLinkNeg, nEle, xEle, yEle, rEle, FileName, lName)
+        Call ImportLinks(nLinks, iEleLink, coordEleLink, l0Link, kLinkPos, kLinkNeg, nEle, xEle, yEle, rEle, nActEle, FileName, lName)
         'First call get the number of links so that we can redim the variables
 
         ReDim iEleLink(1, Math.Max(nLinks - 1, 0))
@@ -7484,7 +7484,7 @@ Public Class PPDEM
         ReDim l0Link(Math.Max(nLinks - 1, 0))
         ReDim kLinkPos(Math.Max(nLinks - 1, 0))
         ReDim kLinkNeg(Math.Max(nLinks - 1, 0))
-        Call ImportLinks(nLinks, iEleLink, coordEleLink, l0Link, kLinkPos, kLinkNeg, nEle, xEle, yEle, rEle, FileName, lName)
+        Call ImportLinks(nLinks, iEleLink, coordEleLink, l0Link, kLinkPos, kLinkNeg, nEle, xEle, yEle, rEle, nActEle, FileName, lName)
 
     End Sub
 
