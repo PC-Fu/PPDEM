@@ -48,18 +48,45 @@
                  jDis = distance
               end if
           end do
+          if (iDis .eq. 1e6 *aveREle) then
+              do iCoord = 1, nActEle
+                  distance = (xEle(iCoord) - coordEleLink(iLink,1))**2 &
+                            +(yEle(iCoord) - coordEleLink(iLink,2))**2
+                  distance = distance**0.5
+                  if ((distance .lt. iDis)) then
+                     iEleLink(iLink,1) = iCoord
+                     iDis = distance
+                  end if
+              end do
+          end if
+          if (jDis .eq. 1e6 *aveREle) then
+              do iCoord = 1, nActEle
+                  distance = (xEle(iCoord) - coordEleLink(iLink,3))**2 &
+                            +(yEle(iCoord) - coordEleLink(iLink,4))**2
+                  distance = distance**0.5
+                  if ((distance .lt. jDis)) then
+                     iEleLink(iLink,2) = iCoord
+                     jDis = distance
+                  end if
+              end do
+          end if
+          if (iEleLink(iLink,1) .eq. iEleLink(iLink,2)) then
+              jDis = 1e6 *aveREle
+              do iCoord = 1, nActEle
+                  distance = (xEle(iCoord) - coordEleLink(iLink,3))**2 &
+                            +(yEle(iCoord) - coordEleLink(iLink,4))**2
+                  distance = distance**0.5
+                  if ((distance .lt. jDis) .and. (iCoord .ne. iEleLink(iLink,1))) then
+                     iEleLink(iLink,2) = iCoord
+                     jDis = distance
+                  end if
+              end do
+          end if
+                    
 	      if (l0Link(iLink) .le. 0.0D0) then
 	          l0Link(iLink) = (xEle(iEleLink(iLink,1)) - xEle(iEleLink(iLink,2)))**2 &
 	                         +(yEle(iEleLink(iLink,1)) - yEle(iEleLink(iLink,2)))**2
 	          l0Link(iLink) = l0Link(iLink)**0.5
-              
-              if (l0Link(iLink) .le. 0.0D0) then
-                  iEleLink(iLink,2) = iEleLink(iLink,2) + 1
-                  l0Link(iLink) = (xEle(iEleLink(iLink,1)) - xEle(iEleLink(iLink,2)))**2 &
-	                             +(yEle(iEleLink(iLink,1)) - yEle(iEleLink(iLink,2)))**2
-	              l0Link(iLink) = l0Link(iLink)**0.5
-              end if
-              
 	      end if
 	  end do
 	end if
