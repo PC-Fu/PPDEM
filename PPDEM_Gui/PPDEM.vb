@@ -283,7 +283,7 @@ Public Class PPDEM
     ByRef flagPause As Integer, ByVal curDir As String, ByRef lCurDir As Integer)
 
     Declare Sub ImportLinks Lib "demintel.dll" Alias "ImportLinks" (<[In](), Out()> _
-    ByRef nLinks As Integer, ByVal iEleLink(,) As Integer, ByVal coordEleLink(,) As Double, ByVal l0Link() As Double, ByVal kLinkPos() As Double, ByVal kLinkNeg() As Double, _
+    ByRef nLinks As Integer, ByRef minR As Double, ByRef maxR As Double, ByVal iEleLink(,) As Integer, ByVal coordEleLink(,) As Double, ByVal l0Link() As Double, ByVal kLinkPos() As Double, ByVal kLinkNeg() As Double, _
     ByRef nEle As Integer, ByVal xEle() As Double, ByVal yEle() As Double, ByVal rEle() As Double, ByRef nActEle As Integer, _
     ByVal FileName As String, ByRef lName As Int32)
 
@@ -925,6 +925,8 @@ Public Class PPDEM
     Public flagPause As Integer = 0
 
     Dim nLinks As Integer = 0
+    Dim minR As Double
+    Dim maxR As Double
     Dim iEleLink(,) As Integer
     Dim coordEleLink(,) As Double
     Dim l0Link() As Double
@@ -7476,7 +7478,7 @@ Public Class PPDEM
         ReDim l0Link(Math.Max(nLinks - 1, 0))
         ReDim kLinkPos(Math.Max(nLinks - 1, 0))
         ReDim kLinkNeg(Math.Max(nLinks - 1, 0))
-        Call ImportLinks(nLinks, iEleLink, coordEleLink, l0Link, kLinkPos, kLinkNeg, nEle, xEle, yEle, rEle, nActEle, FileName, lName)
+        Call ImportLinks(nLinks, minR, maxR, iEleLink, coordEleLink, l0Link, kLinkPos, kLinkNeg, nEle, xEle, yEle, rEle, nActEle, FileName, lName)
         'First call get the number of links so that we can redim the variables
 
         ReDim iEleLink(1, Math.Max(nLinks - 1, 0))
@@ -7484,7 +7486,7 @@ Public Class PPDEM
         ReDim l0Link(Math.Max(nLinks - 1, 0))
         ReDim kLinkPos(Math.Max(nLinks - 1, 0))
         ReDim kLinkNeg(Math.Max(nLinks - 1, 0))
-        Call ImportLinks(nLinks, iEleLink, coordEleLink, l0Link, kLinkPos, kLinkNeg, nEle, xEle, yEle, rEle, nActEle, FileName, lName)
+        Call ImportLinks(nLinks, minR, maxR, iEleLink, coordEleLink, l0Link, kLinkPos, kLinkNeg, nEle, xEle, yEle, rEle, nActEle, FileName, lName)
 
     End Sub
 
