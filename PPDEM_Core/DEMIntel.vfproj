@@ -34,7 +34,7 @@
 				<Tool Name="VFPreBuildEventTool"/>
 				<Tool Name="VFPostBuildEventTool"/>
 				<Tool Name="VFManifestTool" SuppressStartupBanner="true"/></Configuration>
-		<Configuration Name="Release|x64" OutputDirectory="D:\DEM_Intel\VB_X64\PolyBall\bin\Debug" DeleteExtensionsOnClean="*.obj;*.mod;*.pdb;*.asm;*.map;*.dyn;*.dpi;*.tmp;*.log;*.ilk;*.dll;$(TargetPath)" ConfigurationType="typeDynamicLibrary">
+		<Configuration Name="Release|x64" OutputDirectory="F:\source\ppdem\PPDEM_Gui\bin\Release" DeleteExtensionsOnClean="*.obj;*.mod;*.pdb;*.asm;*.map;*.dyn;*.dpi;*.tmp;*.log;*.ilk;*.dll;$(TargetPath)" ConfigurationType="typeDynamicLibrary">
 				<Tool Name="VFFortranCompilerTool" AdditionalOptions="/dll " SuppressStartupBanner="true" OpenMP="OpenMPParallelCode" WarnDeclarations="true" WarnUnusedVariables="true" ModulePath="$(INTDIR)/" ObjectFile="$(INTDIR)/" GlobalOptimizations="true"/>
 				<Tool Name="VFLinkerTool" OutputFile="$(OUTDIR)/DEMIntel.dll" LinkIncremental="linkIncrementalNo" SuppressStartupBanner="true" SubSystem="subSystemWindows" StackReserveSize="2000000000" ImportLibrary="$(OUTDIR)/DEMIntel.lib" LinkDLL="true"/>
 				<Tool Name="VFResourceCompilerTool"/>

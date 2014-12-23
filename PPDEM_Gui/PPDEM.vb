@@ -406,6 +406,7 @@ Public Class PPDEM
     Public penGD As Pen = New Pen(Color.Brown, 3)
     Public penGD2 As Pen = New Pen(Color.White, 3)
     Public brushContour As SolidBrush = New SolidBrush(Color.AliceBlue)
+    Public brushBlue As SolidBrush = New SolidBrush(Color.Blue)
     Public brushMask As SolidBrush = New SolidBrush(Color.FromArgb(200, 255, 145, 0))
     Public brushHLMask As SolidBrush = New SolidBrush(Color.FromArgb(75, 20, 40, 255))
     Public brushTransGray As SolidBrush = New SolidBrush(Color.FromArgb(230, 180, 180, 180))
@@ -2366,6 +2367,7 @@ Public Class PPDEM
 
 
         subDrawLinks(graphObj)
+        subDrawLinkedElements(graphObj)
 
         '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         ' '' Temp movie making
@@ -6126,6 +6128,43 @@ Public Class PPDEM
         Next
 
 
+
+    End Sub
+
+    Private Sub subDrawLinkedElements(ByRef graphObj As Graphics)
+
+
+        For iLink As Integer = 0 To nLinks - 1
+            If nVertex(iEleLink(0, iLink) - 1) = 0 Then
+                graphObj.FillEllipse(brushBlue, Convert.ToSingle((xEle(iEleLink(0, iLink) - 1) - rEle(iEleLink(0, iLink) - 1)) * zoomScale) + xOrigin, canvasContainer.Height - Convert.ToSingle(((yEle(iEleLink(0, iLink) - 1) + rEle(iEleLink(0, iLink) - 1))) * zoomScale) + yOrigin, Convert.ToSingle(2 * rEle(iEleLink(0, iLink) - 1) * zoomScale), Convert.ToSingle(2 * rEle(iEleLink(0, iLink) - 1) * zoomScale))
+                graphObj.DrawEllipse(penHL, Convert.ToSingle((xEle(iEleLink(0, iLink) - 1) - rEle(iEleLink(0, iLink) - 1)) * zoomScale) + xOrigin, canvasContainer.Height - Convert.ToSingle(((yEle(iEleLink(0, iLink) - 1) + rEle(iEleLink(0, iLink) - 1))) * zoomScale) + yOrigin, Convert.ToSingle(2 * rEle(iEleLink(0, iLink) - 1) * zoomScale), Convert.ToSingle(2 * rEle(iEleLink(0, iLink) - 1) * zoomScale))
+            Else
+                Dim polyPath As New System.Drawing.Drawing2D.GraphicsPath
+                For j As Integer = 0 To nVertex(iEleLink(0, iLink) - 1) - 1
+                    polyPath.AddArc(Convert.ToSingle((xCE(0, j, iEleLink(0, iLink) - 1) - rqCE(2, j, iEleLink(0, iLink) - 1)) * zoomScale) + xOrigin, canvasContainer.Height - Convert.ToSingle(((xCE(1, j, iEleLink(0, iLink) - 1) + rqCE(2, j, iEleLink(0, iLink) - 1))) * zoomScale) + yOrigin, Convert.ToSingle(2 * rqCE(2, j, iEleLink(0, iLink) - 1) * zoomScale), Convert.ToSingle(2 * rqCE(2, j, iEleLink(0, iLink) - 1) * zoomScale), Convert.ToSingle(-rqCE(3, j, iEleLink(0, iLink) - 1) / 3.14159 * 180), Convert.ToSingle(-CAC(j, iEleLink(0, iLink) - 1) / 3.14159 * 180))
+                    If showARC.Checked = True Then
+                        graphObj.DrawArc(penHL, Convert.ToSingle((xCE(0, j, iEleLink(0, iLink) - 1) - rqCE(2, j, iEleLink(0, iLink) - 1)) * zoomScale) + xOrigin, canvasContainer.Height - Convert.ToSingle(((xCE(1, j, iEleLink(0, iLink) - 1) + rqCE(2, j, iEleLink(0, iLink) - 1))) * zoomScale) + yOrigin, Convert.ToSingle(2 * rqCE(2, j, iEleLink(0, iLink) - 1) * zoomScale), Convert.ToSingle(2 * rqCE(2, j, iEleLink(0, iLink) - 1) * zoomScale), Convert.ToSingle(-rqCE(3, j, iEleLink(0, iLink) - 1) / 3.14159 * 180), Convert.ToSingle(-CAC(j, iEleLink(0, iLink) - 1) / 3.14159 * 180))
+
+                    End If
+                Next
+                graphObj.FillPath(brushBlue, polyPath)
+            End If
+            If nVertex(iEleLink(1, iLink) - 1) = 0 Then
+                graphObj.FillEllipse(brushBlue, Convert.ToSingle((xEle(iEleLink(1, iLink) - 1) - rEle(iEleLink(1, iLink) - 1)) * zoomScale) + xOrigin, canvasContainer.Height - Convert.ToSingle(((yEle(iEleLink(1, iLink) - 1) + rEle(iEleLink(1, iLink) - 1))) * zoomScale) + yOrigin, Convert.ToSingle(2 * rEle(iEleLink(1, iLink) - 1) * zoomScale), Convert.ToSingle(2 * rEle(iEleLink(1, iLink) - 1) * zoomScale))
+                graphObj.DrawEllipse(penHL, Convert.ToSingle((xEle(iEleLink(1, iLink) - 1) - rEle(iEleLink(1, iLink) - 1)) * zoomScale) + xOrigin, canvasContainer.Height - Convert.ToSingle(((yEle(iEleLink(1, iLink) - 1) + rEle(iEleLink(1, iLink) - 1))) * zoomScale) + yOrigin, Convert.ToSingle(2 * rEle(iEleLink(1, iLink) - 1) * zoomScale), Convert.ToSingle(2 * rEle(iEleLink(1, iLink) - 1) * zoomScale))
+            Else
+                Dim polyPath As New System.Drawing.Drawing2D.GraphicsPath
+                For j As Integer = 0 To nVertex(iEleLink(1, iLink) - 1) - 1
+                    polyPath.AddArc(Convert.ToSingle((xCE(0, j, iEleLink(1, iLink) - 1) - rqCE(2, j, iEleLink(1, iLink) - 1)) * zoomScale) + xOrigin, canvasContainer.Height - Convert.ToSingle(((xCE(1, j, iEleLink(1, iLink) - 1) + rqCE(2, j, iEleLink(1, iLink) - 1))) * zoomScale) + yOrigin, Convert.ToSingle(2 * rqCE(2, j, iEleLink(1, iLink) - 1) * zoomScale), Convert.ToSingle(2 * rqCE(2, j, iEleLink(1, iLink) - 1) * zoomScale), Convert.ToSingle(-rqCE(3, j, iEleLink(1, iLink) - 1) / 3.14159 * 180), Convert.ToSingle(-CAC(j, iEleLink(1, iLink) - 1) / 3.14159 * 180))
+                    If showARC.Checked = True Then
+                        graphObj.DrawArc(penHL, Convert.ToSingle((xCE(0, j, iEleLink(1, iLink) - 1) - rqCE(2, j, iEleLink(1, iLink) - 1)) * zoomScale) + xOrigin, canvasContainer.Height - Convert.ToSingle(((xCE(1, j, iEleLink(1, iLink) - 1) + rqCE(2, j, iEleLink(1, iLink) - 1))) * zoomScale) + yOrigin, Convert.ToSingle(2 * rqCE(2, j, iEleLink(1, iLink) - 1) * zoomScale), Convert.ToSingle(2 * rqCE(2, j, iEleLink(1, iLink) - 1) * zoomScale), Convert.ToSingle(-rqCE(3, j, iEleLink(1, iLink) - 1) / 3.14159 * 180), Convert.ToSingle(-CAC(j, iEleLink(1, iLink) - 1) / 3.14159 * 180))
+
+                    End If
+                Next
+                graphObj.FillPath(brushBlue, polyPath)
+            End If
+        Next
+        
 
     End Sub
 
