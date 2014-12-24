@@ -283,10 +283,19 @@ Public Class PPDEM
     ByRef flagPause As Integer, ByVal curDir As String, ByRef lCurDir As Integer)
 
     Declare Sub ImportLinks Lib "demintel.dll" Alias "ImportLinks" (<[In](), Out()> _
-    ByRef nLinks As Integer, ByRef minR As Double, ByRef maxR As Double, ByVal iEleLink(,) As Integer, ByVal coordEleLink(,) As Double, ByVal l0Link() As Double, ByVal kLinkPos() As Double, ByVal kLinkNeg() As Double, _
+    ByRef nLinks As Integer, ByRef minR As Double, ByRef maxR As Double, ByVal iEleLink(,) As Integer, ByVal l0Link() As Double, ByVal kLinkPos() As Double, ByVal kLinkNeg() As Double, _
     ByRef nEle As Integer, ByVal xEle() As Double, ByVal yEle() As Double, ByVal rEle() As Double, ByRef nActEle As Integer, _
     ByVal FileName As String, ByRef lName As Int32)
 
+    Declare Sub ExPortLinks Lib "demintel.dll" Alias "ExportLinks" (<[In](), Out()> _
+    ByRef nLinks As Integer, ByVal iEleLink(,) As Integer, ByVal l0Link() As Double, ByVal kLinkPos() As Double, ByVal kLinkNeg() As Double, _
+    ByRef nEle As Integer, ByVal xEle() As Double, ByVal yEle() As Double, _
+    ByVal FileName As String, ByRef lName As Int32)
+
+    Declare Sub ImportLinksByID Lib "demintel.dll" Alias "ImportLinksByID" (<[In](), Out()> _
+    ByRef nLinks As Integer, ByVal iEleLink(,) As Integer, ByVal l0Link() As Double, ByVal kLinkPos() As Double, ByVal kLinkNeg() As Double, _
+    ByRef nEle As Integer, ByVal xEle() As Double, ByVal yEle() As Double, _
+    ByVal FileName As String, ByRef lName As Int32)
 
 #Const USEKEY = 0
 #Const STRESSROTATE = 1
@@ -406,7 +415,7 @@ Public Class PPDEM
     Public penGD As Pen = New Pen(Color.Brown, 3)
     Public penGD2 As Pen = New Pen(Color.White, 3)
     Public brushContour As SolidBrush = New SolidBrush(Color.AliceBlue)
-    Public brushBlue As SolidBrush = New SolidBrush(Color.Blue)
+    Public brushBlue As SolidBrush = New SolidBrush(Color.FromArgb(150, 20, 60, 240))
     Public brushMask As SolidBrush = New SolidBrush(Color.FromArgb(200, 255, 145, 0))
     Public brushHLMask As SolidBrush = New SolidBrush(Color.FromArgb(75, 20, 40, 255))
     Public brushTransGray As SolidBrush = New SolidBrush(Color.FromArgb(230, 180, 180, 180))
@@ -929,7 +938,6 @@ Public Class PPDEM
     Dim minR As Double
     Dim maxR As Double
     Dim iEleLink(,) As Integer
-    Dim coordEleLink(,) As Double
     Dim l0Link() As Double
     Dim kLinkPos() As Double
     Dim kLinkNeg() As Double
@@ -2367,7 +2375,11 @@ Public Class PPDEM
 
 
         subDrawLinks(graphObj)
-        subDrawLinkedElements(graphObj)
+
+        If chkHLLinks.Checked Then
+            subDrawLinkedElements(graphObj)
+        End If
+
 
         '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         ' '' Temp movie making
@@ -7506,26 +7518,28 @@ Public Class PPDEM
     End Sub
 
 
-    Private Sub btnImpLink_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnImpLink.Click
+    Private Sub btnImpLinkCoord_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnImpLinkCoord.Click
         dlgOpenTest.ShowDialog()
         FileName = dlgOpenTest.FileName
         lName = FileName.Length
 
         nLinks = 0
         ReDim iEleLink(1, Math.Max(nLinks - 1, 0))
-        ReDim coordEleLink(3, Math.Max(nLinks - 1, 0))
         ReDim l0Link(Math.Max(nLinks - 1, 0))
         ReDim kLinkPos(Math.Max(nLinks - 1, 0))
         ReDim kLinkNeg(Math.Max(nLinks - 1, 0))
-        Call ImportLinks(nLinks, minR, maxR, iEleLink, coordEleLink, l0Link, kLinkPos, kLinkNeg, nEle, xEle, yEle, rEle, nActEle, FileName, lName)
+        Call ImportLinks(nLinks, minR, maxR, iEleLink, l0Link, kLinkPos, kLinkNeg, nEle, xEle, yEle, rEle, nActEle, FileName, lName)
         'First call get the number of links so that we can redim the variables
 
         ReDim iEleLink(1, Math.Max(nLinks - 1, 0))
-        ReDim coordEleLink(3, Math.Max(nLinks - 1, 0))
         ReDim l0Link(Math.Max(nLinks - 1, 0))
         ReDim kLinkPos(Math.Max(nLinks - 1, 0))
         ReDim kLinkNeg(Math.Max(nLinks - 1, 0))
-        Call ImportLinks(nLinks, minR, maxR, iEleLink, coordEleLink, l0Link, kLinkPos, kLinkNeg, nEle, xEle, yEle, rEle, nActEle, FileName, lName)
+        Call ImportLinks(nLinks, minR, maxR, iEleLink, l0Link, kLinkPos, kLinkNeg, nEle, xEle, yEle, rEle, nActEle, FileName, lName)
+
+        btnImpLinkCoord.Enabled = False
+        btnImpLinkID.Enabled = False
+        canvas.Invalidate()
 
     End Sub
 
@@ -7547,5 +7561,43 @@ Public Class PPDEM
 
     Private Sub setLinkDampingRatio_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles setLinkDampingRatio.ValueChanged
         linkDampingRatio = setLinkDampingRatio.Value
+    End Sub
+
+    Private Sub btnImpLinkID_Click(sender As System.Object, e As System.EventArgs) Handles btnImpLinkID.Click
+        dlgOpenTest.ShowDialog()
+        FileName = dlgOpenTest.FileName
+        lName = FileName.Length
+
+        nLinks = 0
+        ReDim iEleLink(1, Math.Max(nLinks - 1, 0))
+        ReDim l0Link(Math.Max(nLinks - 1, 0))
+        ReDim kLinkPos(Math.Max(nLinks - 1, 0))
+        ReDim kLinkNeg(Math.Max(nLinks - 1, 0))
+        Call ImportLinksByID(nLinks, iEleLink, l0Link, kLinkPos, kLinkNeg, nEle, xEle, yEle, FileName, lName)
+        'First call get the number of links so that we can redim the variables
+
+        ReDim iEleLink(1, Math.Max(nLinks - 1, 0))
+        ReDim l0Link(Math.Max(nLinks - 1, 0))
+        ReDim kLinkPos(Math.Max(nLinks - 1, 0))
+        ReDim kLinkNeg(Math.Max(nLinks - 1, 0))
+        Call ImportLinksByID(nLinks, iEleLink, l0Link, kLinkPos, kLinkNeg, nEle, xEle, yEle, FileName, lName)
+
+        btnImpLinkCoord.Enabled = False
+        btnImpLinkID.Enabled = False
+        canvas.Invalidate()
+
+    End Sub
+
+    Private Sub btnExportLinks_Click(sender As System.Object, e As System.EventArgs) Handles btnExportLinks.Click
+        SaveSnapshot.ShowDialog()
+        FileName = SaveSnapshot.FileName
+        lName = FileName.Length
+
+        Call ExPortLinks(nLinks, iEleLink, l0Link, kLinkPos, kLinkNeg, nEle, xEle, yEle, FileName, lName)
+    End Sub
+
+    Private Sub chkHLLinks_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles chkHLLinks.CheckedChanged
+        canvas.Invalidate()
+
     End Sub
 End Class

@@ -1011,6 +1011,18 @@ c      time111(iiter,7)=omp_get_Wtime()
 
       Fy=Fy+FyWall+FyC !/(pMean*2-stsV0)*(pMean*2-stressUDCyc(2))
       FM=FM+FMWall+FMC
+      
+      
+      ! Don't allow the linked particles to rotate.  May make this optional in the future.
+      do iLink = 1, nLinks
+        iEle = iEleLink(iLink, 1)
+        jEle = iEleLink(iLink, 2)
+        vqEle(iEle) = 0.0
+        vqEle(jEle) = 0.0
+        FM(iEle) = 0.0
+        FM(jEle) = 0.0
+      end do
+      
 
       
 c     time111(iiter,8)=omp_get_Wtime()
