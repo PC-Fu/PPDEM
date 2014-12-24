@@ -76,7 +76,13 @@
                   end if
               end do
           end if
-                    
+          
+          if (iLink .gt. 1) then
+              if ((coordEleLink(iLink,1) .eq. coordEleLink(iLink-1,3)) .and. (coordEleLink(iLink,2) .eq. coordEleLink(iLink-1,4))) then
+                 iEleLink(iLink,1) = iEleLink(iLink-1,2)
+              end if
+          end if
+                              
 	      if (l0Link(iLink) .le. 0.0D0) then
 	          l0Link(iLink) = (xEle(iEleLink(iLink,1)) - xEle(iEleLink(iLink,2)))**2 &
 	                         +(yEle(iEleLink(iLink,1)) - yEle(iEleLink(iLink,2)))**2
