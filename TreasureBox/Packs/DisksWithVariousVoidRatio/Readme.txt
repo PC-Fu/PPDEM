@@ -1,0 +1,2 @@
+Specimens used in the IJSS fabric tensor paper (acceptance pending).
+Used lower particle friction coefficient to get higher density but the samples have been sufficiently disturbed to eliminate the unnatural fabric resulting from this process.
