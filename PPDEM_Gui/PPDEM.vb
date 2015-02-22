@@ -45,7 +45,7 @@ Public Class PPDEM
      ByRef flagLoadMode As Integer, ByVal intLoadPara(,) As Integer, ByVal realLoadPara(,) As Double, ByVal iCurStep() As Integer, _
      ByVal eleOut() As Integer, ByVal FWall(,) As Double, ByVal iniFWall(,) As Double, ByVal FxWall() As Double, ByVal FyWall() As Double, ByVal FMWall() As Double, ByVal Fx() As Double, ByVal Fy() As Double, ByVal FM() As Double, _
      ByVal iniOri() As Double, ByVal elong() As Double, ByRef flagOutInied As Integer, ByRef factorSlow As Double, _
-     ByRef hThinLayer As Double, ByVal flagThinLayer() As Integer, ByRef iDirecCyc As Integer, ByRef flagSpecialLoad As Integer, _
+     ByRef hThinLayer As Double, ByVal flagThinLayer() As Integer, ByRef iDirecCyc As Integer, ByRef flagSpecialLoad As Integer, ByRef qMax As Double, _
      ByRef nLinks As Integer, ByVal iEleLink(,) As Integer, ByVal l0Link() As Double, ByVal kLinkPos() As Double, ByVal kLinkNeg() As Double, ByRef linkDampingRatio As Double)
 
     Declare Sub DomainLimit Lib "demintel.dll" Alias "DomainLimit" (<[In](), Out()> _
@@ -909,6 +909,7 @@ Public Class PPDEM
 
     Dim iDirecCyc As Integer = 1
     Dim flagSpecialLoad As Integer = 0
+    Dim qMax As Double = 0.0
 
 
 #If STRESSROTATE = 1 Then
@@ -1537,7 +1538,7 @@ Public Class PPDEM
         rMA, rNA, rMB, rNB, ECohe, nPtHL, xPtHL, strgTensl, numThreads, alwNEleFrd, _
         mGravEle, mInertEle, MIInertEle, zoomScale, rqCE, xCE, hSector, limitAll, vWall, aOverAll, vol, _
          flagLoadMode, intLoadPara, realLoadPara, iCurStep, eleOut, FWall, iniFWall, FxWall, FyWall, FMWall, Fx, Fy, FM, iniOri, elong, flagOutInied, factorSlow, _
-         hThinLayer, flagThinLayer, iDirecCyc, flagSpecialLoad, _
+         hThinLayer, flagThinLayer, iDirecCyc, flagSpecialLoad, qMax, _
          nLinks, iEleLink, l0Link, kLinkPos, kLinkNeg, linkDampingRatio )
 
 #Else
@@ -1553,7 +1554,7 @@ Public Class PPDEM
         rMA, rNA, rMB, rNB, ECohe, nPtHL, xPtHL, strgTensl, numThreads, alwNEleFrd, _
         mGravEle, mInertEle, MIInertEle, zoomScale, rqCE, xCE, hSector, limitAll, vWall, aOverAll, vol, _
          flagLoadMode, intLoadPara, realLoadPara, iCurStep, eleOut, FWall, iniFWall, FxWall, FyWall, FMWall, Fx, Fy, FM, iniOri, elong, flagOutInied, factorSlow, _
-         hThinLayer, flagThinLayer, iDirecCyc, flagSpecialLoad, _
+         hThinLayer, flagThinLayer, iDirecCyc, flagSpecialLoad, qMax, _
          nLinks, iEleLink, l0Link, kLinkPos, kLinkNeg, linkDampingRatio)
 
 #End If
@@ -7599,5 +7600,17 @@ Public Class PPDEM
     Private Sub chkHLLinks_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles chkHLLinks.CheckedChanged
         canvas.Invalidate()
 
+    End Sub
+
+    Private Sub setQLimit_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles setQLimit.ValueChanged
+        qMax = setQLimit.Value
+    End Sub
+
+    Private Sub setInitialLoadDirection_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles setInitialLoadDirection.CheckedChanged
+        If setInitialLoadDirection.Checked = True Then
+            iDirecCyc = -1
+        Else
+            iDirecCyc = 1
+        End If
     End Sub
 End Class
