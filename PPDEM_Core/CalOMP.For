@@ -129,6 +129,7 @@ c     $   strgTensl(1)
      $      iWallLoad /2,1,4,3,5,6,7,8/
      
       integer iDirecCyc,flagUDCyc, flagConstP, flagSpecialLoad
+      integer stepCount, exCount
       double precision maxVWall, maxAccWall,stressUDCyc(2),
      $ qLimit,v0,v1, pMean, stsV0, qMax
      
@@ -141,6 +142,8 @@ c     $   strgTensl(1)
 	maxAccWall=maxVWall/dt/nInc/20
 	flagUDCyc=0
 	qLimit=qMax
+      stepCount=0
+      exCount=0
 	
       flagConstP=0
       ! flagConstP=1 is based on stress on side particles; =2 if based on stress on walls
@@ -207,13 +210,12 @@ c     $   strgTensl(1)
         intLoadPara(iCurStep(2),6)=2
         intLoadPara(iCurStep(2),7)=1
         intLoadPara(iCurStep(2),8)=2
+        open (unit = 1234, file = "v.txt")
+        write (1234,*) intLoadPara(iCurStep(2),1), 
+     $  realLoadPara(iCurStep(2),1), iDirecCyc, iCurStep(2)
 	  v0=realLoadPara(iCurStep(2),1)/nInc/dt
-	  v1=v0+maxAccWall*nInc*dt*iDirecCyc
-	  if (v1.gt.maxVWall) then
-	      v1=maxVWall
-	  else if(v1.lt.-maxVWall) then
-	      v1=-maxVWall
-	  end if
+	  v1=v0*iDirecCyc
+
 	  realLoadPara(iCurStep(2),1)=v1*nInc*dt
         realLoadPara(iCurStep(2),2)=0
         realLoadPara(iCurStep(2),3)= realLoadPara(iCurStep(2),1)
@@ -223,6 +225,7 @@ c     $   strgTensl(1)
         realLoadPara(iCurStep(2),6)=0
         realLoadPara(iCurStep(2),7)=realLoadPara(iCurStep(2),5)
         realLoadPara(iCurStep(2),8)=0
+
 	end if
 	      
 
@@ -1212,25 +1215,33 @@ c      end do
       !!!! Temporary, for cyc UD only
       
       if (flagUDCyc.eq.1) then
-        stressUDCyc(2)=(FWall(2,2)-iniFWall(2,2)
-     $                   -FWall(1,2)+iniFWall(1,2))/2.0/
+        stressUDCyc(2)=(FWall(2,2)
+     $                   -FWall(1,2))/2.0/
      $                   (x1Wall(4)-x1Wall(3))
-        stressUDCyc(1)=(FWall(4,1)-iniFWall(4,1)
-     $                   -FWall(3,1)+iniFWall(3,1))/2.0/
+        stressUDCyc(1)=(FWall(4,1)
+     $                   -FWall(3,1))/2.0/
      $                   (y1Wall(2)-y1Wall(1))
 !       iniFWall(4,1)=-iniFWall(3,1)
         
         if ( (iDirecCyc.eq.1).and.
      $       ((stressUDCyc(2)-stressUDCyc(1)).gt.qLimit) ) then
-            iDirecCyc=-1
+
+                iDirecCyc=-1
+
         end if
 
         if ( (iDirecCyc.eq.-1).and.
      $       ((stressUDCyc(1)-stressUDCyc(2)).gt.qLimit) ) then
-            iDirecCyc=1
+
+                iDirecCyc=1
+
         end if
        
       end if 
+      
+        write (1234,*) iDirecCyc, stressUDCyc(2)-stressUDCyc(1), 
+     $  iCurStep(2)
+        close (1234)
       
       if (flagConstP.eq.1) then
         realLoadPara(iCurStep(2),5)=pMean*2-stressUDCyc(2)
