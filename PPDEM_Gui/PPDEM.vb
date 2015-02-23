@@ -3786,6 +3786,14 @@ Public Class PPDEM
             End If
         End If
 
+        If chkExpWallPosition.Checked Then
+            textEleQuery.AppendText(iCurStep(0).ToString & ", ")
+            For iWall As Integer = 0 To nWall - 1
+                textEleQuery.AppendText(x1Wall(iWall).ToString & ", " & y1Wall(iWall).ToString & ", " & x2Wall(iWall).ToString & ", " & y2Wall(iWall).ToString & ", ")
+            Next
+            textEleQuery.AppendText(Environment.NewLine)
+        End If
+
         canvas.Invalidate()
 
 
@@ -7603,6 +7611,7 @@ Public Class PPDEM
 
     End Sub
 
+
     Private Sub setQLimit_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles setQLimit.ValueChanged
         qMax = setQLimit.Value
     End Sub
@@ -7618,4 +7627,16 @@ Public Class PPDEM
     Private Sub setCyclicDisplacement_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles setCyclicDisplacement.ValueChanged
         cDisp = setCyclicDisplacement.Value
     End Sub
+
+    Private Sub chkExpWallPosition_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles chkExpWallPosition.CheckedChanged
+        If chkExpWallPosition.Checked Then
+            textEleQuery.Text = ""
+            textEleQuery.AppendText("step" & " , ")
+            For iWall As Integer = 0 To nWall - 1
+                textEleQuery.AppendText("W_" & (iWall + 1).ToString() & "_ax, " & "W_" & (iWall + 1).ToString() & "_ay, " & "W_" & (iWall + 1).ToString() & "_bx, " & "W_" & (iWall + 1).ToString() & "_by, ")
+            Next
+            textEleQuery.AppendText(Environment.NewLine)
+        End If
+    End Sub
+
 End Class
