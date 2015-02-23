@@ -14,8 +14,8 @@
      $  flagLoadMode, intLoadPara, realLoadPara,iCurStep,eleOut,
      $  FWall,iniFWall,FxWall,FyWall,FMWall,Fx,Fy,FM,iniOri,elong,
      $  flagOutInied,factorSlow,hThinLayer,flagThinLayer,iDirecCyc, 
-     $  flagSpecialLoad, qMax, nLinks, iEleLink, l0Link, kLinkPos, 
-     $  kLinkNeg, linkDampingRatio)
+     $  flagSpecialLoad, qMax, cDisp, nLinks, iEleLink, l0Link, 
+     $  kLinkPos, kLinkNeg, linkDampingRatio)
 	implicit none
 
 	integer nEle,nActEle,nWall,nCon,nPCon,nGridX,nGridY,numThreads,
@@ -131,7 +131,7 @@ c     $   strgTensl(1)
       integer iDirecCyc,flagUDCyc, flagConstP, flagSpecialLoad
       integer stepCount, exCount
       double precision maxVWall, maxAccWall,stressUDCyc(2),
-     $ qLimit,v0,v1, pMean, stsV0, qMax
+     $ qLimit,v0,v1, pMean, stsV0, qMax, cDisp
      
      	integer nLinks, iLink, iEleLink(nLinks,2)
       double precision l0Link(nLinks),kLinkPos(nLinks),kLinkNeg(nLinks)
@@ -211,11 +211,15 @@ c     $   strgTensl(1)
         intLoadPara(iCurStep(2),7)=1
         intLoadPara(iCurStep(2),8)=2
         open (unit = 1234, file = "v.txt")
-        write (1234,*) intLoadPara(iCurStep(2),1), 
+        write (1234,*) intLoadPara(iCurStep(2),1), cDisp, 
      $  realLoadPara(iCurStep(2),1), iDirecCyc, iCurStep(2)
 	  v0=realLoadPara(iCurStep(2),1)/nInc/dt
-	  v1=v0*iDirecCyc
-
+	  v1=v0+maxAccWall*nInc*dt*iDirecCyc
+	  if (v1.gt.cDisp/nInc/dt) then
+	      v1=cDisp/nInc/dt
+	  else if(v1.lt.-cDisp/nInc/dt) then
+	      v1=-cDisp/nInc/dt
+	  end if
 	  realLoadPara(iCurStep(2),1)=v1*nInc*dt
         realLoadPara(iCurStep(2),2)=0
         realLoadPara(iCurStep(2),3)= realLoadPara(iCurStep(2),1)
@@ -225,7 +229,8 @@ c     $   strgTensl(1)
         realLoadPara(iCurStep(2),6)=0
         realLoadPara(iCurStep(2),7)=realLoadPara(iCurStep(2),5)
         realLoadPara(iCurStep(2),8)=0
-
+        write (1234,*) intLoadPara(iCurStep(2),1), cDisp, 
+     $  realLoadPara(iCurStep(2),1), iDirecCyc, iCurStep(2)
 	end if
 	      
 
