@@ -297,6 +297,14 @@ Public Class PPDEM
     ByRef nEle As Integer, ByVal xEle() As Double, ByVal yEle() As Double, _
     ByVal FileName As String, ByRef lName As Int32)
 
+    Declare Sub BoxCN Lib "demintel.dll" Alias "BoxCN" (<[In](), Out()> _
+    ByRef x As Double, ByRef y As Double, ByRef lBox As Double, ByRef CN As Double,
+    ByRef nEle As Integer, ByRef nActEle As Integer, ByVal xEle() As Double, ByVal yEle() As Double, _
+    ByRef nCon As Integer, ByVal xCon() As Double, ByVal yCon() As Double, ByVal flagConBoun() As Integer, ByVal pairCon(,) As Integer, ByVal flagEMask() As Integer)
+
+    Declare Sub ColorValue Lib "demintel.dll" Alias "ColorValue" (<[In](), Out()> _
+    ByRef rValue As Double, ByRef rMin As Double, ByRef rMax As Double, ByVal RGB() As Integer)
+
 #Const USEKEY = 0
 #Const STRESSROTATE = 1
 
@@ -945,8 +953,10 @@ Public Class PPDEM
     Dim kLinkNeg() As Double
     Dim linkDampingRatio As Double = 0
 
-
-
+    Dim coordNumMatrix(,) As Double
+    Dim colorCNMatrix(,,) As Integer
+    Dim xCNBox() As Single
+    Dim yCNBox() As Single
 
 
 
@@ -1331,6 +1341,13 @@ Public Class PPDEM
             actEle = 0
 
             ctrlMaxNEle.Value = nEle
+
+
+            ' Initialize the coordination number matrix
+            setCoordNumMatrixBoxSize.Value = (limitAll(1) - limitAll(0)) / 10
+            setCoordNumMatrixBoxSize.Increment = (limitAll(1) - limitAll(0)) / 20
+            setCoordNumMatrixSampIntv.Value = (limitAll(1) - limitAll(0)) / 20
+            setCoordNumMatrixSampIntv.Increment = (limitAll(1) - limitAll(0)) / 40
 
 
 
@@ -1870,18 +1887,19 @@ Public Class PPDEM
 
 
         If chkForceByThick.Checked Then
-
+            Dim myColor As New Color
+            myColor = Color.FromArgb(255, 121, 0, 38)
+            Dim brushForce As New SolidBrush(myColor)
+            penForceColor.Color = myColor
             Dim iCon As Integer
             For iList As Integer = 0 To nConV - 1
                 iCon = conView(iList) - 1
                 If (flagConBoun(iCon) = 0) Or ((flagConBoun(iCon) = 2 And chkIncWallForce.Checked = True)) Then
 
                     If chkShowForceColor.Checked Then
-                        penForceColor.Color = Color.FromArgb(FRGB(0, iCon), FRGB(1, iCon), FRGB(2, iCon))
-                    Else
-
-                        penForceColor.Color = Color.FromArgb(255, 121, 0, 38)
-
+                        myColor = Color.FromArgb(FRGB(0, iCon), FRGB(1, iCon), FRGB(2, iCon))
+                        penForceColor.Color = myColor
+                        brushForce.Color = myColor
                     End If
 
                     ''Temp
@@ -1891,12 +1909,19 @@ Public Class PPDEM
                     penForceColor.Width = FThickScale * FConTemp ^ factorContrast
 
                     If rbForceModeDire.Checked = True Then
-                        wForce = rCon(iCon) * FxCon(iCon) / FConTemp * factorLenThick
-                        hForce = rCon(iCon) * FyCon(iCon) / FConTemp * factorLenThick
-                        graphObj.DrawLine(penForceColor, Convert.ToSingle((xCon(iCon) - wForce) * zoomScale) + xOrigin, _
-                                          canvasContainer.Height - Convert.ToSingle(((yCon(iCon) - hForce)) * zoomScale) + yOrigin, _
-                                          Convert.ToSingle((xCon(iCon) + wForce) * zoomScale) + xOrigin, _
-                                          canvasContainer.Height - Convert.ToSingle(((yCon(iCon) + hForce)) * zoomScale) + yOrigin)
+                        If Not chkConForceByRadius.Checked Then
+                            wForce = rCon(iCon) * FxCon(iCon) / FConTemp * factorLenThick
+                            hForce = rCon(iCon) * FyCon(iCon) / FConTemp * factorLenThick
+                            graphObj.DrawLine(penForceColor, Convert.ToSingle((xCon(iCon) - wForce) * zoomScale) + xOrigin, _
+                                              canvasContainer.Height - Convert.ToSingle(((yCon(iCon) - hForce)) * zoomScale) + yOrigin, _
+                                              Convert.ToSingle((xCon(iCon) + wForce) * zoomScale) + xOrigin, _
+                                              canvasContainer.Height - Convert.ToSingle(((yCon(iCon) + hForce)) * zoomScale) + yOrigin)
+
+                        Else
+                            graphObj.FillEllipse(brushForce, (X2Scr(xCon(iCon)) - penForceColor.Width), (Y2Scr(yCon(iCon)) - penForceColor.Width), _
+                                                 2 * penForceColor.Width, 2 * penForceColor.Width)
+
+                        End If
                     ElseIf flagConBoun(iCon) = 0 Then
                         graphObj.DrawLine(penForceColor, Convert.ToSingle(xEle(pairCon(1, iCon) - 1) * zoomScale) + xOrigin, _
                                           canvasContainer.Height - Convert.ToSingle(yEle(pairCon(1, iCon) - 1) * zoomScale) + yOrigin, _
@@ -2382,6 +2407,11 @@ Public Class PPDEM
             subDrawLinkedElements(graphObj)
         End If
 
+        'Draw coordination number matrix
+        If chkShowCNMatrix.Checked Then
+            subDrawCNMatrix(graphObj)
+
+        End If
 
         '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         ' '' Temp movie making
@@ -5176,7 +5206,9 @@ Public Class PPDEM
         canvas.Invalidate()
     End Sub
 
-
+    Private Sub chkConForceByRadius_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles chkConForceByRadius.CheckedChanged
+        canvas.Invalidate()
+    End Sub
     Private Sub rbModeForce_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbModeForce.CheckedChanged
         If rbModeStress.Checked = True Then
             mMode = 0
@@ -6957,19 +6989,21 @@ Public Class PPDEM
                 '''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 
-                If chkForceByThick.Checked Then
 
+                If chkForceByThick.Checked Then
+                    Dim myColor As New Color
+                    myColor = Color.FromArgb(255, 121, 0, 38)
+                    Dim brushForce As New SolidBrush(myColor)
+                    penForceColor.Color = myColor
                     Dim iCon As Integer
                     For iList As Integer = 0 To nConV - 1
                         iCon = conView(iList) - 1
                         If (flagConBoun(iCon) = 0) Or ((flagConBoun(iCon) = 2 And chkIncWallForce.Checked = True)) Then
 
                             If chkShowForceColor.Checked Then
-                                penForceColor.Color = Color.FromArgb(FRGB(0, iCon), FRGB(1, iCon), FRGB(2, iCon))
-                            Else
-
-                                penForceColor.Color = Color.FromArgb(255, 121, 0, 38)
-
+                                myColor = Color.FromArgb(FRGB(0, iCon), FRGB(1, iCon), FRGB(2, iCon))
+                                penForceColor.Color = myColor
+                                brushForce.Color = myColor
                             End If
 
                             ''Temp
@@ -6979,12 +7013,19 @@ Public Class PPDEM
                             penForceColor.Width = FThickScale * FConTemp ^ factorContrast
 
                             If rbForceModeDire.Checked = True Then
-                                wForce = rCon(iCon) * FxCon(iCon) / FConTemp * factorLenThick
-                                hForce = rCon(iCon) * FyCon(iCon) / FConTemp * factorLenThick
-                                graphObj.DrawLine(penForceColor, Convert.ToSingle((xCon(iCon) - wForce) * zoomScale) + xOrigin, _
-                                                  canvasContainer.Height - Convert.ToSingle(((yCon(iCon) - hForce)) * zoomScale) + yOrigin, _
-                                                  Convert.ToSingle((xCon(iCon) + wForce) * zoomScale) + xOrigin, _
-                                                  canvasContainer.Height - Convert.ToSingle(((yCon(iCon) + hForce)) * zoomScale) + yOrigin)
+                                If Not chkConForceByRadius.Checked Then
+                                    wForce = rCon(iCon) * FxCon(iCon) / FConTemp * factorLenThick
+                                    hForce = rCon(iCon) * FyCon(iCon) / FConTemp * factorLenThick
+                                    graphObj.DrawLine(penForceColor, Convert.ToSingle((xCon(iCon) - wForce) * zoomScale) + xOrigin, _
+                                                      canvasContainer.Height - Convert.ToSingle(((yCon(iCon) - hForce)) * zoomScale) + yOrigin, _
+                                                      Convert.ToSingle((xCon(iCon) + wForce) * zoomScale) + xOrigin, _
+                                                      canvasContainer.Height - Convert.ToSingle(((yCon(iCon) + hForce)) * zoomScale) + yOrigin)
+
+                                Else
+                                    graphObj.FillEllipse(brushForce, (X2Scr(xCon(iCon)) - penForceColor.Width), (Y2Scr(yCon(iCon)) - penForceColor.Width), _
+                                                         2 * penForceColor.Width, 2 * penForceColor.Width)
+
+                                End If
                             ElseIf flagConBoun(iCon) = 0 Then
                                 graphObj.DrawLine(penForceColor, Convert.ToSingle(xEle(pairCon(1, iCon) - 1) * zoomScale) + xOrigin, _
                                                   canvasContainer.Height - Convert.ToSingle(yEle(pairCon(1, iCon) - 1) * zoomScale) + yOrigin, _
@@ -6998,6 +7039,7 @@ Public Class PPDEM
 
 
                 End If
+
 
 
 
@@ -7423,6 +7465,12 @@ Public Class PPDEM
                     subDrawCellInEle(graphObj)
                 End If
 
+                If chkShowCNMatrix.Checked Then
+                    subDrawCNMatrix(graphObj)
+
+                End If
+
+
                 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
                 ' '' Temp movie making
                 'Dim penBlack As Pen = New Pen(Color.Black, 3)
@@ -7460,8 +7508,6 @@ Public Class PPDEM
                 canvas.Invalidate()
 
             End If
-
-
 
 
         Else
@@ -7639,4 +7685,65 @@ Public Class PPDEM
         End If
     End Sub
 
+    Private Sub btnStartCoordNumMatrix_Click(sender As System.Object, e As System.EventArgs) Handles btnStartCoordNumMatrix.Click
+        Dim nX As Integer = (limitAll(1) - limitAll(0)) / setCoordNumMatrixSampIntv.Value + 1
+        Dim nY As Integer = (limitAll(3) - limitAll(2)) / setCoordNumMatrixSampIntv.Value + 1
+        ReDim xCNBox(nX - 1)
+        ReDim yCNBox(nY - 1)
+        Dim lBox As Double = setCoordNumMatrixBoxSize.Value
+        Dim dX As Double = setCoordNumMatrixSampIntv.Value
+        ReDim coordNumMatrix(nX - 1, nY - 1)
+        ReDim colorCNMatrix(2, nX - 1, nY - 1)
+
+        Dim maxCN As Double = -1.0E+100
+        Dim minCN As Double = 1.0E+100
+        textEleQuery.Text = ""
+        ' It will be faster if we get the rgb values through a loop in Fortran, but I just want something quick today.  Will revisit if speed becomes a issue.
+        For ix As Integer = 0 To nX - 1
+            xCNBox(ix) = limitAll(0) + ix * dX
+            For iy As Integer = 0 To nY - 1
+                yCNBox(iy) = limitAll(2) + iy * dX
+                Call BoxCN(xCNBox(ix), yCNBox(iy), lBox, coordNumMatrix(ix, iy), _
+                                             nEle, nActEle, xEle, yEle, nCon, xCon, yCon, flagConBoun, pairCon, flagEMask)
+                If coordNumMatrix(ix, iy) > 0 Then
+                    maxCN = Math.Max(maxCN, coordNumMatrix(ix, iy))
+                    minCN = Math.Min(minCN, coordNumMatrix(ix, iy))
+                    textEleQuery.AppendText(xCNBox(ix).ToString() & ", " & yCNBox(iy).ToString() & ", " & coordNumMatrix(ix, iy).ToString() & Environment.NewLine)
+                End If
+            Next
+        Next
+        setCNLowB.Value = minCN
+        setCNUpB.Value = maxCN
+        chkShowCNMatrix.Checked = True
+        canvas.Invalidate()
+
+    End Sub
+
+
+    Private Sub subDrawCNMatrix(ByRef graphObj As Graphics)
+        Dim dX As Double = setCoordNumMatrixSampIntv.Value
+        Dim rMin As Double = setCNLowB.Value
+        Dim rMax As Double = setCNUpB.Value
+        Dim RGB() As Integer = New Integer(2) {}
+        Dim brushCN As SolidBrush = New SolidBrush(Color.Beige)
+
+        For ix As Integer = 0 To xCNBox.Length - 1
+            For iy As Integer = 0 To yCNBox.Length - 1
+                If coordNumMatrix(ix, iy) > 0 Then
+                    Call ColorValue(coordNumMatrix(ix, iy), rMin, rMax, RGB)
+                    brushCN.Color = Color.FromArgb(200, RGB(0), RGB(1), RGB(2))
+                    graphObj.FillRectangle(brushCN, X2Scr(xCNBox(ix) - dX / 2), Y2Scr(yCNBox(iy) + dX / 2), Convert.ToSingle(dX * zoomScale), Convert.ToSingle(dX * zoomScale))
+                End If
+            Next
+        Next
+    End Sub
+
+    Private Sub setCNLowB_ValueChanged(sender As System.Object, e As System.EventArgs) Handles setCNLowB.ValueChanged
+        canvas.Invalidate()
+
+    End Sub
+
+    Private Sub setCNUpB_ValueChanged(sender As System.Object, e As System.EventArgs) Handles setCNUpB.ValueChanged
+        canvas.Invalidate()
+    End Sub
 End Class

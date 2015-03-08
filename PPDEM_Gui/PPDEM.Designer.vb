@@ -300,6 +300,7 @@ Partial Class PPDEM
         Me.modeMotion = New System.Windows.Forms.CheckBox()
         Me.btnOpenResult = New System.Windows.Forms.Button()
         Me.tabStrain = New System.Windows.Forms.TabPage()
+        Me.chkExpWallPosition = New System.Windows.Forms.CheckBox()
         Me.btnMaskCell = New System.Windows.Forms.Button()
         Me.gbShowStnDrct = New System.Windows.Forms.GroupBox()
         Me.rbDrctMaxShear = New System.Windows.Forms.RadioButton()
@@ -413,7 +414,18 @@ Partial Class PPDEM
         Me.timerPlay = New System.Windows.Forms.Timer(Me.components)
         Me.showPpM = New System.Windows.Forms.Label()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-		Me.chkExpWallPosition = New System.Windows.Forms.CheckBox()
+        Me.chkConForceByRadius = New System.Windows.Forms.CheckBox()
+        Me.tabAnalysis = New System.Windows.Forms.TabPage()
+        Me.GroupBox11 = New System.Windows.Forms.GroupBox()
+        Me.setCoordNumMatrixBoxSize = New System.Windows.Forms.NumericUpDown()
+        Me.setCoordNumMatrixSampIntv = New System.Windows.Forms.NumericUpDown()
+        Me.Label44 = New System.Windows.Forms.Label()
+        Me.Label45 = New System.Windows.Forms.Label()
+        Me.chkShowCNMatrix = New System.Windows.Forms.CheckBox()
+        Me.btnStartCoordNumMatrix = New System.Windows.Forms.Button()
+        Me.btnExpCoordNumMatrix = New System.Windows.Forms.Button()
+        Me.setCNLowB = New System.Windows.Forms.NumericUpDown()
+        Me.setCNUpB = New System.Windows.Forms.NumericUpDown()
         CType(Me.tInc, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.refRate, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nIncr, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -525,6 +537,12 @@ Partial Class PPDEM
         CType(Me.canvas, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.trackPost, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.setZoomFactor, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tabAnalysis.SuspendLayout()
+        Me.GroupBox11.SuspendLayout()
+        CType(Me.setCoordNumMatrixBoxSize, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.setCoordNumMatrixSampIntv, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.setCNLowB, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.setCNUpB, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'timerTest
@@ -539,7 +557,7 @@ Partial Class PPDEM
         Me.tInc.Location = New System.Drawing.Point(181, 52)
         Me.tInc.Margin = New System.Windows.Forms.Padding(4)
         Me.tInc.Name = "tInc"
-        Me.tInc.Size = New System.Drawing.Size(90, 20)
+        Me.tInc.Size = New System.Drawing.Size(90, 23)
         Me.tInc.TabIndex = 1
         Me.tInc.Value = New Decimal(New Integer() {14, 0, 0, 0})
         '
@@ -554,7 +572,7 @@ Partial Class PPDEM
         Me.refRate.Margin = New System.Windows.Forms.Padding(4)
         Me.refRate.Maximum = New Decimal(New Integer() {100000, 0, 0, 0})
         Me.refRate.Name = "refRate"
-        Me.refRate.Size = New System.Drawing.Size(90, 20)
+        Me.refRate.Size = New System.Drawing.Size(90, 23)
         Me.refRate.TabIndex = 1
         Me.refRate.Value = New Decimal(New Integer() {100, 0, 0, 0})
         '
@@ -566,7 +584,7 @@ Partial Class PPDEM
         Me.Label3.Location = New System.Drawing.Point(52, 54)
         Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(43, 14)
+        Me.Label3.Size = New System.Drawing.Size(56, 16)
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "TimeInc"
         '
@@ -578,7 +596,7 @@ Partial Class PPDEM
         Me.Label4.Location = New System.Drawing.Point(86, 124)
         Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(68, 14)
+        Me.Label4.Size = New System.Drawing.Size(88, 16)
         Me.Label4.TabIndex = 3
         Me.Label4.Text = "RefreshRate"
         '
@@ -590,7 +608,7 @@ Partial Class PPDEM
         Me.nIncr.Location = New System.Drawing.Point(181, 87)
         Me.nIncr.Margin = New System.Windows.Forms.Padding(4)
         Me.nIncr.Name = "nIncr"
-        Me.nIncr.Size = New System.Drawing.Size(90, 20)
+        Me.nIncr.Size = New System.Drawing.Size(90, 23)
         Me.nIncr.TabIndex = 8
         Me.nIncr.Value = New Decimal(New Integer() {4, 0, 0, 0})
         '
@@ -602,7 +620,7 @@ Partial Class PPDEM
         Me.Label5.Location = New System.Drawing.Point(59, 89)
         Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(87, 14)
+        Me.Label5.Size = New System.Drawing.Size(115, 16)
         Me.Label5.TabIndex = 6
         Me.Label5.Text = "Num. Inc per Call"
         '
@@ -614,7 +632,7 @@ Partial Class PPDEM
         Me.nIncDisp.Location = New System.Drawing.Point(165, 115)
         Me.nIncDisp.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.nIncDisp.Name = "nIncDisp"
-        Me.nIncDisp.Size = New System.Drawing.Size(0, 14)
+        Me.nIncDisp.Size = New System.Drawing.Size(0, 16)
         Me.nIncDisp.TabIndex = 7
         '
         'LbStiff
@@ -625,7 +643,7 @@ Partial Class PPDEM
         Me.LbStiff.Location = New System.Drawing.Point(112, 159)
         Me.LbStiff.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LbStiff.Name = "LbStiff"
-        Me.LbStiff.Size = New System.Drawing.Size(51, 14)
+        Me.LbStiff.Size = New System.Drawing.Size(62, 16)
         Me.LbStiff.TabIndex = 3
         Me.LbStiff.Text = "Stiffness"
         '
@@ -637,7 +655,7 @@ Partial Class PPDEM
         Me.setE.Location = New System.Drawing.Point(181, 157)
         Me.setE.Margin = New System.Windows.Forms.Padding(4)
         Me.setE.Name = "setE"
-        Me.setE.Size = New System.Drawing.Size(90, 20)
+        Me.setE.Size = New System.Drawing.Size(90, 23)
         Me.setE.TabIndex = 10
         Me.setE.Value = New Decimal(New Integer() {20, 0, 0, 0})
         '
@@ -699,7 +717,7 @@ Partial Class PPDEM
         Me.Label1.Location = New System.Drawing.Point(8, 27)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(77, 14)
+        Me.Label1.Size = New System.Drawing.Size(100, 16)
         Me.Label1.TabIndex = 18
         Me.Label1.Text = "Gravity Center"
         '
@@ -711,7 +729,7 @@ Partial Class PPDEM
         Me.Label2.Location = New System.Drawing.Point(71, 194)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(76, 14)
+        Me.Label2.Size = New System.Drawing.Size(102, 16)
         Me.Label2.TabIndex = 19
         Me.Label2.Text = "Glob. Damping"
         '
@@ -723,7 +741,7 @@ Partial Class PPDEM
         Me.maxRFriend_label.Location = New System.Drawing.Point(77, 339)
         Me.maxRFriend_label.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.maxRFriend_label.Name = "maxRFriend_label"
-        Me.maxRFriend_label.Size = New System.Drawing.Size(73, 14)
+        Me.maxRFriend_label.Size = New System.Drawing.Size(97, 16)
         Me.maxRFriend_label.TabIndex = 21
         Me.maxRFriend_label.Text = "Friend Radius"
         '
@@ -736,7 +754,7 @@ Partial Class PPDEM
         Me.setGlobDamp.Margin = New System.Windows.Forms.Padding(4)
         Me.setGlobDamp.Minimum = New Decimal(New Integer() {100, 0, 0, -2147483648})
         Me.setGlobDamp.Name = "setGlobDamp"
-        Me.setGlobDamp.Size = New System.Drawing.Size(90, 20)
+        Me.setGlobDamp.Size = New System.Drawing.Size(90, 23)
         Me.setGlobDamp.TabIndex = 23
         Me.setGlobDamp.Value = New Decimal(New Integer() {2, 0, 0, 0})
         '
@@ -750,7 +768,7 @@ Partial Class PPDEM
         Me.setMaxRFriend.Margin = New System.Windows.Forms.Padding(4)
         Me.setMaxRFriend.Maximum = New Decimal(New Integer() {10000000, 0, 0, 0})
         Me.setMaxRFriend.Name = "setMaxRFriend"
-        Me.setMaxRFriend.Size = New System.Drawing.Size(90, 20)
+        Me.setMaxRFriend.Size = New System.Drawing.Size(90, 23)
         Me.setMaxRFriend.TabIndex = 25
         Me.setMaxRFriend.Value = New Decimal(New Integer() {10, 0, 0, 0})
         '
@@ -762,7 +780,7 @@ Partial Class PPDEM
         Me.lb_set_PPFricAng.Location = New System.Drawing.Point(52, 374)
         Me.lb_set_PPFricAng.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lb_set_PPFricAng.Name = "lb_set_PPFricAng"
-        Me.lb_set_PPFricAng.Size = New System.Drawing.Size(92, 14)
+        Me.lb_set_PPFricAng.Size = New System.Drawing.Size(121, 16)
         Me.lb_set_PPFricAng.TabIndex = 38
         Me.lb_set_PPFricAng.Text = "Fric. Ang. Par-Par"
         '
@@ -776,7 +794,7 @@ Partial Class PPDEM
         Me.setTanTheta1.Margin = New System.Windows.Forms.Padding(4)
         Me.setTanTheta1.Maximum = New Decimal(New Integer() {89, 0, 0, 0})
         Me.setTanTheta1.Name = "setTanTheta1"
-        Me.setTanTheta1.Size = New System.Drawing.Size(90, 20)
+        Me.setTanTheta1.Size = New System.Drawing.Size(90, 23)
         Me.setTanTheta1.TabIndex = 39
         Me.setTanTheta1.Value = New Decimal(New Integer() {40, 0, 0, 0})
         '
@@ -813,7 +831,7 @@ Partial Class PPDEM
         Me.setAngle.Location = New System.Drawing.Point(161, 49)
         Me.setAngle.Margin = New System.Windows.Forms.Padding(4)
         Me.setAngle.Name = "setAngle"
-        Me.setAngle.Size = New System.Drawing.Size(50, 20)
+        Me.setAngle.Size = New System.Drawing.Size(50, 23)
         Me.setAngle.TabIndex = 41
         Me.setAngle.Value = New Decimal(New Integer() {3, 0, 0, 0})
         '
@@ -841,7 +859,7 @@ Partial Class PPDEM
         Me.setRollingDamp.Margin = New System.Windows.Forms.Padding(4)
         Me.setRollingDamp.Maximum = New Decimal(New Integer() {1000000, 0, 0, 0})
         Me.setRollingDamp.Name = "setRollingDamp"
-        Me.setRollingDamp.Size = New System.Drawing.Size(90, 20)
+        Me.setRollingDamp.Size = New System.Drawing.Size(90, 23)
         Me.setRollingDamp.TabIndex = 50
         Me.setRollingDamp.Value = New Decimal(New Integer() {1, 0, 0, 65536})
         '
@@ -857,7 +875,7 @@ Partial Class PPDEM
         Me.setDampingRatio.Maximum = New Decimal(New Integer() {1000000, 0, 0, 0})
         Me.setDampingRatio.Minimum = New Decimal(New Integer() {1000000, 0, 0, -2147483648})
         Me.setDampingRatio.Name = "setDampingRatio"
-        Me.setDampingRatio.Size = New System.Drawing.Size(90, 20)
+        Me.setDampingRatio.Size = New System.Drawing.Size(90, 23)
         Me.setDampingRatio.TabIndex = 50
         Me.setDampingRatio.Value = New Decimal(New Integer() {1, 0, 0, 65536})
         '
@@ -869,7 +887,7 @@ Partial Class PPDEM
         Me.Label7.Location = New System.Drawing.Point(21, 269)
         Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(115, 14)
+        Me.Label7.Size = New System.Drawing.Size(153, 16)
         Me.Label7.TabIndex = 51
         Me.Label7.Text = "Rolling Damping Coeff."
         '
@@ -881,7 +899,7 @@ Partial Class PPDEM
         Me.Label17.Location = New System.Drawing.Point(73, 304)
         Me.Label17.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(75, 14)
+        Me.Label17.Size = New System.Drawing.Size(101, 16)
         Me.Label17.TabIndex = 52
         Me.Label17.Text = "Damping Ratio"
         '
@@ -930,7 +948,7 @@ Partial Class PPDEM
         Me.Label18.Location = New System.Drawing.Point(51, 19)
         Me.Label18.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(61, 14)
+        Me.Label18.Size = New System.Drawing.Size(77, 16)
         Me.Label18.TabIndex = 57
         Me.Label18.Text = "Pressure X"
         '
@@ -944,7 +962,7 @@ Partial Class PPDEM
         Me.setpInt.Margin = New System.Windows.Forms.Padding(4)
         Me.setpInt.Minimum = New Decimal(New Integer() {1, 0, 0, 458752})
         Me.setpInt.Name = "setpInt"
-        Me.setpInt.Size = New System.Drawing.Size(93, 20)
+        Me.setpInt.Size = New System.Drawing.Size(93, 23)
         Me.setpInt.TabIndex = 60
         Me.setpInt.Value = New Decimal(New Integer() {1, 0, 0, 196608})
         '
@@ -954,7 +972,7 @@ Partial Class PPDEM
         Me.Label19.Location = New System.Drawing.Point(158, 67)
         Me.Label19.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(52, 14)
+        Me.Label19.Size = New System.Drawing.Size(67, 16)
         Me.Label19.TabIndex = 61
         Me.Label19.Text = "p-Interval"
         '
@@ -997,7 +1015,7 @@ Partial Class PPDEM
         Me.setCurrentLoadRate.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
         Me.setCurrentLoadRate.Minimum = New Decimal(New Integer() {10, 0, 0, -2147483648})
         Me.setCurrentLoadRate.Name = "setCurrentLoadRate"
-        Me.setCurrentLoadRate.Size = New System.Drawing.Size(103, 20)
+        Me.setCurrentLoadRate.Size = New System.Drawing.Size(103, 23)
         Me.setCurrentLoadRate.TabIndex = 68
         '
         'Label22
@@ -1006,7 +1024,7 @@ Partial Class PPDEM
         Me.Label22.Location = New System.Drawing.Point(2, 27)
         Me.Label22.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(68, 14)
+        Me.Label22.Size = New System.Drawing.Size(90, 16)
         Me.Label22.TabIndex = 69
         Me.Label22.Text = "Current Rate"
         '
@@ -1016,7 +1034,7 @@ Partial Class PPDEM
         Me.Label23.Location = New System.Drawing.Point(51, 66)
         Me.Label23.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(62, 14)
+        Me.Label23.Size = New System.Drawing.Size(78, 16)
         Me.Label23.TabIndex = 70
         Me.Label23.Text = "Pressure Y"
         '
@@ -1032,10 +1050,10 @@ Partial Class PPDEM
         Me.checkFlagDebug.Enabled = False
         Me.checkFlagDebug.Font = New System.Drawing.Font("Arial", 8.0!)
         Me.checkFlagDebug.ForeColor = System.Drawing.Color.White
-        Me.checkFlagDebug.Location = New System.Drawing.Point(194, 549)
+        Me.checkFlagDebug.Location = New System.Drawing.Point(194, 547)
         Me.checkFlagDebug.Margin = New System.Windows.Forms.Padding(4)
         Me.checkFlagDebug.Name = "checkFlagDebug"
-        Me.checkFlagDebug.Size = New System.Drawing.Size(56, 18)
+        Me.checkFlagDebug.Size = New System.Drawing.Size(70, 20)
         Me.checkFlagDebug.TabIndex = 72
         Me.checkFlagDebug.Text = "debug"
         Me.checkFlagDebug.UseVisualStyleBackColor = True
@@ -1046,7 +1064,7 @@ Partial Class PPDEM
         Me.Label21.Location = New System.Drawing.Point(8, 54)
         Me.Label21.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(43, 14)
+        Me.Label21.Size = New System.Drawing.Size(53, 16)
         Me.Label21.TabIndex = 18
         Me.Label21.Text = "gX,  gY"
         '
@@ -1099,6 +1117,7 @@ Partial Class PPDEM
         Me.tabMain.Controls.Add(Me.tabStrain)
         Me.tabMain.Controls.Add(Me.tabCellFabric)
         Me.tabMain.Controls.Add(Me.tabLink)
+        Me.tabMain.Controls.Add(Me.tabAnalysis)
         Me.tabMain.Font = New System.Drawing.Font("Arial", 9.0!)
         Me.tabMain.ItemSize = New System.Drawing.Size(100, 24)
         Me.tabMain.Location = New System.Drawing.Point(0, 0)
@@ -1177,7 +1196,7 @@ Partial Class PPDEM
         Me.chkLayerNoRotation.AutoSize = True
         Me.chkLayerNoRotation.Location = New System.Drawing.Point(117, 40)
         Me.chkLayerNoRotation.Name = "chkLayerNoRotation"
-        Me.chkLayerNoRotation.Size = New System.Drawing.Size(81, 18)
+        Me.chkLayerNoRotation.Size = New System.Drawing.Size(104, 20)
         Me.chkLayerNoRotation.TabIndex = 2
         Me.chkLayerNoRotation.Text = "No Rotation"
         Me.chkLayerNoRotation.UseVisualStyleBackColor = True
@@ -1187,7 +1206,7 @@ Partial Class PPDEM
         Me.chkLayerLowFric.AutoSize = True
         Me.chkLayerLowFric.Location = New System.Drawing.Point(117, 14)
         Me.chkLayerLowFric.Name = "chkLayerLowFric"
-        Me.chkLayerLowFric.Size = New System.Drawing.Size(86, 18)
+        Me.chkLayerLowFric.Size = New System.Drawing.Size(106, 20)
         Me.chkLayerLowFric.TabIndex = 1
         Me.chkLayerLowFric.Text = "Low Friction"
         Me.chkLayerLowFric.UseVisualStyleBackColor = True
@@ -1199,7 +1218,7 @@ Partial Class PPDEM
         Me.setHThinLayer.ForeColor = System.Drawing.Color.White
         Me.setHThinLayer.Location = New System.Drawing.Point(7, 12)
         Me.setHThinLayer.Name = "setHThinLayer"
-        Me.setHThinLayer.Size = New System.Drawing.Size(94, 20)
+        Me.setHThinLayer.Size = New System.Drawing.Size(94, 23)
         Me.setHThinLayer.TabIndex = 0
         '
         'setRotDamp
@@ -1209,7 +1228,7 @@ Partial Class PPDEM
         Me.setRotDamp.ForeColor = System.Drawing.Color.White
         Me.setRotDamp.Location = New System.Drawing.Point(180, 227)
         Me.setRotDamp.Name = "setRotDamp"
-        Me.setRotDamp.Size = New System.Drawing.Size(91, 20)
+        Me.setRotDamp.Size = New System.Drawing.Size(91, 23)
         Me.setRotDamp.TabIndex = 85
         '
         'Label9
@@ -1220,7 +1239,7 @@ Partial Class PPDEM
         Me.Label9.ForeColor = System.Drawing.Color.White
         Me.Label9.Location = New System.Drawing.Point(177, 593)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(75, 14)
+        Me.Label9.Size = New System.Drawing.Size(94, 16)
         Me.Label9.TabIndex = 84
         Me.Label9.Text = "Every X steps"
         '
@@ -1235,7 +1254,7 @@ Partial Class PPDEM
         Me.setOutputFreq.Maximum = New Decimal(New Integer() {10000, 0, 0, 0})
         Me.setOutputFreq.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.setOutputFreq.Name = "setOutputFreq"
-        Me.setOutputFreq.Size = New System.Drawing.Size(91, 20)
+        Me.setOutputFreq.Size = New System.Drawing.Size(91, 23)
         Me.setOutputFreq.TabIndex = 83
         Me.setOutputFreq.Value = New Decimal(New Integer() {10, 0, 0, 0})
         '
@@ -1261,9 +1280,9 @@ Partial Class PPDEM
         Me.chkMonitorSystemVariable.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.chkMonitorSystemVariable.Font = New System.Drawing.Font("Arial", 8.0!)
         Me.chkMonitorSystemVariable.ForeColor = System.Drawing.Color.White
-        Me.chkMonitorSystemVariable.Location = New System.Drawing.Point(17, 573)
+        Me.chkMonitorSystemVariable.Location = New System.Drawing.Point(17, 571)
         Me.chkMonitorSystemVariable.Name = "chkMonitorSystemVariable"
-        Me.chkMonitorSystemVariable.Size = New System.Drawing.Size(145, 18)
+        Me.chkMonitorSystemVariable.Size = New System.Drawing.Size(185, 20)
         Me.chkMonitorSystemVariable.TabIndex = 81
         Me.chkMonitorSystemVariable.Text = "Monitor System Variables"
         Me.chkMonitorSystemVariable.UseVisualStyleBackColor = True
@@ -1280,9 +1299,9 @@ Partial Class PPDEM
         Me.chkSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.chkSave.Font = New System.Drawing.Font("Arial", 8.0!)
         Me.chkSave.ForeColor = System.Drawing.Color.White
-        Me.chkSave.Location = New System.Drawing.Point(14, 653)
+        Me.chkSave.Location = New System.Drawing.Point(14, 651)
         Me.chkSave.Name = "chkSave"
-        Me.chkSave.Size = New System.Drawing.Size(93, 24)
+        Me.chkSave.Size = New System.Drawing.Size(119, 26)
         Me.chkSave.TabIndex = 80
         Me.chkSave.Text = "Save Simulation"
         Me.chkSave.UseVisualStyleBackColor = False
@@ -1298,7 +1317,7 @@ Partial Class PPDEM
         Me.setFreqSaveRST.Maximum = New Decimal(New Integer() {10000, 0, 0, 0})
         Me.setFreqSaveRST.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.setFreqSaveRST.Name = "setFreqSaveRST"
-        Me.setFreqSaveRST.Size = New System.Drawing.Size(91, 20)
+        Me.setFreqSaveRST.Size = New System.Drawing.Size(91, 23)
         Me.setFreqSaveRST.TabIndex = 78
         Me.setFreqSaveRST.Value = New Decimal(New Integer() {10, 0, 0, 0})
         '
@@ -1309,7 +1328,7 @@ Partial Class PPDEM
         Me.lbCritDt.ForeColor = System.Drawing.Color.White
         Me.lbCritDt.Location = New System.Drawing.Point(118, 54)
         Me.lbCritDt.Name = "lbCritDt"
-        Me.lbCritDt.Size = New System.Drawing.Size(43, 14)
+        Me.lbCritDt.Size = New System.Drawing.Size(56, 16)
         Me.lbCritDt.TabIndex = 3
         Me.lbCritDt.Text = "Crit Intv"
         '
@@ -1321,9 +1340,9 @@ Partial Class PPDEM
         Me.chkMassNorm.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.chkMassNorm.Font = New System.Drawing.Font("Arial", 8.0!)
         Me.chkMassNorm.ForeColor = System.Drawing.Color.White
-        Me.chkMassNorm.Location = New System.Drawing.Point(17, 548)
+        Me.chkMassNorm.Location = New System.Drawing.Point(17, 546)
         Me.chkMassNorm.Name = "chkMassNorm"
-        Me.chkMassNorm.Size = New System.Drawing.Size(77, 18)
+        Me.chkMassNorm.Size = New System.Drawing.Size(96, 20)
         Me.chkMassNorm.TabIndex = 76
         Me.chkMassNorm.Text = "Mass Norm"
         Me.chkMassNorm.UseVisualStyleBackColor = True
@@ -1336,7 +1355,7 @@ Partial Class PPDEM
         Me.Label27.Location = New System.Drawing.Point(112, 19)
         Me.Label27.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(48, 14)
+        Me.Label27.Size = New System.Drawing.Size(62, 16)
         Me.Label27.TabIndex = 2
         Me.Label27.Text = "maxNEle"
         '
@@ -1350,7 +1369,7 @@ Partial Class PPDEM
         Me.chkAutoMaxRFriend.ForeColor = System.Drawing.Color.White
         Me.chkAutoMaxRFriend.Location = New System.Drawing.Point(14, 335)
         Me.chkAutoMaxRFriend.Name = "chkAutoMaxRFriend"
-        Me.chkAutoMaxRFriend.Size = New System.Drawing.Size(46, 18)
+        Me.chkAutoMaxRFriend.Size = New System.Drawing.Size(55, 20)
         Me.chkAutoMaxRFriend.TabIndex = 75
         Me.chkAutoMaxRFriend.Text = "Auto"
         Me.chkAutoMaxRFriend.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -1363,7 +1382,7 @@ Partial Class PPDEM
         Me.Label24.ForeColor = System.Drawing.Color.White
         Me.Label24.Location = New System.Drawing.Point(66, 444)
         Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(84, 14)
+        Me.Label24.Size = New System.Drawing.Size(108, 16)
         Me.Label24.TabIndex = 74
         Me.Label24.Text = "Num. Processor"
         '
@@ -1375,7 +1394,7 @@ Partial Class PPDEM
         Me.ctrlNumProcessor.Location = New System.Drawing.Point(181, 442)
         Me.ctrlNumProcessor.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.ctrlNumProcessor.Name = "ctrlNumProcessor"
-        Me.ctrlNumProcessor.Size = New System.Drawing.Size(90, 20)
+        Me.ctrlNumProcessor.Size = New System.Drawing.Size(90, 23)
         Me.ctrlNumProcessor.TabIndex = 73
         Me.ctrlNumProcessor.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
@@ -1389,7 +1408,7 @@ Partial Class PPDEM
         Me.ctrlMaxNEle.Margin = New System.Windows.Forms.Padding(4)
         Me.ctrlMaxNEle.Maximum = New Decimal(New Integer() {600000, 0, 0, 0})
         Me.ctrlMaxNEle.Name = "ctrlMaxNEle"
-        Me.ctrlMaxNEle.Size = New System.Drawing.Size(90, 20)
+        Me.ctrlMaxNEle.Size = New System.Drawing.Size(90, 23)
         Me.ctrlMaxNEle.TabIndex = 1
         Me.ctrlMaxNEle.Value = New Decimal(New Integer() {100, 0, 0, 0})
         '
@@ -1401,7 +1420,7 @@ Partial Class PPDEM
         Me.Label26.Location = New System.Drawing.Point(53, 227)
         Me.Label26.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(90, 14)
+        Me.Label26.Size = New System.Drawing.Size(121, 16)
         Me.Label26.TabIndex = 19
         Me.Label26.Text = "Rotation Damping"
         '
@@ -1413,7 +1432,7 @@ Partial Class PPDEM
         Me.Label58.Location = New System.Drawing.Point(47, 409)
         Me.Label58.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label58.Name = "Label58"
-        Me.Label58.Size = New System.Drawing.Size(96, 14)
+        Me.Label58.Size = New System.Drawing.Size(125, 16)
         Me.Label58.TabIndex = 38
         Me.Label58.Text = "Fric. Ang. Par-Wall"
         '
@@ -1427,7 +1446,7 @@ Partial Class PPDEM
         Me.setTanTheta2.Margin = New System.Windows.Forms.Padding(4)
         Me.setTanTheta2.Maximum = New Decimal(New Integer() {89, 0, 0, 0})
         Me.setTanTheta2.Name = "setTanTheta2"
-        Me.setTanTheta2.Size = New System.Drawing.Size(90, 20)
+        Me.setTanTheta2.Size = New System.Drawing.Size(90, 23)
         Me.setTanTheta2.TabIndex = 39
         Me.setTanTheta2.Value = New Decimal(New Integer() {40, 0, 0, 0})
         '
@@ -1471,7 +1490,7 @@ Partial Class PPDEM
         Me.Label25.AutoSize = True
         Me.Label25.Location = New System.Drawing.Point(100, 610)
         Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(55, 14)
+        Me.Label25.Size = New System.Drawing.Size(73, 16)
         Me.Label25.TabIndex = 112
         Me.Label25.Text = "Pen Width"
         '
@@ -1481,7 +1500,7 @@ Partial Class PPDEM
         Me.setPenWidth.Location = New System.Drawing.Point(13, 607)
         Me.setPenWidth.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.setPenWidth.Name = "setPenWidth"
-        Me.setPenWidth.Size = New System.Drawing.Size(80, 20)
+        Me.setPenWidth.Size = New System.Drawing.Size(80, 23)
         Me.setPenWidth.TabIndex = 111
         Me.setPenWidth.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
@@ -1517,7 +1536,7 @@ Partial Class PPDEM
         Me.rbExpAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.rbExpAll.Location = New System.Drawing.Point(110, 39)
         Me.rbExpAll.Name = "rbExpAll"
-        Me.rbExpAll.Size = New System.Drawing.Size(36, 18)
+        Me.rbExpAll.Size = New System.Drawing.Size(43, 20)
         Me.rbExpAll.TabIndex = 111
         Me.rbExpAll.Text = "All"
         Me.rbExpAll.UseVisualStyleBackColor = True
@@ -1530,7 +1549,7 @@ Partial Class PPDEM
         Me.rbExpVisible.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.rbExpVisible.Location = New System.Drawing.Point(110, 18)
         Me.rbExpVisible.Name = "rbExpVisible"
-        Me.rbExpVisible.Size = New System.Drawing.Size(56, 18)
+        Me.rbExpVisible.Size = New System.Drawing.Size(69, 20)
         Me.rbExpVisible.TabIndex = 110
         Me.rbExpVisible.TabStop = True
         Me.rbExpVisible.Text = "Visible"
@@ -1554,7 +1573,7 @@ Partial Class PPDEM
         Me.chkShowGrid.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.chkShowGrid.Location = New System.Drawing.Point(13, 580)
         Me.chkShowGrid.Name = "chkShowGrid"
-        Me.chkShowGrid.Size = New System.Drawing.Size(75, 18)
+        Me.chkShowGrid.Size = New System.Drawing.Size(91, 20)
         Me.chkShowGrid.TabIndex = 108
         Me.chkShowGrid.Text = "Show Grid"
         Me.chkShowGrid.UseVisualStyleBackColor = True
@@ -1575,7 +1594,7 @@ Partial Class PPDEM
         Me.rbRotationMode2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.rbRotationMode2.Location = New System.Drawing.Point(73, 9)
         Me.rbRotationMode2.Name = "rbRotationMode2"
-        Me.rbRotationMode2.Size = New System.Drawing.Size(59, 18)
+        Me.rbRotationMode2.Size = New System.Drawing.Size(75, 20)
         Me.rbRotationMode2.TabIndex = 1
         Me.rbRotationMode2.TabStop = True
         Me.rbRotationMode2.Text = "Mode 2"
@@ -1588,7 +1607,7 @@ Partial Class PPDEM
         Me.rbRotationMode1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.rbRotationMode1.Location = New System.Drawing.Point(6, 9)
         Me.rbRotationMode1.Name = "rbRotationMode1"
-        Me.rbRotationMode1.Size = New System.Drawing.Size(59, 18)
+        Me.rbRotationMode1.Size = New System.Drawing.Size(75, 20)
         Me.rbRotationMode1.TabIndex = 0
         Me.rbRotationMode1.TabStop = True
         Me.rbRotationMode1.Text = "Mode 1"
@@ -1599,7 +1618,7 @@ Partial Class PPDEM
         Me.lbVelFactor.AutoSize = True
         Me.lbVelFactor.Location = New System.Drawing.Point(225, 470)
         Me.lbVelFactor.Name = "lbVelFactor"
-        Me.lbVelFactor.Size = New System.Drawing.Size(52, 14)
+        Me.lbVelFactor.Size = New System.Drawing.Size(67, 16)
         Me.lbVelFactor.TabIndex = 107
         Me.lbVelFactor.Text = "velFactor"
         '
@@ -1641,7 +1660,7 @@ Partial Class PPDEM
         Me.chkExportCon.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.chkExportCon.Location = New System.Drawing.Point(154, 15)
         Me.chkExportCon.Name = "chkExportCon"
-        Me.chkExportCon.Size = New System.Drawing.Size(92, 18)
+        Me.chkExportCon.Size = New System.Drawing.Size(118, 20)
         Me.chkExportCon.TabIndex = 103
         Me.chkExportCon.Text = "Export Con 3D"
         Me.chkExportCon.UseVisualStyleBackColor = True
@@ -1652,7 +1671,7 @@ Partial Class PPDEM
         Me.modeHist.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.modeHist.Location = New System.Drawing.Point(7, 17)
         Me.modeHist.Name = "modeHist"
-        Me.modeHist.Size = New System.Drawing.Size(115, 18)
+        Me.modeHist.Size = New System.Drawing.Size(143, 20)
         Me.modeHist.TabIndex = 7
         Me.modeHist.Text = "Show Rose Charts"
         Me.modeHist.UseVisualStyleBackColor = True
@@ -1662,7 +1681,7 @@ Partial Class PPDEM
         Me.Label35.AutoSize = True
         Me.Label35.Location = New System.Drawing.Point(6, 51)
         Me.Label35.Name = "Label35"
-        Me.Label35.Size = New System.Drawing.Size(49, 14)
+        Me.Label35.Size = New System.Drawing.Size(64, 16)
         Me.Label35.TabIndex = 102
         Me.Label35.Text = "N Bin Ori"
         '
@@ -1674,7 +1693,7 @@ Partial Class PPDEM
         Me.setNBinFR.Maximum = New Decimal(New Integer() {180, 0, 0, 0})
         Me.setNBinFR.Minimum = New Decimal(New Integer() {2, 0, 0, 0})
         Me.setNBinFR.Name = "setNBinFR"
-        Me.setNBinFR.Size = New System.Drawing.Size(58, 20)
+        Me.setNBinFR.Size = New System.Drawing.Size(58, 23)
         Me.setNBinFR.TabIndex = 101
         Me.setNBinFR.Value = New Decimal(New Integer() {11, 0, 0, 0})
         '
@@ -1683,7 +1702,7 @@ Partial Class PPDEM
         Me.Label38.AutoSize = True
         Me.Label38.Location = New System.Drawing.Point(143, 87)
         Me.Label38.Name = "Label38"
-        Me.Label38.Size = New System.Drawing.Size(48, 14)
+        Me.Label38.Size = New System.Drawing.Size(64, 16)
         Me.Label38.TabIndex = 102
         Me.Label38.Text = "N Bin FR"
         '
@@ -1695,7 +1714,7 @@ Partial Class PPDEM
         Me.setNBinOri.Maximum = New Decimal(New Integer() {180, 0, 0, 0})
         Me.setNBinOri.Minimum = New Decimal(New Integer() {2, 0, 0, 0})
         Me.setNBinOri.Name = "setNBinOri"
-        Me.setNBinOri.Size = New System.Drawing.Size(58, 20)
+        Me.setNBinOri.Size = New System.Drawing.Size(58, 23)
         Me.setNBinOri.TabIndex = 101
         Me.setNBinOri.Value = New Decimal(New Integer() {18, 0, 0, 0})
         '
@@ -1704,7 +1723,7 @@ Partial Class PPDEM
         Me.Label36.AutoSize = True
         Me.Label36.Location = New System.Drawing.Point(143, 51)
         Me.Label36.Name = "Label36"
-        Me.Label36.Size = New System.Drawing.Size(60, 14)
+        Me.Label36.Size = New System.Drawing.Size(78, 16)
         Me.Label36.TabIndex = 102
         Me.Label36.Text = "N Bin Norm"
         '
@@ -1716,7 +1735,7 @@ Partial Class PPDEM
         Me.setNBinForce.Maximum = New Decimal(New Integer() {180, 0, 0, 0})
         Me.setNBinForce.Minimum = New Decimal(New Integer() {2, 0, 0, 0})
         Me.setNBinForce.Name = "setNBinForce"
-        Me.setNBinForce.Size = New System.Drawing.Size(58, 20)
+        Me.setNBinForce.Size = New System.Drawing.Size(58, 23)
         Me.setNBinForce.TabIndex = 101
         Me.setNBinForce.Value = New Decimal(New Integer() {18, 0, 0, 0})
         '
@@ -1725,7 +1744,7 @@ Partial Class PPDEM
         Me.Label37.AutoSize = True
         Me.Label37.Location = New System.Drawing.Point(6, 87)
         Me.Label37.Name = "Label37"
-        Me.Label37.Size = New System.Drawing.Size(63, 14)
+        Me.Label37.Size = New System.Drawing.Size(82, 16)
         Me.Label37.TabIndex = 102
         Me.Label37.Text = "N Bin Force"
         '
@@ -1737,7 +1756,7 @@ Partial Class PPDEM
         Me.setNBinNorm.Maximum = New Decimal(New Integer() {180, 0, 0, 0})
         Me.setNBinNorm.Minimum = New Decimal(New Integer() {2, 0, 0, 0})
         Me.setNBinNorm.Name = "setNBinNorm"
-        Me.setNBinNorm.Size = New System.Drawing.Size(58, 20)
+        Me.setNBinNorm.Size = New System.Drawing.Size(58, 23)
         Me.setNBinNorm.TabIndex = 101
         Me.setNBinNorm.Value = New Decimal(New Integer() {18, 0, 0, 0})
         '
@@ -1747,7 +1766,7 @@ Partial Class PPDEM
         Me.chkMeasureMode.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.chkMeasureMode.Location = New System.Drawing.Point(150, 554)
         Me.chkMeasureMode.Name = "chkMeasureMode"
-        Me.chkMeasureMode.Size = New System.Drawing.Size(65, 18)
+        Me.chkMeasureMode.Size = New System.Drawing.Size(81, 20)
         Me.chkMeasureMode.TabIndex = 104
         Me.chkMeasureMode.Text = "Measure"
         Me.chkMeasureMode.UseVisualStyleBackColor = True
@@ -1773,7 +1792,7 @@ Partial Class PPDEM
         Me.chkHideElement.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.chkHideElement.Location = New System.Drawing.Point(7, 42)
         Me.chkHideElement.Name = "chkHideElement"
-        Me.chkHideElement.Size = New System.Drawing.Size(84, 18)
+        Me.chkHideElement.Size = New System.Drawing.Size(109, 20)
         Me.chkHideElement.TabIndex = 103
         Me.chkHideElement.Text = "Hide Element"
         Me.chkHideElement.UseVisualStyleBackColor = True
@@ -1784,7 +1803,7 @@ Partial Class PPDEM
         Me.chkShowEleNum.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.chkShowEleNum.Location = New System.Drawing.Point(144, 42)
         Me.chkShowEleNum.Name = "chkShowEleNum"
-        Me.chkShowEleNum.Size = New System.Drawing.Size(99, 18)
+        Me.chkShowEleNum.Size = New System.Drawing.Size(124, 20)
         Me.chkShowEleNum.TabIndex = 102
         Me.chkShowEleNum.Text = "Show Ele. Num."
         Me.chkShowEleNum.UseVisualStyleBackColor = True
@@ -1795,7 +1814,7 @@ Partial Class PPDEM
         Me.showLine.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.showLine.Location = New System.Drawing.Point(108, 18)
         Me.showLine.Name = "showLine"
-        Me.showLine.Size = New System.Drawing.Size(75, 18)
+        Me.showLine.Size = New System.Drawing.Size(91, 20)
         Me.showLine.TabIndex = 102
         Me.showLine.Text = "Show Line"
         Me.showLine.UseVisualStyleBackColor = True
@@ -1808,7 +1827,7 @@ Partial Class PPDEM
         Me.showARC.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.showARC.Location = New System.Drawing.Point(7, 18)
         Me.showARC.Name = "showARC"
-        Me.showARC.Size = New System.Drawing.Size(72, 18)
+        Me.showARC.Size = New System.Drawing.Size(84, 20)
         Me.showARC.TabIndex = 101
         Me.showARC.Text = "Show Arc"
         Me.showARC.UseVisualStyleBackColor = True
@@ -1820,13 +1839,14 @@ Partial Class PPDEM
         Me.chkShowFriend.Location = New System.Drawing.Point(203, 18)
         Me.chkShowFriend.Margin = New System.Windows.Forms.Padding(4)
         Me.chkShowFriend.Name = "chkShowFriend"
-        Me.chkShowFriend.Size = New System.Drawing.Size(72, 18)
+        Me.chkShowFriend.Size = New System.Drawing.Size(90, 20)
         Me.chkShowFriend.TabIndex = 75
         Me.chkShowFriend.Text = "Neighbors"
         Me.chkShowFriend.UseVisualStyleBackColor = True
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.chkConForceByRadius)
         Me.GroupBox1.Controls.Add(Me.btnForLengScaleUp)
         Me.GroupBox1.Controls.Add(Me.btnForLengScaleDown)
         Me.GroupBox1.Controls.Add(Me.btnAutoFScaleLeng)
@@ -1946,7 +1966,7 @@ Partial Class PPDEM
         Me.rbForceModeConn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.rbForceModeConn.Location = New System.Drawing.Point(7, 42)
         Me.rbForceModeConn.Name = "rbForceModeConn"
-        Me.rbForceModeConn.Size = New System.Drawing.Size(64, 18)
+        Me.rbForceModeConn.Size = New System.Drawing.Size(81, 20)
         Me.rbForceModeConn.TabIndex = 1
         Me.rbForceModeConn.Text = "Connect"
         Me.rbForceModeConn.UseVisualStyleBackColor = True
@@ -1958,7 +1978,7 @@ Partial Class PPDEM
         Me.rbForceModeDire.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.rbForceModeDire.Location = New System.Drawing.Point(7, 14)
         Me.rbForceModeDire.Name = "rbForceModeDire"
-        Me.rbForceModeDire.Size = New System.Drawing.Size(66, 18)
+        Me.rbForceModeDire.Size = New System.Drawing.Size(84, 20)
         Me.rbForceModeDire.TabIndex = 0
         Me.rbForceModeDire.TabStop = True
         Me.rbForceModeDire.Text = "Direction"
@@ -1969,7 +1989,7 @@ Partial Class PPDEM
         Me.Label10.AutoSize = True
         Me.Label10.Location = New System.Drawing.Point(131, 192)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(48, 14)
+        Me.Label10.Size = New System.Drawing.Size(62, 16)
         Me.Label10.TabIndex = 106
         Me.Label10.Text = "Contrast"
         '
@@ -1980,7 +2000,7 @@ Partial Class PPDEM
         Me.setFactorSlidContrast.ForeColor = System.Drawing.Color.White
         Me.setFactorSlidContrast.Location = New System.Drawing.Point(193, 190)
         Me.setFactorSlidContrast.Name = "setFactorSlidContrast"
-        Me.setFactorSlidContrast.Size = New System.Drawing.Size(55, 20)
+        Me.setFactorSlidContrast.Size = New System.Drawing.Size(55, 23)
         Me.setFactorSlidContrast.TabIndex = 105
         Me.setFactorSlidContrast.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
@@ -2023,7 +2043,7 @@ Partial Class PPDEM
         Me.chkShowSliding.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.chkShowSliding.Location = New System.Drawing.Point(6, 161)
         Me.chkShowSliding.Name = "chkShowSliding"
-        Me.chkShowSliding.Size = New System.Drawing.Size(86, 18)
+        Me.chkShowSliding.Size = New System.Drawing.Size(106, 20)
         Me.chkShowSliding.TabIndex = 101
         Me.chkShowSliding.Text = "Show Sliding"
         Me.chkShowSliding.UseVisualStyleBackColor = True
@@ -2034,7 +2054,7 @@ Partial Class PPDEM
         Me.chkIncWallForce.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.chkIncWallForce.Location = New System.Drawing.Point(6, 135)
         Me.chkIncWallForce.Name = "chkIncWallForce"
-        Me.chkIncWallForce.Size = New System.Drawing.Size(99, 18)
+        Me.chkIncWallForce.Size = New System.Drawing.Size(126, 20)
         Me.chkIncWallForce.TabIndex = 100
         Me.chkIncWallForce.Text = "Incld Wall Force"
         Me.chkIncWallForce.UseVisualStyleBackColor = True
@@ -2046,7 +2066,7 @@ Partial Class PPDEM
         Me.flagForceByLeng.Location = New System.Drawing.Point(6, 22)
         Me.flagForceByLeng.Margin = New System.Windows.Forms.Padding(4)
         Me.flagForceByLeng.Name = "flagForceByLeng"
-        Me.flagForceByLeng.Size = New System.Drawing.Size(72, 18)
+        Me.flagForceByLeng.Size = New System.Drawing.Size(90, 20)
         Me.flagForceByLeng.TabIndex = 77
         Me.flagForceByLeng.Text = "By Length"
         Me.flagForceByLeng.UseVisualStyleBackColor = True
@@ -2057,7 +2077,7 @@ Partial Class PPDEM
         Me.chkShowForceColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.chkShowForceColor.Location = New System.Drawing.Point(137, 135)
         Me.chkShowForceColor.Name = "chkShowForceColor"
-        Me.chkShowForceColor.Size = New System.Drawing.Size(120, 18)
+        Me.chkShowForceColor.Size = New System.Drawing.Size(157, 20)
         Me.chkShowForceColor.TabIndex = 98
         Me.chkShowForceColor.Text = "Color - Friction Ratio"
         Me.chkShowForceColor.UseVisualStyleBackColor = True
@@ -2067,7 +2087,7 @@ Partial Class PPDEM
         Me.Label29.AutoSize = True
         Me.Label29.Location = New System.Drawing.Point(144, 102)
         Me.Label29.Name = "Label29"
-        Me.Label29.Size = New System.Drawing.Size(40, 14)
+        Me.Label29.Size = New System.Drawing.Size(52, 16)
         Me.Label29.TabIndex = 97
         Me.Label29.Text = "Length"
         '
@@ -2076,7 +2096,7 @@ Partial Class PPDEM
         Me.Constrast.AutoSize = True
         Me.Constrast.Location = New System.Drawing.Point(27, 102)
         Me.Constrast.Name = "Constrast"
-        Me.Constrast.Size = New System.Drawing.Size(48, 14)
+        Me.Constrast.Size = New System.Drawing.Size(62, 16)
         Me.Constrast.TabIndex = 96
         Me.Constrast.Text = "Contrast"
         '
@@ -2088,7 +2108,7 @@ Partial Class PPDEM
         Me.cstForceThickLeng.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
         Me.cstForceThickLeng.Location = New System.Drawing.Point(193, 100)
         Me.cstForceThickLeng.Name = "cstForceThickLeng"
-        Me.cstForceThickLeng.Size = New System.Drawing.Size(55, 20)
+        Me.cstForceThickLeng.Size = New System.Drawing.Size(55, 23)
         Me.cstForceThickLeng.TabIndex = 95
         Me.cstForceThickLeng.Value = New Decimal(New Integer() {6, 0, 0, 65536})
         '
@@ -2096,9 +2116,9 @@ Partial Class PPDEM
         '
         Me.chkForceByThick.AutoSize = True
         Me.chkForceByThick.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.chkForceByThick.Location = New System.Drawing.Point(6, 57)
+        Me.chkForceByThick.Location = New System.Drawing.Point(6, 52)
         Me.chkForceByThick.Name = "chkForceByThick"
-        Me.chkForceByThick.Size = New System.Drawing.Size(66, 18)
+        Me.chkForceByThick.Size = New System.Drawing.Size(82, 20)
         Me.chkForceByThick.TabIndex = 90
         Me.chkForceByThick.Text = "By Width"
         Me.chkForceByThick.UseVisualStyleBackColor = True
@@ -2111,7 +2131,7 @@ Partial Class PPDEM
         Me.cstForceThickContrast.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
         Me.cstForceThickContrast.Location = New System.Drawing.Point(87, 100)
         Me.cstForceThickContrast.Name = "cstForceThickContrast"
-        Me.cstForceThickContrast.Size = New System.Drawing.Size(49, 20)
+        Me.cstForceThickContrast.Size = New System.Drawing.Size(49, 23)
         Me.cstForceThickContrast.TabIndex = 94
         Me.cstForceThickContrast.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
@@ -2122,7 +2142,7 @@ Partial Class PPDEM
         Me.chkShowCohesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.chkShowCohesion.Location = New System.Drawing.Point(13, 526)
         Me.chkShowCohesion.Name = "chkShowCohesion"
-        Me.chkShowCohesion.Size = New System.Drawing.Size(100, 18)
+        Me.chkShowCohesion.Size = New System.Drawing.Size(124, 20)
         Me.chkShowCohesion.TabIndex = 87
         Me.chkShowCohesion.Text = "Show Cohesion"
         Me.chkShowCohesion.UseVisualStyleBackColor = True
@@ -2133,7 +2153,7 @@ Partial Class PPDEM
         Me.chkShowCoord.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.chkShowCoord.Location = New System.Drawing.Point(13, 554)
         Me.chkShowCoord.Name = "chkShowCoord"
-        Me.chkShowCoord.Size = New System.Drawing.Size(107, 18)
+        Me.chkShowCoord.Size = New System.Drawing.Size(134, 20)
         Me.chkShowCoord.TabIndex = 86
         Me.chkShowCoord.Text = "Show Coordinate"
         Me.chkShowCoord.UseVisualStyleBackColor = True
@@ -2145,7 +2165,7 @@ Partial Class PPDEM
         Me.flagRotation.Location = New System.Drawing.Point(13, 442)
         Me.flagRotation.Margin = New System.Windows.Forms.Padding(4)
         Me.flagRotation.Name = "flagRotation"
-        Me.flagRotation.Size = New System.Drawing.Size(94, 18)
+        Me.flagRotation.Size = New System.Drawing.Size(117, 20)
         Me.flagRotation.TabIndex = 81
         Me.flagRotation.Text = "Show Rotation"
         Me.flagRotation.UseVisualStyleBackColor = True
@@ -2171,7 +2191,7 @@ Partial Class PPDEM
         Me.checkShowVel.Location = New System.Drawing.Point(13, 470)
         Me.checkShowVel.Margin = New System.Windows.Forms.Padding(4)
         Me.checkShowVel.Name = "checkShowVel"
-        Me.checkShowVel.Size = New System.Drawing.Size(93, 18)
+        Me.checkShowVel.Size = New System.Drawing.Size(112, 20)
         Me.checkShowVel.TabIndex = 76
         Me.checkShowVel.Text = "Show Velocity"
         Me.checkShowVel.UseVisualStyleBackColor = True
@@ -2184,7 +2204,7 @@ Partial Class PPDEM
         Me.flagShowP.Location = New System.Drawing.Point(13, 498)
         Me.flagShowP.Margin = New System.Windows.Forms.Padding(4)
         Me.flagShowP.Name = "flagShowP"
-        Me.flagShowP.Size = New System.Drawing.Size(83, 18)
+        Me.flagShowP.Size = New System.Drawing.Size(106, 20)
         Me.flagShowP.TabIndex = 84
         Me.flagShowP.Text = "Confinement"
         Me.flagShowP.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -2243,10 +2263,10 @@ Partial Class PPDEM
         Me.tabLoad.Controls.Add(Me.grpConfiningControl)
         Me.tabLoad.Controls.Add(Me.GroupBox5)
         Me.tabLoad.ForeColor = System.Drawing.Color.White
-        Me.tabLoad.Location = New System.Drawing.Point(4, 82)
+        Me.tabLoad.Location = New System.Drawing.Point(4, 28)
         Me.tabLoad.Margin = New System.Windows.Forms.Padding(1)
         Me.tabLoad.Name = "tabLoad"
-        Me.tabLoad.Size = New System.Drawing.Size(301, 689)
+        Me.tabLoad.Size = New System.Drawing.Size(301, 743)
         Me.tabLoad.TabIndex = 1
         Me.tabLoad.Text = "Load"
         Me.tabLoad.UseVisualStyleBackColor = True
@@ -2281,7 +2301,7 @@ Partial Class PPDEM
         Me.Label48.AutoSize = True
         Me.Label48.Location = New System.Drawing.Point(4, 118)
         Me.Label48.Name = "Label48"
-        Me.Label48.Size = New System.Drawing.Size(23, 14)
+        Me.Label48.Size = New System.Drawing.Size(29, 16)
         Me.Label48.TabIndex = 81
         Me.Label48.Text = "Bot"
         '
@@ -2290,7 +2310,7 @@ Partial Class PPDEM
         Me.Label47.AutoSize = True
         Me.Label47.Location = New System.Drawing.Point(4, 92)
         Me.Label47.Name = "Label47"
-        Me.Label47.Size = New System.Drawing.Size(24, 14)
+        Me.Label47.Size = New System.Drawing.Size(31, 16)
         Me.Label47.TabIndex = 81
         Me.Label47.Text = "Top"
         '
@@ -2299,7 +2319,7 @@ Partial Class PPDEM
         Me.Label50.AutoSize = True
         Me.Label50.Location = New System.Drawing.Point(185, 16)
         Me.Label50.Name = "Label50"
-        Me.Label50.Size = New System.Drawing.Size(55, 14)
+        Me.Label50.Size = New System.Drawing.Size(73, 16)
         Me.Label50.TabIndex = 81
         Me.Label50.Text = "Tangential"
         '
@@ -2308,7 +2328,7 @@ Partial Class PPDEM
         Me.Label49.AutoSize = True
         Me.Label49.Location = New System.Drawing.Point(70, 16)
         Me.Label49.Name = "Label49"
-        Me.Label49.Size = New System.Drawing.Size(40, 14)
+        Me.Label49.Size = New System.Drawing.Size(52, 16)
         Me.Label49.TabIndex = 81
         Me.Label49.Text = "Normal"
         '
@@ -2317,7 +2337,7 @@ Partial Class PPDEM
         Me.Label46.AutoSize = True
         Me.Label46.Location = New System.Drawing.Point(4, 38)
         Me.Label46.Name = "Label46"
-        Me.Label46.Size = New System.Drawing.Size(26, 14)
+        Me.Label46.Size = New System.Drawing.Size(32, 16)
         Me.Label46.TabIndex = 81
         Me.Label46.Text = "Left"
         '
@@ -2326,7 +2346,7 @@ Partial Class PPDEM
         Me.Label6.AutoSize = True
         Me.Label6.Location = New System.Drawing.Point(4, 65)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(31, 14)
+        Me.Label6.Size = New System.Drawing.Size(41, 16)
         Me.Label6.TabIndex = 81
         Me.Label6.Text = "Right"
         '
@@ -2340,7 +2360,7 @@ Partial Class PPDEM
         Me.setLoadModeTopT.Items.AddRange(New Object() {"Wall Move Rate", "Stress on Particles", "Stress on Walls"})
         Me.setLoadModeTopT.Location = New System.Drawing.Point(163, 89)
         Me.setLoadModeTopT.Name = "setLoadModeTopT"
-        Me.setLoadModeTopT.Size = New System.Drawing.Size(113, 22)
+        Me.setLoadModeTopT.Size = New System.Drawing.Size(113, 24)
         Me.setLoadModeTopT.TabIndex = 80
         '
         'setLoadModeTopN
@@ -2353,7 +2373,7 @@ Partial Class PPDEM
         Me.setLoadModeTopN.Items.AddRange(New Object() {"Wall Move Rate", "Stress on Particles", "Stress on Walls", "Triaxial Mode"})
         Me.setLoadModeTopN.Location = New System.Drawing.Point(47, 89)
         Me.setLoadModeTopN.Name = "setLoadModeTopN"
-        Me.setLoadModeTopN.Size = New System.Drawing.Size(113, 22)
+        Me.setLoadModeTopN.Size = New System.Drawing.Size(113, 24)
         Me.setLoadModeTopN.TabIndex = 80
         '
         'setLoadModeLeftT
@@ -2366,7 +2386,7 @@ Partial Class PPDEM
         Me.setLoadModeLeftT.Items.AddRange(New Object() {"Wall Move Rate", "Stress on Particles", "Stress on Walls"})
         Me.setLoadModeLeftT.Location = New System.Drawing.Point(163, 35)
         Me.setLoadModeLeftT.Name = "setLoadModeLeftT"
-        Me.setLoadModeLeftT.Size = New System.Drawing.Size(113, 22)
+        Me.setLoadModeLeftT.Size = New System.Drawing.Size(113, 24)
         Me.setLoadModeLeftT.TabIndex = 77
         Me.setLoadModeLeftT.Tag = ""
         '
@@ -2380,7 +2400,7 @@ Partial Class PPDEM
         Me.setLoadModeBottomT.Items.AddRange(New Object() {"Wall Move Rate", "Stress on Particles", "Stress on Walls"})
         Me.setLoadModeBottomT.Location = New System.Drawing.Point(163, 115)
         Me.setLoadModeBottomT.Name = "setLoadModeBottomT"
-        Me.setLoadModeBottomT.Size = New System.Drawing.Size(113, 22)
+        Me.setLoadModeBottomT.Size = New System.Drawing.Size(113, 24)
         Me.setLoadModeBottomT.TabIndex = 79
         '
         'setLoadModeLeftN
@@ -2393,7 +2413,7 @@ Partial Class PPDEM
         Me.setLoadModeLeftN.Items.AddRange(New Object() {"Wall Move Rate", "Stress on Particles", "Stress on Walls"})
         Me.setLoadModeLeftN.Location = New System.Drawing.Point(47, 35)
         Me.setLoadModeLeftN.Name = "setLoadModeLeftN"
-        Me.setLoadModeLeftN.Size = New System.Drawing.Size(113, 22)
+        Me.setLoadModeLeftN.Size = New System.Drawing.Size(113, 24)
         Me.setLoadModeLeftN.TabIndex = 77
         Me.setLoadModeLeftN.Tag = ""
         '
@@ -2407,7 +2427,7 @@ Partial Class PPDEM
         Me.setLoadModeRightT.Items.AddRange(New Object() {"Wall Move Rate", "Stress on Particles", "Stress on Walls"})
         Me.setLoadModeRightT.Location = New System.Drawing.Point(163, 62)
         Me.setLoadModeRightT.Name = "setLoadModeRightT"
-        Me.setLoadModeRightT.Size = New System.Drawing.Size(113, 22)
+        Me.setLoadModeRightT.Size = New System.Drawing.Size(113, 24)
         Me.setLoadModeRightT.TabIndex = 78
         '
         'setLoadModeBottomN
@@ -2420,7 +2440,7 @@ Partial Class PPDEM
         Me.setLoadModeBottomN.Items.AddRange(New Object() {"Wall Move Rate", "Stress on Particles", "Stress on Walls", "Triaxial Mode"})
         Me.setLoadModeBottomN.Location = New System.Drawing.Point(47, 115)
         Me.setLoadModeBottomN.Name = "setLoadModeBottomN"
-        Me.setLoadModeBottomN.Size = New System.Drawing.Size(113, 22)
+        Me.setLoadModeBottomN.Size = New System.Drawing.Size(113, 24)
         Me.setLoadModeBottomN.TabIndex = 79
         '
         'setLoadModeRightN
@@ -2433,7 +2453,7 @@ Partial Class PPDEM
         Me.setLoadModeRightN.Items.AddRange(New Object() {"Wall Move Rate", "Stress on Particles", "Stress on Walls"})
         Me.setLoadModeRightN.Location = New System.Drawing.Point(47, 62)
         Me.setLoadModeRightN.Name = "setLoadModeRightN"
-        Me.setLoadModeRightN.Size = New System.Drawing.Size(113, 22)
+        Me.setLoadModeRightN.Size = New System.Drawing.Size(113, 24)
         Me.setLoadModeRightN.TabIndex = 78
         '
         'grpBatchLoading
@@ -2464,7 +2484,7 @@ Partial Class PPDEM
         Me.cycDis.AutoSize = True
         Me.cycDis.Location = New System.Drawing.Point(8, 138)
         Me.cycDis.Name = "cycDis"
-        Me.cycDis.Size = New System.Drawing.Size(31, 14)
+        Me.cycDis.Size = New System.Drawing.Size(40, 16)
         Me.cycDis.TabIndex = 9
         Me.cycDis.Text = "Disp:"
         '
@@ -2475,7 +2495,7 @@ Partial Class PPDEM
         Me.setCyclicDisplacement.Location = New System.Drawing.Point(50, 136)
         Me.setCyclicDisplacement.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.setCyclicDisplacement.Name = "setCyclicDisplacement"
-        Me.setCyclicDisplacement.Size = New System.Drawing.Size(120, 20)
+        Me.setCyclicDisplacement.Size = New System.Drawing.Size(120, 23)
         Me.setCyclicDisplacement.TabIndex = 8
         '
         'setInitialLoadDirection
@@ -2483,7 +2503,7 @@ Partial Class PPDEM
         Me.setInitialLoadDirection.AutoSize = True
         Me.setInitialLoadDirection.Location = New System.Drawing.Point(138, 111)
         Me.setInitialLoadDirection.Name = "setInitialLoadDirection"
-        Me.setInitialLoadDirection.Size = New System.Drawing.Size(99, 18)
+        Me.setInitialLoadDirection.Size = New System.Drawing.Size(127, 20)
         Me.setInitialLoadDirection.TabIndex = 7
         Me.setInitialLoadDirection.Text = "Initial Extension"
         Me.setInitialLoadDirection.UseVisualStyleBackColor = True
@@ -2493,7 +2513,7 @@ Partial Class PPDEM
         Me.Label16.AutoSize = True
         Me.Label16.Location = New System.Drawing.Point(8, 112)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(39, 14)
+        Me.Label16.Size = New System.Drawing.Size(49, 16)
         Me.Label16.TabIndex = 6
         Me.Label16.Text = "q max:"
         '
@@ -2504,7 +2524,7 @@ Partial Class PPDEM
         Me.setQLimit.Location = New System.Drawing.Point(50, 110)
         Me.setQLimit.Maximum = New Decimal(New Integer() {5000, 0, 0, 0})
         Me.setQLimit.Name = "setQLimit"
-        Me.setQLimit.Size = New System.Drawing.Size(70, 20)
+        Me.setQLimit.Size = New System.Drawing.Size(70, 23)
         Me.setQLimit.TabIndex = 5
         '
         'cbSpecialLoad
@@ -2518,7 +2538,7 @@ Partial Class PPDEM
         Me.cbSpecialLoad.Items.AddRange(New Object() {"No special load", "UD cyclic", "Const P flexible", "Const P wall"})
         Me.cbSpecialLoad.Location = New System.Drawing.Point(138, 19)
         Me.cbSpecialLoad.Name = "cbSpecialLoad"
-        Me.cbSpecialLoad.Size = New System.Drawing.Size(140, 22)
+        Me.cbSpecialLoad.Size = New System.Drawing.Size(140, 24)
         Me.cbSpecialLoad.TabIndex = 4
         '
         'lbICurStep3
@@ -2526,7 +2546,7 @@ Partial Class PPDEM
         Me.lbICurStep3.AutoSize = True
         Me.lbICurStep3.Location = New System.Drawing.Point(155, 91)
         Me.lbICurStep3.Name = "lbICurStep3"
-        Me.lbICurStep3.Size = New System.Drawing.Size(51, 14)
+        Me.lbICurStep3.Size = New System.Drawing.Size(66, 16)
         Me.lbICurStep3.TabIndex = 3
         Me.lbICurStep3.Text = "SubStep:"
         '
@@ -2535,7 +2555,7 @@ Partial Class PPDEM
         Me.lbICurStep2.AutoSize = True
         Me.lbICurStep2.Location = New System.Drawing.Point(154, 72)
         Me.lbICurStep2.Name = "lbICurStep2"
-        Me.lbICurStep2.Size = New System.Drawing.Size(86, 14)
+        Me.lbICurStep2.Size = New System.Drawing.Size(112, 16)
         Me.lbICurStep2.TabIndex = 3
         Me.lbICurStep2.Text = "Load Sequence:"
         '
@@ -2544,7 +2564,7 @@ Partial Class PPDEM
         Me.lbICurStep1.AutoSize = True
         Me.lbICurStep1.Location = New System.Drawing.Point(154, 51)
         Me.lbICurStep1.Name = "lbICurStep1"
-        Me.lbICurStep1.Size = New System.Drawing.Size(32, 14)
+        Me.lbICurStep1.Size = New System.Drawing.Size(41, 16)
         Me.lbICurStep1.TabIndex = 3
         Me.lbICurStep1.Text = "Step:"
         '
@@ -2555,7 +2575,7 @@ Partial Class PPDEM
         Me.rbBatchLoading.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.rbBatchLoading.Location = New System.Drawing.Point(7, 86)
         Me.rbBatchLoading.Name = "rbBatchLoading"
-        Me.rbBatchLoading.Size = New System.Drawing.Size(113, 18)
+        Me.rbBatchLoading.Size = New System.Drawing.Size(145, 20)
         Me.rbBatchLoading.TabIndex = 2
         Me.rbBatchLoading.Text = "Automatic Loading"
         Me.rbBatchLoading.UseVisualStyleBackColor = True
@@ -2568,7 +2588,7 @@ Partial Class PPDEM
         Me.rbManualLoading.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.rbManualLoading.Location = New System.Drawing.Point(7, 66)
         Me.rbManualLoading.Name = "rbManualLoading"
-        Me.rbManualLoading.Size = New System.Drawing.Size(99, 18)
+        Me.rbManualLoading.Size = New System.Drawing.Size(129, 20)
         Me.rbManualLoading.TabIndex = 1
         Me.rbManualLoading.TabStop = True
         Me.rbManualLoading.Text = "Manual Loading"
@@ -2612,7 +2632,7 @@ Partial Class PPDEM
         Me.setXGravity.Maximum = New Decimal(New Integer() {276447232, 23283, 0, 0})
         Me.setXGravity.Minimum = New Decimal(New Integer() {1874919424, 2328306, 0, -2147483648})
         Me.setXGravity.Name = "setXGravity"
-        Me.setXGravity.Size = New System.Drawing.Size(77, 20)
+        Me.setXGravity.Size = New System.Drawing.Size(77, 23)
         Me.setXGravity.TabIndex = 76
         '
         'setGX
@@ -2624,7 +2644,7 @@ Partial Class PPDEM
         Me.setGX.Maximum = New Decimal(New Integer() {1874919424, 2328306, 0, 0})
         Me.setGX.Minimum = New Decimal(New Integer() {-1486618624, 232830643, 0, -2147483648})
         Me.setGX.Name = "setGX"
-        Me.setGX.Size = New System.Drawing.Size(77, 20)
+        Me.setGX.Size = New System.Drawing.Size(77, 23)
         Me.setGX.TabIndex = 76
         '
         'setGY
@@ -2636,7 +2656,7 @@ Partial Class PPDEM
         Me.setGY.Maximum = New Decimal(New Integer() {276447232, 23283, 0, 0})
         Me.setGY.Minimum = New Decimal(New Integer() {1874919424, 2328306, 0, -2147483648})
         Me.setGY.Name = "setGY"
-        Me.setGY.Size = New System.Drawing.Size(77, 20)
+        Me.setGY.Size = New System.Drawing.Size(77, 23)
         Me.setGY.TabIndex = 76
         Me.setGY.Value = New Decimal(New Integer() {10, 0, 0, 0})
         '
@@ -2649,7 +2669,7 @@ Partial Class PPDEM
         Me.setYGravity.Maximum = New Decimal(New Integer() {-1530494976, 232830, 0, 0})
         Me.setYGravity.Minimum = New Decimal(New Integer() {1569325056, 23283064, 0, -2147483648})
         Me.setYGravity.Name = "setYGravity"
-        Me.setYGravity.Size = New System.Drawing.Size(77, 20)
+        Me.setYGravity.Size = New System.Drawing.Size(77, 23)
         Me.setYGravity.TabIndex = 76
         '
         'grpDisplacementLoadControl
@@ -2677,7 +2697,7 @@ Partial Class PPDEM
         Me.chkProgressiveLoading.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.chkProgressiveLoading.Location = New System.Drawing.Point(203, 50)
         Me.chkProgressiveLoading.Name = "chkProgressiveLoading"
-        Me.chkProgressiveLoading.Size = New System.Drawing.Size(69, 29)
+        Me.chkProgressiveLoading.Size = New System.Drawing.Size(87, 33)
         Me.chkProgressiveLoading.TabIndex = 71
         Me.chkProgressiveLoading.Text = "Progressive"
         Me.chkProgressiveLoading.UseVisualStyleBackColor = True
@@ -2689,7 +2709,7 @@ Partial Class PPDEM
         Me.setSteptoGo.Location = New System.Drawing.Point(97, 56)
         Me.setSteptoGo.Maximum = New Decimal(New Integer() {100000, 0, 0, 0})
         Me.setSteptoGo.Name = "setSteptoGo"
-        Me.setSteptoGo.Size = New System.Drawing.Size(103, 20)
+        Me.setSteptoGo.Size = New System.Drawing.Size(103, 23)
         Me.setSteptoGo.TabIndex = 70
         '
         'setTargetLoadRate
@@ -2703,7 +2723,7 @@ Partial Class PPDEM
         Me.setTargetLoadRate.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
         Me.setTargetLoadRate.Minimum = New Decimal(New Integer() {10, 0, 0, -2147483648})
         Me.setTargetLoadRate.Name = "setTargetLoadRate"
-        Me.setTargetLoadRate.Size = New System.Drawing.Size(103, 20)
+        Me.setTargetLoadRate.Size = New System.Drawing.Size(103, 23)
         Me.setTargetLoadRate.TabIndex = 68
         '
         'Label33
@@ -2712,7 +2732,7 @@ Partial Class PPDEM
         Me.Label33.Location = New System.Drawing.Point(2, 90)
         Me.Label33.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label33.Name = "Label33"
-        Me.Label33.Size = New System.Drawing.Size(62, 14)
+        Me.Label33.Size = New System.Drawing.Size(82, 16)
         Me.Label33.TabIndex = 69
         Me.Label33.Text = "Target Rate"
         '
@@ -2722,7 +2742,7 @@ Partial Class PPDEM
         Me.Label34.Location = New System.Drawing.Point(2, 60)
         Me.Label34.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label34.Name = "Label34"
-        Me.Label34.Size = New System.Drawing.Size(64, 14)
+        Me.Label34.Size = New System.Drawing.Size(83, 16)
         Me.Label34.TabIndex = 69
         Me.Label34.Text = "Steps to Go"
         '
@@ -2754,7 +2774,7 @@ Partial Class PPDEM
         Me.setpxy.Maximum = New Decimal(New Integer() {-138625024, 2793, 0, 0})
         Me.setpxy.Minimum = New Decimal(New Integer() {-138625024, 2793, 0, -2147483648})
         Me.setpxy.Name = "setpxy"
-        Me.setpxy.Size = New System.Drawing.Size(93, 20)
+        Me.setpxy.Size = New System.Drawing.Size(93, 23)
         Me.setpxy.TabIndex = 76
         '
         'setPy
@@ -2766,7 +2786,7 @@ Partial Class PPDEM
         Me.setPy.Maximum = New Decimal(New Integer() {-138625024, 2793, 0, 0})
         Me.setPy.Minimum = New Decimal(New Integer() {-138625024, 2793, 0, -2147483648})
         Me.setPy.Name = "setPy"
-        Me.setPy.Size = New System.Drawing.Size(95, 20)
+        Me.setPy.Size = New System.Drawing.Size(95, 23)
         Me.setPy.TabIndex = 75
         '
         'Label20
@@ -2775,7 +2795,7 @@ Partial Class PPDEM
         Me.Label20.Location = New System.Drawing.Point(158, 20)
         Me.Label20.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(71, 14)
+        Me.Label20.Size = New System.Drawing.Size(90, 16)
         Me.Label20.TabIndex = 70
         Me.Label20.Text = "Shear Stress"
         '
@@ -2788,7 +2808,7 @@ Partial Class PPDEM
         Me.setPx.Maximum = New Decimal(New Integer() {1874919424, 2328306, 0, 0})
         Me.setPx.Minimum = New Decimal(New Integer() {-138625024, 2793, 0, -2147483648})
         Me.setPx.Name = "setPx"
-        Me.setPx.Size = New System.Drawing.Size(95, 20)
+        Me.setPx.Size = New System.Drawing.Size(95, 23)
         Me.setPx.TabIndex = 74
         '
         'GroupBox5
@@ -2832,7 +2852,7 @@ Partial Class PPDEM
         Me.incWall.Maximum = New Decimal(New Integer() {1000, 0, 0, 0})
         Me.incWall.Minimum = New Decimal(New Integer() {1000, 0, 0, -2147483648})
         Me.incWall.Name = "incWall"
-        Me.incWall.Size = New System.Drawing.Size(50, 20)
+        Me.incWall.Size = New System.Drawing.Size(50, 23)
         Me.incWall.TabIndex = 77
         Me.incWall.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
@@ -2846,9 +2866,9 @@ Partial Class PPDEM
         Me.tabEdit.Controls.Add(Me.grpCrop)
         Me.tabEdit.Controls.Add(Me.grpEditOption)
         Me.tabEdit.ForeColor = System.Drawing.Color.White
-        Me.tabEdit.Location = New System.Drawing.Point(4, 82)
+        Me.tabEdit.Location = New System.Drawing.Point(4, 55)
         Me.tabEdit.Name = "tabEdit"
-        Me.tabEdit.Size = New System.Drawing.Size(301, 689)
+        Me.tabEdit.Size = New System.Drawing.Size(301, 716)
         Me.tabEdit.TabIndex = 3
         Me.tabEdit.Text = "Edit"
         Me.tabEdit.UseVisualStyleBackColor = True
@@ -2873,7 +2893,7 @@ Partial Class PPDEM
         Me.chkExpDiscMask.AutoSize = True
         Me.chkExpDiscMask.Location = New System.Drawing.Point(168, 42)
         Me.chkExpDiscMask.Name = "chkExpDiscMask"
-        Me.chkExpDiscMask.Size = New System.Drawing.Size(44, 18)
+        Me.chkExpDiscMask.Size = New System.Drawing.Size(53, 20)
         Me.chkExpDiscMask.TabIndex = 3
         Me.chkExpDiscMask.Text = "Exp"
         Me.chkExpDiscMask.UseVisualStyleBackColor = True
@@ -2883,7 +2903,7 @@ Partial Class PPDEM
         Me.chkShwDiscMask.AutoSize = True
         Me.chkShwDiscMask.Location = New System.Drawing.Point(168, 16)
         Me.chkShwDiscMask.Name = "chkShwDiscMask"
-        Me.chkShwDiscMask.Size = New System.Drawing.Size(55, 18)
+        Me.chkShwDiscMask.Size = New System.Drawing.Size(64, 20)
         Me.chkShwDiscMask.TabIndex = 2
         Me.chkShwDiscMask.Text = "Show"
         Me.chkShwDiscMask.UseVisualStyleBackColor = True
@@ -3007,7 +3027,7 @@ Partial Class PPDEM
         Me.rbMaskRect.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.rbMaskRect.Location = New System.Drawing.Point(7, 9)
         Me.rbMaskRect.Name = "rbMaskRect"
-        Me.rbMaskRect.Size = New System.Drawing.Size(72, 18)
+        Me.rbMaskRect.Size = New System.Drawing.Size(92, 20)
         Me.rbMaskRect.TabIndex = 0
         Me.rbMaskRect.TabStop = True
         Me.rbMaskRect.Text = "Rectangle"
@@ -3019,7 +3039,7 @@ Partial Class PPDEM
         Me.rbMaskPoly.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.rbMaskPoly.Location = New System.Drawing.Point(7, 43)
         Me.rbMaskPoly.Name = "rbMaskPoly"
-        Me.rbMaskPoly.Size = New System.Drawing.Size(62, 18)
+        Me.rbMaskPoly.Size = New System.Drawing.Size(79, 20)
         Me.rbMaskPoly.TabIndex = 3
         Me.rbMaskPoly.Text = "Polygon"
         Me.rbMaskPoly.UseVisualStyleBackColor = True
@@ -3030,7 +3050,7 @@ Partial Class PPDEM
         Me.rbMaskCircular.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.rbMaskCircular.Location = New System.Drawing.Point(7, 25)
         Me.rbMaskCircular.Name = "rbMaskCircular"
-        Me.rbMaskCircular.Size = New System.Drawing.Size(51, 18)
+        Me.rbMaskCircular.Size = New System.Drawing.Size(64, 20)
         Me.rbMaskCircular.TabIndex = 2
         Me.rbMaskCircular.Text = "Circle"
         Me.rbMaskCircular.UseVisualStyleBackColor = True
@@ -3064,7 +3084,7 @@ Partial Class PPDEM
         Me.rbEleRomove.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.rbEleRomove.Location = New System.Drawing.Point(6, 180)
         Me.rbEleRomove.Name = "rbEleRomove"
-        Me.rbEleRomove.Size = New System.Drawing.Size(103, 18)
+        Me.rbEleRomove.Size = New System.Drawing.Size(135, 20)
         Me.rbEleRomove.TabIndex = 8
         Me.rbEleRomove.TabStop = True
         Me.rbEleRomove.Text = "Remove Element"
@@ -3104,7 +3124,7 @@ Partial Class PPDEM
         Me.setAngRotate.Maximum = New Decimal(New Integer() {180, 0, 0, 0})
         Me.setAngRotate.Minimum = New Decimal(New Integer() {180, 0, 0, -2147483648})
         Me.setAngRotate.Name = "setAngRotate"
-        Me.setAngRotate.Size = New System.Drawing.Size(72, 20)
+        Me.setAngRotate.Size = New System.Drawing.Size(72, 23)
         Me.setAngRotate.TabIndex = 5
         Me.setAngRotate.Value = New Decimal(New Integer() {5, 0, 0, 0})
         '
@@ -3120,7 +3140,7 @@ Partial Class PPDEM
         Me.setCAC.Maximum = New Decimal(New Integer() {314, 0, 0, 131072})
         Me.setCAC.Minimum = New Decimal(New Integer() {1, 0, 0, 131072})
         Me.setCAC.Name = "setCAC"
-        Me.setCAC.Size = New System.Drawing.Size(72, 20)
+        Me.setCAC.Size = New System.Drawing.Size(72, 23)
         Me.setCAC.TabIndex = 4
         Me.setCAC.Value = New Decimal(New Integer() {2, 0, 0, 65536})
         '
@@ -3130,7 +3150,7 @@ Partial Class PPDEM
         Me.rbEleAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.rbEleAdd.Location = New System.Drawing.Point(6, 88)
         Me.rbEleAdd.Name = "rbEleAdd"
-        Me.rbEleAdd.Size = New System.Drawing.Size(108, 18)
+        Me.rbEleAdd.Size = New System.Drawing.Size(134, 20)
         Me.rbEleAdd.TabIndex = 0
         Me.rbEleAdd.TabStop = True
         Me.rbEleAdd.Text = "Add New Particle"
@@ -3142,7 +3162,7 @@ Partial Class PPDEM
         Me.rbEleRotate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.rbEleRotate.Location = New System.Drawing.Point(6, 134)
         Me.rbEleRotate.Name = "rbEleRotate"
-        Me.rbEleRotate.Size = New System.Drawing.Size(95, 18)
+        Me.rbEleRotate.Size = New System.Drawing.Size(125, 20)
         Me.rbEleRotate.TabIndex = 0
         Me.rbEleRotate.TabStop = True
         Me.rbEleRotate.Text = "Rotate Element"
@@ -3154,7 +3174,7 @@ Partial Class PPDEM
         Me.rbSampleRotate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.rbSampleRotate.Location = New System.Drawing.Point(6, 157)
         Me.rbSampleRotate.Name = "rbSampleRotate"
-        Me.rbSampleRotate.Size = New System.Drawing.Size(93, 18)
+        Me.rbSampleRotate.Size = New System.Drawing.Size(121, 20)
         Me.rbSampleRotate.TabIndex = 0
         Me.rbSampleRotate.TabStop = True
         Me.rbSampleRotate.Text = "Rotate Sample"
@@ -3166,7 +3186,7 @@ Partial Class PPDEM
         Me.rbEleCopy.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.rbEleCopy.Location = New System.Drawing.Point(6, 111)
         Me.rbEleCopy.Name = "rbEleCopy"
-        Me.rbEleCopy.Size = New System.Drawing.Size(87, 18)
+        Me.rbEleCopy.Size = New System.Drawing.Size(112, 20)
         Me.rbEleCopy.TabIndex = 0
         Me.rbEleCopy.TabStop = True
         Me.rbEleCopy.Text = "Copy Particle"
@@ -3178,7 +3198,7 @@ Partial Class PPDEM
         Me.rbEleShape.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.rbEleShape.Location = New System.Drawing.Point(6, 65)
         Me.rbEleShape.Name = "rbEleShape"
-        Me.rbEleShape.Size = New System.Drawing.Size(75, 18)
+        Me.rbEleShape.Size = New System.Drawing.Size(97, 20)
         Me.rbEleShape.TabIndex = 0
         Me.rbEleShape.TabStop = True
         Me.rbEleShape.Text = "Edit Shape"
@@ -3190,7 +3210,7 @@ Partial Class PPDEM
         Me.rbEleMove.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.rbEleMove.Location = New System.Drawing.Point(6, 42)
         Me.rbEleMove.Name = "rbEleMove"
-        Me.rbEleMove.Size = New System.Drawing.Size(88, 18)
+        Me.rbEleMove.Size = New System.Drawing.Size(113, 20)
         Me.rbEleMove.TabIndex = 0
         Me.rbEleMove.TabStop = True
         Me.rbEleMove.Text = "Move Particle"
@@ -3203,7 +3223,7 @@ Partial Class PPDEM
         Me.rbView.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.rbView.Location = New System.Drawing.Point(6, 19)
         Me.rbView.Name = "rbView"
-        Me.rbView.Size = New System.Drawing.Size(50, 18)
+        Me.rbView.Size = New System.Drawing.Size(57, 20)
         Me.rbView.TabIndex = 0
         Me.rbView.TabStop = True
         Me.rbView.Text = "View"
@@ -3254,7 +3274,7 @@ Partial Class PPDEM
         Me.Label15.AutoSize = True
         Me.Label15.Location = New System.Drawing.Point(8, 52)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(52, 14)
+        Me.Label15.Size = New System.Drawing.Size(66, 16)
         Me.Label15.TabIndex = 10
         Me.Label15.Text = "BandAng"
         '
@@ -3263,7 +3283,7 @@ Partial Class PPDEM
         Me.rbDyeBand.AutoSize = True
         Me.rbDyeBand.Location = New System.Drawing.Point(9, 75)
         Me.rbDyeBand.Name = "rbDyeBand"
-        Me.rbDyeBand.Size = New System.Drawing.Size(72, 18)
+        Me.rbDyeBand.Size = New System.Drawing.Size(91, 20)
         Me.rbDyeBand.TabIndex = 9
         Me.rbDyeBand.Text = "Dye Band"
         Me.rbDyeBand.UseVisualStyleBackColor = True
@@ -3273,7 +3293,7 @@ Partial Class PPDEM
         Me.rbDyeGrid.AutoSize = True
         Me.rbDyeGrid.Location = New System.Drawing.Point(103, 75)
         Me.rbDyeGrid.Name = "rbDyeGrid"
-        Me.rbDyeGrid.Size = New System.Drawing.Size(67, 18)
+        Me.rbDyeGrid.Size = New System.Drawing.Size(85, 20)
         Me.rbDyeGrid.TabIndex = 8
         Me.rbDyeGrid.Text = "Dye Grid"
         Me.rbDyeGrid.UseVisualStyleBackColor = True
@@ -3284,7 +3304,7 @@ Partial Class PPDEM
         Me.rbGridLine.Checked = True
         Me.rbGridLine.Location = New System.Drawing.Point(195, 75)
         Me.rbGridLine.Name = "rbGridLine"
-        Me.rbGridLine.Size = New System.Drawing.Size(68, 18)
+        Me.rbGridLine.Size = New System.Drawing.Size(87, 20)
         Me.rbGridLine.TabIndex = 7
         Me.rbGridLine.TabStop = True
         Me.rbGridLine.Text = "Grid Line"
@@ -3297,7 +3317,7 @@ Partial Class PPDEM
         Me.setDyeDark.Location = New System.Drawing.Point(215, 48)
         Me.setDyeDark.Maximum = New Decimal(New Integer() {255, 0, 0, 0})
         Me.setDyeDark.Name = "setDyeDark"
-        Me.setDyeDark.Size = New System.Drawing.Size(64, 20)
+        Me.setDyeDark.Size = New System.Drawing.Size(64, 23)
         Me.setDyeDark.TabIndex = 6
         Me.ToolTip1.SetToolTip(Me.setDyeDark, "Grayscale of the dark bands. 0-black; 255-white.")
         Me.setDyeDark.Value = New Decimal(New Integer() {128, 0, 0, 0})
@@ -3311,7 +3331,7 @@ Partial Class PPDEM
         Me.setIntvlDye.Location = New System.Drawing.Point(134, 48)
         Me.setIntvlDye.Maximum = New Decimal(New Integer() {10000, 0, 0, 0})
         Me.setIntvlDye.Name = "setIntvlDye"
-        Me.setIntvlDye.Size = New System.Drawing.Size(71, 20)
+        Me.setIntvlDye.Size = New System.Drawing.Size(71, 23)
         Me.setIntvlDye.TabIndex = 5
         Me.ToolTip1.SetToolTip(Me.setIntvlDye, "Widths of the bands.")
         Me.setIntvlDye.Value = New Decimal(New Integer() {1, 0, 0, 196608})
@@ -3323,7 +3343,7 @@ Partial Class PPDEM
         Me.setAngDye.Location = New System.Drawing.Point(70, 48)
         Me.setAngDye.Maximum = New Decimal(New Integer() {180, 0, 0, 0})
         Me.setAngDye.Name = "setAngDye"
-        Me.setAngDye.Size = New System.Drawing.Size(55, 20)
+        Me.setAngDye.Size = New System.Drawing.Size(55, 23)
         Me.setAngDye.TabIndex = 4
         Me.ToolTip1.SetToolTip(Me.setAngDye, "Angle of the band")
         '
@@ -3332,7 +3352,7 @@ Partial Class PPDEM
         Me.Label31.AutoSize = True
         Me.Label31.Location = New System.Drawing.Point(129, 23)
         Me.Label31.Name = "Label31"
-        Me.Label31.Size = New System.Drawing.Size(66, 14)
+        Me.Label31.Size = New System.Drawing.Size(86, 16)
         Me.Label31.TabIndex = 2
         Me.Label31.Text = "Grid Density"
         '
@@ -3343,7 +3363,7 @@ Partial Class PPDEM
         Me.setNumGD.Location = New System.Drawing.Point(215, 19)
         Me.setNumGD.Maximum = New Decimal(New Integer() {1000, 0, 0, 0})
         Me.setNumGD.Name = "setNumGD"
-        Me.setNumGD.Size = New System.Drawing.Size(64, 20)
+        Me.setNumGD.Size = New System.Drawing.Size(64, 23)
         Me.setNumGD.TabIndex = 1
         Me.setNumGD.Value = New Decimal(New Integer() {10, 0, 0, 0})
         '
@@ -3385,7 +3405,7 @@ Partial Class PPDEM
         Me.chkLockIStepJStep.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.chkLockIStepJStep.Location = New System.Drawing.Point(213, 40)
         Me.chkLockIStepJStep.Name = "chkLockIStepJStep"
-        Me.chkLockIStepJStep.Size = New System.Drawing.Size(58, 18)
+        Me.chkLockIStepJStep.Size = New System.Drawing.Size(72, 20)
         Me.chkLockIStepJStep.TabIndex = 15
         Me.chkLockIStepJStep.Text = "Locked"
         Me.chkLockIStepJStep.UseVisualStyleBackColor = True
@@ -3396,7 +3416,7 @@ Partial Class PPDEM
         Me.showJStep.AutoSize = True
         Me.showJStep.Location = New System.Drawing.Point(255, 12)
         Me.showJStep.Name = "showJStep"
-        Me.showJStep.Size = New System.Drawing.Size(13, 14)
+        Me.showJStep.Size = New System.Drawing.Size(16, 16)
         Me.showJStep.TabIndex = 14
         Me.showJStep.Text = "0"
         '
@@ -3417,7 +3437,7 @@ Partial Class PPDEM
         Me.chkShowRollingTrace.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.chkShowRollingTrace.Location = New System.Drawing.Point(137, 18)
         Me.chkShowRollingTrace.Name = "chkShowRollingTrace"
-        Me.chkShowRollingTrace.Size = New System.Drawing.Size(85, 18)
+        Me.chkShowRollingTrace.Size = New System.Drawing.Size(109, 20)
         Me.chkShowRollingTrace.TabIndex = 1
         Me.chkShowRollingTrace.Text = "Rolling Trace"
         Me.chkShowRollingTrace.UseVisualStyleBackColor = True
@@ -3428,7 +3448,7 @@ Partial Class PPDEM
         Me.chkShowSldTrace.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.chkShowSldTrace.Location = New System.Drawing.Point(5, 18)
         Me.chkShowSldTrace.Name = "chkShowSldTrace"
-        Me.chkShowSldTrace.Size = New System.Drawing.Size(85, 18)
+        Me.chkShowSldTrace.Size = New System.Drawing.Size(108, 20)
         Me.chkShowSldTrace.TabIndex = 0
         Me.chkShowSldTrace.Text = "Sliding Trace"
         Me.chkShowSldTrace.UseVisualStyleBackColor = True
@@ -3468,7 +3488,7 @@ Partial Class PPDEM
         Me.rbContourCoordNum.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.rbContourCoordNum.Location = New System.Drawing.Point(8, 111)
         Me.rbContourCoordNum.Name = "rbContourCoordNum"
-        Me.rbContourCoordNum.Size = New System.Drawing.Size(83, 18)
+        Me.rbContourCoordNum.Size = New System.Drawing.Size(107, 20)
         Me.rbContourCoordNum.TabIndex = 22
         Me.rbContourCoordNum.TabStop = True
         Me.rbContourCoordNum.Text = "Coord. Num."
@@ -3479,7 +3499,7 @@ Partial Class PPDEM
         Me.setRefOri.Location = New System.Drawing.Point(145, 106)
         Me.setRefOri.Maximum = New Decimal(New Integer() {180, 0, 0, 0})
         Me.setRefOri.Name = "setRefOri"
-        Me.setRefOri.Size = New System.Drawing.Size(44, 20)
+        Me.setRefOri.Size = New System.Drawing.Size(44, 23)
         Me.setRefOri.TabIndex = 21
         '
         'rbRelaOri
@@ -3488,7 +3508,7 @@ Partial Class PPDEM
         Me.rbRelaOri.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.rbRelaOri.Location = New System.Drawing.Point(195, 105)
         Me.rbRelaOri.Name = "rbRelaOri"
-        Me.rbRelaOri.Size = New System.Drawing.Size(59, 18)
+        Me.rbRelaOri.Size = New System.Drawing.Size(76, 20)
         Me.rbRelaOri.TabIndex = 20
         Me.rbRelaOri.TabStop = True
         Me.rbRelaOri.Text = "RelaOri"
@@ -3502,7 +3522,7 @@ Partial Class PPDEM
         Me.rbContourOri.Font = New System.Drawing.Font("Arial", 7.0!)
         Me.rbContourOri.Location = New System.Drawing.Point(240, 14)
         Me.rbContourOri.Name = "rbContourOri"
-        Me.rbContourOri.Size = New System.Drawing.Size(25, 29)
+        Me.rbContourOri.Size = New System.Drawing.Size(27, 34)
         Me.rbContourOri.TabIndex = 19
         Me.rbContourOri.TabStop = True
         Me.rbContourOri.Text = "Ori"
@@ -3526,7 +3546,7 @@ Partial Class PPDEM
         Me.rbModeForce.Font = New System.Drawing.Font("Arial", 7.0!)
         Me.rbModeForce.Location = New System.Drawing.Point(6, 29)
         Me.rbModeForce.Name = "rbModeForce"
-        Me.rbModeForce.Size = New System.Drawing.Size(50, 17)
+        Me.rbModeForce.Size = New System.Drawing.Size(58, 19)
         Me.rbModeForce.TabIndex = 1
         Me.rbModeForce.Text = "Force"
         Me.rbModeForce.UseVisualStyleBackColor = True
@@ -3539,7 +3559,7 @@ Partial Class PPDEM
         Me.rbModeStress.Font = New System.Drawing.Font("Arial", 7.0!)
         Me.rbModeStress.Location = New System.Drawing.Point(6, 11)
         Me.rbModeStress.Name = "rbModeStress"
-        Me.rbModeStress.Size = New System.Drawing.Size(51, 17)
+        Me.rbModeStress.Size = New System.Drawing.Size(63, 19)
         Me.rbModeStress.TabIndex = 0
         Me.rbModeStress.TabStop = True
         Me.rbModeStress.Text = "Stress"
@@ -3552,7 +3572,7 @@ Partial Class PPDEM
         Me.rbContourXY.Font = New System.Drawing.Font("Arial", 7.0!)
         Me.rbContourXY.Location = New System.Drawing.Point(231, 80)
         Me.rbContourXY.Name = "rbContourXY"
-        Me.rbContourXY.Size = New System.Drawing.Size(38, 17)
+        Me.rbContourXY.Size = New System.Drawing.Size(41, 19)
         Me.rbContourXY.TabIndex = 17
         Me.rbContourXY.TabStop = True
         Me.rbContourXY.Text = "XY"
@@ -3565,7 +3585,7 @@ Partial Class PPDEM
         Me.rbContourYY.Font = New System.Drawing.Font("Arial", 7.0!)
         Me.rbContourYY.Location = New System.Drawing.Point(181, 80)
         Me.rbContourYY.Name = "rbContourYY"
-        Me.rbContourYY.Size = New System.Drawing.Size(38, 17)
+        Me.rbContourYY.Size = New System.Drawing.Size(41, 19)
         Me.rbContourYY.TabIndex = 16
         Me.rbContourYY.TabStop = True
         Me.rbContourYY.Text = "YY"
@@ -3578,7 +3598,7 @@ Partial Class PPDEM
         Me.rbContourXX.Font = New System.Drawing.Font("Arial", 7.0!)
         Me.rbContourXX.Location = New System.Drawing.Point(134, 80)
         Me.rbContourXX.Name = "rbContourXX"
-        Me.rbContourXX.Size = New System.Drawing.Size(38, 17)
+        Me.rbContourXX.Size = New System.Drawing.Size(41, 19)
         Me.rbContourXX.TabIndex = 15
         Me.rbContourXX.TabStop = True
         Me.rbContourXX.Text = "XX"
@@ -3602,7 +3622,7 @@ Partial Class PPDEM
         Me.rbBlack.Font = New System.Drawing.Font("Arial", 7.0!)
         Me.rbBlack.Location = New System.Drawing.Point(4, 44)
         Me.rbBlack.Name = "rbBlack"
-        Me.rbBlack.Size = New System.Drawing.Size(54, 17)
+        Me.rbBlack.Size = New System.Drawing.Size(60, 19)
         Me.rbBlack.TabIndex = 2
         Me.rbBlack.TabStop = True
         Me.rbBlack.Text = "All Blk"
@@ -3615,7 +3635,7 @@ Partial Class PPDEM
         Me.rbGray.Font = New System.Drawing.Font("Arial", 7.0!)
         Me.rbGray.Location = New System.Drawing.Point(4, 27)
         Me.rbGray.Name = "rbGray"
-        Me.rbGray.Size = New System.Drawing.Size(46, 17)
+        Me.rbGray.Size = New System.Drawing.Size(52, 19)
         Me.rbGray.TabIndex = 1
         Me.rbGray.Text = "Gray"
         Me.rbGray.UseVisualStyleBackColor = True
@@ -3628,7 +3648,7 @@ Partial Class PPDEM
         Me.rbColor.Font = New System.Drawing.Font("Arial", 7.0!)
         Me.rbColor.Location = New System.Drawing.Point(4, 11)
         Me.rbColor.Name = "rbColor"
-        Me.rbColor.Size = New System.Drawing.Size(49, 17)
+        Me.rbColor.Size = New System.Drawing.Size(57, 19)
         Me.rbColor.TabIndex = 0
         Me.rbColor.TabStop = True
         Me.rbColor.Text = "Color"
@@ -3641,7 +3661,7 @@ Partial Class PPDEM
         Me.rbCountorBulk.Font = New System.Drawing.Font("Arial", 7.0!)
         Me.rbCountorBulk.Location = New System.Drawing.Point(134, 55)
         Me.rbCountorBulk.Name = "rbCountorBulk"
-        Me.rbCountorBulk.Size = New System.Drawing.Size(44, 17)
+        Me.rbCountorBulk.Size = New System.Drawing.Size(51, 19)
         Me.rbCountorBulk.TabIndex = 13
         Me.rbCountorBulk.TabStop = True
         Me.rbCountorBulk.Text = "Bulk"
@@ -3654,7 +3674,7 @@ Partial Class PPDEM
         Me.rbContourShear.Font = New System.Drawing.Font("Arial", 7.0!)
         Me.rbContourShear.Location = New System.Drawing.Point(193, 55)
         Me.rbContourShear.Name = "rbContourShear"
-        Me.rbContourShear.Size = New System.Drawing.Size(75, 17)
+        Me.rbContourShear.Size = New System.Drawing.Size(84, 19)
         Me.rbContourShear.TabIndex = 12
         Me.rbContourShear.TabStop = True
         Me.rbContourShear.Text = "Max Shear"
@@ -3676,7 +3696,7 @@ Partial Class PPDEM
         Me.chkMode1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.chkMode1.Location = New System.Drawing.Point(8, 34)
         Me.chkMode1.Name = "chkMode1"
-        Me.chkMode1.Size = New System.Drawing.Size(85, 18)
+        Me.chkMode1.Size = New System.Drawing.Size(109, 20)
         Me.chkMode1.TabIndex = 1
         Me.chkMode1.Text = "Static Range"
         Me.chkMode1.UseVisualStyleBackColor = True
@@ -3688,7 +3708,7 @@ Partial Class PPDEM
         Me.chkMode0.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.chkMode0.Location = New System.Drawing.Point(8, 11)
         Me.chkMode0.Name = "chkMode0"
-        Me.chkMode0.Size = New System.Drawing.Size(99, 18)
+        Me.chkMode0.Size = New System.Drawing.Size(128, 20)
         Me.chkMode0.TabIndex = 0
         Me.chkMode0.TabStop = True
         Me.chkMode0.Text = "Dynamic Range"
@@ -3704,7 +3724,7 @@ Partial Class PPDEM
         Me.setRelaMin.Maximum = New Decimal(New Integer() {-727379968, 232, 0, 0})
         Me.setRelaMin.Minimum = New Decimal(New Integer() {-727379968, 232, 0, -2147483648})
         Me.setRelaMin.Name = "setRelaMin"
-        Me.setRelaMin.Size = New System.Drawing.Size(93, 20)
+        Me.setRelaMin.Size = New System.Drawing.Size(93, 23)
         Me.setRelaMin.TabIndex = 10
         '
         'setRelaMax
@@ -3717,7 +3737,7 @@ Partial Class PPDEM
         Me.setRelaMax.Maximum = New Decimal(New Integer() {1410065408, 2, 0, 0})
         Me.setRelaMax.Minimum = New Decimal(New Integer() {1410065408, 2, 0, -2147483648})
         Me.setRelaMax.Name = "setRelaMax"
-        Me.setRelaMax.Size = New System.Drawing.Size(92, 20)
+        Me.setRelaMax.Size = New System.Drawing.Size(92, 23)
         Me.setRelaMax.TabIndex = 9
         '
         'PictureBox1
@@ -3779,7 +3799,7 @@ Partial Class PPDEM
         Me.rbContourH.Font = New System.Drawing.Font("Arial", 7.0!)
         Me.rbContourH.Location = New System.Drawing.Point(131, 14)
         Me.rbContourH.Name = "rbContourH"
-        Me.rbContourH.Size = New System.Drawing.Size(18, 29)
+        Me.rbContourH.Size = New System.Drawing.Size(20, 34)
         Me.rbContourH.TabIndex = 4
         Me.rbContourH.Text = "H"
         Me.rbContourH.UseVisualStyleBackColor = True
@@ -3792,7 +3812,7 @@ Partial Class PPDEM
         Me.rbContourU.Font = New System.Drawing.Font("Arial", 7.0!)
         Me.rbContourU.Location = New System.Drawing.Point(185, 14)
         Me.rbContourU.Name = "rbContourU"
-        Me.rbContourU.Size = New System.Drawing.Size(18, 29)
+        Me.rbContourU.Size = New System.Drawing.Size(20, 34)
         Me.rbContourU.TabIndex = 3
         Me.rbContourU.Text = "U"
         Me.rbContourU.UseVisualStyleBackColor = True
@@ -3805,7 +3825,7 @@ Partial Class PPDEM
         Me.rbContourR.Font = New System.Drawing.Font("Arial", 7.0!)
         Me.rbContourR.Location = New System.Drawing.Point(214, 14)
         Me.rbContourR.Name = "rbContourR"
-        Me.rbContourR.Size = New System.Drawing.Size(18, 29)
+        Me.rbContourR.Size = New System.Drawing.Size(20, 34)
         Me.rbContourR.TabIndex = 2
         Me.rbContourR.Text = "R"
         Me.rbContourR.UseVisualStyleBackColor = True
@@ -3818,7 +3838,7 @@ Partial Class PPDEM
         Me.rbContourV.Font = New System.Drawing.Font("Arial", 7.0!)
         Me.rbContourV.Location = New System.Drawing.Point(159, 14)
         Me.rbContourV.Name = "rbContourV"
-        Me.rbContourV.Size = New System.Drawing.Size(18, 29)
+        Me.rbContourV.Size = New System.Drawing.Size(18, 34)
         Me.rbContourV.TabIndex = 1
         Me.rbContourV.Text = "V"
         Me.rbContourV.UseVisualStyleBackColor = True
@@ -3831,7 +3851,7 @@ Partial Class PPDEM
         Me.chkDefContour.ForeColor = System.Drawing.Color.Gold
         Me.chkDefContour.Location = New System.Drawing.Point(6, 13)
         Me.chkDefContour.Name = "chkDefContour"
-        Me.chkDefContour.Size = New System.Drawing.Size(103, 20)
+        Me.chkDefContour.Size = New System.Drawing.Size(128, 23)
         Me.chkDefContour.TabIndex = 0
         Me.chkDefContour.Text = "Def. Contour"
         Me.chkDefContour.UseVisualStyleBackColor = True
@@ -3841,7 +3861,7 @@ Partial Class PPDEM
         Me.Label32.AutoSize = True
         Me.Label32.Location = New System.Drawing.Point(86, 42)
         Me.Label32.Name = "Label32"
-        Me.Label32.Size = New System.Drawing.Size(86, 14)
+        Me.Label32.Size = New System.Drawing.Size(111, 16)
         Me.Label32.TabIndex = 11
         Me.Label32.Text = "Reference State"
         '
@@ -3876,7 +3896,7 @@ Partial Class PPDEM
         Me.Label8.AutoSize = True
         Me.Label8.Location = New System.Drawing.Point(140, 15)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(42, 14)
+        Me.Label8.Size = New System.Drawing.Size(53, 16)
         Me.Label8.TabIndex = 11
         Me.Label8.Text = "Sparse"
         '
@@ -3889,7 +3909,7 @@ Partial Class PPDEM
         Me.setStepSparse.Maximum = New Decimal(New Integer() {10000, 0, 0, 0})
         Me.setStepSparse.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.setStepSparse.Name = "setStepSparse"
-        Me.setStepSparse.Size = New System.Drawing.Size(68, 20)
+        Me.setStepSparse.Size = New System.Drawing.Size(68, 23)
         Me.setStepSparse.TabIndex = 10
         Me.setStepSparse.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
@@ -3899,7 +3919,7 @@ Partial Class PPDEM
         Me.chkColorTrace.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.chkColorTrace.Location = New System.Drawing.Point(82, 40)
         Me.chkColorTrace.Name = "chkColorTrace"
-        Me.chkColorTrace.Size = New System.Drawing.Size(79, 18)
+        Me.chkColorTrace.Size = New System.Drawing.Size(100, 20)
         Me.chkColorTrace.TabIndex = 7
         Me.chkColorTrace.Text = "Color Trace"
         Me.chkColorTrace.UseVisualStyleBackColor = True
@@ -3910,7 +3930,7 @@ Partial Class PPDEM
         Me.rbV.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.rbV.Location = New System.Drawing.Point(235, 39)
         Me.rbV.Name = "rbV"
-        Me.rbV.Size = New System.Drawing.Size(32, 18)
+        Me.rbV.Size = New System.Drawing.Size(37, 20)
         Me.rbV.TabIndex = 9
         Me.rbV.Text = "V"
         Me.rbV.UseVisualStyleBackColor = True
@@ -3922,7 +3942,7 @@ Partial Class PPDEM
         Me.rbH.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.rbH.Location = New System.Drawing.Point(195, 40)
         Me.rbH.Name = "rbH"
-        Me.rbH.Size = New System.Drawing.Size(31, 18)
+        Me.rbH.Size = New System.Drawing.Size(37, 20)
         Me.rbH.TabIndex = 8
         Me.rbH.TabStop = True
         Me.rbH.Text = "H"
@@ -3936,7 +3956,7 @@ Partial Class PPDEM
         Me.chkShowTrace.ForeColor = System.Drawing.Color.Gold
         Me.chkShowTrace.Location = New System.Drawing.Point(5, 11)
         Me.chkShowTrace.Name = "chkShowTrace"
-        Me.chkShowTrace.Size = New System.Drawing.Size(99, 20)
+        Me.chkShowTrace.Size = New System.Drawing.Size(119, 23)
         Me.chkShowTrace.TabIndex = 5
         Me.chkShowTrace.Text = "Show Trace"
         Me.chkShowTrace.UseVisualStyleBackColor = True
@@ -3947,7 +3967,7 @@ Partial Class PPDEM
         Me.chkShowRotation.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.chkShowRotation.Location = New System.Drawing.Point(81, 65)
         Me.chkShowRotation.Name = "chkShowRotation"
-        Me.chkShowRotation.Size = New System.Drawing.Size(94, 18)
+        Me.chkShowRotation.Size = New System.Drawing.Size(117, 20)
         Me.chkShowRotation.TabIndex = 6
         Me.chkShowRotation.Text = "Show Rotation"
         Me.chkShowRotation.UseVisualStyleBackColor = True
@@ -3997,7 +4017,7 @@ Partial Class PPDEM
         Me.chkHideElement2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.chkHideElement2.Location = New System.Drawing.Point(145, 43)
         Me.chkHideElement2.Name = "chkHideElement2"
-        Me.chkHideElement2.Size = New System.Drawing.Size(84, 18)
+        Me.chkHideElement2.Size = New System.Drawing.Size(109, 20)
         Me.chkHideElement2.TabIndex = 104
         Me.chkHideElement2.Text = "Hide Element"
         Me.chkHideElement2.UseVisualStyleBackColor = True
@@ -4008,7 +4028,7 @@ Partial Class PPDEM
         Me.modeVR.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.modeVR.Location = New System.Drawing.Point(7, 44)
         Me.modeVR.Name = "modeVR"
-        Me.modeVR.Size = New System.Drawing.Size(71, 18)
+        Me.modeVR.Size = New System.Drawing.Size(90, 20)
         Me.modeVR.TabIndex = 7
         Me.modeVR.Text = "Void Ratio"
         Me.modeVR.UseVisualStyleBackColor = True
@@ -4019,7 +4039,7 @@ Partial Class PPDEM
         Me.modeGD.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.modeGD.Location = New System.Drawing.Point(145, 19)
         Me.modeGD.Name = "modeGD"
-        Me.modeGD.Size = New System.Drawing.Size(104, 18)
+        Me.modeGD.Size = New System.Drawing.Size(134, 20)
         Me.modeGD.TabIndex = 6
         Me.modeGD.Text = "Grid Deformation"
         Me.modeGD.UseVisualStyleBackColor = True
@@ -4031,7 +4051,7 @@ Partial Class PPDEM
         Me.modeMotion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.modeMotion.Location = New System.Drawing.Point(7, 19)
         Me.modeMotion.Name = "modeMotion"
-        Me.modeMotion.Size = New System.Drawing.Size(89, 18)
+        Me.modeMotion.Size = New System.Drawing.Size(113, 20)
         Me.modeMotion.TabIndex = 5
         Me.modeMotion.Text = "Particle Trace"
         Me.modeMotion.UseVisualStyleBackColor = True
@@ -4053,7 +4073,7 @@ Partial Class PPDEM
         '
         Me.tabStrain.AutoScroll = True
         Me.tabStrain.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-		Me.tabStrain.Controls.Add(Me.chkExpWallPosition)
+        Me.tabStrain.Controls.Add(Me.chkExpWallPosition)
         Me.tabStrain.Controls.Add(Me.btnMaskCell)
         Me.tabStrain.Controls.Add(Me.gbShowStnDrct)
         Me.tabStrain.Controls.Add(Me.gbStnMode)
@@ -4085,12 +4105,23 @@ Partial Class PPDEM
         Me.tabStrain.Controls.Add(Me.setRdStnCell)
         Me.tabStrain.Controls.Add(Me.btnIniStnCell)
         Me.tabStrain.ForeColor = System.Drawing.Color.White
-        Me.tabStrain.Location = New System.Drawing.Point(4, 82)
+        Me.tabStrain.Location = New System.Drawing.Point(4, 55)
         Me.tabStrain.Name = "tabStrain"
-        Me.tabStrain.Size = New System.Drawing.Size(301, 689)
+        Me.tabStrain.Size = New System.Drawing.Size(301, 716)
         Me.tabStrain.TabIndex = 5
         Me.tabStrain.Text = "Strain"
         Me.tabStrain.UseVisualStyleBackColor = True
+        '
+        'chkExpWallPosition
+        '
+        Me.chkExpWallPosition.AutoSize = True
+        Me.chkExpWallPosition.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.chkExpWallPosition.Location = New System.Drawing.Point(9, 597)
+        Me.chkExpWallPosition.Name = "chkExpWallPosition"
+        Me.chkExpWallPosition.Size = New System.Drawing.Size(139, 21)
+        Me.chkExpWallPosition.TabIndex = 32
+        Me.chkExpWallPosition.Text = "Exp Wall Position"
+        Me.chkExpWallPosition.UseVisualStyleBackColor = True
         '
         'btnMaskCell
         '
@@ -4125,7 +4156,7 @@ Partial Class PPDEM
         Me.rbDrctMaxShear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.rbDrctMaxShear.Location = New System.Drawing.Point(97, 44)
         Me.rbDrctMaxShear.Name = "rbDrctMaxShear"
-        Me.rbDrctMaxShear.Size = New System.Drawing.Size(108, 18)
+        Me.rbDrctMaxShear.Size = New System.Drawing.Size(137, 20)
         Me.rbDrctMaxShear.TabIndex = 4
         Me.rbDrctMaxShear.TabStop = True
         Me.rbDrctMaxShear.Text = "Strain-Max Shear"
@@ -4138,7 +4169,7 @@ Partial Class PPDEM
         Me.rbDrctStnXX.Font = New System.Drawing.Font("Arial", 8.0!)
         Me.rbDrctStnXX.Location = New System.Drawing.Point(207, 20)
         Me.rbDrctStnXX.Name = "rbDrctStnXX"
-        Me.rbDrctStnXX.Size = New System.Drawing.Size(42, 18)
+        Me.rbDrctStnXX.Size = New System.Drawing.Size(50, 20)
         Me.rbDrctStnXX.TabIndex = 3
         Me.rbDrctStnXX.Text = "X'X'"
         Me.rbDrctStnXX.UseVisualStyleBackColor = True
@@ -4151,7 +4182,7 @@ Partial Class PPDEM
         Me.rbDrctShearFlow.Font = New System.Drawing.Font("Arial", 8.0!)
         Me.rbDrctShearFlow.Location = New System.Drawing.Point(97, 19)
         Me.rbDrctShearFlow.Name = "rbDrctShearFlow"
-        Me.rbDrctShearFlow.Size = New System.Drawing.Size(80, 18)
+        Me.rbDrctShearFlow.Size = New System.Drawing.Size(99, 20)
         Me.rbDrctShearFlow.TabIndex = 2
         Me.rbDrctShearFlow.TabStop = True
         Me.rbDrctShearFlow.Text = "Shear Flow"
@@ -4164,7 +4195,7 @@ Partial Class PPDEM
         Me.rbDrctStnII.Font = New System.Drawing.Font("Arial", 8.0!)
         Me.rbDrctStnII.Location = New System.Drawing.Point(16, 44)
         Me.rbDrctStnII.Name = "rbDrctStnII"
-        Me.rbDrctStnII.Size = New System.Drawing.Size(60, 18)
+        Me.rbDrctStnII.Size = New System.Drawing.Size(76, 20)
         Me.rbDrctStnII.TabIndex = 1
         Me.rbDrctStnII.Text = "Strain-II"
         Me.rbDrctStnII.UseVisualStyleBackColor = True
@@ -4176,7 +4207,7 @@ Partial Class PPDEM
         Me.rbDrctStnI.Font = New System.Drawing.Font("Arial", 8.0!)
         Me.rbDrctStnI.Location = New System.Drawing.Point(16, 20)
         Me.rbDrctStnI.Name = "rbDrctStnI"
-        Me.rbDrctStnI.Size = New System.Drawing.Size(58, 18)
+        Me.rbDrctStnI.Size = New System.Drawing.Size(73, 20)
         Me.rbDrctStnI.TabIndex = 0
         Me.rbDrctStnI.Text = "Strain-I"
         Me.rbDrctStnI.UseVisualStyleBackColor = True
@@ -4197,7 +4228,7 @@ Partial Class PPDEM
         Me.rbModeStnRate.Font = New System.Drawing.Font("Arial", 8.0!)
         Me.rbModeStnRate.Location = New System.Drawing.Point(7, 30)
         Me.rbModeStnRate.Name = "rbModeStnRate"
-        Me.rbModeStnRate.Size = New System.Drawing.Size(78, 18)
+        Me.rbModeStnRate.Size = New System.Drawing.Size(100, 20)
         Me.rbModeStnRate.TabIndex = 1
         Me.rbModeStnRate.Text = "Strain Rate"
         Me.rbModeStnRate.UseVisualStyleBackColor = True
@@ -4209,7 +4240,7 @@ Partial Class PPDEM
         Me.rbModeStnInc.Font = New System.Drawing.Font("Arial", 8.0!)
         Me.rbModeStnInc.Location = New System.Drawing.Point(7, 11)
         Me.rbModeStnInc.Name = "rbModeStnInc"
-        Me.rbModeStnInc.Size = New System.Drawing.Size(70, 18)
+        Me.rbModeStnInc.Size = New System.Drawing.Size(88, 20)
         Me.rbModeStnInc.TabIndex = 0
         Me.rbModeStnInc.TabStop = True
         Me.rbModeStnInc.Text = "Strain Inc"
@@ -4231,7 +4262,7 @@ Partial Class PPDEM
         Me.rbDelauany.Font = New System.Drawing.Font("Arial", 8.0!)
         Me.rbDelauany.Location = New System.Drawing.Point(15, 30)
         Me.rbDelauany.Name = "rbDelauany"
-        Me.rbDelauany.Size = New System.Drawing.Size(70, 18)
+        Me.rbDelauany.Size = New System.Drawing.Size(89, 20)
         Me.rbDelauany.TabIndex = 1
         Me.rbDelauany.Text = "Delaunay"
         Me.rbDelauany.UseVisualStyleBackColor = True
@@ -4243,7 +4274,7 @@ Partial Class PPDEM
         Me.rbHomoTri.Font = New System.Drawing.Font("Arial", 8.0!)
         Me.rbHomoTri.Location = New System.Drawing.Point(15, 11)
         Me.rbHomoTri.Name = "rbHomoTri"
-        Me.rbHomoTri.Size = New System.Drawing.Size(87, 18)
+        Me.rbHomoTri.Size = New System.Drawing.Size(112, 20)
         Me.rbHomoTri.TabIndex = 0
         Me.rbHomoTri.TabStop = True
         Me.rbHomoTri.Text = "Hom Triangle"
@@ -4313,7 +4344,7 @@ Partial Class PPDEM
         Me.chkAddActCell.Font = New System.Drawing.Font("Arial", 8.0!)
         Me.chkAddActCell.Location = New System.Drawing.Point(9, 88)
         Me.chkAddActCell.Name = "chkAddActCell"
-        Me.chkAddActCell.Size = New System.Drawing.Size(50, 24)
+        Me.chkAddActCell.Size = New System.Drawing.Size(58, 26)
         Me.chkAddActCell.TabIndex = 22
         Me.chkAddActCell.Text = " AdAct"
         Me.chkAddActCell.UseVisualStyleBackColor = True
@@ -4325,7 +4356,7 @@ Partial Class PPDEM
         Me.chkShwStrnVal.Font = New System.Drawing.Font("Arial", 8.0!)
         Me.chkShwStrnVal.Location = New System.Drawing.Point(8, 291)
         Me.chkShwStrnVal.Name = "chkShwStrnVal"
-        Me.chkShwStrnVal.Size = New System.Drawing.Size(50, 18)
+        Me.chkShwStrnVal.Size = New System.Drawing.Size(61, 20)
         Me.chkShwStrnVal.TabIndex = 21
         Me.chkShwStrnVal.Text = "Value"
         Me.chkShwStrnVal.UseVisualStyleBackColor = True
@@ -4340,7 +4371,7 @@ Partial Class PPDEM
         Me.setValLegend.Location = New System.Drawing.Point(195, 292)
         Me.setValLegend.Minimum = New Decimal(New Integer() {100, 0, 0, -2147483648})
         Me.setValLegend.Name = "setValLegend"
-        Me.setValLegend.Size = New System.Drawing.Size(98, 20)
+        Me.setValLegend.Size = New System.Drawing.Size(98, 23)
         Me.setValLegend.TabIndex = 20
         Me.setValLegend.Value = New Decimal(New Integer() {1, 0, 0, 196608})
         '
@@ -4351,7 +4382,7 @@ Partial Class PPDEM
         Me.chkShowStnLegend.Font = New System.Drawing.Font("Arial", 8.0!)
         Me.chkShowStnLegend.Location = New System.Drawing.Point(97, 290)
         Me.chkShowStnLegend.Name = "chkShowStnLegend"
-        Me.chkShowStnLegend.Size = New System.Drawing.Size(59, 18)
+        Me.chkShowStnLegend.Size = New System.Drawing.Size(74, 20)
         Me.chkShowStnLegend.TabIndex = 19
         Me.chkShowStnLegend.Text = "Legend"
         Me.chkShowStnLegend.UseVisualStyleBackColor = True
@@ -4366,7 +4397,7 @@ Partial Class PPDEM
         Me.setStnContrast.Location = New System.Drawing.Point(206, 213)
         Me.setStnContrast.Maximum = New Decimal(New Integer() {5, 0, 0, 0})
         Me.setStnContrast.Name = "setStnContrast"
-        Me.setStnContrast.Size = New System.Drawing.Size(42, 20)
+        Me.setStnContrast.Size = New System.Drawing.Size(42, 23)
         Me.setStnContrast.TabIndex = 18
         Me.setStnContrast.Value = New Decimal(New Integer() {5, 0, 0, 65536})
         '
@@ -4376,7 +4407,7 @@ Partial Class PPDEM
         Me.Label14.Font = New System.Drawing.Font("Arial", 8.0!)
         Me.Label14.Location = New System.Drawing.Point(153, 214)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(48, 14)
+        Me.Label14.Size = New System.Drawing.Size(62, 16)
         Me.Label14.TabIndex = 17
         Me.Label14.Text = "Contrast"
         '
@@ -4387,7 +4418,7 @@ Partial Class PPDEM
         Me.chkLgthStrn.Font = New System.Drawing.Font("Arial", 8.0!)
         Me.chkLgthStrn.Location = New System.Drawing.Point(155, 253)
         Me.chkLgthStrn.Name = "chkLgthStrn"
-        Me.chkLgthStrn.Size = New System.Drawing.Size(56, 18)
+        Me.chkLgthStrn.Size = New System.Drawing.Size(70, 20)
         Me.chkLgthStrn.TabIndex = 14
         Me.chkLgthStrn.Text = "Length"
         Me.chkLgthStrn.UseVisualStyleBackColor = True
@@ -4422,7 +4453,7 @@ Partial Class PPDEM
         Me.chkShowStnDrct.Font = New System.Drawing.Font("Arial", 8.0!)
         Me.chkShowStnDrct.Location = New System.Drawing.Point(8, 253)
         Me.chkShowStnDrct.Name = "chkShowStnDrct"
-        Me.chkShowStnDrct.Size = New System.Drawing.Size(75, 18)
+        Me.chkShowStnDrct.Size = New System.Drawing.Size(90, 20)
         Me.chkShowStnDrct.TabIndex = 11
         Me.chkShowStnDrct.Text = "Show Drct"
         Me.chkShowStnDrct.UseVisualStyleBackColor = True
@@ -4447,7 +4478,7 @@ Partial Class PPDEM
         Me.rbShowBothStn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.rbShowBothStn.Location = New System.Drawing.Point(6, 10)
         Me.rbShowBothStn.Name = "rbShowBothStn"
-        Me.rbShowBothStn.Size = New System.Drawing.Size(34, 18)
+        Me.rbShowBothStn.Size = New System.Drawing.Size(41, 20)
         Me.rbShowBothStn.TabIndex = 2
         Me.rbShowBothStn.TabStop = True
         Me.rbShowBothStn.Text = "+-"
@@ -4459,7 +4490,7 @@ Partial Class PPDEM
         Me.rbShowNegStn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.rbShowNegStn.Location = New System.Drawing.Point(6, 60)
         Me.rbShowNegStn.Name = "rbShowNegStn"
-        Me.rbShowNegStn.Size = New System.Drawing.Size(28, 18)
+        Me.rbShowNegStn.Size = New System.Drawing.Size(33, 20)
         Me.rbShowNegStn.TabIndex = 1
         Me.rbShowNegStn.TabStop = True
         Me.rbShowNegStn.Text = "-"
@@ -4471,7 +4502,7 @@ Partial Class PPDEM
         Me.rbShowPosiStn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.rbShowPosiStn.Location = New System.Drawing.Point(6, 35)
         Me.rbShowPosiStn.Name = "rbShowPosiStn"
-        Me.rbShowPosiStn.Size = New System.Drawing.Size(30, 18)
+        Me.rbShowPosiStn.Size = New System.Drawing.Size(36, 20)
         Me.rbShowPosiStn.TabIndex = 0
         Me.rbShowPosiStn.TabStop = True
         Me.rbShowPosiStn.Text = "+"
@@ -4507,7 +4538,7 @@ Partial Class PPDEM
         Me.rbSpinTensor.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.rbSpinTensor.Location = New System.Drawing.Point(17, 123)
         Me.rbSpinTensor.Name = "rbSpinTensor"
-        Me.rbSpinTensor.Size = New System.Drawing.Size(45, 18)
+        Me.rbSpinTensor.Size = New System.Drawing.Size(56, 20)
         Me.rbSpinTensor.TabIndex = 18
         Me.rbSpinTensor.TabStop = True
         Me.rbSpinTensor.Text = "Spin"
@@ -4519,7 +4550,7 @@ Partial Class PPDEM
         Me.rbShearFlowRate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.rbShearFlowRate.Location = New System.Drawing.Point(98, 71)
         Me.rbShearFlowRate.Name = "rbShearFlowRate"
-        Me.rbShearFlowRate.Size = New System.Drawing.Size(77, 18)
+        Me.rbShearFlowRate.Size = New System.Drawing.Size(95, 20)
         Me.rbShearFlowRate.TabIndex = 17
         Me.rbShearFlowRate.TabStop = True
         Me.rbShearFlowRate.Text = "ShearFlow"
@@ -4531,7 +4562,7 @@ Partial Class PPDEM
         Me.rbStrainXYN.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.rbStrainXYN.Location = New System.Drawing.Point(98, 96)
         Me.rbStrainXYN.Name = "rbStrainXYN"
-        Me.rbStrainXYN.Size = New System.Drawing.Size(75, 18)
+        Me.rbStrainXYN.Size = New System.Drawing.Size(93, 20)
         Me.rbStrainXYN.TabIndex = 8
         Me.rbStrainXYN.TabStop = True
         Me.rbStrainXYN.Text = "Strain-X'Y'"
@@ -4543,7 +4574,7 @@ Partial Class PPDEM
         Me.rbStrainN.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.rbStrainN.Location = New System.Drawing.Point(17, 96)
         Me.rbStrainN.Name = "rbStrainN"
-        Me.rbStrainN.Size = New System.Drawing.Size(70, 18)
+        Me.rbStrainN.Size = New System.Drawing.Size(87, 20)
         Me.rbStrainN.TabIndex = 7
         Me.rbStrainN.TabStop = True
         Me.rbStrainN.Text = "StrainX'X'"
@@ -4554,7 +4585,7 @@ Partial Class PPDEM
         Me.Label13.AutoSize = True
         Me.Label13.Location = New System.Drawing.Point(195, 73)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(25, 14)
+        Me.Label13.Size = New System.Drawing.Size(30, 16)
         Me.Label13.TabIndex = 15
         Me.Label13.Text = "X'X'"
         '
@@ -4566,7 +4597,7 @@ Partial Class PPDEM
         Me.setAngN.Location = New System.Drawing.Point(194, 96)
         Me.setAngN.Maximum = New Decimal(New Integer() {360, 0, 0, 0})
         Me.setAngN.Name = "setAngN"
-        Me.setAngN.Size = New System.Drawing.Size(70, 20)
+        Me.setAngN.Size = New System.Drawing.Size(70, 23)
         Me.setAngN.TabIndex = 16
         '
         'rbStrainXYMax
@@ -4575,7 +4606,7 @@ Partial Class PPDEM
         Me.rbStrainXYMax.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.rbStrainXYMax.Location = New System.Drawing.Point(16, 71)
         Me.rbStrainXYMax.Name = "rbStrainXYMax"
-        Me.rbStrainXYMax.Size = New System.Drawing.Size(73, 18)
+        Me.rbStrainXYMax.Size = New System.Drawing.Size(91, 20)
         Me.rbStrainXYMax.TabIndex = 6
         Me.rbStrainXYMax.TabStop = True
         Me.rbStrainXYMax.Text = "MaxShear"
@@ -4587,7 +4618,7 @@ Partial Class PPDEM
         Me.rbStrainII.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.rbStrainII.Location = New System.Drawing.Point(182, 20)
         Me.rbStrainII.Name = "rbStrainII"
-        Me.rbStrainII.Size = New System.Drawing.Size(60, 18)
+        Me.rbStrainII.Size = New System.Drawing.Size(76, 20)
         Me.rbStrainII.TabIndex = 5
         Me.rbStrainII.TabStop = True
         Me.rbStrainII.Text = "Strain-II"
@@ -4599,7 +4630,7 @@ Partial Class PPDEM
         Me.rbStrainI.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.rbStrainI.Location = New System.Drawing.Point(98, 20)
         Me.rbStrainI.Name = "rbStrainI"
-        Me.rbStrainI.Size = New System.Drawing.Size(58, 18)
+        Me.rbStrainI.Size = New System.Drawing.Size(73, 20)
         Me.rbStrainI.TabIndex = 4
         Me.rbStrainI.TabStop = True
         Me.rbStrainI.Text = "Strain-I"
@@ -4611,7 +4642,7 @@ Partial Class PPDEM
         Me.rbStrainXY.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.rbStrainXY.Location = New System.Drawing.Point(182, 45)
         Me.rbStrainXY.Name = "rbStrainXY"
-        Me.rbStrainXY.Size = New System.Drawing.Size(71, 18)
+        Me.rbStrainXY.Size = New System.Drawing.Size(87, 20)
         Me.rbStrainXY.TabIndex = 3
         Me.rbStrainXY.TabStop = True
         Me.rbStrainXY.Text = "Strain-XY"
@@ -4623,7 +4654,7 @@ Partial Class PPDEM
         Me.rbStrainYY.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.rbStrainYY.Location = New System.Drawing.Point(98, 45)
         Me.rbStrainYY.Name = "rbStrainYY"
-        Me.rbStrainYY.Size = New System.Drawing.Size(72, 18)
+        Me.rbStrainYY.Size = New System.Drawing.Size(88, 20)
         Me.rbStrainYY.TabIndex = 2
         Me.rbStrainYY.TabStop = True
         Me.rbStrainYY.Text = "Strain-YY"
@@ -4635,7 +4666,7 @@ Partial Class PPDEM
         Me.rbStrainXX.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.rbStrainXX.Location = New System.Drawing.Point(16, 46)
         Me.rbStrainXX.Name = "rbStrainXX"
-        Me.rbStrainXX.Size = New System.Drawing.Size(70, 18)
+        Me.rbStrainXX.Size = New System.Drawing.Size(86, 20)
         Me.rbStrainXX.TabIndex = 1
         Me.rbStrainXX.TabStop = True
         Me.rbStrainXX.Text = "Strain-XX"
@@ -4648,7 +4679,7 @@ Partial Class PPDEM
         Me.rbStrainV.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.rbStrainV.Location = New System.Drawing.Point(16, 20)
         Me.rbStrainV.Name = "rbStrainV"
-        Me.rbStrainV.Size = New System.Drawing.Size(64, 18)
+        Me.rbStrainV.Size = New System.Drawing.Size(79, 20)
         Me.rbStrainV.TabIndex = 0
         Me.rbStrainV.TabStop = True
         Me.rbStrainV.Text = "Strain-V"
@@ -4684,7 +4715,7 @@ Partial Class PPDEM
         Me.chkShowStrain.Font = New System.Drawing.Font("Arial", 8.0!)
         Me.chkShowStrain.Location = New System.Drawing.Point(8, 213)
         Me.chkShowStrain.Name = "chkShowStrain"
-        Me.chkShowStrain.Size = New System.Drawing.Size(83, 18)
+        Me.chkShowStrain.Size = New System.Drawing.Size(101, 20)
         Me.chkShowStrain.TabIndex = 6
         Me.chkShowStrain.Text = "Show Strain"
         Me.chkShowStrain.UseVisualStyleBackColor = True
@@ -4696,7 +4727,7 @@ Partial Class PPDEM
         Me.chkShowCell.Font = New System.Drawing.Font("Arial", 8.0!)
         Me.chkShowCell.Location = New System.Drawing.Point(8, 189)
         Me.chkShowCell.Name = "chkShowCell"
-        Me.chkShowCell.Size = New System.Drawing.Size(72, 18)
+        Me.chkShowCell.Size = New System.Drawing.Size(88, 20)
         Me.chkShowCell.TabIndex = 5
         Me.chkShowCell.Text = "Show Cell"
         Me.chkShowCell.UseVisualStyleBackColor = True
@@ -4709,7 +4740,7 @@ Partial Class PPDEM
         Me.setNumCell.Location = New System.Drawing.Point(216, 55)
         Me.setNumCell.Maximum = New Decimal(New Integer() {10000000, 0, 0, 0})
         Me.setNumCell.Name = "setNumCell"
-        Me.setNumCell.Size = New System.Drawing.Size(78, 20)
+        Me.setNumCell.Size = New System.Drawing.Size(78, 23)
         Me.setNumCell.TabIndex = 4
         Me.setNumCell.Value = New Decimal(New Integer() {12, 0, 0, 0})
         '
@@ -4719,7 +4750,7 @@ Partial Class PPDEM
         Me.Label12.Font = New System.Drawing.Font("Arial", 8.0!)
         Me.Label12.Location = New System.Drawing.Point(154, 57)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(55, 14)
+        Me.Label12.Size = New System.Drawing.Size(73, 16)
         Me.Label12.TabIndex = 3
         Me.Label12.Text = "Cell Dens."
         '
@@ -4729,7 +4760,7 @@ Partial Class PPDEM
         Me.Label11.Font = New System.Drawing.Font("Arial", 8.0!)
         Me.Label11.Location = New System.Drawing.Point(154, 22)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(48, 14)
+        Me.Label11.Size = New System.Drawing.Size(62, 16)
         Me.Label11.TabIndex = 2
         Me.Label11.Text = "Cell Size"
         '
@@ -4742,7 +4773,7 @@ Partial Class PPDEM
         Me.setRdStnCell.Location = New System.Drawing.Point(216, 20)
         Me.setRdStnCell.Maximum = New Decimal(New Integer() {10000000, 0, 0, 0})
         Me.setRdStnCell.Name = "setRdStnCell"
-        Me.setRdStnCell.Size = New System.Drawing.Size(78, 20)
+        Me.setRdStnCell.Size = New System.Drawing.Size(78, 23)
         Me.setRdStnCell.TabIndex = 1
         Me.setRdStnCell.Value = New Decimal(New Integer() {1, 0, 0, 196608})
         '
@@ -4812,7 +4843,7 @@ Partial Class PPDEM
         Me.setStressRotationRate.Location = New System.Drawing.Point(159, 88)
         Me.setStressRotationRate.Minimum = New Decimal(New Integer() {100, 0, 0, -2147483648})
         Me.setStressRotationRate.Name = "setStressRotationRate"
-        Me.setStressRotationRate.Size = New System.Drawing.Size(120, 21)
+        Me.setStressRotationRate.Size = New System.Drawing.Size(120, 25)
         Me.setStressRotationRate.TabIndex = 18
         '
         'Label41
@@ -4820,7 +4851,7 @@ Partial Class PPDEM
         Me.Label41.AutoSize = True
         Me.Label41.Location = New System.Drawing.Point(13, 121)
         Me.Label41.Name = "Label41"
-        Me.Label41.Size = New System.Drawing.Size(71, 15)
+        Me.Label41.Size = New System.Drawing.Size(83, 17)
         Me.Label41.TabIndex = 23
         Me.Label41.Text = "NStep Limit"
         '
@@ -4841,7 +4872,7 @@ Partial Class PPDEM
         Me.setPStressAng.Maximum = New Decimal(New Integer() {100000000, 0, 0, 0})
         Me.setPStressAng.Minimum = New Decimal(New Integer() {1000000000, 0, 0, -2147483648})
         Me.setPStressAng.Name = "setPStressAng"
-        Me.setPStressAng.Size = New System.Drawing.Size(120, 21)
+        Me.setPStressAng.Size = New System.Drawing.Size(120, 25)
         Me.setPStressAng.TabIndex = 17
         '
         'chkStressRotation
@@ -4850,7 +4881,7 @@ Partial Class PPDEM
         Me.chkStressRotation.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.chkStressRotation.Location = New System.Drawing.Point(16, 39)
         Me.chkStressRotation.Name = "chkStressRotation"
-        Me.chkStressRotation.Size = New System.Drawing.Size(93, 19)
+        Me.chkStressRotation.Size = New System.Drawing.Size(110, 21)
         Me.chkStressRotation.TabIndex = 78
         Me.chkStressRotation.Text = "Sts. Rotation"
         Me.chkStressRotation.UseVisualStyleBackColor = True
@@ -4861,7 +4892,7 @@ Partial Class PPDEM
         Me.setStressIncRate.Location = New System.Drawing.Point(159, 152)
         Me.setStressIncRate.Minimum = New Decimal(New Integer() {100, 0, 0, -2147483648})
         Me.setStressIncRate.Name = "setStressIncRate"
-        Me.setStressIncRate.Size = New System.Drawing.Size(120, 21)
+        Me.setStressIncRate.Size = New System.Drawing.Size(120, 25)
         Me.setStressIncRate.TabIndex = 19
         '
         'setMaxStep
@@ -4869,7 +4900,7 @@ Partial Class PPDEM
         Me.setMaxStep.Location = New System.Drawing.Point(159, 121)
         Me.setMaxStep.Maximum = New Decimal(New Integer() {100000000, 0, 0, 0})
         Me.setMaxStep.Name = "setMaxStep"
-        Me.setMaxStep.Size = New System.Drawing.Size(120, 21)
+        Me.setMaxStep.Size = New System.Drawing.Size(120, 25)
         Me.setMaxStep.TabIndex = 20
         Me.setMaxStep.Value = New Decimal(New Integer() {1000000, 0, 0, 0})
         '
@@ -4878,7 +4909,7 @@ Partial Class PPDEM
         Me.Label30.AutoSize = True
         Me.Label30.Location = New System.Drawing.Point(13, 95)
         Me.Label30.Name = "Label30"
-        Me.Label30.Size = New System.Drawing.Size(52, 15)
+        Me.Label30.Size = New System.Drawing.Size(65, 17)
         Me.Label30.TabIndex = 22
         Me.Label30.Text = "P.S.A Inc"
         '
@@ -4887,7 +4918,7 @@ Partial Class PPDEM
         Me.Label28.AutoSize = True
         Me.Label28.Location = New System.Drawing.Point(13, 63)
         Me.Label28.Name = "Label28"
-        Me.Label28.Size = New System.Drawing.Size(94, 15)
+        Me.Label28.Size = New System.Drawing.Size(114, 17)
         Me.Label28.TabIndex = 21
         Me.Label28.Text = "Prcp Stress Ang"
         '
@@ -4896,7 +4927,7 @@ Partial Class PPDEM
         Me.chkExpVVTs.AutoSize = True
         Me.chkExpVVTs.Location = New System.Drawing.Point(9, 432)
         Me.chkExpVVTs.Name = "chkExpVVTs"
-        Me.chkExpVVTs.Size = New System.Drawing.Size(118, 19)
+        Me.chkExpVVTs.Size = New System.Drawing.Size(142, 21)
         Me.chkExpVVTs.TabIndex = 16
         Me.chkExpVVTs.Text = "Export VV Tensor"
         Me.chkExpVVTs.UseVisualStyleBackColor = True
@@ -4906,7 +4937,7 @@ Partial Class PPDEM
         Me.chkShowVCFabric.AutoSize = True
         Me.chkShowVCFabric.Location = New System.Drawing.Point(9, 404)
         Me.chkShowVCFabric.Name = "chkShowVCFabric"
-        Me.chkShowVCFabric.Size = New System.Drawing.Size(113, 19)
+        Me.chkShowVCFabric.Size = New System.Drawing.Size(136, 21)
         Me.chkShowVCFabric.TabIndex = 15
         Me.chkShowVCFabric.Text = "Show VC Fabric"
         Me.chkShowVCFabric.UseVisualStyleBackColor = True
@@ -4916,7 +4947,7 @@ Partial Class PPDEM
         Me.chkShowVoidVector.AutoSize = True
         Me.chkShowVoidVector.Location = New System.Drawing.Point(9, 376)
         Me.chkShowVoidVector.Name = "chkShowVoidVector"
-        Me.chkShowVoidVector.Size = New System.Drawing.Size(119, 19)
+        Me.chkShowVoidVector.Size = New System.Drawing.Size(143, 21)
         Me.chkShowVoidVector.TabIndex = 14
         Me.chkShowVoidVector.Text = "Show Void Vector"
         Me.chkShowVoidVector.UseVisualStyleBackColor = True
@@ -4926,7 +4957,7 @@ Partial Class PPDEM
         Me.chkShowVCBound.AutoSize = True
         Me.chkShowVCBound.Location = New System.Drawing.Point(9, 348)
         Me.chkShowVCBound.Name = "chkShowVCBound"
-        Me.chkShowVCBound.Size = New System.Drawing.Size(115, 19)
+        Me.chkShowVCBound.Size = New System.Drawing.Size(137, 21)
         Me.chkShowVCBound.TabIndex = 13
         Me.chkShowVCBound.Text = "Show VC Bound"
         Me.chkShowVCBound.UseVisualStyleBackColor = True
@@ -4936,7 +4967,7 @@ Partial Class PPDEM
         Me.chkShowVCNum.AutoSize = True
         Me.chkShowVCNum.Location = New System.Drawing.Point(9, 320)
         Me.chkShowVCNum.Name = "chkShowVCNum"
-        Me.chkShowVCNum.Size = New System.Drawing.Size(106, 19)
+        Me.chkShowVCNum.Size = New System.Drawing.Size(126, 21)
         Me.chkShowVCNum.TabIndex = 12
         Me.chkShowVCNum.Text = "Show VC Num"
         Me.chkShowVCNum.UseVisualStyleBackColor = True
@@ -4946,7 +4977,7 @@ Partial Class PPDEM
         Me.chkExtVC.AutoSize = True
         Me.chkExtVC.Location = New System.Drawing.Point(9, 292)
         Me.chkExtVC.Name = "chkExtVC"
-        Me.chkExtVC.Size = New System.Drawing.Size(82, 19)
+        Me.chkExtVC.Size = New System.Drawing.Size(99, 21)
         Me.chkExtVC.TabIndex = 11
         Me.chkExtVC.Text = "Extend VC"
         Me.chkExtVC.UseVisualStyleBackColor = True
@@ -4957,7 +4988,7 @@ Partial Class PPDEM
         Me.chkShowDualCelll.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.chkShowDualCelll.Location = New System.Drawing.Point(156, 26)
         Me.chkShowDualCelll.Name = "chkShowDualCelll"
-        Me.chkShowDualCelll.Size = New System.Drawing.Size(108, 19)
+        Me.chkShowDualCelll.Size = New System.Drawing.Size(126, 21)
         Me.chkShowDualCelll.TabIndex = 10
         Me.chkShowDualCelll.Text = "Show Dual Cell"
         Me.chkShowDualCelll.UseVisualStyleBackColor = True
@@ -4968,7 +4999,7 @@ Partial Class PPDEM
         Me.chkShowEdgeNum.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.chkShowEdgeNum.Location = New System.Drawing.Point(167, 105)
         Me.chkShowEdgeNum.Name = "chkShowEdgeNum"
-        Me.chkShowEdgeNum.Size = New System.Drawing.Size(119, 19)
+        Me.chkShowEdgeNum.Size = New System.Drawing.Size(140, 21)
         Me.chkShowEdgeNum.TabIndex = 9
         Me.chkShowEdgeNum.Text = "Show Edge Num."
         Me.chkShowEdgeNum.UseVisualStyleBackColor = True
@@ -4979,7 +5010,7 @@ Partial Class PPDEM
         Me.chkShowSolidCell.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.chkShowSolidCell.Location = New System.Drawing.Point(156, 65)
         Me.chkShowSolidCell.Name = "chkShowSolidCell"
-        Me.chkShowSolidCell.Size = New System.Drawing.Size(110, 19)
+        Me.chkShowSolidCell.Size = New System.Drawing.Size(128, 21)
         Me.chkShowSolidCell.TabIndex = 8
         Me.chkShowSolidCell.Text = "Show Solid Cell"
         Me.chkShowSolidCell.UseVisualStyleBackColor = True
@@ -4989,7 +5020,7 @@ Partial Class PPDEM
         Me.setCellOpacity.Location = New System.Drawing.Point(9, 241)
         Me.setCellOpacity.Maximum = 255
         Me.setCellOpacity.Name = "setCellOpacity"
-        Me.setCellOpacity.Size = New System.Drawing.Size(289, 45)
+        Me.setCellOpacity.Size = New System.Drawing.Size(289, 53)
         Me.setCellOpacity.TabIndex = 7
         Me.setCellOpacity.TickFrequency = 8
         Me.setCellOpacity.Value = 100
@@ -4999,7 +5030,7 @@ Partial Class PPDEM
         Me.chkShowCellNum.AutoSize = True
         Me.chkShowCellNum.Location = New System.Drawing.Point(9, 214)
         Me.chkShowCellNum.Name = "chkShowCellNum"
-        Me.chkShowCellNum.Size = New System.Drawing.Size(115, 19)
+        Me.chkShowCellNum.Size = New System.Drawing.Size(135, 21)
         Me.chkShowCellNum.TabIndex = 6
         Me.chkShowCellNum.Text = "Show Cell Num."
         Me.chkShowCellNum.UseVisualStyleBackColor = True
@@ -5009,7 +5040,7 @@ Partial Class PPDEM
         Me.chkShowEffEdge.AutoSize = True
         Me.chkShowEffEdge.Location = New System.Drawing.Point(8, 186)
         Me.chkShowEffEdge.Name = "chkShowEffEdge"
-        Me.chkShowEffEdge.Size = New System.Drawing.Size(106, 19)
+        Me.chkShowEffEdge.Size = New System.Drawing.Size(127, 21)
         Me.chkShowEffEdge.TabIndex = 5
         Me.chkShowEffEdge.Text = "Show Eff Edge"
         Me.chkShowEffEdge.UseVisualStyleBackColor = True
@@ -5019,7 +5050,7 @@ Partial Class PPDEM
         Me.rbShowCrctCell.AutoSize = True
         Me.rbShowCrctCell.Location = New System.Drawing.Point(9, 159)
         Me.rbShowCrctCell.Name = "rbShowCrctCell"
-        Me.rbShowCrctCell.Size = New System.Drawing.Size(104, 19)
+        Me.rbShowCrctCell.Size = New System.Drawing.Size(123, 21)
         Me.rbShowCrctCell.TabIndex = 4
         Me.rbShowCrctCell.Text = "Corrected Cell"
         Me.rbShowCrctCell.UseVisualStyleBackColor = True
@@ -5030,7 +5061,7 @@ Partial Class PPDEM
         Me.rbShowOriCell.Checked = True
         Me.rbShowOriCell.Location = New System.Drawing.Point(8, 132)
         Me.rbShowOriCell.Name = "rbShowOriCell"
-        Me.rbShowOriCell.Size = New System.Drawing.Size(93, 19)
+        Me.rbShowOriCell.Size = New System.Drawing.Size(108, 21)
         Me.rbShowOriCell.TabIndex = 3
         Me.rbShowOriCell.TabStop = True
         Me.rbShowOriCell.Text = "Original Cell"
@@ -5042,7 +5073,7 @@ Partial Class PPDEM
         Me.chkShowContNum.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.chkShowContNum.Location = New System.Drawing.Point(9, 105)
         Me.chkShowContNum.Name = "chkShowContNum"
-        Me.chkShowContNum.Size = New System.Drawing.Size(129, 19)
+        Me.chkShowContNum.Size = New System.Drawing.Size(153, 21)
         Me.chkShowContNum.TabIndex = 2
         Me.chkShowContNum.Text = "Show Contact Num"
         Me.chkShowContNum.UseVisualStyleBackColor = True
@@ -5053,7 +5084,7 @@ Partial Class PPDEM
         Me.chkShowCellInEle.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.chkShowCellInEle.Location = New System.Drawing.Point(9, 66)
         Me.chkShowCellInEle.Name = "chkShowCellInEle"
-        Me.chkShowCellInEle.Size = New System.Drawing.Size(113, 19)
+        Me.chkShowCellInEle.Size = New System.Drawing.Size(132, 21)
         Me.chkShowCellInEle.TabIndex = 1
         Me.chkShowCellInEle.Text = "Show Cell In Ele"
         Me.chkShowCellInEle.UseVisualStyleBackColor = True
@@ -5093,7 +5124,7 @@ Partial Class PPDEM
         Me.chkHLLinks.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.chkHLLinks.Location = New System.Drawing.Point(9, 199)
         Me.chkHLLinks.Name = "chkHLLinks"
-        Me.chkHLLinks.Size = New System.Drawing.Size(158, 19)
+        Me.chkHLLinks.Size = New System.Drawing.Size(181, 21)
         Me.chkHLLinks.TabIndex = 6
         Me.chkHLLinks.Text = "Highlight linked particles"
         Me.chkHLLinks.UseVisualStyleBackColor = True
@@ -5125,7 +5156,7 @@ Partial Class PPDEM
         Me.setLinkDampingRatio.Location = New System.Drawing.Point(4, 167)
         Me.setLinkDampingRatio.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
         Me.setLinkDampingRatio.Name = "setLinkDampingRatio"
-        Me.setLinkDampingRatio.Size = New System.Drawing.Size(136, 21)
+        Me.setLinkDampingRatio.Size = New System.Drawing.Size(136, 25)
         Me.setLinkDampingRatio.TabIndex = 3
         Me.setLinkDampingRatio.Value = New Decimal(New Integer() {5, 0, 0, 65536})
         '
@@ -5194,7 +5225,7 @@ Partial Class PPDEM
         Me.mainTransparency.Maximum = 20
         Me.mainTransparency.Name = "mainTransparency"
         Me.mainTransparency.Orientation = System.Windows.Forms.Orientation.Vertical
-        Me.mainTransparency.Size = New System.Drawing.Size(45, 271)
+        Me.mainTransparency.Size = New System.Drawing.Size(53, 271)
         Me.mainTransparency.TabIndex = 107
         Me.mainTransparency.TickStyle = System.Windows.Forms.TickStyle.None
         '
@@ -5255,7 +5286,7 @@ Partial Class PPDEM
         Me.setZoomFactor.Location = New System.Drawing.Point(1140, 781)
         Me.setZoomFactor.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.setZoomFactor.Name = "setZoomFactor"
-        Me.setZoomFactor.Size = New System.Drawing.Size(50, 20)
+        Me.setZoomFactor.Size = New System.Drawing.Size(50, 23)
         Me.setZoomFactor.TabIndex = 81
         Me.setZoomFactor.Value = New Decimal(New Integer() {12, 0, 0, 65536})
         '
@@ -5308,7 +5339,7 @@ Partial Class PPDEM
         Me.showCurrentStepPost.ForeColor = System.Drawing.Color.White
         Me.showCurrentStepPost.Location = New System.Drawing.Point(912, 783)
         Me.showCurrentStepPost.Name = "showCurrentStepPost"
-        Me.showCurrentStepPost.Size = New System.Drawing.Size(65, 14)
+        Me.showCurrentStepPost.Size = New System.Drawing.Size(85, 16)
         Me.showCurrentStepPost.TabIndex = 83
         Me.showCurrentStepPost.Text = "CurrentStep"
         Me.showCurrentStepPost.Visible = False
@@ -5317,12 +5348,13 @@ Partial Class PPDEM
         '
         Me.btnPlay.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btnPlay.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnPlay.Font = New System.Drawing.Font("Arial", 9.0!)
         Me.btnPlay.ForeColor = System.Drawing.Color.White
         Me.btnPlay.Location = New System.Drawing.Point(313, 787)
         Me.btnPlay.Name = "btnPlay"
         Me.btnPlay.Size = New System.Drawing.Size(21, 30)
         Me.btnPlay.TabIndex = 84
-        Me.btnPlay.Text = "|>"
+        Me.btnPlay.Text = ">"
         Me.btnPlay.UseVisualStyleBackColor = True
         Me.btnPlay.Visible = False
         '
@@ -5335,7 +5367,7 @@ Partial Class PPDEM
         Me.btnStop.Name = "btnStop"
         Me.btnStop.Size = New System.Drawing.Size(21, 30)
         Me.btnStop.TabIndex = 84
-        Me.btnStop.Text = "[]"
+        Me.btnStop.Text = "="
         Me.btnStop.UseVisualStyleBackColor = True
         Me.btnStop.Visible = False
         '
@@ -5351,20 +5383,136 @@ Partial Class PPDEM
         Me.showPpM.ForeColor = System.Drawing.Color.White
         Me.showPpM.Location = New System.Drawing.Point(1145, 806)
         Me.showPpM.Name = "showPpM"
-        Me.showPpM.Size = New System.Drawing.Size(27, 14)
+        Me.showPpM.Size = New System.Drawing.Size(35, 16)
         Me.showPpM.TabIndex = 85
         Me.showPpM.Text = "ppm"
         '
-		'chkExpWallPosition
+        'chkConForceByRadius
         '
-        Me.chkExpWallPosition.AutoSize = True
-        Me.chkExpWallPosition.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.chkExpWallPosition.Location = New System.Drawing.Point(9, 597)
-        Me.chkExpWallPosition.Name = "chkExpWallPosition"
-        Me.chkExpWallPosition.Size = New System.Drawing.Size(139, 21)
-        Me.chkExpWallPosition.TabIndex = 32
-        Me.chkExpWallPosition.Text = "Exp Wall Position"
-        Me.chkExpWallPosition.UseVisualStyleBackColor = True
+        Me.chkConForceByRadius.AutoSize = True
+        Me.chkConForceByRadius.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.chkConForceByRadius.Location = New System.Drawing.Point(6, 73)
+        Me.chkConForceByRadius.Name = "chkConForceByRadius"
+        Me.chkConForceByRadius.Size = New System.Drawing.Size(70, 20)
+        Me.chkConForceByRadius.TabIndex = 108
+        Me.chkConForceByRadius.Text = "Radius"
+        Me.chkConForceByRadius.UseVisualStyleBackColor = True
+        '
+        'tabAnalysis
+        '
+        Me.tabAnalysis.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.tabAnalysis.Controls.Add(Me.GroupBox11)
+        Me.tabAnalysis.Location = New System.Drawing.Point(4, 82)
+        Me.tabAnalysis.Name = "tabAnalysis"
+        Me.tabAnalysis.Size = New System.Drawing.Size(301, 689)
+        Me.tabAnalysis.TabIndex = 8
+        Me.tabAnalysis.Text = "Analysis"
+        '
+        'GroupBox11
+        '
+        Me.GroupBox11.Controls.Add(Me.setCNUpB)
+        Me.GroupBox11.Controls.Add(Me.setCNLowB)
+        Me.GroupBox11.Controls.Add(Me.btnExpCoordNumMatrix)
+        Me.GroupBox11.Controls.Add(Me.btnStartCoordNumMatrix)
+        Me.GroupBox11.Controls.Add(Me.chkShowCNMatrix)
+        Me.GroupBox11.Controls.Add(Me.Label45)
+        Me.GroupBox11.Controls.Add(Me.Label44)
+        Me.GroupBox11.Controls.Add(Me.setCoordNumMatrixSampIntv)
+        Me.GroupBox11.Controls.Add(Me.setCoordNumMatrixBoxSize)
+        Me.GroupBox11.Location = New System.Drawing.Point(0, 0)
+        Me.GroupBox11.Name = "GroupBox11"
+        Me.GroupBox11.Size = New System.Drawing.Size(298, 123)
+        Me.GroupBox11.TabIndex = 0
+        Me.GroupBox11.TabStop = False
+        Me.GroupBox11.Text = "Coordination Num Matrix"
+        '
+        'setCoordNumMatrixBoxSize
+        '
+        Me.setCoordNumMatrixBoxSize.DecimalPlaces = 4
+        Me.setCoordNumMatrixBoxSize.Increment = New Decimal(New Integer() {1, 0, 0, 196608})
+        Me.setCoordNumMatrixBoxSize.Location = New System.Drawing.Point(127, 23)
+        Me.setCoordNumMatrixBoxSize.Minimum = New Decimal(New Integer() {1, 0, 0, 327680})
+        Me.setCoordNumMatrixBoxSize.Name = "setCoordNumMatrixBoxSize"
+        Me.setCoordNumMatrixBoxSize.Size = New System.Drawing.Size(86, 25)
+        Me.setCoordNumMatrixBoxSize.TabIndex = 0
+        Me.setCoordNumMatrixBoxSize.Value = New Decimal(New Integer() {1, 0, 0, 327680})
+        '
+        'setCoordNumMatrixSampIntv
+        '
+        Me.setCoordNumMatrixSampIntv.DecimalPlaces = 4
+        Me.setCoordNumMatrixSampIntv.Increment = New Decimal(New Integer() {1, 0, 0, 196608})
+        Me.setCoordNumMatrixSampIntv.Location = New System.Drawing.Point(127, 54)
+        Me.setCoordNumMatrixSampIntv.Minimum = New Decimal(New Integer() {1, 0, 0, 393216})
+        Me.setCoordNumMatrixSampIntv.Name = "setCoordNumMatrixSampIntv"
+        Me.setCoordNumMatrixSampIntv.Size = New System.Drawing.Size(86, 25)
+        Me.setCoordNumMatrixSampIntv.TabIndex = 1
+        Me.setCoordNumMatrixSampIntv.Value = New Decimal(New Integer() {1, 0, 0, 393216})
+        '
+        'Label44
+        '
+        Me.Label44.AutoSize = True
+        Me.Label44.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label44.Location = New System.Drawing.Point(9, 31)
+        Me.Label44.Name = "Label44"
+        Me.Label44.Size = New System.Drawing.Size(66, 17)
+        Me.Label44.TabIndex = 2
+        Me.Label44.Text = "Box Size"
+        '
+        'Label45
+        '
+        Me.Label45.AutoSize = True
+        Me.Label45.Location = New System.Drawing.Point(9, 57)
+        Me.Label45.Name = "Label45"
+        Me.Label45.Size = New System.Drawing.Size(119, 17)
+        Me.Label45.TabIndex = 3
+        Me.Label45.Text = "Sampling Interval"
+        '
+        'chkShowCNMatrix
+        '
+        Me.chkShowCNMatrix.AutoSize = True
+        Me.chkShowCNMatrix.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.chkShowCNMatrix.Location = New System.Drawing.Point(13, 96)
+        Me.chkShowCNMatrix.Name = "chkShowCNMatrix"
+        Me.chkShowCNMatrix.Size = New System.Drawing.Size(63, 21)
+        Me.chkShowCNMatrix.TabIndex = 4
+        Me.chkShowCNMatrix.Text = "Show"
+        Me.chkShowCNMatrix.UseVisualStyleBackColor = True
+        '
+        'btnStartCoordNumMatrix
+        '
+        Me.btnStartCoordNumMatrix.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnStartCoordNumMatrix.Location = New System.Drawing.Point(219, 14)
+        Me.btnStartCoordNumMatrix.Name = "btnStartCoordNumMatrix"
+        Me.btnStartCoordNumMatrix.Size = New System.Drawing.Size(73, 37)
+        Me.btnStartCoordNumMatrix.TabIndex = 5
+        Me.btnStartCoordNumMatrix.Text = "Analyze"
+        Me.btnStartCoordNumMatrix.UseVisualStyleBackColor = True
+        '
+        'btnExpCoordNumMatrix
+        '
+        Me.btnExpCoordNumMatrix.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnExpCoordNumMatrix.Location = New System.Drawing.Point(219, 57)
+        Me.btnExpCoordNumMatrix.Name = "btnExpCoordNumMatrix"
+        Me.btnExpCoordNumMatrix.Size = New System.Drawing.Size(73, 26)
+        Me.btnExpCoordNumMatrix.TabIndex = 6
+        Me.btnExpCoordNumMatrix.Text = "Export"
+        Me.btnExpCoordNumMatrix.UseVisualStyleBackColor = True
+        '
+        'setCNLowB
+        '
+        Me.setCNLowB.DecimalPlaces = 3
+        Me.setCNLowB.Location = New System.Drawing.Point(100, 92)
+        Me.setCNLowB.Name = "setCNLowB"
+        Me.setCNLowB.Size = New System.Drawing.Size(83, 25)
+        Me.setCNLowB.TabIndex = 7
+        '
+        'setCNUpB
+        '
+        Me.setCNUpB.DecimalPlaces = 3
+        Me.setCNUpB.Location = New System.Drawing.Point(219, 92)
+        Me.setCNUpB.Name = "setCNUpB"
+        Me.setCNUpB.Size = New System.Drawing.Size(73, 25)
+        Me.setCNUpB.TabIndex = 8
         '
         'PPDEM
         '
@@ -5544,6 +5692,13 @@ Partial Class PPDEM
         CType(Me.canvas, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.trackPost, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.setZoomFactor, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tabAnalysis.ResumeLayout(False)
+        Me.GroupBox11.ResumeLayout(False)
+        Me.GroupBox11.PerformLayout()
+        CType(Me.setCoordNumMatrixBoxSize, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.setCoordNumMatrixSampIntv, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.setCNLowB, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.setCNUpB, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -5935,11 +6090,23 @@ Partial Class PPDEM
     Friend WithEvents btnImpLinkID As System.Windows.Forms.Button
     Protected WithEvents btnExportLinks As System.Windows.Forms.Button
     Friend WithEvents chkHLLinks As System.Windows.Forms.CheckBox
-	Friend WithEvents chkExpWallPosition As System.Windows.Forms.CheckBox
+    Friend WithEvents chkExpWallPosition As System.Windows.Forms.CheckBox
     Friend WithEvents Label16 As System.Windows.Forms.Label
     Friend WithEvents setQLimit As System.Windows.Forms.NumericUpDown
     Friend WithEvents setInitialLoadDirection As System.Windows.Forms.CheckBox
     Friend WithEvents cycDis As System.Windows.Forms.Label
     Friend WithEvents setCyclicDisplacement As System.Windows.Forms.NumericUpDown
+    Friend WithEvents chkConForceByRadius As System.Windows.Forms.CheckBox
+    Friend WithEvents tabAnalysis As System.Windows.Forms.TabPage
+    Friend WithEvents GroupBox11 As System.Windows.Forms.GroupBox
+    Friend WithEvents btnExpCoordNumMatrix As System.Windows.Forms.Button
+    Friend WithEvents btnStartCoordNumMatrix As System.Windows.Forms.Button
+    Friend WithEvents chkShowCNMatrix As System.Windows.Forms.CheckBox
+    Friend WithEvents Label45 As System.Windows.Forms.Label
+    Friend WithEvents Label44 As System.Windows.Forms.Label
+    Friend WithEvents setCoordNumMatrixSampIntv As System.Windows.Forms.NumericUpDown
+    Friend WithEvents setCoordNumMatrixBoxSize As System.Windows.Forms.NumericUpDown
+    Friend WithEvents setCNUpB As System.Windows.Forms.NumericUpDown
+    Friend WithEvents setCNLowB As System.Windows.Forms.NumericUpDown
 
 End Class

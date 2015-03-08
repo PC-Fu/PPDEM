@@ -22,6 +22,6 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <StartAction>Program</StartAction>
-    <StartProgram>D:\DEM_Intel\PPDEM_GIT\PPDEM_Gui\bin\Debug\PPDEM.exe</StartProgram>
+    <StartProgram>D:\DEM_Intel\PPDEM_GIT\PPDEM_Gui\bin\Release\PPDEM.exe</StartProgram>
   </PropertyGroup>
 </Project>
