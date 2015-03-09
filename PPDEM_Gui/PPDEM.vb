@@ -305,6 +305,12 @@ Public Class PPDEM
     Declare Sub ColorValue Lib "demintel.dll" Alias "ColorValue" (<[In](), Out()> _
     ByRef rValue As Double, ByRef rMin As Double, ByRef rMax As Double, ByVal RGB() As Integer)
 
+    Declare Sub CalMinDist Lib "demintel.dll" Alias "CalMinDist" (<[In](), Out()> _
+    ByRef nEle As Integer, ByRef nEle As Integer, ByVal xEle() As Double, ByVal yEle() As Double, ByVal rEle() As Double, ByVal nVertex() As Integer, _
+    ByVal pair(,) As Integer, ByRef nPair As Integer, ByRef alwNEleFrd As Integer, _
+    ByVal nDistEle() As Integer, ByVal distEle(,) As Double, ByVal meanDist() As Double, ByVal stdevDist() As Double)
+
+
 #Const USEKEY = 0
 #Const STRESSROTATE = 1
 
@@ -3822,6 +3828,14 @@ Public Class PPDEM
                 textEleQuery.AppendText(x1Wall(iWall).ToString & ", " & y1Wall(iWall).ToString & ", " & x2Wall(iWall).ToString & ", " & y2Wall(iWall).ToString & ", ")
             Next
             textEleQuery.AppendText(Environment.NewLine)
+        End If
+
+        If chkTracDNSpatial.Checked Then
+            CalculateDNMatrix()
+        End If
+
+        If chkTrackMinDist.Checked Then
+            CalculateMinDistance()
         End If
 
         canvas.Invalidate()
@@ -7686,6 +7700,13 @@ Public Class PPDEM
     End Sub
 
     Private Sub btnStartCoordNumMatrix_Click(sender As System.Object, e As System.EventArgs) Handles btnStartCoordNumMatrix.Click
+        CalculateDNMatrix()
+        chkShowCNMatrix.Checked = True
+        canvas.Invalidate()
+
+    End Sub
+
+    Private Sub CalculateDNMatrix()
         Dim nX As Integer = (limitAll(1) - limitAll(0)) / setCoordNumMatrixSampIntv.Value + 1
         Dim nY As Integer = (limitAll(3) - limitAll(2)) / setCoordNumMatrixSampIntv.Value + 1
         ReDim xCNBox(nX - 1)
@@ -7697,7 +7718,6 @@ Public Class PPDEM
 
         Dim maxCN As Double = -1.0E+100
         Dim minCN As Double = 1.0E+100
-        textEleQuery.Text = ""
         ' It will be faster if we get the rgb values through a loop in Fortran, but I just want something quick today.  Will revisit if speed becomes a issue.
         For ix As Integer = 0 To nX - 1
             xCNBox(ix) = limitAll(0) + ix * dX
@@ -7708,15 +7728,16 @@ Public Class PPDEM
                 If coordNumMatrix(ix, iy) > 0 Then
                     maxCN = Math.Max(maxCN, coordNumMatrix(ix, iy))
                     minCN = Math.Min(minCN, coordNumMatrix(ix, iy))
-                    textEleQuery.AppendText(xCNBox(ix).ToString() & ", " & yCNBox(iy).ToString() & ", " & coordNumMatrix(ix, iy).ToString() & Environment.NewLine)
+                    'textEleQuery.AppendText(xCNBox(ix).ToString() & ", " & yCNBox(iy).ToString() & ", " & coordNumMatrix(ix, iy).ToString() & Environment.NewLine)
                 End If
             Next
         Next
-        setCNLowB.Value = minCN
-        setCNUpB.Value = maxCN
-        chkShowCNMatrix.Checked = True
-        canvas.Invalidate()
 
+        If chkFixDNColor.Checked = False Then
+            setCNLowB.Value = minCN
+            setCNUpB.Value = maxCN
+        End If
+        SummaryDNMatrix(2)
     End Sub
 
 
@@ -7745,5 +7766,95 @@ Public Class PPDEM
 
     Private Sub setCNUpB_ValueChanged(sender As System.Object, e As System.EventArgs) Handles setCNUpB.ValueChanged
         canvas.Invalidate()
+    End Sub
+
+    Private Sub btnExpCoordNumMatrix_Click(sender As System.Object, e As System.EventArgs) Handles btnExpCoordNumMatrix.Click
+        textEleQuery.Text = ""
+        For ix As Integer = 0 To xCNBox.Length - 1
+            For iy As Integer = 0 To yCNBox.Length - 1
+                If coordNumMatrix(ix, iy) > 0 Then
+                    textEleQuery.AppendText(xCNBox(ix).ToString() & ", " & yCNBox(iy).ToString() & ", " & coordNumMatrix(ix, iy).ToString() & Environment.NewLine)
+                End If
+            Next
+        Next
+    End Sub
+
+    Private Sub SummaryDNMatrix(exclLayer As Integer) ' We excelude the boundary cells (variable determines the number of layers)
+        Dim meanDN As Double = 0.0
+        Dim stdevDN As Double = 0.0
+        Dim count As Integer = 0
+        For ix As Integer = exclLayer To xCNBox.Length - 1 - exclLayer
+            For iy As Integer = exclLayer To yCNBox.Length - 1 - exclLayer
+                If coordNumMatrix(ix, iy) > 0 Then
+                    count += 1
+                    meanDN += coordNumMatrix(ix, iy)
+                End If
+            Next
+        Next
+
+        If count > 1 Then
+            meanDN /= count
+            For ix As Integer = exclLayer To xCNBox.Length - 1 - exclLayer
+                For iy As Integer = exclLayer To yCNBox.Length - 1 - exclLayer
+                    If coordNumMatrix(ix, iy) > 0 Then
+                        stdevDN += (coordNumMatrix(ix, iy) - meanDN) ^ 2.0
+                    End If
+                Next
+            Next
+            stdevDN = (stdevDN / (count - 1)) ^ 0.5
+        End If
+        textEleQuery.AppendText(iCurStep(0).ToString() & ", " & meanDN.ToString() & ", " & stdevDN.ToString() & Environment.NewLine)
+    End Sub
+
+ 
+    Private Sub chkTracDNSpatial_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles chkTracDNSpatial.CheckedChanged
+        textEleQuery.Text = ""
+    End Sub
+
+    Private Sub btnCalMinDist_Click(sender As System.Object, e As System.EventArgs) Handles btnCalMinDist.Click
+        CalculateMinDistance()
+    End Sub
+
+    Private Sub CalculateMinDistance()
+        Call DomainLimit(nEle, nActEle, xEle, yEle, rEle, nVertex, xVertex, yVertex, boundELe, limitAll, hSector)
+
+        limitAll(0) -= maxGap
+        limitAll(1) += maxGap
+        limitAll(2) -= maxGap
+        limitAll(3) += maxGap
+
+
+        nGridY = (limitAll(3) - limitAll(2)) / xGrid + 1
+        nGridX = (limitAll(1) - limitAll(0)) / xGrid + 1
+        maxNEleGrid = Math.Max((xGrid ^ 2 / (volSld / nActEle) * 4), 10)   'Potentially problematic
+        ReDim nEleGrid(nGridY - 1, nGridX - 1)
+        ReDim lEG(maxNEleGrid - 1, nGridY - 1, nGridX - 1)
+
+
+        Call Grid(nEle, nActEle, nVertex, xEle, yEle, rEle, xVertex, yVertex, nGridX, nGridY, nEleGrid, lEG, xGrid, boundELe, limitAll, maxNEleGrid)
+
+  
+        flag1stEF = 1  ' only transfer npair to oldnpair when EleFrd is called the first time
+        Call EleFrd(nEle, xEle, yEle, rEle, nVertex, xVertex, yVertex, pair, nPair, nGridX, nGridY, nEleGrid, _
+            lEG, maxGap, nEleFrd, pairIndex, oldNPair, oldPair, oldNEleFrd, oldPairIndex, alwNEleFrd, _
+            maxNEleFrd, flag1stEF, maxNEleGrid, hSector)
+
+        Dim nDistEle() As Integer = New Integer(nEle - 1) {}
+        Dim distEle(,) As Double = New Double(nEle - 1, alwNEleFrd - 1) {}
+        Dim meanDist() As Double = New Double(2) {}
+        Dim stdevDist() As Double = New Double(2) {}
+
+        Call CalMinDist(nEle, nActEle, xEle, yEle, rEle, nVertex, pair, nPair, alwNEleFrd, nDistEle, distEle, meanDist, stdevDist)
+        If chkTrackMinDist.Checked Then
+            textEleQuery.AppendText(iCurStep(0).ToString() & ", " & meanDist(0).ToString() & ", " & meanDist(1).ToString() & ", " & meanDist(2).ToString() & ", " _
+                                    & stdevDist(0).ToString() & ", " & stdevDist(1).ToString() & ", " & stdevDist(2).ToString() & ", " & Environment.NewLine)
+        End If
+
+    End Sub
+
+    Private Sub chkTrackMinDist_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles chkTrackMinDist.CheckedChanged
+        If chkTrackMinDist.Checked Then
+            textEleQuery.Text = "step, mean1, mean2, mean3, stdev1, stdev2, stdev3"
+        End If
     End Sub
 End Class

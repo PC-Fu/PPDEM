@@ -123,6 +123,7 @@ Partial Class PPDEM
         Me.showARC = New System.Windows.Forms.CheckBox()
         Me.chkShowFriend = New System.Windows.Forms.CheckBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.chkConForceByRadius = New System.Windows.Forms.CheckBox()
         Me.btnForLengScaleUp = New System.Windows.Forms.Button()
         Me.btnForLengScaleDown = New System.Windows.Forms.Button()
         Me.btnAutoFScaleLeng = New System.Windows.Forms.Button()
@@ -392,6 +393,19 @@ Partial Class PPDEM
         Me.btnLinkStiffMinus = New System.Windows.Forms.Button()
         Me.btnLinkStiffPlus = New System.Windows.Forms.Button()
         Me.btnImpLinkCoord = New System.Windows.Forms.Button()
+        Me.tabAnalysis = New System.Windows.Forms.TabPage()
+        Me.GroupBox11 = New System.Windows.Forms.GroupBox()
+        Me.chkFixDNColor = New System.Windows.Forms.CheckBox()
+        Me.chkTracDNSpatial = New System.Windows.Forms.CheckBox()
+        Me.setCNUpB = New System.Windows.Forms.NumericUpDown()
+        Me.setCNLowB = New System.Windows.Forms.NumericUpDown()
+        Me.btnExpCoordNumMatrix = New System.Windows.Forms.Button()
+        Me.btnStartCoordNumMatrix = New System.Windows.Forms.Button()
+        Me.chkShowCNMatrix = New System.Windows.Forms.CheckBox()
+        Me.Label45 = New System.Windows.Forms.Label()
+        Me.Label44 = New System.Windows.Forms.Label()
+        Me.setCoordNumMatrixSampIntv = New System.Windows.Forms.NumericUpDown()
+        Me.setCoordNumMatrixBoxSize = New System.Windows.Forms.NumericUpDown()
         Me.btnSnapShot = New System.Windows.Forms.Button()
         Me.canvasContainer = New System.Windows.Forms.Panel()
         Me.mainTransparency = New System.Windows.Forms.TrackBar()
@@ -414,18 +428,8 @@ Partial Class PPDEM
         Me.timerPlay = New System.Windows.Forms.Timer(Me.components)
         Me.showPpM = New System.Windows.Forms.Label()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.chkConForceByRadius = New System.Windows.Forms.CheckBox()
-        Me.tabAnalysis = New System.Windows.Forms.TabPage()
-        Me.GroupBox11 = New System.Windows.Forms.GroupBox()
-        Me.setCoordNumMatrixBoxSize = New System.Windows.Forms.NumericUpDown()
-        Me.setCoordNumMatrixSampIntv = New System.Windows.Forms.NumericUpDown()
-        Me.Label44 = New System.Windows.Forms.Label()
-        Me.Label45 = New System.Windows.Forms.Label()
-        Me.chkShowCNMatrix = New System.Windows.Forms.CheckBox()
-        Me.btnStartCoordNumMatrix = New System.Windows.Forms.Button()
-        Me.btnExpCoordNumMatrix = New System.Windows.Forms.Button()
-        Me.setCNLowB = New System.Windows.Forms.NumericUpDown()
-        Me.setCNUpB = New System.Windows.Forms.NumericUpDown()
+        Me.btnCalMinDist = New System.Windows.Forms.Button()
+        Me.chkTrackMinDist = New System.Windows.Forms.CheckBox()
         CType(Me.tInc, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.refRate, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nIncr, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -532,17 +536,17 @@ Partial Class PPDEM
         CType(Me.setCellOpacity, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tabLink.SuspendLayout()
         CType(Me.setLinkDampingRatio, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tabAnalysis.SuspendLayout()
+        Me.GroupBox11.SuspendLayout()
+        CType(Me.setCNUpB, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.setCNLowB, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.setCoordNumMatrixSampIntv, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.setCoordNumMatrixBoxSize, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.canvasContainer.SuspendLayout()
         CType(Me.mainTransparency, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.canvas, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.trackPost, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.setZoomFactor, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.tabAnalysis.SuspendLayout()
-        Me.GroupBox11.SuspendLayout()
-        CType(Me.setCoordNumMatrixBoxSize, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.setCoordNumMatrixSampIntv, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.setCNLowB, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.setCNUpB, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'timerTest
@@ -1876,6 +1880,17 @@ Partial Class PPDEM
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Show Force"
         '
+        'chkConForceByRadius
+        '
+        Me.chkConForceByRadius.AutoSize = True
+        Me.chkConForceByRadius.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.chkConForceByRadius.Location = New System.Drawing.Point(6, 73)
+        Me.chkConForceByRadius.Name = "chkConForceByRadius"
+        Me.chkConForceByRadius.Size = New System.Drawing.Size(70, 20)
+        Me.chkConForceByRadius.TabIndex = 108
+        Me.chkConForceByRadius.Text = "Radius"
+        Me.chkConForceByRadius.UseVisualStyleBackColor = True
+        '
         'btnForLengScaleUp
         '
         Me.btnForLengScaleUp.Cursor = System.Windows.Forms.Cursors.Default
@@ -2263,10 +2278,10 @@ Partial Class PPDEM
         Me.tabLoad.Controls.Add(Me.grpConfiningControl)
         Me.tabLoad.Controls.Add(Me.GroupBox5)
         Me.tabLoad.ForeColor = System.Drawing.Color.White
-        Me.tabLoad.Location = New System.Drawing.Point(4, 28)
+        Me.tabLoad.Location = New System.Drawing.Point(4, 82)
         Me.tabLoad.Margin = New System.Windows.Forms.Padding(1)
         Me.tabLoad.Name = "tabLoad"
-        Me.tabLoad.Size = New System.Drawing.Size(301, 743)
+        Me.tabLoad.Size = New System.Drawing.Size(301, 689)
         Me.tabLoad.TabIndex = 1
         Me.tabLoad.Text = "Load"
         Me.tabLoad.UseVisualStyleBackColor = True
@@ -2866,9 +2881,9 @@ Partial Class PPDEM
         Me.tabEdit.Controls.Add(Me.grpCrop)
         Me.tabEdit.Controls.Add(Me.grpEditOption)
         Me.tabEdit.ForeColor = System.Drawing.Color.White
-        Me.tabEdit.Location = New System.Drawing.Point(4, 55)
+        Me.tabEdit.Location = New System.Drawing.Point(4, 82)
         Me.tabEdit.Name = "tabEdit"
-        Me.tabEdit.Size = New System.Drawing.Size(301, 716)
+        Me.tabEdit.Size = New System.Drawing.Size(301, 689)
         Me.tabEdit.TabIndex = 3
         Me.tabEdit.Text = "Edit"
         Me.tabEdit.UseVisualStyleBackColor = True
@@ -4105,9 +4120,9 @@ Partial Class PPDEM
         Me.tabStrain.Controls.Add(Me.setRdStnCell)
         Me.tabStrain.Controls.Add(Me.btnIniStnCell)
         Me.tabStrain.ForeColor = System.Drawing.Color.White
-        Me.tabStrain.Location = New System.Drawing.Point(4, 55)
+        Me.tabStrain.Location = New System.Drawing.Point(4, 82)
         Me.tabStrain.Name = "tabStrain"
-        Me.tabStrain.Size = New System.Drawing.Size(301, 716)
+        Me.tabStrain.Size = New System.Drawing.Size(301, 689)
         Me.tabStrain.TabIndex = 5
         Me.tabStrain.Text = "Strain"
         Me.tabStrain.UseVisualStyleBackColor = True
@@ -5190,6 +5205,150 @@ Partial Class PPDEM
         Me.btnImpLinkCoord.Text = "Import Links by Coordinates"
         Me.btnImpLinkCoord.UseVisualStyleBackColor = True
         '
+        'tabAnalysis
+        '
+        Me.tabAnalysis.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.tabAnalysis.Controls.Add(Me.chkTrackMinDist)
+        Me.tabAnalysis.Controls.Add(Me.btnCalMinDist)
+        Me.tabAnalysis.Controls.Add(Me.GroupBox11)
+        Me.tabAnalysis.Location = New System.Drawing.Point(4, 82)
+        Me.tabAnalysis.Name = "tabAnalysis"
+        Me.tabAnalysis.Size = New System.Drawing.Size(301, 689)
+        Me.tabAnalysis.TabIndex = 8
+        Me.tabAnalysis.Text = "Analysis"
+        '
+        'GroupBox11
+        '
+        Me.GroupBox11.Controls.Add(Me.chkFixDNColor)
+        Me.GroupBox11.Controls.Add(Me.chkTracDNSpatial)
+        Me.GroupBox11.Controls.Add(Me.setCNUpB)
+        Me.GroupBox11.Controls.Add(Me.setCNLowB)
+        Me.GroupBox11.Controls.Add(Me.btnExpCoordNumMatrix)
+        Me.GroupBox11.Controls.Add(Me.btnStartCoordNumMatrix)
+        Me.GroupBox11.Controls.Add(Me.chkShowCNMatrix)
+        Me.GroupBox11.Controls.Add(Me.Label45)
+        Me.GroupBox11.Controls.Add(Me.Label44)
+        Me.GroupBox11.Controls.Add(Me.setCoordNumMatrixSampIntv)
+        Me.GroupBox11.Controls.Add(Me.setCoordNumMatrixBoxSize)
+        Me.GroupBox11.Location = New System.Drawing.Point(0, 0)
+        Me.GroupBox11.Name = "GroupBox11"
+        Me.GroupBox11.Size = New System.Drawing.Size(298, 154)
+        Me.GroupBox11.TabIndex = 0
+        Me.GroupBox11.TabStop = False
+        Me.GroupBox11.Text = "Coordination Num Matrix"
+        '
+        'chkFixDNColor
+        '
+        Me.chkFixDNColor.AutoSize = True
+        Me.chkFixDNColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.chkFixDNColor.Location = New System.Drawing.Point(13, 95)
+        Me.chkFixDNColor.Name = "chkFixDNColor"
+        Me.chkFixDNColor.Size = New System.Drawing.Size(113, 21)
+        Me.chkFixDNColor.TabIndex = 11
+        Me.chkFixDNColor.Text = "Fix plot range"
+        Me.chkFixDNColor.UseVisualStyleBackColor = True
+        '
+        'chkTracDNSpatial
+        '
+        Me.chkTracDNSpatial.AutoSize = True
+        Me.chkTracDNSpatial.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.chkTracDNSpatial.Location = New System.Drawing.Point(127, 127)
+        Me.chkTracDNSpatial.Name = "chkTracDNSpatial"
+        Me.chkTracDNSpatial.Size = New System.Drawing.Size(58, 21)
+        Me.chkTracDNSpatial.TabIndex = 10
+        Me.chkTracDNSpatial.Text = "track"
+        Me.chkTracDNSpatial.UseVisualStyleBackColor = True
+        '
+        'setCNUpB
+        '
+        Me.setCNUpB.DecimalPlaces = 3
+        Me.setCNUpB.Location = New System.Drawing.Point(219, 92)
+        Me.setCNUpB.Name = "setCNUpB"
+        Me.setCNUpB.Size = New System.Drawing.Size(73, 25)
+        Me.setCNUpB.TabIndex = 8
+        Me.setCNUpB.Value = New Decimal(New Integer() {3, 0, 0, 0})
+        '
+        'setCNLowB
+        '
+        Me.setCNLowB.DecimalPlaces = 3
+        Me.setCNLowB.Location = New System.Drawing.Point(127, 92)
+        Me.setCNLowB.Name = "setCNLowB"
+        Me.setCNLowB.Size = New System.Drawing.Size(86, 25)
+        Me.setCNLowB.TabIndex = 7
+        Me.setCNLowB.Value = New Decimal(New Integer() {2, 0, 0, 0})
+        '
+        'btnExpCoordNumMatrix
+        '
+        Me.btnExpCoordNumMatrix.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnExpCoordNumMatrix.Location = New System.Drawing.Point(219, 57)
+        Me.btnExpCoordNumMatrix.Name = "btnExpCoordNumMatrix"
+        Me.btnExpCoordNumMatrix.Size = New System.Drawing.Size(73, 26)
+        Me.btnExpCoordNumMatrix.TabIndex = 6
+        Me.btnExpCoordNumMatrix.Text = "Export"
+        Me.btnExpCoordNumMatrix.UseVisualStyleBackColor = True
+        '
+        'btnStartCoordNumMatrix
+        '
+        Me.btnStartCoordNumMatrix.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnStartCoordNumMatrix.Location = New System.Drawing.Point(219, 14)
+        Me.btnStartCoordNumMatrix.Name = "btnStartCoordNumMatrix"
+        Me.btnStartCoordNumMatrix.Size = New System.Drawing.Size(73, 37)
+        Me.btnStartCoordNumMatrix.TabIndex = 5
+        Me.btnStartCoordNumMatrix.Text = "Analyze"
+        Me.btnStartCoordNumMatrix.UseVisualStyleBackColor = True
+        '
+        'chkShowCNMatrix
+        '
+        Me.chkShowCNMatrix.AutoSize = True
+        Me.chkShowCNMatrix.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.chkShowCNMatrix.Location = New System.Drawing.Point(13, 127)
+        Me.chkShowCNMatrix.Name = "chkShowCNMatrix"
+        Me.chkShowCNMatrix.Size = New System.Drawing.Size(63, 21)
+        Me.chkShowCNMatrix.TabIndex = 4
+        Me.chkShowCNMatrix.Text = "Show"
+        Me.chkShowCNMatrix.UseVisualStyleBackColor = True
+        '
+        'Label45
+        '
+        Me.Label45.AutoSize = True
+        Me.Label45.Location = New System.Drawing.Point(9, 57)
+        Me.Label45.Name = "Label45"
+        Me.Label45.Size = New System.Drawing.Size(119, 17)
+        Me.Label45.TabIndex = 3
+        Me.Label45.Text = "Sampling Interval"
+        '
+        'Label44
+        '
+        Me.Label44.AutoSize = True
+        Me.Label44.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label44.Location = New System.Drawing.Point(9, 31)
+        Me.Label44.Name = "Label44"
+        Me.Label44.Size = New System.Drawing.Size(66, 17)
+        Me.Label44.TabIndex = 2
+        Me.Label44.Text = "Box Size"
+        '
+        'setCoordNumMatrixSampIntv
+        '
+        Me.setCoordNumMatrixSampIntv.DecimalPlaces = 4
+        Me.setCoordNumMatrixSampIntv.Increment = New Decimal(New Integer() {1, 0, 0, 196608})
+        Me.setCoordNumMatrixSampIntv.Location = New System.Drawing.Point(127, 54)
+        Me.setCoordNumMatrixSampIntv.Minimum = New Decimal(New Integer() {1, 0, 0, 393216})
+        Me.setCoordNumMatrixSampIntv.Name = "setCoordNumMatrixSampIntv"
+        Me.setCoordNumMatrixSampIntv.Size = New System.Drawing.Size(86, 25)
+        Me.setCoordNumMatrixSampIntv.TabIndex = 1
+        Me.setCoordNumMatrixSampIntv.Value = New Decimal(New Integer() {1, 0, 0, 393216})
+        '
+        'setCoordNumMatrixBoxSize
+        '
+        Me.setCoordNumMatrixBoxSize.DecimalPlaces = 4
+        Me.setCoordNumMatrixBoxSize.Increment = New Decimal(New Integer() {1, 0, 0, 196608})
+        Me.setCoordNumMatrixBoxSize.Location = New System.Drawing.Point(127, 23)
+        Me.setCoordNumMatrixBoxSize.Minimum = New Decimal(New Integer() {1, 0, 0, 327680})
+        Me.setCoordNumMatrixBoxSize.Name = "setCoordNumMatrixBoxSize"
+        Me.setCoordNumMatrixBoxSize.Size = New System.Drawing.Size(86, 25)
+        Me.setCoordNumMatrixBoxSize.TabIndex = 0
+        Me.setCoordNumMatrixBoxSize.Value = New Decimal(New Integer() {1, 0, 0, 327680})
+        '
         'btnSnapShot
         '
         Me.btnSnapShot.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
@@ -5387,132 +5546,26 @@ Partial Class PPDEM
         Me.showPpM.TabIndex = 85
         Me.showPpM.Text = "ppm"
         '
-        'chkConForceByRadius
+        'btnCalMinDist
         '
-        Me.chkConForceByRadius.AutoSize = True
-        Me.chkConForceByRadius.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.chkConForceByRadius.Location = New System.Drawing.Point(6, 73)
-        Me.chkConForceByRadius.Name = "chkConForceByRadius"
-        Me.chkConForceByRadius.Size = New System.Drawing.Size(70, 20)
-        Me.chkConForceByRadius.TabIndex = 108
-        Me.chkConForceByRadius.Text = "Radius"
-        Me.chkConForceByRadius.UseVisualStyleBackColor = True
+        Me.btnCalMinDist.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCalMinDist.Location = New System.Drawing.Point(3, 161)
+        Me.btnCalMinDist.Name = "btnCalMinDist"
+        Me.btnCalMinDist.Size = New System.Drawing.Size(182, 40)
+        Me.btnCalMinDist.TabIndex = 1
+        Me.btnCalMinDist.Text = "Cal Min Distance"
+        Me.btnCalMinDist.UseVisualStyleBackColor = True
         '
-        'tabAnalysis
+        'chkTrackMinDist
         '
-        Me.tabAnalysis.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.tabAnalysis.Controls.Add(Me.GroupBox11)
-        Me.tabAnalysis.Location = New System.Drawing.Point(4, 82)
-        Me.tabAnalysis.Name = "tabAnalysis"
-        Me.tabAnalysis.Size = New System.Drawing.Size(301, 689)
-        Me.tabAnalysis.TabIndex = 8
-        Me.tabAnalysis.Text = "Analysis"
-        '
-        'GroupBox11
-        '
-        Me.GroupBox11.Controls.Add(Me.setCNUpB)
-        Me.GroupBox11.Controls.Add(Me.setCNLowB)
-        Me.GroupBox11.Controls.Add(Me.btnExpCoordNumMatrix)
-        Me.GroupBox11.Controls.Add(Me.btnStartCoordNumMatrix)
-        Me.GroupBox11.Controls.Add(Me.chkShowCNMatrix)
-        Me.GroupBox11.Controls.Add(Me.Label45)
-        Me.GroupBox11.Controls.Add(Me.Label44)
-        Me.GroupBox11.Controls.Add(Me.setCoordNumMatrixSampIntv)
-        Me.GroupBox11.Controls.Add(Me.setCoordNumMatrixBoxSize)
-        Me.GroupBox11.Location = New System.Drawing.Point(0, 0)
-        Me.GroupBox11.Name = "GroupBox11"
-        Me.GroupBox11.Size = New System.Drawing.Size(298, 123)
-        Me.GroupBox11.TabIndex = 0
-        Me.GroupBox11.TabStop = False
-        Me.GroupBox11.Text = "Coordination Num Matrix"
-        '
-        'setCoordNumMatrixBoxSize
-        '
-        Me.setCoordNumMatrixBoxSize.DecimalPlaces = 4
-        Me.setCoordNumMatrixBoxSize.Increment = New Decimal(New Integer() {1, 0, 0, 196608})
-        Me.setCoordNumMatrixBoxSize.Location = New System.Drawing.Point(127, 23)
-        Me.setCoordNumMatrixBoxSize.Minimum = New Decimal(New Integer() {1, 0, 0, 327680})
-        Me.setCoordNumMatrixBoxSize.Name = "setCoordNumMatrixBoxSize"
-        Me.setCoordNumMatrixBoxSize.Size = New System.Drawing.Size(86, 25)
-        Me.setCoordNumMatrixBoxSize.TabIndex = 0
-        Me.setCoordNumMatrixBoxSize.Value = New Decimal(New Integer() {1, 0, 0, 327680})
-        '
-        'setCoordNumMatrixSampIntv
-        '
-        Me.setCoordNumMatrixSampIntv.DecimalPlaces = 4
-        Me.setCoordNumMatrixSampIntv.Increment = New Decimal(New Integer() {1, 0, 0, 196608})
-        Me.setCoordNumMatrixSampIntv.Location = New System.Drawing.Point(127, 54)
-        Me.setCoordNumMatrixSampIntv.Minimum = New Decimal(New Integer() {1, 0, 0, 393216})
-        Me.setCoordNumMatrixSampIntv.Name = "setCoordNumMatrixSampIntv"
-        Me.setCoordNumMatrixSampIntv.Size = New System.Drawing.Size(86, 25)
-        Me.setCoordNumMatrixSampIntv.TabIndex = 1
-        Me.setCoordNumMatrixSampIntv.Value = New Decimal(New Integer() {1, 0, 0, 393216})
-        '
-        'Label44
-        '
-        Me.Label44.AutoSize = True
-        Me.Label44.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label44.Location = New System.Drawing.Point(9, 31)
-        Me.Label44.Name = "Label44"
-        Me.Label44.Size = New System.Drawing.Size(66, 17)
-        Me.Label44.TabIndex = 2
-        Me.Label44.Text = "Box Size"
-        '
-        'Label45
-        '
-        Me.Label45.AutoSize = True
-        Me.Label45.Location = New System.Drawing.Point(9, 57)
-        Me.Label45.Name = "Label45"
-        Me.Label45.Size = New System.Drawing.Size(119, 17)
-        Me.Label45.TabIndex = 3
-        Me.Label45.Text = "Sampling Interval"
-        '
-        'chkShowCNMatrix
-        '
-        Me.chkShowCNMatrix.AutoSize = True
-        Me.chkShowCNMatrix.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.chkShowCNMatrix.Location = New System.Drawing.Point(13, 96)
-        Me.chkShowCNMatrix.Name = "chkShowCNMatrix"
-        Me.chkShowCNMatrix.Size = New System.Drawing.Size(63, 21)
-        Me.chkShowCNMatrix.TabIndex = 4
-        Me.chkShowCNMatrix.Text = "Show"
-        Me.chkShowCNMatrix.UseVisualStyleBackColor = True
-        '
-        'btnStartCoordNumMatrix
-        '
-        Me.btnStartCoordNumMatrix.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnStartCoordNumMatrix.Location = New System.Drawing.Point(219, 14)
-        Me.btnStartCoordNumMatrix.Name = "btnStartCoordNumMatrix"
-        Me.btnStartCoordNumMatrix.Size = New System.Drawing.Size(73, 37)
-        Me.btnStartCoordNumMatrix.TabIndex = 5
-        Me.btnStartCoordNumMatrix.Text = "Analyze"
-        Me.btnStartCoordNumMatrix.UseVisualStyleBackColor = True
-        '
-        'btnExpCoordNumMatrix
-        '
-        Me.btnExpCoordNumMatrix.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnExpCoordNumMatrix.Location = New System.Drawing.Point(219, 57)
-        Me.btnExpCoordNumMatrix.Name = "btnExpCoordNumMatrix"
-        Me.btnExpCoordNumMatrix.Size = New System.Drawing.Size(73, 26)
-        Me.btnExpCoordNumMatrix.TabIndex = 6
-        Me.btnExpCoordNumMatrix.Text = "Export"
-        Me.btnExpCoordNumMatrix.UseVisualStyleBackColor = True
-        '
-        'setCNLowB
-        '
-        Me.setCNLowB.DecimalPlaces = 3
-        Me.setCNLowB.Location = New System.Drawing.Point(100, 92)
-        Me.setCNLowB.Name = "setCNLowB"
-        Me.setCNLowB.Size = New System.Drawing.Size(83, 25)
-        Me.setCNLowB.TabIndex = 7
-        '
-        'setCNUpB
-        '
-        Me.setCNUpB.DecimalPlaces = 3
-        Me.setCNUpB.Location = New System.Drawing.Point(219, 92)
-        Me.setCNUpB.Name = "setCNUpB"
-        Me.setCNUpB.Size = New System.Drawing.Size(73, 25)
-        Me.setCNUpB.TabIndex = 8
+        Me.chkTrackMinDist.AutoSize = True
+        Me.chkTrackMinDist.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.chkTrackMinDist.Location = New System.Drawing.Point(203, 171)
+        Me.chkTrackMinDist.Name = "chkTrackMinDist"
+        Me.chkTrackMinDist.Size = New System.Drawing.Size(58, 21)
+        Me.chkTrackMinDist.TabIndex = 2
+        Me.chkTrackMinDist.Text = "track"
+        Me.chkTrackMinDist.UseVisualStyleBackColor = True
         '
         'PPDEM
         '
@@ -5686,19 +5739,20 @@ Partial Class PPDEM
         Me.tabLink.ResumeLayout(False)
         Me.tabLink.PerformLayout()
         CType(Me.setLinkDampingRatio, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tabAnalysis.ResumeLayout(False)
+        Me.tabAnalysis.PerformLayout()
+        Me.GroupBox11.ResumeLayout(False)
+        Me.GroupBox11.PerformLayout()
+        CType(Me.setCNUpB, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.setCNLowB, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.setCoordNumMatrixSampIntv, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.setCoordNumMatrixBoxSize, System.ComponentModel.ISupportInitialize).EndInit()
         Me.canvasContainer.ResumeLayout(False)
         Me.canvasContainer.PerformLayout()
         CType(Me.mainTransparency, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.canvas, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.trackPost, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.setZoomFactor, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.tabAnalysis.ResumeLayout(False)
-        Me.GroupBox11.ResumeLayout(False)
-        Me.GroupBox11.PerformLayout()
-        CType(Me.setCoordNumMatrixBoxSize, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.setCoordNumMatrixSampIntv, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.setCNLowB, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.setCNUpB, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -6108,5 +6162,9 @@ Partial Class PPDEM
     Friend WithEvents setCoordNumMatrixBoxSize As System.Windows.Forms.NumericUpDown
     Friend WithEvents setCNUpB As System.Windows.Forms.NumericUpDown
     Friend WithEvents setCNLowB As System.Windows.Forms.NumericUpDown
+    Friend WithEvents chkTracDNSpatial As System.Windows.Forms.CheckBox
+    Friend WithEvents chkFixDNColor As System.Windows.Forms.CheckBox
+    Friend WithEvents btnCalMinDist As System.Windows.Forms.Button
+    Friend WithEvents chkTrackMinDist As System.Windows.Forms.CheckBox
 
 End Class

@@ -52,6 +52,9 @@
 		<File RelativePath=".\AutoCellCenter.for"/>
 		<File RelativePath=".\BHSV2RGB.for"/>
 		<File RelativePath="BoundBox.for"/>
+		<File RelativePath=".\CalMinDist.f90">
+			<FileConfiguration Name="Release|x64">
+				<Tool Name="VFFortranCompilerTool" SourceFileFormat="fileFormatFree"/></FileConfiguration></File>
 		<File RelativePath="CalOMP.For"/>
 		<File RelativePath="CalPOLY.for"/>
 		<File RelativePath="CC.for"/>
@@ -126,6 +129,7 @@
 		<File RelativePath=".\SaveMask.for"/>
 		<File RelativePath="SectorArea.for"/>
 		<File RelativePath="SnapShot.for"/>
+		<File RelativePath=".\SortArray.f90"/>
 		<File RelativePath=".\SortCon2Ele.for"/>
 		<File RelativePath="SortGDLine.for"/>
 		<File RelativePath="SortQEdge.for"/>
