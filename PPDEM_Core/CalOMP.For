@@ -19,7 +19,7 @@
 	implicit none
 
 	integer nEle,nActEle,nWall,nCon,nPCon,nGridX,nGridY,numThreads,
-     $	alwNEleFrd
+     $	alwNEleFrd,iCon
 	integer nVertex(nEle)
 	integer iEle,iVertex,iWall,iIter,nInc,jEle,omp_get_thread_num,
      $	itemp,iPara,eleOut(0:1000)
@@ -1220,14 +1220,43 @@ c      end do
       !!!! Temporary, for cyc UD only
       
       if (flagUDCyc.eq.1) then
-        stressUDCyc(2)=(FWall(2,2)
-     $                   -FWall(1,2))/2.0/
-     $                   (x1Wall(4)-x1Wall(3))
-        stressUDCyc(1)=(FWall(4,1)
-     $                   -FWall(3,1))/2.0/
-     $                   (y1Wall(2)-y1Wall(1))
-!       iniFWall(4,1)=-iniFWall(3,1)
-        
+         stressUDCyc(1)=0.0
+         stressUDCyc(2)=0.0
+!        stressUDCyc(2)=(FWall(2,2)
+!     $                   -FWall(1,2))/2.0/
+!     $                   (x1Wall(4)-x1Wall(3))
+!        stressUDCyc(1)=(FWall(4,1)
+!     $                   -FWall(3,1))/2.0/
+!     $                   (y1Wall(2)-y1Wall(1))
+!!       iniFWall(4,1)=-iniFWall(3,1)
+      do iCon=1,nCon
+      
+
+            if (flagConBoun(iCon).eq.0) then
+     
+                stressUDCyc(1)=stressUDCyc(1) + FxCon(iCon)*
+     $             (xEle(pairCon(iCon,1))-xEle(pairCon(iCon,2)))
+
+     
+                stressUDCyc(2)=stressUDCyc(2) + FyCon(iCon)*
+     $             (yEle(pairCon(iCon,1))-yEle(pairCon(iCon,2)))
+
+
+            else if (flagConBoun(iCon).gt.0) then
+     
+                stressUDCyc(1)=stressUDCyc(1) + FxCon(iCon)*
+     $             (xEle(pairCon(iCon,1))-xCon(iCon))
+
+                stressUDCyc(2)=stressUDCyc(2) + FyCon(iCon)*
+     $             (yEle(pairCon(iCon,1))-yCon(iCon))
+
+            end if
+
+      
+      end do
+      
+      stressUDCyc=stressUDCyc/vol
+      
         if ( (iDirecCyc.eq.1).and.
      $       ((stressUDCyc(2)-stressUDCyc(1)).gt.qLimit) ) then
 
