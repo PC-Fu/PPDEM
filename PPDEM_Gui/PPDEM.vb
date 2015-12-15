@@ -7854,7 +7854,7 @@ Public Class PPDEM
 
     Private Sub chkTrackMinDist_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles chkTrackMinDist.CheckedChanged
         If chkTrackMinDist.Checked Then
-            textEleQuery.Text = "step, mean1, mean2, mean3, stdev1, stdev2, stdev3"
+            textEleQuery.Text = "step, mean1, mean2, mean3, stdev1, stdev2, stdev3" & Environment.NewLine
         End If
     End Sub
 End Class
