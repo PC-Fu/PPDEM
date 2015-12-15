@@ -308,7 +308,7 @@ Public Class PPDEM
     Declare Sub CalMinDist Lib "demintel.dll" Alias "CalMinDist" (<[In](), Out()> _
     ByRef nEle As Integer, ByRef nEle As Integer, ByVal xEle() As Double, ByVal yEle() As Double, ByVal rEle() As Double, ByVal nVertex() As Integer, _
     ByVal pair(,) As Integer, ByRef nPair As Integer, ByRef alwNEleFrd As Integer, _
-    ByVal nDistEle() As Integer, ByVal distEle(,) As Double, ByVal meanDist() As Double, ByVal stdevDist() As Double)
+    ByVal nDistEle() As Integer, ByVal distEle(,) As Double, ByVal meanDist() As Double, ByVal stdevDist() As Double, ByRef dThreeMean As Double, ByRef dThreeBig As Double, ByRef dThreeSmall As Double, ByRef dThreeDev As Double, ByRef nCThree As Double, ByRef dCThree As Double, ByRef coordTen As Double)
 
 
 #Const USEKEY = 0
@@ -3460,8 +3460,9 @@ Public Class PPDEM
 
     End Sub
 
-
-
+    Private Sub CentripetalG_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CentripetalG.CheckedChanged
+        gXgY(0) = -10000.0
+    End Sub
 
     Private Sub tabEdit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tabEdit.Click
 
@@ -7841,20 +7842,31 @@ Public Class PPDEM
 
         Dim nDistEle() As Integer = New Integer(nEle - 1) {}
         Dim distEle(,) As Double = New Double(nEle - 1, alwNEleFrd - 1) {}
-        Dim meanDist() As Double = New Double(2) {}
-        Dim stdevDist() As Double = New Double(2) {}
+        Dim meanDist() As Double = New Double(5) {}
+        Dim stdevDist() As Double = New Double(5) {}
+        Dim dThreeMean As Double = 0.0
+        Dim dThreeBig As Double = 0.0
+        Dim dThreeSmall As Double = 0.0
+        Dim dThreeDev As Double = 0.0
+        Dim nCThree As Double = 0.0
+        Dim dCThree As Double = 0.0
+        Dim coordTen As Double = 0.0
 
-        Call CalMinDist(nEle, nActEle, xEle, yEle, rEle, nVertex, pair, nPair, alwNEleFrd, nDistEle, distEle, meanDist, stdevDist)
+        Call CalMinDist(nEle, nActEle, xEle, yEle, rEle, nVertex, pair, nPair, alwNEleFrd, nDistEle, distEle, meanDist, stdevDist, dThreeMean, dThreeBig, dThreeSmall, dThreeDev, nCThree, dCThree, coordTen)
         If chkTrackMinDist.Checked Then
-            textEleQuery.AppendText(iCurStep(0).ToString() & ", " & meanDist(0).ToString() & ", " & meanDist(1).ToString() & ", " & meanDist(2).ToString() & ", " _
-                                    & stdevDist(0).ToString() & ", " & stdevDist(1).ToString() & ", " & stdevDist(2).ToString() & ", " & Environment.NewLine)
+            textEleQuery.AppendText(iCurStep(0).ToString() & ", " & nCThree.ToString() & ", " & dCThree.ToString() & ", " & coordTen.ToString() & ", " _
+                                     & dThreeMean.ToString() & ", " & dThreeBig.ToString() & ", " & dThreeSmall.ToString() & ", " & dThreeDev.ToString() & ", " & Environment.NewLine)
         End If
 
     End Sub
 
     Private Sub chkTrackMinDist_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles chkTrackMinDist.CheckedChanged
         If chkTrackMinDist.Checked Then
-            textEleQuery.Text = "step, mean1, mean2, mean3, stdev1, stdev2, stdev3" & Environment.NewLine
+            textEleQuery.Text = "step, nCThree, dCThree, coordTen, dThreeMean, dThreeBig, dThreeSmall, dThreeDev "
+            textEleQuery.AppendText(Environment.NewLine)
         End If
     End Sub
+
+
+
 End Class

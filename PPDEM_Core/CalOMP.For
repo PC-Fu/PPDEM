@@ -19,7 +19,7 @@
 	implicit none
 
 	integer nEle,nActEle,nWall,nCon,nPCon,nGridX,nGridY,numThreads,
-     $	alwNEleFrd
+     $	alwNEleFrd,iCon
 	integer nVertex(nEle)
 	integer iEle,iVertex,iWall,iIter,nInc,jEle,omp_get_thread_num,
      $	itemp,iPara,eleOut(0:1000)
@@ -210,9 +210,9 @@ c     $   strgTensl(1)
         intLoadPara(iCurStep(2),6)=2
         intLoadPara(iCurStep(2),7)=1
         intLoadPara(iCurStep(2),8)=2
-        open (unit = 1234, file = "v.txt")
-        write (1234,*) intLoadPara(iCurStep(2),1), cDisp, 
-     $  realLoadPara(iCurStep(2),1), iDirecCyc, iCurStep(2)
+!        open (unit = 1234, file = "v.txt")
+!        write (1234,*) intLoadPara(iCurStep(2),1), cDisp, 
+!     $  realLoadPara(iCurStep(2),1), iDirecCyc, iCurStep(2)
 	  v0=realLoadPara(iCurStep(2),1)/nInc/dt
 	  v1=v0+maxAccWall*nInc*dt*iDirecCyc
 	  if (v1.gt.cDisp/nInc/dt) then
@@ -229,8 +229,8 @@ c     $   strgTensl(1)
         realLoadPara(iCurStep(2),6)=0
         realLoadPara(iCurStep(2),7)=realLoadPara(iCurStep(2),5)
         realLoadPara(iCurStep(2),8)=0
-        write (1234,*) intLoadPara(iCurStep(2),1), cDisp, 
-     $  realLoadPara(iCurStep(2),1), iDirecCyc, iCurStep(2)
+!        write (1234,*) intLoadPara(iCurStep(2),1), cDisp, 
+!     $  realLoadPara(iCurStep(2),1), iDirecCyc, iCurStep(2)
 	end if
 	      
 
@@ -1060,12 +1060,25 @@ c     time111(iiter,8)=omp_get_Wtime()
             pvRotDamp=rotDamp
             pvXGravity=xGravity
             pvDt=dt
+            
+            if (pvgXgY(1).le.-100) then
+              Fx(iEle)=Fx(iEle)+mGravEle(iEle)
+     $		*pvgXgY(2)*(pvXGravity(1)-xEle(iEle))
+     $        /sqrt((pvXGravity(1)-xEle(iEle))**2
+     $        +(pvXGravity(2)-yEle(iEle))**2) 
+              
+              Fy(iEle)=Fy(iEle)+mGravEle(iEle)
+     $		*pvgXgY(2)*(pvXGravity(2)-yEle(iEle))
+     $        /sqrt((pvXGravity(1)-xEle(iEle))**2
+     $        +(pvXGravity(2)-yEle(iEle))**2) 
+            else
 
 			Fx(iEle)=Fx(iEle)+mGravEle(iEle)
      $		*sign(pvgXgY(1),pvXGravity(1)-xEle(iEle))
      
 			Fy(iEle)=Fy(iEle)+mGravEle(iEle)
      $		*sign(pvgXgY(2),pvxGravity(2)-yEle(iEle))
+            end if
 		   
 		    FM(iEle)=FM(iEle)
 		   
@@ -1220,14 +1233,43 @@ c      end do
       !!!! Temporary, for cyc UD only
       
       if (flagUDCyc.eq.1) then
-        stressUDCyc(2)=(FWall(2,2)
-     $                   -FWall(1,2))/2.0/
-     $                   (x1Wall(4)-x1Wall(3))
-        stressUDCyc(1)=(FWall(4,1)
-     $                   -FWall(3,1))/2.0/
-     $                   (y1Wall(2)-y1Wall(1))
-!       iniFWall(4,1)=-iniFWall(3,1)
-        
+         stressUDCyc(1)=0.0
+         stressUDCyc(2)=0.0
+!        stressUDCyc(2)=(FWall(2,2)
+!     $                   -FWall(1,2))/2.0/
+!     $                   (x1Wall(4)-x1Wall(3))
+!        stressUDCyc(1)=(FWall(4,1)
+!     $                   -FWall(3,1))/2.0/
+!     $                   (y1Wall(2)-y1Wall(1))
+!!       iniFWall(4,1)=-iniFWall(3,1)
+      do iCon=1,nCon
+      
+
+            if (flagConBoun(iCon).eq.0) then
+     
+                stressUDCyc(1)=stressUDCyc(1) + FxCon(iCon)*
+     $             (xEle(pairCon(iCon,1))-xEle(pairCon(iCon,2)))
+
+     
+                stressUDCyc(2)=stressUDCyc(2) + FyCon(iCon)*
+     $             (yEle(pairCon(iCon,1))-yEle(pairCon(iCon,2)))
+
+
+            else if (flagConBoun(iCon).gt.0) then
+     
+                stressUDCyc(1)=stressUDCyc(1) + FxCon(iCon)*
+     $             (xEle(pairCon(iCon,1))-xCon(iCon))
+
+                stressUDCyc(2)=stressUDCyc(2) + FyCon(iCon)*
+     $             (yEle(pairCon(iCon,1))-yCon(iCon))
+
+            end if
+
+      
+      end do
+      
+      stressUDCyc=stressUDCyc/vol
+      
         if ( (iDirecCyc.eq.1).and.
      $       ((stressUDCyc(2)-stressUDCyc(1)).gt.qLimit) ) then
 
@@ -1244,9 +1286,9 @@ c      end do
        
       end if 
       
-        write (1234,*) iDirecCyc, stressUDCyc(2)-stressUDCyc(1), 
-     $  iCurStep(2)
-        close (1234)
+!   write (1234,*) iDirecCyc, stressUDCyc(2)-stressUDCyc(1), 
+!$  iCurStep(2)
+!   close (1234)
       
       if (flagConstP.eq.1) then
         realLoadPara(iCurStep(2),5)=pMean*2-stressUDCyc(2)
