@@ -2551,7 +2551,7 @@ Partial Class PPDEM
         Me.cbSpecialLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cbSpecialLoad.ForeColor = System.Drawing.Color.White
         Me.cbSpecialLoad.FormattingEnabled = True
-        Me.cbSpecialLoad.Items.AddRange(New Object() {"No special load", "UD cyclic", "Const P flexible", "Const P wall"})
+        Me.cbSpecialLoad.Items.AddRange(New Object() {"No special load", "UD cyclic", "Const P flexible", "Const P wall", "CPwd cyclic"})
         Me.cbSpecialLoad.Location = New System.Drawing.Point(138, 19)
         Me.cbSpecialLoad.Name = "cbSpecialLoad"
         Me.cbSpecialLoad.Size = New System.Drawing.Size(140, 22)

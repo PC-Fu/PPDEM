@@ -146,7 +146,7 @@ c     $   strgTensl(1)
       exCount=0
 	
       flagConstP=0
-      ! flagConstP=1 is based on stress on side particles; =2 if based on stress on walls
+      ! flagConstP=1 is based on stress on side particles; =2 if based on stress on walls; =3 if cyclic wall
       pMean=realLoadPara(iCurStep(2),5)
       
       if (flagSpecialLoad.eq.0) then
@@ -160,6 +160,9 @@ c     $   strgTensl(1)
         flagUDCyc=0
       else if (flagSpecialLoad.eq.3) then
         flagConstP=2
+        flagUDCyc=0
+      else if (flagSpecialLoad.eq.4) then
+        flagConstP=3
         flagUDCyc=0
       end if
         
@@ -232,6 +235,31 @@ c     $   strgTensl(1)
 !        write (1234,*) intLoadPara(iCurStep(2),1), cDisp, 
 !     $  realLoadPara(iCurStep(2),1), iDirecCyc, iCurStep(2)
 	end if
+      
+      !!!!!!!!!!
+	!! For drained const p cyclic only
+	if ((flagConstP.eq.3).and.(intLoadPara(iCurStep(2),1).eq.1)) then
+        intLoadPara(iCurStep(2),2)=1
+        intLoadPara(iCurStep(2),3)=1
+        intLoadPara(iCurStep(2),4)=1
+        intLoadPara(iCurStep(2),5)=3
+        intLoadPara(iCurStep(2),6)=1
+        intLoadPara(iCurStep(2),7)=3
+        intLoadPara(iCurStep(2),8)=1
+        v0=realLoadPara(iCurStep(2),1)/nInc/dt
+	  v1=v0+maxAccWall*nInc*dt*iDirecCyc
+	  if (v1.gt.cDisp/nInc/dt) then
+	      v1=cDisp/nInc/dt
+	  else if(v1.lt.-cDisp/nInc/dt) then
+	      v1=-cDisp/nInc/dt
+	  end if
+	  realLoadPara(iCurStep(2),1)=v1*nInc*dt
+        realLoadPara(iCurStep(2),2)=0
+        realLoadPara(iCurStep(2),3)= realLoadPara(iCurStep(2),1)
+        realLoadPara(iCurStep(2),4)=0
+        realLoadPara(iCurStep(2),6)=0
+        realLoadPara(iCurStep(2),8)=0
+      end if
 	      
 
 	do iIter=1,nInc
@@ -755,13 +783,17 @@ c     $                  pvAOver)
 
 c      time111(iiter,3)=omp_get_Wtime()
 
+
       !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
       !!!! Temporary, for constant p test only
-      if ((flagConstP.eq.2).and.(intLoadPara(iCurStep(2),1).eq.1)) then
-        iniFWall(3,1)=(pMean*2-(FWall(2,2)-FWall(1,2))/2.0/
+      if (((flagConstP.eq.2).or.(flagConstP.eq.3))
+     $      .and.(intLoadPara(iCurStep(2),1).eq.1)) then
+      iniFWall(3,1)=(pMean*2-(FWall(2,2)-FWall(1,2))/2.0/
      $      (x1Wall(4)-x1Wall(3)))*(y1Wall(2)-y1Wall(1))
-        iniFWall(4,1)=-iniFWall(3,1)
+      iniFWall(4,1)=-iniFWall(3,1)
       end if
+      !write (1234,*) intLoadPara(iCurStep(2),1),
+      !$  FWall,FWall(1,2),FWall(2,2),iniFWall(3,1),iniFWall(4,1)
       !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
       
       
@@ -795,7 +827,7 @@ c      time111(iiter,3)=omp_get_Wtime()
       FyWall=0
       FMWall=0
       FWall=iniFWall
-      
+              
       
 c       call omp_set_num_threads (1)   !  Overhead for paralellization was very high.  Couldn't figure out why.  Use one thread only for this loop.
 c      time111(iiter,4)=omp_get_Wtime()
@@ -1232,7 +1264,7 @@ c      end do
       !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
       !!!! Temporary, for cyc UD only
       
-      if (flagUDCyc.eq.1) then
+      if ((flagUDCyc.eq.1).or.(flagConstP.eq.3)) then
          stressUDCyc(1)=0.0
          stressUDCyc(2)=0.0
 !        stressUDCyc(2)=(FWall(2,2)
