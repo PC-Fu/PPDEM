@@ -117,8 +117,8 @@ c     $   strgTensl(1)
      
       double precision aOver,aOverAll,pvAOver,aOver1,aOver2,vol  ! 1 for particle-particle contact; 2 for particle-wall contact
 	
-	integer intLoadPara(0:100000,0:8),iCurStep(4)
-      double precision realLoadPara(0:100000,8)
+	integer intLoadPara(0:1000000,0:8),iCurStep(4)
+      double precision realLoadPara(0:1000000,8)
       integer iLoadWall(8),iLoadXY(8),iLoadSign(8),iWallLoad(8)  
       
       double precision hThinLayer

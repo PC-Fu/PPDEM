@@ -37,8 +37,8 @@
 	
 	double precision time111
 	
-	integer intLoadPara(0:100000,0:8),iCurStep(4),flagLoadMode
-      double precision realLoadPara(0:100000,8)     
+	integer intLoadPara(0:1000000,0:8),iCurStep(4),flagLoadMode
+      double precision realLoadPara(0:1000000,8)     
 
 	vol=0
 	nPCon=0

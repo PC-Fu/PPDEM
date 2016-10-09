@@ -75,7 +75,7 @@
      $                     xEleTrace(E2,jStep),yEleTrace(E2,jStep),
      $                     xEleTrace(E3,jStep),yEleTrace(E3,jStep))
      
-            areaCell(iCell)=(areaI+areaJ)/2
+            areaCell(iCell)=(areaI+areaI)/2
      
             strainXX =1.0/(areaI+areaJ)* 
      $               ( (yEleTrace(E2,jStep)-yEleTrace(E3,jStep))*u11 

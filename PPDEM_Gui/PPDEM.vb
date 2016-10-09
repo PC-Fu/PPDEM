@@ -809,13 +809,13 @@ Public Class PPDEM
 
     Dim flagReDrawTab = 0
 
-    Dim intLoadPara(,) As Integer = New Integer(8, 100000) {}
+    Dim intLoadPara(,) As Integer = New Integer(8, 1000000) {}
     ' in the dll, define intLoadPara(0:1000,0:5)
     '(0,0) is the total number of load batches; arrary (0,:) is used for manual control
     'arries(i,:) are for batched loading
 
 
-    Dim realLoadPara(,) As Double = New Double(7, 100000) {}
+    Dim realLoadPara(,) As Double = New Double(7, 1000000) {}
     Dim flagLoadMode As Integer = 0   ' =0 manula loading; =1 automatic batched loading
 
 
@@ -1333,7 +1333,7 @@ Public Class PPDEM
 
             nGridY = (limitAll(3) - limitAll(2)) / xGrid + 1
             nGridX = (limitAll(1) - limitAll(0)) / xGrid + 1
-            maxNEleGrid = Math.Max((xGrid ^ 2 / (volSld / nActEle) * 4), 10)   'Potentially problematic
+            maxNEleGrid = Math.Max((xGrid ^ 2 / (volSld / nActEle) * 4) * 10, 10)   'Potentially problematic
             ReDim nEleGrid(nGridY - 1, nGridX - 1)
             ReDim lEG(maxNEleGrid - 1, nGridY - 1, nGridX - 1)
 
@@ -1424,7 +1424,7 @@ Public Class PPDEM
 
         nGridY = (limitAll(3) - limitAll(2)) / xGrid + 1
         nGridX = (limitAll(1) - limitAll(0)) / xGrid + 1
-        maxNEleGrid = Math.Max((xGrid ^ 2 / (volSld / nActEle) * 4), 10)   'Potentially problematic
+        maxNEleGrid = Math.Max((xGrid ^ 2 / (volSld / nActEle) * 4) * 10, 10)   'Potentially problematic
         ReDim nEleGrid(nGridY - 1, nGridX - 1)
         ReDim lEG(maxNEleGrid - 1, nGridY - 1, nGridX - 1)
 
@@ -3730,7 +3730,7 @@ Public Class PPDEM
 
         nGridY = (limitAll(3) - limitAll(2)) / xGrid + 1
         nGridX = (limitAll(1) - limitAll(0)) / xGrid + 1
-        maxNEleGrid = Math.Max((xGrid ^ 2 / (volSld / nActEle) * 3), 10)   'Potentially problematic
+        maxNEleGrid = Math.Max((xGrid ^ 2 / (volSld / nActEle) * 4) * 10, 10)   'Potentially problematic
         ReDim nEleGrid(nGridY - 1, nGridX - 1)
         ReDim lEG(maxNEleGrid - 1, nGridY - 1, nGridX - 1)
 
@@ -3920,7 +3920,7 @@ Public Class PPDEM
 
         nGridY = (limitAll(3) - limitAll(2)) / xGrid + 1
         nGridX = (limitAll(1) - limitAll(0)) / xGrid + 1
-        maxNEleGrid = Math.Max((xGrid ^ 2 / (volSld / nActEle) * 4), 10)   'Potentially problematic
+        maxNEleGrid = Math.Max((xGrid ^ 2 / (volSld / nActEle) * 4) * 10, 10)   'Potentially problematic
         ReDim nEleGrid(nGridY - 1, nGridX - 1)
         ReDim lEG(maxNEleGrid - 1, nGridY - 1, nGridX - 1)
 
@@ -4175,7 +4175,7 @@ Public Class PPDEM
 
             nGridY = (limitAll(3) - limitAll(2)) / xGrid + 1
             nGridX = (limitAll(1) - limitAll(0)) / xGrid + 1
-            maxNEleGrid = Math.Max((xGrid ^ 2 / (volSld / nActEle) * 4), 10)   'Potentially problematic
+            maxNEleGrid = Math.Max((xGrid ^ 2 / (volSld / nActEle) * 4) * 10, 10)   'Potentially problematic
             ReDim nEleGrid(nGridY - 1, nGridX - 1)
             ReDim lEG(maxNEleGrid - 1, nGridY - 1, nGridX - 1)
 
@@ -6467,23 +6467,70 @@ Public Class PPDEM
                 textEleQuery.AppendText(areaTemp(iCell).ToString("E02") & ", ")
             Next
             textEleQuery.AppendText(Environment.NewLine)
+            If rbHomoTri.Checked Then
+                If setNumCell.Value > 0 Then
 
-            If setNumCell.Value > 0 Then
 
+                    Call IniStrainCell(numCell, iEleCell, rStainCell, nEle, xEle, yEle, areaEle, _
+                          limitAll, xGrid, nGridX, nGridY, nEleGrid, lEG, maxNEleGrid, eleStnCell, _
+                         eleBuffer, nEleTop, wgtBuffer, flagEffCell)
 
-                Call IniStrainCell(numCell, iEleCell, rStainCell, nEle, xEle, yEle, areaEle, _
-                      limitAll, xGrid, nGridX, nGridY, nEleGrid, lEG, maxNEleGrid, eleStnCell, _
-                     eleBuffer, nEleTop, wgtBuffer, flagEffCell)
+                    nActCell = 0
+                    Call MaskStrainCell(numCell, nActCell, nEle, xEle, yEle, eleStnCell, cellAct, flagEffCell, nNodeMask, Mask)
 
-                nActCell = 0
-                Call MaskStrainCell(numCell, nActCell, nEle, xEle, yEle, eleStnCell, cellAct, flagEffCell, nNodeMask, Mask)
-
+                End If
             End If
             trackPost.Value += 1
             Call ReadPauseFile(flagPause, curDir, lCurDir)
 
 
+
         Loop
+        flagPause = 0
+    End Sub
+
+    Private Sub btnStrnAveTrack_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnStrnAveTrack.Click
+        textEleQuery.Clear()
+        Do While (trackPost.Value < trackPost.Maximum And flagPause < 1)
+            canvas.Invalidate()
+
+            Dim strainAveTemp As Double = 0.0
+            Dim areaAveTemp As Double = 0.0
+
+            For iCell = 0 To nActCell - 1
+                areaAveTemp = areaAveTemp + areaCell(cellAct(iCell))
+                strainAveTemp = strainAveTemp + strainOut(cellAct(iCell)) * areaCell(cellAct(iCell))
+            Next
+            strainAveTemp = strainAveTemp / areaAveTemp
+
+
+
+            textEleQuery.AppendText("Strain" & ", ")
+            textEleQuery.AppendText(iCurStep(0) & ", ")
+            textEleQuery.AppendText(strainAveTemp.ToString("E04") & ", ")
+            textEleQuery.AppendText(Environment.NewLine)
+
+            If rbHomoTri.Checked Then
+                If setNumCell.Value > 0 Then
+
+
+                    Call IniStrainCell(numCell, iEleCell, rStainCell, nEle, xEle, yEle, areaEle, _
+                          limitAll, xGrid, nGridX, nGridY, nEleGrid, lEG, maxNEleGrid, eleStnCell, _
+                         eleBuffer, nEleTop, wgtBuffer, flagEffCell)
+
+                    nActCell = 0
+                    Call MaskStrainCell(numCell, nActCell, nEle, xEle, yEle, eleStnCell, cellAct, flagEffCell, nNodeMask, Mask)
+
+                End If
+            End If
+
+            trackPost.Value += 1
+            Call ReadPauseFile(flagPause, curDir, lCurDir)
+
+
+
+        Loop
+        flagPause = 0
     End Sub
 
     Private Sub PictureBox2_Paint(ByVal sender As Object, ByVal e As System.Windows.Forms.PaintEventArgs)
@@ -7827,7 +7874,7 @@ Public Class PPDEM
 
         nGridY = (limitAll(3) - limitAll(2)) / xGrid + 1
         nGridX = (limitAll(1) - limitAll(0)) / xGrid + 1
-        maxNEleGrid = Math.Max((xGrid ^ 2 / (volSld / nActEle) * 4), 10)   'Potentially problematic
+        maxNEleGrid = Math.Max((xGrid ^ 2 / (volSld / nActEle) * 4) * 10, 10)   'Potentially problematic
         ReDim nEleGrid(nGridY - 1, nGridX - 1)
         ReDim lEG(maxNEleGrid - 1, nGridY - 1, nGridX - 1)
 
@@ -7854,18 +7901,19 @@ Public Class PPDEM
 
         Call CalMinDist(nEle, nActEle, xEle, yEle, rEle, nVertex, pair, nPair, alwNEleFrd, nDistEle, distEle, meanDist, stdevDist, dThreeMean, dThreeBig, dThreeSmall, dThreeDev, nCThree, dCThree, coordTen)
         If chkTrackMinDist.Checked Then
-            textEleQuery.AppendText(iCurStep(0).ToString() & ", " & nCThree.ToString() & ", " & dCThree.ToString() & ", " & coordTen.ToString() & ", " _
-                                     & dThreeMean.ToString() & ", " & dThreeBig.ToString() & ", " & dThreeSmall.ToString() & ", " & dThreeDev.ToString() & ", " & Environment.NewLine)
+            textEleQuery.AppendText(iCurStep(0).ToString() & ", " & meanDist(0).ToString() & ", " & meanDist(1).ToString() & ", " & meanDist(2).ToString() & ", " & coordTen.ToString() & ", " _
+                                     & dThreeMean.ToString() & ", " & dThreeBig.ToString() & ", " & dThreeSmall.ToString() & ", " & Environment.NewLine)
         End If
 
     End Sub
 
     Private Sub chkTrackMinDist_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles chkTrackMinDist.CheckedChanged
         If chkTrackMinDist.Checked Then
-            textEleQuery.Text = "step, nCThree, dCThree, coordTen, dThreeMean, dThreeBig, dThreeSmall, dThreeDev "
+            textEleQuery.Text = "step, Mean1, Mean2, Mean3, coordTen, dThreeMean, dThreeBig, dThreeSmall"
             textEleQuery.AppendText(Environment.NewLine)
         End If
     End Sub
+
 
 
 

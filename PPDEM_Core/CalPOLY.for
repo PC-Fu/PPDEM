@@ -119,8 +119,8 @@ c     $   strgTensl(1)
 	
       double precision rqCE(nEle,10,4),xCE(nEle,10,2),hSector(nEle)
       
-      integer intLoadPara(0:100000,0:8),iCurStep(4)
-      double precision realLoadPara(0:100000,8)     
+      integer intLoadPara(0:1000000,0:8),iCurStep(4)
+      double precision realLoadPara(0:1000000,8)     
       
 	integer eleOut(0:1000)
 	

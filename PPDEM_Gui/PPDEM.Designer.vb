@@ -431,6 +431,7 @@ Partial Class PPDEM
         Me.timerPlay = New System.Windows.Forms.Timer(Me.components)
         Me.showPpM = New System.Windows.Forms.Label()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.btnStrnAveTrack = New System.Windows.Forms.Button()
         CType(Me.tInc, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.refRate, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nIncr, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1017,8 +1018,8 @@ Partial Class PPDEM
         Me.setCurrentLoadRate.Increment = New Decimal(New Integer() {1, 0, 0, 327680})
         Me.setCurrentLoadRate.Location = New System.Drawing.Point(97, 25)
         Me.setCurrentLoadRate.Margin = New System.Windows.Forms.Padding(4)
-        Me.setCurrentLoadRate.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
-        Me.setCurrentLoadRate.Minimum = New Decimal(New Integer() {10, 0, 0, -2147483648})
+        Me.setCurrentLoadRate.Maximum = New Decimal(New Integer() {1000, 0, 0, 0})
+        Me.setCurrentLoadRate.Minimum = New Decimal(New Integer() {1000, 0, 0, -2147483648})
         Me.setCurrentLoadRate.Name = "setCurrentLoadRate"
         Me.setCurrentLoadRate.Size = New System.Drawing.Size(103, 20)
         Me.setCurrentLoadRate.TabIndex = 68
@@ -4100,6 +4101,7 @@ Partial Class PPDEM
         '
         Me.tabStrain.AutoScroll = True
         Me.tabStrain.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.tabStrain.Controls.Add(Me.btnStrnAveTrack)
         Me.tabStrain.Controls.Add(Me.chkExpWallPosition)
         Me.tabStrain.Controls.Add(Me.btnMaskCell)
         Me.tabStrain.Controls.Add(Me.gbShowStnDrct)
@@ -5579,6 +5581,17 @@ Partial Class PPDEM
         Me.showPpM.TabIndex = 85
         Me.showPpM.Text = "ppm"
         '
+        'btnStrnAveTrack
+        '
+        Me.btnStrnAveTrack.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnStrnAveTrack.Font = New System.Drawing.Font("Arial", 8.0!)
+        Me.btnStrnAveTrack.Location = New System.Drawing.Point(90, 568)
+        Me.btnStrnAveTrack.Name = "btnStrnAveTrack"
+        Me.btnStrnAveTrack.Size = New System.Drawing.Size(75, 23)
+        Me.btnStrnAveTrack.TabIndex = 33
+        Me.btnStrnAveTrack.Text = "TrackAve"
+        Me.btnStrnAveTrack.UseVisualStyleBackColor = True
+        '
         'PPDEM
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
@@ -6179,5 +6192,6 @@ Partial Class PPDEM
     Friend WithEvents btnCalMinDist As System.Windows.Forms.Button
     Friend WithEvents chkTrackMinDist As System.Windows.Forms.CheckBox
     Friend WithEvents CentripetalG As System.Windows.Forms.CheckBox
+    Friend WithEvents btnStrnAveTrack As System.Windows.Forms.Button
 
 End Class

@@ -23,93 +23,94 @@ Partial Class Histgram
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Histgram))
-        Me.roseForce = New System.Windows.Forms.PictureBox
-        Me.roseOrit = New System.Windows.Forms.PictureBox
-        Me.GroupBox5 = New System.Windows.Forms.GroupBox
-        Me.btnImpMask = New System.Windows.Forms.Button
-        Me.btnExpMask = New System.Windows.Forms.Button
-        Me.rbMaskHist = New System.Windows.Forms.RadioButton
-        Me.rbGlobHist = New System.Windows.Forms.RadioButton
-        Me.btnNewMask = New System.Windows.Forms.Button
-        Me.Label1 = New System.Windows.Forms.Label
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox
-        Me.rbWeighted = New System.Windows.Forms.RadioButton
-        Me.rbCount = New System.Windows.Forms.RadioButton
-        Me.hgFR = New System.Windows.Forms.PictureBox
-        Me.roseNorm = New System.Windows.Forms.PictureBox
-        Me.Label4 = New System.Windows.Forms.Label
-        Me.chkIBoundMode = New System.Windows.Forms.CheckBox
-        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel
-        Me.lbFb11 = New System.Windows.Forms.Label
-        Me.lbFb12 = New System.Windows.Forms.Label
-        Me.lbFb22 = New System.Windows.Forms.Label
-        Me.lbFb21 = New System.Windows.Forms.Label
-        Me.lbAngFabAxis1 = New System.Windows.Forms.Label
-        Me.lbF1 = New System.Windows.Forms.Label
-        Me.lbF2 = New System.Windows.Forms.Label
-        Me.lbAngFabAxis2 = New System.Windows.Forms.Label
-        Me.groupTsFabric = New System.Windows.Forms.GroupBox
-        Me.chkFabExp = New System.Windows.Forms.CheckBox
-        Me.groupTsStress = New System.Windows.Forms.GroupBox
-        Me.checkStsBExp = New System.Windows.Forms.CheckBox
-        Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel
-        Me.lbStress11 = New System.Windows.Forms.Label
-        Me.lbStress12 = New System.Windows.Forms.Label
-        Me.lbStress22 = New System.Windows.Forms.Label
-        Me.lbStress21 = New System.Windows.Forms.Label
-        Me.lbAngStressAxis2 = New System.Windows.Forms.Label
-        Me.lbPrnStress1 = New System.Windows.Forms.Label
-        Me.lbAngStressAxis1 = New System.Windows.Forms.Label
-        Me.lbPrnStress2 = New System.Windows.Forms.Label
-        Me.lbContactNumber = New System.Windows.Forms.Label
-        Me.groupTsBodyStress = New System.Windows.Forms.GroupBox
-        Me.chkStsExp = New System.Windows.Forms.CheckBox
-        Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel
-        Me.lbBodyStress11 = New System.Windows.Forms.Label
-        Me.lbBodyStress12 = New System.Windows.Forms.Label
-        Me.lbBodyStress22 = New System.Windows.Forms.Label
-        Me.lbBodyStress21 = New System.Windows.Forms.Label
-        Me.lbAngBodyStressAxis2 = New System.Windows.Forms.Label
-        Me.lbPrnBodyStress1 = New System.Windows.Forms.Label
-        Me.lbAngBodyStressAxis1 = New System.Windows.Forms.Label
-        Me.lbPrnBodyStress2 = New System.Windows.Forms.Label
-        Me.Label10 = New System.Windows.Forms.Label
-        Me.Label11 = New System.Windows.Forms.Label
-        Me.Label12 = New System.Windows.Forms.Label
-        Me.Label13 = New System.Windows.Forms.Label
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox
-        Me.rbFabricWeightNone = New System.Windows.Forms.RadioButton
-        Me.rbFabricWeightMaxShear = New System.Windows.Forms.RadioButton
-        Me.rbFabricWeightBulk = New System.Windows.Forms.RadioButton
-        Me.rbFabricWeightXY = New System.Windows.Forms.RadioButton
-        Me.rbFabricWeightYY = New System.Windows.Forms.RadioButton
-        Me.rbFabricWeightXX = New System.Windows.Forms.RadioButton
-        Me.setTransHist = New System.Windows.Forms.TrackBar
-        Me.setAngRefLine = New System.Windows.Forms.NumericUpDown
-        Me.chkShowRefLine = New System.Windows.Forms.CheckBox
-        Me.chkAlwaysTop = New System.Windows.Forms.CheckBox
-        Me.setScalePolar = New System.Windows.Forms.NumericUpDown
-        Me.gbFabricConNorm = New System.Windows.Forms.GroupBox
-        Me.chkCNExp = New System.Windows.Forms.CheckBox
-        Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel
-        Me.lbCN11 = New System.Windows.Forms.Label
-        Me.lbCN12 = New System.Windows.Forms.Label
-        Me.lbCN22 = New System.Windows.Forms.Label
-        Me.lbCN21 = New System.Windows.Forms.Label
-        Me.lbAngFabCN1 = New System.Windows.Forms.Label
-        Me.lbCN1 = New System.Windows.Forms.Label
-        Me.lbCN2 = New System.Windows.Forms.Label
-        Me.lbAngFabCN2 = New System.Windows.Forms.Label
-        Me.chkShowRoseLegend = New System.Windows.Forms.CheckBox
-        Me.chkShowSldNorm = New System.Windows.Forms.CheckBox
-        Me.roseForceNormTang = New System.Windows.Forms.PictureBox
-        Me.roseShearRatio = New System.Windows.Forms.PictureBox
-        Me.lbExpandWindow = New System.Windows.Forms.Label
-        Me.lbRoseForceNormTang = New System.Windows.Forms.Label
-        Me.lbRoseShearRatio = New System.Windows.Forms.Label
-        Me.setScaleShearRatio = New System.Windows.Forms.NumericUpDown
-        Me.setScaleForceNT = New System.Windows.Forms.NumericUpDown
-        Me.btnResetScaleForceNT = New System.Windows.Forms.Button
+        Me.roseForce = New System.Windows.Forms.PictureBox()
+        Me.roseOrit = New System.Windows.Forms.PictureBox()
+        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.btnImpMask = New System.Windows.Forms.Button()
+        Me.btnExpMask = New System.Windows.Forms.Button()
+        Me.rbMaskHist = New System.Windows.Forms.RadioButton()
+        Me.rbGlobHist = New System.Windows.Forms.RadioButton()
+        Me.btnNewMask = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.rbWeighted = New System.Windows.Forms.RadioButton()
+        Me.rbCount = New System.Windows.Forms.RadioButton()
+        Me.hgFR = New System.Windows.Forms.PictureBox()
+        Me.roseNorm = New System.Windows.Forms.PictureBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.chkIBoundMode = New System.Windows.Forms.CheckBox()
+        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.lbFb11 = New System.Windows.Forms.Label()
+        Me.lbFb12 = New System.Windows.Forms.Label()
+        Me.lbFb22 = New System.Windows.Forms.Label()
+        Me.lbFb21 = New System.Windows.Forms.Label()
+        Me.lbAngFabAxis1 = New System.Windows.Forms.Label()
+        Me.lbF1 = New System.Windows.Forms.Label()
+        Me.lbF2 = New System.Windows.Forms.Label()
+        Me.lbAngFabAxis2 = New System.Windows.Forms.Label()
+        Me.groupTsFabric = New System.Windows.Forms.GroupBox()
+        Me.chkFabExp = New System.Windows.Forms.CheckBox()
+        Me.groupTsStress = New System.Windows.Forms.GroupBox()
+        Me.checkStsBExp = New System.Windows.Forms.CheckBox()
+        Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
+        Me.lbStress11 = New System.Windows.Forms.Label()
+        Me.lbStress12 = New System.Windows.Forms.Label()
+        Me.lbStress22 = New System.Windows.Forms.Label()
+        Me.lbStress21 = New System.Windows.Forms.Label()
+        Me.lbAngStressAxis2 = New System.Windows.Forms.Label()
+        Me.lbPrnStress1 = New System.Windows.Forms.Label()
+        Me.lbAngStressAxis1 = New System.Windows.Forms.Label()
+        Me.lbPrnStress2 = New System.Windows.Forms.Label()
+        Me.lbContactNumber = New System.Windows.Forms.Label()
+        Me.groupTsBodyStress = New System.Windows.Forms.GroupBox()
+        Me.chkStsExp = New System.Windows.Forms.CheckBox()
+        Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
+        Me.lbBodyStress11 = New System.Windows.Forms.Label()
+        Me.lbBodyStress12 = New System.Windows.Forms.Label()
+        Me.lbBodyStress22 = New System.Windows.Forms.Label()
+        Me.lbBodyStress21 = New System.Windows.Forms.Label()
+        Me.lbAngBodyStressAxis2 = New System.Windows.Forms.Label()
+        Me.lbPrnBodyStress1 = New System.Windows.Forms.Label()
+        Me.lbAngBodyStressAxis1 = New System.Windows.Forms.Label()
+        Me.lbPrnBodyStress2 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.rbFabricWeightNone = New System.Windows.Forms.RadioButton()
+        Me.rbFabricWeightMaxShear = New System.Windows.Forms.RadioButton()
+        Me.rbFabricWeightBulk = New System.Windows.Forms.RadioButton()
+        Me.rbFabricWeightXY = New System.Windows.Forms.RadioButton()
+        Me.rbFabricWeightYY = New System.Windows.Forms.RadioButton()
+        Me.rbFabricWeightXX = New System.Windows.Forms.RadioButton()
+        Me.setTransHist = New System.Windows.Forms.TrackBar()
+        Me.setAngRefLine = New System.Windows.Forms.NumericUpDown()
+        Me.chkShowRefLine = New System.Windows.Forms.CheckBox()
+        Me.chkAlwaysTop = New System.Windows.Forms.CheckBox()
+        Me.setScalePolar = New System.Windows.Forms.NumericUpDown()
+        Me.gbFabricConNorm = New System.Windows.Forms.GroupBox()
+        Me.chkCNExp = New System.Windows.Forms.CheckBox()
+        Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
+        Me.lbCN11 = New System.Windows.Forms.Label()
+        Me.lbCN12 = New System.Windows.Forms.Label()
+        Me.lbCN22 = New System.Windows.Forms.Label()
+        Me.lbCN21 = New System.Windows.Forms.Label()
+        Me.lbAngFabCN1 = New System.Windows.Forms.Label()
+        Me.lbCN1 = New System.Windows.Forms.Label()
+        Me.lbCN2 = New System.Windows.Forms.Label()
+        Me.lbAngFabCN2 = New System.Windows.Forms.Label()
+        Me.chkShowRoseLegend = New System.Windows.Forms.CheckBox()
+        Me.chkShowSldNorm = New System.Windows.Forms.CheckBox()
+        Me.roseForceNormTang = New System.Windows.Forms.PictureBox()
+        Me.roseShearRatio = New System.Windows.Forms.PictureBox()
+        Me.lbExpandWindow = New System.Windows.Forms.Label()
+        Me.lbRoseForceNormTang = New System.Windows.Forms.Label()
+        Me.lbRoseShearRatio = New System.Windows.Forms.Label()
+        Me.setScaleShearRatio = New System.Windows.Forms.NumericUpDown()
+        Me.setScaleForceNT = New System.Windows.Forms.NumericUpDown()
+        Me.btnResetScaleForceNT = New System.Windows.Forms.Button()
+        Me.chkAllExp = New System.Windows.Forms.CheckBox()
         CType(Me.roseForce, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.roseOrit, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox5.SuspendLayout()
@@ -203,7 +204,7 @@ Partial Class Histgram
         Me.rbMaskHist.AutoSize = True
         Me.rbMaskHist.Location = New System.Drawing.Point(61, 19)
         Me.rbMaskHist.Name = "rbMaskHist"
-        Me.rbMaskHist.Size = New System.Drawing.Size(59, 20)
+        Me.rbMaskHist.Size = New System.Drawing.Size(50, 18)
         Me.rbMaskHist.TabIndex = 1
         Me.rbMaskHist.Text = "Mask"
         Me.rbMaskHist.UseVisualStyleBackColor = True
@@ -214,7 +215,7 @@ Partial Class Histgram
         Me.rbGlobHist.Checked = True
         Me.rbGlobHist.Location = New System.Drawing.Point(2, 19)
         Me.rbGlobHist.Name = "rbGlobHist"
-        Me.rbGlobHist.Size = New System.Drawing.Size(67, 20)
+        Me.rbGlobHist.Size = New System.Drawing.Size(55, 18)
         Me.rbGlobHist.TabIndex = 0
         Me.rbGlobHist.TabStop = True
         Me.rbGlobHist.Text = "Global"
@@ -237,7 +238,7 @@ Partial Class Histgram
         Me.Label1.BackColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Label1.Location = New System.Drawing.Point(16, 9)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(132, 17)
+        Me.Label1.Size = New System.Drawing.Size(111, 15)
         Me.Label1.TabIndex = 7
         Me.Label1.Text = "Particle Orientation"
         '
@@ -257,7 +258,7 @@ Partial Class Histgram
         Me.rbWeighted.AutoSize = True
         Me.rbWeighted.Location = New System.Drawing.Point(16, 13)
         Me.rbWeighted.Name = "rbWeighted"
-        Me.rbWeighted.Size = New System.Drawing.Size(70, 20)
+        Me.rbWeighted.Size = New System.Drawing.Size(58, 18)
         Me.rbWeighted.TabIndex = 10
         Me.rbWeighted.Text = "Weight"
         Me.rbWeighted.UseVisualStyleBackColor = True
@@ -268,7 +269,7 @@ Partial Class Histgram
         Me.rbCount.Checked = True
         Me.rbCount.Location = New System.Drawing.Point(89, 12)
         Me.rbCount.Name = "rbCount"
-        Me.rbCount.Size = New System.Drawing.Size(64, 20)
+        Me.rbCount.Size = New System.Drawing.Size(53, 18)
         Me.rbCount.TabIndex = 0
         Me.rbCount.TabStop = True
         Me.rbCount.Text = "Count"
@@ -303,7 +304,7 @@ Partial Class Histgram
         Me.Label4.BackColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Label4.Location = New System.Drawing.Point(326, 9)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(99, 17)
+        Me.Label4.Size = New System.Drawing.Size(83, 15)
         Me.Label4.TabIndex = 7
         Me.Label4.Text = "Contact Norm"
         '
@@ -313,7 +314,7 @@ Partial Class Histgram
         Me.chkIBoundMode.Font = New System.Drawing.Font("Arial", 8.0!)
         Me.chkIBoundMode.Location = New System.Drawing.Point(8, 805)
         Me.chkIBoundMode.Name = "chkIBoundMode"
-        Me.chkIBoundMode.Size = New System.Drawing.Size(196, 20)
+        Me.chkIBoundMode.Size = New System.Drawing.Size(155, 18)
         Me.chkIBoundMode.TabIndex = 11
         Me.chkIBoundMode.Text = "Including Boundary Forces"
         Me.chkIBoundMode.UseVisualStyleBackColor = True
@@ -347,9 +348,9 @@ Partial Class Histgram
         Me.lbFb11.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lbFb11.AutoSize = True
         Me.lbFb11.Font = New System.Drawing.Font("Arial", 7.5!)
-        Me.lbFb11.Location = New System.Drawing.Point(3, 4)
+        Me.lbFb11.Location = New System.Drawing.Point(3, 6)
         Me.lbFb11.Name = "lbFb11"
-        Me.lbFb11.Size = New System.Drawing.Size(36, 16)
+        Me.lbFb11.Size = New System.Drawing.Size(30, 13)
         Me.lbFb11.TabIndex = 0
         Me.lbFb11.Text = "Fb11"
         '
@@ -358,9 +359,9 @@ Partial Class Histgram
         Me.lbFb12.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lbFb12.AutoSize = True
         Me.lbFb12.Font = New System.Drawing.Font("Arial", 7.5!)
-        Me.lbFb12.Location = New System.Drawing.Point(68, 4)
+        Me.lbFb12.Location = New System.Drawing.Point(68, 6)
         Me.lbFb12.Name = "lbFb12"
-        Me.lbFb12.Size = New System.Drawing.Size(37, 16)
+        Me.lbFb12.Size = New System.Drawing.Size(31, 13)
         Me.lbFb12.TabIndex = 0
         Me.lbFb12.Text = "Fb12"
         '
@@ -369,9 +370,9 @@ Partial Class Histgram
         Me.lbFb22.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lbFb22.AutoSize = True
         Me.lbFb22.Font = New System.Drawing.Font("Arial", 7.5!)
-        Me.lbFb22.Location = New System.Drawing.Point(68, 30)
+        Me.lbFb22.Location = New System.Drawing.Point(68, 31)
         Me.lbFb22.Name = "lbFb22"
-        Me.lbFb22.Size = New System.Drawing.Size(37, 16)
+        Me.lbFb22.Size = New System.Drawing.Size(31, 13)
         Me.lbFb22.TabIndex = 0
         Me.lbFb22.Text = "Fb22"
         '
@@ -380,9 +381,9 @@ Partial Class Histgram
         Me.lbFb21.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lbFb21.AutoSize = True
         Me.lbFb21.Font = New System.Drawing.Font("Arial", 7.5!)
-        Me.lbFb21.Location = New System.Drawing.Point(3, 30)
+        Me.lbFb21.Location = New System.Drawing.Point(3, 31)
         Me.lbFb21.Name = "lbFb21"
-        Me.lbFb21.Size = New System.Drawing.Size(37, 16)
+        Me.lbFb21.Size = New System.Drawing.Size(31, 13)
         Me.lbFb21.TabIndex = 0
         Me.lbFb21.Text = "Fb21"
         '
@@ -391,9 +392,9 @@ Partial Class Histgram
         Me.lbAngFabAxis1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.lbAngFabAxis1.AutoSize = True
         Me.lbAngFabAxis1.Font = New System.Drawing.Font("Arial", 7.5!)
-        Me.lbAngFabAxis1.Location = New System.Drawing.Point(135, 0)
+        Me.lbAngFabAxis1.Location = New System.Drawing.Point(137, 6)
         Me.lbAngFabAxis1.Name = "lbAngFabAxis1"
-        Me.lbAngFabAxis1.Size = New System.Drawing.Size(55, 25)
+        Me.lbAngFabAxis1.Size = New System.Drawing.Size(50, 13)
         Me.lbAngFabAxis1.TabIndex = 0
         Me.lbAngFabAxis1.Text = "angAxis1"
         '
@@ -402,9 +403,9 @@ Partial Class Histgram
         Me.lbF1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.lbF1.AutoSize = True
         Me.lbF1.Font = New System.Drawing.Font("Arial", 7.5!)
-        Me.lbF1.Location = New System.Drawing.Point(219, 4)
+        Me.lbF1.Location = New System.Drawing.Point(221, 6)
         Me.lbF1.Name = "lbF1"
-        Me.lbF1.Size = New System.Drawing.Size(19, 16)
+        Me.lbF1.Size = New System.Drawing.Size(16, 13)
         Me.lbF1.TabIndex = 0
         Me.lbF1.Text = "FI"
         '
@@ -413,9 +414,9 @@ Partial Class Histgram
         Me.lbF2.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.lbF2.AutoSize = True
         Me.lbF2.Font = New System.Drawing.Font("Arial", 7.5!)
-        Me.lbF2.Location = New System.Drawing.Point(218, 30)
+        Me.lbF2.Location = New System.Drawing.Point(219, 31)
         Me.lbF2.Name = "lbF2"
-        Me.lbF2.Size = New System.Drawing.Size(22, 16)
+        Me.lbF2.Size = New System.Drawing.Size(19, 13)
         Me.lbF2.TabIndex = 0
         Me.lbF2.Text = "FII"
         '
@@ -424,9 +425,9 @@ Partial Class Histgram
         Me.lbAngFabAxis2.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.lbAngFabAxis2.AutoSize = True
         Me.lbAngFabAxis2.Font = New System.Drawing.Font("Arial", 7.5!)
-        Me.lbAngFabAxis2.Location = New System.Drawing.Point(135, 25)
+        Me.lbAngFabAxis2.Location = New System.Drawing.Point(137, 31)
         Me.lbAngFabAxis2.Name = "lbAngFabAxis2"
-        Me.lbAngFabAxis2.Size = New System.Drawing.Size(55, 26)
+        Me.lbAngFabAxis2.Size = New System.Drawing.Size(50, 13)
         Me.lbAngFabAxis2.TabIndex = 0
         Me.lbAngFabAxis2.Text = "angAxis2"
         '
@@ -448,7 +449,7 @@ Partial Class Histgram
         Me.chkFabExp.CheckAlign = System.Drawing.ContentAlignment.TopCenter
         Me.chkFabExp.Location = New System.Drawing.Point(278, 22)
         Me.chkFabExp.Name = "chkFabExp"
-        Me.chkFabExp.Size = New System.Drawing.Size(22, 35)
+        Me.chkFabExp.Size = New System.Drawing.Size(19, 33)
         Me.chkFabExp.TabIndex = 14
         Me.chkFabExp.Text = "E"
         Me.chkFabExp.UseVisualStyleBackColor = True
@@ -471,7 +472,7 @@ Partial Class Histgram
         Me.checkStsBExp.CheckAlign = System.Drawing.ContentAlignment.TopCenter
         Me.checkStsBExp.Location = New System.Drawing.Point(278, 22)
         Me.checkStsBExp.Name = "checkStsBExp"
-        Me.checkStsBExp.Size = New System.Drawing.Size(22, 35)
+        Me.checkStsBExp.Size = New System.Drawing.Size(19, 33)
         Me.checkStsBExp.TabIndex = 13
         Me.checkStsBExp.Text = "E"
         Me.checkStsBExp.UseVisualStyleBackColor = True
@@ -504,9 +505,9 @@ Partial Class Histgram
         Me.lbStress11.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lbStress11.AutoSize = True
         Me.lbStress11.Font = New System.Drawing.Font("Arial", 7.5!)
-        Me.lbStress11.Location = New System.Drawing.Point(3, 8)
+        Me.lbStress11.Location = New System.Drawing.Point(3, 9)
         Me.lbStress11.Name = "lbStress11"
-        Me.lbStress11.Size = New System.Drawing.Size(59, 16)
+        Me.lbStress11.Size = New System.Drawing.Size(45, 13)
         Me.lbStress11.TabIndex = 0
         Me.lbStress11.Text = "Stress11"
         '
@@ -515,9 +516,9 @@ Partial Class Histgram
         Me.lbStress12.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lbStress12.AutoSize = True
         Me.lbStress12.Font = New System.Drawing.Font("Arial", 7.5!)
-        Me.lbStress12.Location = New System.Drawing.Point(68, 0)
+        Me.lbStress12.Location = New System.Drawing.Point(68, 9)
         Me.lbStress12.Name = "lbStress12"
-        Me.lbStress12.Size = New System.Drawing.Size(53, 32)
+        Me.lbStress12.Size = New System.Drawing.Size(46, 13)
         Me.lbStress12.TabIndex = 0
         Me.lbStress12.Text = "Stress12"
         '
@@ -526,9 +527,9 @@ Partial Class Histgram
         Me.lbStress22.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lbStress22.AutoSize = True
         Me.lbStress22.Font = New System.Drawing.Font("Arial", 7.5!)
-        Me.lbStress22.Location = New System.Drawing.Point(68, 32)
+        Me.lbStress22.Location = New System.Drawing.Point(68, 42)
         Me.lbStress22.Name = "lbStress22"
-        Me.lbStress22.Size = New System.Drawing.Size(53, 32)
+        Me.lbStress22.Size = New System.Drawing.Size(46, 13)
         Me.lbStress22.TabIndex = 0
         Me.lbStress22.Text = "Stress22"
         '
@@ -537,9 +538,9 @@ Partial Class Histgram
         Me.lbStress21.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lbStress21.AutoSize = True
         Me.lbStress21.Font = New System.Drawing.Font("Arial", 7.5!)
-        Me.lbStress21.Location = New System.Drawing.Point(3, 32)
+        Me.lbStress21.Location = New System.Drawing.Point(3, 42)
         Me.lbStress21.Name = "lbStress21"
-        Me.lbStress21.Size = New System.Drawing.Size(53, 32)
+        Me.lbStress21.Size = New System.Drawing.Size(46, 13)
         Me.lbStress21.TabIndex = 0
         Me.lbStress21.Text = "Stress21"
         '
@@ -548,9 +549,9 @@ Partial Class Histgram
         Me.lbAngStressAxis2.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.lbAngStressAxis2.AutoSize = True
         Me.lbAngStressAxis2.Font = New System.Drawing.Font("Arial", 7.5!)
-        Me.lbAngStressAxis2.Location = New System.Drawing.Point(135, 32)
+        Me.lbAngStressAxis2.Location = New System.Drawing.Point(137, 42)
         Me.lbAngStressAxis2.Name = "lbAngStressAxis2"
-        Me.lbAngStressAxis2.Size = New System.Drawing.Size(55, 32)
+        Me.lbAngStressAxis2.Size = New System.Drawing.Size(50, 13)
         Me.lbAngStressAxis2.TabIndex = 0
         Me.lbAngStressAxis2.Text = "angAxis2"
         '
@@ -559,9 +560,9 @@ Partial Class Histgram
         Me.lbPrnStress1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.lbPrnStress1.AutoSize = True
         Me.lbPrnStress1.Font = New System.Drawing.Font("Arial", 7.5!)
-        Me.lbPrnStress1.Location = New System.Drawing.Point(204, 8)
+        Me.lbPrnStress1.Location = New System.Drawing.Point(210, 9)
         Me.lbPrnStress1.Name = "lbPrnStress1"
-        Me.lbPrnStress1.Size = New System.Drawing.Size(49, 16)
+        Me.lbPrnStress1.Size = New System.Drawing.Size(37, 13)
         Me.lbPrnStress1.TabIndex = 0
         Me.lbPrnStress1.Text = "StressI"
         '
@@ -570,9 +571,9 @@ Partial Class Histgram
         Me.lbAngStressAxis1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.lbAngStressAxis1.AutoSize = True
         Me.lbAngStressAxis1.Font = New System.Drawing.Font("Arial", 7.5!)
-        Me.lbAngStressAxis1.Location = New System.Drawing.Point(135, 0)
+        Me.lbAngStressAxis1.Location = New System.Drawing.Point(137, 9)
         Me.lbAngStressAxis1.Name = "lbAngStressAxis1"
-        Me.lbAngStressAxis1.Size = New System.Drawing.Size(55, 32)
+        Me.lbAngStressAxis1.Size = New System.Drawing.Size(50, 13)
         Me.lbAngStressAxis1.TabIndex = 0
         Me.lbAngStressAxis1.Text = "angAxis1"
         '
@@ -581,9 +582,9 @@ Partial Class Histgram
         Me.lbPrnStress2.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.lbPrnStress2.AutoSize = True
         Me.lbPrnStress2.Font = New System.Drawing.Font("Arial", 7.5!)
-        Me.lbPrnStress2.Location = New System.Drawing.Point(203, 40)
+        Me.lbPrnStress2.Location = New System.Drawing.Point(209, 42)
         Me.lbPrnStress2.Name = "lbPrnStress2"
-        Me.lbPrnStress2.Size = New System.Drawing.Size(52, 16)
+        Me.lbPrnStress2.Size = New System.Drawing.Size(40, 13)
         Me.lbPrnStress2.TabIndex = 0
         Me.lbPrnStress2.Text = "StressII"
         '
@@ -593,7 +594,7 @@ Partial Class Histgram
         Me.lbContactNumber.Font = New System.Drawing.Font("Arial", 8.0!)
         Me.lbContactNumber.Location = New System.Drawing.Point(5, 827)
         Me.lbContactNumber.Name = "lbContactNumber"
-        Me.lbContactNumber.Size = New System.Drawing.Size(150, 16)
+        Me.lbContactNumber.Size = New System.Drawing.Size(113, 14)
         Me.lbContactNumber.TabIndex = 14
         Me.lbContactNumber.Text = "Coordination  Number:"
         '
@@ -615,7 +616,7 @@ Partial Class Histgram
         Me.chkStsExp.CheckAlign = System.Drawing.ContentAlignment.TopCenter
         Me.chkStsExp.Location = New System.Drawing.Point(280, 15)
         Me.chkStsExp.Name = "chkStsExp"
-        Me.chkStsExp.Size = New System.Drawing.Size(22, 35)
+        Me.chkStsExp.Size = New System.Drawing.Size(19, 33)
         Me.chkStsExp.TabIndex = 14
         Me.chkStsExp.Text = "E"
         Me.chkStsExp.UseVisualStyleBackColor = True
@@ -648,9 +649,9 @@ Partial Class Histgram
         Me.lbBodyStress11.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lbBodyStress11.AutoSize = True
         Me.lbBodyStress11.Font = New System.Drawing.Font("Arial", 7.5!)
-        Me.lbBodyStress11.Location = New System.Drawing.Point(3, 8)
+        Me.lbBodyStress11.Location = New System.Drawing.Point(3, 9)
         Me.lbBodyStress11.Name = "lbBodyStress11"
-        Me.lbBodyStress11.Size = New System.Drawing.Size(59, 16)
+        Me.lbBodyStress11.Size = New System.Drawing.Size(45, 13)
         Me.lbBodyStress11.TabIndex = 0
         Me.lbBodyStress11.Text = "Stress11"
         '
@@ -659,9 +660,9 @@ Partial Class Histgram
         Me.lbBodyStress12.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lbBodyStress12.AutoSize = True
         Me.lbBodyStress12.Font = New System.Drawing.Font("Arial", 7.5!)
-        Me.lbBodyStress12.Location = New System.Drawing.Point(69, 8)
+        Me.lbBodyStress12.Location = New System.Drawing.Point(69, 9)
         Me.lbBodyStress12.Name = "lbBodyStress12"
-        Me.lbBodyStress12.Size = New System.Drawing.Size(60, 16)
+        Me.lbBodyStress12.Size = New System.Drawing.Size(46, 13)
         Me.lbBodyStress12.TabIndex = 0
         Me.lbBodyStress12.Text = "Stress12"
         '
@@ -670,9 +671,9 @@ Partial Class Histgram
         Me.lbBodyStress22.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lbBodyStress22.AutoSize = True
         Me.lbBodyStress22.Font = New System.Drawing.Font("Arial", 7.5!)
-        Me.lbBodyStress22.Location = New System.Drawing.Point(69, 40)
+        Me.lbBodyStress22.Location = New System.Drawing.Point(69, 42)
         Me.lbBodyStress22.Name = "lbBodyStress22"
-        Me.lbBodyStress22.Size = New System.Drawing.Size(60, 16)
+        Me.lbBodyStress22.Size = New System.Drawing.Size(46, 13)
         Me.lbBodyStress22.TabIndex = 0
         Me.lbBodyStress22.Text = "Stress22"
         '
@@ -681,9 +682,9 @@ Partial Class Histgram
         Me.lbBodyStress21.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lbBodyStress21.AutoSize = True
         Me.lbBodyStress21.Font = New System.Drawing.Font("Arial", 7.5!)
-        Me.lbBodyStress21.Location = New System.Drawing.Point(3, 40)
+        Me.lbBodyStress21.Location = New System.Drawing.Point(3, 42)
         Me.lbBodyStress21.Name = "lbBodyStress21"
-        Me.lbBodyStress21.Size = New System.Drawing.Size(60, 16)
+        Me.lbBodyStress21.Size = New System.Drawing.Size(46, 13)
         Me.lbBodyStress21.TabIndex = 0
         Me.lbBodyStress21.Text = "Stress21"
         '
@@ -692,9 +693,9 @@ Partial Class Histgram
         Me.lbAngBodyStressAxis2.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.lbAngBodyStressAxis2.AutoSize = True
         Me.lbAngBodyStressAxis2.Font = New System.Drawing.Font("Arial", 7.5!)
-        Me.lbAngBodyStressAxis2.Location = New System.Drawing.Point(137, 32)
+        Me.lbAngBodyStressAxis2.Location = New System.Drawing.Point(140, 42)
         Me.lbAngBodyStressAxis2.Name = "lbAngBodyStressAxis2"
-        Me.lbAngBodyStressAxis2.Size = New System.Drawing.Size(55, 32)
+        Me.lbAngBodyStressAxis2.Size = New System.Drawing.Size(50, 13)
         Me.lbAngBodyStressAxis2.TabIndex = 0
         Me.lbAngBodyStressAxis2.Text = "angAxis2"
         '
@@ -703,9 +704,9 @@ Partial Class Histgram
         Me.lbPrnBodyStress1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.lbPrnBodyStress1.AutoSize = True
         Me.lbPrnBodyStress1.Font = New System.Drawing.Font("Arial", 7.5!)
-        Me.lbPrnBodyStress1.Location = New System.Drawing.Point(207, 8)
+        Me.lbPrnBodyStress1.Location = New System.Drawing.Point(213, 9)
         Me.lbPrnBodyStress1.Name = "lbPrnBodyStress1"
-        Me.lbPrnBodyStress1.Size = New System.Drawing.Size(49, 16)
+        Me.lbPrnBodyStress1.Size = New System.Drawing.Size(37, 13)
         Me.lbPrnBodyStress1.TabIndex = 0
         Me.lbPrnBodyStress1.Text = "StressI"
         '
@@ -714,9 +715,9 @@ Partial Class Histgram
         Me.lbAngBodyStressAxis1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.lbAngBodyStressAxis1.AutoSize = True
         Me.lbAngBodyStressAxis1.Font = New System.Drawing.Font("Arial", 7.5!)
-        Me.lbAngBodyStressAxis1.Location = New System.Drawing.Point(137, 0)
+        Me.lbAngBodyStressAxis1.Location = New System.Drawing.Point(140, 9)
         Me.lbAngBodyStressAxis1.Name = "lbAngBodyStressAxis1"
-        Me.lbAngBodyStressAxis1.Size = New System.Drawing.Size(55, 32)
+        Me.lbAngBodyStressAxis1.Size = New System.Drawing.Size(50, 13)
         Me.lbAngBodyStressAxis1.TabIndex = 0
         Me.lbAngBodyStressAxis1.Text = "angAxis1"
         '
@@ -725,9 +726,9 @@ Partial Class Histgram
         Me.lbPrnBodyStress2.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.lbPrnBodyStress2.AutoSize = True
         Me.lbPrnBodyStress2.Font = New System.Drawing.Font("Arial", 7.5!)
-        Me.lbPrnBodyStress2.Location = New System.Drawing.Point(206, 40)
+        Me.lbPrnBodyStress2.Location = New System.Drawing.Point(212, 42)
         Me.lbPrnBodyStress2.Name = "lbPrnBodyStress2"
-        Me.lbPrnBodyStress2.Size = New System.Drawing.Size(52, 16)
+        Me.lbPrnBodyStress2.Size = New System.Drawing.Size(40, 13)
         Me.lbPrnBodyStress2.TabIndex = 0
         Me.lbPrnBodyStress2.Text = "StressII"
         '
@@ -738,7 +739,7 @@ Partial Class Histgram
         Me.Label10.ForeColor = System.Drawing.Color.Black
         Me.Label10.Location = New System.Drawing.Point(16, 9)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(132, 17)
+        Me.Label10.Size = New System.Drawing.Size(111, 15)
         Me.Label10.TabIndex = 15
         Me.Label10.Text = "Particle Orientation"
         '
@@ -749,7 +750,7 @@ Partial Class Histgram
         Me.Label11.ForeColor = System.Drawing.Color.Black
         Me.Label11.Location = New System.Drawing.Point(323, 9)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(172, 17)
+        Me.Label11.Size = New System.Drawing.Size(145, 15)
         Me.Label11.TabIndex = 15
         Me.Label11.Text = "Contact Normal Direction"
         '
@@ -760,7 +761,7 @@ Partial Class Histgram
         Me.Label12.ForeColor = System.Drawing.Color.Black
         Me.Label12.Location = New System.Drawing.Point(16, 343)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(240, 17)
+        Me.Label12.Size = New System.Drawing.Size(200, 15)
         Me.Label12.TabIndex = 15
         Me.Label12.Text = "Contact Force Direction (not useful)"
         '
@@ -771,7 +772,7 @@ Partial Class Histgram
         Me.Label13.ForeColor = System.Drawing.Color.Black
         Me.Label13.Location = New System.Drawing.Point(321, 338)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(94, 17)
+        Me.Label13.Size = New System.Drawing.Size(79, 15)
         Me.Label13.TabIndex = 15
         Me.Label13.Text = "Friction Ratio"
         '
@@ -799,7 +800,7 @@ Partial Class Histgram
         Me.rbFabricWeightNone.Font = New System.Drawing.Font("Arial", 7.0!)
         Me.rbFabricWeightNone.Location = New System.Drawing.Point(5, 20)
         Me.rbFabricWeightNone.Name = "rbFabricWeightNone"
-        Me.rbFabricWeightNone.Size = New System.Drawing.Size(55, 19)
+        Me.rbFabricWeightNone.Size = New System.Drawing.Size(50, 17)
         Me.rbFabricWeightNone.TabIndex = 6
         Me.rbFabricWeightNone.TabStop = True
         Me.rbFabricWeightNone.Text = "None"
@@ -811,7 +812,7 @@ Partial Class Histgram
         Me.rbFabricWeightMaxShear.Font = New System.Drawing.Font("Arial", 7.0!)
         Me.rbFabricWeightMaxShear.Location = New System.Drawing.Point(96, 41)
         Me.rbFabricWeightMaxShear.Name = "rbFabricWeightMaxShear"
-        Me.rbFabricWeightMaxShear.Size = New System.Drawing.Size(82, 19)
+        Me.rbFabricWeightMaxShear.Size = New System.Drawing.Size(76, 17)
         Me.rbFabricWeightMaxShear.TabIndex = 5
         Me.rbFabricWeightMaxShear.Text = "Max Shear"
         Me.rbFabricWeightMaxShear.UseVisualStyleBackColor = True
@@ -822,7 +823,7 @@ Partial Class Histgram
         Me.rbFabricWeightBulk.Font = New System.Drawing.Font("Arial", 7.0!)
         Me.rbFabricWeightBulk.Location = New System.Drawing.Point(4, 41)
         Me.rbFabricWeightBulk.Name = "rbFabricWeightBulk"
-        Me.rbFabricWeightBulk.Size = New System.Drawing.Size(49, 19)
+        Me.rbFabricWeightBulk.Size = New System.Drawing.Size(45, 17)
         Me.rbFabricWeightBulk.TabIndex = 4
         Me.rbFabricWeightBulk.Text = "Bulk"
         Me.rbFabricWeightBulk.UseVisualStyleBackColor = True
@@ -833,7 +834,7 @@ Partial Class Histgram
         Me.rbFabricWeightXY.Font = New System.Drawing.Font("Arial", 7.0!)
         Me.rbFabricWeightXY.Location = New System.Drawing.Point(54, 42)
         Me.rbFabricWeightXY.Name = "rbFabricWeightXY"
-        Me.rbFabricWeightXY.Size = New System.Drawing.Size(39, 19)
+        Me.rbFabricWeightXY.Size = New System.Drawing.Size(39, 17)
         Me.rbFabricWeightXY.TabIndex = 3
         Me.rbFabricWeightXY.Text = "XY"
         Me.rbFabricWeightXY.UseVisualStyleBackColor = True
@@ -844,7 +845,7 @@ Partial Class Histgram
         Me.rbFabricWeightYY.Font = New System.Drawing.Font("Arial", 7.0!)
         Me.rbFabricWeightYY.Location = New System.Drawing.Point(118, 22)
         Me.rbFabricWeightYY.Name = "rbFabricWeightYY"
-        Me.rbFabricWeightYY.Size = New System.Drawing.Size(39, 19)
+        Me.rbFabricWeightYY.Size = New System.Drawing.Size(39, 17)
         Me.rbFabricWeightYY.TabIndex = 2
         Me.rbFabricWeightYY.Text = "YY"
         Me.rbFabricWeightYY.UseVisualStyleBackColor = True
@@ -855,7 +856,7 @@ Partial Class Histgram
         Me.rbFabricWeightXX.Font = New System.Drawing.Font("Arial", 7.0!)
         Me.rbFabricWeightXX.Location = New System.Drawing.Point(67, 22)
         Me.rbFabricWeightXX.Name = "rbFabricWeightXX"
-        Me.rbFabricWeightXX.Size = New System.Drawing.Size(39, 19)
+        Me.rbFabricWeightXX.Size = New System.Drawing.Size(39, 17)
         Me.rbFabricWeightXX.TabIndex = 1
         Me.rbFabricWeightXX.Text = "XX"
         Me.rbFabricWeightXX.UseVisualStyleBackColor = True
@@ -877,19 +878,19 @@ Partial Class Histgram
         Me.setAngRefLine.DecimalPlaces = 1
         Me.setAngRefLine.Font = New System.Drawing.Font("Arial", 8.0!)
         Me.setAngRefLine.ForeColor = System.Drawing.Color.White
-        Me.setAngRefLine.Location = New System.Drawing.Point(224, 839)
+        Me.setAngRefLine.Location = New System.Drawing.Point(224, 834)
         Me.setAngRefLine.Maximum = New Decimal(New Integer() {360, 0, 0, 0})
         Me.setAngRefLine.Name = "setAngRefLine"
-        Me.setAngRefLine.Size = New System.Drawing.Size(74, 23)
+        Me.setAngRefLine.Size = New System.Drawing.Size(74, 20)
         Me.setAngRefLine.TabIndex = 18
         '
         'chkShowRefLine
         '
         Me.chkShowRefLine.AutoSize = True
         Me.chkShowRefLine.Font = New System.Drawing.Font("Arial", 8.0!)
-        Me.chkShowRefLine.Location = New System.Drawing.Point(224, 813)
+        Me.chkShowRefLine.Location = New System.Drawing.Point(224, 808)
         Me.chkShowRefLine.Name = "chkShowRefLine"
-        Me.chkShowRefLine.Size = New System.Drawing.Size(84, 20)
+        Me.chkShowRefLine.Size = New System.Drawing.Size(69, 18)
         Me.chkShowRefLine.TabIndex = 19
         Me.chkShowRefLine.Text = "Ref. Line"
         Me.chkShowRefLine.UseVisualStyleBackColor = True
@@ -901,7 +902,7 @@ Partial Class Histgram
         Me.chkAlwaysTop.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chkAlwaysTop.Location = New System.Drawing.Point(159, 852)
         Me.chkAlwaysTop.Name = "chkAlwaysTop"
-        Me.chkAlwaysTop.Size = New System.Drawing.Size(50, 21)
+        Me.chkAlwaysTop.Size = New System.Drawing.Size(46, 19)
         Me.chkAlwaysTop.TabIndex = 20
         Me.chkAlwaysTop.Text = "Top"
         Me.chkAlwaysTop.UseVisualStyleBackColor = True
@@ -913,7 +914,7 @@ Partial Class Histgram
         Me.setScalePolar.Location = New System.Drawing.Point(554, 307)
         Me.setScalePolar.Minimum = New Decimal(New Integer() {1, 0, 0, 65536})
         Me.setScalePolar.Name = "setScalePolar"
-        Me.setScalePolar.Size = New System.Drawing.Size(60, 25)
+        Me.setScalePolar.Size = New System.Drawing.Size(60, 21)
         Me.setScalePolar.TabIndex = 21
         Me.setScalePolar.Value = New Decimal(New Integer() {5, 0, 0, 65536})
         '
@@ -935,7 +936,7 @@ Partial Class Histgram
         Me.chkCNExp.CheckAlign = System.Drawing.ContentAlignment.TopCenter
         Me.chkCNExp.Location = New System.Drawing.Point(278, 22)
         Me.chkCNExp.Name = "chkCNExp"
-        Me.chkCNExp.Size = New System.Drawing.Size(22, 35)
+        Me.chkCNExp.Size = New System.Drawing.Size(19, 33)
         Me.chkCNExp.TabIndex = 14
         Me.chkCNExp.Text = "E"
         Me.chkCNExp.UseVisualStyleBackColor = True
@@ -969,9 +970,9 @@ Partial Class Histgram
         Me.lbCN11.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lbCN11.AutoSize = True
         Me.lbCN11.Font = New System.Drawing.Font("Arial", 7.5!)
-        Me.lbCN11.Location = New System.Drawing.Point(3, 4)
+        Me.lbCN11.Location = New System.Drawing.Point(3, 6)
         Me.lbCN11.Name = "lbCN11"
-        Me.lbCN11.Size = New System.Drawing.Size(36, 16)
+        Me.lbCN11.Size = New System.Drawing.Size(30, 13)
         Me.lbCN11.TabIndex = 0
         Me.lbCN11.Text = "Fb11"
         '
@@ -980,9 +981,9 @@ Partial Class Histgram
         Me.lbCN12.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lbCN12.AutoSize = True
         Me.lbCN12.Font = New System.Drawing.Font("Arial", 7.5!)
-        Me.lbCN12.Location = New System.Drawing.Point(68, 4)
+        Me.lbCN12.Location = New System.Drawing.Point(68, 6)
         Me.lbCN12.Name = "lbCN12"
-        Me.lbCN12.Size = New System.Drawing.Size(37, 16)
+        Me.lbCN12.Size = New System.Drawing.Size(31, 13)
         Me.lbCN12.TabIndex = 0
         Me.lbCN12.Text = "Fb12"
         '
@@ -991,9 +992,9 @@ Partial Class Histgram
         Me.lbCN22.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lbCN22.AutoSize = True
         Me.lbCN22.Font = New System.Drawing.Font("Arial", 7.5!)
-        Me.lbCN22.Location = New System.Drawing.Point(68, 30)
+        Me.lbCN22.Location = New System.Drawing.Point(68, 31)
         Me.lbCN22.Name = "lbCN22"
-        Me.lbCN22.Size = New System.Drawing.Size(37, 16)
+        Me.lbCN22.Size = New System.Drawing.Size(31, 13)
         Me.lbCN22.TabIndex = 0
         Me.lbCN22.Text = "Fb22"
         '
@@ -1002,9 +1003,9 @@ Partial Class Histgram
         Me.lbCN21.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lbCN21.AutoSize = True
         Me.lbCN21.Font = New System.Drawing.Font("Arial", 7.5!)
-        Me.lbCN21.Location = New System.Drawing.Point(3, 30)
+        Me.lbCN21.Location = New System.Drawing.Point(3, 31)
         Me.lbCN21.Name = "lbCN21"
-        Me.lbCN21.Size = New System.Drawing.Size(37, 16)
+        Me.lbCN21.Size = New System.Drawing.Size(31, 13)
         Me.lbCN21.TabIndex = 0
         Me.lbCN21.Text = "Fb21"
         '
@@ -1013,9 +1014,9 @@ Partial Class Histgram
         Me.lbAngFabCN1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.lbAngFabCN1.AutoSize = True
         Me.lbAngFabCN1.Font = New System.Drawing.Font("Arial", 7.5!)
-        Me.lbAngFabCN1.Location = New System.Drawing.Point(135, 0)
+        Me.lbAngFabCN1.Location = New System.Drawing.Point(137, 6)
         Me.lbAngFabCN1.Name = "lbAngFabCN1"
-        Me.lbAngFabCN1.Size = New System.Drawing.Size(55, 25)
+        Me.lbAngFabCN1.Size = New System.Drawing.Size(50, 13)
         Me.lbAngFabCN1.TabIndex = 0
         Me.lbAngFabCN1.Text = "angAxis1"
         '
@@ -1024,9 +1025,9 @@ Partial Class Histgram
         Me.lbCN1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.lbCN1.AutoSize = True
         Me.lbCN1.Font = New System.Drawing.Font("Arial", 7.5!)
-        Me.lbCN1.Location = New System.Drawing.Point(219, 4)
+        Me.lbCN1.Location = New System.Drawing.Point(221, 6)
         Me.lbCN1.Name = "lbCN1"
-        Me.lbCN1.Size = New System.Drawing.Size(19, 16)
+        Me.lbCN1.Size = New System.Drawing.Size(16, 13)
         Me.lbCN1.TabIndex = 0
         Me.lbCN1.Text = "FI"
         '
@@ -1035,9 +1036,9 @@ Partial Class Histgram
         Me.lbCN2.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.lbCN2.AutoSize = True
         Me.lbCN2.Font = New System.Drawing.Font("Arial", 7.5!)
-        Me.lbCN2.Location = New System.Drawing.Point(218, 30)
+        Me.lbCN2.Location = New System.Drawing.Point(219, 31)
         Me.lbCN2.Name = "lbCN2"
-        Me.lbCN2.Size = New System.Drawing.Size(22, 16)
+        Me.lbCN2.Size = New System.Drawing.Size(19, 13)
         Me.lbCN2.TabIndex = 0
         Me.lbCN2.Text = "FII"
         '
@@ -1046,9 +1047,9 @@ Partial Class Histgram
         Me.lbAngFabCN2.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.lbAngFabCN2.AutoSize = True
         Me.lbAngFabCN2.Font = New System.Drawing.Font("Arial", 7.5!)
-        Me.lbAngFabCN2.Location = New System.Drawing.Point(135, 25)
+        Me.lbAngFabCN2.Location = New System.Drawing.Point(137, 31)
         Me.lbAngFabCN2.Name = "lbAngFabCN2"
-        Me.lbAngFabCN2.Size = New System.Drawing.Size(55, 26)
+        Me.lbAngFabCN2.Size = New System.Drawing.Size(50, 13)
         Me.lbAngFabCN2.TabIndex = 0
         Me.lbAngFabCN2.Text = "angAxis2"
         '
@@ -1063,7 +1064,7 @@ Partial Class Histgram
         Me.chkShowRoseLegend.ForeColor = System.Drawing.Color.Black
         Me.chkShowRoseLegend.Location = New System.Drawing.Point(543, 9)
         Me.chkShowRoseLegend.Name = "chkShowRoseLegend"
-        Me.chkShowRoseLegend.Size = New System.Drawing.Size(66, 27)
+        Me.chkShowRoseLegend.Size = New System.Drawing.Size(59, 25)
         Me.chkShowRoseLegend.TabIndex = 22
         Me.chkShowRoseLegend.Text = "Legend"
         Me.chkShowRoseLegend.UseVisualStyleBackColor = False
@@ -1080,7 +1081,7 @@ Partial Class Histgram
         Me.chkShowSldNorm.ForeColor = System.Drawing.Color.Black
         Me.chkShowSldNorm.Location = New System.Drawing.Point(320, 304)
         Me.chkShowSldNorm.Name = "chkShowSldNorm"
-        Me.chkShowSldNorm.Size = New System.Drawing.Size(61, 27)
+        Me.chkShowSldNorm.Size = New System.Drawing.Size(55, 25)
         Me.chkShowSldNorm.TabIndex = 23
         Me.chkShowSldNorm.Text = "Sliding"
         Me.chkShowSldNorm.UseVisualStyleBackColor = False
@@ -1110,7 +1111,7 @@ Partial Class Histgram
         Me.lbExpandWindow.AutoSize = True
         Me.lbExpandWindow.Location = New System.Drawing.Point(615, 2)
         Me.lbExpandWindow.Name = "lbExpandWindow"
-        Me.lbExpandWindow.Size = New System.Drawing.Size(17, 17)
+        Me.lbExpandWindow.Size = New System.Drawing.Size(14, 15)
         Me.lbExpandWindow.TabIndex = 27
         Me.lbExpandWindow.Text = "<"
         '
@@ -1121,7 +1122,7 @@ Partial Class Histgram
         Me.lbRoseForceNormTang.ForeColor = System.Drawing.Color.Black
         Me.lbRoseForceNormTang.Location = New System.Drawing.Point(637, 9)
         Me.lbRoseForceNormTang.Name = "lbRoseForceNormTang"
-        Me.lbRoseForceNormTang.Size = New System.Drawing.Size(167, 17)
+        Me.lbRoseForceNormTang.Size = New System.Drawing.Size(143, 15)
         Me.lbRoseForceNormTang.TabIndex = 28
         Me.lbRoseForceNormTang.Text = "Normal-Tangential Force"
         '
@@ -1132,7 +1133,7 @@ Partial Class Histgram
         Me.lbRoseShearRatio.ForeColor = System.Drawing.Color.Black
         Me.lbRoseShearRatio.Location = New System.Drawing.Point(632, 338)
         Me.lbRoseShearRatio.Name = "lbRoseShearRatio"
-        Me.lbRoseShearRatio.Size = New System.Drawing.Size(85, 17)
+        Me.lbRoseShearRatio.Size = New System.Drawing.Size(72, 15)
         Me.lbRoseShearRatio.TabIndex = 29
         Me.lbRoseShearRatio.Text = "Shear Ratio"
         '
@@ -1142,7 +1143,7 @@ Partial Class Histgram
         Me.setScaleShearRatio.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
         Me.setScaleShearRatio.Location = New System.Drawing.Point(860, 636)
         Me.setScaleShearRatio.Name = "setScaleShearRatio"
-        Me.setScaleShearRatio.Size = New System.Drawing.Size(60, 25)
+        Me.setScaleShearRatio.Size = New System.Drawing.Size(60, 21)
         Me.setScaleShearRatio.TabIndex = 30
         Me.setScaleShearRatio.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
@@ -1152,7 +1153,7 @@ Partial Class Histgram
         Me.setScaleForceNT.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
         Me.setScaleForceNT.Location = New System.Drawing.Point(860, 304)
         Me.setScaleForceNT.Name = "setScaleForceNT"
-        Me.setScaleForceNT.Size = New System.Drawing.Size(60, 25)
+        Me.setScaleForceNT.Size = New System.Drawing.Size(60, 21)
         Me.setScaleForceNT.TabIndex = 31
         Me.setScaleForceNT.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
@@ -1169,11 +1170,23 @@ Partial Class Histgram
         Me.btnResetScaleForceNT.Text = "Reset"
         Me.btnResetScaleForceNT.UseVisualStyleBackColor = False
         '
+        'chkAllExp
+        '
+        Me.chkAllExp.AutoSize = True
+        Me.chkAllExp.Font = New System.Drawing.Font("Arial", 8.0!)
+        Me.chkAllExp.Location = New System.Drawing.Point(224, 863)
+        Me.chkAllExp.Name = "chkAllExp"
+        Me.chkAllExp.Size = New System.Drawing.Size(47, 18)
+        Me.chkAllExp.TabIndex = 33
+        Me.chkAllExp.Text = "All E"
+        Me.chkAllExp.UseVisualStyleBackColor = True
+        '
         'Histgram
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(934, 886)
+        Me.Controls.Add(Me.chkAllExp)
         Me.Controls.Add(Me.btnResetScaleForceNT)
         Me.Controls.Add(Me.setScaleForceNT)
         Me.Controls.Add(Me.setScaleShearRatio)
@@ -1343,5 +1356,6 @@ Partial Class Histgram
     Friend WithEvents setScaleForceNT As System.Windows.Forms.NumericUpDown
     Friend WithEvents btnResetScaleForceNT As System.Windows.Forms.Button
     Friend WithEvents checkStsBExp As System.Windows.Forms.CheckBox
+    Friend WithEvents chkAllExp As System.Windows.Forms.CheckBox
 
 End Class
