@@ -7622,7 +7622,7 @@ Public Class PPDEM
         dlgOpenTest.ShowDialog()
         FileName = dlgOpenTest.FileName
         lName = FileName.Length
-        ReDim angSequence(1000000)
+        ReDim angSequence(5000000)
 
         If lName > 0 Then
             Call ReadAngFile(nStressRotationSteps, angSequence, FileName, lName)

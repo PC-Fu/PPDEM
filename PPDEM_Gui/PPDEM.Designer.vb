@@ -302,6 +302,7 @@ Partial Class PPDEM
         Me.modeMotion = New System.Windows.Forms.CheckBox()
         Me.btnOpenResult = New System.Windows.Forms.Button()
         Me.tabStrain = New System.Windows.Forms.TabPage()
+        Me.btnStrnAveTrack = New System.Windows.Forms.Button()
         Me.chkExpWallPosition = New System.Windows.Forms.CheckBox()
         Me.btnMaskCell = New System.Windows.Forms.Button()
         Me.gbShowStnDrct = New System.Windows.Forms.GroupBox()
@@ -431,7 +432,6 @@ Partial Class PPDEM
         Me.timerPlay = New System.Windows.Forms.Timer(Me.components)
         Me.showPpM = New System.Windows.Forms.Label()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.btnStrnAveTrack = New System.Windows.Forms.Button()
         CType(Me.tInc, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.refRate, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nIncr, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -754,6 +754,7 @@ Partial Class PPDEM
         'setGlobDamp
         '
         Me.setGlobDamp.BackColor = System.Drawing.Color.DimGray
+        Me.setGlobDamp.DecimalPlaces = 1
         Me.setGlobDamp.Font = New System.Drawing.Font("Arial", 8.0!)
         Me.setGlobDamp.ForeColor = System.Drawing.Color.White
         Me.setGlobDamp.Location = New System.Drawing.Point(181, 192)
@@ -1230,6 +1231,7 @@ Partial Class PPDEM
         'setRotDamp
         '
         Me.setRotDamp.BackColor = System.Drawing.Color.DimGray
+        Me.setRotDamp.DecimalPlaces = 1
         Me.setRotDamp.Font = New System.Drawing.Font("Arial", 8.0!)
         Me.setRotDamp.ForeColor = System.Drawing.Color.White
         Me.setRotDamp.Location = New System.Drawing.Point(180, 227)
@@ -4141,6 +4143,17 @@ Partial Class PPDEM
         Me.tabStrain.Text = "Strain"
         Me.tabStrain.UseVisualStyleBackColor = True
         '
+        'btnStrnAveTrack
+        '
+        Me.btnStrnAveTrack.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnStrnAveTrack.Font = New System.Drawing.Font("Arial", 8.0!)
+        Me.btnStrnAveTrack.Location = New System.Drawing.Point(90, 568)
+        Me.btnStrnAveTrack.Name = "btnStrnAveTrack"
+        Me.btnStrnAveTrack.Size = New System.Drawing.Size(75, 23)
+        Me.btnStrnAveTrack.TabIndex = 33
+        Me.btnStrnAveTrack.Text = "TrackAve"
+        Me.btnStrnAveTrack.UseVisualStyleBackColor = True
+        '
         'chkExpWallPosition
         '
         Me.chkExpWallPosition.AutoSize = True
@@ -5580,17 +5593,6 @@ Partial Class PPDEM
         Me.showPpM.Size = New System.Drawing.Size(27, 14)
         Me.showPpM.TabIndex = 85
         Me.showPpM.Text = "ppm"
-        '
-        'btnStrnAveTrack
-        '
-        Me.btnStrnAveTrack.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnStrnAveTrack.Font = New System.Drawing.Font("Arial", 8.0!)
-        Me.btnStrnAveTrack.Location = New System.Drawing.Point(90, 568)
-        Me.btnStrnAveTrack.Name = "btnStrnAveTrack"
-        Me.btnStrnAveTrack.Size = New System.Drawing.Size(75, 23)
-        Me.btnStrnAveTrack.TabIndex = 33
-        Me.btnStrnAveTrack.Text = "TrackAve"
-        Me.btnStrnAveTrack.UseVisualStyleBackColor = True
         '
         'PPDEM
         '
